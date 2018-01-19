@@ -1,0 +1,13 @@
+NET "clock" LOC = "B8";
+
+NET "SW1" LOC = "H13";
+NET "LED1" LOC = "K14";
+
+NET "SW2" LOC = "E18";
+NET "LED2" LOC = "K15";
+
+NET "SW3" LOC = "D18";
+NET "LED3" LOC = "J15";
+
+NET "SW4" LOC = "B18";
+NET "LED4" LOC = "J14";

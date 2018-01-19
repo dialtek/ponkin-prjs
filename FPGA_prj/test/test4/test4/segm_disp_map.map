@@ -1,0 +1,22 @@
+Release 14.2 Map P.28xd (nt)
+Xilinx Map Application Log File for Design 'segm_disp'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off
+-c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Thu Nov 21 00:05:27 2013
+
+FATAL_ERROR:PersonalityModule:baspmdlm.c:168:1.27 - dll library <MlSpar3eTasks>
+   does not exist.   Process will terminate. For technical support on this
+   issue, please open a WebCase with this project attached at
+   http://www.xilinx.com/support.
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :   0

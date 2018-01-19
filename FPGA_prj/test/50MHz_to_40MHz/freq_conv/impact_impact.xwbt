@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\Xilinx\test\50MHz_to_40MHz\freq_conv\impact.xsl
+OUTFILE=C:\Xilinx\test\50MHz_to_40MHz\freq_conv\impact.xsl
+FAMILY=None
+PART=None
+WORKINGDIR=C:\Xilinx\test\50MHz_to_40MHz\freq_conv
+LICENSE=iMPACT
+USER_INFO=iMPACT

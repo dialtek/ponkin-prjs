@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main.xst" -ofn "D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc9572xl-VQ44-5 main.ngc main.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper main.ngd 
+XSLTProcess main_build.xml 
+tsim -intstyle ise main main.nga 
+taengine -intstyle ise -f main -w --format html1 -l main_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n main -i main 

@@ -1,0 +1,429 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W1  @READ_ROM_MEMORY.P1
+W0      @delay_us1.P2
+W0 -W1  @DIV3232A.P3
+W0 -W1  @DIV3232B.P4
+W0 -W3  @FLT64.P5
+W0 -W3  @DIVFF64.P6
+W0 -W3  @SI64TOF48.P7
+W0 -W2  @FLT48.P8
+W0 -W1  @SDTOF.P9
+W0 -W2  @F48TOSI64.P10
+W0 -W3  @MULFF64.P11
+W0 -W1  @SFTOI.P12
+W0 -W2  @MULFF48.P13
+W0 -W1  @MUL3232.P14
+W0 -W3  @SI64TOF64.P15
+W0 -W2  @ADDFF48.P16
+W0 -W2  @F48TO64.P17
+W0      @SITOF.P18
+W0 -W1  @ADDFF.P19
+W0 -W2  @DIVFF48.P20
+W0 -W1  @FTOSD.P21
+W0 -W3  @DIV6464B.P22
+W0 -W3  @I64TOF48.P23
+W0      @ITOF.P24
+W0 -W1  @READ_PROGRAM_MEMORY.P25
+W0 -W1  @SPI_XFERM_1.P26
+W0 -W3  @I64TOF64.P27
+W0      @delay_ms1.P28
+W0 -W1  @WRITE_PROGRAM_MEMORY.P29
+W0 -W1  @FLT.P30
+W0 -W3  @PRINTF_F64_9600_5893_5892.P31
+W0 -W1  @MULS3232.P32
+W0 -W3  @F64TOSI64.P33
+W0 -W3  @ADDFF64.P34
+W0 -W3  @F64TO48.P35
+W0 -W3  @F64TOI64.P36
+W0 -W1  @DIVFF.P37
+W0 -W1  @DIVS3232A.P38
+W0 -W1  @MULFF.P39
+W1      @SCRATCH
+W1      @READ_PACKED_MEMORY.P1
+W1      @NVR_WR.P2
+W1      @WRITE_PACKED_MEMORY.P3
+W2 -W3  @DIV3232A.P1
+W2      @READ_PACKED_MEMORY.P2
+W2      @SPI_XFERM_1.P3
+W2 -W3  @ADDFF.P4
+W2 -W3  @DIV3232B.P5
+W2 -W3  @FLT.P6
+W2      @WRITE_PACKED_MEMORY.P7
+W2      @WRITE_PROGRAM_MEMORY.P8
+W2      @READ_ROM_MEMORY.P9
+W2 -W3  @MULS3232.P10
+W2 -W3  @MUL3232.P11
+W2 -W3  @MULFF.P12
+W2      @READ_PROGRAM_MEMORY.P13
+W2 -W3  @DIVFF.P14
+W2 -W3  @DIVS3232A.P15
+W3      @WRITE_PACKED_MEMORY.P1
+W3      @READ_ROM_MEMORY.P2
+W3 -W5  @DIVFF48.P3
+W3      @WRITE_PROGRAM_MEMORY.P4
+W3 -W5  @FLT48.P5
+W3      @READ_PROGRAM_MEMORY.P6
+W3      @READ_PACKED_MEMORY.P7
+W3 -W5  @ADDFF48.P8
+W3 -W5  @MULFF48.P9
+W4 -W7  @MULFF64.P1
+W4 -W7  @DIV6464B.P2
+W4 -W7  @DIVFF64.P3
+W4 -W7  @ADDFF64.P4
+W4 -W7  @FLT64.P5
+W9 -W10 @PRINTF_F64_9600_5893_5892.P1
+230     U2MODE
+238     U2BRG
+2C4     LATA
+2C6     TRISB
+2C6.0   TRB0
+2C6.1   TRB1
+2C6.2   CN2_TRIS
+2C6.3   CN1_TRIS
+2C6.4   CN4_TRIS
+2C6.5   CN3_TRIS
+2C7.5   Status_LED_TRIS
+2C7.6   TRB14
+2C7.7   XPORT_RST_TRIS
+2C7.7   XPORT_RST_n
+2C8     PORTB
+2C8.2   CN2
+2C8.3   CN1
+2C8.4   CN4
+2C8.5   CN3
+2CA.0   RB0
+2CA     LATB
+2CA.1   RB1
+2CB.5   Status_LED
+2CC     TRISC
+2CC.1   TRC1
+2CC.2   TRC2
+2CC.4   TRC4
+2CD.5   TRC13
+2CD.6   TRC14
+2CE     PORTC
+2CF.5   RC13
+2D0     LATC
+2D1.6   RC14
+2D2.0   TRD0
+2D2     TRISD
+2D2.2   ADC_SYNC_TRIS
+2D2.3   ADC_RESET_TRIS
+2D2.4   TRD4
+2D2.5   TRD5
+2D2.6   TRD6
+2D2.7   TRD7
+2D3.0   TRD8
+2D3.1   TRD9
+2D3.2   TRD10
+2D3.3   TRD11
+2D4     PORTD
+2D4.1   ADC_DRDY
+2D6     LATD
+2D6.0   RD0
+2D6.1   ADC_DRDY_TRIS
+2D6.2   ADC_SYNC
+2D6.3   ADC_RESET
+2D6.4   RD4
+2D6.5   RD5
+2D6.6   RD6
+2D6.7   RD7
+2D7.0   RD8
+2D7.1   RD9
+2D7.2   RD10
+2D7.3   RD11
+2DE     TRISF
+2DE.4   UART2_RX_TRIS
+2DE.5   UART2_TX_TRIS
+2E0     PORTF
+2E2     LATF
+2E4     TRISG
+2E4.0   LCD_RW_TRIS
+2E4.1   LCD_RS_TRIS
+2E4.6   SCK2_TRIS
+2E4.7   SDI2_TRIS
+2E5.0   SDO2_TRIS
+2E5.1   ADC_CS_TRIS
+2E5.4   TRG12
+2E5.5   TRG13
+2E5.6   LCD_E_TRIS
+2E6     PORTG
+2E8     LATG
+2E8.0   LCD_RW
+2E8.1   LCD_RS
+2E8.6   SCK2
+2E8.7   SDI2
+2E9.0   SDO2
+2E9.1   ADC_CS
+2E9.4   RG12
+2E9.5   RG13
+2E9.6   LCD_E
+2E9.7   RG15
+6D2     ODCD
+744.0   PLLPRE0
+744     CLKDIV
+744.1   PLLPRE1
+744.2   PLLPRE2
+744.3   PLLPRE3
+744.4   PLLPRE4
+744.6   PLLPOST0
+744.7   PLLPOST1
+746     PLLFBD
+800-827 pas_64
+828-84F qas_64
+850-87F pat_64
+880-8AF qat_64
+8B0-8B3 ADC_RByte1
+8B4-8B7 ADC_RByte2
+8B8-8BB ADC_RByte3
+8BC-8BF ADC_RByte_Sum
+8C0-8C3 ADCresult
+8C4-8C7 Vin
+8C8     PGA
+8C9     Sps_buf
+8CA     Global_Ch_Number
+8CB     LCD_num_symb
+8CC-8CD ADCaddCoef
+8CE-8D1 ADCmulCoef
+8D2     LCD_num_symb_K
+8D3     Sps_Wr
+8D4-8DB flash_wr_U16
+8DC-8E3 flash_rd_U16
+8E4     CRC_Wr
+8E5     menu_item
+8E6-8E9 Max_Temp
+8EA-8EB T_Pulse
+8EC-8ED Number_Pulse
+8EE-8EF count
+8F0-8F1 Freq
+8F2     menu_sel
+8F3     menu_fl
+8F4.0   meas_stop_fl
+8F4.1   LCD_clear_fl
+8F4.2   reset_fl
+8F5     count_CN4
+8F6     count_CN3
+8F7     NumAver
+8F8     ADC_sps_var
+8F9     CRC1
+8FA     CRC2
+8FB     CRC_buf
+8FC-8FF temp
+900-903 TmpInt
+904-907 p
+908-90B TemperatureInCelsius
+90C-90F TemperatureInKelvin
+910-913 K1
+914-917 K2
+918-919 Integer_part
+91A     Tenth
+91B     buf
+91B.4   buf4
+91B.5   buf5
+91B.6   buf6
+91B.7   buf7
+91C-91D Bpush_delay.counter
+91C-91F Destroy_float.Variable_float
+91C-91D CRC16.pcBlock
+91C-91F PI_regulator.Tmp
+91C     ADC_sps_set.SPS
+91C     ADC_rd_and_print_ch.chanel
+91C-91D Wr_Flash2.K1_int
+91C     ADC_set_PGA.PGA_val
+91D     ADC_rd_and_print_ch.Tenth_C
+91E-91F CRC16.len
+91E     Wr_Flash2.K2_int
+91E-91F ADC_rd_and_print_ch.IntegerPartTempInKelvin
+920     CRC16.crc
+920-923 ADC_rd_and_print_ch.Temporary_K
+924-925 ADC_rd_and_print_ch.Temporary
+926     ADC_rd_and_print_ch.Hundredth_C
+927     ADC_rd_and_print_ch.Thousandth_C
+92A-92B PositiveTemperature.IntegerPartPosTemp
+92A-92D Remainder.Parameter
+92A     ADC_setCh.Ch_Number
+92A-92D ADC_vol_to_T.Final_T
+92A     LCDSetCursor.ucPos
+92C     LCDMsg.c
+92C     WrReg.RegName
+92C-92F LCDPutU16._u16
+92D     WrReg.CommandByte
+92E-931 ADC_vol_to_T.r
+92E     LCDCommand.uc
+92E-931 LCDPutU32._u16
+92E     Remainder.Digit
+92F     Remainder.ValueDigit
+930-933 Remainder.Temporary
+930     LCDPutU16.u8NumDigs
+932-935 ADC_vol_to_T.Rt
+932-935 LCDPutU16.u16a
+932     LCDPutU32.u8NumDigs
+934-937 LCDPutU32.u16a
+934     Remainder.i
+935     Remainder.Degree
+936-939 LCDPutU16.u16b
+936-939 ADC_vol_to_T.D
+938-93B LCDPutU32.u16b
+93A-93D ADC_vol_to_T.x
+93E-941 ADC_vol_to_T.A
+942-945 ADC_vol_to_T.B
+944     LCDPutCh.c
+946     ADC_vol_average.NumSamples
+946     LCDWriteData.uc
+947     ADC_vol_average.i
+948-94B ADC_vol_average.A
+94A     LCDWriteNibble.uc
+94C-94F ADC_vol_average.Sum
+94C-94F sqrt.x
+950-953 sqrt.y
+952-955 Read_ADC_vol_in.k
+954-957 sqrt.res
+956-959 Read_ADC_vol_in.VinInt
+958-959 sqrt.data1
+95A-95B sqrt.data2
+95C-95D sqrt.p
+2780-27FF Stack
+
+ROM Allocation:
+000200  @const1328.call
+00020E  @const1329.call
+00022C  @const1330.call
+00024A  CRC16Table.call
+000266  CRC16Table.data
+000312  @const1427.call
+00032C  @const1428.call
+000346  @const1429.call
+000360  @const1430.call
+00037A  @const1432.call
+00038A  @const1433.call
+00039A  @const1449.call
+0003B4  @const1450.call
+0003D2  @const1477.call
+0003E2  @const1478.call
+0003F0  @const1479.call
+0003FE  @const1480.call
+00040E  @const1483.call
+00041C  @const1484.call
+000432  @const1485.call
+000448  @const1495.call
+000464  @const1496.call
+000480  @const1497.call
+000498  @const1498.call
+0004B2  @const1499.call
+0004D0  @const1500.call
+0004EE  @const1501.call
+0004FC  @const1502.call
+00051A  @const1504.call
+000536  @const1505.call
+000550  @const1506.call
+00056A  cn_irq_handler
+0005CC  timer1_irq_handler
+0005F4  timer2_isr_handler
+000632  OscSetup
+00064E  EnableInt
+00066C  MCU_init
+0006C4  @delay_ms1
+0006DC  LCDWriteNibble
+000718  LCDCommand
+000744  LCDInit
+0007AE  LCDClear
+0007BC  LCDWriteData
+0007EA  LCDPutCh
+0007F4  LCDMsg
+0007FE  LCDSetCursor
+000812  LCDWelcome
+00087E  @READ_PROGRAM_MEMORY
+0008AC  @I64TOF64
+000910  @DIVFF64
+000A18  @F64TO48
+000A5C  Rd_Flash2
+000ABE  CRC16
+000AF6  ADC_wakeUp
+000B16  WrReg
+000B72  ADC_set_PGA
+000C08  ADC_StopRd
+000C2C  ADC_sps_set
+000C42  ADC_init
+000CDE  ADC_SelfCal
+000DB8  Full_dev_reset
+000E42  ADC_StartRdContin
+000E62  @DIVS3232A
+000EE0  ADC_RdataC
+000F8C  ADC_setCh
+000FDC  @MULS3232
+00101E  @MULFF64
+00112E  @SI64TOF64
+001192  @F48TO64
+0011D8  @SDTOF
+001226  @MULFF
+0012EA  @FTOSD
+00132A  Read_ADC_vol_in
+001418  ADC_vol_average
+001460  @DIVFF
+00152A  @ADDFF
+0016D4  @FLT
+00173C  sqrt
+00183A  ADC_vol_to_T
+00193E  DisableInt
+001950  @F64TOI64
+0019A6  @DIV6464B
+001A3A  @PRINTF_F64_9600_5893_5892
+001BBC  @SFTOI
+001BE8  PositiveTemperature
+001C1A  @DIV3232A
+001C6E  @MUL3232
+001C9E  LCDPutU16
+001DDA  @ITOF
+001E14  Remainder
+001E7C  LCDPutU32
+002090  ADC_rd_and_print_ch
+0023C4  PI_regulator
+0024A0  Bpush_delay
+0024AE  LCD_print_menu
+002532  LCD_main_menu
+002782  @NVR_WR
+0027AA  @WRITE_PROGRAM_MEMORY
+00282C  Wr_Flash2
+002874  save_to_flash
+00288C  Destroy_float
+0028CA  MAIN
+0028CA  @cinit1
+002972  @cinit2
+0136  m1
+
+Project Directory:
+    C:\Users\LyuosevDmitriy\Google Drive\My project\Control Temperature\CCS PIC-C\
+
+Project Files:
+    main.c                                                  [11-сен-14 15:16  CRC=6615606D]
+    main.h                                                  [21-май-14 14:44  CRC=5670E383]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\24HJ128GP506A.h [12-фев-14 15:10  CRC=A158CF29]
+    ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h [28-сен-12 11:35  CRC=546412C9]
+    MT-16S4A-2FLG.h                                         [09-сен-14 11:07  CRC=940C4CCE]
+    ADS1256.h                                               [09-сен-14 10:17  CRC=2B6F478B]
+
+Source signature=9D2E01C6
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC24HJ128GP506A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

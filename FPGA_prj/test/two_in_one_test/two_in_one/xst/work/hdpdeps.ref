@@ -1,0 +1,14 @@
+V3 7
+FL C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd 2013/08/06.15:34:01 P.28xd
+EN work/first_pgm 1375788849 \
+      FL C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/first_pgm/Beh 1375788850 \
+      FL C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd \
+      EN work/first_pgm 1375788849 CP sec_pgm
+FL C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd 2013/08/06.15:32:20 P.28xd
+EN work/sec_pgm 1375788847 \
+      FL C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/sec_pgm/Beh 1375788848 \
+      FL C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd EN work/sec_pgm 1375788847

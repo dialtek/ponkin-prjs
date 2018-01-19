@@ -1,0 +1,45 @@
+C:\Users\D\Desktop\ModBus\bin\Release\ModBus.exe.config
+C:\Users\D\Desktop\ModBus\bin\Release\ModBus.exe
+C:\Users\D\Desktop\ModBus\bin\Release\ModBus.pdb
+C:\Users\D\Desktop\ModBus\obj\Release\MainWindow.g.cs
+C:\Users\D\Desktop\ModBus\obj\Release\App.g.cs
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus_MarkupCompile.cache
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus_MarkupCompile.lref
+C:\Users\D\Desktop\ModBus\obj\Release\MainWindow.baml
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus.g.resources
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus.Properties.Resources.resources
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus.csproj.GenerateResource.Cache
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus.exe
+C:\Users\D\Desktop\ModBus\obj\Release\ModBus.pdb
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\bin\Release\ModBus.exe.config
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.exe
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.pdb
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\bin\Release\ModBus.exe
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\bin\Release\ModBus.pdb
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.csprojResolveAssemblyReference.cache
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\MainWindow.g.cs
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\Settings.g.cs
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\App.g.cs
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus_MarkupCompile.cache
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus_MarkupCompile.lref
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\MainWindow.baml
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\Settings.baml
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.g.resources
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.Properties.Resources.resources
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus 24.06.17\ModBus\obj\Release\ModBus.csproj.GenerateResource.Cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\ModBus.csprojResolveAssemblyReference.cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\MainWindow.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Settings.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\App.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\MainWindow.baml
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Settings.baml
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\ModBus.Properties.Resources.resources
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\ModBus.csproj.GenerateResource.Cache
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Release\Система вывода КРИОН.exe.config
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Release\Система вывода КРИОН.exe
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Release\Система вывода КРИОН.pdb
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Система вывода КРИОН_MarkupCompile.cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Система вывода КРИОН_MarkupCompile.lref
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Система вывода КРИОН.g.resources
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Система вывода КРИОН.exe
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Release\Система вывода КРИОН.pdb

@@ -1,0 +1,28 @@
+Command line:
+   m_seq_32bit_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51446
+
+Sun Apr 20 10:43:59 2014
+
+
+ Elaboration Time: 0.078 sec
+
+ Current Memory Usage: 505.991 Meg
+
+ Total Signals          : 15
+ Total Nets             : 47
+ Total Signal Drivers   : 7
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 19
+ Total Scalar Nets and Variables : 159
+
+ Total Simulation Time: 0.124801 sec
+
+ Current Memory Usage: 505.991 Meg
+
+Sun Apr 20 10:51:24 2014
+

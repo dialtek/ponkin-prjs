@@ -1,0 +1,18 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm_isim_beh.exe -prj C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm_beh.prj work.first_pgm 
+ISim P.28xd (signature 0x1048c146)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd" into library work
+Parsing VHDL file "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 120108 KB
+Fuse CPU Usage: 499 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling architecture beh of entity sec_pgm [sec_pgm_default]
+Compiling architecture beh of entity first_pgm
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+ERROR:Simulator:861 - Failed to link the design

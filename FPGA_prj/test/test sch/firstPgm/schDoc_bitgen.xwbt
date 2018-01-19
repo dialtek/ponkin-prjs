@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\test\test sch\firstPgm\schDoc.ncd
+OUTFILE=C:\Xilinx\test\test sch\firstPgm\schDoc.bit
+FAMILY=Spartan3E
+PART=xc3s500e-5fg320
+WORKINGDIR=C:\Xilinx\test\test sch\firstPgm
+LICENSE=WebPack
+USER_INFO=__0_0_0

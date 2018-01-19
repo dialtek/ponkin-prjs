@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="fpga_spi_module" />
+            <top_module name="numeric_std" />
+            <top_module name="std_logic_1164" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/fpga_spi_module/din" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">din</obj_property>
+      <obj_property name="ObjectShortName">din</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/dout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dout[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dout[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/dclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dclk</obj_property>
+      <obj_property name="ObjectShortName">dclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/clk_in_40meg" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk_in_40meg</obj_property>
+      <obj_property name="ObjectShortName">clk_in_40meg</obj_property>
+      <obj_property name="label">clk_in_40meg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/shiftregdatain" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftregdatain</obj_property>
+      <obj_property name="ObjectShortName">shiftregdatain</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/shiftregdataout" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftregdataout</obj_property>
+      <obj_property name="ObjectShortName">shiftregdataout</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/spi_dclk_signal" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">spi_dclk_signal</obj_property>
+      <obj_property name="ObjectShortName">spi_dclk_signal</obj_property>
+      <obj_property name="label">spi_dclk_signal</obj_property>
+   </wvobject>
+   <wvobject fp_name="/fpga_spi_module/tmp" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">tmp[7:0]</obj_property>
+      <obj_property name="ObjectShortName">tmp[7:0]</obj_property>
+   </wvobject>
+</wave_config>

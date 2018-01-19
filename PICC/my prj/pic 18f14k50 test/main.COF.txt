@@ -1,0 +1,1201 @@
+Coff-Dump Utility V1.2
+Copyright (c) 2003 Custom Computer Services, Inc.
+-------------------------------------------------
+
+CoffFile (C:\Program Files\PICC\Projects\pic 18f14k50 test\main.COF):
+
+File Header:
+f_magic=4660
+f_nscns=3
+f_timdat=1332803842
+f_symptr=0x00000368
+f_nsyms=470
+f_opthdr=16
+f_flags=0x0003
+
+Optional Header:
+magic=7032
+vstamp=16672
+proc_type=0x0000A145 [Unknown Device]
+rom_width_bits=8
+ram_width_bits=8
+
+Section Header:
+s_name=.udata
+s_paddr=0x00000000
+s_vaddr=0x00000000
+s_size=0x00000001
+s_scnptr=0x00000000
+s_relptr=0x00000000
+s_lnnoptr=0x00000000
+s_nreloc=0
+s_nlnno=0
+s_flags=0x00001080
+
+Raw Data:
+00
+
+
+Section Header:
+s_name=.romdata1
+s_paddr=0x00300000
+s_vaddr=0x00300000
+s_size=0x0000000E
+s_scnptr=0x0000009C
+s_relptr=0x00000000
+s_lnnoptr=0x00000000
+s_nreloc=0
+s_nlnno=0
+s_flags=0x00001020
+
+Raw Data:
+20F9181E 00888900 03C003E0 0340
+
+
+Section Header:
+s_name=.text
+s_paddr=0x00000000
+s_vaddr=0x00000000
+s_size=0x0000004E
+s_scnptr=0x000000AA
+s_relptr=0x00000000
+s_lnnoptr=0x000000F8
+s_nreloc=0
+s_nlnno=39
+s_flags=0x00001020
+
+Line Number: l_srcndx=0, l_lnno=1, l_paddr=0x00000000, l_flags=0x0000, l_fcnndx=0
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000004, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000006, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000008, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000000A, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000000C, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000000E, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000010, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000012, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000014, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000016, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000018, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000001A, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000001C, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x0000001E, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000020, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000022, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=5, l_paddr=0x00000024, l_flags=0x0001, l_fcnndx=2
+Line Number: l_srcndx=0, l_lnno=7, l_paddr=0x00000026, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=7, l_paddr=0x00000028, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=9, l_paddr=0x0000002A, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=13, l_paddr=0x0000002C, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=13, l_paddr=0x0000002E, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=13, l_paddr=0x00000030, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=38, l_paddr=0x00000032, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=39, l_paddr=0x00000034, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=39, l_paddr=0x00000036, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=39, l_paddr=0x00000038, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=39, l_paddr=0x0000003A, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=39, l_paddr=0x0000003C, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=40, l_paddr=0x0000003E, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=41, l_paddr=0x00000040, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=41, l_paddr=0x00000042, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=41, l_paddr=0x00000044, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=41, l_paddr=0x00000046, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=41, l_paddr=0x00000048, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=44, l_paddr=0x0000004A, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=47, l_paddr=0x0000004C, l_flags=0x0001, l_fcnndx=75
+Line Number: l_srcndx=0, l_lnno=47, l_paddr=0x0000004C, l_flags=0x0001, l_fcnndx=75
+
+Raw Data:
+02EF00F0 F86AD09E EA6AE96A 400ED36E D350000E 7E6EC190 C192C194 C196000E 
+7F6E6B6A 6D6A660E D36E936A 040E6B6E 6D6E8198 020E006E 002EFED7 00D08188 
+020E006E 002EFED7 00D0F3D7 0300
+
+
+Symbol Table:
+Index[0]= Symbol: n_name=.file, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=103, n_numaux=1
+Index[1]= Aux File: x_offset=14, x_incline=0
+Index[2]= Symbol: n_name=@cinit, n_value=0x00000004, n_scnum=3, n_type=0x002C, n_sclass=2, n_numaux=1
+Index[3]= Aux Fcn: x_tagndx=0, x_size=0, x_lnnoptr=0, x_endnds=12
+Index[4]= Symbol: n_name=.bf, n_value=0x00000004, n_scnum=3, n_type=0x0000, n_sclass=101, n_numaux=1
+Index[5]= Aux Bobf: x_lnno=0, x_endndx=12
+Index[6]= Symbol: n_name=.bb, n_value=0x00000004, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[7]= Aux Bobf: x_lnno=0, x_endndx=9
+Index[8]= Symbol: n_name=.eb, n_value=0x00000024, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[9]= Aux Eobf: x_lnno=0
+Index[10]= Symbol: n_name=.ef, n_value=0x00000024, n_scnum=3, n_type=0x0000, n_sclass=101, n_numaux=1
+Index[11]= Aux Eobf: x_lnno=0
+Index[12]= Symbol: n_name=.eof, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=107, n_numaux=0
+Index[13]= Symbol: n_name=.file, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=103, n_numaux=1
+Index[14]= Aux File: x_offset=70, x_incline=1
+Index[15]= Symbol: n_name=.eof, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=107, n_numaux=0
+Index[16]= Symbol: n_name=.file, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=103, n_numaux=1
+Index[17]= Aux File: x_offset=126, x_incline=1
+Index[18]= Symbol: n_name=.nolist, n_value=0x00000003, n_scnum=-2, n_type=0x0000, n_sclass=108, n_numaux=0
+Index[19]= Symbol: n_name=CCP_1, n_value=0x00000FBE, n_scnum=1, n_type=0x000E, n_sclass=2, n_numaux=0
+Index[20]= Symbol: n_name=CCP_1_LOW, n_value=0x00000FBE, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[21]= Symbol: n_name=CCP_1_HIGH, n_value=0x00000FBF, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[22]= Symbol: n_name=CCP_2, n_value=0x00000FBB, n_scnum=1, n_type=0x000E, n_sclass=2, n_numaux=0
+Index[23]= Symbol: n_name=CCP_2_LOW, n_value=0x00000FBB, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[24]= Symbol: n_name=CCP_2_HIGH, n_value=0x00000FBC, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[25]= Symbol: n_name=CCP_3, n_value=0x00000FB8, n_scnum=1, n_type=0x000E, n_sclass=2, n_numaux=0
+Index[26]= Symbol: n_name=CCP_3_LOW, n_value=0x00000FB8, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[27]= Symbol: n_name=CCP_3_HIGH, n_value=0x00000FB9, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[28]= Symbol: n_name=CCP_4, n_value=0x00000F74, n_scnum=1, n_type=0x000E, n_sclass=2, n_numaux=0
+Index[29]= Symbol: n_name=CCP_4_LOW, n_value=0x00000F74, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[30]= Symbol: n_name=CCP_4_HIGH, n_value=0x00000F75, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[31]= Symbol: n_name=C1OUT, n_value=0x00000F6D, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[32]= Aux Var: x_tagndx=89, x_size=1
+Index[33]= Symbol: n_name=.list, n_value=0x000001DF, n_scnum=-2, n_type=0x0000, n_sclass=108, n_numaux=0
+Index[34]= Symbol: n_name=.eof, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=107, n_numaux=0
+Index[35]= Symbol: n_name=.file, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=103, n_numaux=1
+Index[36]= Aux File: x_offset=70, x_incline=1
+Index[37]= Symbol: n_name=C2OUT, n_value=0x00000F6B, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[38]= Aux Var: x_tagndx=89, x_size=1
+Index[39]= Symbol: n_name=TRISA, n_value=0x00000F92, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[40]= Symbol: n_name=TRISB, n_value=0x00000F93, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[41]= Symbol: n_name=TRISC, n_value=0x00000F94, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[42]= Symbol: n_name=OSCCON, n_value=0x00000FD3, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[43]= Symbol: n_name=PORTA, n_value=0x00000F80, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[44]= Symbol: n_name=PORTB, n_value=0x00000F81, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[45]= Symbol: n_name=PORTC, n_value=0x00000F82, n_scnum=1, n_type=0x000C, n_sclass=2, n_numaux=0
+Index[46]= Symbol: n_name=RA0, n_value=0x00000F80, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[47]= Aux Var: x_tagndx=101, x_size=1
+Index[48]= Symbol: n_name=RA1, n_value=0x00000F80, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[49]= Aux Var: x_tagndx=107, x_size=1
+Index[50]= Symbol: n_name=RA3, n_value=0x00000F80, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[51]= Aux Var: x_tagndx=114, x_size=1
+Index[52]= Symbol: n_name=RA4, n_value=0x00000F80, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[53]= Aux Var: x_tagndx=122, x_size=1
+Index[54]= Symbol: n_name=RA5, n_value=0x00000F80, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[55]= Aux Var: x_tagndx=131, x_size=1
+Index[56]= Symbol: n_name=TRA5, n_value=0x00000F92, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[57]= Aux Var: x_tagndx=131, x_size=1
+Index[58]= Symbol: n_name=TRA4, n_value=0x00000F92, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[59]= Aux Var: x_tagndx=122, x_size=1
+Index[60]= Symbol: n_name=TRA3, n_value=0x00000F92, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[61]= Aux Var: x_tagndx=114, x_size=1
+Index[62]= Symbol: n_name=TRA1, n_value=0x00000F92, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[63]= Aux Var: x_tagndx=107, x_size=1
+Index[64]= Symbol: n_name=TRA0, n_value=0x00000F92, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[65]= Aux Var: x_tagndx=101, x_size=1
+Index[66]= Symbol: n_name=RB4, n_value=0x00000F81, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[67]= Aux Var: x_tagndx=142, x_size=1
+Index[68]= Symbol: n_name=RB5, n_value=0x00000F81, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[69]= Aux Var: x_tagndx=131, x_size=1
+Index[70]= Symbol: n_name=.eof, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=107, n_numaux=0
+Index[71]= Symbol: n_name=.file, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=103, n_numaux=1
+Index[72]= Aux File: x_offset=14, x_incline=0
+Index[73]= Symbol: n_name=RB6, n_value=0x00000F81, n_scnum=1, n_type=0x0008, n_sclass=2, n_numaux=1
+Index[74]= Aux Var: x_tagndx=89, x_size=1
+Index[75]= Symbol: n_name=Main, n_value=0x00000004, n_scnum=3, n_type=0x002C, n_sclass=2, n_numaux=1
+Index[76]= Aux Fcn: x_tagndx=0, x_size=0, x_lnnoptr=0, x_endnds=89
+Index[77]= Symbol: n_name=.bf, n_value=0x00000004, n_scnum=3, n_type=0x0000, n_sclass=101, n_numaux=1
+Index[78]= Aux Bobf: x_lnno=5, x_endndx=89
+Index[79]= Symbol: n_name=.bb, n_value=0x00000004, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[80]= Aux Bobf: x_lnno=7, x_endndx=86
+Index[81]= Symbol: n_name=.bb, n_value=0x00000032, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[82]= Aux Bobf: x_lnno=38, x_endndx=84
+Index[83]= Symbol: n_name=.eb, n_value=0x0000004A, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[84]= Aux Eobf: x_lnno=44
+Index[85]= Symbol: n_name=.eb, n_value=0x0000004C, n_scnum=3, n_type=0x0000, n_sclass=100, n_numaux=1
+Index[86]= Aux Eobf: x_lnno=44
+Index[87]= Symbol: n_name=.ef, n_value=0x0000004C, n_scnum=3, n_type=0x0000, n_sclass=101, n_numaux=1
+Index[88]= Aux Eobf: x_lnno=44
+Index[89]= Symbol: n_name=.tbit6, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[90]= Aux Tag: x_size=1, x_endndx=101
+Index[91]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[92]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[93]= Symbol: n_name=bit2, n_value=0x00000002, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[94]= Symbol: n_name=bit3, n_value=0x00000003, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[95]= Symbol: n_name=bit4, n_value=0x00000004, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[96]= Symbol: n_name=bit5, n_value=0x00000005, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[97]= Symbol: n_name=bit6, n_value=0x00000006, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[98]= Aux Field: x_size=1
+Index[99]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[100]= Aux Eos: x_tagndx=89, x_size=1
+Index[101]= Symbol: n_name=.tbit0, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[102]= Aux Tag: x_size=1, x_endndx=107
+Index[103]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[104]= Aux Field: x_size=1
+Index[105]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[106]= Aux Eos: x_tagndx=101, x_size=1
+Index[107]= Symbol: n_name=.tbit1, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[108]= Aux Tag: x_size=1, x_endndx=114
+Index[109]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[110]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[111]= Aux Field: x_size=1
+Index[112]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[113]= Aux Eos: x_tagndx=107, x_size=1
+Index[114]= Symbol: n_name=.tbit2, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[115]= Aux Tag: x_size=1, x_endndx=122
+Index[116]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[117]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[118]= Symbol: n_name=bit2, n_value=0x00000002, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[119]= Aux Field: x_size=1
+Index[120]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[121]= Aux Eos: x_tagndx=114, x_size=1
+Index[122]= Symbol: n_name=.tbit3, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[123]= Aux Tag: x_size=1, x_endndx=131
+Index[124]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[125]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[126]= Symbol: n_name=bit2, n_value=0x00000002, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[127]= Symbol: n_name=bit3, n_value=0x00000003, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[128]= Aux Field: x_size=1
+Index[129]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[130]= Aux Eos: x_tagndx=122, x_size=1
+Index[131]= Symbol: n_name=.tbit5, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[132]= Aux Tag: x_size=1, x_endndx=142
+Index[133]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[134]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[135]= Symbol: n_name=bit2, n_value=0x00000002, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[136]= Symbol: n_name=bit3, n_value=0x00000003, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[137]= Symbol: n_name=bit4, n_value=0x00000004, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[138]= Symbol: n_name=bit5, n_value=0x00000005, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[139]= Aux Field: x_size=1
+Index[140]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[141]= Aux Eos: x_tagndx=131, x_size=1
+Index[142]= Symbol: n_name=.tbit4, n_value=0x00000000, n_scnum=-2, n_type=0x0008, n_sclass=10, n_numaux=1
+Index[143]= Aux Tag: x_size=1, x_endndx=152
+Index[144]= Symbol: n_name=bit0, n_value=0x00000000, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[145]= Symbol: n_name=bit1, n_value=0x00000001, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[146]= Symbol: n_name=bit2, n_value=0x00000002, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[147]= Symbol: n_name=bit3, n_value=0x00000003, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=0
+Index[148]= Symbol: n_name=bit4, n_value=0x00000004, n_scnum=-2, n_type=0x000C, n_sclass=18, n_numaux=1
+Index[149]= Aux Field: x_size=1
+Index[150]= Symbol: n_name=.eos, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=102, n_numaux=1
+Index[151]= Aux Eos: x_tagndx=142, x_size=1
+Index[152]= Symbol: n_name=.eof, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=107, n_numaux=0
+Index[153]= Symbol: n_name=.ccsext, n_value=0x000038AC, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[154]= Symbol: n_name=.ccscase, n_value=0x00000000, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[155]= Symbol: n_name=.ccsptr, n_value=0x00000010, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[156]= Symbol: n_name=.ccs_short, n_value=0x00000001, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[157]= Symbol: n_name=.ccs_int, n_value=0x00000008, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[158]= Symbol: n_name=.ccs_long, n_value=0x00000010, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[159]= Symbol: n_name=.ccs_family, n_value=0x00000003, n_scnum=-2, n_type=0x0000, n_sclass=0, n_numaux=0
+Index[160]= Symbol: n_name=__PCH__, n_value=0x0000014A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[161]= Symbol: n_name=__DEVICE__, n_value=0x00000152, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[162]= Symbol: n_name=__DATE__, n_value=0x00000162, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[163]= Symbol: n_name=__TIME__, n_value=0x00000177, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[164]= Symbol: n_name=__FILE__, n_value=0x0000018B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[165]= Symbol: n_name=__LINE__, n_value=0x00000198, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[166]= Symbol: n_name=GETENV, n_value=0x000001A5, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[167]= Symbol: n_name=__FILENAME__, n_value=0x000001A9, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[168]= Symbol: n_name=__ADDRESS__, n_value=0x000001BA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[169]= Symbol: n_name=PIN_A0, n_value=0x000001CC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[170]= Symbol: n_name=PIN_A1, n_value=0x000001D2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[171]= Symbol: n_name=PIN_A3, n_value=0x000001D8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[172]= Symbol: n_name=PIN_A4, n_value=0x000001DE, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[173]= Symbol: n_name=PIN_A5, n_value=0x000001E4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[174]= Symbol: n_name=PIN_B4, n_value=0x000001EA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[175]= Symbol: n_name=PIN_B5, n_value=0x000001F0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[176]= Symbol: n_name=PIN_B6, n_value=0x000001F6, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[177]= Symbol: n_name=PIN_B7, n_value=0x000001FC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[178]= Symbol: n_name=PIN_C0, n_value=0x00000202, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[179]= Symbol: n_name=PIN_C1, n_value=0x00000208, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[180]= Symbol: n_name=PIN_C2, n_value=0x0000020E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[181]= Symbol: n_name=PIN_C3, n_value=0x00000214, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[182]= Symbol: n_name=PIN_C4, n_value=0x0000021A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[183]= Symbol: n_name=PIN_C5, n_value=0x00000220, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[184]= Symbol: n_name=PIN_C6, n_value=0x00000226, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[185]= Symbol: n_name=PIN_C7, n_value=0x0000022C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[186]= Symbol: n_name=FALSE, n_value=0x00000232, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[187]= Symbol: n_name=TRUE, n_value=0x00000234, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[188]= Symbol: n_name=BYTE, n_value=0x00000236, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[189]= Symbol: n_name=BOOLEAN, n_value=0x0000023B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[190]= Symbol: n_name=getc, n_value=0x00000240, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[191]= Symbol: n_name=fgetc, n_value=0x00000246, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[192]= Symbol: n_name=getchar, n_value=0x0000024C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[193]= Symbol: n_name=putc, n_value=0x00000252, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[194]= Symbol: n_name=fputc, n_value=0x0000025A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[195]= Symbol: n_name=fgets, n_value=0x00000262, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[196]= Symbol: n_name=fputs, n_value=0x00000267, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[197]= Symbol: n_name=WDT_TIMEOUT, n_value=0x0000026C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[198]= Symbol: n_name=MCLR_FROM_SLEEP, n_value=0x0000027A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[199]= Symbol: n_name=MCLR_FROM_RUN, n_value=0x0000028D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[200]= Symbol: n_name=NORMAL_POWER_UP, n_value=0x0000029E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[201]= Symbol: n_name=BROWNOUT_RESTART, n_value=0x000002B1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[202]= Symbol: n_name=WDT_FROM_SLEEP, n_value=0x000002C5, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[203]= Symbol: n_name=RESET_INSTRUCTION, n_value=0x000002D6, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[204]= Symbol: n_name=SLEEP_FULL, n_value=0x000002EA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[205]= Symbol: n_name=SLEEP_IDLE, n_value=0x000002F7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[206]= Symbol: n_name=T0_INTERNAL, n_value=0x00000304, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[207]= Symbol: n_name=T0_EXT_L_TO_H, n_value=0x00000312, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[208]= Symbol: n_name=T0_EXT_H_TO_L, n_value=0x00000323, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[209]= Symbol: n_name=T0_DIV_1, n_value=0x00000334, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[210]= Symbol: n_name=T0_DIV_2, n_value=0x0000033F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[211]= Symbol: n_name=T0_DIV_4, n_value=0x0000034A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[212]= Symbol: n_name=T0_DIV_8, n_value=0x00000355, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[213]= Symbol: n_name=T0_DIV_16, n_value=0x00000360, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[214]= Symbol: n_name=T0_DIV_32, n_value=0x0000036C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[215]= Symbol: n_name=T0_DIV_64, n_value=0x00000378, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[216]= Symbol: n_name=T0_DIV_128, n_value=0x00000384, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[217]= Symbol: n_name=T0_DIV_256, n_value=0x00000391, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[218]= Symbol: n_name=T0_OFF, n_value=0x0000039E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[219]= Symbol: n_name=T0_8_BIT, n_value=0x000003A3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[220]= Symbol: n_name=RTCC_INTERNAL, n_value=0x000003B1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[221]= Symbol: n_name=RTCC_EXT_L_TO_H, n_value=0x000003C1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[222]= Symbol: n_name=RTCC_EXT_H_TO_L, n_value=0x000003D4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[223]= Symbol: n_name=RTCC_DIV_1, n_value=0x000003E7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[224]= Symbol: n_name=RTCC_DIV_2, n_value=0x000003F4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[225]= Symbol: n_name=RTCC_DIV_4, n_value=0x00000401, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[226]= Symbol: n_name=RTCC_DIV_8, n_value=0x0000040E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[227]= Symbol: n_name=RTCC_DIV_16, n_value=0x0000041B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[228]= Symbol: n_name=RTCC_DIV_32, n_value=0x00000429, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[229]= Symbol: n_name=RTCC_DIV_64, n_value=0x00000437, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[230]= Symbol: n_name=RTCC_DIV_128, n_value=0x00000445, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[231]= Symbol: n_name=RTCC_DIV_256, n_value=0x00000454, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[232]= Symbol: n_name=RTCC_OFF, n_value=0x00000463, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[233]= Symbol: n_name=RTCC_8_BIT, n_value=0x00000471, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[234]= Symbol: n_name=WDT_ON, n_value=0x00000481, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[235]= Symbol: n_name=WDT_OFF, n_value=0x00000487, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[236]= Symbol: n_name=T1_DISABLED, n_value=0x00000489, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[237]= Symbol: n_name=T1_INTERNAL, n_value=0x00000497, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[238]= Symbol: n_name=T1_EXTERNAL, n_value=0x000004A8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[239]= Symbol: n_name=T1_EXTERNAL_SYNC, n_value=0x000004B9, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[240]= Symbol: n_name=T1_CLK_OUT, n_value=0x000004CF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[241]= Symbol: n_name=T1_DIV_BY_1, n_value=0x000004DC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[242]= Symbol: n_name=T1_DIV_BY_2, n_value=0x000004EA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[243]= Symbol: n_name=T1_DIV_BY_4, n_value=0x000004FB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[244]= Symbol: n_name=T1_DIV_BY_8, n_value=0x0000050C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[245]= Symbol: n_name=T2_DISABLED, n_value=0x0000051D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[246]= Symbol: n_name=T2_DIV_BY_1, n_value=0x0000052B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[247]= Symbol: n_name=T2_DIV_BY_4, n_value=0x00000539, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[248]= Symbol: n_name=T2_DIV_BY_16, n_value=0x00000547, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[249]= Symbol: n_name=T3_DISABLED, n_value=0x00000556, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[250]= Symbol: n_name=T3_INTERNAL, n_value=0x00000564, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[251]= Symbol: n_name=T3_EXTERNAL, n_value=0x00000575, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[252]= Symbol: n_name=T3_EXTERNAL_SYNC, n_value=0x00000586, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[253]= Symbol: n_name=T3_DIV_BY_1, n_value=0x0000059C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[254]= Symbol: n_name=T3_DIV_BY_2, n_value=0x000005AA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[255]= Symbol: n_name=T3_DIV_BY_4, n_value=0x000005BB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[256]= Symbol: n_name=T3_DIV_BY_8, n_value=0x000005CC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[257]= Symbol: n_name=CCP_OFF, n_value=0x000005DD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[258]= Symbol: n_name=CCP_CAPTURE_FE, n_value=0x000005DF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[259]= Symbol: n_name=CCP_CAPTURE_RE, n_value=0x000005F0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[260]= Symbol: n_name=CCP_CAPTURE_DIV_4, n_value=0x00000601, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[261]= Symbol: n_name=CCP_CAPTURE_DIV_16, n_value=0x00000615, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[262]= Symbol: n_name=CCP_COMPARE_SET_ON_MATCH, n_value=0x0000062A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[263]= Symbol: n_name=CCP_COMPARE_CLR_ON_MATCH, n_value=0x00000645, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[264]= Symbol: n_name=CCP_COMPARE_INT, n_value=0x00000660, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[265]= Symbol: n_name=CCP_COMPARE_INT_AND_TOGGLE, n_value=0x00000674, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[266]= Symbol: n_name=CCP_COMPARE_RESET_TIMER, n_value=0x00000693, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[267]= Symbol: n_name=CCP_PWM, n_value=0x000006AF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[268]= Symbol: n_name=CCP_PWM_PLUS_1, n_value=0x000006B3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[269]= Symbol: n_name=CCP_PWM_PLUS_2, n_value=0x000006C7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[270]= Symbol: n_name=CCP_PWM_PLUS_3, n_value=0x000006DB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[271]= Symbol: n_name=T3_CCP2, n_value=0x000006EF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[272]= Symbol: n_name=CCP_PWM_H_H, n_value=0x000006F3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[273]= Symbol: n_name=CCP_PWM_H_L, n_value=0x00000704, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[274]= Symbol: n_name=CCP_PWM_L_H, n_value=0x00000715, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[275]= Symbol: n_name=CCP_PWM_L_L, n_value=0x00000726, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[276]= Symbol: n_name=CCP_PWM_FULL_BRIDGE, n_value=0x00000737, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[277]= Symbol: n_name=CCP_PWM_FULL_BRIDGE_REV, n_value=0x00000750, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[278]= Symbol: n_name=CCP_PWM_HALF_BRIDGE, n_value=0x0000076D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[279]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP1, n_value=0x00000786, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[280]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP2, n_value=0x000007A5, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[281]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP, n_value=0x000007C4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[282]= Symbol: n_name=CCP_SHUTDOWN_ON_INT0, n_value=0x000007E2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[283]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP1_INT0, n_value=0x00000800, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[284]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP2_INT0, n_value=0x00000824, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[285]= Symbol: n_name=CCP_SHUTDOWN_ON_COMP_INT0, n_value=0x00000848, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[286]= Symbol: n_name=CCP_SHUTDOWN_AC_L, n_value=0x0000086B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[287]= Symbol: n_name=CCP_SHUTDOWN_AC_H, n_value=0x00000886, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[288]= Symbol: n_name=CCP_SHUTDOWN_AC_F, n_value=0x000008A1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[289]= Symbol: n_name=CCP_SHUTDOWN_BD_L, n_value=0x000008BC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[290]= Symbol: n_name=CCP_SHUTDOWN_BD_H, n_value=0x000008D7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[291]= Symbol: n_name=CCP_SHUTDOWN_BD_F, n_value=0x000008F2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[292]= Symbol: n_name=CCP_SHUTDOWN_RESTART, n_value=0x0000090D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[293]= Symbol: n_name=CCP_PULSE_STEERING_A, n_value=0x0000092D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[294]= Symbol: n_name=CCP_PULSE_STEERING_B, n_value=0x0000094D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[295]= Symbol: n_name=CCP_PULSE_STEERING_C, n_value=0x0000096D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[296]= Symbol: n_name=CCP_PULSE_STEERING_D, n_value=0x0000098D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[297]= Symbol: n_name=CCP_PULSE_STEERING_SYNC, n_value=0x000009AD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[298]= Symbol: n_name=SPI_DISABLED, n_value=0x000009D0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[299]= Symbol: n_name=SPI_MASTER, n_value=0x000009E2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[300]= Symbol: n_name=SPI_SLAVE, n_value=0x000009F2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[301]= Symbol: n_name=SPI_SCK_IDLE_HIGH, n_value=0x00000A01, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[302]= Symbol: n_name=SPI_SCK_IDLE_LOW, n_value=0x00000A18, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[303]= Symbol: n_name=SPI_CLK_DIV_4, n_value=0x00000A2E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[304]= Symbol: n_name=SPI_CLK_DIV_16, n_value=0x00000A41, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[305]= Symbol: n_name=SPI_CLK_DIV_64, n_value=0x00000A55, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[306]= Symbol: n_name=SPI_CLK_T2, n_value=0x00000A69, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[307]= Symbol: n_name=SPI_SS_DISABLED, n_value=0x00000A79, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[308]= Symbol: n_name=SPI_XMIT_L_TO_H, n_value=0x00000A8E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[309]= Symbol: n_name=SPI_XMIT_H_TO_L, n_value=0x00000AA5, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[310]= Symbol: n_name=SPI_SAMPLE_AT_MIDDLE, n_value=0x00000ABC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[311]= Symbol: n_name=SPI_SAMPLE_AT_END, n_value=0x00000AD8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[312]= Symbol: n_name=SPI_L_TO_H, n_value=0x00000AF1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[313]= Symbol: n_name=SPI_H_TO_L, n_value=0x00000B0D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[314]= Symbol: n_name=UART_ADDRESS, n_value=0x00000B2A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[315]= Symbol: n_name=UART_DATA, n_value=0x00000B39, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[316]= Symbol: n_name=UART_AUTODETECT, n_value=0x00000B45, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[317]= Symbol: n_name=UART_AUTODETECT_NOWAIT, n_value=0x00000B57, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[318]= Symbol: n_name=UART_WAKEUP_ON_RDA, n_value=0x00000B70, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[319]= Symbol: n_name=UART_SEND_BREAK, n_value=0x00000B86, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[320]= Symbol: n_name=NC_NC_NC_NC, n_value=0x00000B99, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[321]= Symbol: n_name=NC_NC, n_value=0x00000BAB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[322]= Symbol: n_name=CP1_AGND_C0, n_value=0x00000BB1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[323]= Symbol: n_name=CP1_C1_C0, n_value=0x00000BC7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[324]= Symbol: n_name=CP1_C2_C0, n_value=0x00000BDB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[325]= Symbol: n_name=CP1_C3_C0, n_value=0x00000BEF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[326]= Symbol: n_name=CP1_AGND_VREF, n_value=0x00000C03, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[327]= Symbol: n_name=CP1_C1_VREF, n_value=0x00000C1B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[328]= Symbol: n_name=CP1_C2_VREF, n_value=0x00000C31, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[329]= Symbol: n_name=CP1_C3_VREF, n_value=0x00000C47, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[330]= Symbol: n_name=CP1_OUT_ON_C4, n_value=0x00000C5D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[331]= Symbol: n_name=CP1_INVERT, n_value=0x00000C75, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[332]= Symbol: n_name=CP1_FAST, n_value=0x00000C8A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[333]= Symbol: n_name=CP2_AGND_C0, n_value=0x00000C9D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[334]= Symbol: n_name=CP2_C1_C0, n_value=0x00000CB3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[335]= Symbol: n_name=CP2_C2_C0, n_value=0x00000CC7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[336]= Symbol: n_name=CP2_C3_C0, n_value=0x00000CDB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[337]= Symbol: n_name=CP2_AGND_VREF, n_value=0x00000CEF, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[338]= Symbol: n_name=CP2_C1_VREF, n_value=0x00000D07, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[339]= Symbol: n_name=CP2_C2_VREF, n_value=0x00000D1D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[340]= Symbol: n_name=CP2_C3_VREF, n_value=0x00000D33, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[341]= Symbol: n_name=CP2_OUT_ON_C4, n_value=0x00000D49, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[342]= Symbol: n_name=CP2_INVERT, n_value=0x00000D61, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[343]= Symbol: n_name=CP2_FAST, n_value=0x00000D76, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[344]= Symbol: n_name=VREF_OFF, n_value=0x00000D89, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[345]= Symbol: n_name=VREF_1v024, n_value=0x00000D94, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[346]= Symbol: n_name=VREF_2v048, n_value=0x00000DA4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[347]= Symbol: n_name=VREF_4v096, n_value=0x00000DB4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[348]= Symbol: n_name=LVD_LVDIN, n_value=0x00000DC4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[349]= Symbol: n_name=LVD_45, n_value=0x00000DD3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[350]= Symbol: n_name=LVD_42, n_value=0x00000DD8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[351]= Symbol: n_name=LVD_40, n_value=0x00000DDD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[352]= Symbol: n_name=LVD_38, n_value=0x00000DE2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[353]= Symbol: n_name=LVD_36, n_value=0x00000DE7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[354]= Symbol: n_name=LVD_35, n_value=0x00000DEC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[355]= Symbol: n_name=LVD_33, n_value=0x00000DF1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[356]= Symbol: n_name=LVD_30, n_value=0x00000DF6, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[357]= Symbol: n_name=LVD_28, n_value=0x00000DFB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[358]= Symbol: n_name=LVD_27, n_value=0x00000E00, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[359]= Symbol: n_name=LVD_25, n_value=0x00000E05, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[360]= Symbol: n_name=LVD_24, n_value=0x00000E0A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[361]= Symbol: n_name=LVD_23, n_value=0x00000E0F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[362]= Symbol: n_name=LVD_22, n_value=0x00000E14, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[363]= Symbol: n_name=LVD_21, n_value=0x00000E19, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[364]= Symbol: n_name=DAC_OFF, n_value=0x00000E1E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[365]= Symbol: n_name=DAC_VSS_VDD, n_value=0x00000E20, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[366]= Symbol: n_name=DAC_VREF_VDD, n_value=0x00000E31, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[367]= Symbol: n_name=DAC_VSS_VREF, n_value=0x00000E43, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[368]= Symbol: n_name=DAC_VREF_VREF, n_value=0x00000E55, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[369]= Symbol: n_name=DAC_VSS_FVR, n_value=0x00000E68, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[370]= Symbol: n_name=DAC_FVR_VREF, n_value=0x00000E79, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[371]= Symbol: n_name=DAC_OUTPUT, n_value=0x00000E8B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[372]= Symbol: n_name=DAC_LVP_POS, n_value=0x00000E9B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[373]= Symbol: n_name=DAC_LVP_NEG, n_value=0x00000EAC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[374]= Symbol: n_name=OSC_PLL_ON, n_value=0x00000EBA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[375]= Symbol: n_name=OSC_PLL_OFF, n_value=0x00000ECC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[376]= Symbol: n_name=OSC_31250, n_value=0x00000EDA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[377]= Symbol: n_name=OSC_250KHZ, n_value=0x00000EEB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[378]= Symbol: n_name=OSC_500KHZ, n_value=0x00000EFB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[379]= Symbol: n_name=OSC_1MHZ, n_value=0x00000F0B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[380]= Symbol: n_name=OSC_2MHZ, n_value=0x00000F19, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[381]= Symbol: n_name=OSC_4MHZ, n_value=0x00000F27, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[382]= Symbol: n_name=OSC_8MHZ, n_value=0x00000F35, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[383]= Symbol: n_name=OSC_16MHZ, n_value=0x00000F43, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[384]= Symbol: n_name=OSC_32MHZ, n_value=0x00000F52, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[385]= Symbol: n_name=OSC_64MHZ, n_value=0x00000F63, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[386]= Symbol: n_name=OSC_TIMER1, n_value=0x00000F74, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[387]= Symbol: n_name=OSC_INTRC, n_value=0x00000F81, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[388]= Symbol: n_name=OSC_NORMAL, n_value=0x00000F8D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[389]= Symbol: n_name=OSC_IDLE_MODE, n_value=0x00000F9A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[390]= Symbol: n_name=OSC_STATE_STABLE, n_value=0x00000FAD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[391]= Symbol: n_name=OSC_STATE_EXT_RUNNING, n_value=0x00000FC0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[392]= Symbol: n_name=ADC_OFF, n_value=0x00000FD8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[393]= Symbol: n_name=ADC_CLOCK_DIV_2, n_value=0x00000FDA, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[394]= Symbol: n_name=ADC_CLOCK_DIV_4, n_value=0x00000FF0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[395]= Symbol: n_name=ADC_CLOCK_DIV_8, n_value=0x00001005, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[396]= Symbol: n_name=ADC_CLOCK_DIV_16, n_value=0x0000101A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[397]= Symbol: n_name=ADC_CLOCK_DIV_32, n_value=0x00001030, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[398]= Symbol: n_name=ADC_CLOCK_DIV_64, n_value=0x00001046, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[399]= Symbol: n_name=ADC_CLOCK_INTERNAL, n_value=0x0000105C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[400]= Symbol: n_name=ADC_TAD_MUL_0, n_value=0x00001074, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[401]= Symbol: n_name=ADC_TAD_MUL_2, n_value=0x00001087, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[402]= Symbol: n_name=ADC_TAD_MUL_4, n_value=0x0000109A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[403]= Symbol: n_name=ADC_TAD_MUL_6, n_value=0x000010AD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[404]= Symbol: n_name=ADC_TAD_MUL_8, n_value=0x000010C0, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[405]= Symbol: n_name=ADC_TAD_MUL_12, n_value=0x000010D3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[406]= Symbol: n_name=ADC_TAD_MUL_16, n_value=0x000010E7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[407]= Symbol: n_name=ADC_TAD_MUL_20, n_value=0x000010FB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[408]= Symbol: n_name=sAN0, n_value=0x0000110F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[409]= Symbol: n_name=sAN1, n_value=0x00001117, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[410]= Symbol: n_name=sAN2, n_value=0x0000111F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[411]= Symbol: n_name=sAN3, n_value=0x00001127, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[412]= Symbol: n_name=sAN4, n_value=0x0000112F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[413]= Symbol: n_name=sAN5, n_value=0x00001138, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[414]= Symbol: n_name=sAN6, n_value=0x00001141, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[415]= Symbol: n_name=sAN7, n_value=0x0000114A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[416]= Symbol: n_name=sAN8, n_value=0x00001153, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[417]= Symbol: n_name=sAN9, n_value=0x00001157, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[418]= Symbol: n_name=sAN10, n_value=0x0000115B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[419]= Symbol: n_name=sAN11, n_value=0x0000115F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[420]= Symbol: n_name=NO_ANALOGS, n_value=0x00001163, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[421]= Symbol: n_name=ALL_ANALOG, n_value=0x00001170, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[422]= Symbol: n_name=VSS_VDD, n_value=0x00001183, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[423]= Symbol: n_name=VREF_VREF, n_value=0x00001189, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[424]= Symbol: n_name=VSS_VREF, n_value=0x00001199, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[425]= Symbol: n_name=VREF_VDD, n_value=0x000011A8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[426]= Symbol: n_name=ADC_START_AND_READ, n_value=0x000011B7, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[427]= Symbol: n_name=ADC_START_ONLY, n_value=0x000011CC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[428]= Symbol: n_name=ADC_READ_ONLY, n_value=0x000011DD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[429]= Symbol: n_name=L_TO_H, n_value=0x000011ED, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[430]= Symbol: n_name=H_TO_L, n_value=0x000011F2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[431]= Symbol: n_name=GLOBAL, n_value=0x000011F4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[432]= Symbol: n_name=PERIPH, n_value=0x000011FB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[433]= Symbol: n_name=INT_RTCC, n_value=0x00001202, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[434]= Symbol: n_name=INT_TIMER0, n_value=0x00001214, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[435]= Symbol: n_name=INT_TIMER1, n_value=0x00001228, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[436]= Symbol: n_name=INT_TIMER2, n_value=0x0000123C, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[437]= Symbol: n_name=INT_TIMER3, n_value=0x00001250, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[438]= Symbol: n_name=INT_EXT_L2H, n_value=0x00001264, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[439]= Symbol: n_name=INT_EXT_H2L, n_value=0x0000127B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[440]= Symbol: n_name=INT_EXT, n_value=0x00001292, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[441]= Symbol: n_name=INT_EXT1_L2H, n_value=0x0000129B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[442]= Symbol: n_name=INT_EXT1_H2L, n_value=0x000012B3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[443]= Symbol: n_name=INT_EXT1, n_value=0x000012CB, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[444]= Symbol: n_name=INT_EXT2_L2H, n_value=0x000012DD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[445]= Symbol: n_name=INT_EXT2_H2L, n_value=0x000012F5, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[446]= Symbol: n_name=INT_EXT2, n_value=0x0000130D, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[447]= Symbol: n_name=INT_AD, n_value=0x0000131F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[448]= Symbol: n_name=INT_RDA, n_value=0x00001328, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[449]= Symbol: n_name=INT_TBE, n_value=0x00001331, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[450]= Symbol: n_name=INT_SSP, n_value=0x0000133A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[451]= Symbol: n_name=INT_CCP1, n_value=0x00001343, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[452]= Symbol: n_name=INT_BUSCOL, n_value=0x00001355, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[453]= Symbol: n_name=INT_COMP, n_value=0x00001369, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[454]= Symbol: n_name=INT_EEPROM, n_value=0x0000137B, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[455]= Symbol: n_name=INT_OSCF, n_value=0x0000138F, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[456]= Symbol: n_name=INT_COMP2, n_value=0x000013A1, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[457]= Symbol: n_name=INT_USB, n_value=0x000013B4, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[458]= Symbol: n_name=INT_RA, n_value=0x000013BD, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[459]= Symbol: n_name=INT_RB, n_value=0x000013C8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[460]= Symbol: n_name=INT_RAB, n_value=0x000013D3, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[461]= Symbol: n_name=INT_RA0, n_value=0x000013DE, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[462]= Symbol: n_name=INT_RA1, n_value=0x000013E8, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[463]= Symbol: n_name=INT_RA3, n_value=0x000013F2, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[464]= Symbol: n_name=INT_RA4, n_value=0x000013FC, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[465]= Symbol: n_name=INT_RA5, n_value=0x00001406, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[466]= Symbol: n_name=INT_RB4, n_value=0x00001410, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[467]= Symbol: n_name=INT_RB5, n_value=0x0000141A, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[468]= Symbol: n_name=INT_RB6, n_value=0x00001424, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+Index[469]= Symbol: n_name=INT_RB7, n_value=0x0000142E, n_scnum=-2, n_type=0x0000, n_sclass=201, n_numaux=0
+
+String Table:
+Offset[4]= .romdata1
+Offset[14]= C:\Program Files\PICC\Projects\pic 18f14k50 test\main.c
+Offset[70]= C:\Program Files\PICC\Projects\pic 18f14k50 test\main.h
+Offset[126]= C:\Program Files\PICC\Projects\pic 18f14k50 test\18F14K50.h
+Offset[186]= CCP_1_LOW
+Offset[196]= CCP_1_HIGH
+Offset[207]= CCP_2_LOW
+Offset[217]= CCP_2_HIGH
+Offset[228]= CCP_3_LOW
+Offset[238]= CCP_3_HIGH
+Offset[249]= CCP_4_LOW
+Offset[259]= CCP_4_HIGH
+Offset[270]= main.lst
+Offset[279]= .ccscase
+Offset[288]= .ccs_short
+Offset[299]= .ccs_int
+Offset[308]= .ccs_long
+Offset[318]= .ccs_family
+Offset[330]= "4.120"
+Offset[338]= 1450
+Offset[343]= __DEVICE__
+Offset[354]= "26-мар-12"
+Offset[366]= __DATE__
+Offset[375]= "18:17:21"
+Offset[386]= __TIME__
+Offset[395]= "?"
+Offset[399]= __FILE__
+Offset[408]= "?"
+Offset[412]= __LINE__
+Offset[421]= "?"
+Offset[425]= "?"
+Offset[429]= __FILENAME__
+Offset[442]= int16
+Offset[448]= __ADDRESS__
+Offset[460]= 31744
+Offset[466]= 31745
+Offset[472]= 31747
+Offset[478]= 31748
+Offset[484]= 31749
+Offset[490]= 31756
+Offset[496]= 31757
+Offset[502]= 31758
+Offset[508]= 31759
+Offset[514]= 31760
+Offset[520]= 31761
+Offset[526]= 31762
+Offset[532]= 31763
+Offset[538]= 31764
+Offset[544]= 31765
+Offset[550]= 31766
+Offset[556]= 31767
+Offset[562]= 0
+Offset[564]= 1
+Offset[566]= int8
+Offset[571]= int1
+Offset[576]= getch
+Offset[582]= getch
+Offset[588]= getch
+Offset[594]= putchar
+Offset[602]= putchar
+Offset[610]= gets
+Offset[615]= puts
+Offset[620]= 7
+Offset[622]= WDT_TIMEOUT
+Offset[634]= 11
+Offset[637]= MCLR_FROM_SLEEP
+Offset[653]= 15
+Offset[656]= MCLR_FROM_RUN
+Offset[670]= 12
+Offset[673]= NORMAL_POWER_UP
+Offset[689]= 14
+Offset[692]= BROWNOUT_RESTART
+Offset[709]= 3
+Offset[711]= WDT_FROM_SLEEP
+Offset[726]= 0
+Offset[728]= RESET_INSTRUCTION
+Offset[746]= 0
+Offset[748]= SLEEP_FULL
+Offset[759]= 1
+Offset[761]= SLEEP_IDLE
+Offset[772]= 0
+Offset[774]= T0_INTERNAL
+Offset[786]= 32
+Offset[789]= T0_EXT_L_TO_H
+Offset[803]= 48
+Offset[806]= T0_EXT_H_TO_L
+Offset[820]= 8
+Offset[822]= T0_DIV_1
+Offset[831]= 0
+Offset[833]= T0_DIV_2
+Offset[842]= 1
+Offset[844]= T0_DIV_4
+Offset[853]= 2
+Offset[855]= T0_DIV_8
+Offset[864]= 3
+Offset[866]= T0_DIV_16
+Offset[876]= 4
+Offset[878]= T0_DIV_32
+Offset[888]= 5
+Offset[890]= T0_DIV_64
+Offset[900]= 6
+Offset[902]= T0_DIV_128
+Offset[913]= 7
+Offset[915]= T0_DIV_256
+Offset[926]= 0x80
+Offset[931]= 0x40
+Offset[936]= T0_8_BIT
+Offset[945]= 0
+Offset[947]= RTCC_INTERNAL
+Offset[961]= 32
+Offset[964]= RTCC_EXT_L_TO_H
+Offset[980]= 48
+Offset[983]= RTCC_EXT_H_TO_L
+Offset[999]= 8
+Offset[1001]= RTCC_DIV_1
+Offset[1012]= 0
+Offset[1014]= RTCC_DIV_2
+Offset[1025]= 1
+Offset[1027]= RTCC_DIV_4
+Offset[1038]= 2
+Offset[1040]= RTCC_DIV_8
+Offset[1051]= 3
+Offset[1053]= RTCC_DIV_16
+Offset[1065]= 4
+Offset[1067]= RTCC_DIV_32
+Offset[1079]= 5
+Offset[1081]= RTCC_DIV_64
+Offset[1093]= 6
+Offset[1095]= RTCC_DIV_128
+Offset[1108]= 7
+Offset[1110]= RTCC_DIV_256
+Offset[1123]= 0x80
+Offset[1128]= RTCC_OFF
+Offset[1137]= 0x40
+Offset[1142]= RTCC_8_BIT
+Offset[1153]= 0x100
+Offset[1159]= 0
+Offset[1161]= 0
+Offset[1163]= T1_DISABLED
+Offset[1175]= 0x85
+Offset[1180]= T1_INTERNAL
+Offset[1192]= 0x87
+Offset[1197]= T1_EXTERNAL
+Offset[1209]= 0x83
+Offset[1214]= T1_EXTERNAL_SYNC
+Offset[1231]= 8
+Offset[1233]= T1_CLK_OUT
+Offset[1244]= 0
+Offset[1246]= T1_DIV_BY_1
+Offset[1258]= 0x10
+Offset[1263]= T1_DIV_BY_2
+Offset[1275]= 0x20
+Offset[1280]= T1_DIV_BY_4
+Offset[1292]= 0x30
+Offset[1297]= T1_DIV_BY_8
+Offset[1309]= 0
+Offset[1311]= T2_DISABLED
+Offset[1323]= 4
+Offset[1325]= T2_DIV_BY_1
+Offset[1337]= 5
+Offset[1339]= T2_DIV_BY_4
+Offset[1351]= 6
+Offset[1353]= T2_DIV_BY_16
+Offset[1366]= 0
+Offset[1368]= T3_DISABLED
+Offset[1380]= 0x85
+Offset[1385]= T3_INTERNAL
+Offset[1397]= 0x87
+Offset[1402]= T3_EXTERNAL
+Offset[1414]= 0x83
+Offset[1419]= T3_EXTERNAL_SYNC
+Offset[1436]= 0
+Offset[1438]= T3_DIV_BY_1
+Offset[1450]= 0x10
+Offset[1455]= T3_DIV_BY_2
+Offset[1467]= 0x20
+Offset[1472]= T3_DIV_BY_4
+Offset[1484]= 0x30
+Offset[1489]= T3_DIV_BY_8
+Offset[1501]= 0
+Offset[1503]= 4
+Offset[1505]= CCP_CAPTURE_FE
+Offset[1520]= 5
+Offset[1522]= CCP_CAPTURE_RE
+Offset[1537]= 6
+Offset[1539]= CCP_CAPTURE_DIV_4
+Offset[1557]= 7
+Offset[1559]= CCP_CAPTURE_DIV_16
+Offset[1578]= 8
+Offset[1580]= CCP_COMPARE_SET_ON_MATCH
+Offset[1605]= 9
+Offset[1607]= CCP_COMPARE_CLR_ON_MATCH
+Offset[1632]= 0xA
+Offset[1636]= CCP_COMPARE_INT
+Offset[1652]= 0x2
+Offset[1656]= CCP_COMPARE_INT_AND_TOGGLE
+Offset[1683]= 0xB
+Offset[1687]= CCP_COMPARE_RESET_TIMER
+Offset[1711]= 0xC
+Offset[1715]= 0x1c
+Offset[1720]= CCP_PWM_PLUS_1
+Offset[1735]= 0x2c
+Offset[1740]= CCP_PWM_PLUS_2
+Offset[1755]= 0x3c
+Offset[1760]= CCP_PWM_PLUS_3
+Offset[1775]= 0x8
+Offset[1779]= 0x0c
+Offset[1784]= CCP_PWM_H_H
+Offset[1796]= 0x0d
+Offset[1801]= CCP_PWM_H_L
+Offset[1813]= 0x0e
+Offset[1818]= CCP_PWM_L_H
+Offset[1830]= 0x0f
+Offset[1835]= CCP_PWM_L_L
+Offset[1847]= 0x40
+Offset[1852]= CCP_PWM_FULL_BRIDGE
+Offset[1872]= 0xC0
+Offset[1877]= CCP_PWM_FULL_BRIDGE_REV
+Offset[1901]= 0x80
+Offset[1906]= CCP_PWM_HALF_BRIDGE
+Offset[1926]= 0x100000
+Offset[1935]= CCP_SHUTDOWN_ON_COMP1
+Offset[1957]= 0x200000
+Offset[1966]= CCP_SHUTDOWN_ON_COMP2
+Offset[1988]= 0x300000
+Offset[1997]= CCP_SHUTDOWN_ON_COMP
+Offset[2018]= 0x400000
+Offset[2027]= CCP_SHUTDOWN_ON_INT0
+Offset[2048]= 0x500000
+Offset[2057]= CCP_SHUTDOWN_ON_COMP1_INT0
+Offset[2084]= 0x600000
+Offset[2093]= CCP_SHUTDOWN_ON_COMP2_INT0
+Offset[2120]= 0x700000
+Offset[2129]= CCP_SHUTDOWN_ON_COMP_INT0
+Offset[2155]= 0x000000
+Offset[2164]= CCP_SHUTDOWN_AC_L
+Offset[2182]= 0x040000
+Offset[2191]= CCP_SHUTDOWN_AC_H
+Offset[2209]= 0x080000
+Offset[2218]= CCP_SHUTDOWN_AC_F
+Offset[2236]= 0x000000
+Offset[2245]= CCP_SHUTDOWN_BD_L
+Offset[2263]= 0x010000
+Offset[2272]= CCP_SHUTDOWN_BD_H
+Offset[2290]= 0x020000
+Offset[2299]= CCP_SHUTDOWN_BD_F
+Offset[2317]= 0x80000000
+Offset[2328]= CCP_SHUTDOWN_RESTART
+Offset[2349]= 0x01000000
+Offset[2360]= CCP_PULSE_STEERING_A
+Offset[2381]= 0x02000000
+Offset[2392]= CCP_PULSE_STEERING_B
+Offset[2413]= 0x04000000
+Offset[2424]= CCP_PULSE_STEERING_C
+Offset[2445]= 0x08000000
+Offset[2456]= CCP_PULSE_STEERING_D
+Offset[2477]= 0x10000000
+Offset[2488]= CCP_PULSE_STEERING_SYNC
+Offset[2512]= 0x00
+Offset[2517]= SPI_DISABLED
+Offset[2530]= 0x20
+Offset[2535]= SPI_MASTER
+Offset[2546]= 0x24
+Offset[2551]= SPI_SLAVE
+Offset[2561]= 0x10
+Offset[2566]= SPI_SCK_IDLE_HIGH
+Offset[2584]= 0x00
+Offset[2589]= SPI_SCK_IDLE_LOW
+Offset[2606]= 0x00
+Offset[2611]= SPI_CLK_DIV_4
+Offset[2625]= 0x01
+Offset[2630]= SPI_CLK_DIV_16
+Offset[2645]= 0x02
+Offset[2650]= SPI_CLK_DIV_64
+Offset[2665]= 0x03
+Offset[2670]= SPI_CLK_T2
+Offset[2681]= 0x01
+Offset[2686]= SPI_SS_DISABLED
+Offset[2702]= 0x4000
+Offset[2709]= SPI_XMIT_L_TO_H
+Offset[2725]= 0x0000
+Offset[2732]= SPI_XMIT_H_TO_L
+Offset[2748]= 0x0000
+Offset[2755]= SPI_SAMPLE_AT_MIDDLE
+Offset[2776]= 0x8000
+Offset[2783]= SPI_SAMPLE_AT_END
+Offset[2801]= SPI_SCK_IDLE_LOW
+Offset[2818]= SPI_L_TO_H
+Offset[2829]= SPI_SCK_IDLE_HIGH
+Offset[2847]= SPI_H_TO_L
+Offset[2858]= 2
+Offset[2860]= UART_ADDRESS
+Offset[2873]= 4
+Offset[2875]= UART_DATA
+Offset[2885]= 8
+Offset[2887]= UART_AUTODETECT
+Offset[2903]= 9
+Offset[2905]= UART_AUTODETECT_NOWAIT
+Offset[2928]= 10
+Offset[2931]= UART_WAKEUP_ON_RDA
+Offset[2950]= 13
+Offset[2953]= UART_SEND_BREAK
+Offset[2969]= 0x404
+Offset[2975]= NC_NC_NC_NC
+Offset[2987]= 0x404
+Offset[2993]= 0x4000080
+Offset[3003]= CP1_AGND_C0
+Offset[3015]= 0x0100081
+Offset[3025]= CP1_C1_C0
+Offset[3035]= 0x0200082
+Offset[3045]= CP1_C2_C0
+Offset[3055]= 0x0400083
+Offset[3065]= CP1_C3_C0
+Offset[3075]= 0x4000084
+Offset[3085]= CP1_AGND_VREF
+Offset[3099]= 0x0100085
+Offset[3109]= CP1_C1_VREF
+Offset[3121]= 0x0200086
+Offset[3131]= CP1_C2_VREF
+Offset[3143]= 0x0400087
+Offset[3153]= CP1_C3_VREF
+Offset[3165]= 0x2000020
+Offset[3175]= CP1_OUT_ON_C4
+Offset[3189]= 0x0000010
+Offset[3199]= CP1_INVERT
+Offset[3210]= 0x0000008
+Offset[3220]= CP1_FAST
+Offset[3229]= 0x4008000
+Offset[3239]= CP2_AGND_C0
+Offset[3251]= 0x0108100
+Offset[3261]= CP2_C1_C0
+Offset[3271]= 0x0208200
+Offset[3281]= CP2_C2_C0
+Offset[3291]= 0x0408300
+Offset[3301]= CP2_C3_C0
+Offset[3311]= 0x4008400
+Offset[3321]= CP2_AGND_VREF
+Offset[3335]= 0x0108500
+Offset[3345]= CP2_C1_VREF
+Offset[3357]= 0x0208600
+Offset[3367]= CP2_C2_VREF
+Offset[3379]= 0x0408700
+Offset[3389]= CP2_C3_VREF
+Offset[3401]= 0x0082000
+Offset[3411]= CP2_OUT_ON_C4
+Offset[3425]= 0x0001000
+Offset[3435]= CP2_INVERT
+Offset[3446]= 0x0000800
+Offset[3456]= CP2_FAST
+Offset[3465]= 0
+Offset[3467]= VREF_OFF
+Offset[3476]= 0x90
+Offset[3481]= VREF_1v024
+Offset[3492]= 0xA0
+Offset[3497]= VREF_2v048
+Offset[3508]= 0xB0
+Offset[3513]= VREF_4v096
+Offset[3524]= 0x1F
+Offset[3529]= LVD_LVDIN
+Offset[3539]= 0x1E
+Offset[3544]= 0x1D
+Offset[3549]= 0x1C
+Offset[3554]= 0x1B
+Offset[3559]= 0x1A
+Offset[3564]= 0x19
+Offset[3569]= 0x18
+Offset[3574]= 0x17
+Offset[3579]= 0x16
+Offset[3584]= 0x15
+Offset[3589]= 0x14
+Offset[3594]= 0x13
+Offset[3599]= 0x12
+Offset[3604]= 0x11
+Offset[3609]= 0x10
+Offset[3614]= 0
+Offset[3616]= 0x80
+Offset[3621]= DAC_VSS_VDD
+Offset[3633]= 0x81
+Offset[3638]= DAC_VREF_VDD
+Offset[3651]= 0x84
+Offset[3656]= DAC_VSS_VREF
+Offset[3669]= 0x85
+Offset[3674]= DAC_VREF_VREF
+Offset[3688]= 0x88
+Offset[3693]= DAC_VSS_FVR
+Offset[3705]= 0x89
+Offset[3710]= DAC_FVR_VREF
+Offset[3723]= 0x20
+Offset[3728]= DAC_OUTPUT
+Offset[3739]= 0x40
+Offset[3744]= DAC_LVP_POS
+Offset[3756]= 0
+Offset[3758]= DAC_LVP_NEG
+Offset[3770]= 0x4000
+Offset[3777]= OSC_PLL_ON
+Offset[3788]= 0
+Offset[3790]= OSC_PLL_OFF
+Offset[3802]= 0x8000
+Offset[3809]= OSC_31250
+Offset[3819]= 0x10
+Offset[3824]= OSC_250KHZ
+Offset[3835]= 0x20
+Offset[3840]= OSC_500KHZ
+Offset[3851]= 0x30
+Offset[3856]= OSC_1MHZ
+Offset[3865]= 0x40
+Offset[3870]= OSC_2MHZ
+Offset[3879]= 0x50
+Offset[3884]= OSC_4MHZ
+Offset[3893]= 0x60
+Offset[3898]= OSC_8MHZ
+Offset[3907]= 0x70
+Offset[3912]= OSC_16MHZ
+Offset[3922]= 0x4060
+Offset[3929]= OSC_32MHZ
+Offset[3939]= 0x4070
+Offset[3946]= OSC_64MHZ
+Offset[3956]= 1
+Offset[3958]= OSC_TIMER1
+Offset[3969]= 2
+Offset[3971]= OSC_INTRC
+Offset[3981]= 0
+Offset[3983]= OSC_NORMAL
+Offset[3994]= 0x80
+Offset[3999]= OSC_IDLE_MODE
+Offset[4013]= 4
+Offset[4015]= OSC_STATE_STABLE
+Offset[4032]= 8
+Offset[4034]= OSC_STATE_EXT_RUNNING
+Offset[4056]= 0
+Offset[4058]= 0x100
+Offset[4064]= ADC_CLOCK_DIV_2
+Offset[4080]= 0x04
+Offset[4085]= ADC_CLOCK_DIV_4
+Offset[4101]= 0x01
+Offset[4106]= ADC_CLOCK_DIV_8
+Offset[4122]= 0x05
+Offset[4127]= ADC_CLOCK_DIV_16
+Offset[4144]= 0x02
+Offset[4149]= ADC_CLOCK_DIV_32
+Offset[4166]= 0x06
+Offset[4171]= ADC_CLOCK_DIV_64
+Offset[4188]= 0x07
+Offset[4193]= ADC_CLOCK_INTERNAL
+Offset[4212]= 0x00
+Offset[4217]= ADC_TAD_MUL_0
+Offset[4231]= 0x08
+Offset[4236]= ADC_TAD_MUL_2
+Offset[4250]= 0x10
+Offset[4255]= ADC_TAD_MUL_4
+Offset[4269]= 0x18
+Offset[4274]= ADC_TAD_MUL_6
+Offset[4288]= 0x20
+Offset[4293]= ADC_TAD_MUL_8
+Offset[4307]= 0x28
+Offset[4312]= ADC_TAD_MUL_12
+Offset[4327]= 0x30
+Offset[4332]= ADC_TAD_MUL_16
+Offset[4347]= 0x38
+Offset[4352]= ADC_TAD_MUL_20
+Offset[4367]= 0x10000
+Offset[4375]= 0x20000
+Offset[4383]= 0x40000
+Offset[4391]= 0x80000
+Offset[4399]= 0x100000
+Offset[4408]= 0x200000
+Offset[4417]= 0x400000
+Offset[4426]= 0x800000
+Offset[4435]= 0x1
+Offset[4439]= 0x2
+Offset[4443]= 0x4
+Offset[4447]= 0x8
+Offset[4451]= 0
+Offset[4453]= NO_ANALOGS
+Offset[4464]= 0xF00FF
+Offset[4472]= ALL_ANALOG
+Offset[4483]= 0x000
+Offset[4489]= 0x500
+Offset[4495]= VREF_VREF
+Offset[4505]= 0x400
+Offset[4511]= VSS_VREF
+Offset[4520]= 0x100
+Offset[4526]= VREF_VDD
+Offset[4535]= 7
+Offset[4537]= ADC_START_AND_READ
+Offset[4556]= 1
+Offset[4558]= ADC_START_ONLY
+Offset[4573]= 6
+Offset[4575]= ADC_READ_ONLY
+Offset[4589]= 0x40
+Offset[4594]= 0
+Offset[4596]= 0xF2C0
+Offset[4603]= 0xF240
+Offset[4610]= 0x00F220
+Offset[4619]= INT_RTCC
+Offset[4628]= 0x00F220
+Offset[4637]= INT_TIMER0
+Offset[4648]= 0x009D01
+Offset[4657]= INT_TIMER1
+Offset[4668]= 0x009D02
+Offset[4677]= INT_TIMER2
+Offset[4688]= 0x00A002
+Offset[4697]= INT_TIMER3
+Offset[4708]= 0x5000F210
+Offset[4719]= INT_EXT_L2H
+Offset[4731]= 0x6000F210
+Offset[4742]= INT_EXT_H2L
+Offset[4754]= 0x00F210
+Offset[4763]= 0x5001F008
+Offset[4774]= INT_EXT1_L2H
+Offset[4787]= 0x6001F008
+Offset[4798]= INT_EXT1_H2L
+Offset[4811]= 0x00F008
+Offset[4820]= INT_EXT1
+Offset[4829]= 0x5002F010
+Offset[4840]= INT_EXT2_L2H
+Offset[4853]= 0x6002F010
+Offset[4864]= INT_EXT2_H2L
+Offset[4877]= 0x00F010
+Offset[4886]= INT_EXT2
+Offset[4895]= 0x009D40
+Offset[4904]= 0x009D20
+Offset[4913]= 0x009D10
+Offset[4922]= 0x009D08
+Offset[4931]= 0x009D04
+Offset[4940]= INT_CCP1
+Offset[4949]= 0x00A008
+Offset[4958]= INT_BUSCOL
+Offset[4969]= 0x00A040
+Offset[4978]= INT_COMP
+Offset[4987]= 0x00A010
+Offset[4996]= INT_EEPROM
+Offset[5007]= 0x00A080
+Offset[5016]= INT_OSCF
+Offset[5025]= 0x00A020
+Offset[5034]= INT_COMP2
+Offset[5044]= 0x00A004
+Offset[5053]= 0x00FFF208
+Offset[5064]= 0x01FFF208
+Offset[5075]= 0x02FFF208
+Offset[5086]= 0x001F208
+Offset[5096]= 0x002F208
+Offset[5106]= 0x008F208
+Offset[5116]= 0x010F208
+Offset[5126]= 0x020F208
+Offset[5136]= 0x110F208
+Offset[5146]= 0x120F208
+Offset[5156]= 0x140F208
+Offset[5166]= 0x180F208
+
+CCS Extended COFF Information:
+===================================
+
+Information extracted from the symbol table:
+CCS header offset=0x000038AC
+Pointer Size=16
+Case State=FALSE
+short Width=1
+int Width=8
+long Width=16
+
+Header:
+f_magic=0x9179
+f_offslstfile=270 [main.lst]
+f_lstlnnoptr=0x000038C6
+f_nlstlnno=39
+f_fninfoptr=0x000039FE
+f_nfninfo=2
+f_flags=0x00000000
+
+List Line Number: l_lstlnno=12, l_paddr=0x00000000
+List Line Number: l_lstlnno=65, l_paddr=0x00000004
+List Line Number: l_lstlnno=66, l_paddr=0x00000006
+List Line Number: l_lstlnno=67, l_paddr=0x00000008
+List Line Number: l_lstlnno=68, l_paddr=0x0000000A
+List Line Number: l_lstlnno=69, l_paddr=0x0000000C
+List Line Number: l_lstlnno=70, l_paddr=0x0000000E
+List Line Number: l_lstlnno=71, l_paddr=0x00000010
+List Line Number: l_lstlnno=72, l_paddr=0x00000012
+List Line Number: l_lstlnno=73, l_paddr=0x00000014
+List Line Number: l_lstlnno=74, l_paddr=0x00000016
+List Line Number: l_lstlnno=75, l_paddr=0x00000018
+List Line Number: l_lstlnno=76, l_paddr=0x0000001A
+List Line Number: l_lstlnno=77, l_paddr=0x0000001C
+List Line Number: l_lstlnno=78, l_paddr=0x0000001E
+List Line Number: l_lstlnno=79, l_paddr=0x00000020
+List Line Number: l_lstlnno=80, l_paddr=0x00000022
+List Line Number: l_lstlnno=81, l_paddr=0x00000024
+List Line Number: l_lstlnno=84, l_paddr=0x00000026
+List Line Number: l_lstlnno=85, l_paddr=0x00000028
+List Line Number: l_lstlnno=88, l_paddr=0x0000002A
+List Line Number: l_lstlnno=93, l_paddr=0x0000002C
+List Line Number: l_lstlnno=94, l_paddr=0x0000002E
+List Line Number: l_lstlnno=95, l_paddr=0x00000030
+List Line Number: l_lstlnno=121, l_paddr=0x00000032
+List Line Number: l_lstlnno=123, l_paddr=0x00000034
+List Line Number: l_lstlnno=124, l_paddr=0x00000036
+List Line Number: l_lstlnno=125, l_paddr=0x00000038
+List Line Number: l_lstlnno=126, l_paddr=0x0000003A
+List Line Number: l_lstlnno=127, l_paddr=0x0000003C
+List Line Number: l_lstlnno=129, l_paddr=0x0000003E
+List Line Number: l_lstlnno=131, l_paddr=0x00000040
+List Line Number: l_lstlnno=132, l_paddr=0x00000042
+List Line Number: l_lstlnno=133, l_paddr=0x00000044
+List Line Number: l_lstlnno=134, l_paddr=0x00000046
+List Line Number: l_lstlnno=135, l_paddr=0x00000048
+List Line Number: l_lstlnno=139, l_paddr=0x0000004A
+List Line Number: l_lstlnno=144, l_paddr=0x0000004C
+List Line Number: l_lstlnno=144, l_paddr=0x0000004C
+
+Function[0]: f_symndx=2, f_type=0 , f_parentfn=0
+Function[1]: f_symndx=2, f_type=0 , f_parentfn=0
+
+
+Size=18528
+Done...

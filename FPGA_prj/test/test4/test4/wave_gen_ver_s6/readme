@@ -1,0 +1,111 @@
+-- Copyright(C) 2009 by Xilinx, Inc. All rights reserved. 
+-- The files included in this design directory contain proprietary, confidential information of 
+-- Xilinx, Inc., are distributed under license from Xilinx, Inc., and may be used, copied 
+-- and/or disclosed only pursuant to the terms of a valid license agreement with Xilinx, Inc. 
+-- This copyright notice must be retained as part of this text at all times. 
+
+
+wave_gen_ver_s6 is a top level Verilog type project of a programmable waveform 
+	generator controlled via a PC (or other terminal device) using RS-232 serial 
+	communication. 
+
+DESIGN TYPE:
+        ISE (chip 6SLX45t fgg484 -2)
+
+PORTS 
+Inputs:
+          -- system signals
+  * clk_pin			- System clock for the Wave_gen design.
+  * rst_pin			- Resets the wave_gen design to initial state
+
+          -- serial communications signals
+  * rxd_pin			- Serial communications recieve input
+  * lb_sel_pin		- Serial communications loop-back control pin
+
+
+Outputs:          
+          -- LED signals
+  * led_pins 		-8-bit vector
+            
+          -- SPI related signals
+  * spi_clk_pin		- SPI clock
+  * SPI_MOSI_pin 	- SPI master-out-slave-in datum
+  * DAC_cs_n_pin 	- DAC SPI chip select (active low)
+  * DAC_clr_n_pin	- DAC clear
+            
+           -- serial communications signals
+         
+  * txd_pin			- Serial communications transmission signal
+        
+
+DESCRIPTION:
+	The wave_gen design consists of several modular blocks:
+
+* Clk_gen 	- Produces three clock signals: a x1 clock for the rx domain; 
+				an xM/D clock (fx) for the tx domain; and a clk_samp which is 
+				produced by dividing the tx clock by a selectable prescalar.
+				
+* rst_gen	- Provides reset signal to each of the three clock domains.
+
+* lb_ctl 	- Provides a quick diagnostic capability by feeding the raw 
+				serial rx signal back out the transmit line.
+				
+* uart_rx	- Captures serial data (rxd_pin buffered by an IBUF) and presents 
+				it at the output of the module on the rx_data 8-bit bus.  The 
+				signal rx_data_rdy pulses high for one clock when a new rx_data 
+				is received. This data is then passed to the cmd_parse module.
+				
+* Cmd_parse	- Examines the incoming serial stream and executes commands based 
+				on the contents.  The command parser always sends the received 
+				character through the response generator and out the transmit path, 
+				thus always echoing the received character. At the end of each 
+				command either an “-OK”, “-ERR”, or data response message is 
+				returned depending on the validity of the received serial sequence.
+				
+* Resp_gen	- The response generator produces user-readable output.
+
+* char_fifo	- The character FIFO both buffers the character sequences produced 
+				by resp_gen and serves as a clock domain-crossing mechanism.
+				
+* uart_tx 	- Continually attempts to empty the character FIFO when there is 
+				data present.
+
+* samp_ram	- Holds the patterns sent from the sample generator and command parser.
+
+* samp_gen	- Uses the parameters set by the command parser to sequentially 
+				extract data from the dual-port sample RAM.
+
+* DAC_SPI	- Serializes the data from the sample generator and passes it to the 
+				on-board DAC or to LEDs.
+
+* clkx_bus	- Clock crossing circuit 
+
+For a complete design description please see design_descript_lab.pdf included in the project directory.
+
+
+SIMULATION:
+	The wave_gen project contains a "self-checking" hierarchical testbench.
+	
+* tb_wave_gen acts as a system level testbench file, integrating the 
+	wave_gen design as well as several testbench modules.  It consists of 
+	drivers and monitors for the pins of the UUT, and higher level 
+	functionality that allows the implementation of self checking tests.  
+
+* test_wave_gen initializes and sends stimulus to the system testbench (tb_wave_gen).
+
+	This environment allows the verification of the full design, as well as 
+	various sub-blocks on which it is based. This verification is a self- 
+	checking environment which displays output text rather than showing 
+	generated waveforms.
+
+For additional test environment information please see test_descript_lab.pdf included in the project directory.
+
+For more information on fully optimizing, constraining, coding, synthesizing, simulating, and implementing your 
+designs please visit Xilinx Customer Training at www.xilinx.com\education.
+
+
+For support information and contacts please see:
+
+	http://www.xilinx.com/support
+or
+	http://www.xilinx.com/support/services/contact_info.htm

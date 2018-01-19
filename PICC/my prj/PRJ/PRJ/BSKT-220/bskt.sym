@@ -1,0 +1,120 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+005     portA
+006.0   B0
+006     portB
+006.1   B1
+006.2   B2
+006.3   B3
+006.4   B4
+006.5   B5
+006.6   B6
+006.7   B7
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     x
+02A.0   fl1
+02A.1   fl2
+02B     phase
+02C     buf
+02D     buf1
+02E     buf2
+02F     buf3
+030-031 angle
+032-033 buf4
+034-035 buf5
+036-037 turn_counter
+038-039 sum1
+03A-03B @PRINTF_LU_38400_53_50.P1
+03A     MAIN.@SCRATCH1
+03B-03C @PRINTF_LD_38400_53_50.P1
+03C     @PRINTF_LU_38400_53_50.@SCRATCH1
+03D     @PRINTF_LU_38400_53_50.@SCRATCH2
+03D     @PRINTF_LD_38400_53_50.@SCRATCH1
+03E     @PRINTF_LU_38400_53_50.@SCRATCH3
+03E     @PRINTF_LD_38400_53_50.@SCRATCH2
+03F     @PRINTF_LU_38400_53_50.@SCRATCH4
+03F     @PRINTF_LD_38400_53_50.@SCRATCH3
+040     @PRINTF_LU_38400_53_50.@SCRATCH5
+040     @PRINTF_LD_38400_53_50.@SCRATCH4
+041     @PRINTF_LU_38400_53_50.@SCRATCH6
+041     @PRINTF_LD_38400_53_50.@SCRATCH5
+042     @PRINTF_LU_38400_53_50.@SCRATCH7
+042     @PRINTF_LD_38400_53_50.@SCRATCH6
+043     @PRINTF_LD_38400_53_50.@SCRATCH7
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+085     TRISA
+086.0   TRB0
+086     TRISB
+086.1   TRB1
+086.2   TRB2
+086.3   TRB3
+086.4   TRB4
+086.5   TRB5
+086.6   TRB6
+086.7   TRB7
+098     TXSTA
+098.2   BRGH
+099     SPBRG
+09C     CMCON
+09C.4   C1INV
+09C.5   C2INV
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+0066  TIMER1_isr
+006A  TIMER2_isr
+0092  TIMER0_isr
+0096  CAPTURE1_isr
+01B6  MAIN
+004D  @const92
+00E5  @PRINTF_LU_38400_53_50
+013F  @PRINTF_LD_38400_53_50
+01B6  @cinit
+
+Project Directory:
+    C:\PRJ\BSKT-220\
+
+Project Files:
+    bskt.c
+    ..\..\Program Files\PICC\devices\16F88.h
+
+Units:
+    bskt.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      bskt.err
+    Ext Symbols: bskt.esym
+    INHX8:       bskt.hex
+    Symbols:     bskt.sym
+    List:        bskt.lst
+    Debug/COFF:  bskt.cof
+    Project:     bskt.PJT
+    Call Tree:   bskt.tre
+    Statistics:  bskt.sta

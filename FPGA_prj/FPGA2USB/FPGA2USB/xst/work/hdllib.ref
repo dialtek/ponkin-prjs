@@ -1,0 +1,6 @@
+EN fx2lp_slavefifo2b_streamin_fpga_top NULL D:/work/Projects/FPGA_prj/FPGA2USB/main.vhd sub00/vhpl00 1387874017
+EN fx2lp_clk_div NULL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd sub00/vhpl02 1389352082
+EN fpga2usb NULL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/main.vhd sub00/vhpl04 1389352084
+AR fpga2usb behav D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/main.vhd sub00/vhpl05 1389352085
+AR fx2lp_slavefifo2b_streamin_fpga_top fx2lp_slavefifo2b_streamin_fpga_top_arch D:/work/Projects/FPGA_prj/FPGA2USB/main.vhd sub00/vhpl01 1387874018
+AR fx2lp_clk_div behavioral D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd sub00/vhpl03 1389352083

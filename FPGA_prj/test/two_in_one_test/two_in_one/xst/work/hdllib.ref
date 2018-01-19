@@ -1,0 +1,4 @@
+AR sec_pgm beh C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd sub00/vhpl03 1375788848
+EN sec_pgm NULL C:/Xilinx/test/two_in_one_test/two_in_one/sec_pgm.vhd sub00/vhpl02 1375788847
+AR first_pgm beh C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd sub00/vhpl01 1375788850
+EN first_pgm NULL C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.vhd sub00/vhpl00 1375788849

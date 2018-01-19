@@ -1,0 +1,543 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+taengine -intstyle ise -f StateMachine -w --format html1 -l StateMachine_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+XSLTProcess StateMachine_build.xml 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 StateMachine.ngc StateMachine.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper StateMachine.ngd 
+tsim -intstyle ise StateMachine StateMachine.nga 
+hprep6 -s IEEE1149 -n StateMachine -i StateMachine 

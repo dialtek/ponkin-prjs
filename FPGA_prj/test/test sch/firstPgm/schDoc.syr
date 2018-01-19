@@ -1,0 +1,350 @@
+Release 14.2 - xst P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: schDoc.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "schDoc.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "schDoc"
+Output Format                      : NGC
+Target Device                      : xc3s500e-5-fg320
+
+---- Source Options
+Top Module Name                    : schDoc
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf" in Library work.
+Entity <ifd_mxilinx_schdoc> compiled.
+Entity <ifd_mxilinx_schdoc> (Architecture <behavioral>) compiled.
+Entity <schdoc> compiled.
+Entity <schdoc> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <schDoc> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <IFD_MXILINX_schDoc> in library <work> (architecture <behavioral>) with generics.
+	INIT = '0'
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <schDoc> in library <work> (Architecture <behavioral>).
+    Set user-defined property "HU_SET =  XLXI_1_0" for instance <XLXI_1> in unit <schDoc>.
+    Set user-defined property "HU_SET =  XLXI_3_1" for instance <XLXI_3> in unit <schDoc>.
+    Set user-defined property "HU_SET =  XLXI_4_2" for instance <XLXI_4> in unit <schDoc>.
+    Set user-defined property "HU_SET =  XLXI_5_3" for instance <XLXI_5> in unit <schDoc>.
+Entity <schDoc> analyzed. Unit <schDoc> generated.
+
+Analyzing generic Entity <IFD_MXILINX_schDoc> in library <work> (Architecture <behavioral>).
+	INIT = '0'
+    Set user-defined property "INIT =  0" for instance <I_36_15> in unit <IFD_MXILINX_schDoc>.
+    Set user-defined property "IOB =  TRUE" for instance <I_36_15> in unit <IFD_MXILINX_schDoc>.
+    Set user-defined property "IBUF_DELAY_VALUE =  0" for instance <I_36_24> in unit <IFD_MXILINX_schDoc>.
+    Set user-defined property "IFD_DELAY_VALUE =  AUTO" for instance <I_36_24> in unit <IFD_MXILINX_schDoc>.
+    Set user-defined property "IOSTANDARD =  DEFAULT" for instance <I_36_24> in unit <IFD_MXILINX_schDoc>.
+Entity <IFD_MXILINX_schDoc> analyzed. Unit <IFD_MXILINX_schDoc> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <IFD_MXILINX_schDoc>.
+    Related source file is "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf".
+Unit <IFD_MXILINX_schDoc> synthesized.
+
+
+Synthesizing Unit <schDoc>.
+    Related source file is "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf".
+Unit <schDoc> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <schDoc> ...
+
+Optimizing unit <IFD_MXILINX_schDoc> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block schDoc, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : schDoc.ngr
+Top Level Output File Name         : schDoc
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 8
+#      GND                         : 4
+#      VCC                         : 4
+# FlipFlops/Latches                : 4
+#      FDCE                        : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      IBUF                        : 4
+#      OBUF                        : 4
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-5 
+
+ Number of Slices:                        0  out of   4656     0%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
+    IOB Flip Flops:                       4
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 4     |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+XLXI_1/XLXN_1(XLXI_1/I_36_29:G)    | NONE(XLXI_1/I_36_15)   | 1     |
+XLXI_3/XLXN_1(XLXI_3/I_36_29:G)    | NONE(XLXI_3/I_36_15)   | 1     |
+XLXI_4/XLXN_1(XLXI_4/I_36_29:G)    | NONE(XLXI_4/I_36_15)   | 1     |
+XLXI_5/XLXN_1(XLXI_5/I_36_29:G)    | NONE(XLXI_5/I_36_15)   | 1     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 1.731ns
+   Maximum output required time after clock: 4.040ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              1.731ns (Levels of Logic = 2)
+  Source:            SW4 (PAD)
+  Destination:       XLXI_5/I_36_15 (FF)
+  Destination Clock: clock rising
+
+  Data Path: SW4 to XLXI_5/I_36_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'XLXI_5'
+     IBUF:I->O             1   1.106   0.357  I_36_24 (D_IN)
+     FDCE:D                    0.268          I_36_15
+    ----------------------------------------
+    Total                      1.731ns (1.374ns logic, 0.357ns route)
+                                       (79.4% logic, 20.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              4.040ns (Levels of Logic = 2)
+  Source:            XLXI_1/I_36_15 (FF)
+  Destination:       LED1 (PAD)
+  Source Clock:      clock rising
+
+  Data Path: XLXI_1/I_36_15 to LED1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.514   0.357  I_36_15 (Q)
+     end scope: 'XLXI_1'
+     OBUF:I->O                 3.169          LED1_OBUF (LED1)
+    ----------------------------------------
+    Total                      4.040ns (3.683ns logic, 0.357ns route)
+                                       (91.2% logic, 8.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.44 secs
+ 
+--> 
+
+Total memory usage is 221112 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

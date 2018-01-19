@@ -1,0 +1,131 @@
+
+ROM used:   9490/88064 (11%)
+            9490/88064 (11%) including unused fragments
+
+            2.1 Average locations per line
+            6.5 Average locations per statement
+
+RAM used:   205/8192 (3%) at main() level
+            302/8192 (4%) worst case
+
+Stack used: 82 worst case (42 in main + 40 for interrupts)
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  636   395  27  main.c
+  173     0   0  main.h
+  838     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
+ 1351   524  36  C:\Program Files (x86)\PICC\Drivers\stdlib.h
+   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+  423   125   9  C:\Program Files (x86)\PICC\Drivers\string.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+  269   135   9  LCD_16X4_Termo3.h
+  807   289  20  ADS1256.h
+----- -----
+ 4557  1468 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     68   0    8             @DIV3232B
+0     24   0    2             @delay_ms1
+0    126   1    8             @DIVS3232A
+0     66   0    8             @MULS3232
+0    196   1    8             @MULFF
+0    272   1    0             @MULFF64
+0    100   1    0             @SI64TOF64
+0    264   1    8             @DIVFF64
+0     48   0    8             @MUL3232
+0     66   0    1    307  2.3  LCDWriteNibble
+0     46   0    4    140  2.2  LCDWriteData
+0     44   0    4    119  2.2  LCDCommand
+0     20   0    4     39  1.5  LCDSetCursor
+0     14   0    0     37  1.1  LCDClear
+0    160   1    0    461  1.9  LCDInit
+0     10   0    1     24  1.2  LCDPutCh
+0     10   0    1     24  1.2  LCDMsg
+0    108   1    3    145  1.3  LCDWelcome
+0     26   0    0             @const1239
+0     26   0    0             @const1240
+0     30   0    0             @const1241
+0    316   2   15    928  5.3  LCDPutU16
+0     84   0    8             @DIV3232A
+0    532   3   15   1641  5.4  LCDPutU32
+0     36   0    0    270  1.9  ADC_wakeUp
+0     96   1    5    290  2.8  WrReg
+0     48   0    0    209  2.7  ADC_StartRdContin
+0    324   2    5    997  5.8  ADC_RdataC
+0     52   0    0    233  2.7  ADC_StopRd
+0     22   0    1     66  2.0  ADC_sps_set
+0    222   1    0    903  3.9  ADC_SelfCal
+0    216   1    1    810  5.8  ADC_setCh
+0    242   1   21    218  3.5  Read_ADC_vol_in
+0    100   1    0             @I64TOF64
+0     70   0    0             @F48TO64
+0     68   0    0             @F64TO48
+0     78   0    4             @SDTOF
+0     64   0    4             @FTOSD
+0     72   0   10    224  5.0  ADC_vol_average
+0    150   1    1    486  4.2  ADC_set_PGA
+0    150   1    0    517  5.7  ADC_init
+0     36   0    0    250  4.1  Rd_Flash
+0     46   0    0             @READ_PROGRAM_MEMORY
+0     32   0    0    250  4.1  Wr_Flash
+0     40   0    0             @NVR_WR
+0    130   1    0             @WRITE_PROGRAM_MEMORY
+0     78   0   10    346 10.0  Crc8
+0     28   0    0    197  1.8  OscSetup
+0     32   0    0    209  1.8  EnableInt
+0     20   0    0    163  1.8  DisableInt
+0     90   0    0    896  2.4  MCU_init
+0     18   0    2     86  3.1  Bpush_delay
+0    132   1    3    152  1.3  LCD_print_menu
+0     26   0    0             @const1350
+0     26   0    0             @const1351
+0     26   0    0             @const1352
+0     26   0    0             @const1353
+0    560   3    3   1002  3.4  LCD_main_menu
+0     16   0    0             @const1355
+0     16   0    0             @const1356
+0    138   1    3    410  1.8  Full_dev_reset
+0     26   0    0             @const1372
+0     30   0    0             @const1373
+0    894   5    6   2516  4.9  ADC_rd_and_print_ch
+0    200   1    0             @PRINTFU32_9600_5893_5892
+0     28   0    0     84  2.0  save_to_flash
+0     92   0    2    383  4.7  cn_irq_handler
+0     40   0    0     48  1.1  timer1_irq_handler
+0   1246   7    5   4891  9.9  MAIN
+0     28   0    0             @const1394
+0     28   0    0             @const1395
+0     24   0    0             @const1396
+0     26   0    0             @const1397
+0     30   0    0             @const1398
+0     24   0    0             @const1399
+0     28   0    0             @const1400
+0     26   0    0             @const1401
+0     26   0    0             @const1402
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               39
+    Statements              1468
+    Comments                1753
+    Volume (V)              36458
+    Difficulty (D)          129.0
+    Effort to implement (E) 4703757
+    Time to implement (T)   72 hours, 35 minutes
+    Est Delivered Bugs (B)  9
+    Cyclomatic Complexity   112
+    Maintainability (MI)    35
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-0FFFE  8978  56046  
+10000-14FFE     0  20480  
+15000-157FE     0  2048  
+
+
+

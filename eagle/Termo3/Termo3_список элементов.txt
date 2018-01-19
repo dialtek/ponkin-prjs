@@ -1,0 +1,59 @@
+Partlist exported from D:/work/Projects/eagle/Termo3/Termo3.sch at 17.03.2014 10:45:13
+
+Assembly variant: 
+
+Qty Value             Device         Parts                                                                                                                             
+3                     C100MFX25V     C14, C20, C34                                                                                                                     
+2                     C0805          C10, C12                                                                                                                          
+1                     F15HP          X5                                                                                                                                
+1                     F25HP          X6                                                                                                                                
+1                     ISO35          U1                                                                                                                                
+1                     JP1E           JP2                                                                                                                               
+1                     ML16           SV1                                                                                                                               
+1                     ML20L          SV3                                                                                                                               
+6                     MLT025"        R14, R19, R20, R30, R31, R32                                                                                                      
+3                     NMA            DC1, DC2, DC3                                                                                                                     
+1                     RTRIM3329H     POT1                                                                                                                              
+1                     TE5            F1                                                                                                                                
+1   0,1               C0805          C100                                                                                                                              
+17  0.1               C0805          C1, C2, C6, C7, C13, C16, C18, C23, C29, C50, C58, C59, C97, C99, C102, C103, C107                                                
+21  0.1u              C0805          C8, C15, C17, C24, C26, C30, C31, C39, C43, C45, C60, C62, C64, C66, C69, C72, C76, C82, C108, C110, C111                         
+8   0.01u             C0805          C3, C21, C25, C65, C70, C71, C74, C75                                                                                             
+1   1M                R0805          R16                                                                                                                               
+1   1N5061            1N5061         D3                                                                                                                                
+6   1_PIN_CON         1_PIN_CON      P1, P2, P3, P4, P5, P6                                                                                                            
+22  1k                R0805          R10, R12, R18, R21, R22, R23, R24, R25, R26, R27, R28, R33, R34, R35, R36, R37, R38, R39, R40, R41, R100, R104                    
+26  1n                C0805          C41, C42, C44, C46, C51, C52, C53, C54, C55, C56, C57, C61, C80, C81, C83, C84, C85, C86, C87, C88, C89, C91, C92, C93, C104, C109
+1   1u                C0805          C47                                                                                                                               
+1   4.7               C100MFX25V     C5                                                                                                                                
+1   6N137             6N137          OK1                                                                                                                               
+1   10MEG             HC49/U         X2                                                                                                                                
+8   10k               R0805          R6, R7, R8, R11, R42, R43, R44, R45                                                                                               
+1   10u               C100MFX25V     C48                                                                                                                               
+13  10u               C0805          C4, C19, C22, C28, C37, C49, C63, C67, C68, C73, C77, C98, C101                                                                   
+1   15p               C0805          C11                                                                                                                               
+4   18p               C0805          C78, C79, C105, C106                                                                                                              
+2   47R               742-8_SNS      RN1, RN2                                                                                                                          
+1   47R               MLT025"        R9                                                                                                                                
+1   50u               C0805          C33                                                                                                                               
+3   51R               R0805          R5, R13, R17                                                                                                                      
+1   100k 0.1% I=10uA  MLT025"        R15                                                                                                                               
+1   100k 0.1% I=100uA MLT025"        R29                                                                                                                               
+8   100p              C0805          C35, C36, C38, C40, C90, C94, C95, C96                                                                                            
+3   100u              C100MFX25V     C9, C27, C32                                                                                                                      
+1   AD620N            AD620N         IC4                                                                                                                               
+1   ADP3338_3.3V      ADP3338_3.3V   U4                                                                                                                                
+2   ADS1256           ADS1256        U2, U5                                                                                                                            
+1   ADUM1301          ADUM1301       IC7                                                                                                                               
+2   ADUM1401          ADUM1401       IC1, IC6                                                                                                                          
+1   DS1811            DS1811         D1                                                                                                                                
+2   HC49/U            HC49/U         X4, X7                                                                                                                            
+2   JP3PIN            JP3PIN         JP1, JP3                                                                                                                          
+2   LED3MM            LED3MM         HL2, HL6                                                                                                                          
+2   LM2937            LM2937         IC3, IC8                                                                                                                          
+2   NJM2880           NJM2880        DA1, DA2                                                                                                                          
+1   OPA340P           OPA340P        IC5                                                                                                                               
+1   PIC24HJ64GP506    PIC24HJ64GP506 IC2                                                                                                                               
+1   PIC_ISP_CONN      PIC_ISP_CONN   X1                                                                                                                                
+1   REF5025           REF5025        U7                                                                                                                                
+1   XPORT             XPORT          XP1                                                                                                                               

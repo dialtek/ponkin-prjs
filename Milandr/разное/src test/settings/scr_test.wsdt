@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>src_test/Debug</Project><Project>LDM_K1986BE92Ql_prj/Debug</Project></CurrentConfigs><CurrentProj>LDM_K1986BE92Ql_prj</CurrentProj><OverviewSelected>0</OverviewSelected></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>272</Column0><Column1>28</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <TerminalIO/>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1395</ColumnWidth1><ColumnWidth2>372</ColumnWidth2><ColumnWidth3>93</ColumnWidth3></Build>
+      <Debug-Log>
+        
+        
+      <ColumnWidth0>37</ColumnWidth0><ColumnWidth1>1827</ColumnWidth1></Debug-Log>
+    </Static>
+    <Windows>
+      
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-28713-17994</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>LDM_K1986BE92Ql_prj</ExpandedNode><ExpandedNode>LDM_K1986BE92Ql_prj/src</ExpandedNode><ExpandedNode>LDM_K1986BE92Ql_prj/src/CMSIS</ExpandedNode><ExpandedNode>LDM_K1986BE92Ql_prj/src/inc</ExpandedNode><ExpandedNode>LDM_K1986BE92Ql_prj/src/startup</ExpandedNode><ExpandedNode>src_test</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-4665-18445</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-31633-1715</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\LDM_K1986BE92QL\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>49</YPos2><SelStart2>4803</SelStart2><SelEnd2>4803</SelEnd2></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\LDM_K1986BE92QL\inc\LCD_MT12864J.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>831</YPos2><SelStart2>15142</SelStart2><SelEnd2>15142</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-0122d790><key>iaridepm.enu1</key></Toolbar-0122d790></Sizes></Row0><Row1><Sizes/></Row1></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>601</Bottom><Right>347</Right><x>-2</x><y>-2</y><xscreen>211</xscreen><yscreen>31</yscreen><sizeHorzCX>146528</sizeHorzCX><sizeHorzCY>37897</sizeHorzCY><sizeVertCX>242361</sizeVertCX><sizeVertCY>737164</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>172</Bottom><Right>1442</Right><x>-2</x><y>-2</y><xscreen>1444</xscreen><yscreen>174</yscreen><sizeHorzCX>1002778</sizeHorzCX><sizeHorzCY>212714</sizeHorzCY><sizeVertCX>146528</sizeVertCX><sizeVertCY>37897</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm_isim_beh.exe" -prj "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm_beh.prj" "work.first_pgm" 

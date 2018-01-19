@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="PhysDesignRules" num="739" delta="old" >Unexpected DCM feedback loop. The signal <arg fmt="%s" index="1">DCM_CLKFB_IBUFG</arg> on the CLKFB pin of comp <arg fmt="%s" index="2">DCM_SP_inst</arg> is not driven by an IOB or BUFGMUX therefore the phase relationship of output clocks to CLKIN cannot be guaranteed.
+</msg>
+
+</messages>
+

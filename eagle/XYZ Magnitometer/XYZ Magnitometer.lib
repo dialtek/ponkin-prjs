@@ -1,0 +1,45 @@
+Netlist
+
+Exported from XYZ Magnitometer.brd at 07.12.2012 17:34:15
+
+EAGLE Version 6.2.0 Copyright (c) 1988-2012 CadSoft
+
+Net      Part     Pad
+
+0V       C1       2
+         U1       P$11
+         U1       P$9
+
+1        U1       P$3
+
+2        U1       P$4
+
+3        U1       P$5
+
+4        U1       P$6
+
+5        U1       P$7
+
+N$2      C1       1
+         U1       P$10
+         U1       P$13
+
+N$3      C2       1
+         U1       P$8
+
+N$4      C2       2
+         U1       P$12
+
+N$5      P2       P$1
+         U1       P$14
+         U1       P$2
+
+N$6      P3       P$1
+         U1       P$1
+
+N$7      P1       P$1
+         U1       P$16
+
+N$8      P5       P$1
+         U1       P$15
+

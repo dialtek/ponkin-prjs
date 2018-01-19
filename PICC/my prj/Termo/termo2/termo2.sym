@@ -1,0 +1,250 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     PGA
+005     buf
+005.4   buf4
+005.5   buf5
+005.6   buf6
+005.7   buf7
+006     MAIN.j
+007-00E MAIN.buf1
+00F     MAIN.b
+010.0   MAIN.EEWrFl
+011-014 MAIN.Vin
+015-018 MAIN.Mid
+019-01A MAIN.t
+01B-01C MAIN.t1
+01D-01E MAIN.t2
+01F-020 MAIN.tr
+021-024 MAIN.LSB_weight
+025     MAIN.dt
+026     MAIN.CRC1
+027     MAIN.CRC2
+028-02B @PRINTF_L32U_9600_31766_31767.P1
+028-029 LCDWelcome.u16a
+028     AdcChData.Ch
+028-02B LCDPutU32._u16
+028     LCDInit.@SCRATCH1
+028     MAIN.@SCRATCH1
+029-02C AdcChData.r1
+029     MAIN.@SCRATCH2
+02A     LCDSetCursor.ucPos
+02A     LCDWelcome.@SCRATCH1
+02A     @PSTRINGC_206.@SCRATCH1
+02A     MAIN.@SCRATCH3
+02B     LCDSetCursor.@SCRATCH1
+02B     @PSTRINGC_206.@SCRATCH2
+02B     MAIN.@SCRATCH4
+02C     LCDPutU32.u8NumDigs
+02C     LCDCommand.uc
+02C     LCDMsg.c
+02C     powr.n
+02C     MAIN.@SCRATCH5
+02C     @PRINTF_L32U_9600_31766_31767.@SCRATCH1
+02D     powr.a
+02D-030 LCDPutU32.u16a
+02D-030 AdcChData.r2
+02D     LCDCommand.@SCRATCH1
+02D     MAIN.@SCRATCH6
+02D     @PRINTF_L32U_9600_31766_31767.@SCRATCH2
+02E-02F @MUL1616.P1
+02E     MAIN.@SCRATCH7
+02E     @PRINTF_L32U_9600_31766_31767.@SCRATCH3
+02F     MAIN.@SCRATCH8
+02F     @PRINTF_L32U_9600_31766_31767.@SCRATCH4
+030-031 @MUL1616.P1
+030     @PRINTF_L32U_9600_31766_31767.@SCRATCH5
+031-034 LCDPutU32.u16b
+031-034 AdcChData.r3
+031     @PRINTF_L32U_9600_31766_31767.@SCRATCH6
+032     @MUL1616.@SCRATCH1
+032     @PRINTF_L32U_9600_31766_31767.@SCRATCH7
+033     @PRINTF_L32U_9600_31766_31767.@SCRATCH8
+035-038 @MUL3232.P1
+035-038 AdcChData.Sum
+035     LCDPutU32.@SCRATCH1
+036     LCDPutCh.c
+037     LCDWriteData.uc
+038     LCDWriteData.@SCRATCH1
+039     Middle_Sum.n
+039-03C @MUL3232.P1
+039     LCDWriteNibble.uc
+039     WrReg.RegAdr
+03A     @delay_ms1.P1
+03A-03D Middle_Sum.a1
+03A     @delay_us1.P1
+03A     WrReg.Wbyte
+03B     WrReg.@SCRATCH1
+03D     @MUL3232.@SCRATCH1
+03E-041 Middle_Sum.a2
+03E     @MUL3232.@SCRATCH2
+03F     @MUL3232.@SCRATCH3
+040     @MUL3232.@SCRATCH4
+041     @MUL3232.@SCRATCH5
+042     Middle_Sum.i
+042     @MUL3232.@SCRATCH6
+043-046 @DIV3232.P1
+043-046 Adc_Rdata.r1
+047-04A @DIV3232.P1
+047-04A Adc_Rdata.r2
+04B-04E Adc_Rdata.r3
+04B     @DIV3232.@SCRATCH1
+04C     @DIV3232.@SCRATCH2
+04D     @DIV3232.@SCRATCH3
+04E     @DIV3232.@SCRATCH4
+04F-052 Adc_Rdata.Sum
+04F     @DIV3232.@SCRATCH5
+053     WrByte.b
+053     Adc_Rdata.@SCRATCH1
+054     Adc_Rdata.@SCRATCH2
+055     Adc_Rdata.@SCRATCH3
+056     Adc_Rdata.@SCRATCH4
+057     Adc_Rdata.@SCRATCH5
+058     Adc_Rdata.@SCRATCH6
+F80.0   RA0
+F80     PORTA
+F80.1   RA1
+F80.2   RA2
+F80.3   RA3
+F80.4   RA4
+F80.5   RA5
+F81     PORTB
+F81.1   PORTB1
+F81.2   PORTB2
+F81.3   PORTB3
+F81.4   PORTB4
+F81.5   RB5
+F82     PORTC
+F82.5   PORTC5
+F82.6   PORTC6
+F82.7   PORTC7
+F83     PORTD
+F83.0   LCD_E
+F83     PSP_DATA
+F83.2   LCD_RS
+F83.3   LCD_RW
+F83.4   PORTD4
+F83.5   PORTD5
+F83.6   PORTD6
+F83.7   PORTD7
+F84     PORTE
+F84.0   RE0
+F92.0   TRA0
+F92     TRISA
+F92.1   TRA1
+F92.2   TRA2
+F92.3   TRA3
+F92.4   TRA4
+F92.5   TRA5
+F93     TRISB
+F94     TRISC
+F94.3   TRC3
+F94.4   TRC4
+F94.5   TRC5
+F94.6   TRC6
+F94.7   TRC7
+F95     TRISD
+F96     TRISE
+F96.0   TRE0
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FC6     SSPCON
+FC6.4   CKP
+FC7     SSPSTAT
+FC7.6   CKE
+FC7.7   SMP
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0050  @delay_ms1
+0078  @delay_us1
+0098  LCDWriteNibble
+018C  LCDWriteData
+00E2  LCDCommand
+01E0  LCDSetCursor
+017E  LCDClear
+0102  LCDInit
+01B0  LCDPutCh
+0582  LCDPutU32
+038E  @DIV3232
+04EE  @MUL3232
+01B8  LCDMsg
+01EC  LCDWelcome
+0004  @const210
+01C0  @PSTRINGC_206
+0014  @const212
+02C2  WrByte
+021C  WrReg
+0250  AdsInit
+02CE  SelfCal
+02F0  Adc_Rdata
+041C  Middle_Sum
+049C  AdcChData
+0542  powr
+09B0  MAIN
+0564  @MUL1616
+0022  @const281
+0028  @const282
+090A  @PRINTF_L32U_9600_31766_31767
+002E  @const286
+0030  @const287
+0034  @const288
+003A  @const290
+003E  @const291
+0044  @const293
+0048  @const294
+004A  @const295
+09B0  @cinit
+0178  l1
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    c:\program files\picc\projects\termo2\
+
+Project Files:
+    termo2.c                                                [30-мар-12 18:18  CRC=3AD7AB1A]
+    ..\..\devices\18F4320.h                                 [13-апр-11 15:02  CRC=8FE4751D]
+
+Source signature=5AA09554
+
+Units:
+    c:\program files\picc\projects\termo2\termo2 (main)
+
+Compiler Settings:
+    Processor:      PIC18F4320
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      termo2.err
+    Ext Symbols: termo2.esym
+    INHX32:      termo2.hex
+    Symbols:     termo2.sym
+    List:        termo2.lst
+    Debug/COFF:  termo2.cof
+    Project:     termo2.PJT
+    Call Tree:   termo2.tre
+    Statistics:  termo2.STA

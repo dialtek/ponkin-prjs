@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>990110833</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986be9x.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$TOOLKIT_DIR$\config\linker\Milandr\MDR32F1.icf</file>
+      <file>$PROJ_DIR$\Debug\Exe\c.out</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Exe\test2.hex</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_can_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_usb_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_i2c_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_ext_bus_cntrl_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_adc_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_dac_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_bkp_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_comp_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_power_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_wwdg_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_iwdg_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_timer_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\startup_MDR32F9Qx.s</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_rst_clk_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_port_defs.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_MDR32F9Qx.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_dma_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_eeprom_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_uart_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\1986BE9x_spi_defs.h</file>
+      <file>$TOOLKIT_DIR$\inc\Milandr\core_cm3.h</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\c.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 10 9 34 8 14 12 7</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICCARM</name>
+          <file> 0 40 35 4 3 2 29 1 16 6 5 17 18 37 32 36 38 39 19 25 26 27 28 21 22 24 33 23 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 0 40 35 4 3 2 29 1 16 6 5 17 18 37 32 36 38 39 19 25 26 27 28 21 22 24 33 23 20</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup_MDR32F9Qx.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

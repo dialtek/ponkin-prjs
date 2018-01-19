@@ -1,0 +1,114 @@
+//// дата изменения: 9.05.15
+//
+#include "MDR32Fx.h"
+
+#define F_CPU  80000000 // HCLK frequency
+
+#include "mdr_delay.h"
+#include "mdr_spi.h"
+#include "MT_12864B_abc.h"
+
+/*--------------------------------------------------------------------------- */
+// 1-wire
+#define One_wire_port_dir MDR_PORTD->OE     // регистр направленности порта 1-wire
+#define One_wire_port 	  MDR_PORTD->RXTX   // регистр данных порта 1-wire
+#define One_wire_pin_num 2  // PD2			// номер пина 1 - wire
+
+#include "mdr_1_wire.h"     // подключение библиотеки 1 - wire 
+/*--------------------------------------------------------------------------- */
+
+#define right_b (!(MDR_PORTB->RXTX & (1<<10))) 
+#define up_b    (!(MDR_PORTB->RXTX & (1<<8)))
+#define left_b  (!(MDR_PORTB->RXTX & (1<<9)))
+#define down_b  (!(MDR_PORTD->RXTX & (1<<4))) 
+
+	void OSC_init(void){
+
+  //---CLK-----------------------------------------------------------------------------------------------------
+   
+  MDR_RST_CLK->PLL_CONTROL = ((1 << 2) | (7 << 8)); 	  // вкл. PLL | коэф. умножения = 7
+  									  // 7 при кварце 10 мег
+  									  // 9 при кварце 8 мег
+  while((MDR_RST_CLK->CLOCK_STATUS & 0x02) != 0x02);      // ждем когда PLL выйдет в раб. режим
+  
+  MDR_RST_CLK->HS_CONTROL = 0x01;                         // вкл. HSE осцилятор
+  while ((MDR_RST_CLK->CLOCK_STATUS & (1 << 2)) == 0x00); // ждем пока HSE выйдет в рабочий режим
+  
+  MDR_RST_CLK->CPU_CLOCK  = (2                            // источник для CPU_C1
+						   |(1 << 2)                      // источник для CPU_C2
+						   |(1 << 4)                      // предделитель для CPU_C3
+						   |(1 << 8));                    // источник для HCLK  
+  
+
+ MDR_RST_CLK->PER_CLOCK = 0xFFFFFFFF;                    // вкл. тактирование всей перефирии
+//  // HCLK = 80 МГц ?
+  
+  }
+   
+	void GPIO_init (void){  
+  
+  MDR_PORTA->OE      = 1 | (1<<5) | (1<<7);      // порт A1 - вход, A0,A5,A6 на выход
+  MDR_PORTA->FUNC    = 0x0000;          // функция - порт 
+  MDR_PORTA->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTA->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTB->OE = 0xf8bf;               // порт B на выход, PB6 - UART1 RX + кнопки SB..
+  MDR_PORTB->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTB->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTB->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//  
+  MDR_PORTC->OE      = 0xFFFF;
+  //MDR_PORTC->OE      = 0x0000;   		// LCD_A0 пин на выход
+  MDR_PORTC->FUNC    = 0x0000;          // функция - порт 
+  MDR_PORTC->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTC->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTD->OE = 0x0000;               // порт D на вход, PD4 - LCD_reset
+  MDR_PORTD->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTD->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTD->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTE->OE = 0xffff;               // порт E на выход
+  MDR_PORTE->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTE->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTE->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTF->OE = 0xffff;               // порт D на выход, модуль SSP1 
+  MDR_PORTF->FUNC = (2 << 6) |			// режим  пинов 1, 2, 3, 4 порта 
+					(2 << 4) |			// - альтернативный, задействован модуль SSP1
+					(2 << 2) |
+					(2 << 0);
+
+  MDR_PORTF->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTF->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+   }
+ 
+	void MCU_init (void) {
+	  
+ 	 OSC_init();
+	 SysTickTimer_Init();
+ 	 GPIO_init();  
+  	 MDR32_SSP1_init();
+	 
+	}
+
+/*=========================================================================== */
+	int main()							  
+{
+  
+ int Temper = 0;		// температура
+
+ MCU_init();		// иницализация системы тактирования,
+  					// модулей GPIO, SPI
+ LCD_init();
+ LCD_Clear();
+ 
+ while(1)
+  {	
+    Temper = ds18b20_rd_t();
+	
+    LCD_set_cursor(6);
+	LCD_Wr_num(Temper,5);
+  }
+
+}

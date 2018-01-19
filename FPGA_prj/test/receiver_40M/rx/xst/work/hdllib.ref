@@ -1,0 +1,4 @@
+AR rx_main beh C:/Xilinx/test/receiver_40M/rx/RX_main.vhd sub00/vhpl01 1376481362
+AR fx_conv beh C:/Xilinx/test/receiver_40M/rx/fx_conv.vhd sub00/vhpl03 1376481360
+EN rx_main NULL C:/Xilinx/test/receiver_40M/rx/RX_main.vhd sub00/vhpl00 1376481361
+EN fx_conv NULL C:/Xilinx/test/receiver_40M/rx/fx_conv.vhd sub00/vhpl02 1376481359

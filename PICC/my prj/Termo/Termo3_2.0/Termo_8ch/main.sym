@@ -1,0 +1,367 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W3  @SI64TOF64.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0 -W3  @DIVFF64.P3
+W0 -W1  @SFTOI.P4
+W0 -W1  @FTOSD.P5
+W0 -W1  @DIV3232B.P6
+W0 -W3  @I64TOF64.P7
+W0 -W1  @FLT.P8
+W0 -W3  @MULS6464.P9
+W0 -W1  @MUL3232.P10
+W0 -W1  @MULS3232.P11
+W0 -W3  @DIVS6464.P12
+W0 -W1  @MULFF.P13
+W0 -W1  @SDTOF.P14
+W0 -W3  @ADDFF64.P15
+W0      @delay_ms1.P16
+W0 -W1  @DIVS3232A.P17
+W0      @delay_us1.P18
+W0 -W1  @PRINTFU32_9600_5893_5892.P19
+W0 -W2  @MULFF48.P20
+W0      @ITOF.P21
+W0 -W3  @SI64TOF48.P22
+W0 -W1  @READ_PROGRAM_MEMORY.P23
+W0 -W2  @DIVFF48.P24
+W0 -W1  @SPI_XFERM_1.P25
+W0 -W1  @ADDFF.P26
+W0 -W3  @MULFF64.P27
+W0 -W2  @F48TO64.P28
+W0 -W1  @DIVFF.P29
+W0 -W2  @DIVS4848.P30
+W0      @SITOF.P31
+W0 -W3  @F64TO48.P32
+W0 -W1  @DIV3232A.P33
+W0 -W1  @WRITE_PROGRAM_MEMORY.P34
+W0 -W2  @ADDFF48.P35
+W0 -W2  @MULS4848.P36
+W1      @SCRATCH
+W1      @WRITE_PACKED_MEMORY.P1
+W1      @READ_PACKED_MEMORY.P2
+W1      @NVR_WR.P3
+W2      @READ_ROM_MEMORY.P1
+W2 -W3  @MULS3232.P2
+W2 -W3  @MULFF.P3
+W2      @WRITE_PACKED_MEMORY.P4
+W2 -W3  @DIVFF.P5
+W2      @WRITE_PROGRAM_MEMORY.P6
+W2 -W3  @FLT.P7
+W2      @READ_PROGRAM_MEMORY.P8
+W2 -W3  @ADDFF.P9
+W2 -W3  @MUL3232.P10
+W2 -W3  @DIV3232B.P11
+W2      @READ_PACKED_MEMORY.P12
+W2 -W3  @DIV3232A.P13
+W2      @SPI_XFERM_1.P14
+W2 -W3  @DIVS3232A.P15
+W3      @READ_ROM_MEMORY.P1
+W3      @WRITE_PROGRAM_MEMORY.P2
+W3 -W5  @MULFF48.P3
+W3      @READ_PACKED_MEMORY.P4
+W3      @READ_PROGRAM_MEMORY.P5
+W3      @WRITE_PACKED_MEMORY.P6
+W3 -W5  @MULS4848.P7
+W3 -W5  @ADDFF48.P8
+W3 -W5  @DIVS4848.P9
+W3 -W5  @DIVFF48.P10
+W4 -W7  @ADDFF64.P1
+W4 -W7  @DIVS6464.P2
+W4 -W7  @MULS6464.P3
+W4      @PRINTFU32_9600_5893_5892.P4
+W4 -W7  @MULFF64.P5
+W4 -W7  @DIVFF64.P6
+230     U2MODE
+238     U2BRG
+2C4     LATA
+2C6     TRISB
+2C6.0   TRB0
+2C6.1   TRB1
+2C6.2   CN3_TRIS
+2C6.3   CN4_TRIS
+2C6.4   CN2_TRIS
+2C6.5   CN1_TRIS
+2C7.5   Status_LED_TRIS
+2C7.6   TRB14
+2C7.7   XPORT_RST_n
+2C7.7   XPORT_RST_TRIS
+2C8     PORTB
+2C8.2   CN3
+2C8.3   CN4
+2C8.4   CN2
+2C8.5   CN1
+2CA.0   RB0
+2CA     LATB
+2CA.1   RB1
+2CB.5   Status_LED
+2CC     TRISC
+2CC.1   TRC1
+2CC.2   TRC2
+2CC.4   TRC4
+2CD.5   TRC13
+2CD.6   TRC14
+2CE     PORTC
+2CF.5   RC13
+2CF.6   RC14
+2D0     LATC
+2D2.0   ADC2_RESET_TRIS
+2D2     TRISD
+2D2.1   ADC_DRDY_TRIS
+2D2.2   ADC_SYNC_TRIS
+2D2.3   ADC_RESET_TRIS
+2D2.4   TRD4
+2D2.5   TRD5
+2D2.6   TRD6
+2D2.7   TRD7
+2D3.0   TRD8
+2D3.1   ADC2_DRDY_TRIS
+2D3.2   ADC2_CS_TRIS
+2D3.3   ADC2_SYNC_TRIS
+2D4     PORTD
+2D4.1   ADC_DRDY
+2D5.1   ADC2_DRDY
+2D6     LATD
+2D6.0   ADC2_RESET
+2D6.2   ADC_SYNC
+2D6.3   ADC_RESET
+2D6.4   RD4
+2D6.5   RD5
+2D6.6   RD6
+2D6.7   RD7
+2D7.0   RD8
+2D7.2   ADC2_CS
+2D7.3   ADC2_SYNC
+2DE     TRISF
+2DE.4   UART2_RX_TRIS
+2DE.5   UART2_TX_TRIS
+2E0     PORTF
+2E2     LATF
+2E4     TRISG
+2E4.0   TRG0
+2E4.1   TRG1
+2E4.6   SCK2_TRIS
+2E4.7   SDI2_TRIS
+2E5.0   SDO2_TRIS
+2E5.1   ADC_CS_TRIS
+2E5.4   LCD_RW_TRIS
+2E5.5   LCD_RS_TRIS
+2E5.6   LCD_E_TRIS
+2E6     PORTG
+2E8     LATG
+2E8.0   RG0
+2E8.1   RG1
+2E8.6   SCK2
+2E8.7   SDI2
+2E9.0   SDO2
+2E9.1   ADC_CS
+2E9.4   LCD_RW
+2E9.5   LCD_RS
+2E9.6   LCD_E
+2E9.7   RG15
+6D2     ODCD
+744     CLKDIV
+744.0   PLLPRE0
+744.1   PLLPRE1
+744.2   PLLPRE2
+744.3   PLLPRE3
+744.4   PLLPRE4
+744.6   PLLPOST0
+744.7   PLLPOST1
+746     PLLFBD
+800-801 strtok.save
+802-805 _Randseed
+806-809 ADC_RByte1
+80A-80D ADC_RByte2
+80E-811 ADC_RByte3
+812-815 ADC_RByte_Sum
+816-819 ADCresult
+81A-81D Vin
+81E     PGA
+81F     Sps_buf
+820     Global_Ch_Number
+821     ostatok_int_dec
+822-823 ADCaddCoef
+824-827 ADCmulCoef
+828-82B Final_T_in_K
+82C     ostatok_int_sot
+82D     LCD_num_symb
+82E-831 flash_wr_data
+832     Aver_Wr
+833     Sps_Wr
+834     CRC_Wr
+835     ADC_select
+836     menu_item
+837     menu_sel
+838     menu_fl
+839.0   meas_stop_fl
+839.1   LCD_clear_fl
+839.2   reset_fl
+83A     NumAver
+83B     ADC_sps_var
+83C     CRC1
+83D     CRC2
+83E     CRC_buf
+83F     buf
+83F.4   buf4
+83F.5   buf5
+83F.6   buf6
+83F.7   buf7
+840-843 flash_rd_data
+844-847 temp
+848     MAIN.ch
+84A     ADC_set_PGA.PGA_val
+84A-84B Bpush_delay.counter
+84A     ADC_rd_and_print_ch.chanel
+84A-84B Crc8.pcBlock
+84A-84D LCDPutU16._u16
+84A     ADC_sps_set.SPS
+84C     ADC_setCh.Ch_Number
+84C-84F LCDPutU32._u16
+84C-84D Crc8.len
+84C     LCDSetCursor.ucPos
+84C     ADC_vol_average.NumSamples
+84D     ADC_vol_average.i
+84E-851 ADC_vol_average.A
+84E     Crc8.crc
+84E     LCDPutU16.u8NumDigs
+84E     WrReg.RegName
+84E     LCDMsg.c
+84F     WrReg.CommandByte
+850-853 LCDPutU16.u16a
+850     LCDPutU32.u8NumDigs
+850-851 Crc8.i
+850     LCDCommand.uc
+852-855 ADC_vol_average.Sum
+852-855 LCDPutU32.u16a
+854-857 LCDPutU16.u16b
+856-859 LCDPutU32.u16b
+858-85B Read_ADC_vol_in.k
+85C-85F Read_ADC_vol_in.VinInt
+860     LCDPutCh.c
+862     LCDWriteData.uc
+868     LCDWriteNibble.uc
+2780-27FF Stack
+
+ROM Allocation:
+000200  @const1239.call
+00021A  @const1240.call
+000234  @const1241.call
+000252  @const1350.call
+00026C  @const1351.call
+000286  @const1352.call
+0002A0  @const1353.call
+0002BA  @const1355.call
+0002CA  @const1356.call
+0002DA  @const1372.call
+0002F4  @const1373.call
+000312  @const1394.call
+00032E  @const1395.call
+00034A  @const1396.call
+000362  @const1397.call
+00037C  @const1398.call
+00039A  @const1399.call
+0003B2  @const1400.call
+0003CE  @const1401.call
+0003E8  @const1402.call
+000402  DisableInt
+000416  cn_irq_handler
+000472  timer1_irq_handler
+00049A  OscSetup
+0004B6  EnableInt
+0004D6  MCU_init
+000530  @delay_ms1
+000548  LCDWriteNibble
+00058A  LCDCommand
+0005B6  LCDInit
+000656  LCDClear
+000664  LCDWriteData
+000692  LCDPutCh
+00069C  LCDMsg
+0006A6  LCDSetCursor
+0006BA  LCDWelcome
+000726  @READ_PROGRAM_MEMORY
+000754  Rd_Flash
+000778  Crc8
+0007C6  ADC_wakeUp
+0007EA  WrReg
+00084A  ADC_StopRd
+00087E  ADC_sps_set
+000894  ADC_init
+00092A  ADC_set_PGA
+0009C0  ADC_SelfCal
+000A9E  Full_dev_reset
+000B28  ADC_StartRdContin
+000B58  @DIVS3232A
+000BD6  ADC_RdataC
+000D1A  ADC_setCh
+000DF2  @MULS3232
+000E34  @I64TOF64
+000E98  @MULFF64
+000FA8  @SI64TOF64
+00100C  @DIVFF64
+001114  @F48TO64
+00115A  @F64TO48
+00119E  @SDTOF
+0011EC  @MULFF
+0012B0  @FTOSD
+0012F0  Read_ADC_vol_in
+0013E2  ADC_vol_average
+00142A  @DIV3232A
+00147E  @MUL3232
+0014AE  LCDPutU32
+0016C2  @DIV3232B
+001706  @PRINTFU32_9600_5893_5892
+0017CE  ADC_rd_and_print_ch
+001B4C  Bpush_delay
+001B5E  LCD_print_menu
+001BE2  LCD_main_menu
+001E12  LCDPutU16
+001F4E  @NVR_WR
+001F76  @WRITE_PROGRAM_MEMORY
+001FF8  Wr_Flash
+002018  save_to_flash
+002034  MAIN
+002034  @cinit1
+0020AC  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+0136  m1
+
+Project Directory:
+    D:\work\Projects\PICC\my prj\Termo3_2.0\Termo_8ch\
+
+Project Files:
+    main.c                                                  [10-לאי-15 11:58  CRC=8624B220]
+    main.h                                                  [04-לאנ-14 15:29  CRC=A54ADC60]
+    C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [08-לאי-15 18:09  CRC=C558AE71]
+    C:\Program Files (x86)\PICC\Drivers\stdlib.h            [08-ט‏ם-11 14:39  CRC=0B6669CF]
+    C:\Program Files (x86)\PICC\Drivers\stddef.h            [16-ט‏כ-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\Drivers\string.h            [14-ט‏כ-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-ÿםג-08 13:55  CRC=2D1F019F]
+    LCD_16X4_Termo3.h                                       [24-פוג-14 12:59  CRC=21BC766A]
+    ADS1256.h                                               [04-לאנ-14 15:28  CRC=00040BA9]
+
+Source signature=F87D0F16
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC24HJ128GP506A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

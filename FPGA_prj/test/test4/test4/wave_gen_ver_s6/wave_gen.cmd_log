@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/wave_gen.xst" -ofn "C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/wave_gen.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -uc wave_gen_timing.ucf -uc wave_gen_pins.ucf -p xc6slx45t-fgg484-2 wave_gen.ngc wave_gen.ngd  
+map -intstyle ise -p xc6slx45t-fgg484-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -ignore_keep_hierarchy -pr off -lc off -power off -o wave_gen_map.ncd wave_gen.ngd wave_gen.pcf 
+par -w -intstyle ise -ol high -mt off wave_gen_map.ncd wave_gen.ncd wave_gen.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml wave_gen.twx wave_gen.ncd -o wave_gen.twr wave_gen.pcf -ucf wave_gen_timing.ucf -ucf wave_gen_pins.ucf 
+bitgen -intstyle ise -f wave_gen.ut wave_gen.ncd 

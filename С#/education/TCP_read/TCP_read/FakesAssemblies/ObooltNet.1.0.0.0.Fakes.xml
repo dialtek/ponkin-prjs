@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ObooltNet.1.0.0.0.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:ObooltNet.Fakes.ShimNetConnection">
+            <summary>Тип оболочки совместимости для ObooltNet.NetConnection</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.ShimNetConnection.#ctor">
+            <summary>Инициализация нового экземпляра оболочки совместимости</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.ShimNetConnection.#ctor(ObooltNet.NetConnection)">
+            <summary>Инициализация новой оболочки совместимости для заданного экземпляра</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.ShimNetConnection.BehaveAsCurrent">
+            <summary>Назначение поведения &quot;Current&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.ShimNetConnection.BehaveAsNotImplemented">
+            <summary>Назначение поведения &quot;NotImplemented&quot; всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.Behavior">
+            <summary>Назначение поведения всем методам типа с оболочкой совместимости</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CallOnConnectNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.CallOnConnect(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CallOnDataReceivedNetConnectionByteArray">
+            <summary>Задает оболочка совместимости NetConnection.CallOnDataReceived(NetConnection connection, Byte[] data)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CallOnDisconnectNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.CallOnDisconnect(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CheckClientAlreadyConnected">
+            <summary>Задает оболочка совместимости NetConnection.CheckClientAlreadyConnected()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CheckClientUsedAsServer">
+            <summary>Задает оболочка совместимости NetConnection.CheckClientUsedAsServer()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CheckServerAlreadyStarted">
+            <summary>Задает оболочка совместимости NetConnection.CheckServerAlreadyStarted()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.CheckServerUsedAsClient">
+            <summary>Задает оболочка совместимости NetConnection.CheckServerUsedAsClient()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.ConnectIPAddressInt32">
+            <summary>Задает оболочка совместимости NetConnection.Connect(IPAddress address, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.ConnectStringInt32">
+            <summary>Задает оболочка совместимости NetConnection.Connect(String hostname, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.Constructor">
+            <summary>Задает оболочка совместимости NetConnection.NetConnection()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.ConstructorTcpClient">
+            <summary>Задает оболочка совместимости NetConnection.NetConnection(TcpClient client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.Disconnect">
+            <summary>Задает оболочка совместимости NetConnection.Disconnect()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.ListenAsync">
+            <summary>Задает оболочка совместимости NetConnection.ListenAsync()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnConnectAddNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.add_OnConnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnConnectRemoveNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnConnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnDataReceivedAddNetConnectionNetConnectionEventHandlerOfByteArray">
+            <summary>Задает оболочка совместимости NetConnection.add_OnDataReceived(NetConnectionEventHandler`1&lt;Byte[]&gt; value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnDataReceivedRemoveNetConnectionNetConnectionEventHandlerOfByteArray">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnDataReceived(NetConnectionEventHandler`1&lt;Byte[]&gt; value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnDisconnectAddNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.add_OnDisconnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.OnDisconnectRemoveNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnDisconnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.ReceiveFromAsyncNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.ReceiveFromAsync(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.RemoteEndPointGet">
+            <summary>Задает оболочка совместимости NetConnection.get_RemoteEndPoint()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.SendByteArray">
+            <summary>Задает оболочка совместимости NetConnection.Send(Byte[] data)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.StartIPAddressInt32">
+            <summary>Задает оболочка совместимости NetConnection.Start(IPAddress address, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.StartInt32">
+            <summary>Задает оболочка совместимости NetConnection.Start(Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.StartListen">
+            <summary>Задает оболочка совместимости NetConnection.StartListen()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.StartReceiveFromNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.StartReceiveFrom(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.Stop">
+            <summary>Задает оболочка совместимости NetConnection.Stop()</summary>
+        </member>
+        <member name="T:ObooltNet.Fakes.ShimNetConnection.AllInstances">
+            <summary>Определение оболочек совместимости для всех членов экземпляров</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CallOnConnectNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.CallOnConnect(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CallOnDataReceivedNetConnectionByteArray">
+            <summary>Задает оболочка совместимости NetConnection.CallOnDataReceived(NetConnection connection, Byte[] data)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CallOnDisconnectNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.CallOnDisconnect(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CheckClientAlreadyConnected">
+            <summary>Задает оболочка совместимости NetConnection.CheckClientAlreadyConnected()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CheckClientUsedAsServer">
+            <summary>Задает оболочка совместимости NetConnection.CheckClientUsedAsServer()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CheckServerAlreadyStarted">
+            <summary>Задает оболочка совместимости NetConnection.CheckServerAlreadyStarted()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.CheckServerUsedAsClient">
+            <summary>Задает оболочка совместимости NetConnection.CheckServerUsedAsClient()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.ConnectIPAddressInt32">
+            <summary>Задает оболочка совместимости NetConnection.Connect(IPAddress address, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.ConnectStringInt32">
+            <summary>Задает оболочка совместимости NetConnection.Connect(String hostname, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.Disconnect">
+            <summary>Задает оболочка совместимости NetConnection.Disconnect()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.ListenAsync">
+            <summary>Задает оболочка совместимости NetConnection.ListenAsync()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnConnectAddNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.add_OnConnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnConnectRemoveNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnConnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnDataReceivedAddNetConnectionNetConnectionEventHandlerOfByteArray">
+            <summary>Задает оболочка совместимости NetConnection.add_OnDataReceived(NetConnectionEventHandler`1&lt;Byte[]&gt; value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnDataReceivedRemoveNetConnectionNetConnectionEventHandlerOfByteArray">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnDataReceived(NetConnectionEventHandler`1&lt;Byte[]&gt; value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnDisconnectAddNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.add_OnDisconnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.OnDisconnectRemoveNetConnectionNetConnectionEventHandler">
+            <summary>Задает оболочка совместимости NetConnection.remove_OnDisconnect(NetConnectionEventHandler value)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.ReceiveFromAsyncNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.ReceiveFromAsync(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.RemoteEndPointGet">
+            <summary>Задает оболочка совместимости NetConnection.get_RemoteEndPoint()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.SendByteArray">
+            <summary>Задает оболочка совместимости NetConnection.Send(Byte[] data)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.StartIPAddressInt32">
+            <summary>Задает оболочка совместимости NetConnection.Start(IPAddress address, Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.StartInt32">
+            <summary>Задает оболочка совместимости NetConnection.Start(Int32 port)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.StartListen">
+            <summary>Задает оболочка совместимости NetConnection.StartListen()</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.StartReceiveFromNetConnection">
+            <summary>Задает оболочка совместимости NetConnection.StartReceiveFrom(NetConnection client)</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.ShimNetConnection.AllInstances.Stop">
+            <summary>Задает оболочка совместимости NetConnection.Stop()</summary>
+        </member>
+        <member name="T:ObooltNet.Fakes.StubNetConnection">
+            <summary>Тип заглушки ObooltNet.NetConnection</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.StubNetConnection.#ctor">
+            <summary>Инициализирует новый экземпляр</summary>
+        </member>
+        <member name="M:ObooltNet.Fakes.StubNetConnection.InitializeStub">
+            <summary>Инициализирует новый экземпляр type StubNetConnection</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.StubNetConnection.CallBase">
+            <summary>Получает или задает значение, указывающее, следует ли вызывать базовый метод вместо резервного поведения</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.StubNetConnection.InstanceBehavior">
+            <summary>Получает или задает поведение экземпляра.</summary>
+        </member>
+        <member name="P:ObooltNet.Fakes.StubNetConnection.InstanceObserver">
+            <summary>Получает или задает наблюдатель экземпляра.</summary>
+        </member>
+    </members>
+</doc>

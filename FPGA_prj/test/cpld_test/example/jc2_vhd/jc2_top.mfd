@@ -1,0 +1,82 @@
+MDF Database:  version 1.0
+MDF_INFO | jc2_top | XC9572XL-7-CS48
+MACROCELL | 2 | 7 | Q_int<0>
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 2 | 0 | 7 | 1 | 4
+INPUTS | 4 | Q<1>  | DIR  | Q<3>  | RUN
+INPUTMC | 4 | 0 | 7 | 1 | 17 | 1 | 4 | 0 | 17
+EQ | 4 | 
+   Q<0>.D = Q<1> & !DIR
+	# !Q<3> & DIR;
+   Q<0>.CLK = CLK;	// GCK
+   Q<0>.CE = RUN;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 7 | Q_int<1>
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 2 | 2 | 7 | 1 | 10
+INPUTS | 4 | Q<2>  | DIR  | Q<0>  | RUN
+INPUTMC | 4 | 1 | 10 | 1 | 17 | 2 | 7 | 0 | 17
+EQ | 4 | 
+   Q<1>.D = Q<0> & DIR
+	# Q<2> & !DIR;
+   Q<1>.CLK = CLK;	// GCK
+   Q<1>.CE = RUN;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 10 | Q_int<2>
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 2 | 0 | 7 | 1 | 4
+INPUTS | 4 | Q<1>  | DIR  | Q<3>  | RUN
+INPUTMC | 4 | 0 | 7 | 1 | 17 | 1 | 4 | 0 | 17
+EQ | 4 | 
+   Q<2>.D = Q<1> & DIR
+	# Q<3> & !DIR;
+   Q<2>.CLK = CLK;	// GCK
+   Q<2>.CE = RUN;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 4 | Q_int<3>
+ATTRIBUTES | 8815426 | 0
+OUTPUTMC | 2 | 2 | 7 | 1 | 10
+INPUTS | 4 | Q<0>  | DIR  | Q<2>  | RUN
+INPUTMC | 4 | 2 | 7 | 1 | 17 | 1 | 10 | 0 | 17
+EQ | 4 | 
+   Q<3>.D = !Q<0> & !DIR
+	# Q<2> & DIR;
+   Q<3>.CLK = CLK;	// GCK
+   Q<3>.CE = RUN;
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 1 | 17 | DIR
+ATTRIBUTES | 8553216 | 0
+OUTPUTMC | 5 | 2 | 7 | 0 | 7 | 1 | 10 | 1 | 4 | 1 | 17
+INPUTS | 3 | RIGHT  | DIR  | LEFT
+INPUTMC | 1 | 1 | 17
+INPUTP | 2 | 46 | 92
+EQ | 3 | 
+   DIR.D = RIGHT & DIR
+	# RIGHT & !LEFT;
+   DIR.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+MACROCELL | 0 | 17 | RUN
+ATTRIBUTES | 8553216 | 0
+OUTPUTMC | 5 | 2 | 7 | 0 | 7 | 1 | 10 | 1 | 4 | 0 | 17
+INPUTS | 4 | STOP  | RIGHT  | RUN  | LEFT
+INPUTMC | 1 | 0 | 17
+INPUTP | 3 | 72 | 46 | 92
+EQ | 3 | 
+   !RUN.D = !STOP
+	# RIGHT & !RUN & LEFT;
+   RUN.CLK = CLK;	// GCK
+GLOBALS | 1 | 2 | CLK
+
+PIN | CLK | 16384 | 0 | N/A | 24 | 6 | 2 | 7 | 0 | 7 | 1 | 10 | 1 | 4 | 1 | 17 | 0 | 17
+PIN | RIGHT | 64 | 0 | N/A | 46 | 2 | 1 | 17 | 0 | 17
+PIN | LEFT | 64 | 0 | N/A | 92 | 2 | 1 | 17 | 0 | 17
+PIN | STOP | 64 | 0 | N/A | 72 | 1 | 0 | 17
+PIN | Q<0> | 536871040 | 0 | N/A | 33
+PIN | Q<1> | 536871040 | 0 | N/A | 15
+PIN | Q<2> | 536871040 | 0 | N/A | 3
+PIN | Q<3> | 536871040 | 0 | N/A | 88

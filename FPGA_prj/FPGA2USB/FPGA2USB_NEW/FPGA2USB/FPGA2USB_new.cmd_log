@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.xst" -ofn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.syr" 
+xst -intstyle ise -ifn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.xst" -ofn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.syr" 
+xst -intstyle ise -ifn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.xst" -ofn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.syr" 
+xst -intstyle ise -ifn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.xst" -ofn "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB_NEW/FPGA2USB/FPGA2USB_new.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 FPGA2USB_new.ngc FPGA2USB_new.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o FPGA2USB_new_map.ncd FPGA2USB_new.ngd FPGA2USB_new.pcf 

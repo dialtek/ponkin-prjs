@@ -1,0 +1,10 @@
+NET "gclk"    LOC = "P43";
+NET "spi_clk"  LOC = "P44";
+
+NET "D"        LOC = "P8";
+NET "shout"    LOC = "P23";
+NET "Q"    		LOC = "P29";
+
+NET "CE"       LOC = "P22";
+
+NET "LED"      LOC = "P1";

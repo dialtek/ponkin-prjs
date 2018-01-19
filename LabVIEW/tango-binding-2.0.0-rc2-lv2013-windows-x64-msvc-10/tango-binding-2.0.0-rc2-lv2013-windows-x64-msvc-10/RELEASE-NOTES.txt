@@ -1,0 +1,29 @@
+**********************************************************
+********         Tango Binding for LabVIEW        ********
+**********************************************************
+
+1. About this distribution
+----------------------------
+This is release 2.0.0 RC2 for the Windows 64 bit version of LabVIEW 2013 
+It has been compiled using Microsoft Visual C++ 10 (the associated runtime libraries are provided).
+
+2. Changes since last version (1.8.0)
+------------------------------------
+Tango events are now fully supported. 
+Better error handling.
+
+3. Known problems
+-------------------
+The _ReloadDeviceInterface.vi might cause a crash in case a LabVIEW thread is communicating with the 
+device which interface is to be reloaded. No choice, just make sure no other LabVIEW vi is accessing this Tango device.
+NB: _ReloadDeviceInterface.vi is supposed to be only used for devices having dynamic attributes (e.g. the archiving extractor). 
+  
+4. Feedback & Bug report
+--------------------------
+Send your comments to tango@esrf.fr (i.e. the Tango mailing list)
+
+Have fun with Tango for LabVIEW.
+Nicolas Leclercq - Synchrotron SOLEIL
+
+
+

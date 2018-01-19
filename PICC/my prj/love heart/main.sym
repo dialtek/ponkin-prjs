@@ -1,0 +1,125 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0      @delay_ms1.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0 -W1  @DIV3232B.P3
+W0      @delay_us1.P4
+W1      @SCRATCH
+W1      @READ_PACKED_MEMORY.P1
+W1      @WRITE_PACKED_MEMORY.P2
+W2 -W3  @DIV3232B.P1
+W2      @READ_ROM_MEMORY.P2
+W2      @WRITE_PACKED_MEMORY.P3
+W2      @READ_PACKED_MEMORY.P4
+W3      @READ_ROM_MEMORY.P1
+W3      @WRITE_PACKED_MEMORY.P2
+W3      @READ_PACKED_MEMORY.P3
+2C0     TRISA
+2C2     PORTA
+2C2.0   RA0
+2C2.1   RA1
+2C2.2   RA2
+2C2.3   RA3
+2C2.4   RA4
+2C2.7   RA7
+2C3.0   RA8
+2C3.1   RA9
+2C3.2   RA10
+2C6     ODCA
+2C8     TRISB
+2C8.6   TR_KN
+2CA     PORTB
+2CA.0   RB0
+2CA.1   RB1
+2CA.2   RB2
+2CA.3   RB3
+2CA.4   RB4
+2CA.5   RB5
+2CA.6   RB6
+2CA.7   RB7
+2CB.0   RB8
+2CB.1   RB9
+2CB.2   RB10
+2CB.3   RB11
+2CB.4   RB12
+2CB.5   RB13
+2CB.6   RB14
+2CB.7   RB15
+2CE     ODCB
+2D0     TRISC
+2D2     PORTC
+2D2.0   RC0
+2D2.1   RC1
+2D2.2   RC2
+2D2.3   RC3
+2D2.4   RC4
+2D2.5   RC5
+2D2.6   RC6
+2D2.7   RC7
+2D3.0   RC8
+2D3.1   RC9
+2D6     ODCC
+800-801 i
+802-803 b
+804-805 n
+806.0   fl1
+807     t_out
+808     b_hold
+809     b_push
+80A     rnd_blink2.x
+80A-80B L1.x
+80A-80B blink1.x
+80A     rnd_blink.delay
+80A-80B blink2.y
+814     i
+1F80-1FFF Stack
+
+ROM Allocation:
+0200  @delay_ms1
+0210  TIMER1_isr
+0260  blink1
+0582  blink2
+0B5C  L1
+116A  rnd_blink
+1264  rnd_blink2
+18FE  MAIN
+18FE  @cinit1
+1916  @cinit2
+
+
+User Memory space: 
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Program Files (x86)\PICC\my prj\love heart\
+
+Project Files:
+    main.c                                                  [03-дек-12 16:32  CRC=07490077]
+    ..\..\devices\33FJ64GP204.h                             [28-фев-12 13:44  CRC=2FDB017C]
+
+Source signature=66FF036F
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      DSPIC33FJ64GP204
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

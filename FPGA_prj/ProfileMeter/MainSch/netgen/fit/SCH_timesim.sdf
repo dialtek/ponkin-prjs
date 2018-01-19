@@ -1,0 +1,61 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "SCH")
+  (DATE "Wed Oct 07 18:19:04 2015")
+  (VENDOR "Xilinx")
+  (PROGRAM "Xilinx SDF Writer")
+  (VERSION "P.49d")
+  (DIVIDER /)
+  (TIMESCALE 1 ps)
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE LED_2)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O ( 2000 )( 2000 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE LED_OBUF)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O ( 0 )( 0 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE LED_OBUF_Q)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O ( 500 )( 500 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_XOR2")
+    (INSTANCE LED_OBUF_D)
+      (DELAY
+        (ABSOLUTE
+          (PORT I0 ( 0 )( 0 ))
+          (PORT I1 ( 0 )( 0 ))
+          (IOPATH I0 O ( 0 )( 0 ))
+          (IOPATH I1 O ( 0 )( 0 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE NlwBufferBlock_LED_OBUF_D_IN0)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O ( 0 )( 0 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE NlwBufferBlock_LED_OBUF_D_IN1)
+      (DELAY
+        (ABSOLUTE
+          (IOPATH I O ( 0 )( 0 ))
+        )
+      )
+  )
+)

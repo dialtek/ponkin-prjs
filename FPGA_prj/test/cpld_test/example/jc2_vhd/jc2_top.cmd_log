@@ -1,0 +1,14 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.xst" -ofn "D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc jc2_top.ucf -p xc9572xl-CS48-7 jc2_top.ngc jc2_top.ngd  
+cpldfit -intstyle ise -p xc9572xl-7-CS48 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper jc2_top.ngd 
+XSLTProcess jc2_top_build.xml 
+tsim -intstyle ise jc2_top jc2_top.nga 
+taengine -intstyle ise -f jc2_top -w --format html1 -l jc2_top_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n jc2_top -i jc2_top 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.xst" -ofn "D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc jc2_top.ucf -p xc9572xl-CS48-7 jc2_top.ngc jc2_top.ngd  
+cpldfit -intstyle ise -p xc9572xl-7-CS48 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper jc2_top.ngd 
+XSLTProcess jc2_top_build.xml 
+tsim -intstyle ise jc2_top jc2_top.nga 
+taengine -intstyle ise -f jc2_top -w --format html1 -l jc2_top_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n jc2_top -i jc2_top 

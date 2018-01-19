@@ -1,0 +1,14 @@
+D:\work\Projects\С#\KZ Vitok\bin\Debug\Interop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\bin\Debug\AxInterop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\obj\Debug\KZ Vitok.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\KZ Vitok\obj\Debug\Interop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\obj\Debug\AxInterop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\obj\Debug\KZ Vitok.csproj.ResolveComReference.cache
+D:\work\Projects\С#\KZ Vitok\obj\Debug\KZ Vitok.csproj.GenerateResource.Cache
+D:\work\Projects\С#\KZ Vitok\obj\Debug\KZ_vitok.Form1.resources
+D:\work\Projects\С#\KZ Vitok\obj\Debug\KZ_vitok.Properties.Resources.resources
+D:\work\Projects\С#\KZ Vitok\bin\Debug\Ток КЗ витка.exe.config
+D:\work\Projects\С#\KZ Vitok\bin\Debug\Ток КЗ витка.exe
+D:\work\Projects\С#\KZ Vitok\bin\Debug\Ток КЗ витка.pdb
+D:\work\Projects\С#\KZ Vitok\obj\Debug\Ток КЗ витка.exe
+D:\work\Projects\С#\KZ Vitok\obj\Debug\Ток КЗ витка.pdb

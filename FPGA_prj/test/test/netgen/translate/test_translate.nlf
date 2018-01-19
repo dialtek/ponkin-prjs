@@ -1,0 +1,19 @@
+Release 14.2 - netgen P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -rpw 100 -tpw 0 -ar Structure -tm test -w
+-dir netgen/translate -ofmt vhdl -sim test.ngd test_translate.vhd  
+
+Reading design 'test.ngd' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist 'C:\Xilinx\test\test\netgen\translate\test_translate.vhd'
+...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx SIMPRIM
+   simulation primitives and has to be used with SIMPRIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 123364 kilobytes

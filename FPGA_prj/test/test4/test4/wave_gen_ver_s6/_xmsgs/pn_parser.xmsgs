@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated   -->
+<!--     by the Xilinx ISE software.  Any direct editing or        -->
+<!--     changes made to this file may result in unpredictable     -->
+<!--     behavior or data corruption.  It is strongly advised that -->
+<!--     users do not edit the contents of this file.              -->
+<!--                                                               -->
+<!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.    -->
+
+<messages>
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clk_div.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clk_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clkx_bus.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clkx_bus.v</arg>&quot; Line <arg fmt="%d" index="2">48</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clogb2.txt&apos; in file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clkx_bus.v&quot; line 48
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/cmd_parse.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/cmd_parse.v</arg>&quot; Line <arg fmt="%d" index="2">128</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clogb2.txt&apos; in file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/cmd_parse.v&quot; line 128
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/dac_spi.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/debouncer.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/debouncer.v</arg>&quot; Line <arg fmt="%d" index="2">38</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clogb2.txt&apos; in file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/debouncer.v&quot; line 38
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/lb_ctl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/meta_harden.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/out_ddr_flop.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/reset_bridge.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/resp_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1065" >&quot;<arg fmt="%s" index="1">C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/resp_gen.v</arg>&quot; Line <arg fmt="%d" index="2">69</arg>. <arg fmt="%s" index="3">Include file found: &apos;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/clogb2.txt&apos; in file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/resp_gen.v&quot; line 69
+</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/rst_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/samp_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/to_bcd.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/uart_baud_gen.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/uart_rx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/uart_rx_ctl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/uart_tx.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/uart_tx_ctl.v&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1845" ><arg fmt="%s" index="1">Analyzing Verilog file &quot;C:/work/Projects/FPGA_prj/test/test4/test4/wave_gen_ver_s6/wave_gen.v&quot; into library work</arg>
+</msg>
+
+</messages>
+

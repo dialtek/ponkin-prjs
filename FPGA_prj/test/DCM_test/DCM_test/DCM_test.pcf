@@ -1,0 +1,10 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Thu Aug 08 16:23:20 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "DCM_CLK180" LOCATE = SITE "R18" LEVEL 1;
+COMP "Gclk_div_2" LOCATE = SITE "R15" LEVEL 1;
+COMP "DCM_CLKIN" LOCATE = SITE "B8" LEVEL 1;
+SCHEMATIC END;
+

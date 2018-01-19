@@ -1,0 +1,4 @@
+EN wiz2 NULL C:/Xilinx/test/wizard_test/wiz/wiz2.vhd sub00/vhpl02 1376044821
+EN wiz_main NULL C:/Xilinx/test/wizard_test/wiz/wiz_main.vhd sub00/vhpl00 1376044823
+AR wiz2 behavioral C:/Xilinx/test/wizard_test/wiz/wiz2.vhd sub00/vhpl03 1376044822
+AR wiz_main beh C:/Xilinx/test/wizard_test/wiz/wiz_main.vhd sub00/vhpl01 1376044824

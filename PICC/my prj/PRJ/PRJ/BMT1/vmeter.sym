@@ -1,0 +1,228 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     buf
+018.4   buf4
+018.5   buf5
+018.6   buf6
+018.7   buf7
+019-01A Ih
+01B-01C Ut
+01D     TMR0fl
+01E     ff1
+01F-020 pwm_val
+021     MAIN.ch
+022     MAIN.i
+023     MAIN.ff
+024-025 MAIN.val
+026-029 MAIN.ADC_value
+02A-02D MAIN.t_out
+02E-031 MAIN.b_hold
+032-035 MAIN.b_push
+036-037 LCDWelcome.u16a
+036     Ih_LCDUpdate.ns
+036     Pa_LCDUpdate.ns
+036     @delay_us1.P1
+036     PBScan.pb
+036     Ut_LCDUpdate.ns
+036-037 U16EEWrite.DATA
+036     LCDInit.@SCRATCH1
+036     MAIN.@SCRATCH1
+037-038 Ih_LCDUpdate.num1
+037     PBScan.uc
+037-038 Ut_LCDUpdate.num1
+037-038 Pa_LCDUpdate.num1
+037     MAIN.@SCRATCH2
+038     U16EEWrite.Adr
+038-039 @PRINTF_LU_9600_31766_31767.P1
+038     LCDWelcome.@SCRATCH1
+038     MAIN.@SCRATCH3
+039-03A Pa_LCDUpdate.num2
+039-03A Ih_LCDUpdate.num2
+039     U16EEWrite.value
+039-03A Ut_LCDUpdate.num2
+039     MAIN.@SCRATCH4
+03A     U16EERead.Adr
+03A     @delay_ms1.P1
+03A     U16EEWrite.@SCRATCH1
+03A     @PRINTF_LU_9600_31766_31767.@SCRATCH1
+03B     U16EERead.value
+03B-03C Pa_LCDUpdate.pres
+03B-03C Ut_LCDUpdate.mod
+03B-03C Ih_LCDUpdate.mod
+03B     U16EEWrite.@SCRATCH2
+03B     @PRINTF_LU_9600_31766_31767.@SCRATCH2
+03C-03D U16EERead.DATA
+03C     @PRINTF_LU_9600_31766_31767.@SCRATCH3
+03D-03E Pa_LCDUpdate.mod
+03D     Ih_LCDUpdate.@SCRATCH1
+03D     Ut_LCDUpdate.@SCRATCH1
+03D     @PRINTF_LU_9600_31766_31767.@SCRATCH4
+03E     U16EERead.@SCRATCH1
+03E     @PRINTF_LU_9600_31766_31767.@SCRATCH5
+03F-040 LCDPutS16.s16a
+03F-040 @DIV1616.P1
+03F     LCDSetCursor.ucPos
+03F-040 @MUL1616.P1
+03F     U16EERead.@SCRATCH2
+03F     Pa_LCDUpdate.@SCRATCH1
+03F     @PRINTF_LU_9600_31766_31767.@SCRATCH6
+040     LCDMsg.c
+040     LCDSetCursor.@SCRATCH1
+040     Pa_LCDUpdate.@SCRATCH2
+040     @PRINTF_LU_9600_31766_31767.@SCRATCH7
+041     LCDPutS16.u8NumDigs
+041     LCDCommand.uc
+041-042 @MUL1616.P1
+041-042 @DIV1616.P2
+041     Pa_LCDUpdate.@SCRATCH3
+042     LCDPutS16.c
+042     LCDCommand.@SCRATCH1
+043-046 LCDPutU16._u16
+043     @DIV1616.@SCRATCH1
+043     @MUL1616.@SCRATCH1
+047     LCDPutU16.u8NumDigs
+048-04B LCDPutU16.u16a
+04C-04F LCDPutU16.u16b
+050-053 @DIV3232.P1
+050-053 @MUL3232.P2
+050     LCDPutU16.@SCRATCH1
+051     LCDPutCh.c
+052     LCDWriteData.uc
+053     LCDWriteData.@SCRATCH1
+054-057 @DIV3232.P1
+054     LCDWriteNibble.uc
+054-057 @MUL3232.P1
+058     @DIV3232.@SCRATCH1
+058     @MUL3232.@SCRATCH1
+059     @DIV3232.@SCRATCH2
+059     @MUL3232.@SCRATCH2
+05A     @DIV3232.@SCRATCH3
+05A     @MUL3232.@SCRATCH3
+05B     @DIV3232.@SCRATCH4
+05B     @MUL3232.@SCRATCH4
+05C     @DIV3232.@SCRATCH5
+05C     @MUL3232.@SCRATCH5
+05D     @MUL3232.@SCRATCH6
+F80     PORTA
+F80.2   RA2
+F81.0   LCD_RW
+F81     PORTB
+F81.2   LCD_E
+F81.3   LCD_RS
+F81.4   PORTB4
+F81.5   PORTB5
+F81.6   PORTB6
+F81.7   PORTB7
+F92     TRISA
+F92.2   TRA2
+F93     TRISB
+F94     TRISC
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB-FBC CCP_2
+FBC     CCP_2_HIGH
+FBE-FBF CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+09B6  @delay_ms1
+0A2E  @delay_us1
+009E  TABLE
+0B7E  U16EERead
+13BE  U16EEWrite
+09DE  LCDWriteNibble
+1370  PBScan
+0AFA  LCDWriteData
+0A4C  LCDCommand
+0B32  LCDSetCursor
+0AEC  LCDClear
+0A70  LCDInit
+0B22  LCDPutCh
+0D9C  LCDPutU16
+0C1E  @DIV3232
+0BCA  @MUL3232
+1142  LCDPutS16
+0B2A  LCDMsg
+0B3E  LCDWelcome
+07C0  @const257
+07EA  @const258
+0F96  Ih_LCDUpdate
+0812  @const264
+0D3C  @DIV1616
+0D7E  @MUL1616
+0832  @const271
+084E  @const272
+086A  @const273
+1080  Ut_LCDUpdate
+088A  @const279
+1174  Pa_LCDUpdate
+08AA  @const288
+08C8  @const289
+08E6  @const290
+0904  @const292
+09A2  TIMER0_isr
+1454  MAIN
+0920  @const305
+0946  @const306
+096C  @const307
+0C98  @PRINTF_LU_9600_31766_31767
+1454  @cinit
+
+Project Directory:
+    C:\PRJ\BMT1\
+
+Project Files:
+    vmeter.c
+    ..\..\Program Files\PICC\devices\18F2320.h
+    ..\..\Program Files\PICC\drivers\math.h
+
+Units:
+    vmeter.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F2320
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      vmeter.err
+    Ext Symbols: vmeter.esym
+    INHX32:      vmeter.hex
+    Symbols:     vmeter.sym
+    List:        vmeter.lst
+    Debug/COFF:  vmeter.cof
+    Project:     vmeter.PJT
+    Call Tree:   vmeter.tre
+    Statistics:  vmeter.sta

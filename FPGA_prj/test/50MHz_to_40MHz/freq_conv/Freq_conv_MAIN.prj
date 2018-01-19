@@ -1,0 +1,2 @@
+vhdl work "ipcore_dir/fx_conv.vhd"
+vhdl work "Freq_conv_MAIN.vhd"

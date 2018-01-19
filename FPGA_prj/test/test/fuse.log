@@ -1,0 +1,17 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Xilinx/test/test/test_isim_beh.exe -prj C:/Xilinx/test/test/test_beh.prj work.test 
+ISim P.28xd (signature 0x1048c146)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Xilinx/test/test/test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 120584 KB
+Fuse CPU Usage: 531 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity test
+Time Resolution for simulation is 1ps.
+ERROR:Simulator:861 - Failed to link the design

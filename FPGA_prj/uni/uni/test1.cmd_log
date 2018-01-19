@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/uni/uni/test1.xst" -ofn "D:/work/Projects/FPGA_prj/uni/uni/test1.syr" 

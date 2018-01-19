@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2510682418</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</file>
+      <file>$PROJ_DIR$\CMSIS\core_cm3.c</file>
+      <file>$PROJ_DIR$\inc\core_cm3.h</file>
+      <file>$PROJ_DIR$\inc\system_MDR32F9Qx.h</file>
+      <file>$PROJ_DIR$\inc\MDR32Fx.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbutils.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncinput.pbi</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_config.h</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\mb.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_MDR32F9Qx.o</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbcrc.c</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncdisc.o</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\porttimer.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\portserial.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\mb.o</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mb.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdlib.h</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mbconfig.h</file>
+      <file>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_uart.c</file>
+      <file>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_uart.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbutils.o</file>
+      <file>$PROJ_DIR$\Debug\Exe\prj_file.hex</file>
+      <file>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncholding.o</file>
+      <file>$PROJ_DIR$\..\esis divider key\inc\system_MDR32F9Qx.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncdiag.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfunccoils.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfunccoils.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncdisc.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\portevent.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\porttimer.o</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbrtu.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.o</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\mb.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\portserial.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\MDR32F9Qx_uart.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbrtu.pbi</file>
+      <file>$TOOLKIT_DIR$\config\linker\Milandr\MDR1986VE9x\MDR32F1.icf</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product_string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\string.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\rtu\mbrtu.h</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</file>
+      <file>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbutils.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\portevent.pbi</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mbproto.h</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\port.h</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbcrc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\inttypes.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\prj_file.pbd</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\porttimer.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\milandr\port\port.h</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mbport.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ysizet.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\core_cm3.o</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbrtu.o</file>
+      <file>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\portevent.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbcrc.pbi</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mbfunc.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\assert.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\MDR32F9Qx_uart.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncdiag.pbi</file>
+      <file>$PROJ_DIR$\..\esis divider key\inc\mdr_delay.h</file>
+      <file>$PROJ_DIR$\..\esis divider key\inc\MDR32Fx.h</file>
+      <file>$PROJ_DIR$\..\esis divider key\inc\core_cm3.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbcrc.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\portserial.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncother.o</file>
+      <file>$PROJ_DIR$\..\freemodbus-v1.5.0\modbus\include\mbframe.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\prj_file.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncholding.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncinput.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\mbfuncother.pbi</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 68</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 44</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88 89 6 72 75 43 9 24 53 12 84 35</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 89 6 72 75 43 9 24 53 12 84 35</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 77</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6 72 75 43 9 24 53 12</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 6 72 75 43 9 24 53 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 94</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncinput.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 96</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\mb.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 46</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 26 93 82 54</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 26 93 82 54</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbcrc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 81</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 90</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 73 83 72 75 43 9 24 53 12 4 2 6 84 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 73 83 72 75 43 9 24 53 12 4 2 6 84 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncholding.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 95</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 34</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfunccoils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 38</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 37</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\portserial.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 47</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 91</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 83 72 75 43 9 24 53 12 67 6 23 73 74 64 4 2 84 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 83 72 75 43 9 24 53 12 67 6 23 74 64 4 2 84 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_uart.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 48</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 85</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10 57 6 72 75 43 9 24 53 12 4 2 84 3 28 13</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 10 57 6 72 75 43 9 24 53 12 4 2 84 3 28 13</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 69</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 20</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 88 89 6 72 75 43 9 24 53 12 84 35 87</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 88 89 6 72 75 43 9 24 53 12 84 35 87</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncother.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 97</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 92</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncdisc.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 17</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 93 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\rtu\mbrtu.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 49</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 79</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 42 93 66</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64 42 93 66</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbutils.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 25 72 75 43 9 24 53 12 76 52 51 73 83 4 2 6 84 3 23 74 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\modbus\functions\mbfuncdiag.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 86</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\porttimer.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 19</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 41</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 65 83 72 75 43 9 24 53 12 67 6 23 73 74 64 4 2 84 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 65 83 72 75 43 9 24 53 12 67 6 23 74 64 4 2 84 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\freemodbus-v1.5.0\milandr\port\portevent.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 62</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 40</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 23 73 83 72 75 43 9 24 53 12 4 2 6 84 3 74 64</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 23 65 83 72 75 43 9 24 53 12 67 6 74 64</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\prj_file.out</name>
+      <outputs>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 31</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 50 77 20 14 44 59 78 58 45</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs>
+      <file>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</file>
+      <file>$PROJ_DIR$\CMSIS\core_cm3.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\Release\Obj\main.o</file>
+      <file>$PROJ_DIR$\Release\Obj\startup_MDR32F9Qx.o</file>
+      <file>$PROJ_DIR$\Release\Obj\core_cm3.o</file>
+      <file>$PROJ_DIR$\Release\Obj\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Release\Obj\system_MDR32F9Qx.pbi</file>
+      <file>$PROJ_DIR$\Release\Exe\prj_file.out</file>
+      <file>$PROJ_DIR$\Release\Obj\system_MDR32F9Qx.o</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 14</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 10 11 8 3 5 9 4</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 18</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+    </file>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

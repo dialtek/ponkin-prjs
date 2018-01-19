@@ -1,0 +1,9 @@
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\bin\Debug\MDR32FL.exe.config
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.Form1.resources
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.Properties.Resources.resources
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.csproj.GenerateResource.Cache
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\bin\Debug\MDR32FL.exe
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\bin\Debug\MDR32FL.pdb
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.exe
+D:\work\Projects\С#\education\MDR32Fl\MDR32FL\MDR32FL\obj\Debug\MDR32FL.pdb

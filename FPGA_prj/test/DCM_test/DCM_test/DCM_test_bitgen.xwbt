@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\test\DCM_test\DCM_test\DCM_test.ncd
+OUTFILE=C:\Xilinx\test\DCM_test\DCM_test\DCM_test.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Xilinx\test\DCM_test\DCM_test
+LICENSE=WebPack
+USER_INFO=__0_0_0

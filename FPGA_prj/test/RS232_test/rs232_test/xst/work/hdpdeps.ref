@@ -1,0 +1,8 @@
+V3 3
+FL C:/Xilinx/test/RS232_test/rs232_test/rs232_test.vhd 2013/08/06.16:51:18 P.28xd
+EN work/rs232_test 1375956570 \
+      FL C:/Xilinx/test/RS232_test/rs232_test/rs232_test.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/std_logic_arith 1341906177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1341906179 PB ieee/NUMERIC_STD 1341906182
+AR work/rs232_test/Beh 1375956571 \
+      FL C:/Xilinx/test/RS232_test/rs232_test/rs232_test.vhd EN work/rs232_test 1375956570

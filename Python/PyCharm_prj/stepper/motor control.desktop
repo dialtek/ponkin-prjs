@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Step motors control
+Comment=Step motors control test script
+Exec=/home/pi/python/step_motor/gui/motor_control.sh
+Terminal=false
+Type=Application

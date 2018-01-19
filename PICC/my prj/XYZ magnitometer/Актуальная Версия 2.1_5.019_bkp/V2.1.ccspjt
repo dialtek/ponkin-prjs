@@ -1,0 +1,62 @@
+[PROJECT]
+Target=V2.1.hex
+Processor_Text=PIC18F25K80
+CCSVerions=5.019
+Compiler=PCH
+CCSVersion=5.015
+Development_Mode=
+ToolSuite=CCS
+[Target Data]
+FileList=V2.1.c
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Users\LyuosevDmitriy\Google Drive\My project\3-Axis Digital & 1-Axis Analog Gaussmeter\Version 3.0\CCS C Compiler\
+Library=
+LinkerScript=
+output=
+[C:\Users\LyuosevDmitriy\Google Drive\My project\3-Axis Digital & 1-Axis Analog Gaussmeter\Version 3.0\CCS C Compiler\V2.1]
+Type=4
+[mru-list]
+1=V2.1.c
+[Opened Files]
+1=V2.1.c
+2=V2.1.h
+3=LCD for V2.1.c
+4=
+5=
+[V2.1.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[defines]
+enabled=0
+chip=1
+D1=
+V1=
+[fileformats]
+forcecoff=1
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+expandtree=0
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[CompilerVersion]
+Fixed=
+[Units]
+Count=1
+1=V2.1 (main)

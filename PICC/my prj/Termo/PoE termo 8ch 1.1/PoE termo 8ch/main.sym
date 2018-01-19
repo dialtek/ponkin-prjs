@@ -1,0 +1,316 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W1  @WRITE_PROGRAM_MEMORY.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0 -W1  @ADDFF.P3
+W0 -W3  @I64TOF64.P4
+W0      @PRINTFU16_115200_5893_5892.P5
+W0 -W1  @DIV3232B.P6
+W0 -W2  @DIVFF48.P7
+W0 -W1  @MULFF.P8
+W0 -W3  @MULS6464.P9
+W0      @SITOF.P10
+W0 -W3  @DIVS6464.P11
+W0 -W3  @SI64TOF64.P12
+W0 -W3  @SI64TOF48.P13
+W0 -W1  @DIVFF.P14
+W0 -W2  @MULFF48.P15
+W0      @delay_us1.P16
+W0 -W2  @DIVS4848.P17
+W0 -W2  @ADDFF48.P18
+W0 -W3  @MULFF64.P19
+W0 -W1  @SPI_XFERM_1.P20
+W0 -W1  @FTOSD.P21
+W0 -W3  @F64TO48.P22
+W0 -W1  @MUL3232.P23
+W0 -W1  @MULS3232.P24
+W0 -W1  @PRINTFD32_115200_5893_5892.P25
+W0 -W2  @MULS4848.P26
+W0 -W3  @DIVFF64.P27
+W0 -W3  @ADDFF64.P28
+W0 -W1  @DIVS3232A.P29
+W0      @delay_ms1.P30
+W0 -W1  @READ_PROGRAM_MEMORY.P31
+W1      @SCRATCH
+W1      @READ_PACKED_MEMORY.P1
+W1      @WRITE_PACKED_MEMORY.P2
+W1      @NVR_WR.P3
+W2      @WRITE_PROGRAM_MEMORY.P1
+W2 -W3  @DIV3232B.P2
+W2      @READ_ROM_MEMORY.P3
+W2      @READ_PACKED_MEMORY.P4
+W2 -W3  @DIVS3232A.P5
+W2 -W3  @DIVFF.P6
+W2      @READ_PROGRAM_MEMORY.P7
+W2      @SPI_XFERM_1.P8
+W2 -W3  @MULFF.P9
+W2 -W3  @MUL3232.P10
+W2 -W3  @MULS3232.P11
+W2      @WRITE_PACKED_MEMORY.P12
+W2 -W3  @ADDFF.P13
+W3 -W5  @ADDFF48.P1
+W3      @WRITE_PROGRAM_MEMORY.P2
+W3      @READ_ROM_MEMORY.P3
+W3 -W5  @MULS4848.P4
+W3 -W5  @DIVFF48.P5
+W3 -W5  @MULFF48.P6
+W3 -W5  @DIVS4848.P7
+W3      @READ_PACKED_MEMORY.P8
+W3      @READ_PROGRAM_MEMORY.P9
+W3      @WRITE_PACKED_MEMORY.P10
+W4 -W7  @MULFF64.P1
+W4 -W7  @DIVFF64.P2
+W4 -W7  @MULS6464.P3
+W4 -W7  @ADDFF64.P4
+W4      @PRINTFD32_115200_5893_5892.P5
+W4      @PRINTFU16_115200_5893_5892.P6
+W4 -W7  @DIVS6464.P7
+230     U2MODE
+232     U2STA
+234     U2TXREG
+236     U2RXREG
+238     U2BRG
+2C4     LATA
+2C6     TRISB
+2C6.0   TRB0
+2C6.1   TRB1
+2C6.2   CN3_TRIS
+2C6.3   CN4_TRIS
+2C6.4   CN2_TRIS
+2C6.5   CN1_TRIS
+2C7.5   Status_LED_TRIS
+2C7.6   TRB14
+2C7.7   XPORT_RST_TRIS
+2C7.7   XPORT_RST_n
+2C8     PORTB
+2C8.2   CN3
+2C8.3   CN4
+2C8.4   CN2
+2C8.5   CN1
+2CA.0   RB0
+2CA     LATB
+2CA.1   RB1
+2CB.5   Status_LED
+2CC     TRISC
+2CC.1   TRC1
+2CC.2   TRC2
+2CC.4   TRC4
+2CD.5   TRC13
+2CD.6   TRC14
+2CE     PORTC
+2CF.5   RC13
+2CF.6   RC14
+2D0     LATC
+2D2.0   ADC2_RESET_TRIS
+2D2     TRISD
+2D2.1   ADC_DRDY_TRIS
+2D2.2   ADC_SYNC_TRIS
+2D2.3   ADC_RESET_TRIS
+2D2.4   TRD4
+2D2.5   TRD5
+2D2.6   TRD6
+2D2.7   TRD7
+2D3.0   TRD8
+2D3.1   ADC2_DRDY_TRIS
+2D3.2   ADC2_CS_TRIS
+2D3.3   ADC2_SYNC_TRIS
+2D4     PORTD
+2D4.1   ADC_DRDY
+2D5.1   ADC2_DRDY
+2D6.0   ADC2_RESET
+2D6     LATD
+2D6.2   ADC_SYNC
+2D6.3   ADC_RESET
+2D6.4   RD4
+2D6.5   RD5
+2D6.6   RD6
+2D6.7   RD7
+2D7.0   RD8
+2D7.2   ADC2_CS
+2D7.3   ADC2_SYNC
+2DE     TRISF
+2DE.4   UART2_RX_TRIS
+2DE.5   UART2_TX_TRIS
+2E0     PORTF
+2E2     LATF
+2E4.0   TRG0
+2E4     TRISG
+2E4.1   TRG1
+2E4.6   SCK2_TRIS
+2E4.7   SDI2_TRIS
+2E5.0   SDO2_TRIS
+2E5.1   ADC_CS_TRIS
+2E5.4   LCD_RW_TRIS
+2E5.5   LCD_RS_TRIS
+2E5.6   LCD_E_TRIS
+2E6     PORTG
+2E8.0   RG0
+2E8     LATG
+2E8.1   RG1
+2E8.6   SCK2
+2E8.7   SDI2
+2E9.0   SDO2
+2E9.1   ADC_CS
+2E9.4   LCD_RW
+2E9.5   LCD_RS
+2E9.6   LCD_E
+2E9.7   RG15
+6D2     ODCD
+744     CLKDIV
+744.0   PLLPRE0
+744.1   PLLPRE1
+744.2   PLLPRE2
+744.3   PLLPRE3
+744.4   PLLPRE4
+744.6   PLLPOST0
+744.7   PLLPOST1
+746     PLLFBD
+800-801 strtok.save
+802-805 _Randseed
+806-807 rs232_errors
+808-810 Mx_ch_code
+811     PGA
+812     PGA_val
+813     Sps_buf
+814-817 flash_wr_data
+818     Aver_Wr
+819     Sps_Wr
+81A     CRC_Wr
+81B     ADC_select
+81C.0   meas_stop_fl
+81C.1   reset_fl
+81C.2   stop_fl
+81D     NumAver
+81E     ADC_sps_var
+81F     CRC1
+820     CRC2
+821     CRC_buf
+822-825 flash_rd_data
+826-1825 Ch_buf
+1826-1829 Ch_buf_sum
+182A    Ma_buf_index
+182B    Ma_buf_size
+182C-186B RXd_buf
+186C    state
+186D    wrptr
+186E-186F tmp
+1870    rdptr
+1872-1881 RxData
+1882    MAIN.ch
+1884    ADC_Par_rd_and_print_ch.channel
+1885    ADC_Par_rd_and_print_ch.rchr
+1886    ADC_Par_rd_and_print_ch.dg
+1888-1889 ADC_Par_rd_and_print_ch.buf1
+188C    ch_to_int.ch
+188C    ADC_read_aver.ADC_number
+188C    getrxch.rch
+188C    ADC_setCh.Ch_Number
+188C    Clr_bufs.i
+188C    ADC_sps_set.SPS
+188C    SYNC_ADC.command
+188C    ADC_set_PGA.PGA_val
+188D    ch_to_int.dg
+188D    Clr_bufs.j
+188D    ADC_setCh.ADC_number
+188D    ADC_read_aver.ADC_ch
+188E    WrReg.RegName
+188E-1891 ADC_read_aver._Ch_buf_sum
+188F    WrReg.CommandByte
+1892    ADC_read_aver.i
+1898    ADC_read.ADC_number
+189A-189D ADC_read.ADC_RByte1
+189E-18A1 ADC_read.ADC_RByte2
+18A2-18A5 ADC_read.ADC_RByte3
+18A6-18A9 ADC_read.ADC_RByte_Sum
+18AA-18AD ADC_read.Vin
+18B6    ADC_select.command
+1F80-1FFF Stack
+
+ROM Allocation:
+000200  @const1303.call
+000216  @const1304.call
+00022A  @const1305.call
+000242  @const1306.call
+000258  @const1310.call
+000278  @const1311.call
+000290  @const1312.call
+0002A6  @const1313.call
+0002C6  @const1314.call
+0002DC  @const1315.call
+0002F2  @const1316.call
+000308  @const1317.call
+000328  @const1318.call
+00034C  timer1_irq_handler
+000374  UART2_RXd_isr
+0003B0  OscSetup
+0003CC  EnableInt
+0003DC  MCU_init
+000412  Clr_bufs
+000458  WrReg
+0004B8  ADC_sps_set
+0004CE  ADC_set_PGA
+000580  ADC_SelfCal
+0005C4  ADC_init
+000680  ADC_select
+0006AC  ADC_setCh
+000710  SYNC_ADC
+000744  @DIVS3232A
+0007C2  @MULS3232
+000804  @I64TOF64
+000868  @MULFF64
+000978  @SI64TOF64
+0009DC  @DIVFF64
+000AE4  @F64TO48
+000B28  @MULFF
+000BEC  @FTOSD
+000C2C  ADC_read
+000E02  ADC_read_aver
+000E82  @DIV3232B
+000EC6  @PRINTFD32_115200_5893_5892
+000FDA  getrxch
+00101E  ch_to_int
+0010A6  @PRINTFU16_115200_5893_5892
+001158  ADC_Par_rd_and_print_ch
+00171C  @cinit1
+00171C  MAIN
+00177C  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    E:\work\Projects\PICC\my prj\PoE termo 8ch 1.1\PoE termo 8ch\
+
+Project Files:
+    main.c                                                  [11-дек-15 15:51  CRC=F708339B]
+    main.h                                                  [01-июн-15 11:29  CRC=79F3E5ED]
+    C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [12-ноя-13 14:36  CRC=D01F2ECD]
+    C:\Program Files (x86)\PICC\Drivers\stdlib.h            [08-июн-11 14:39  CRC=0B6669CF]
+    C:\Program Files (x86)\PICC\Drivers\stddef.h            [16-июл-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\Drivers\string.h            [14-июл-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-янв-08 13:55  CRC=2D1F019F]
+    ADS1256.h                                               [11-дек-15 15:51  CRC=73320FE0]
+
+Source signature=0D6FAC7E
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC24HJ128GP506A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

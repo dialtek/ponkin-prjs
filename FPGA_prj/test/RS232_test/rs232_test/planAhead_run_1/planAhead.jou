@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.2 (64-bit)
+# Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+# Start of session at: Thu Aug 08 14:10:38 2013
+# Process ID: 4748
+# Log file: C:/Xilinx/test/RS232_test/rs232_test/planAhead_run_1/planAhead.log
+# Journal file: C:/Xilinx/test/RS232_test/rs232_test/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Xilinx/test/RS232_test/rs232_test/pa.fromHdl.tcl

@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\work\Projects\FPGA_prj\test\RS232_test\rs232_test\rs232_test.ncd
+OUTFILE=C:\work\Projects\FPGA_prj\test\RS232_test\rs232_test\rs232_test.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\work\Projects\FPGA_prj\test\RS232_test\rs232_test
+LICENSE=WebPack
+USER_INFO=__0_0_0

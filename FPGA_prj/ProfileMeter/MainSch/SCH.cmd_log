@@ -1,0 +1,102 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -i -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+taengine -intstyle ise -f SCH -w --format html1 -l SCH_html/tim/timing_report.htm 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+ngdbuild -intstyle ise -dd _ngo -i -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+taengine -intstyle ise -f SCH -w --format html1 -l SCH_html/tim/timing_report.htm 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+pin2ucf SCH.gyd -o D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/imp.ucf -r SCH.lck 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+ibiswriter -intstyle ise -g VCCIO:LVTTL SCH.pnx SCH.ibs 
+netgen -intstyle ise -rpw 100 -ar Structure -tm SCH -w -dir netgen/fit -ofmt vhdl -sim SCH.nga SCH_timesim.vhd 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+pin2ucf SCH.gyd -o D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/imp.ucf -r SCH.lck 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+netgen -intstyle ise -rpw 100 -ar Structure -tm SCH -w -dir netgen/fit -ofmt vhdl -sim SCH.nga SCH_timesim.vhd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc imp.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+ibiswriter -intstyle ise -g VCCIO:LVTTL SCH.pnx SCH.ibs 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+ngdbuild -intstyle ise -dd _ngo -uc _pace.ucf -p xc9572xl-VQ44-5 SCH.ngc SCH.ngd  
+cpldfit -intstyle ise -p xc9572xl-5-VQ44 -ofmt vhdl -optimize speed -htmlrpt -loc on -slew fast -init low -inputs 54 -pterms 25 -unused float -power std -terminate keeper SCH.ngd 
+XSLTProcess SCH_build.xml 
+tsim -intstyle ise SCH SCH.nga 
+hprep6 -s IEEE1149 -n SCH -i SCH 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.xst" -ofn "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.syr" 
+XSLTProcess SCH_build.xml 

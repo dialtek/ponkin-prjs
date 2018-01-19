@@ -1,0 +1,36 @@
+Pin Freeze File:  version P.49d
+
+9572XL44VQ XC9572XL-5-VQ44
+CE S:PIN22
+D S:PIN8
+gclk S:PIN43
+spi_clk S:PIN44
+LED S:PIN1
+Q S:PIN29
+shout S:PIN23
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_1 spi_in_word<9> spi_in_word<8> spi_in_word<7> spi_in_word<6>
+		 spi_in_word<5> spi_in_word<4> spi_in_word<3> spi_in_word<2>
+		 spi_in_word<1> out_word<19>/out_word<19>_SETF out_word<18>/out_word<18>_SETF out_word<17>/out_word<17>_SETF
+		 out_word<16>/out_word<16>_SETF LED_OBUF out_word<15>/out_word<15>_SETF out_word<14>/out_word<14>_SETF
+		 out_word<13>/out_word<13>_SETF out_word<11>/out_word<11>_SETF
+PARTITION FB2_1 EXP6_ Q_out_s EXP7_ EXP8_
+		
+PARTITION FB2_10 out_word<10>/out_word<10>_RSTF out_cnt<0> out_cnt<4> out_cnt<3>/out_cnt<3>_RSTF
+		 out_cnt<3> out_cnt<2> out_cnt<1> state<2>
+		 state<1>
+PARTITION FB3_1 out_word<5>/out_word<5>_SETF out_word<12>/out_word<12>_SETF out_word<9> out_word<8>
+		 out_word<7> out_word<6> out_word<5> out_word<4>
+		 out_word<19> out_word<18> out_word<17> out_word<16>
+		 out_word<15> out_word<14> out_word<13> out_word<12>
+		 out_word<11> out_word<10>
+PARTITION FB4_1 spi_in_word<15> spi_in_word<14> spi_in_word<13> spi_in_word<12>
+		 spi_in_word<11> spi_in_word<10> spi_in_word<0> out_word<9>/out_word<9>_RSTF
+		 out_word<8>/out_word<8>_SETF out_word<7>/out_word<7>_SETF out_word<6>/out_word<6>_SETF out_word<4>/out_word<4>_SETF
+		 cnt<0> int_shout cnt<4> cnt<3>
+		 cnt<2> cnt<1>
+

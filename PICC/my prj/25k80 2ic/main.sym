@@ -1,0 +1,112 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+F48     CCP_5
+F48     CCP_5_LOW
+F49     CCP_5_HIGH
+F4B     CCP_4_LOW
+F4B     CCP_4
+F4C     CCP_4_HIGH
+F4E     CCP_3_LOW
+F4E     CCP_3
+F4F     CCP_3_HIGH
+F51     CCP_2
+F51     CCP_2_LOW
+F52     CCP_2_HIGH
+F80     PORTA
+F80.0   RA0
+F80.1   RA1
+F80.2   RA2
+F80.3   RA3
+F80.4   RA4
+F80.5   RA5
+F81     PORTB
+F82     PORTC
+F82.3   RC3
+F82.4   RC4
+F82.5   RC5
+F82.6   RC6
+F82.7   RC7
+F92     TRISA
+F92.0   TRA0
+F92.1   TRA1
+F92.2   TRA2
+F92.3   TRA3
+F92.4   TRA4
+F92.5   TRA5
+F93     TRISB
+F94     TRISC
+F94.3   TRC3
+F94.4   TRC4
+F94.5   TRC5
+F94.6   TRC6
+F94.7   TRC7
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBC     CCP_1_LOW
+FBC     CCP_1
+FBD     CCP_1_HIGH
+FC5.0   SEN
+FC5     SSPCON2
+FC5.1   RSEN
+FC5.2   PEN
+FC5.3   RCEN
+FC5.4   ACKEN
+FC5.5   ACKDT
+FC5.6   ACKSTAT
+FC6     SSPCON1
+FC7     SSPSTAT
+FC7.0   BF
+FC8     SSPADD
+FC9     SSPBUF
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  main
+0004  @cinit1
+0022  @cinit2
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Program Files (x86)\PICC\my prj\25k80 2ic\
+
+Project Files:
+    main.c                                                  [12-ט‏כ-12 16:50  CRC=36F1830D]
+    ..\..\devices\18F25K80.h                                [28-פוג-12 13:44  CRC=64C2B7A3]
+
+Source signature=0076F253
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F25K80
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

@@ -1,0 +1,69 @@
+SOFTWARE LICENSE
+
+This license applies to the:
+
+SPELLMAN HIGH VOLTAGE ELECTRONIC CORP'S TEST SOFTWARE AND GUI
+
+Executable program, object files, documentation, and source code, herein referred to as "the 
+SOFTWARE". 
+
+This is an agreement wherein,
+
+SPELLMAN HIGH VOLTAGE ELECTRONIC CORP'S CUSTOMER
+
+Herein referred to as the "USER" desires to enter into an agreement to license the SOFTWARE 
+from Spellman High Voltage Electronics Corporation of 475 Wireless Boulevard in Hauppauge, 
+NY 11788.  
+
+By using, copying, transmitting, distributing or installing the SOFTWARE, the USER agrees to 
+all of the terms of this License.  If the USER does not agree to any of the terms of this License, 
+then it shall not use, copy, transmit, distribute, or install the SOFTWARE.  Spellman High 
+Voltage Electronics Corporation reserves the right to revoke this license at any time, for any or 
+no reason.
+
+To the maximum extent permitted by applicable law, Spellman High Voltage Electronics 
+Corporation licenses the SOFTWARE and all accompanying files, data and materials, and any 
+support services related to the SOFTWARE "AS IS"and with all faults, and hereby disclaim all 
+warranties and conditions, either express, implied, or statutory, including, but not limited to, any 
+warranties or conditions of merchantability, or fitness for a particular purpose, or lack of viruses, 
+or accuracy, or completeness of responses, or results, all with regard to the SOFTWARE, and the 
+provision of or failure to provide support services.  
+
+The entire risk as to the quality of the SOFTWARE, or arising out of use or performance of the 
+SOFTWARE and support services, if any, remains with the USER.  This disclaimer of warranty 
+constitutes an essential part of the agreement.  In no event shall Spellman High Voltage 
+Electronics Corporation, or its principals, shareholders, officers, employees, subsidiaries, 
+affiliates, contractors, or suppliers of customers be liable for any damages, whether actual, 
+incidental, consequential, or punitive relating to the use of the SOFTWARE.  The USER 
+assumes the entire risk of using the SOFTWARE and agrees to indemnify and hold Spellman 
+High Voltage Electronics Corporation harmless against any claims, demands, actions, 
+proceedings, liability, damages, loss, cost or expense (including attorneys' fees) resulting from 
+the USER'S use, installation or distribution of the SOFTWARE.
+
+This Agreement is the complete statement of the Agreement between the parties on the subject 
+matter, and supersedes all other or prior understandings, purchase orders, agreements and 
+arrangements, and may not be amended nor may any provision be waived except by a writing 
+signed by Spellman High Voltage Electronics Corporation.  Exclusive jurisdiction and venue for 
+all matters relating to this Agreement shall be in courts and located in the State and County of 
+New York, and the USER consents to such jurisdiction and venue.
+
+If Spellman High Voltage Electronics Corporation has included Source Code in this license, 
+Spellman High Voltage Electronics Corporation grants the USER the following nonexclusive, 
+royalty-free rights: to use and modify the source code version of, and reproduce and distribute 
+the object code version of, the SOFTWARE, solely in conjunction with a product designed by 
+the USER.  
+
+You may not disclose the results of any benchmark test of either the SOFTWARE or the 
+associated hardware/SOFTWARE combination to any third party without Spellman High 
+Voltage Electronics Corporation's prior written approval.
+
+There are no third party beneficiaries of any promises, obligations or representations made by 
+Spellman High Voltage Electronics Corporation herein.
+
+Neither the license granted herein nor any rights thereunder with regard to the SOFTWARE may 
+be sublicensed or assigned by the USER without the prior written consent of Spellman High 
+Voltage Electronics Corporation.
+
+The SOFTWARE is Copyright © 1998-2006 by Spellman High Voltage Electronics 
+Corporation.  All rights reserved.
+

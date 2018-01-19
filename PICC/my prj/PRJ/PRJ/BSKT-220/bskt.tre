@@ -1,0 +1,10 @@
+ÀÄbskt
+   ÃÄMAIN  0/164  Ram=1
+   ³  ÃÄ??0??
+   ³  ÃÄ@PRINTF_LU_38400_53_50  0/90  Ram=9
+   ³  ÃÄ@const92  0/25  Ram=0
+   ³  ÀÄ@PRINTF_LD_38400_53_50  0/119  Ram=9
+   ÃÄTIMER1_isr  0/4  Ram=0
+   ÃÄTIMER2_isr  0/40  Ram=0
+   ÃÄTIMER0_isr  0/4  Ram=0
+   ÀÄCAPTURE1_isr  0/79  Ram=0

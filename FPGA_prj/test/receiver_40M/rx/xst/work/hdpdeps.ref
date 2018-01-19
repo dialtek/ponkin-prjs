@@ -1,0 +1,15 @@
+V3 11
+FL C:/Xilinx/test/receiver_40M/rx/fx_conv.vhd 2013/08/14.15:55:58 P.28xd
+EN work/fx_conv 1376481359 FL C:/Xilinx/test/receiver_40M/rx/fx_conv.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/fx_conv/Beh 1376481360 \
+      FL C:/Xilinx/test/receiver_40M/rx/fx_conv.vhd EN work/fx_conv 1376481359 \
+      CP BUFG CP IBUFG CP DCM_SP
+FL C:/Xilinx/test/receiver_40M/rx/RX_main.vhd 2013/08/14.15:54:59 P.28xd
+EN work/RX_main 1376481361 FL C:/Xilinx/test/receiver_40M/rx/RX_main.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/RX_main/Beh 1376481362 \
+      FL C:/Xilinx/test/receiver_40M/rx/RX_main.vhd EN work/RX_main 1376481361 \
+      CP fx_conv

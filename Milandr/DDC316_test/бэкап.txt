@@ -1,0 +1,527 @@
+#include "MDR32Fx.h"
+#define F_CPU 80000000
+#include "mdr_delay.h"
+//#include "mdr_spi.h"
+
+#define U8  uint8_t
+#define U16 uint16_t 
+#define S16 int16_t 
+#define U32 uint32_t
+#define S32 int32_t
+
+#define CPLD_CE_ON  	 MDR_PORTB->RXTX |=   1<<7  
+#define CPLD_CE_OFF  	 MDR_PORTB->RXTX &=  ~(1<<7)  
+
+#define SSP1_TXD_set_1 	 MDR_PORTF->RXTX |=  1 
+#define SSP1_TXD_set_0 	 MDR_PORTF->RXTX &= ~1 
+#define SSP1_RXD_val     (MDR_PORTF->RXTX & (1<<3)) // линия данных АЦП
+
+#define SSP1_SCK_set_1 	 MDR_PORTF->RXTX |=  1<<1 
+#define SSP1_SCK_set_0 	 MDR_PORTF->RXTX &= ~(1<<1) 
+
+#define ADC3_RST_ON 	 MDR_PORTE->RXTX |=  (1<<2)  
+#define ADC3_RST_OFF 	 MDR_PORTE->RXTX &= ~(1<<2)
+#define ADC2_RST_ON 	 MDR_PORTE->RXTX |=  (1<<1)  
+#define ADC2_RST_OFF 	 MDR_PORTE->RXTX &= ~(1<<1)
+#define ADC1_RST_ON 	 MDR_PORTE->RXTX |=  1; 
+#define ADC1_RST_OFF 	 MDR_PORTE->RXTX &= ~1;
+
+#define n_ADC3_DVALID    (MDR_PORTA->RXTX & (1<<5)) // сигнал готовности данных АЦП для чтения 
+
+#define VD5_ON  		 MDR_PORTB->RXTX |=   1  
+#define VD5_OFF  		 MDR_PORTB->RXTX &=   0  
+
+#define VD6_ON  		 MDR_PORTB->RXTX |=   1<<3  
+#define VD6_OFF  		 MDR_PORTB->RXTX &=   0<<3 
+
+#define Charge_ON  		 MDR_PORTA->RXTX |=   1<<7  
+#define Charge_OFF  	 MDR_PORTA->RXTX &=  ~(1<<7)  
+
+#define SW1_ON  		 MDR_PORTC->RXTX & (1<<2)  
+#define SW1_OFF  		 MDR_PORTC->RXTX & (0<<2)    
+#define SW3_ON  		 MDR_PORTE->RXTX & (0<<1)  
+#define SW3_OFF  		 MDR_PORTE->RXTX & (1<<1)
+#define SW4_ON  		 MDR_PORTE->RXTX & (0<<3)  
+#define SW4_OFF  		 MDR_PORTE->RXTX & (1<<3)  
+
+#define ADC_full_scale   12								// полная шкала АЦП в пикоКулонах
+
+	U8 tmp = 0;
+        U8 conv_flag = 0;
+        U16 counter = 0;
+        U8 Uart_rx_fl = 0; // флаг запроса на выдачу данных по UART	
+	
+	void OSC_init(void){
+
+	#define	_HSEBYP				1		// 0 - режим осциллятора, 1 - режим внешнего генератора
+	#define	_HSEON				1		// 0 - выключен, 1 - включен
+
+
+//---CLK-----------------------------------------------------------------------------------------------------
+  
+  //MDR_RST_CLK->HS_CONTROL = 2;                            // режим внешнего генератора
+  //MDR_RST_CLK->HS_CONTROL = 0x03;                         // вкл. HSE осцилятор
+
+  MDR_RST_CLK->HS_CONTROL = (_HSEBYP<<1) + _HSEON; 
+  while ((MDR_RST_CLK->CLOCK_STATUS & 0x04) != 0x04);   // ждем пока HSE выйдет в рабочий режим
+  MDR_RST_CLK->PLL_CONTROL = ((1 << 2) | (1 << 8)); 	  // вкл. PLL | коэф. умножения = 2
+
+  while((MDR_RST_CLK->CLOCK_STATUS & 0x02) != 0x02);      // ждем когда PLL выйдет в раб. режим
+
+  MDR_RST_CLK->CPU_CLOCK  = (2                            // источник для CPU_C1
+						   |(1 << 2)                      // источник для CPU_C2
+						   |(1 << 4)                      // предделитель для CPU_C3
+						   |(1 << 8));                    // источник для HCLK
+  
+//    MDR_RST_CLK->CPU_CLOCK  = (2                            // источник для CPU_C1
+//						   |(0 << 2)                      // источник для CPU_C2
+//						   |(1 << 4)                      // предделитель для CPU_C3
+//						   |(1 << 8));                    // источник для HCLK
+  
+  
+  
+  MDR_RST_CLK->PER_CLOCK = 0xFFFFFFFF;                    // вкл. тактирование всей перефирии
+  // HCLK = 80 МГц
+  
+  }
+   
+	void GPIO_init (void){  
+  
+  MDR_PORTA->OE      = 0xFFD5; // PA5 - dvalid3, PA3 - DVALID2, PA1 - DVALID1, PA0 - MCU_CONV
+  MDR_PORTA->FUNC    = 0x0000;          // функция - порт 
+  MDR_PORTA->ANALOG  = 0xFFFF;          // режим потра - цифровой
+  MDR_PORTA->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTB->OE = 0xffff;               // порт B на выход, 9ый пин - вход DVALID АЦП
+  MDR_PORTB->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTB->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTB->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//  
+  MDR_PORTC->OE     = 0x00000000;                    
+  MDR_PORTC->FUNC   = 0x00000000;                
+  MDR_PORTC->ANALOG = 0x0000FFFF;
+  MDR_PORTC->PD      = 1<<0;          
+  //---------------------------------------------------------------------------//
+  MDR_PORTD->OE = 0x0000;               // порт D на вход, PD4 - LCD_reset
+  MDR_PORTD->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTD->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTD->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTE->OE = 0xffff;               // порт E на выход
+  MDR_PORTE->FUNC = 0x0000;             // функция - порт 
+  MDR_PORTE->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTE->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+  //---------------------------------------------------------------------------//
+  MDR_PORTF->OE = 0xffb7;               // порт F на выход,PF3 - RxD
+  MDR_PORTF->FUNC = (2 << 6) |		    // режим  пинов 1, 2, 3, 4 порта 
+					(2 << 4) |			// - альтернативный, задействован модуль SSP1
+					(2 << 2) |
+					(2 << 0);
+  MDR_PORTF->ANALOG  = 0xffff;          // режим потра - цифровой
+  MDR_PORTF->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
+
+   }
+ 
+	void timer1_init(void) {
+ 
+  MDR_TIMER1->CNTRL = 0x00000000;                         // Режим инициализации таймера
+  MDR_TIMER1->CNT   = 0x00000000;                         // Начальное значение счетчика
+  MDR_TIMER1->PSG   = 7;                         		 // Предделитель частоты - 10,5 мкс
+  MDR_TIMER1->ARR   = 100;                                // Основание счета, прерывание каждые 16 мкс. 
+  MDR_TIMER1->IE    = 0x00000002;                         // Разрешение генерировать прерывание при CNT=ARR
+  MDR_RST_CLK->TIM_CLOCK  = (0|(1 << 24));                // делитель частоты|разрешение тактирования Таймера 1
+  MDR_TIMER1->STATUS= 0x00000000;                         // сбрасываем флаги
+
+ }
+
+/*--------------------------------------------------------------------------- */
+// SPI
+	void MDR32_SSP1_init (U8 data_lenght){
+	  
+	  /*
+     // Настройка модуля SSP1 для работы с MT-12864B: режим мастрера, 16-битный режим
+   
+	MDR_RST_CLK->PER_CLOCK |= 1 << 8;     // Разрешения тактирования периферийного блока SPI 1 (SSP1)
+	MDR_RST_CLK->SSP_CLOCK = (1 << 24) |  // Разрешение тактовой частоты на SSP 1
+                                 2;       // Делитель тактовой частоты SSP1, SSP1_CLK = HCLK (40 МГц)
+    
+	MDR_SSP1->CR0 = (0 << 8) | 			  // Задает параметр SCR формулы F_SSP1 = SSP1_CLK / (CPSDVR*(1  + SCR)) 
+  					(1 << 7) |			  // Фаза  сигнала  SSPCLKOUT, инверсная фаза клока
+    				(1 << 6) |			  // Полярность  сигнала  SSPCLKOUT, стробирование по переднему фронту
+   					(0 << 4) |			  // Формат информационного кадра -  протокол SPI фирмы Motorola
+   						7;				  // Размер слова данных - 0111 – 16 бит
+   
+	MDR_SSP1->CPSR = 2; 				  // Коэффициент  деления  тактовой  частоы CPSDVR
+										  // Таким образом, при CPSDVR = 2, SCR = 0, F_SSP1 = 80 МГц
+										  // частота SSP1_CLK получается равной 40 МГц
+	
+	MDR_SSP1->CR1 = (0 << 2) |			  // Выбор ведущего или ведомого режима работы: 0 – ведущий модуль 
+					(1 << 1); 		      // Разрешение работы приемопередатчика
+	
+    // пины SPI1_TxD и SPI1_CLK настроены на выход в GPIO_init()
+	// также включен альтернативный режим порта - задействован модуль SSP1
+	// пины PF0 - PF3 используются этим модулем!
+	
+    */
+	  
+  MDR_RST_CLK->PER_CLOCK |= (1 << 8); //тактирование SSP1
+  MDR_RST_CLK->SSP_CLOCK = ((0 << 0)|(1 << 24)); //предделитель = 1, разрешение тактирования SSP1 
+
+  MDR_SSP1->CPSR = 2; //делитель тактовой частоты;
+  MDR_SSP1->CR0 = 0 << 6; //полярность сигнала
+  MDR_SSP1->CR0 |= 0 << 7; //фаза сигнала
+  MDR_SSP1->CR0 |= 0 << 8; //коэффициент скорости
+  MDR_SSP1->CR0 |= 0 << 4; //формат кадра
+  MDR_SSP1->CR0 |= data_lenght-1;
+  MDR_SSP1->CR1 |= ((0 << 2)|(1 << 1)); //режим работы и включение приемопередатчика SSP
+
+   }
+   
+   	void MDR32_SSP1_init_2 (U8 data_lenght){
+	  
+	 
+	 
+	MDR_RST_CLK->PER_CLOCK |= 1 << 8;     // Разрешения тактирования периферийного блока SPI 1 (SSP1)
+	MDR_RST_CLK->SSP_CLOCK = (1 << 24) |  // Разрешение тактовой частоты на SSP 1
+                                 0;       // Делитель тактовой частоты SSP1, SSP1_CLK = HCLK (40 МГц)
+    
+	MDR_SSP1->CR0 = (0 << 8) | 			  // Задает параметр SCR формулы F_SSP1 = SSP1_CLK / (CPSDVR*(1  + SCR)) 
+  					(1 << 7) |		  // Фаза  сигнала  SSPCLKOUT, инверсная фаза клока стробирование по переднему фронту
+    				(0 << 6) |
+					(0 << 5) |			  // Полярность  сигнала  SSPCLKOUT, 
+   					(0 << 4) |			  // Формат информационного кадра -  протокол SPI фирмы Motorola
+   						15;				  // Размер слова данных - 0111 – 16 бит
+   
+	MDR_SSP1->CPSR = 4; 				  // Коэффициент  деления  тактовой  частоы CPSDVR
+										  // Таким образом, при CPSDVR = 2, SCR = 0, F_SSP1 = 80 МГц
+										  // частота SSP1_CLK получается равной 40 МГц
+	
+	MDR_SSP1->CR1 = (0 << 2) |			  // Выбор ведущего или ведомого режима работы: 0 – ведущий модуль 
+					(1 << 1); 		      // Разрешение работы приемопередатчика
+	}
+
+	void SPI1_Wr_Data (U16 data){
+	  
+	  // функция отправки данных на шину SSP1
+	  // регистр DR - 16 бит !!!!
+	  MDR_SSP1->DR = data;
+	}
+
+	void SPI_clk_disable (void) {
+	  
+	// выключение записи байтов команд АЦП
+	// стробирование по падающему фронту сигнала ГЕНЕРАТОРА АЦП !!!!!  
+	  
+	MDR_PORTF->FUNC = (2 << 6) |		// режим  пинов 1, 2, 3, 4 порта 
+					  (2 << 4) |		// - альтернативный, задействован модуль SSP1
+					  (0 << 2) |		// отключаем тактирование SPI посылки,  
+					  					// тактирование от своего клока!!!
+					  (2 << 0);
+	}
+
+	void SPI_clk_enable (void) {
+	  
+	// вкл. тактирования линии SPI для считывания результатов преобр. АЦП\
+	// тактирование по падающему фронту сигнала SPI_CLK 
+	  
+	MDR_PORTF->FUNC = (2 << 6) |		// режим  пинов 1, 2, 3, 4 порта 
+					  (2 << 4) |		// - альтернативный, задействован модуль SSP1
+					  (2 << 2) |		// вкл. тактирование SPI,  
+					  					// режим чтения данных, тактирование от клока SPI
+					  (2 << 0);
+	}
+
+	U16 SPI1_Rd_Data (void){
+	  
+          
+          #define SSP_SR_RNE ((uint32_t)0x00000004) // бит заполнения FIFO SSP
+          
+	  // функция считывния данных шины SSP1
+	  // регистр DR - 16 бит !!!!
+	  
+	  S16 rx_buf = 0;
+	  MDR_SSP1->DR = 0;	         // инициировать тактовые импульсы
+	  while((MDR_SSP1->SR & 1<<4)) { } // ждем готовности модуля
+          while((MDR_SSP1->SR & SSP_SR_RNE) != 0) rx_buf = MDR_SSP1->DR; // читаем все что в буфере
+	  
+	  
+	  return rx_buf;
+
+	}
+
+/*--------------------------------------------------------------------------- */
+// ADC
+	void ADC_config (void) {
+	  
+	  CPLD_CE_ON;
+	  //SPI1_Wr_Data(0xccc0);  //Test mode 3 (inputs opened and 1.5pC charge dumped into the integrators during each conversion) 12p
+	  //SPI1_Wr_Data(0xc0c0);  //Test mode 3 (inputs opened and 1.5pC charge dumped into the integrators during each conversion) 1.5p
+	  //SPI1_Wr_Data(0xc4c0);  //Test mode 3 (inputs opened and 1.5pC charge dumped into the integrators during each conversion) 6p
+	  //SPI1_Wr_Data(0xcc80);  //Test mode 2 (inputs opened and 10pF internal capacitor connected to integrators)
+	  //SPI1_Wr_Data(0xcc40);    //Test mode 1 (inputs opened)
+	  SPI1_Wr_Data(0xcc00);    //normal mode
+	  //SPI1_Wr_Data(0xfc00);    //normal mode
+	  delay_us(5);
+	  SPI1_Wr_Data(0xcc00);    //normal mode
+	  delay_us(5);
+	  CPLD_CE_OFF;	
+	  delay_us(5);
+	  
+/*
+SPI1_Wr_Data (1<<16| 
+			  0<<15|	  // параллельный режим передачи выходных данных через Dout1 - Dout4
+		   0x00<<13|	  // 16-битный режим работы
+				  		  
+			(3 << 8)|	  // Полная шкала - 12 пикоКулон, maximum input charge
+			(0 << 6)|    // Unused bit. Must always be set to zero.
+			(1 << 5)|    // High-Speed Operation Selection, 
+			   			  // нормальный режим работы АЦП, не скоростной
+				   
+//00  Normal mode (default)
+//01  Test mode 1 (inputs opened)
+//10	Test mode 2 (inputs opened and 10pF internal 
+//capacitor connected to integrators)
+//11  Test mode 3 (inputs opened and 1.5pC charge dumped into 
+//the integrators during each conversion) 
+					   			      
+			 (3 << 4)|  // TEST MODE FUNCTION
+			 (0 << 1)|  // This bit is reset to '0' and must be set to '0'
+			 (0 << 0)); // internal buffer enabled
+*/
+
+} 
+
+	void ADC_init (void) {
+	  
+  ADC1_RST_ON;
+  ADC2_RST_ON;
+  ADC3_RST_ON;
+  delay_ms(1);
+//  ADC_RST_OFF;
+//  delay_ms(1);
+//  ADC_RST_ON;
+//  delay_us(100);
+  ADC_config();
+  //delay_us(100);
+  
+	}
+
+/*=========================================================================== */
+// UART
+	void Uart_init (void){
+//UART	  
+MDR_PORTB->FUNC |= ((2 << 5*2) | (2 << 6*2)); 	//режим работы порта
+MDR_PORTB->ANALOG |= ((1 << 5) | (1 << 6)); 	//цифровой
+MDR_PORTB->PWR |= ((3 << 5*2) | (3 << 6*2)); 	//максимально быcтрый
+
+MDR_RST_CLK->PER_CLOCK |= (1UL << 6); 			//тактирование UART1
+MDR_RST_CLK->UART_CLOCK = (4 					// установка делителя для UART1
+  |(0 << 8) 									// установка делителя для UART2
+  |(1 << 24) 						// разрешение тактовой частоты UART1
+  |(0 << 25));						// разрешение тактовой частоты UART2*/ 
+
+  //Параметры делителя при частоте = 5000000Гц и скорости = 115200
+MDR_UART1->IBRD = 0x2; 						// целая часть делителя скорости
+MDR_UART1->FBRD = 0x2e; 					// дробная часть делителя скорости
+MDR_UART1->LCR_H = ((0 << 1) 				// разрешение проверки четности
+  |(0 << 2) 								// четность/нечетность
+  |(0 << 3) 								// стоп-бит
+  |(0 << 4) 						// откл. буфера FIFO приемника и передатчика
+  |(3 << 5) 								// длина слова = 8 бит
+  |(0 << 7)); 							    // передача бита четности
+
+MDR_UART1->CR = ((1 << 8)|(1 << 9)|1);   // передачик и приемник разрешен, 
+MDR_UART1->IMSC = 1 << 4;                // RXIM разрешение прерывания от приемника UARTRXINTR. 1 – установлена;   										 // разрешение приемопередатчика UART1
+}
+	
+	void Uart_send_hex(U8 hex_data){
+	  
+      // пока Буфер   FIFO   передатчика   заполнен...  
+	while(MDR_UART1->FR & (1<<5)) { }; // ждем готовности UART1;
+
+    MDR_UART1->DR = hex_data;
+  
+	}
+	  
+	void Uart_CR_LF_send (void){
+	  
+        Uart_send_hex(0x0A);
+	Uart_send_hex(0x0D);
+	
+	}
+
+	void Uart_num_send(int32_t data){
+	  
+  unsigned char temp[10],count=0;
+  if (data<0) 
+  {
+    data=-data;
+    Uart_send_hex('-');
+  }     
+  if (data)
+  {
+    while (data)
+    {
+      temp[count++]=data%10+'0';
+      data/=10;                 
+    }                           
+    while (count)           
+      Uart_send_hex(temp[--count]);          
+  }
+  else Uart_send_hex('0');           
+}
+
+	void Uart_send_text(unsigned char *s){
+  while (*s != 0)
+    Uart_send_hex(*s++);
+}
+
+
+/*=========================================================================== */
+// Interupts
+	
+__irq void Timer1_IRQHandler(void) 
+//функция обработки прерывания irq Timed
+{    
+	 tmp = ~tmp;	 
+	 if(tmp) MDR_PORTA->RXTX |= 1; 
+	 else    MDR_PORTA->RXTX &= 0;
+	 
+     MDR_TIMER1->CNT = 0x00000000;      // установка знач. счетчика на 0
+     MDR_TIMER1->STATUS &= ~(1 << 1);   // сброс статуса прерывания от таймера 1
+     NVIC_ClearPendingIRQ(Timer1_IRQn); // сброс флага прерывания от таймера 1
+ 
+}
+
+__irq void UART1_IRQHandler( void )
+ //функция обработки прерывания irq UART
+{
+	 char Rx_data = 0;
+ 	 
+	 Rx_data = MDR_UART1->DR;
+
+	 if (Rx_data == 'C')
+	 Uart_rx_fl = 1; // запрос получен, выставлен флаг отсылки на ПК
+	 else 	Uart_rx_fl = 2; // ошибка запроса
+	 
+	 MDR_UART1->ICR  = 1 << 4; // RXIC Сброс прерывания от приемника UARTRXINTR
+}
+
+      void MCU_init (void) {
+	  
+ 	 OSC_init();
+	 SysTickTimer_Init();
+ 	 GPIO_init();  
+ 	 Uart_init();
+  	 //MDR32_SSP1_init(16);
+	 timer1_init();
+  
+	}
+
+/*=========================================================================== */
+// MAIN
+
+ int main()
+{
+ volatile U32 ADC1_data[16];
+ volatile U32 ADC2_data[16];
+ volatile U32 ADC3_data[16];
+ 
+ MCU_init();			// иницализация системы тактирования,
+ MDR32_SSP1_init_2(16); 	// модулей GPIO, SPI, UART 
+ 
+ ADC_init();
+ 
+ NVIC_EnableIRQ(Timer1_IRQn);    // Разрешение прерывания для Таймера 1
+  __enable_irq();		 // Enable Interrupts global
+   
+ MDR_TIMER1->CNTRL = 1; 	 // включить таймер 1
+
+ while(1)
+  {     
+    NVIC_DisableIRQ(UART1_IRQn); // Запрет прерывания для UART1
+    
+    MDR_TIMER1->CNTRL = 0;      // выкл. стробов интергаторов АЦП на время чтения
+    
+	while(n_ADC3_DVALID) { }    // ожидание готовности АЦП
+
+           SPI1_Rd_Data();     // вычитываем мусор, ????
+	   SPI1_Rd_Data();     // только после трех пустых чтений        
+           SPI1_Rd_Data();     // идут адекватные данные   
+           
+          for (U8 i = 0; i < 16; i++) // чтение данных всех АЦП 3
+	 {
+           
+	    // в режиме послед. чтения каналов
+	    // выдвигается сначала последний вход АЦП, потом предпоследний и тд.
+           ADC3_data[i] = SPI1_Rd_Data();
+	 }
+        //--
+          for (U8 i = 0; i < 16; i++) // чтение данных всех АЦП 2
+	 {
+           
+           ADC2_data[i] = SPI1_Rd_Data();
+	 }
+          //--
+          for (U8 i = 0; i < 16; i++) // чтение данных всех АЦП 1
+	 {
+           
+           ADC1_data[i] = SPI1_Rd_Data();
+	 }
+         
+	MDR_TIMER1->CNTRL = 1;      // вкл. стробов интергаторов АЦП
+        NVIC_EnableIRQ(UART1_IRQn); // Разрешение прерывания для UART1
+        
+         for (U8 i = 0; i < 16; i++) // 5-20 - ADC3; 21-36 - ADC2; ADC3 - 37-51
+	 {     
+           /// расчет pC из отчетов АЦП, для получения pC надо делить на 10 на ПК 
+    
+           // АЦП 3
+	   ADC3_data[i] = ADC3_data[i] & 0xfff0;   // избавляемся от последних 4 бит, тк 12 бит. режим
+	   ADC3_data[i] = ADC3_data[i] >> 4;       // приводим к 12 бит. варианту
+	   ADC3_data[i] = (U32)(((ADC3_data[i] * ADC_full_scale*10)/4095.0)); 
+           // АЦП 2
+           ADC2_data[i] = ADC2_data[i] & 0xfff0;   
+	   ADC2_data[i] = ADC2_data[i] >> 4;       
+	   ADC2_data[i] = (U32)(((ADC2_data[i] * ADC_full_scale*10)/4095.0));
+           // АЦП 1
+           ADC1_data[i] = ADC1_data[i] & 0xfff0;  
+	   ADC1_data[i] = ADC1_data[i] >> 4;       
+	   ADC1_data[i] = (U32)(((ADC1_data[i] * ADC_full_scale*10)/4095.0)); 
+	 }
+         
+         
+         if(Uart_rx_fl == 1) // если был запрос на отправку данных..
+	 {  
+	    Uart_rx_fl = 0; // сброс флага запроса
+         // отсылка на ПК данных АЦП 1
+         for (U8 i = 0; i < 16; i++) { Uart_num_send(ADC1_data[i]); Uart_send_text(";"); } 
+         // отсылка на ПК данных АЦП 2
+         for (U8 i = 0; i < 16; i++) { Uart_num_send(ADC2_data[i]); Uart_send_text(";"); }
+         // отсылка на ПК данных АЦП 3
+         for (U8 i = 0; i < 16; i++) { Uart_num_send(ADC3_data[i]); Uart_send_text(";"); }
+         Uart_send_text("E");
+	 Uart_CR_LF_send();	
+	 }
+	 else if (Uart_rx_fl == 2)
+	 {
+	    Uart_rx_fl = 0; 		// сброс флага ошибки
+	    Uart_send_text("error");    // отсылка сообщ. об ошибке на ПК
+	    Uart_CR_LF_send();
+	 }
+	 
+         delay_ms(5); // задержка перед след. измерениями необходима, иначе шлет пургу - неуспевает
+ }	
+}
+
+/*
+	запись и чтение конфигурационно регистра
+	CPLD_CE_ON;
+
+	SPI1_Wr_Data(0xcc00);    //normal mode
+	delay_us(3);
+	CPLD_CE_OFF;
+    //while(n_ADC3_DVALID) { }
+	delay_us(3);
+	ADC_data[0] = SPI1_Rd_Data();
+	*/

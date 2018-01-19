@@ -1,0 +1,72 @@
+    ____  ____
+   /   /\/   /
+  /___/  \  /    VENDOR      : Xilinx Inc.
+  \   \   \/     VERSION     : 14.4 (P.49d)
+   \   \         APPLICATION : C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe
+   /   /         CONTENTS    : Compilation Log
+  /___/   /\     FILENAME    : compxlib.log
+  \   \  /  \    
+   \___\/\___\
+
+Release 14.4 - C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe 14.4 (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Processing command line ...
+Reading the compxlib configuration file - 'compxlib.cfg' ...
+Library Source Paths => 'C:/Xilinx/14.4/ISE_DS/ISE'
+Current Working Directory => 'D:\work\Projects\FPGA_prj\ProfileMeter\MainSch'
+Compilation Mode = FAST
+Execute Mode = ON
+Scheduling library installation & compilation for architectures: acr2 xa9500xl xbr xc9500 xc9500xl xpla3
+
+Scheduling library installation & compilation for libraries: uni9000 coolrunner
+
+Signature:-
+------------------------------------------------------------------------------
+C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64\unwrapped\compxlib.exe -s mti_de -l all -arch cpld -lib unisim -lib simprim -lib uni9000 -lib coolrunner -intstyle ise 
+------------------------------------------------------------------------------
+ERROR:Compxlib - COMPXLIB[sim]: Unable to automatically find executables for simulator 'mti_de' from the following paths:
+    C:\Xilinx\14.4\ISE_DS\ISE\\lib\nt64
+   C:\Xilinx\14.4\ISE_DS\ISE\\bin\nt64
+   C:\Xilinx\Vivado_HLS\2012.4\bin
+   C:\Xilinx\14.4\ISE_DS\ISE\bin\nt64
+   C:\Xilinx\14.4\ISE_DS\ISE\lib\nt64
+   C:\Xilinx\14.4\ISE_DS\ISE\..\..\..\DocNav
+   C:\Xilinx\Vivado\2012.4\bin
+   C:\Xilinx\14.4\ISE_DS\PlanAhead\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\bin\nt64
+   C:\Xilinx\14.4\ISE_DS\EDK\lib\nt64
+   C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\nt64\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\gnuwin\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\gnu\arm\nt\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_be\bin
+   C:\Xilinx\14.4\ISE_DS\EDK\gnu\microblaze\linux_toolchain\nt64_le\bin
+   C:\Xilinx\14.4\ISE_DS\common\bin\nt64
+   C:\Xilinx\14.4\ISE_DS\common\lib\nt64
+   C:\PROGRA~2\Borland\CBUILD~1\Bin
+   C:\PROGRA~2\Borland\CBUILD~1\Projects\Bpl
+   C:\Program Files (x86)\Microchip\MPLABC18\v3.46\mpasm
+   C:\Program Files (x86)\Microchip\MPLABC18\v3.46\bin
+   C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common
+   C:\Windows\system32
+   C:\Windows
+   C:\Windows\System32\Wbem
+   C:\Windows\System32\WindowsPowerShell\v1.0\
+   C:\Program Files\Intel\WiFi\bin\
+   C:\Program Files\Common Files\Intel\WirelessCommon\
+   C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86
+   C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64
+   C:\Program Files\IVI Foundation\VISA\Win64\Bin\
+   C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\
+   C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin
+   C:\PROGRA~2\PICC
+   C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\
+   C:\Program Files\Microsoft SQL Server\110\Tools\Binn\
+   C:\Program Files (x86)\Skype\Phone\
+   C:\Program Files (x86)\QuickTime\QTSystem\
+   C:\Program Files (x86)\Microchip\MPLABC18\v3.45\mpasm
+   C:\Program Files (x86)\Microchip\MPLABC18\v3.45\bin
+   C:\Python33
+   D:\work\Projects\Python\komodo.
+Simulator 'mti_de' is ignored.

@@ -1,0 +1,9 @@
+ÀÄÓïğ
+   ÃÄMAIN  0/206  Ram=1
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄOscSetup  0/28  Ram=0
+   ³  ÃÄMCU_init  0/54  Ram=0
+   ³  ³  ÀÄEnableInt  0/16  Ram=0
+   ³  ÀÄ@delay_ms1  0/24  Ram=2
+   ÃÄtimer1_irq_handler  0/40  Ram=0
+   ÀÄUART2_RXd_isr  0/60  Ram=5

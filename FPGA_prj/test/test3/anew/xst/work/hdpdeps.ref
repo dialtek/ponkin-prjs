@@ -1,0 +1,7 @@
+V3 3
+FL C:/Xilinx/test/test3/anew/anew.vhd 2013/08/04.21:51:14 P.28xd
+EN work/anew 1375638678 FL C:/Xilinx/test/test3/anew/anew.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/std_logic_arith 1341906177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1341906179 PB ieee/NUMERIC_STD 1341906182
+AR work/anew/Beh 1375638679 \
+      FL C:/Xilinx/test/test3/anew/anew.vhd EN work/anew 1375638678

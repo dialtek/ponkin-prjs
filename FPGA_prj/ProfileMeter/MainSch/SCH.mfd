@@ -1,0 +1,11 @@
+MDF Database:  version 1.0
+MDF_INFO | SCH | XC9572XL-5-VQ44
+MACROCELL | 0 | 14 | OUT_F_OBUF
+ATTRIBUTES | 264962 | 0
+INPUTS | 1 | IN_F
+INPUTP | 1 | 20
+EQ | 1 | 
+   OUT_F = !IN_F;
+
+PIN | IN_F | 64 | 0 | N/A | 20 | 1 | 0 | 14
+PIN | OUT_F | 536871040 | 0 | N/A | 26

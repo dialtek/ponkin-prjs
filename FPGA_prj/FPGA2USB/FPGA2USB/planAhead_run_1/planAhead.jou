@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# PlanAhead v14.2 (64-bit)
+# Build 194362 by xbuild on Fri Jul 20 18:52:11 MDT 2012
+# Start of session at: Mon Sep 30 16:38:08 2013
+# Process ID: 6416
+# Log file: C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/planAhead_run_1/planAhead.log
+# Journal file: C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/pa.fromHdl.tcl

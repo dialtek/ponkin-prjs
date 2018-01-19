@@ -1,0 +1,8 @@
+V3 3
+FL D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.vhd 2012/03/23.22:11:04 P.49d
+EN work/jc2_top 1444143286 \
+      FL D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.vhd \
+      PB ieee/std_logic_1164 1354696159
+AR work/jc2_top/jc2_top_arch 1444143287 \
+      FL D:/work/Projects/FPGA_prj/test/cpld_test/example/jc2_vhd/jc2_top.vhd \
+      EN work/jc2_top 1444143286

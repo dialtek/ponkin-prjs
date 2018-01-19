@@ -1,0 +1,291 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     @INTERRUPT_AREA
+019     @INTERRUPT_AREA
+01A     buf
+01A.4   buf4
+01A.5   buf5
+01A.6   buf6
+01A.7   buf7
+01B-01C strtok.save
+01D.0   int_fl
+01D.1   zero_set1
+01D.2   fl2
+01D.3   menufl1
+01D.4   menufl2
+01D.5   menufl3
+01D.6   menufl4
+01E     ff1
+01F     TMR0fl
+020     MenuItemNum
+021     RXd_buf
+022     ConfigRegA
+023     ConfigRegB
+024     ModeReg
+025     xMSB
+026     xLSB
+027     zMSB
+028     zLSB
+029     yMSB
+02A     yLSB
+02B     StatReg
+02C     idRegA
+02D     idRegB
+02E     idRegC
+02F-030 SumX
+031-032 SumY
+033-034 SumZ
+035-036 SumX0
+037-038 SumY0
+039-03A SumZ0
+03B-03E average_Xg
+03F-042 average_Yg
+043-046 average_Zg
+047-048 Xh
+049     Xl
+04A-04B Yh
+04C     Yl
+04D-04E Zh
+04F     Zl
+050-053 Xd
+054-057 Yd
+058-05B Zd
+05C     aver_count
+05D-060 average_X
+061-064 average_Y
+065-068 average_Z
+069     LCDWelcome.i
+069-06C @DIVS3232.P1
+069-06C @MULFF.P2
+069-06C @SDTOF.P3
+069-06C @PRINTF_L32D_9600_31766_31767.P4
+069-06C @SFTOI.P5
+069     SensRdAll.@SCRATCH1
+06A     LCDSetCursor.ucPos
+06A     LCDWelcome.@SCRATCH1
+06A     @PSTRINGC_248.@SCRATCH1
+06A     SensRdAll.@SCRATCH2
+06B     @delay_ms1.P1
+06B-06C LCDPutS16.s16a
+06B     LCDSetCursor.@SCRATCH1
+06B     @PSTRINGC_248.@SCRATCH2
+06B     SensRdAll.@SCRATCH3
+06C     LCDMsg.c
+06C     LCDCommand.uc
+06C     SensRdAll.@SCRATCH4
+06D     LCDPutS16.u8NumDigs
+06D-070 @DIVS3232.P1
+06D-070 @MULFF.P2
+06D     LCDCommand.@SCRATCH1
+06D     @SDTOF.@SCRATCH1
+06D     @PRINTF_L32D_9600_31766_31767.@SCRATCH1
+06E     LCDPutS16.c
+06E     @PRINTF_L32D_9600_31766_31767.@SCRATCH2
+06F-072 LCDPutU16._u16
+06F     @PRINTF_L32D_9600_31766_31767.@SCRATCH3
+070     @PRINTF_L32D_9600_31766_31767.@SCRATCH4
+071     @DIVS3232.@SCRATCH1
+071     @MULFF.@SCRATCH1
+071     @PRINTF_L32D_9600_31766_31767.@SCRATCH5
+072     @DIVS3232.@SCRATCH2
+072     @MULFF.@SCRATCH2
+072     @PRINTF_L32D_9600_31766_31767.@SCRATCH6
+073     LCDPutU16.u8NumDigs
+073     @DIVS3232.@SCRATCH3
+073     @MULFF.@SCRATCH3
+073     @PRINTF_L32D_9600_31766_31767.@SCRATCH7
+074-077 LCDPutU16.u16a
+074     @DIVS3232.@SCRATCH4
+074     @PRINTF_L32D_9600_31766_31767.@SCRATCH8
+075     @DIVS3232.@SCRATCH5
+076     @DIVS3232.@SCRATCH6
+078-07B LCDPutU16.u16b
+07C-07F @MUL3232.P1
+07C-07F @DIV3232.P2
+07C     LCDPutU16.@SCRATCH1
+07D     LCDPutCh.c
+07E     LCDWriteData.uc
+07F     LCDWriteData.@SCRATCH1
+080     LCDWriteNibble.uc
+080-083 @DIV3232.P1
+080-083 @MUL3232.P2
+081     LCDWriteNibble.@SCRATCH1
+082     @delay_us1.P1
+084     @DIV3232.@SCRATCH1
+084     @MUL3232.@SCRATCH1
+085     @DIV3232.@SCRATCH2
+085     @MUL3232.@SCRATCH2
+086     @DIV3232.@SCRATCH3
+086     @MUL3232.@SCRATCH3
+087     @DIV3232.@SCRATCH4
+087     @MUL3232.@SCRATCH4
+088     @DIV3232.@SCRATCH5
+088     @MUL3232.@SCRATCH5
+089     @MUL3232.@SCRATCH6
+08A     @I2C_READ_1.P1
+08A     SensWrData.Adr
+08A     int0.@SCRATCH1
+08B     SensWrData.Data
+08B     @I2C_READ_1.@SCRATCH1
+08B     int0.@SCRATCH2
+08C     @I2C_WRITE_1.P1
+08C     @I2C_READ_1.@SCRATCH2
+F48     CCP_5_LOW
+F48     CCP_5
+F49     CCP_5_HIGH
+F4B     CCP_4_LOW
+F4B     CCP_4
+F4C     CCP_4_HIGH
+F4E     CCP_3_LOW
+F4E     CCP_3
+F4F     CCP_3_HIGH
+F51     CCP_2_LOW
+F51     CCP_2
+F52     CCP_2_HIGH
+F80     PORTA
+F80.3   SW1
+F81     PORTB
+F81.0   DRDY
+F82     PORTC
+F82.2   SW2
+F8A     LATB
+F8A.3   LCD_E
+F8A.4   LCD_RW
+F8A.5   LCD_RS
+F8B     LATC
+F8B.0   DB7
+F8B.1   DB6
+F8B.2   DB5
+F8B.5   DB4
+F8B.6   LED
+F92     TRISA
+F92.3   TRA3
+F93     TRISB
+F93.0   TRB0
+F93.3   TRB3
+F93.4   TRB4
+F93.5   TRB5
+F94     TRISC
+F94.0   TRC0
+F94.1   TRC1
+F94.2   TRC2
+F94.3   TRC3
+F94.4   TRC4
+F94.5   TRC5
+F94.6   TRC6
+F94.7   TRC7
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBC     CCP_1
+FBC     CCP_1_LOW
+FBD     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PACKED_MEMORY.P4
+FF1     INTCON2
+FF2     INTCON
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+00038C  @delay_ms1
+0003B2  @delay_us1
+00014E  @I2C_READ_1
+000106  @I2C_WRITE_1
+0003D0  LCDWriteNibble
+0004A8  LCDWriteData
+000418  LCDCommand
+000506  LCDSetCursor
+000512  LCDClear
+00043C  LCDinit
+0004D4  LCDPutCh
+0009D8  LCDPutU16
+0007C6  @DIV3232
+000984  @MUL3232
+000BD8  LCDPutS16
+0004DC  LCDMsg
+000526  LCDWelcome
+0000BA  @const252
+0004E6  @PSTRINGC_248
+0000CA  @const254
+000196  SensWrData
+000556  SensInit
+000C0A  SensRdAll
+0000DC  @const316
+00059A  @DIVS3232
+00067E  @SDTOF
+0006D4  @MULFF
+000854  @PRINTF_L32D_9600_31766_31767
+0000EE  @const330
+00094C  @SFTOI
+0000F2  @const333
+0000F8  @const334
+000100  @const335
+0001D0  int0
+00036E  UART_RXd_isr
+000FAE  MAIN
+000FAE  @cinit1
+001080  @cinit2
+
+Project Directory:
+    D:\work\Projects\PICC\my prj\XYZ magnitometer\Версия 2.2\
+
+Project Files:
+    main.c                                                  [29-окт-14 15:16  CRC=AC5F4D4F]
+    XYZ Gaussmeter.h                                        [28-окт-14 15:51  CRC=7D3737F5]
+    C:\Program Files (x86)\PICC\Devices\18F25K80.h          [30-ноя-12 18:59  CRC=64C2B7A3]
+    C:\Program Files (x86)\PICC\Drivers\stdio.h             [31-июл-07 13:24  CRC=4E4534F4]
+    C:\Program Files (x86)\PICC\Drivers\string.h            [14-июл-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\Drivers\stddef.h            [16-июл-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-янв-08 13:55  CRC=2D1F019F]
+    LCD_XYZ_Gaussmeter.c                                    [28-окт-14 16:09  CRC=B6C66B43]
+
+Source signature=24B522FB
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F25K80
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

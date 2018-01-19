@@ -1,0 +1,40 @@
+.OPTION EXPLICIT
+.Set Cabinet=off
+.Set Compress=off
+.Set MaxDiskSize=CDROM
+.Set ReservePerCabinetSize=6144
+.Set DiskDirectoryTemplate=".."
+.Set CompressionType=MSZIP
+.Set CompressionLevel=7
+.Set CompressionMemory=21
+.Set CabinetNameTemplate="slm_nxpusb.CAB"
+"Setup.Lst"
+"setup.exe"
+.Set Cabinet=on
+.Set Compress=on
+"slm_nxpusb.exe"
+"msvbvm60.dll"
+"OLEAUT32.DLL"
+"OLEPRO32.DLL"
+"ASYCFILT.DLL"
+"STDOLE2.TLB"
+"COMCAT.DLL"
+"USB_DLL.dll"
+"TABCTL32.OCX"
+"comdlg32.ocx"
+"mscomctl.ocx"
+"mscomct2.ocx"
+"RICHTX32.OCX"
+"RICHED32.DLL"
+"MSCOMM32.OCX"
+"comct332.ocx"
+"cwanalysis.ocx"
+"MSWINSCK.OCX"
+"cwui.ocx"
+"mfc42.dll"
+"MSVCRT.DLL"
+"mesa.dll"
+"SETUP1.EXE"
+"VB6STKIT.DLL"
+"ST6UNST.EXE"
+"license.txt"

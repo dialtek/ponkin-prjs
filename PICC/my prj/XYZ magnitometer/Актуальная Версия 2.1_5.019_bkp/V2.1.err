@@ -1,0 +1,23 @@
+>>> Warning 216 "V2.1.c" Line 869(2,3): Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITE_1)
+>>> Warning 216 "V2.1.c" Line 869(2,3): Interrupts disabled during call to prevent re-entrancy:  (@I2C_READ_1)
+>>> Warning 216 "V2.1.c" Line 869(2,3): Interrupts disabled during call to prevent re-entrancy:  (SensWrData)
+>>> Warning 202 "E:\work\Projects\ponkin\PICC\my prj\XYZ magnitometer\Актуальная Версия 2.1_5.019\LCD for V2.1.c" Line 192(18,19): Variable never used:   i
+>>> Warning 202 "V2.1.c" Line 11(39,50): Variable never used:   LCDClear_Fl
+>>> Warning 202 "V2.1.c" Line 14(11,14): Variable never used:   ff1
+>>> Warning 202 "V2.1.c" Line 15(58,65): Variable never used:   menufl4
+>>> Warning 202 "V2.1.c" Line 16(11,17): Variable never used:   TMR0fl
+>>> Warning 202 "V2.1.c" Line 16(21,32): Variable never used:   MenuItemNum
+>>> Warning 202 "V2.1.c" Line 19(61,65): Variable never used:   xMSB
+>>> Warning 202 "V2.1.c" Line 19(74,78): Variable never used:   xLSB
+>>> Warning 202 "V2.1.c" Line 20(7,11): Variable never used:   zMSB
+>>> Warning 202 "V2.1.c" Line 20(20,24): Variable never used:   zLSB
+>>> Warning 202 "V2.1.c" Line 20(33,37): Variable never used:   yMSB
+>>> Warning 202 "V2.1.c" Line 20(46,50): Variable never used:   yLSB
+>>> Warning 202 "V2.1.c" Line 20(59,66): Variable never used:   StatReg
+>>> Warning 202 "V2.1.c" Line 20(75,81): Variable never used:   idRegA
+>>> Warning 202 "V2.1.c" Line 21(7,13): Variable never used:   idRegB
+>>> Warning 202 "V2.1.c" Line 21(22,28): Variable never used:   idRegC
+>>> Warning 202 "V2.1.c" Line 53(4,10): Variable never used:   my_arr
+      Memory usage:   ROM=24%      RAM=5% - 6%
+      0 Errors,  20 Warnings.
+Build Successful.

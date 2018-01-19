@@ -1,0 +1,581 @@
+CCS PCM C Compiler, Version 4.065, 30574               22-апр-11 14:03
+
+               Filename: bskt.lst
+
+               ROM used: 602 words (15%)
+                         Largest free fragment is 2048
+               RAM used: 33 (9%) at main() level
+                         42 (11%) worst case
+               Stack:    2 worst case (1 in main + 1 for interrupts)
+
+*
+0000:  MOVLW  00
+0001:  MOVWF  0A
+0002:  GOTO   1B6
+0003:  NOP
+0004:  MOVWF  7F
+0005:  SWAPF  03,W
+0006:  CLRF   03
+0007:  MOVWF  21
+0008:  MOVF   7F,W
+0009:  MOVWF  20
+000A:  MOVF   0A,W
+000B:  MOVWF  28
+000C:  CLRF   0A
+000D:  SWAPF  20,F
+000E:  MOVF   04,W
+000F:  MOVWF  22
+0010:  MOVF   77,W
+0011:  MOVWF  23
+0012:  MOVF   78,W
+0013:  MOVWF  24
+0014:  MOVF   79,W
+0015:  MOVWF  25
+0016:  MOVF   7A,W
+0017:  MOVWF  26
+0018:  MOVF   7B,W
+0019:  MOVWF  27
+001A:  BCF    03.7
+001B:  BCF    03.5
+001C:  MOVLW  8C
+001D:  MOVWF  04
+001E:  BTFSS  00.0
+001F:  GOTO   022
+0020:  BTFSC  0C.0
+0021:  GOTO   045
+0022:  MOVLW  8C
+0023:  MOVWF  04
+0024:  BTFSS  00.1
+0025:  GOTO   028
+0026:  BTFSC  0C.1
+0027:  GOTO   047
+0028:  MOVLW  8C
+0029:  MOVWF  04
+002A:  BTFSS  00.2
+002B:  GOTO   02E
+002C:  BTFSC  0C.2
+002D:  GOTO   049
+002E:  BTFSS  0B.5
+002F:  GOTO   032
+0030:  BTFSC  0B.2
+0031:  GOTO   04B
+0032:  MOVF   22,W
+0033:  MOVWF  04
+0034:  MOVF   23,W
+0035:  MOVWF  77
+0036:  MOVF   24,W
+0037:  MOVWF  78
+0038:  MOVF   25,W
+0039:  MOVWF  79
+003A:  MOVF   26,W
+003B:  MOVWF  7A
+003C:  MOVF   27,W
+003D:  MOVWF  7B
+003E:  MOVF   28,W
+003F:  MOVWF  0A
+0040:  SWAPF  21,W
+0041:  MOVWF  03
+0042:  SWAPF  7F,F
+0043:  SWAPF  7F,W
+0044:  RETFIE
+0045:  BCF    0A.3
+0046:  GOTO   066
+0047:  BCF    0A.3
+0048:  GOTO   06A
+0049:  BCF    0A.3
+004A:  GOTO   096
+004B:  BCF    0A.3
+004C:  GOTO   092
+.................... //#include "C:\PRJ\BSKT-220\bskt.h" 
+....................  
+.................... #include <16F88.h> 
+.................... //////// Standard Header file for the PIC16F88 device //////////////// 
+.................... #device PIC16F88 
+.................... #list 
+....................  
+.................... #device *=16 
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES HS                       //High speed Osc (> 4mhz) 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES MCLR                     //Master Clear pin enabled 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NOFCMEN                  //Fail-safe clock monitor disabled 
+.................... #FUSES NOIESO                    //Internal External Switch Over mode enabled 
+....................  
+....................  
+.................... //#fuses   HS,NOPROTECT,NOWDT,PUT,NOMCLR,NOBROWNOUT,NOLVP,NOCPD 
+....................  
+.................... #BYTE portA = 0x05 
+.................... #BYTE portB = 0x06 
+....................  
+.................... #BYTE TRISA = 0x85                
+.................... #BYTE TRISB = 0x86 
+....................  
+.................... #BYTE CMCON = 0x9C 
+....................  
+.................... #BIT C1INV=CMCON.4 
+.................... #BIT C2INV=CMCON.5 
+....................  
+.................... #BYTE SPBRG = 0x99 
+.................... #BYTE TXSTA = 0x98 
+.................... #BIT BRGH=TXSTA.2 
+....................  
+.................... #BIT B0=portB.0 
+.................... #BIT B1=portB.1 
+.................... #BIT B2=portB.2 
+.................... #BIT B3=portB.3 
+.................... #BIT B4=portB.4 
+.................... #BIT B5=portB.5 
+.................... #BIT B6=portB.6 
+.................... #BIT B7=portB.7 
+....................  
+.................... #BIT TRB0=TRISB.0 
+.................... #BIT TRB1=TRISB.1 
+.................... #BIT TRB2=TRISB.2 
+.................... #BIT TRB3=TRISB.3 
+.................... #BIT TRB4=TRISB.4 
+.................... #BIT TRB5=TRISB.5 
+.................... #BIT TRB6=TRISB.6 
+.................... #BIT TRB7=TRISB.7 
+....................  
+.................... #use delay(clock=8000000) 
+.................... //#use rs232(baud=9600,parity=N,xmit=PIN_A3,rcv=PIN_A2,bits=8) 
+.................... #use rs232(UART1,baud=38400,parity=N,xmit=PIN_B5,bits=8) 
+....................  
+.................... signed int8 x=0; 
+*
+01CA:  BCF    03.5
+01CB:  CLRF   29
+.................... int1 fl1=0,fl2=0; 
+01CC:  BCF    2A.0
+01CD:  BCF    2A.1
+.................... unsigned int8 phase=0,buf,buf1=0,buf2=0,buf3=0;  
+01CE:  CLRF   2B
+01CF:  CLRF   2D
+01D0:  CLRF   2E
+01D1:  CLRF   2F
+.................... unsigned int16 angle=0,buf4=0,buf5=0; 
+01D2:  CLRF   30
+01D3:  CLRF   31
+01D4:  CLRF   32
+01D5:  CLRF   33
+01D6:  CLRF   34
+01D7:  CLRF   35
+.................... //int16 turns=0; 
+.................... signed int16 turn_counter=0,sum1=0; 
+01D8:  CLRF   36
+01D9:  CLRF   37
+01DA:  CLRF   38
+01DB:  CLRF   39
+....................  
+.................... #int_TIMER1 
+.................... void  TIMER1_isr(void)  
+.................... { 
+.................... clear_interrupt(int_timer1); 
+*
+0066:  BCF    0C.0
+.................... } 
+....................  
+0067:  BCF    0C.0
+0068:  BCF    0A.3
+0069:  GOTO   032
+.................... #int_TIMER2 
+.................... void  TIMER2_isr(void)  
+.................... { 
+.................... switch(phase){ 
+006A:  MOVF   2B,W
+006B:  XORLW  00
+006C:  BTFSC  03.2
+006D:  GOTO   078
+006E:  XORLW  01
+006F:  BTFSC  03.2
+0070:  GOTO   07F
+0071:  XORLW  03
+0072:  BTFSC  03.2
+0073:  GOTO   084
+0074:  XORLW  01
+0075:  BTFSC  03.2
+0076:  GOTO   089
+0077:  GOTO   08D
+.................... case(0): 
+.................... //сброс ТМР1 
+.................... set_timer1(0); 
+0078:  CLRF   0F
+0079:  CLRF   0E
+.................... B1=0; 
+007A:  BCF    06.1
+.................... B3=0; 
+007B:  BCF    06.3
+.................... phase=1; 
+007C:  MOVLW  01
+007D:  MOVWF  2B
+.................... break; 
+007E:  GOTO   08E
+....................  
+.................... case(1): 
+.................... B1=1; 
+007F:  BSF    06.1
+.................... B3=0; 
+0080:  BCF    06.3
+.................... phase=2; 
+0081:  MOVLW  02
+0082:  MOVWF  2B
+.................... break; 
+0083:  GOTO   08E
+....................  
+.................... case(2): 
+.................... B1=1; 
+0084:  BSF    06.1
+.................... B3=1; 
+0085:  BSF    06.3
+.................... phase=3; 
+0086:  MOVLW  03
+0087:  MOVWF  2B
+.................... break; 
+0088:  GOTO   08E
+....................  
+.................... case(3): 
+.................... B1=0; 
+0089:  BCF    06.1
+.................... B3=1; 
+008A:  BSF    06.3
+.................... phase=0; 
+008B:  CLRF   2B
+.................... break; 
+008C:  GOTO   08E
+....................  
+.................... default: 
+.................... phase=0; 
+008D:  CLRF   2B
+.................... } 
+.................... clear_interrupt(int_timer2); 
+008E:  BCF    0C.1
+.................... } 
+....................  
+008F:  BCF    0C.1
+0090:  BCF    0A.3
+0091:  GOTO   032
+.................... #int_TIMER0 
+.................... void  TIMER0_isr(void)  
+.................... { 
+.................... clear_interrupt(int_timer0); 
+0092:  BCF    0B.2
+.................... } 
+....................  
+0093:  BCF    0B.2
+0094:  BCF    0A.3
+0095:  GOTO   032
+.................... #int_CCP1 
+.................... void CAPTURE1_isr(void) 
+.................... { 
+....................   buf4=CCP_1>>3;// 360 градусов buf4 - текущее 
+0096:  RRF    16,W
+0097:  MOVWF  33
+0098:  RRF    15,W
+0099:  MOVWF  32
+009A:  RRF    33,F
+009B:  RRF    32,F
+009C:  RRF    33,F
+009D:  RRF    32,F
+009E:  MOVLW  1F
+009F:  ANDWF  33,F
+....................    
+....................   //счетчик витков 
+....................   sum1=buf4-buf5; 
+00A0:  MOVF   34,W
+00A1:  SUBWF  32,W
+00A2:  MOVWF  77
+00A3:  MOVF   33,W
+00A4:  MOVWF  7A
+00A5:  MOVF   35,W
+00A6:  BTFSS  03.0
+00A7:  INCFSZ 35,W
+00A8:  SUBWF  7A,F
+00A9:  MOVF   77,W
+00AA:  MOVWF  38
+00AB:  MOVF   7A,W
+00AC:  MOVWF  39
+....................   if(sum1 < (-300))x=1;//+1 виток 
+00AD:  BTFSS  39.7
+00AE:  GOTO   0BC
+00AF:  MOVF   39,W
+00B0:  SUBLW  FE
+00B1:  BTFSS  03.0
+00B2:  GOTO   0BC
+00B3:  BTFSS  03.2
+00B4:  GOTO   0B9
+00B5:  MOVF   38,W
+00B6:  SUBLW  D3
+00B7:  BTFSS  03.0
+00B8:  GOTO   0BC
+00B9:  MOVLW  01
+00BA:  MOVWF  29
+....................    else  
+00BB:  GOTO   0CD
+....................    if(sum1 > 300) x=-1;// -1 виток 
+00BC:  BTFSC  39.7
+00BD:  GOTO   0CC
+00BE:  MOVF   39,W
+00BF:  SUBLW  00
+00C0:  BTFSC  03.0
+00C1:  GOTO   0CC
+00C2:  XORLW  FF
+00C3:  BTFSS  03.2
+00C4:  GOTO   0C9
+00C5:  MOVF   38,W
+00C6:  SUBLW  2C
+00C7:  BTFSC  03.0
+00C8:  GOTO   0CC
+00C9:  MOVLW  FF
+00CA:  MOVWF  29
+....................      else x=0; 
+00CB:  GOTO   0CD
+00CC:  CLRF   29
+....................   turn_counter=turn_counter+x; 
+00CD:  CLRF   7A
+00CE:  MOVF   29,W
+00CF:  BTFSC  29.7
+00D0:  DECF   7A,F
+00D1:  ADDWF  36,F
+00D2:  MOVF   7A,W
+00D3:  BTFSC  03.0
+00D4:  INCFSZ 7A,W
+00D5:  ADDWF  37,F
+....................    
+....................   buf5=buf4;//buf5-предыдущее значение 
+00D6:  MOVF   33,W
+00D7:  MOVWF  35
+00D8:  MOVF   32,W
+00D9:  MOVWF  34
+....................    
+....................   if(!fl1){ 
+00DA:  BTFSC  2A.0
+00DB:  GOTO   0E1
+....................      fl1=1; 
+00DC:  BSF    2A.0
+....................      angle=buf4;// 360 градусов  
+00DD:  MOVF   33,W
+00DE:  MOVWF  31
+00DF:  MOVF   32,W
+00E0:  MOVWF  30
+....................   } 
+.................... clear_interrupt(int_CCP1); 
+00E1:  BCF    0C.2
+.................... } 
+....................  
+....................  
+....................  
+00E2:  BCF    0C.2
+00E3:  BCF    0A.3
+00E4:  GOTO   032
+.................... void main() 
+.................... { 
+*
+01B6:  CLRF   04
+01B7:  BCF    03.7
+01B8:  MOVLW  1F
+01B9:  ANDWF  03,F
+01BA:  MOVLW  0C
+01BB:  BSF    03.5
+01BC:  MOVWF  19
+01BD:  MOVLW  A6
+01BE:  MOVWF  18
+01BF:  MOVLW  90
+01C0:  BCF    03.5
+01C1:  MOVWF  18
+01C2:  BSF    03.5
+01C3:  BCF    1F.4
+01C4:  BCF    1F.5
+01C5:  MOVF   1B,W
+01C6:  ANDLW  80
+01C7:  MOVWF  1B
+01C8:  MOVLW  07
+01C9:  MOVWF  1C
+....................   
+....................   
+....................    setup_adc_ports(NO_ANALOGS|VSS_VDD); 
+*
+01DC:  BSF    03.5
+01DD:  BCF    1F.4
+01DE:  BCF    1F.5
+01DF:  MOVF   1B,W
+01E0:  ANDLW  80
+01E1:  MOVWF  1B
+....................    setup_adc(ADC_OFF); 
+01E2:  BCF    03.5
+01E3:  BCF    1F.0
+....................    setup_spi(SPI_SS_DISABLED); 
+01E4:  BCF    14.5
+01E5:  BSF    03.5
+01E6:  BCF    06.2
+01E7:  BSF    06.1
+01E8:  BCF    06.4
+01E9:  MOVLW  01
+01EA:  BCF    03.5
+01EB:  MOVWF  14
+01EC:  MOVLW  00
+01ED:  BSF    03.5
+01EE:  MOVWF  14
+....................    setup_timer_0(RTCC_INTERNAL|RTCC_DIV_1); 
+01EF:  MOVF   01,W
+01F0:  ANDLW  C7
+01F1:  IORLW  08
+01F2:  MOVWF  01
+....................    setup_timer_1(T1_INTERNAL|T1_DIV_BY_2); 
+01F3:  MOVLW  95
+01F4:  BCF    03.5
+01F5:  MOVWF  10
+....................    setup_timer_2(T2_DIV_BY_16,89,1); 
+01F6:  MOVLW  00
+01F7:  MOVWF  78
+01F8:  IORLW  06
+01F9:  MOVWF  12
+01FA:  MOVLW  59
+01FB:  BSF    03.5
+01FC:  MOVWF  12
+....................    setup_comparator(A0_A2_A1_A2_OUT_ON_A3_A4); 
+01FD:  MOVLW  06
+01FE:  MOVWF  1C
+01FF:  MOVF   05,W
+0200:  IORLW  07
+0201:  ANDLW  E7
+0202:  MOVWF  05
+0203:  MOVLW  06
+0204:  MOVWF  77
+0205:  DECFSZ 77,F
+0206:  GOTO   205
+0207:  NOP
+0208:  MOVF   1C,W
+0209:  BCF    03.5
+020A:  BCF    0D.6
+....................   // setup_comparator(NC_NC_NC_NC); 
+....................    setup_vref(VREF_LOW|13|VREF_A2);//0.5Ucc на RA2 
+020B:  MOVLW  ED
+020C:  BSF    03.5
+020D:  MOVWF  1D
+020E:  BSF    05.2
+....................    setup_ccp1 (CCP_CAPTURE_FE);  
+020F:  BSF    06.0
+0210:  BCF    03.5
+0211:  CLRF   17
+0212:  MOVLW  04
+0213:  MOVWF  17
+....................   // enable_interrupts(INT_TIMER1); 
+....................    enable_interrupts(INT_TIMER2); 
+0214:  BSF    03.5
+0215:  BSF    0C.1
+....................    enable_interrupts(INT_CCP1); 
+0216:  BSF    0C.2
+....................    //enable_interrupts(INT_TIMER0); 
+....................    //disable_interrupts(INT_TIMER0); 
+....................    enable_interrupts(GLOBAL); 
+0217:  MOVLW  C0
+0218:  BCF    03.5
+0219:  IORWF  0B,F
+....................    //BRGH=0; 
+....................   // SPBRG=51; 
+....................     
+.................... //Setup_Oscillator parameter not selected from Intr Oscillator Config tab 
+....................  
+....................    // TODO: USER CODE!! 
+....................    C1INV=1; 
+021A:  BSF    03.5
+021B:  BSF    1C.4
+....................    TRB1=0; 
+021C:  BCF    06.1
+....................    TRB3=0; 
+021D:  BCF    06.3
+....................    B1=0; 
+021E:  BCF    03.5
+021F:  BCF    06.1
+....................    B3=0; 
+0220:  BCF    06.3
+.................... while(true){ 
+....................  
+....................  if(fl1){ 
+0221:  BTFSS  2A.0
+0222:  GOTO   258
+....................   /* buf1=angle/100; 
+....................    buf=angle-buf1*100; 
+....................    buf2=buf/10; 
+....................    buf3=buf-buf2*10; 
+....................    printf("%u%u%u\n\r",buf1,buf2,buf3); 
+....................   */  
+....................    printf("Az=%Lu  Turns=%Ld \n\r",angle,turn_counter); 
+0223:  MOVLW  41
+0224:  BTFSS  0C.4
+0225:  GOTO   224
+0226:  MOVWF  19
+0227:  MOVLW  7A
+0228:  BTFSS  0C.4
+0229:  GOTO   228
+022A:  MOVWF  19
+022B:  MOVLW  3D
+022C:  BTFSS  0C.4
+022D:  GOTO   22C
+022E:  MOVWF  19
+022F:  MOVLW  10
+0230:  MOVWF  04
+0231:  MOVF   31,W
+0232:  MOVWF  3B
+0233:  MOVF   30,W
+0234:  MOVWF  3A
+0235:  GOTO   0E5
+0236:  MOVLW  06
+0237:  MOVWF  3A
+0238:  MOVF   3A,W
+0239:  CALL   04D
+023A:  INCF   3A,F
+023B:  MOVWF  77
+023C:  MOVF   77,W
+023D:  BTFSS  0C.4
+023E:  GOTO   23D
+023F:  MOVWF  19
+0240:  MOVLW  0E
+0241:  SUBWF  3A,W
+0242:  BTFSS  03.2
+0243:  GOTO   238
+0244:  MOVLW  10
+0245:  MOVWF  04
+0246:  MOVF   37,W
+0247:  MOVWF  3C
+0248:  MOVF   36,W
+0249:  MOVWF  3B
+024A:  GOTO   13F
+024B:  MOVLW  20
+024C:  BTFSS  0C.4
+024D:  GOTO   24C
+024E:  MOVWF  19
+024F:  MOVLW  0A
+0250:  BTFSS  0C.4
+0251:  GOTO   250
+0252:  MOVWF  19
+0253:  MOVLW  0D
+0254:  BTFSS  0C.4
+0255:  GOTO   254
+0256:  MOVWF  19
+....................    
+....................   fl1=0; 
+0257:  BCF    2A.0
+....................    
+....................  } 
+....................  
+....................  
+....................  
+....................  
+.................... } 
+0258:  GOTO   221
+....................  
+.................... } 
+0259:  SLEEP
+
+Configuration Fuses:
+   Word  1: 3F2A   HS NOWDT NOPUT MCLR NOBROWNOUT NOLVP NOCPD NOWRT NODEBUG CCPB0 NOPROTECT
+   Word  2: 3FFC   NOFCMEN NOIESO

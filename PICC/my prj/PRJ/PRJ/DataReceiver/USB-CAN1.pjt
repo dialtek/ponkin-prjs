@@ -1,0 +1,28 @@
+[PROJECT]
+Target=C:\PRJ\USB-CAN\USB-CAN1.hex
+Development_Mode=
+Processor_Text=PIC18F2480
+ToolSuite=CCS
+Processor=0x2480
+[C:\PRJ\USB-CAN\USB-CAN1]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\USB-CAN\USB-CAN1.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=c:\PRJ\DataReceiver\USB-CAN1.c
+2=C:\Program Files\PICC\devices\18F2480.h
+3=
+4=
+[Target Data]
+OptionString=-p +FH
+FileList=USB-CAN1.c
+[Units]
+Count=1
+1=USB-CAN1.c (main)

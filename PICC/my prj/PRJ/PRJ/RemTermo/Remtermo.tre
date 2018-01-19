@@ -1,0 +1,12 @@
+ÀÄRemtermo
+   ÃÄMAIN  0/299  Ram=20
+   ³  ÃÄ??0??
+   ³  ÃÄ@DIV1616  0/37  Ram=5
+   ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ÃÄ@DIV1616  0/37  Ram=5
+   ³  ÃÄ@MUL88  0/37  Ram=2
+   ³  ÃÄ@DIV1616  0/37  Ram=5
+   ³  ÃÄ@MUL1616  0/22  Ram=5
+   ³  ÃÄCrc8  0/40  Ram=6
+   ³  ÀÄ@delay_ms1  0/22  Ram=1
+   ÀÄtbe_int  0/19  Ram=0

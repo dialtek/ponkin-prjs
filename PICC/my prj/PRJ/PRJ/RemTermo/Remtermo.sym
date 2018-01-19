@@ -1,0 +1,109 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     @WRITE_PROGRAM_MEMORY8.P2
+005     portA
+006     portB
+006.4   PORTB4
+00C     PIR1
+00C.4   TXIF
+015     CCP_1_LOW
+015-016 CCP_1
+016     CCP_1_HIGH
+019     TXREG
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029-046 txbuf
+047-05A msgbuf
+05B     j
+05C     k
+05D-05E MAIN.temp1
+05F-060 MAIN.temp2
+061-062 MAIN.Vdd
+063-064 MAIN.V
+065-066 MAIN.Vpoint
+067     MAIN.fgrad1
+068     MAIN.pgrad1
+069     MAIN.fgrad2
+06A     MAIN.pgrad2
+06B     MAIN.i
+06C     MAIN.pl
+06D     @MUL88.P1
+06D-06E Crc8.pcBlock
+06D-06E @DIV1616.P1
+06D-06E @MUL1616.P2
+06D     MAIN.@SCRATCH1
+06E     @MUL88.P1
+06E     @delay_ms1.P2
+06E     MAIN.@SCRATCH2
+06F-070 @DIV1616.P1
+06F     Crc8.len
+06F-070 @MUL1616.P1
+06F     MAIN.@SCRATCH3
+070     Crc8.crc
+070     MAIN.@SCRATCH4
+071     Crc8.i
+071     @DIV1616.@SCRATCH1
+071     @MUL1616.@SCRATCH1
+072     Crc8.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B     @SCRATCH
+085     TRISA
+086     TRISB
+086.4   TRB4
+086.5   TRB5
+098     TXSTA
+098.1   TRMT
+098.5   TXEN
+09C.6   C1OUT
+09C.7   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+
+ROM Allocation:
+00D2  @delay_ms1
+0037  tbe_int
+00AA  Crc8
+00E8  MAIN
+004A  @DIV1616
+006F  @MUL88
+0094  @MUL1616
+00E8  @cinit
+
+Project Directory:
+    C:\PRJ\RemTermo\
+
+Project Files:
+    Remtermo.c
+    ..\..\Program Files\PICC\devices\16F88.h
+
+Units:
+    Remtermo.c (main)
+
+Compiler Settings:
+    Processor:      PIC16F88
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Remtermo.err
+    Ext Symbols: Remtermo.esym
+    INHX8:       Remtermo.hex
+    Symbols:     Remtermo.sym
+    List:        Remtermo.lst
+    Debug/COFF:  Remtermo.cof
+    Project:     Remtermo.PJT
+    Call Tree:   Remtermo.tre
+    Statistics:  Remtermo.sta

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_32bit_isim_beh.exe" -prj "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_32bit_beh.prj" "work.m_seq_32bit" "work.glbl" 

@@ -1,0 +1,15 @@
+# Output products list for <ShiftReg>
+ShiftReg.asy
+ShiftReg.gise
+ShiftReg.ngc
+ShiftReg.sym
+ShiftReg.vhd
+ShiftReg.vho
+ShiftReg.xco
+ShiftReg.xise
+ShiftReg\doc\c_shift_ram_v11_0_readme.txt
+ShiftReg\doc\c_shift_ram_v11_0_vinfo.html
+ShiftReg\doc\ds228_shift_ram.pdf
+ShiftReg_flist.txt
+ShiftReg_xmdf.tcl
+_xmsgs\pn_parser.xmsgs

@@ -1,0 +1,29 @@
+[PROJECT]
+Target=C:\PRJ\BSKT-220\bskt.hex
+Development_Mode=
+Processor_Text=PIC16F88
+ToolSuite=CCS
+Processor=0x688F
+[C:\PRJ\BSKT-220\bskt]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\BSKT-220\bskt.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=C:\PRJ\BSKT-220\bskt.c
+2=C:\Program Files\PICC\devices\16F88.h
+3=C:\PRJ\BSKT-220\bskt.h
+4=
+5=
+[Target Data]
+OptionString=-p +FM
+FileList=bskt.c
+[Units]
+Count=1
+1=bskt.c (main)

@@ -1,0 +1,32 @@
+NET "CLKIN_IN" LOC = "B8";
+NET "CLK_48M" LOC = "T15";
+
+NET "slrd" LOC = "N9";
+NET "slwr" LOC = "V9";
+
+NET "input_buf_empty_fl" LOC = "R4";
+#NET "Sw7" LOC = "R17";
+#NET "Sw7_led" LOC = "F4";
+
+#NET "BTN3" LOC = "H13";
+#NET "LED0" LOC = "J14";
+
+NET "fdata<0>"  LOC = "R14"; 
+NET "fdata<1>"  LOC = "R13";
+NET "fdata<2>"  LOC = "P13";
+NET "fdata<3>"  LOC = "T12";
+NET "fdata<4>"  LOC = "N11";
+NET "fdata<5>"  LOC = "R11";
+NET "fdata<6>"  LOC = "P10";
+NET "fdata<7>"  LOC = "R10";
+
+NET "RX_FIFO_full_fl"  LOC = "T16";
+#NET "flaga"  LOC = "V14";
+
+NET "faddr<0>"  LOC = "T14";
+NET "faddr<1>"  LOC = "V13";
+
+NET "sloe"  LOC = "V15";
+
+
+

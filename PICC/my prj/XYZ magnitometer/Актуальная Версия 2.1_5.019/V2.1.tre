@@ -1,0 +1,468 @@
+ÀÄÀêòóàëüíàÿ Âåðñèÿ 2
+   ÃÄMAIN  0/2016  Ram=10
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄLCDinit  0/116  Ram=0
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³  ÀÄ@delay_us1  0/30  Ram=1
+   ³  ³  ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/38  Ram=2
+   ³  ³  ³  ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/38  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/38  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/38  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄLCDCommand  0/38  Ram=2
+   ³  ³     ÀÄ*
+   ³  ÃÄLCDWelcome  0/78  Ram=1
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄLCDMsg  0/10  Ram=1
+   ³  ³  ³     ÀÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³        ÀÄLCDWriteData  0/44  Ram=2
+   ³  ³  ³           ÃÄ@delay_us1  0/30  Ram=1
+   ³  ³  ³           ÃÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³           ³  ÀÄ*
+   ³  ³  ³           ÀÄLCDWriteNibble  0/72  Ram=2
+   ³  ³  ³              ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄLCDCommand  0/38  Ram=2
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÀÄLCDClear  0/18  Ram=0
+   ³  ³     ÀÄLCDCommand  0/38  Ram=2
+   ³  ³        ÀÄ*
+   ³  ÃÄdetect_sensors  0/110  Ram=2
+   ³  ³  ÃÄrom_rd_sens_data  0/206  Ram=1
+   ³  ³  ³  ÃÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ³  ³  ÀÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÃÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄrom_rd_float  0/64  Ram=11
+   ³  ³  ³  ³  ÀÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³     ÀÄ*
+   ³  ³  ³  ÃÄrom_rd_float  0/64  Ram=11
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄrom_rd_float  0/64  Ram=11
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄrom_rd_CRC16  0/48  Ram=5
+   ³  ³  ³  ³  ÃÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ³  ÀÄrom_rd_byte  0/218  Ram=7
+   ³  ³  ³  ³     ÀÄ*
+   ³  ³  ³  ÀÄCRC16  0/110  Ram=8
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄHMC5883l_Init  0/30  Ram=0
+   ³  ³  ³  ÃÄSensWrData  0/58  Ram=2
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ³  ÀÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÃÄSensWrData  0/58  Ram=2
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄSensWrData  0/58  Ram=2
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÀÄTLV493D_init  0/516  Ram=8
+   ³  ³     ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³     ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³     ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³     ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³     ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³     ÀÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ÃÄLCDsensInfoMsg  0/478  Ram=2
+   ³  ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDPutU16n  0/518  Ram=14
+   ³  ³  ³  ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³  ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³  ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³  ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³  ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄLCDPutU16  0/532  Ram=14
+   ³  ³  ³     ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³     ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³     ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³     ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³     ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³     ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³     ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³     ÃÄ@MUL3232  0/84  Ram=14
+   ³  ³  ³     ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³     ³  ÀÄ*
+   ³  ³  ³     ÀÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³        ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÀÄLCDClear  0/18  Ram=0
+   ³  ³     ÀÄ*
+   ³  ÃÄTLV493D_rd_all  0/1078  Ram=29
+   ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ³  ÃÄTLV493D_reset  0/60  Ram=0
+   ³  ³  ³  ÀÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ÃÄTLV493D_init  0/516  Ram=8
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄTLV493D_calc_field  0/190  Ram=12
+   ³  ³  ³  ÃÄ@SITOF  0/74  Ram=2
+   ³  ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ³  ÀÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄTLV493D_calc_field  0/190  Ram=12
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄTLV493D_calc_field  0/190  Ram=12
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄ@PRINTF_LD_9600_31766_31767  0/228  Ram=9
+   ³  ³  ÃÄ@PRINTF_LD_9600_31766_31767  0/228  Ram=9
+   ³  ³  ÃÄ@PRINTF_LD_9600_31766_31767  0/228  Ram=9
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDPutS16n  0/52  Ram=4
+   ³  ³  ³  ÃÄLCDPutCh  0/8  Ram=1
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÀÄLCDPutU16n  0/518  Ram=14
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDPutS16n  0/52  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDPutS16n  0/52  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³     ÀÄ*
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDPutU16  0/532  Ram=14
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄSensRdAll  0/1258  Ram=4
+   ³  ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄ@SDTOF  0/86  Ram=5
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SDTOF  0/86  Ram=5
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SDTOF  0/86  Ram=5
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄ@PRINTF_L32D_9600_31766_31767  0/252  Ram=12
+   ³  ³  ³  ÃÄ@DIV3232  0/142  Ram=13
+   ³  ³  ³  ÀÄ@DIV3232  0/142  Ram=13
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄ@PRINTF_L32D_9600_31766_31767  0/252  Ram=12
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@FTOSD  0/62  Ram=5
+   ³  ³  ÃÄ@PRINTF_L32D_9600_31766_31767  0/252  Ram=12
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ³  ÃÄLCDPutS16  0/50  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³     ÀÄ*
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDPutU16  0/532  Ram=14
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄdetect_sensors  0/110  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄNC_LCDMsg  0/82  Ram=0
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³     ÀÄ*
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÃÄLCDsensInfoMsg  0/478  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄget_rx_ch  0/62  Ram=2
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄ@MULFF  0/242  Ram=11
+   ³  ÃÄ@SFTOI  0/56  Ram=4
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄch_to_int  0/112  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@MUL1616  0/30  Ram=5
+   ³  ÃÄch_to_int  0/112  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@MUL1616  0/30  Ram=5
+   ³  ÃÄch_to_int  0/112  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@MUL1616  0/30  Ram=5
+   ³  ÃÄch_to_int  0/112  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ÃÄ@FLT  0/118  Ram=10
+   ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ÃÄ@FLT  0/118  Ram=10
+   ³  ÃÄ@ITOF  0/54  Ram=2
+   ³  ÃÄ@DIVFF  0/346  Ram=14
+   ³  ÃÄ@FLT  0/118  Ram=10
+   ³  ÃÄ@PRINTF_LU_9600_31766_31767  0/172  Ram=9
+   ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄupdate_rom_data  0/162  Ram=4
+   ³  ³  ÃÄrom_wr_byte  0/164  Ram=7
+   ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ³  ³  ÀÄ@delay_ms1  0/40  Ram=1
+   ³  ³  ÃÄrom_wr_byte  0/164  Ram=7
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄrom_wr_byte  0/164  Ram=7
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄrom_wr_float  0/68  Ram=9
+   ³  ³  ³  ÀÄrom_wr_byte  0/164  Ram=7
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄrom_wr_float  0/68  Ram=9
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄrom_wr_float  0/68  Ram=9
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄrom_wr_CRC16  0/66  Ram=6
+   ³  ³     ÃÄCRC16  0/110  Ram=8
+   ³  ³     ÃÄrom_wr_byte  0/164  Ram=7
+   ³  ³     ³  ÀÄ*
+   ³  ³     ÀÄrom_wr_byte  0/164  Ram=7
+   ³  ³        ÀÄ*
+   ³  ÃÄch_to_int  0/112  Ram=2
+   ³  ÃÄ@PSTRINGC_9600_31766_31767  0/34  Ram=2
+   ³  ÃÄ@PRINTF_LD_9600_31766_31767  0/228  Ram=9
+   ³  ÃÄLCDClear  0/18  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@PSTRINGC_857  0/32  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄupdate_rom_data  0/162  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/12  Ram=2
+   ³  ³  ÀÄ*
+   ³  ÃÄ@delay_ms1  0/40  Ram=1
+   ³  ÀÄ@PSTRINGC_857  0/32  Ram=2
+   ³     ÀÄ*
+   ÃÄint0  0/320  Ram=4
+   ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ÃÄ@I2C_WRITE_1  0/72  Ram=1
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÃÄ@I2C_READ_1  0/72  Ram=3
+   ³  ÀÄHMC5883l_Init  0/30  Ram=0
+   ³     ÀÄ*
+   ÀÄUART_RXd_isr  0/28  Ram=2

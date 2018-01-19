@@ -1,0 +1,5 @@
+NET "clk_50M" LOC = "B8";
+NET "LED0" LOC = "J14";
+
+#NET "pin_rx" LOC = "U6";
+NET "pin_tx" LOC = "P9";

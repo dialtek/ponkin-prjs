@@ -1,0 +1,12 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Thu Aug 08 17:04:59 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "CLKDV_OUT" LOCATE = SITE "M13" LEVEL 1;
+COMP "CLKIN_IBUFG_OUT" LOCATE = SITE "R15" LEVEL 1;
+COMP "CLKIN_IN" LOCATE = SITE "B8" LEVEL 1;
+COMP "CLK0_OUT" LOCATE = SITE "R18" LEVEL 1;
+COMP "CLK180_OUT" LOCATE = SITE "T17" LEVEL 1;
+SCHEMATIC END;
+

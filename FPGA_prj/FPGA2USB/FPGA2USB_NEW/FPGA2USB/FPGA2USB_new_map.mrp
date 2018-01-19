@@ -1,0 +1,30 @@
+Release 14.2 Map P.28xd (nt)
+Xilinx Mapping Report File for Design 'FPGA2USB_new'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off
+-c 100 -o FPGA2USB_new_map.ncd FPGA2USB_new.ngd FPGA2USB_new.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -5
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Thu Nov 21 13:42:37 2013
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :   0
+
+Section 1 - Errors
+------------------
+FATAL_ERROR:PersonalityModule:baspmdlm.c:168:1.27 - dll library <MlSpar3eTasks>
+   does not exist.   Process will terminate. For technical support on this
+   issue, please open a WebCase with this project attached at
+   http://www.xilinx.com/support.
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------

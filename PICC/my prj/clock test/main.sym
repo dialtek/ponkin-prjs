@@ -1,0 +1,86 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     @delay_ms1.P1
+F80     PORTA
+F80.0   RA0
+F80.1   RA1
+F80.2   RA2
+F80.3   RA3
+F80.4   RA4
+F80.5   RA5
+F81     PORTB
+F82     PORTC
+F83     PORTD
+F84     PORTE
+F92     TRISA
+F92.0   TRA0
+F92.1   TRA1
+F92.2   TRA2
+F92.3   TRA3
+F92.4   TRA4
+F92.5   TRA5
+F93     TRISB
+F94     TRISC
+F95     TRISD
+F96     TRISE
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  @delay_ms1
+002C  main
+002C  @cinit1
+0040  @cinit2
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Program Files (x86)\PICC\my prj\clock test\
+
+Project Files:
+    main.c                                                  [28-אגד-12 11:08  CRC=42CF4BD3]
+    ..\..\devices\18F2320.h                                 [28-פוג-12 13:44  CRC=931A7941]
+
+Source signature=69043E55
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F2320
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

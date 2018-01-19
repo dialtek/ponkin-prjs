@@ -1,0 +1,50 @@
+
+ROM used: 531 (13%)
+          531 (13%) including unused fragments
+
+          1 Average locations per line
+          9 Average locations per statement
+
+RAM used: 87 (24%) at main() level
+          89 (24%) worst case
+
+Stack used: 2 worst case (out of 7 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  160    61 100  Remtermo.c
+  301     0   0  ..\..\Program Files\PICC\devices\16F88.h
+----- -----
+  461    61 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     22   4   1             @delay_ms1
+0     19   4   0   120  3.8  tbe_int
+0     40   8   6   346 10.0  Crc8
+0    299  56  20  2254  7.9  MAIN
+0     37   7   5             @DIV1616
+0     37   7   2             @MUL88
+0     22   4   5             @MUL1616
+
+Program metrics:
+    Functions               3
+    Statements              61
+    Comments                107
+    Volume (V)              3122
+    Difficilty (D)          21.1
+    Effort to implement (E) 65722
+    Time to implement (T)   1 hours, 1 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   4
+    Maintainability (MI)    94
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00036    51  0  
+00037-007FF   476  1517  
+00800-00FFF     0  2048  
+
+
+

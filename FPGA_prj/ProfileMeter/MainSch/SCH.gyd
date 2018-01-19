@@ -1,0 +1,16 @@
+Pin Freeze File:  version P.49d
+
+9572XL44VQ XC9572XL-5-VQ44
+IN_F S:PIN43
+OUT_F S:PIN2
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_15 OUT_F_OBUF
+
+
+
+
+

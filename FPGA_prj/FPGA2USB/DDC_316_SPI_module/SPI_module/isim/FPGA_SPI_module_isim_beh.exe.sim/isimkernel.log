@@ -1,0 +1,28 @@
+Command line:
+   FPGA_SPI_module_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  1550
+
+Tue May 20 14:59:59 2014
+
+
+ Elaboration Time: 0.0312 sec
+
+ Current Memory Usage: 506.094 Meg
+
+ Total Signals          : 7
+ Total Nets             : 21
+ Total Signal Drivers   : 3
+ Total Blocks           : 4
+ Total Primitive Blocks : 4
+ Total Processes        : 2
+ Total Traceable Variables  : 10
+ Total Scalar Nets and Variables : 399
+
+ Total Simulation Time: 0.0468 sec
+
+ Current Memory Usage: 506.094 Meg
+
+Tue May 20 15:02:51 2014
+

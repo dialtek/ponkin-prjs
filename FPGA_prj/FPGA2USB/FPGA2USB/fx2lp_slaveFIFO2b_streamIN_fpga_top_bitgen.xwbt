@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB\fx2lp_slaveFIFO2b_streamIN_fpga_top.ncd
+OUTFILE=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB\fx2lp_slaveFIFO2b_streamIN_fpga_top.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB
+LICENSE=WebPack
+USER_INFO=__0_0_0

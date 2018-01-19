@@ -1,0 +1,30 @@
+ISim log file
+Running: D:\work\Projects\FPGA_prj\test\cpld_test\simul1\main_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main_isim_beh.wdb 
+ISim P.49d (signature 0x7708f090)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 50.00us
+ISim P.49d (signature 0x7708f090)
+This is a Full version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 50.00us
+# run all
+# restart
+# run 50.00us
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# isim force add /main/a 1 -radix bin -time 20 us -cancel 30 us
+# isim force add /main/a 1 -radix bin -time 20 us -cancel 30 us
+# isim force add /main/b 1 -radix bin -time 10 us -value 0 -radix bin -time 15 us -repeat 10 us -cancel 45 us
+# isim force add /main/b 1 -radix bin -time 10 us -value 0 -radix bin -time 15 us -repeat 10 us -cancel 45 us
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.

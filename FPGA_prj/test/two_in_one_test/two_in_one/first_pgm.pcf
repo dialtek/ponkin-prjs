@@ -1,0 +1,13 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Tue Aug 06 15:34:46 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "LED0" LOCATE = SITE "J14" LEVEL 1;
+COMP "BTN0" LOCATE = SITE "B18" LEVEL 1;
+COMP "LED1" LOCATE = SITE "J15" LEVEL 1;
+COMP "BTN1" LOCATE = SITE "D18" LEVEL 1;
+COMP "BTN2" LOCATE = SITE "E18" LEVEL 1;
+COMP "BTN3" LOCATE = SITE "H13" LEVEL 1;
+SCHEMATIC END;
+

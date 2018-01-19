@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB\impact.xsl
+OUTFILE=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=D:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB
+LICENSE=iMPACT
+USER_INFO=iMPACT

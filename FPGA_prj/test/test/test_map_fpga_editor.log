@@ -1,0 +1,17 @@
+#:C0     
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.28xd
+#Current Working Directory:
+#:D   C:\Xilinx\test\test
+#Date/Time:
+#:T   Fri Aug 02 13:03:15 2013
+#------------------------------
+	#Reading test_map.ncd...
+	#Loading device for application Rf_Device from file '3s500e.nph' in environment C:\Xilinx\14.2\ISE_DS\ISE\.
+	#   "test" is an NCD, version 3.2, device xc3s500e, package fg320, speed -5
+	#Design creation date: 2013.08.02.09.01.15
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes

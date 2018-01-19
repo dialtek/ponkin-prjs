@@ -1,0 +1,8 @@
+Release 14.2 Drc P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Wed Nov 20 14:51:50 2013
+
+drc -z rs232_test.ncd rs232_test.pcf
+
+DRC detected 0 errors and 0 warnings.

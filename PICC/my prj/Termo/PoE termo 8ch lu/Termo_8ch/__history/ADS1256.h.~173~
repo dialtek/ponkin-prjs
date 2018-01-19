@@ -1,0 +1,326 @@
+// изменена для версии PoE без дисплея
+// 28.05.15
+
+//-------------------- работа с регистрами АЦП ------------------------------//
+
+static U8 RdReg(U8 RegName)
+{
+   U8 RegValue = 0; 
+   //1st Command Byte: 0001 rrrr where rrrr is the address of the first register to read.
+   //2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to read – 1
+   ADC_CS = 0;
+   delay_us(1);
+   Spi_write2(0x10+RegName); // 1st Command Byte,??????? ??????
+   Spi_write2(0x00); // 1st Command Byte, ?????? ?????? ???? ????
+   delay_us(8); // 50 CLK_IN PEDIODS
+   RegValue = Spi_read2(0);
+   delay_us(1);
+   ADC_CS =1;
+   delay_us(1);
+   Return RegValue;  
+}
+
+static void WrReg(U8 RegName,CommandByte)
+{
+   ADC_CS = 0;
+   ADC2_CS = 0;
+   delay_us(5);
+   Spi_write2(0x50+RegName); // 1st Command Byte: 0101 (0x50) rrrr where rrrr is the address to the first register to be written.
+   delay_us(10);
+   Spi_write2(0);         // 2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to be written – 1.
+   delay_us(10);
+   Spi_write2(CommandByte);
+   delay_us(10);
+   ADC_CS = 1;
+   ADC2_CS = 1;
+ 
+   delay_us(20);
+}
+//---------------------------------------------------------------------------//
+
+//==================== настройка и нинициализация АЦП =======================//
+
+static void ADC_sps_set(U8 SPS){
+                                                          
+   Sps_buf = SPS;
+   WrReg(DRATE,SPS); 
+   delay_us(20);
+                 
+        
+}
+
+static void ADC_set_PGA(u8 PGA_val){
+  
+  PGA = PGA_val;
+
+/* PGA
+000 = 1 (default)
+001 = 2
+010 = 4
+011 = 8
+100 = 16
+101 = 32
+110 = 64
+111 = 64*/
+/**/
+
+   switch (PGA_val){
+      case 1:
+       WrReg(ADCON,0);
+      break;
+      
+      case 2:
+       WrReg(ADCON,1);
+      break;
+      
+      case 4:
+       WrReg(ADCON,2);
+      break;
+      
+      case 8:
+       WrReg(ADCON,3);
+      break;
+      
+      case 16:
+       WrReg(ADCON,4);
+      break;
+      
+      case 32:
+       WrReg(ADCON,5);
+      break;
+      
+      case 64:
+       WrReg(ADCON,6);
+      break; 
+   }
+   delay_us(20);
+}
+
+static void ADC_SelfCal(){
+                     
+   ADC_CS = 0;
+   ADC2_CS = 0;
+   delay_us(1);
+   
+   Spi_write2(0xF0);
+   delay_us(1);
+   
+   ADC_CS = 1;
+   ADC2_CS = 1;
+   
+   While(ADC_DRDY | ADC2_DRDY) { }   // ждем готовности обоих АЦП
+    
+   /*
+   Switch (Sps_buf) {     
+    
+      case 0xF0:   
+       delay_us(220);        
+        break;                      
+      
+      case 0xE0:
+       delay_us(255); 
+        break;
+        
+      case 0xD0:
+       delay_us(315); 
+        break;
+        
+      case 0xC0:
+       delay_us(445); 
+        break;
+        
+      case 0xB0:
+       delay_us(685); 
+        break;
+        
+      case 0xA1:
+       delay_ms(1);
+       delay_us(185);               
+        break;      
+        
+      case 0x92:
+       delay_ms(5);
+        break;
+        
+      case 0x82:
+       delay_ms(10);
+       delay_us(200);
+        break;
+                   
+      case 0x63:
+       delay_ms(21); 
+        break;
+        
+      case 0x43:
+       delay_ms(41); 
+        break;
+        
+      case 0x23:
+       delay_ms(101); 
+        break;         
+            
+      case 0x13:
+       delay_ms(201); 
+        break;                          
+     }
+     */
+}
+
+static void ADC_init(){
+   
+  WrReg(STATUS,2);   // вкл. входной буфер
+  delay_us(20);
+
+   if(ADC_sps_var>7)  ADC_sps_var = 7;
+   // установка sps
+   switch (ADC_sps_var){                // передача величины скорости измерений АЦП 
+    
+      case 0: ADC_sps_set(0x13);  break; // 5   sps
+      case 1: ADC_sps_set(0x23);  break; // 10   sps
+      case 2: ADC_sps_set(0x43);  break; // 25   sps
+      case 3: ADC_sps_set(0x63);  break; // 50   sps
+      case 4: ADC_sps_set(0x82);  break; // 100  sps
+      case 5: ADC_sps_set(0x91);  break; // 500  sps
+      case 6: ADC_sps_set(0xA1);  break; // 1000 sps
+      case 7: ADC_sps_set(0xC0);  break; // 3750 sps
+      }
+      
+   ADC_set_PGA(8);    // Уст. PGA
+   ADC_SelfCal();     // Автокалибровка обоих АЦП 
+}
+//===========================================================================//
+
+
+//---------------------- уст. каналов и чтение АЦП --------------------------//
+
+static void SYNC_ADC(U8 command)
+  { /// синхронизация АЦП
+  
+   //command 0 - не выбран ни один АЦП
+   //command 1 - выбран АЦП 1
+   //command 2 - выбран АЦП 2
+   
+   switch(command)
+   {
+         case 0:     
+            ADC_SYNC = 1; 
+            ADC2_SYNC = 1;
+         break;
+         
+         case 1: 
+            ADC_SYNC = 0; 
+            delay_us(20);
+            ADC_SYNC = 1;
+         break;
+         
+         case 2: 
+            ADC2_SYNC = 0; 
+            delay_us(20);
+            ADC2_SYNC = 1; 
+         break;
+   }
+  }
+
+static void ADC_select(U8 command)
+  { /// выбор АЦП
+  
+   //command 0 - не выбран ни один АЦП
+   //command 1 - выбран АЦП 1
+   //command 2 - выбран АЦП 2
+   
+   switch(command)
+   {
+         case 0: ADC_CS = 1; ADC2_CS = 1; break;
+         case 1: ADC_CS = 0; ADC2_CS = 1; break;
+         case 2: ADC_CS = 1; ADC2_CS = 0; break;
+   }
+  }
+
+
+static void ADC_setCh(U8 Ch_Number, U8 ADC_number){
+
+ // уст. каналоа АЦП
+ // 1 канал пользователя - 4 канал АЦП по факту (13(+) и 12(-) ножки) и тд.
+ 
+  ADC_select(ADC_number); // выбор АЦП
+  delay_us(2);
+ 
+  Spi_write2(0x50+MUX);  // уст. канал АЦП   
+  delay_us(10);
+  Spi_write2(0);         
+  delay_us(10);
+  Spi_write2(Mx_ch_code[Ch_Number]);
+  
+  ADC_select(0);
+  delay_us(20);  
+}
+
+static S32 ADC_read(U8 ADC_number)
+  {
+  
+  ADC_select(ADC_number); // выбор АЦП
+  
+  S32 ADC_RByte1=0;  // ст. байт данных АЦП
+  S32 ADC_RByte2=0;  // ср. байт данных АЦП
+  S32 ADC_RByte3=0;  // мл. байт данных АЦП
+  
+  S32 ADC_RByte_Sum; // суммарные отсчеты АЦП - 24 бита
+  
+  float Vin;         // измеренное напряжение 
+
+  Spi_write2(0x01);        // команда чтения Rdata
+  delay_us(20);
+  ADC_Rbyte1 = Spi_read2(0);   // чтение
+  ADC_Rbyte2 = Spi_read2(0);
+  ADC_Rbyte3 = Spi_read2(0);
+  
+  ADC_select(0); // сброс выбора АЦП
+  
+  // склеивание трех байт отсчетов АЦП
+  ADC_RByte_Sum = ((S32)ADC_Rbyte1<<24) | ((S32)ADC_Rbyte2<<16) | ((S32)ADC_Rbyte3<<8);
+  ADC_RByte_Sum = ADC_RByte_Sum/256; // приведение 24 бит к 32-битной переменной
+  
+  Vin = ((ADC_RByte_Sum*5)/(8388608.0*PGA)); // расчет U
+  
+  return Vin*uV; // возврат масштабированного U 
+  
+  }
+
+static S32 ADC_read_aver(U8 ADC_number,U8 ADC_ch)
+{
+ S32 _Ch_buf_sum; // переменн. для хранения текущ. усредн. значения
+ 
+ if(Ma_buf_index > Ma_buf_size-1) Ma_buf_index = 0;   // сброс индекса буфера
+ 
+ Ch_buf[ADC_ch][Ma_buf_index] = ADC_read(ADC_number); // считываем текщее изм. в буфер
+ 
+ for(U8 i = 0; i < Ma_buf_size; i++)                  // суммируем весь буфер
+ {
+   Ch_buf_sum += Ch_buf[ADC_ch][i];   // меняем элемент буфера на новый
+ }  
+ Ch_buf_sum = Ch_buf_sum/Ma_buf_size; // вычисляем среднее
+ 
+ _Ch_buf_sum = Ch_buf_sum; // пересохраняем для возврата
+ 
+ Ch_buf_sum = 0;           // сброс глоб переменной
+ 
+ return _Ch_buf_sum;
+
+}
+
+//---------------------------------------------------------------------------//
+ 
+// разное 
+static S32 ADC_vol_average(U8 NumSamples){
+   
+   S32 A,Sum = 0;               
+   U8 i;
+   
+   for (i=0;i<NumSamples;i++){
+       
+       //A = Read_ADC_vol_in(uV);
+       Sum = Sum + A;    
+   }                                  
+   return Sum/NumSamples;
+}
+

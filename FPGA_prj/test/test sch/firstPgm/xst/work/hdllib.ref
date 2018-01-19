@@ -1,0 +1,4 @@
+AR ifd_mxilinx_schdoc behavioral "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf" sub00/vhpl01 1375437002
+AR schdoc behavioral "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf" sub00/vhpl03 1375437004
+EN schdoc NULL "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf" sub00/vhpl02 1375437003
+EN ifd_mxilinx_schdoc NULL "C:/Xilinx/test/test sch/firstPgm/schDoc.vhf" sub00/vhpl00 1375437001

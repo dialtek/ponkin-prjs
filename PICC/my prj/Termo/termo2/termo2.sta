@@ -1,0 +1,79 @@
+
+ROM used: 3904 (48%)
+          3904 (48%) including unused fragments
+
+          2 Average locations per line
+          11 Average locations per statement
+
+RAM used: 48 (9%) at main() level
+          89 (17%) worst case
+
+Stack used: 7 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+ 1294   340 100  termo2.c
+  454     0   0  ..\..\devices\18F4320.h
+----- -----
+ 1748   340 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   1   1             @delay_ms1
+0     32   0   1             @delay_us1
+0     74   1   1   307  2.3  LCDWriteNibble
+0     36   0   2   140  2.2  LCDWriteData
+0     32   0   2   119  2.2  LCDCommand
+0     12   0   2    39  1.5  LCDSetCursor
+0     14   0   0    37  1.1  LCDClear
+0    124   2   1   461  1.9  LCDInit
+0      8   0   1    24  1.2  LCDPutCh
+0    904  12  14  1641  5.4  LCDPutU32
+0    142   2  13             @DIV3232
+0     84   1  14             @MUL3232
+0      8   0   1    24  1.2  LCDMsg
+0     48   1   3   119  1.2  LCDWelcome
+0     16   0   0             @const210
+0     32   0   2             @PSTRINGC_206
+0     14   0   0             @const212
+0     12   0   1    24  1.2  WrByte
+0     52   1   3   123  2.2  WrReg
+0    114   1   0   436  2.4  AdsInit
+0     34   0   0    94  1.7  SelfCal
+0    158   2  22   459  6.5  Adc_Rdata
+0    128   2  10   269  5.0  Middle_Sum
+0     82   1  17   303  3.0  AdcChData
+0     34   0   2    57  2.6  powr
+0   1424  18  42  3478  5.0  MAIN
+0     30   0   5             @MUL1616
+0      6   0   0             @const281
+0      6   0   0             @const282
+0    166   2  12             @PRINTF_L32U_9600_31766_31767
+0      2   0   0             @const286
+0      4   0   0             @const287
+0      6   0   0             @const288
+0      4   0   0             @const290
+0      6   0   0             @const291
+0      4   0   0             @const293
+0      2   0   0             @const294
+0      6   0   0             @const295
+
+Program metrics:
+    Functions               19
+    Statements              340
+    Comments                746
+    Volume (V)              12413
+    Difficilty (D)          50.4
+    Effort to implement (E) 625661
+    Time to implement (T)   9 hours, 39 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   10
+    Maintainability (MI)    77
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-01FFE  3900  4288  
+
+
+

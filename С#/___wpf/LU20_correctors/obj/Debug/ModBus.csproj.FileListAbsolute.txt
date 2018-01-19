@@ -1,0 +1,60 @@
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\bin\Debug\ModBus.exe.config
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\bin\Debug\ModBus.exe
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\bin\Debug\ModBus.pdb
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\MainWindow.g.cs
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\App.g.cs
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus_MarkupCompile.cache
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus_MarkupCompile.lref
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\MainWindow.baml
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.g.resources
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.Properties.Resources.resources
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.csproj.GenerateResource.Cache
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.exe
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.pdb
+C:\Users\Марсель\Documents\Visual Studio 2015\Projects\ModBus\ModBus\obj\Debug\ModBus.csprojResolveAssemblyReference.cache
+C:\Users\D\Desktop\ModBus\bin\Debug\ModBus.exe.config
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.exe
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.pdb
+C:\Users\D\Desktop\ModBus\bin\Debug\ModBus.exe
+C:\Users\D\Desktop\ModBus\bin\Debug\ModBus.pdb
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.csprojResolveAssemblyReference.cache
+C:\Users\D\Desktop\ModBus\obj\Debug\MainWindow.g.cs
+C:\Users\D\Desktop\ModBus\obj\Debug\App.g.cs
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus_MarkupCompile.cache
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus_MarkupCompile.lref
+C:\Users\D\Desktop\ModBus\obj\Debug\MainWindow.baml
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.g.resources
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.Properties.Resources.resources
+C:\Users\D\Desktop\ModBus\obj\Debug\ModBus.csproj.GenerateResource.Cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\ModBus.csprojResolveAssemblyReference.cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\MainWindow.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Settings.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\App.g.cs
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\MainWindow.baml
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Settings.baml
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\ModBus.Properties.Resources.resources
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\ModBus.csproj.GenerateResource.Cache
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Debug\Система вывода КРИОН.exe.config
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Debug\Система вывода КРИОН.exe
+C:\Users\D\Desktop\ModBus old\ModBus\bin\Debug\Система вывода КРИОН.pdb
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Система вывода КРИОН_MarkupCompile.cache
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Система вывода КРИОН_MarkupCompile.lref
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Система вывода КРИОН.g.resources
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Система вывода КРИОН.exe
+C:\Users\D\Desktop\ModBus old\ModBus\obj\Debug\Система вывода КРИОН.pdb
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\bin\Debug\Система вывода КРИОН.exe.config
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Система вывода КРИОН.exe
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Система вывода КРИОН.pdb
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\bin\Debug\Система вывода КРИОН.exe
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\bin\Debug\Система вывода КРИОН.pdb
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\ModBus.csprojResolveAssemblyReference.cache
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\MainWindow.g.cs
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Settings.g.cs
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\App.g.cs
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Система вывода КРИОН_MarkupCompile.cache
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Система вывода КРИОН_MarkupCompile.lref
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\MainWindow.baml
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Settings.baml
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\Система вывода КРИОН.g.resources
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\ModBus.Properties.Resources.resources
+E:\work\Projects\ponkin\С#\___wpf\krion_extract_sys\ModBus\obj\Debug\ModBus.csproj.GenerateResource.Cache

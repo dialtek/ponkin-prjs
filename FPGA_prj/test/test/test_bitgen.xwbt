@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\test\test\test.ncd
+OUTFILE=C:\Xilinx\test\test\test.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Xilinx\test\test
+LICENSE=WebPack
+USER_INFO=__0_0_0

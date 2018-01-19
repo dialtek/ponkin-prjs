@@ -1,0 +1,3708 @@
+CCS PCD C Compiler, Version 4.130, 5967               03-дек-12 16:32
+
+               Filename: C:\Program Files (x86)\PICC\my prj\love heart\main.lst
+
+               ROM used: 6620 bytes (15%)
+                         Largest free fragment is 37412
+               RAM used: 138 (2%) at main() level
+                         150 (2%) worst case
+               Stack:    4 worst case (2 in main + 2 for interrupts)
+
+*
+0000:  GOTO    18FE
+*
+001A:  DATA    10,02,00
+.................... #include <33FJ64GP204.h> 
+.................... //////// Standard Header file for the DSPIC33FJ64GP204 device //////////////// 
+.................... #device DSPIC33FJ64GP204 
+.................... #list 
+....................  
+....................  
+.................... #FUSES WPRES32                  //Watch Dog Timer PreScalar 1:32 
+.................... #FUSES WPOSTS1                  //Watch Dog Timer PostScalar 1:1 
+.................... //#FUSES PROTECT_HIGH             //General Segment Code Protect High Security 
+.................... #FUSES CKSFSM                   //Clock Switching is enabled, fail Safe clock monitor is enabled 
+.................... #FUSES FRC                      //Internal Fast RC Oscillator 
+.................... #FUSES OSCIO                    //OSC2 is general purpose output 
+....................  
+.................... #use delay(clock=7.37M) 
+*
+0200:  CP0     W0
+0202:  BTSC.B  42.1
+0204:  BRA     20E
+0206:  REPEAT  #E60
+0208:  NOP     
+020A:  DEC     W0,W0
+020C:  BRA     NZ,206
+020E:  RETURN  
+.................... //7370000 
+....................  #WORD TRISA = 0x02C0 
+....................  #WORD TRISB = 0x02C8 
+....................  #WORD TRISC = 0x02D0 
+....................   
+....................  #WORD PORTA = 0x02C2 
+....................  #WORD PORTB = 0x02CA 
+....................  #WORD PORTC = 0x02D2 
+....................   
+....................  #WORD ODCA = 0x02C6 
+....................  #WORD ODCB = 0x02CE 
+....................  #WORD ODCC = 0x02D6 
+....................   
+....................  #BIT TR_KN = TRISB.6 
+....................   
+....................  #BIT RB6 = PORTB.6 
+....................  #BIT RB8 = PORTB.8 
+....................  #BIT RB5 = PORTB.5 
+....................  #BIT RB4 = PORTB.4 
+....................  #BIT RB2 = PORTB.2 
+....................  #BIT RB3 = PORTB.3 
+....................  #BIT RB1 = PORTB.1 
+....................  #BIT RB0 = PORTB.0 
+....................  #BIT RB15 = PORTB.15 
+....................  #BIT RB14 = PORTB.14 
+....................  #BIT RB10 = PORTB.10 
+....................  #BIT RB11 = PORTB.11 
+....................  #BIT RB12 = PORTB.12 
+....................  #BIT RB13= PORTB.13 
+....................  #BIT RB9 = PORTB.9 
+....................  #BIT RB7 = PORTB.7 
+....................   
+....................  #BIT RC6 = PORTC.6 
+....................  #BIT RC7 = PORTC.7 
+....................  #BIT RC8 = PORTC.8 
+....................  #BIT RC9 = PORTC.9 
+....................   #BIT RC0 = PORTC.0 
+....................    #BIT RC1 = PORTC.1 
+....................     #BIT RC2 = PORTC.2 
+....................      #BIT RC3 = PORTC.3 
+....................       #BIT RC4 = PORTC.4 
+....................        #BIT RC5 = PORTC.5 
+....................   
+....................   #BIT RA10 = PORTA.10 
+....................   #BIT RA7 = PORTA.7 
+....................   #BIT RA2 = PORTA.2 
+....................   #BIT RA3 = PORTA.3 
+....................   #BIT RA8 = PORTA.8 
+....................   #BIT RA4 = PORTA.4 
+....................   #BIT RA9 = PORTA.9 
+....................   #BIT RA0 = PORTA.0 
+....................   #BIT RA1 = PORTA.1 
+....................   
+....................  #define LED1 RB7 
+....................  #define LED2 RB8 
+....................  #define LED3 RB9 
+....................  #define LED4 RC6 
+....................  #define LED5 RC7 
+....................  #define LED6 RC8 
+....................  #define LED7 RC9 
+....................  #define LED8 RB10 
+....................  #define LED9 RB11 
+....................  #define LED10 RB12 
+....................  #define LED11 RB13 
+....................  #define LED12 RA10 
+....................   #define LED13 RA7 
+....................   #define LED14 RB14 
+....................   #define LED15 RB15 
+....................   #define LED16 RA0 
+....................   #define LED17 RA1 
+....................   #define LED18 RB0 
+....................   #define LED19 RB1 
+....................   #define LED20 RB2 
+....................   #define LED21 RB3 
+....................   #define LED22 RC0 
+....................   #define LED23 RC1 
+....................   #define LED24 RC2 
+....................   #define LED25 RA2 
+....................   #define LED26 RA3 
+....................   #define LED27 RA8 
+....................   #define LED28 RB4 
+....................   #define LED29 RA4 
+....................   #define LED30 RA9 
+....................   #define LED31 RC3 
+....................  #define LED32 RC4 
+....................  #define LED33 RC5 
+....................  #define LED34 RB5 
+....................  #define KN RB6 
+....................   
+....................  unsigned int16 i=0,b=20,n=0; 
+....................  int1 fl1=0; 
+....................  unsigned int8 t_out=0; 
+....................   unsigned int8 b_hold=0; 
+....................   unsigned int8 b_push=0; 
+....................  
+.................... #INT_TIMER1 
+.................... void  TIMER1_isr(void)  
+.................... { // прерывание каждые 30 мкс. 
+0210:  PUSH    42
+0212:  PUSH    36
+0214:  MOV     W0,[W15++]
+0216:  MOV     #2,W0
+0218:  REPEAT  #C
+021A:  MOV     [W0++],[W15++]
+.................... SET_TIMER1(65504); 
+021C:  MOV     #FFE0,W4
+021E:  MOV     W4,100
+.................... if (!KN){ 
+0220:  BTSC.B  2CA.6
+0222:  BRA     24E
+.................... char i; 
+....................    for (i=0;i<20;i++){ 
+0224:  CLR.B   814
+0226:  MOV.B   814,W0L
+0228:  SE      W0,W0
+022A:  CP      W0,#14
+022C:  BRA     GE,236
+....................    delay_us(2); 
+022E:  REPEAT  #5
+0230:  NOP     
+....................    } 
+0232:  INC.B   0814
+0234:  BRA     226
+....................    if (!KN){ 
+0236:  BTSC.B  2CA.6
+0238:  BRA     24E
+....................    delay_ms(100); 
+023A:  MOV     #64,W0
+023C:  CALL    200
+....................    n=n+1; 
+0240:  MOV     804,W4
+0242:  ADD     W4,#1,W4
+0244:  MOV     W4,804
+....................     
+....................    if (n>6){ 
+0246:  MOV     804,W4
+0248:  CP      W4,#6
+024A:  BRA     LEU,24E
+....................    n=0; 
+024C:  CLR     804
+....................    } 
+....................    } 
+....................    } 
+....................     
+....................  
+.................... clear_interrupt(int_timer1); 
+024E:  BCLR.B  84.3
+.................... } 
+....................   
+0250:  BCLR.B  84.3
+0252:  MOV     #1A,W0
+0254:  REPEAT  #C
+0256:  MOV     [--W15],[W0--]
+0258:  MOV     [--W15],W0
+025A:  POP     36
+025C:  POP     42
+025E:  RETFIE  
+....................  void blink1 (unsigned int16 x){ 
+....................  porta=0x0000; 
+0260:  CLR     2C2
+....................  portb=0x0000; 
+0262:  CLR     2CA
+....................  portc=0x0000; 
+0264:  CLR     2D2
+....................   delay_ms(x); 
+0266:  PUSH    42
+0268:  BCLR.B  81.7
+026A:  SETM.B  42
+026C:  BSET.B  81.7
+026E:  MOV     80A,W0
+0270:  CALL    200
+0274:  BCLR.B  81.7
+0276:  POP     42
+0278:  BSET.B  81.7
+....................    LED34=1; 
+027A:  BSET.B  2CA.5
+....................    delay_ms(x); 
+027C:  PUSH    42
+027E:  BCLR.B  81.7
+0280:  SETM.B  42
+0282:  BSET.B  81.7
+0284:  MOV     80A,W0
+0286:  CALL    200
+028A:  BCLR.B  81.7
+028C:  POP     42
+028E:  BSET.B  81.7
+....................    LED1=1; 
+0290:  BSET.B  2CA.7
+....................    delay_ms(x); 
+0292:  PUSH    42
+0294:  BCLR.B  81.7
+0296:  SETM.B  42
+0298:  BSET.B  81.7
+029A:  MOV     80A,W0
+029C:  CALL    200
+02A0:  BCLR.B  81.7
+02A2:  POP     42
+02A4:  BSET.B  81.7
+....................    LED33=1; 
+02A6:  BSET.B  2D2.5
+....................    delay_ms(x);   
+02A8:  PUSH    42
+02AA:  BCLR.B  81.7
+02AC:  SETM.B  42
+02AE:  BSET.B  81.7
+02B0:  MOV     80A,W0
+02B2:  CALL    200
+02B6:  BCLR.B  81.7
+02B8:  POP     42
+02BA:  BSET.B  81.7
+....................    LED2=1; 
+02BC:  BSET.B  2CB.0
+....................    delay_ms(x);   
+02BE:  PUSH    42
+02C0:  BCLR.B  81.7
+02C2:  SETM.B  42
+02C4:  BSET.B  81.7
+02C6:  MOV     80A,W0
+02C8:  CALL    200
+02CC:  BCLR.B  81.7
+02CE:  POP     42
+02D0:  BSET.B  81.7
+....................    LED32=1; 
+02D2:  BSET.B  2D2.4
+....................    delay_ms(x); 
+02D4:  PUSH    42
+02D6:  BCLR.B  81.7
+02D8:  SETM.B  42
+02DA:  BSET.B  81.7
+02DC:  MOV     80A,W0
+02DE:  CALL    200
+02E2:  BCLR.B  81.7
+02E4:  POP     42
+02E6:  BSET.B  81.7
+....................    LED3=1; 
+02E8:  BSET.B  2CB.1
+....................    delay_ms(x); 
+02EA:  PUSH    42
+02EC:  BCLR.B  81.7
+02EE:  SETM.B  42
+02F0:  BSET.B  81.7
+02F2:  MOV     80A,W0
+02F4:  CALL    200
+02F8:  BCLR.B  81.7
+02FA:  POP     42
+02FC:  BSET.B  81.7
+....................    LED31=1; 
+02FE:  BSET.B  2D2.3
+....................    delay_ms(x);   
+0300:  PUSH    42
+0302:  BCLR.B  81.7
+0304:  SETM.B  42
+0306:  BSET.B  81.7
+0308:  MOV     80A,W0
+030A:  CALL    200
+030E:  BCLR.B  81.7
+0310:  POP     42
+0312:  BSET.B  81.7
+....................    LED4=1; 
+0314:  BSET.B  2D2.6
+....................    delay_ms(x);   
+0316:  PUSH    42
+0318:  BCLR.B  81.7
+031A:  SETM.B  42
+031C:  BSET.B  81.7
+031E:  MOV     80A,W0
+0320:  CALL    200
+0324:  BCLR.B  81.7
+0326:  POP     42
+0328:  BSET.B  81.7
+....................    LED30=1; 
+032A:  BSET.B  2C3.1
+....................    delay_ms(x); 
+032C:  PUSH    42
+032E:  BCLR.B  81.7
+0330:  SETM.B  42
+0332:  BSET.B  81.7
+0334:  MOV     80A,W0
+0336:  CALL    200
+033A:  BCLR.B  81.7
+033C:  POP     42
+033E:  BSET.B  81.7
+....................    LED5=1; 
+0340:  BSET.B  2D2.7
+....................    delay_ms(x); 
+0342:  PUSH    42
+0344:  BCLR.B  81.7
+0346:  SETM.B  42
+0348:  BSET.B  81.7
+034A:  MOV     80A,W0
+034C:  CALL    200
+0350:  BCLR.B  81.7
+0352:  POP     42
+0354:  BSET.B  81.7
+....................    LED29=1; 
+0356:  BSET.B  2C2.4
+....................    delay_ms(x);  
+0358:  PUSH    42
+035A:  BCLR.B  81.7
+035C:  SETM.B  42
+035E:  BSET.B  81.7
+0360:  MOV     80A,W0
+0362:  CALL    200
+0366:  BCLR.B  81.7
+0368:  POP     42
+036A:  BSET.B  81.7
+....................    LED6=1; 
+036C:  BSET.B  2D3.0
+....................    delay_ms(x); 
+036E:  PUSH    42
+0370:  BCLR.B  81.7
+0372:  SETM.B  42
+0374:  BSET.B  81.7
+0376:  MOV     80A,W0
+0378:  CALL    200
+037C:  BCLR.B  81.7
+037E:  POP     42
+0380:  BSET.B  81.7
+....................    LED28=1; 
+0382:  BSET.B  2CA.4
+....................    delay_ms(x); 
+0384:  PUSH    42
+0386:  BCLR.B  81.7
+0388:  SETM.B  42
+038A:  BSET.B  81.7
+038C:  MOV     80A,W0
+038E:  CALL    200
+0392:  BCLR.B  81.7
+0394:  POP     42
+0396:  BSET.B  81.7
+....................    LED7=1; 
+0398:  BSET.B  2D3.1
+....................    delay_ms(x);   
+039A:  PUSH    42
+039C:  BCLR.B  81.7
+039E:  SETM.B  42
+03A0:  BSET.B  81.7
+03A2:  MOV     80A,W0
+03A4:  CALL    200
+03A8:  BCLR.B  81.7
+03AA:  POP     42
+03AC:  BSET.B  81.7
+....................    LED27=1; 
+03AE:  BSET.B  2C3.0
+....................    delay_ms(x); 
+03B0:  PUSH    42
+03B2:  BCLR.B  81.7
+03B4:  SETM.B  42
+03B6:  BSET.B  81.7
+03B8:  MOV     80A,W0
+03BA:  CALL    200
+03BE:  BCLR.B  81.7
+03C0:  POP     42
+03C2:  BSET.B  81.7
+....................    LED8=1; 
+03C4:  BSET.B  2CB.2
+....................    delay_ms(x); 
+03C6:  PUSH    42
+03C8:  BCLR.B  81.7
+03CA:  SETM.B  42
+03CC:  BSET.B  81.7
+03CE:  MOV     80A,W0
+03D0:  CALL    200
+03D4:  BCLR.B  81.7
+03D6:  POP     42
+03D8:  BSET.B  81.7
+....................    LED26=1; 
+03DA:  BSET.B  2C2.3
+....................    delay_ms(x);   
+03DC:  PUSH    42
+03DE:  BCLR.B  81.7
+03E0:  SETM.B  42
+03E2:  BSET.B  81.7
+03E4:  MOV     80A,W0
+03E6:  CALL    200
+03EA:  BCLR.B  81.7
+03EC:  POP     42
+03EE:  BSET.B  81.7
+....................    LED9=1; 
+03F0:  BSET.B  2CB.3
+....................    delay_ms(x);   
+03F2:  PUSH    42
+03F4:  BCLR.B  81.7
+03F6:  SETM.B  42
+03F8:  BSET.B  81.7
+03FA:  MOV     80A,W0
+03FC:  CALL    200
+0400:  BCLR.B  81.7
+0402:  POP     42
+0404:  BSET.B  81.7
+....................    LED25=1; 
+0406:  BSET.B  2C2.2
+....................    delay_ms(x); 
+0408:  PUSH    42
+040A:  BCLR.B  81.7
+040C:  SETM.B  42
+040E:  BSET.B  81.7
+0410:  MOV     80A,W0
+0412:  CALL    200
+0416:  BCLR.B  81.7
+0418:  POP     42
+041A:  BSET.B  81.7
+....................    LED10=1; 
+041C:  BSET.B  2CB.4
+....................    delay_ms(x); 
+041E:  PUSH    42
+0420:  BCLR.B  81.7
+0422:  SETM.B  42
+0424:  BSET.B  81.7
+0426:  MOV     80A,W0
+0428:  CALL    200
+042C:  BCLR.B  81.7
+042E:  POP     42
+0430:  BSET.B  81.7
+....................    LED24=1; 
+0432:  BSET.B  2D2.2
+....................    delay_ms(x);   
+0434:  PUSH    42
+0436:  BCLR.B  81.7
+0438:  SETM.B  42
+043A:  BSET.B  81.7
+043C:  MOV     80A,W0
+043E:  CALL    200
+0442:  BCLR.B  81.7
+0444:  POP     42
+0446:  BSET.B  81.7
+....................    LED11=1; 
+0448:  BSET.B  2CB.5
+....................    delay_ms(x);   
+044A:  PUSH    42
+044C:  BCLR.B  81.7
+044E:  SETM.B  42
+0450:  BSET.B  81.7
+0452:  MOV     80A,W0
+0454:  CALL    200
+0458:  BCLR.B  81.7
+045A:  POP     42
+045C:  BSET.B  81.7
+....................    LED23=1; 
+045E:  BSET.B  2D2.1
+....................    delay_ms(x); 
+0460:  PUSH    42
+0462:  BCLR.B  81.7
+0464:  SETM.B  42
+0466:  BSET.B  81.7
+0468:  MOV     80A,W0
+046A:  CALL    200
+046E:  BCLR.B  81.7
+0470:  POP     42
+0472:  BSET.B  81.7
+....................    LED12=1; 
+0474:  BSET.B  2C3.2
+....................    delay_ms(x); 
+0476:  PUSH    42
+0478:  BCLR.B  81.7
+047A:  SETM.B  42
+047C:  BSET.B  81.7
+047E:  MOV     80A,W0
+0480:  CALL    200
+0484:  BCLR.B  81.7
+0486:  POP     42
+0488:  BSET.B  81.7
+....................    LED22=1; 
+048A:  BSET.B  2D2.0
+....................    delay_ms(x);   
+048C:  PUSH    42
+048E:  BCLR.B  81.7
+0490:  SETM.B  42
+0492:  BSET.B  81.7
+0494:  MOV     80A,W0
+0496:  CALL    200
+049A:  BCLR.B  81.7
+049C:  POP     42
+049E:  BSET.B  81.7
+....................    LED13=1; 
+04A0:  BSET.B  2C2.7
+....................    delay_ms(x);   
+04A2:  PUSH    42
+04A4:  BCLR.B  81.7
+04A6:  SETM.B  42
+04A8:  BSET.B  81.7
+04AA:  MOV     80A,W0
+04AC:  CALL    200
+04B0:  BCLR.B  81.7
+04B2:  POP     42
+04B4:  BSET.B  81.7
+....................    LED21=1; 
+04B6:  BSET.B  2CA.3
+....................    delay_ms(x); 
+04B8:  PUSH    42
+04BA:  BCLR.B  81.7
+04BC:  SETM.B  42
+04BE:  BSET.B  81.7
+04C0:  MOV     80A,W0
+04C2:  CALL    200
+04C6:  BCLR.B  81.7
+04C8:  POP     42
+04CA:  BSET.B  81.7
+....................    LED14=1; 
+04CC:  BSET.B  2CB.6
+....................    delay_ms(x); 
+04CE:  PUSH    42
+04D0:  BCLR.B  81.7
+04D2:  SETM.B  42
+04D4:  BSET.B  81.7
+04D6:  MOV     80A,W0
+04D8:  CALL    200
+04DC:  BCLR.B  81.7
+04DE:  POP     42
+04E0:  BSET.B  81.7
+....................    LED20=1; 
+04E2:  BSET.B  2CA.2
+....................    delay_ms(x);   
+04E4:  PUSH    42
+04E6:  BCLR.B  81.7
+04E8:  SETM.B  42
+04EA:  BSET.B  81.7
+04EC:  MOV     80A,W0
+04EE:  CALL    200
+04F2:  BCLR.B  81.7
+04F4:  POP     42
+04F6:  BSET.B  81.7
+....................    LED15=1; 
+04F8:  BSET.B  2CB.7
+....................    delay_ms(x);   
+04FA:  PUSH    42
+04FC:  BCLR.B  81.7
+04FE:  SETM.B  42
+0500:  BSET.B  81.7
+0502:  MOV     80A,W0
+0504:  CALL    200
+0508:  BCLR.B  81.7
+050A:  POP     42
+050C:  BSET.B  81.7
+....................    LED19=1; 
+050E:  BSET.B  2CA.1
+....................    delay_ms(x); 
+0510:  PUSH    42
+0512:  BCLR.B  81.7
+0514:  SETM.B  42
+0516:  BSET.B  81.7
+0518:  MOV     80A,W0
+051A:  CALL    200
+051E:  BCLR.B  81.7
+0520:  POP     42
+0522:  BSET.B  81.7
+....................    LED16=1; 
+0524:  BSET.B  2C2.0
+....................    delay_ms(x); 
+0526:  PUSH    42
+0528:  BCLR.B  81.7
+052A:  SETM.B  42
+052C:  BSET.B  81.7
+052E:  MOV     80A,W0
+0530:  CALL    200
+0534:  BCLR.B  81.7
+0536:  POP     42
+0538:  BSET.B  81.7
+....................    LED17=1; 
+053A:  BSET.B  2C2.1
+....................    delay_ms(x);   
+053C:  PUSH    42
+053E:  BCLR.B  81.7
+0540:  SETM.B  42
+0542:  BSET.B  81.7
+0544:  MOV     80A,W0
+0546:  CALL    200
+054A:  BCLR.B  81.7
+054C:  POP     42
+054E:  BSET.B  81.7
+....................    LED18=1; 
+0550:  BSET.B  2CA.0
+....................    delay_ms(x);   
+0552:  PUSH    42
+0554:  BCLR.B  81.7
+0556:  SETM.B  42
+0558:  BSET.B  81.7
+055A:  MOV     80A,W0
+055C:  CALL    200
+0560:  BCLR.B  81.7
+0562:  POP     42
+0564:  BSET.B  81.7
+....................  porta=0x0000; 
+0566:  CLR     2C2
+....................  portb=0x0000; 
+0568:  CLR     2CA
+....................  portc=0x0000; 
+056A:  CLR     2D2
+....................    delay_ms(x); 
+056C:  PUSH    42
+056E:  BCLR.B  81.7
+0570:  SETM.B  42
+0572:  BSET.B  81.7
+0574:  MOV     80A,W0
+0576:  CALL    200
+057A:  BCLR.B  81.7
+057C:  POP     42
+057E:  BSET.B  81.7
+....................   
+....................  } 
+0580:  RETURN  
+....................   
+....................  void blink2 (unsigned int16 y){ 
+....................  
+.................... LED1=1; 
+0582:  BSET.B  2CA.7
+.................... delay_ms(y); 
+0584:  PUSH    42
+0586:  BCLR.B  81.7
+0588:  SETM.B  42
+058A:  BSET.B  81.7
+058C:  MOV     80A,W0
+058E:  CALL    200
+0592:  BCLR.B  81.7
+0594:  POP     42
+0596:  BSET.B  81.7
+.................... LED2=1;  
+0598:  BSET.B  2CB.0
+.................... delay_ms(y); 
+059A:  PUSH    42
+059C:  BCLR.B  81.7
+059E:  SETM.B  42
+05A0:  BSET.B  81.7
+05A2:  MOV     80A,W0
+05A4:  CALL    200
+05A8:  BCLR.B  81.7
+05AA:  POP     42
+05AC:  BSET.B  81.7
+.................... LED3=1;  
+05AE:  BSET.B  2CB.1
+.................... delay_ms(y); 
+05B0:  PUSH    42
+05B2:  BCLR.B  81.7
+05B4:  SETM.B  42
+05B6:  BSET.B  81.7
+05B8:  MOV     80A,W0
+05BA:  CALL    200
+05BE:  BCLR.B  81.7
+05C0:  POP     42
+05C2:  BSET.B  81.7
+.................... LED4=1;  
+05C4:  BSET.B  2D2.6
+.................... delay_ms(y); 
+05C6:  PUSH    42
+05C8:  BCLR.B  81.7
+05CA:  SETM.B  42
+05CC:  BSET.B  81.7
+05CE:  MOV     80A,W0
+05D0:  CALL    200
+05D4:  BCLR.B  81.7
+05D6:  POP     42
+05D8:  BSET.B  81.7
+.................... LED5=1;  
+05DA:  BSET.B  2D2.7
+.................... delay_ms(y); 
+05DC:  PUSH    42
+05DE:  BCLR.B  81.7
+05E0:  SETM.B  42
+05E2:  BSET.B  81.7
+05E4:  MOV     80A,W0
+05E6:  CALL    200
+05EA:  BCLR.B  81.7
+05EC:  POP     42
+05EE:  BSET.B  81.7
+.................... LED6=1;  
+05F0:  BSET.B  2D3.0
+.................... delay_ms(y); 
+05F2:  PUSH    42
+05F4:  BCLR.B  81.7
+05F6:  SETM.B  42
+05F8:  BSET.B  81.7
+05FA:  MOV     80A,W0
+05FC:  CALL    200
+0600:  BCLR.B  81.7
+0602:  POP     42
+0604:  BSET.B  81.7
+.................... LED7=1;  
+0606:  BSET.B  2D3.1
+.................... delay_ms(y); 
+0608:  PUSH    42
+060A:  BCLR.B  81.7
+060C:  SETM.B  42
+060E:  BSET.B  81.7
+0610:  MOV     80A,W0
+0612:  CALL    200
+0616:  BCLR.B  81.7
+0618:  POP     42
+061A:  BSET.B  81.7
+.................... LED8=1;  
+061C:  BSET.B  2CB.2
+.................... delay_ms(y); 
+061E:  PUSH    42
+0620:  BCLR.B  81.7
+0622:  SETM.B  42
+0624:  BSET.B  81.7
+0626:  MOV     80A,W0
+0628:  CALL    200
+062C:  BCLR.B  81.7
+062E:  POP     42
+0630:  BSET.B  81.7
+.................... LED9=1;  
+0632:  BSET.B  2CB.3
+.................... delay_ms(y); 
+0634:  PUSH    42
+0636:  BCLR.B  81.7
+0638:  SETM.B  42
+063A:  BSET.B  81.7
+063C:  MOV     80A,W0
+063E:  CALL    200
+0642:  BCLR.B  81.7
+0644:  POP     42
+0646:  BSET.B  81.7
+.................... LED10=1;  
+0648:  BSET.B  2CB.4
+.................... delay_ms(y); 
+064A:  PUSH    42
+064C:  BCLR.B  81.7
+064E:  SETM.B  42
+0650:  BSET.B  81.7
+0652:  MOV     80A,W0
+0654:  CALL    200
+0658:  BCLR.B  81.7
+065A:  POP     42
+065C:  BSET.B  81.7
+....................  LED11=1;  
+065E:  BSET.B  2CB.5
+....................  delay_ms(y); 
+0660:  PUSH    42
+0662:  BCLR.B  81.7
+0664:  SETM.B  42
+0666:  BSET.B  81.7
+0668:  MOV     80A,W0
+066A:  CALL    200
+066E:  BCLR.B  81.7
+0670:  POP     42
+0672:  BSET.B  81.7
+.................... LED12=1;  
+0674:  BSET.B  2C3.2
+.................... delay_ms(y); 
+0676:  PUSH    42
+0678:  BCLR.B  81.7
+067A:  SETM.B  42
+067C:  BSET.B  81.7
+067E:  MOV     80A,W0
+0680:  CALL    200
+0684:  BCLR.B  81.7
+0686:  POP     42
+0688:  BSET.B  81.7
+.................... LED13=1;  
+068A:  BSET.B  2C2.7
+.................... delay_ms(y); 
+068C:  PUSH    42
+068E:  BCLR.B  81.7
+0690:  SETM.B  42
+0692:  BSET.B  81.7
+0694:  MOV     80A,W0
+0696:  CALL    200
+069A:  BCLR.B  81.7
+069C:  POP     42
+069E:  BSET.B  81.7
+.................... LED14=1; 
+06A0:  BSET.B  2CB.6
+.................... delay_ms(y); 
+06A2:  PUSH    42
+06A4:  BCLR.B  81.7
+06A6:  SETM.B  42
+06A8:  BSET.B  81.7
+06AA:  MOV     80A,W0
+06AC:  CALL    200
+06B0:  BCLR.B  81.7
+06B2:  POP     42
+06B4:  BSET.B  81.7
+.................... LED15=1; 
+06B6:  BSET.B  2CB.7
+.................... delay_ms(y); 
+06B8:  PUSH    42
+06BA:  BCLR.B  81.7
+06BC:  SETM.B  42
+06BE:  BSET.B  81.7
+06C0:  MOV     80A,W0
+06C2:  CALL    200
+06C6:  BCLR.B  81.7
+06C8:  POP     42
+06CA:  BSET.B  81.7
+.................... LED16 =1; 
+06CC:  BSET.B  2C2.0
+.................... delay_ms(y); 
+06CE:  PUSH    42
+06D0:  BCLR.B  81.7
+06D2:  SETM.B  42
+06D4:  BSET.B  81.7
+06D6:  MOV     80A,W0
+06D8:  CALL    200
+06DC:  BCLR.B  81.7
+06DE:  POP     42
+06E0:  BSET.B  81.7
+.................... LED17 =1; 
+06E2:  BSET.B  2C2.1
+.................... delay_ms(y); 
+06E4:  PUSH    42
+06E6:  BCLR.B  81.7
+06E8:  SETM.B  42
+06EA:  BSET.B  81.7
+06EC:  MOV     80A,W0
+06EE:  CALL    200
+06F2:  BCLR.B  81.7
+06F4:  POP     42
+06F6:  BSET.B  81.7
+....................  LED18 =1; 
+06F8:  BSET.B  2CA.0
+....................  delay_ms(y); 
+06FA:  PUSH    42
+06FC:  BCLR.B  81.7
+06FE:  SETM.B  42
+0700:  BSET.B  81.7
+0702:  MOV     80A,W0
+0704:  CALL    200
+0708:  BCLR.B  81.7
+070A:  POP     42
+070C:  BSET.B  81.7
+.................... LED19 =1; 
+070E:  BSET.B  2CA.1
+.................... delay_ms(y); 
+0710:  PUSH    42
+0712:  BCLR.B  81.7
+0714:  SETM.B  42
+0716:  BSET.B  81.7
+0718:  MOV     80A,W0
+071A:  CALL    200
+071E:  BCLR.B  81.7
+0720:  POP     42
+0722:  BSET.B  81.7
+.................... LED20 =1; 
+0724:  BSET.B  2CA.2
+.................... delay_ms(y); 
+0726:  PUSH    42
+0728:  BCLR.B  81.7
+072A:  SETM.B  42
+072C:  BSET.B  81.7
+072E:  MOV     80A,W0
+0730:  CALL    200
+0734:  BCLR.B  81.7
+0736:  POP     42
+0738:  BSET.B  81.7
+....................  LED21 =1; 
+073A:  BSET.B  2CA.3
+....................  delay_ms(y); 
+073C:  PUSH    42
+073E:  BCLR.B  81.7
+0740:  SETM.B  42
+0742:  BSET.B  81.7
+0744:  MOV     80A,W0
+0746:  CALL    200
+074A:  BCLR.B  81.7
+074C:  POP     42
+074E:  BSET.B  81.7
+.................... LED22 =1; 
+0750:  BSET.B  2D2.0
+.................... delay_ms(y); 
+0752:  PUSH    42
+0754:  BCLR.B  81.7
+0756:  SETM.B  42
+0758:  BSET.B  81.7
+075A:  MOV     80A,W0
+075C:  CALL    200
+0760:  BCLR.B  81.7
+0762:  POP     42
+0764:  BSET.B  81.7
+.................... LED23 =1; 
+0766:  BSET.B  2D2.1
+.................... delay_ms(y); 
+0768:  PUSH    42
+076A:  BCLR.B  81.7
+076C:  SETM.B  42
+076E:  BSET.B  81.7
+0770:  MOV     80A,W0
+0772:  CALL    200
+0776:  BCLR.B  81.7
+0778:  POP     42
+077A:  BSET.B  81.7
+.................... LED24 =1; 
+077C:  BSET.B  2D2.2
+.................... delay_ms(y); 
+077E:  PUSH    42
+0780:  BCLR.B  81.7
+0782:  SETM.B  42
+0784:  BSET.B  81.7
+0786:  MOV     80A,W0
+0788:  CALL    200
+078C:  BCLR.B  81.7
+078E:  POP     42
+0790:  BSET.B  81.7
+....................  LED25 =1; 
+0792:  BSET.B  2C2.2
+....................  delay_ms(y); 
+0794:  PUSH    42
+0796:  BCLR.B  81.7
+0798:  SETM.B  42
+079A:  BSET.B  81.7
+079C:  MOV     80A,W0
+079E:  CALL    200
+07A2:  BCLR.B  81.7
+07A4:  POP     42
+07A6:  BSET.B  81.7
+....................  LED26 =1; 
+07A8:  BSET.B  2C2.3
+....................  delay_ms(y); 
+07AA:  PUSH    42
+07AC:  BCLR.B  81.7
+07AE:  SETM.B  42
+07B0:  BSET.B  81.7
+07B2:  MOV     80A,W0
+07B4:  CALL    200
+07B8:  BCLR.B  81.7
+07BA:  POP     42
+07BC:  BSET.B  81.7
+.................... LED27 =1; 
+07BE:  BSET.B  2C3.0
+.................... delay_ms(y); 
+07C0:  PUSH    42
+07C2:  BCLR.B  81.7
+07C4:  SETM.B  42
+07C6:  BSET.B  81.7
+07C8:  MOV     80A,W0
+07CA:  CALL    200
+07CE:  BCLR.B  81.7
+07D0:  POP     42
+07D2:  BSET.B  81.7
+.................... LED28 =1; 
+07D4:  BSET.B  2CA.4
+.................... delay_ms(y); 
+07D6:  PUSH    42
+07D8:  BCLR.B  81.7
+07DA:  SETM.B  42
+07DC:  BSET.B  81.7
+07DE:  MOV     80A,W0
+07E0:  CALL    200
+07E4:  BCLR.B  81.7
+07E6:  POP     42
+07E8:  BSET.B  81.7
+.................... LED29 =1; 
+07EA:  BSET.B  2C2.4
+.................... delay_ms(y); 
+07EC:  PUSH    42
+07EE:  BCLR.B  81.7
+07F0:  SETM.B  42
+07F2:  BSET.B  81.7
+07F4:  MOV     80A,W0
+07F6:  CALL    200
+07FA:  BCLR.B  81.7
+07FC:  POP     42
+07FE:  BSET.B  81.7
+.................... LED30 =1; 
+0800:  BSET.B  2C3.1
+.................... delay_ms(y); 
+0802:  PUSH    42
+0804:  BCLR.B  81.7
+0806:  SETM.B  42
+0808:  BSET.B  81.7
+080A:  MOV     80A,W0
+080C:  CALL    200
+0810:  BCLR.B  81.7
+0812:  POP     42
+0814:  BSET.B  81.7
+.................... LED31=1; 
+0816:  BSET.B  2D2.3
+.................... delay_ms(y); 
+0818:  PUSH    42
+081A:  BCLR.B  81.7
+081C:  SETM.B  42
+081E:  BSET.B  81.7
+0820:  MOV     80A,W0
+0822:  CALL    200
+0826:  BCLR.B  81.7
+0828:  POP     42
+082A:  BSET.B  81.7
+.................... LED32 =1; 
+082C:  BSET.B  2D2.4
+.................... delay_ms(y); 
+082E:  PUSH    42
+0830:  BCLR.B  81.7
+0832:  SETM.B  42
+0834:  BSET.B  81.7
+0836:  MOV     80A,W0
+0838:  CALL    200
+083C:  BCLR.B  81.7
+083E:  POP     42
+0840:  BSET.B  81.7
+.................... LED33 =1; 
+0842:  BSET.B  2D2.5
+.................... delay_ms(y); 
+0844:  PUSH    42
+0846:  BCLR.B  81.7
+0848:  SETM.B  42
+084A:  BSET.B  81.7
+084C:  MOV     80A,W0
+084E:  CALL    200
+0852:  BCLR.B  81.7
+0854:  POP     42
+0856:  BSET.B  81.7
+.................... LED34 =1; 
+0858:  BSET.B  2CA.5
+.................... delay_ms(y); 
+085A:  PUSH    42
+085C:  BCLR.B  81.7
+085E:  SETM.B  42
+0860:  BSET.B  81.7
+0862:  MOV     80A,W0
+0864:  CALL    200
+0868:  BCLR.B  81.7
+086A:  POP     42
+086C:  BSET.B  81.7
+....................  
+.................... LED1=0; 
+086E:  BCLR.B  2CA.7
+.................... delay_ms(y); 
+0870:  PUSH    42
+0872:  BCLR.B  81.7
+0874:  SETM.B  42
+0876:  BSET.B  81.7
+0878:  MOV     80A,W0
+087A:  CALL    200
+087E:  BCLR.B  81.7
+0880:  POP     42
+0882:  BSET.B  81.7
+.................... LED2=0;  
+0884:  BCLR.B  2CB.0
+.................... delay_ms(y); 
+0886:  PUSH    42
+0888:  BCLR.B  81.7
+088A:  SETM.B  42
+088C:  BSET.B  81.7
+088E:  MOV     80A,W0
+0890:  CALL    200
+0894:  BCLR.B  81.7
+0896:  POP     42
+0898:  BSET.B  81.7
+.................... LED3=0;  
+089A:  BCLR.B  2CB.1
+.................... delay_ms(y); 
+089C:  PUSH    42
+089E:  BCLR.B  81.7
+08A0:  SETM.B  42
+08A2:  BSET.B  81.7
+08A4:  MOV     80A,W0
+08A6:  CALL    200
+08AA:  BCLR.B  81.7
+08AC:  POP     42
+08AE:  BSET.B  81.7
+.................... LED4=0;  
+08B0:  BCLR.B  2D2.6
+.................... delay_ms(y); 
+08B2:  PUSH    42
+08B4:  BCLR.B  81.7
+08B6:  SETM.B  42
+08B8:  BSET.B  81.7
+08BA:  MOV     80A,W0
+08BC:  CALL    200
+08C0:  BCLR.B  81.7
+08C2:  POP     42
+08C4:  BSET.B  81.7
+.................... LED5=0;  
+08C6:  BCLR.B  2D2.7
+.................... delay_ms(y); 
+08C8:  PUSH    42
+08CA:  BCLR.B  81.7
+08CC:  SETM.B  42
+08CE:  BSET.B  81.7
+08D0:  MOV     80A,W0
+08D2:  CALL    200
+08D6:  BCLR.B  81.7
+08D8:  POP     42
+08DA:  BSET.B  81.7
+.................... LED6=0;  
+08DC:  BCLR.B  2D3.0
+.................... delay_ms(y); 
+08DE:  PUSH    42
+08E0:  BCLR.B  81.7
+08E2:  SETM.B  42
+08E4:  BSET.B  81.7
+08E6:  MOV     80A,W0
+08E8:  CALL    200
+08EC:  BCLR.B  81.7
+08EE:  POP     42
+08F0:  BSET.B  81.7
+.................... LED7=0;  
+08F2:  BCLR.B  2D3.1
+.................... delay_ms(y); 
+08F4:  PUSH    42
+08F6:  BCLR.B  81.7
+08F8:  SETM.B  42
+08FA:  BSET.B  81.7
+08FC:  MOV     80A,W0
+08FE:  CALL    200
+0902:  BCLR.B  81.7
+0904:  POP     42
+0906:  BSET.B  81.7
+.................... LED8=0;  
+0908:  BCLR.B  2CB.2
+.................... delay_ms(y); 
+090A:  PUSH    42
+090C:  BCLR.B  81.7
+090E:  SETM.B  42
+0910:  BSET.B  81.7
+0912:  MOV     80A,W0
+0914:  CALL    200
+0918:  BCLR.B  81.7
+091A:  POP     42
+091C:  BSET.B  81.7
+.................... LED9=0;  
+091E:  BCLR.B  2CB.3
+.................... delay_ms(y); 
+0920:  PUSH    42
+0922:  BCLR.B  81.7
+0924:  SETM.B  42
+0926:  BSET.B  81.7
+0928:  MOV     80A,W0
+092A:  CALL    200
+092E:  BCLR.B  81.7
+0930:  POP     42
+0932:  BSET.B  81.7
+.................... LED10=0;  
+0934:  BCLR.B  2CB.4
+.................... delay_ms(y); 
+0936:  PUSH    42
+0938:  BCLR.B  81.7
+093A:  SETM.B  42
+093C:  BSET.B  81.7
+093E:  MOV     80A,W0
+0940:  CALL    200
+0944:  BCLR.B  81.7
+0946:  POP     42
+0948:  BSET.B  81.7
+....................  LED11=0;  
+094A:  BCLR.B  2CB.5
+....................  delay_ms(y); 
+094C:  PUSH    42
+094E:  BCLR.B  81.7
+0950:  SETM.B  42
+0952:  BSET.B  81.7
+0954:  MOV     80A,W0
+0956:  CALL    200
+095A:  BCLR.B  81.7
+095C:  POP     42
+095E:  BSET.B  81.7
+.................... LED12=0;  
+0960:  BCLR.B  2C3.2
+.................... delay_ms(y); 
+0962:  PUSH    42
+0964:  BCLR.B  81.7
+0966:  SETM.B  42
+0968:  BSET.B  81.7
+096A:  MOV     80A,W0
+096C:  CALL    200
+0970:  BCLR.B  81.7
+0972:  POP     42
+0974:  BSET.B  81.7
+.................... LED13=0;  
+0976:  BCLR.B  2C2.7
+.................... delay_ms(y); 
+0978:  PUSH    42
+097A:  BCLR.B  81.7
+097C:  SETM.B  42
+097E:  BSET.B  81.7
+0980:  MOV     80A,W0
+0982:  CALL    200
+0986:  BCLR.B  81.7
+0988:  POP     42
+098A:  BSET.B  81.7
+.................... LED14=0; 
+098C:  BCLR.B  2CB.6
+.................... delay_ms(y); 
+098E:  PUSH    42
+0990:  BCLR.B  81.7
+0992:  SETM.B  42
+0994:  BSET.B  81.7
+0996:  MOV     80A,W0
+0998:  CALL    200
+099C:  BCLR.B  81.7
+099E:  POP     42
+09A0:  BSET.B  81.7
+.................... LED15=0; 
+09A2:  BCLR.B  2CB.7
+.................... delay_ms(y); 
+09A4:  PUSH    42
+09A6:  BCLR.B  81.7
+09A8:  SETM.B  42
+09AA:  BSET.B  81.7
+09AC:  MOV     80A,W0
+09AE:  CALL    200
+09B2:  BCLR.B  81.7
+09B4:  POP     42
+09B6:  BSET.B  81.7
+.................... LED16 =0; 
+09B8:  BCLR.B  2C2.0
+.................... delay_ms(y); 
+09BA:  PUSH    42
+09BC:  BCLR.B  81.7
+09BE:  SETM.B  42
+09C0:  BSET.B  81.7
+09C2:  MOV     80A,W0
+09C4:  CALL    200
+09C8:  BCLR.B  81.7
+09CA:  POP     42
+09CC:  BSET.B  81.7
+.................... LED17 =0; 
+09CE:  BCLR.B  2C2.1
+.................... delay_ms(y); 
+09D0:  PUSH    42
+09D2:  BCLR.B  81.7
+09D4:  SETM.B  42
+09D6:  BSET.B  81.7
+09D8:  MOV     80A,W0
+09DA:  CALL    200
+09DE:  BCLR.B  81.7
+09E0:  POP     42
+09E2:  BSET.B  81.7
+....................  LED18 =0; 
+09E4:  BCLR.B  2CA.0
+....................  delay_ms(y); 
+09E6:  PUSH    42
+09E8:  BCLR.B  81.7
+09EA:  SETM.B  42
+09EC:  BSET.B  81.7
+09EE:  MOV     80A,W0
+09F0:  CALL    200
+09F4:  BCLR.B  81.7
+09F6:  POP     42
+09F8:  BSET.B  81.7
+.................... LED19 =0; 
+09FA:  BCLR.B  2CA.1
+.................... delay_ms(y); 
+09FC:  PUSH    42
+09FE:  BCLR.B  81.7
+0A00:  SETM.B  42
+0A02:  BSET.B  81.7
+0A04:  MOV     80A,W0
+0A06:  CALL    200
+0A0A:  BCLR.B  81.7
+0A0C:  POP     42
+0A0E:  BSET.B  81.7
+.................... LED20 =0; 
+0A10:  BCLR.B  2CA.2
+.................... delay_ms(y); 
+0A12:  PUSH    42
+0A14:  BCLR.B  81.7
+0A16:  SETM.B  42
+0A18:  BSET.B  81.7
+0A1A:  MOV     80A,W0
+0A1C:  CALL    200
+0A20:  BCLR.B  81.7
+0A22:  POP     42
+0A24:  BSET.B  81.7
+....................  LED21 =0; 
+0A26:  BCLR.B  2CA.3
+....................  delay_ms(y); 
+0A28:  PUSH    42
+0A2A:  BCLR.B  81.7
+0A2C:  SETM.B  42
+0A2E:  BSET.B  81.7
+0A30:  MOV     80A,W0
+0A32:  CALL    200
+0A36:  BCLR.B  81.7
+0A38:  POP     42
+0A3A:  BSET.B  81.7
+.................... LED22 =0; 
+0A3C:  BCLR.B  2D2.0
+.................... delay_ms(y); 
+0A3E:  PUSH    42
+0A40:  BCLR.B  81.7
+0A42:  SETM.B  42
+0A44:  BSET.B  81.7
+0A46:  MOV     80A,W0
+0A48:  CALL    200
+0A4C:  BCLR.B  81.7
+0A4E:  POP     42
+0A50:  BSET.B  81.7
+.................... LED23 =0; 
+0A52:  BCLR.B  2D2.1
+.................... delay_ms(y); 
+0A54:  PUSH    42
+0A56:  BCLR.B  81.7
+0A58:  SETM.B  42
+0A5A:  BSET.B  81.7
+0A5C:  MOV     80A,W0
+0A5E:  CALL    200
+0A62:  BCLR.B  81.7
+0A64:  POP     42
+0A66:  BSET.B  81.7
+.................... LED24 =0; 
+0A68:  BCLR.B  2D2.2
+.................... delay_ms(y); 
+0A6A:  PUSH    42
+0A6C:  BCLR.B  81.7
+0A6E:  SETM.B  42
+0A70:  BSET.B  81.7
+0A72:  MOV     80A,W0
+0A74:  CALL    200
+0A78:  BCLR.B  81.7
+0A7A:  POP     42
+0A7C:  BSET.B  81.7
+....................  LED25 =0; 
+0A7E:  BCLR.B  2C2.2
+....................  delay_ms(y); 
+0A80:  PUSH    42
+0A82:  BCLR.B  81.7
+0A84:  SETM.B  42
+0A86:  BSET.B  81.7
+0A88:  MOV     80A,W0
+0A8A:  CALL    200
+0A8E:  BCLR.B  81.7
+0A90:  POP     42
+0A92:  BSET.B  81.7
+....................  LED26 =0; 
+0A94:  BCLR.B  2C2.3
+....................  delay_ms(y); 
+0A96:  PUSH    42
+0A98:  BCLR.B  81.7
+0A9A:  SETM.B  42
+0A9C:  BSET.B  81.7
+0A9E:  MOV     80A,W0
+0AA0:  CALL    200
+0AA4:  BCLR.B  81.7
+0AA6:  POP     42
+0AA8:  BSET.B  81.7
+.................... LED27 =0; 
+0AAA:  BCLR.B  2C3.0
+.................... delay_ms(y); 
+0AAC:  PUSH    42
+0AAE:  BCLR.B  81.7
+0AB0:  SETM.B  42
+0AB2:  BSET.B  81.7
+0AB4:  MOV     80A,W0
+0AB6:  CALL    200
+0ABA:  BCLR.B  81.7
+0ABC:  POP     42
+0ABE:  BSET.B  81.7
+.................... LED28 =0; 
+0AC0:  BCLR.B  2CA.4
+.................... delay_ms(y); 
+0AC2:  PUSH    42
+0AC4:  BCLR.B  81.7
+0AC6:  SETM.B  42
+0AC8:  BSET.B  81.7
+0ACA:  MOV     80A,W0
+0ACC:  CALL    200
+0AD0:  BCLR.B  81.7
+0AD2:  POP     42
+0AD4:  BSET.B  81.7
+.................... LED29 =0; 
+0AD6:  BCLR.B  2C2.4
+.................... delay_ms(y); 
+0AD8:  PUSH    42
+0ADA:  BCLR.B  81.7
+0ADC:  SETM.B  42
+0ADE:  BSET.B  81.7
+0AE0:  MOV     80A,W0
+0AE2:  CALL    200
+0AE6:  BCLR.B  81.7
+0AE8:  POP     42
+0AEA:  BSET.B  81.7
+.................... LED30 =0; 
+0AEC:  BCLR.B  2C3.1
+.................... delay_ms(y); 
+0AEE:  PUSH    42
+0AF0:  BCLR.B  81.7
+0AF2:  SETM.B  42
+0AF4:  BSET.B  81.7
+0AF6:  MOV     80A,W0
+0AF8:  CALL    200
+0AFC:  BCLR.B  81.7
+0AFE:  POP     42
+0B00:  BSET.B  81.7
+.................... LED31=0; 
+0B02:  BCLR.B  2D2.3
+.................... delay_ms(y); 
+0B04:  PUSH    42
+0B06:  BCLR.B  81.7
+0B08:  SETM.B  42
+0B0A:  BSET.B  81.7
+0B0C:  MOV     80A,W0
+0B0E:  CALL    200
+0B12:  BCLR.B  81.7
+0B14:  POP     42
+0B16:  BSET.B  81.7
+.................... LED32 =0; 
+0B18:  BCLR.B  2D2.4
+.................... delay_ms(y); 
+0B1A:  PUSH    42
+0B1C:  BCLR.B  81.7
+0B1E:  SETM.B  42
+0B20:  BSET.B  81.7
+0B22:  MOV     80A,W0
+0B24:  CALL    200
+0B28:  BCLR.B  81.7
+0B2A:  POP     42
+0B2C:  BSET.B  81.7
+.................... LED33 =0; 
+0B2E:  BCLR.B  2D2.5
+.................... delay_ms(y); 
+0B30:  PUSH    42
+0B32:  BCLR.B  81.7
+0B34:  SETM.B  42
+0B36:  BSET.B  81.7
+0B38:  MOV     80A,W0
+0B3A:  CALL    200
+0B3E:  BCLR.B  81.7
+0B40:  POP     42
+0B42:  BSET.B  81.7
+.................... LED34 =0; 
+0B44:  BCLR.B  2CA.5
+.................... delay_ms(y); 
+0B46:  PUSH    42
+0B48:  BCLR.B  81.7
+0B4A:  SETM.B  42
+0B4C:  BSET.B  81.7
+0B4E:  MOV     80A,W0
+0B50:  CALL    200
+0B54:  BCLR.B  81.7
+0B56:  POP     42
+0B58:  BSET.B  81.7
+....................  } 
+0B5A:  RETURN  
+....................   
+....................  void L1 (unsigned int16 x){ 
+....................   
+....................  porta=0x0000; 
+0B5C:  CLR     2C2
+....................  portb=0x0000; 
+0B5E:  CLR     2CA
+....................  portc=0x0000; 
+0B60:  CLR     2D2
+....................  delay_ms(x); 
+0B62:  PUSH    42
+0B64:  BCLR.B  81.7
+0B66:  SETM.B  42
+0B68:  BSET.B  81.7
+0B6A:  MOV     80A,W0
+0B6C:  CALL    200
+0B70:  BCLR.B  81.7
+0B72:  POP     42
+0B74:  BSET.B  81.7
+....................    LED1=1; 
+0B76:  BSET.B  2CA.7
+....................    delay_ms(x);   
+0B78:  PUSH    42
+0B7A:  BCLR.B  81.7
+0B7C:  SETM.B  42
+0B7E:  BSET.B  81.7
+0B80:  MOV     80A,W0
+0B82:  CALL    200
+0B86:  BCLR.B  81.7
+0B88:  POP     42
+0B8A:  BSET.B  81.7
+....................    LED1=0; 
+0B8C:  BCLR.B  2CA.7
+....................  delay_ms(x); 
+0B8E:  PUSH    42
+0B90:  BCLR.B  81.7
+0B92:  SETM.B  42
+0B94:  BSET.B  81.7
+0B96:  MOV     80A,W0
+0B98:  CALL    200
+0B9C:  BCLR.B  81.7
+0B9E:  POP     42
+0BA0:  BSET.B  81.7
+....................    LED2=1; 
+0BA2:  BSET.B  2CB.0
+....................    delay_ms(x);   
+0BA4:  PUSH    42
+0BA6:  BCLR.B  81.7
+0BA8:  SETM.B  42
+0BAA:  BSET.B  81.7
+0BAC:  MOV     80A,W0
+0BAE:  CALL    200
+0BB2:  BCLR.B  81.7
+0BB4:  POP     42
+0BB6:  BSET.B  81.7
+....................    LED2=0; 
+0BB8:  BCLR.B  2CB.0
+....................    delay_ms(x);   
+0BBA:  PUSH    42
+0BBC:  BCLR.B  81.7
+0BBE:  SETM.B  42
+0BC0:  BSET.B  81.7
+0BC2:  MOV     80A,W0
+0BC4:  CALL    200
+0BC8:  BCLR.B  81.7
+0BCA:  POP     42
+0BCC:  BSET.B  81.7
+....................    LED3=1; 
+0BCE:  BSET.B  2CB.1
+....................    delay_ms(x); 
+0BD0:  PUSH    42
+0BD2:  BCLR.B  81.7
+0BD4:  SETM.B  42
+0BD6:  BSET.B  81.7
+0BD8:  MOV     80A,W0
+0BDA:  CALL    200
+0BDE:  BCLR.B  81.7
+0BE0:  POP     42
+0BE2:  BSET.B  81.7
+....................    LED3=0; 
+0BE4:  BCLR.B  2CB.1
+....................    delay_ms(x); 
+0BE6:  PUSH    42
+0BE8:  BCLR.B  81.7
+0BEA:  SETM.B  42
+0BEC:  BSET.B  81.7
+0BEE:  MOV     80A,W0
+0BF0:  CALL    200
+0BF4:  BCLR.B  81.7
+0BF6:  POP     42
+0BF8:  BSET.B  81.7
+....................    LED4=1; 
+0BFA:  BSET.B  2D2.6
+....................    delay_ms(x);   
+0BFC:  PUSH    42
+0BFE:  BCLR.B  81.7
+0C00:  SETM.B  42
+0C02:  BSET.B  81.7
+0C04:  MOV     80A,W0
+0C06:  CALL    200
+0C0A:  BCLR.B  81.7
+0C0C:  POP     42
+0C0E:  BSET.B  81.7
+....................    LED4=0; 
+0C10:  BCLR.B  2D2.6
+....................    delay_ms(x);   
+0C12:  PUSH    42
+0C14:  BCLR.B  81.7
+0C16:  SETM.B  42
+0C18:  BSET.B  81.7
+0C1A:  MOV     80A,W0
+0C1C:  CALL    200
+0C20:  BCLR.B  81.7
+0C22:  POP     42
+0C24:  BSET.B  81.7
+....................    LED5=1; 
+0C26:  BSET.B  2D2.7
+....................    delay_ms(x); 
+0C28:  PUSH    42
+0C2A:  BCLR.B  81.7
+0C2C:  SETM.B  42
+0C2E:  BSET.B  81.7
+0C30:  MOV     80A,W0
+0C32:  CALL    200
+0C36:  BCLR.B  81.7
+0C38:  POP     42
+0C3A:  BSET.B  81.7
+....................    LED5=0; 
+0C3C:  BCLR.B  2D2.7
+....................    delay_ms(x); 
+0C3E:  PUSH    42
+0C40:  BCLR.B  81.7
+0C42:  SETM.B  42
+0C44:  BSET.B  81.7
+0C46:  MOV     80A,W0
+0C48:  CALL    200
+0C4C:  BCLR.B  81.7
+0C4E:  POP     42
+0C50:  BSET.B  81.7
+....................    LED6=1; 
+0C52:  BSET.B  2D3.0
+....................    delay_ms(x);  
+0C54:  PUSH    42
+0C56:  BCLR.B  81.7
+0C58:  SETM.B  42
+0C5A:  BSET.B  81.7
+0C5C:  MOV     80A,W0
+0C5E:  CALL    200
+0C62:  BCLR.B  81.7
+0C64:  POP     42
+0C66:  BSET.B  81.7
+....................    LED6=0; 
+0C68:  BCLR.B  2D3.0
+....................    delay_ms(x); 
+0C6A:  PUSH    42
+0C6C:  BCLR.B  81.7
+0C6E:  SETM.B  42
+0C70:  BSET.B  81.7
+0C72:  MOV     80A,W0
+0C74:  CALL    200
+0C78:  BCLR.B  81.7
+0C7A:  POP     42
+0C7C:  BSET.B  81.7
+....................    LED7=1; 
+0C7E:  BSET.B  2D3.1
+....................    delay_ms(x); 
+0C80:  PUSH    42
+0C82:  BCLR.B  81.7
+0C84:  SETM.B  42
+0C86:  BSET.B  81.7
+0C88:  MOV     80A,W0
+0C8A:  CALL    200
+0C8E:  BCLR.B  81.7
+0C90:  POP     42
+0C92:  BSET.B  81.7
+....................    LED7=0; 
+0C94:  BCLR.B  2D3.1
+....................    delay_ms(x);   
+0C96:  PUSH    42
+0C98:  BCLR.B  81.7
+0C9A:  SETM.B  42
+0C9C:  BSET.B  81.7
+0C9E:  MOV     80A,W0
+0CA0:  CALL    200
+0CA4:  BCLR.B  81.7
+0CA6:  POP     42
+0CA8:  BSET.B  81.7
+....................    LED8=1; 
+0CAA:  BSET.B  2CB.2
+....................    delay_ms(x); 
+0CAC:  PUSH    42
+0CAE:  BCLR.B  81.7
+0CB0:  SETM.B  42
+0CB2:  BSET.B  81.7
+0CB4:  MOV     80A,W0
+0CB6:  CALL    200
+0CBA:  BCLR.B  81.7
+0CBC:  POP     42
+0CBE:  BSET.B  81.7
+....................    LED8=0; 
+0CC0:  BCLR.B  2CB.2
+....................    delay_ms(x); 
+0CC2:  PUSH    42
+0CC4:  BCLR.B  81.7
+0CC6:  SETM.B  42
+0CC8:  BSET.B  81.7
+0CCA:  MOV     80A,W0
+0CCC:  CALL    200
+0CD0:  BCLR.B  81.7
+0CD2:  POP     42
+0CD4:  BSET.B  81.7
+....................    LED9=1; 
+0CD6:  BSET.B  2CB.3
+....................    delay_ms(x);   
+0CD8:  PUSH    42
+0CDA:  BCLR.B  81.7
+0CDC:  SETM.B  42
+0CDE:  BSET.B  81.7
+0CE0:  MOV     80A,W0
+0CE2:  CALL    200
+0CE6:  BCLR.B  81.7
+0CE8:  POP     42
+0CEA:  BSET.B  81.7
+....................    LED9=0; 
+0CEC:  BCLR.B  2CB.3
+....................    delay_ms(x);   
+0CEE:  PUSH    42
+0CF0:  BCLR.B  81.7
+0CF2:  SETM.B  42
+0CF4:  BSET.B  81.7
+0CF6:  MOV     80A,W0
+0CF8:  CALL    200
+0CFC:  BCLR.B  81.7
+0CFE:  POP     42
+0D00:  BSET.B  81.7
+....................    LED10=1; 
+0D02:  BSET.B  2CB.4
+....................    delay_ms(x); 
+0D04:  PUSH    42
+0D06:  BCLR.B  81.7
+0D08:  SETM.B  42
+0D0A:  BSET.B  81.7
+0D0C:  MOV     80A,W0
+0D0E:  CALL    200
+0D12:  BCLR.B  81.7
+0D14:  POP     42
+0D16:  BSET.B  81.7
+....................    LED10=0; 
+0D18:  BCLR.B  2CB.4
+....................    delay_ms(x); 
+0D1A:  PUSH    42
+0D1C:  BCLR.B  81.7
+0D1E:  SETM.B  42
+0D20:  BSET.B  81.7
+0D22:  MOV     80A,W0
+0D24:  CALL    200
+0D28:  BCLR.B  81.7
+0D2A:  POP     42
+0D2C:  BSET.B  81.7
+....................    LED11=1; 
+0D2E:  BSET.B  2CB.5
+....................    delay_ms(x);   
+0D30:  PUSH    42
+0D32:  BCLR.B  81.7
+0D34:  SETM.B  42
+0D36:  BSET.B  81.7
+0D38:  MOV     80A,W0
+0D3A:  CALL    200
+0D3E:  BCLR.B  81.7
+0D40:  POP     42
+0D42:  BSET.B  81.7
+....................    LED11=0; 
+0D44:  BCLR.B  2CB.5
+....................    delay_ms(x);   
+0D46:  PUSH    42
+0D48:  BCLR.B  81.7
+0D4A:  SETM.B  42
+0D4C:  BSET.B  81.7
+0D4E:  MOV     80A,W0
+0D50:  CALL    200
+0D54:  BCLR.B  81.7
+0D56:  POP     42
+0D58:  BSET.B  81.7
+....................    LED12=1; 
+0D5A:  BSET.B  2C3.2
+....................    delay_ms(x); 
+0D5C:  PUSH    42
+0D5E:  BCLR.B  81.7
+0D60:  SETM.B  42
+0D62:  BSET.B  81.7
+0D64:  MOV     80A,W0
+0D66:  CALL    200
+0D6A:  BCLR.B  81.7
+0D6C:  POP     42
+0D6E:  BSET.B  81.7
+....................    LED12=0; 
+0D70:  BCLR.B  2C3.2
+....................    delay_ms(x); 
+0D72:  PUSH    42
+0D74:  BCLR.B  81.7
+0D76:  SETM.B  42
+0D78:  BSET.B  81.7
+0D7A:  MOV     80A,W0
+0D7C:  CALL    200
+0D80:  BCLR.B  81.7
+0D82:  POP     42
+0D84:  BSET.B  81.7
+....................    LED13=1; 
+0D86:  BSET.B  2C2.7
+....................    delay_ms(x);   
+0D88:  PUSH    42
+0D8A:  BCLR.B  81.7
+0D8C:  SETM.B  42
+0D8E:  BSET.B  81.7
+0D90:  MOV     80A,W0
+0D92:  CALL    200
+0D96:  BCLR.B  81.7
+0D98:  POP     42
+0D9A:  BSET.B  81.7
+....................    LED13=0; 
+0D9C:  BCLR.B  2C2.7
+....................    delay_ms(x);   
+0D9E:  PUSH    42
+0DA0:  BCLR.B  81.7
+0DA2:  SETM.B  42
+0DA4:  BSET.B  81.7
+0DA6:  MOV     80A,W0
+0DA8:  CALL    200
+0DAC:  BCLR.B  81.7
+0DAE:  POP     42
+0DB0:  BSET.B  81.7
+....................    LED14=1; 
+0DB2:  BSET.B  2CB.6
+....................    delay_ms(x); 
+0DB4:  PUSH    42
+0DB6:  BCLR.B  81.7
+0DB8:  SETM.B  42
+0DBA:  BSET.B  81.7
+0DBC:  MOV     80A,W0
+0DBE:  CALL    200
+0DC2:  BCLR.B  81.7
+0DC4:  POP     42
+0DC6:  BSET.B  81.7
+....................    LED14=0; 
+0DC8:  BCLR.B  2CB.6
+....................    delay_ms(x); 
+0DCA:  PUSH    42
+0DCC:  BCLR.B  81.7
+0DCE:  SETM.B  42
+0DD0:  BSET.B  81.7
+0DD2:  MOV     80A,W0
+0DD4:  CALL    200
+0DD8:  BCLR.B  81.7
+0DDA:  POP     42
+0DDC:  BSET.B  81.7
+....................    LED15=1; 
+0DDE:  BSET.B  2CB.7
+....................    delay_ms(x);   
+0DE0:  PUSH    42
+0DE2:  BCLR.B  81.7
+0DE4:  SETM.B  42
+0DE6:  BSET.B  81.7
+0DE8:  MOV     80A,W0
+0DEA:  CALL    200
+0DEE:  BCLR.B  81.7
+0DF0:  POP     42
+0DF2:  BSET.B  81.7
+....................    LED15=0; 
+0DF4:  BCLR.B  2CB.7
+....................    delay_ms(x);   
+0DF6:  PUSH    42
+0DF8:  BCLR.B  81.7
+0DFA:  SETM.B  42
+0DFC:  BSET.B  81.7
+0DFE:  MOV     80A,W0
+0E00:  CALL    200
+0E04:  BCLR.B  81.7
+0E06:  POP     42
+0E08:  BSET.B  81.7
+....................    LED16=1; 
+0E0A:  BSET.B  2C2.0
+....................    delay_ms(x); 
+0E0C:  PUSH    42
+0E0E:  BCLR.B  81.7
+0E10:  SETM.B  42
+0E12:  BSET.B  81.7
+0E14:  MOV     80A,W0
+0E16:  CALL    200
+0E1A:  BCLR.B  81.7
+0E1C:  POP     42
+0E1E:  BSET.B  81.7
+....................    LED16=0; 
+0E20:  BCLR.B  2C2.0
+....................    delay_ms(x); 
+0E22:  PUSH    42
+0E24:  BCLR.B  81.7
+0E26:  SETM.B  42
+0E28:  BSET.B  81.7
+0E2A:  MOV     80A,W0
+0E2C:  CALL    200
+0E30:  BCLR.B  81.7
+0E32:  POP     42
+0E34:  BSET.B  81.7
+....................    LED17=1; 
+0E36:  BSET.B  2C2.1
+....................    delay_ms(x);   
+0E38:  PUSH    42
+0E3A:  BCLR.B  81.7
+0E3C:  SETM.B  42
+0E3E:  BSET.B  81.7
+0E40:  MOV     80A,W0
+0E42:  CALL    200
+0E46:  BCLR.B  81.7
+0E48:  POP     42
+0E4A:  BSET.B  81.7
+....................    LED17=0; 
+0E4C:  BCLR.B  2C2.1
+....................    delay_ms(x);;   
+0E4E:  PUSH    42
+0E50:  BCLR.B  81.7
+0E52:  SETM.B  42
+0E54:  BSET.B  81.7
+0E56:  MOV     80A,W0
+0E58:  CALL    200
+0E5C:  BCLR.B  81.7
+0E5E:  POP     42
+0E60:  BSET.B  81.7
+....................    LED18=1; 
+0E62:  BSET.B  2CA.0
+....................    delay_ms(x); 
+0E64:  PUSH    42
+0E66:  BCLR.B  81.7
+0E68:  SETM.B  42
+0E6A:  BSET.B  81.7
+0E6C:  MOV     80A,W0
+0E6E:  CALL    200
+0E72:  BCLR.B  81.7
+0E74:  POP     42
+0E76:  BSET.B  81.7
+....................    LED18=0; 
+0E78:  BCLR.B  2CA.0
+....................    delay_ms(x); 
+0E7A:  PUSH    42
+0E7C:  BCLR.B  81.7
+0E7E:  SETM.B  42
+0E80:  BSET.B  81.7
+0E82:  MOV     80A,W0
+0E84:  CALL    200
+0E88:  BCLR.B  81.7
+0E8A:  POP     42
+0E8C:  BSET.B  81.7
+....................    LED19=1; 
+0E8E:  BSET.B  2CA.1
+....................    delay_ms(x);   
+0E90:  PUSH    42
+0E92:  BCLR.B  81.7
+0E94:  SETM.B  42
+0E96:  BSET.B  81.7
+0E98:  MOV     80A,W0
+0E9A:  CALL    200
+0E9E:  BCLR.B  81.7
+0EA0:  POP     42
+0EA2:  BSET.B  81.7
+....................    LED19=0; 
+0EA4:  BCLR.B  2CA.1
+....................    delay_ms(x);   
+0EA6:  PUSH    42
+0EA8:  BCLR.B  81.7
+0EAA:  SETM.B  42
+0EAC:  BSET.B  81.7
+0EAE:  MOV     80A,W0
+0EB0:  CALL    200
+0EB4:  BCLR.B  81.7
+0EB6:  POP     42
+0EB8:  BSET.B  81.7
+....................    LED20=1; 
+0EBA:  BSET.B  2CA.2
+....................    delay_ms(x); 
+0EBC:  PUSH    42
+0EBE:  BCLR.B  81.7
+0EC0:  SETM.B  42
+0EC2:  BSET.B  81.7
+0EC4:  MOV     80A,W0
+0EC6:  CALL    200
+0ECA:  BCLR.B  81.7
+0ECC:  POP     42
+0ECE:  BSET.B  81.7
+....................    LED20=0; 
+0ED0:  BCLR.B  2CA.2
+....................    delay_ms(x); 
+0ED2:  PUSH    42
+0ED4:  BCLR.B  81.7
+0ED6:  SETM.B  42
+0ED8:  BSET.B  81.7
+0EDA:  MOV     80A,W0
+0EDC:  CALL    200
+0EE0:  BCLR.B  81.7
+0EE2:  POP     42
+0EE4:  BSET.B  81.7
+....................    LED21=1; 
+0EE6:  BSET.B  2CA.3
+....................    delay_ms(x);   
+0EE8:  PUSH    42
+0EEA:  BCLR.B  81.7
+0EEC:  SETM.B  42
+0EEE:  BSET.B  81.7
+0EF0:  MOV     80A,W0
+0EF2:  CALL    200
+0EF6:  BCLR.B  81.7
+0EF8:  POP     42
+0EFA:  BSET.B  81.7
+....................    LED21=0; 
+0EFC:  BCLR.B  2CA.3
+....................    delay_ms(x);   
+0EFE:  PUSH    42
+0F00:  BCLR.B  81.7
+0F02:  SETM.B  42
+0F04:  BSET.B  81.7
+0F06:  MOV     80A,W0
+0F08:  CALL    200
+0F0C:  BCLR.B  81.7
+0F0E:  POP     42
+0F10:  BSET.B  81.7
+....................    LED22=1; 
+0F12:  BSET.B  2D2.0
+....................    delay_ms(x); 
+0F14:  PUSH    42
+0F16:  BCLR.B  81.7
+0F18:  SETM.B  42
+0F1A:  BSET.B  81.7
+0F1C:  MOV     80A,W0
+0F1E:  CALL    200
+0F22:  BCLR.B  81.7
+0F24:  POP     42
+0F26:  BSET.B  81.7
+....................    LED22=0; 
+0F28:  BCLR.B  2D2.0
+....................    delay_ms(x); 
+0F2A:  PUSH    42
+0F2C:  BCLR.B  81.7
+0F2E:  SETM.B  42
+0F30:  BSET.B  81.7
+0F32:  MOV     80A,W0
+0F34:  CALL    200
+0F38:  BCLR.B  81.7
+0F3A:  POP     42
+0F3C:  BSET.B  81.7
+....................    LED23=1; 
+0F3E:  BSET.B  2D2.1
+....................    delay_ms(x);   
+0F40:  PUSH    42
+0F42:  BCLR.B  81.7
+0F44:  SETM.B  42
+0F46:  BSET.B  81.7
+0F48:  MOV     80A,W0
+0F4A:  CALL    200
+0F4E:  BCLR.B  81.7
+0F50:  POP     42
+0F52:  BSET.B  81.7
+....................    LED23=0; 
+0F54:  BCLR.B  2D2.1
+....................    delay_ms(x);   
+0F56:  PUSH    42
+0F58:  BCLR.B  81.7
+0F5A:  SETM.B  42
+0F5C:  BSET.B  81.7
+0F5E:  MOV     80A,W0
+0F60:  CALL    200
+0F64:  BCLR.B  81.7
+0F66:  POP     42
+0F68:  BSET.B  81.7
+....................    LED24=1; 
+0F6A:  BSET.B  2D2.2
+....................    delay_ms(x); 
+0F6C:  PUSH    42
+0F6E:  BCLR.B  81.7
+0F70:  SETM.B  42
+0F72:  BSET.B  81.7
+0F74:  MOV     80A,W0
+0F76:  CALL    200
+0F7A:  BCLR.B  81.7
+0F7C:  POP     42
+0F7E:  BSET.B  81.7
+....................    LED24=0; 
+0F80:  BCLR.B  2D2.2
+....................    delay_ms(x); 
+0F82:  PUSH    42
+0F84:  BCLR.B  81.7
+0F86:  SETM.B  42
+0F88:  BSET.B  81.7
+0F8A:  MOV     80A,W0
+0F8C:  CALL    200
+0F90:  BCLR.B  81.7
+0F92:  POP     42
+0F94:  BSET.B  81.7
+....................    LED25=1; 
+0F96:  BSET.B  2C2.2
+....................    delay_ms(x);   
+0F98:  PUSH    42
+0F9A:  BCLR.B  81.7
+0F9C:  SETM.B  42
+0F9E:  BSET.B  81.7
+0FA0:  MOV     80A,W0
+0FA2:  CALL    200
+0FA6:  BCLR.B  81.7
+0FA8:  POP     42
+0FAA:  BSET.B  81.7
+....................    LED25=0; 
+0FAC:  BCLR.B  2C2.2
+....................    delay_ms(x); 
+0FAE:  PUSH    42
+0FB0:  BCLR.B  81.7
+0FB2:  SETM.B  42
+0FB4:  BSET.B  81.7
+0FB6:  MOV     80A,W0
+0FB8:  CALL    200
+0FBC:  BCLR.B  81.7
+0FBE:  POP     42
+0FC0:  BSET.B  81.7
+....................     LED26=1; 
+0FC2:  BSET.B  2C2.3
+....................    delay_ms(x);   
+0FC4:  PUSH    42
+0FC6:  BCLR.B  81.7
+0FC8:  SETM.B  42
+0FCA:  BSET.B  81.7
+0FCC:  MOV     80A,W0
+0FCE:  CALL    200
+0FD2:  BCLR.B  81.7
+0FD4:  POP     42
+0FD6:  BSET.B  81.7
+....................    LED26=0; 
+0FD8:  BCLR.B  2C2.3
+....................    delay_ms(x);   
+0FDA:  PUSH    42
+0FDC:  BCLR.B  81.7
+0FDE:  SETM.B  42
+0FE0:  BSET.B  81.7
+0FE2:  MOV     80A,W0
+0FE4:  CALL    200
+0FE8:  BCLR.B  81.7
+0FEA:  POP     42
+0FEC:  BSET.B  81.7
+....................    LED27=1; 
+0FEE:  BSET.B  2C3.0
+....................    delay_ms(x); 
+0FF0:  PUSH    42
+0FF2:  BCLR.B  81.7
+0FF4:  SETM.B  42
+0FF6:  BSET.B  81.7
+0FF8:  MOV     80A,W0
+0FFA:  CALL    200
+0FFE:  BCLR.B  81.7
+1000:  POP     42
+1002:  BSET.B  81.7
+....................    LED27=0; 
+1004:  BCLR.B  2C3.0
+....................    delay_ms(x); 
+1006:  PUSH    42
+1008:  BCLR.B  81.7
+100A:  SETM.B  42
+100C:  BSET.B  81.7
+100E:  MOV     80A,W0
+1010:  CALL    200
+1014:  BCLR.B  81.7
+1016:  POP     42
+1018:  BSET.B  81.7
+....................    LED28=1; 
+101A:  BSET.B  2CA.4
+....................    delay_ms(x);   
+101C:  PUSH    42
+101E:  BCLR.B  81.7
+1020:  SETM.B  42
+1022:  BSET.B  81.7
+1024:  MOV     80A,W0
+1026:  CALL    200
+102A:  BCLR.B  81.7
+102C:  POP     42
+102E:  BSET.B  81.7
+....................    LED28=0; 
+1030:  BCLR.B  2CA.4
+....................    delay_ms(x);   
+1032:  PUSH    42
+1034:  BCLR.B  81.7
+1036:  SETM.B  42
+1038:  BSET.B  81.7
+103A:  MOV     80A,W0
+103C:  CALL    200
+1040:  BCLR.B  81.7
+1042:  POP     42
+1044:  BSET.B  81.7
+....................    LED29=1; 
+1046:  BSET.B  2C2.4
+....................    delay_ms(x); 
+1048:  PUSH    42
+104A:  BCLR.B  81.7
+104C:  SETM.B  42
+104E:  BSET.B  81.7
+1050:  MOV     80A,W0
+1052:  CALL    200
+1056:  BCLR.B  81.7
+1058:  POP     42
+105A:  BSET.B  81.7
+....................    LED29=0; 
+105C:  BCLR.B  2C2.4
+....................    delay_ms(x); 
+105E:  PUSH    42
+1060:  BCLR.B  81.7
+1062:  SETM.B  42
+1064:  BSET.B  81.7
+1066:  MOV     80A,W0
+1068:  CALL    200
+106C:  BCLR.B  81.7
+106E:  POP     42
+1070:  BSET.B  81.7
+....................    LED30=1; 
+1072:  BSET.B  2C3.1
+....................    delay_ms(x);   
+1074:  PUSH    42
+1076:  BCLR.B  81.7
+1078:  SETM.B  42
+107A:  BSET.B  81.7
+107C:  MOV     80A,W0
+107E:  CALL    200
+1082:  BCLR.B  81.7
+1084:  POP     42
+1086:  BSET.B  81.7
+....................    LED30=0; 
+1088:  BCLR.B  2C3.1
+....................    delay_ms(x);   
+108A:  PUSH    42
+108C:  BCLR.B  81.7
+108E:  SETM.B  42
+1090:  BSET.B  81.7
+1092:  MOV     80A,W0
+1094:  CALL    200
+1098:  BCLR.B  81.7
+109A:  POP     42
+109C:  BSET.B  81.7
+....................    LED31=1; 
+109E:  BSET.B  2D2.3
+....................    delay_ms(x); 
+10A0:  PUSH    42
+10A2:  BCLR.B  81.7
+10A4:  SETM.B  42
+10A6:  BSET.B  81.7
+10A8:  MOV     80A,W0
+10AA:  CALL    200
+10AE:  BCLR.B  81.7
+10B0:  POP     42
+10B2:  BSET.B  81.7
+....................    LED31=0; 
+10B4:  BCLR.B  2D2.3
+....................    delay_ms(x); 
+10B6:  PUSH    42
+10B8:  BCLR.B  81.7
+10BA:  SETM.B  42
+10BC:  BSET.B  81.7
+10BE:  MOV     80A,W0
+10C0:  CALL    200
+10C4:  BCLR.B  81.7
+10C6:  POP     42
+10C8:  BSET.B  81.7
+....................    LED32=1; 
+10CA:  BSET.B  2D2.4
+....................    delay_ms(x);   
+10CC:  PUSH    42
+10CE:  BCLR.B  81.7
+10D0:  SETM.B  42
+10D2:  BSET.B  81.7
+10D4:  MOV     80A,W0
+10D6:  CALL    200
+10DA:  BCLR.B  81.7
+10DC:  POP     42
+10DE:  BSET.B  81.7
+....................    LED32=0; 
+10E0:  BCLR.B  2D2.4
+....................    delay_ms(x); 
+10E2:  PUSH    42
+10E4:  BCLR.B  81.7
+10E6:  SETM.B  42
+10E8:  BSET.B  81.7
+10EA:  MOV     80A,W0
+10EC:  CALL    200
+10F0:  BCLR.B  81.7
+10F2:  POP     42
+10F4:  BSET.B  81.7
+....................    LED33=1; 
+10F6:  BSET.B  2D2.5
+....................    delay_ms(x); 
+10F8:  PUSH    42
+10FA:  BCLR.B  81.7
+10FC:  SETM.B  42
+10FE:  BSET.B  81.7
+1100:  MOV     80A,W0
+1102:  CALL    200
+1106:  BCLR.B  81.7
+1108:  POP     42
+110A:  BSET.B  81.7
+....................    LED33=0; 
+110C:  BCLR.B  2D2.5
+....................    delay_ms(x); 
+110E:  PUSH    42
+1110:  BCLR.B  81.7
+1112:  SETM.B  42
+1114:  BSET.B  81.7
+1116:  MOV     80A,W0
+1118:  CALL    200
+111C:  BCLR.B  81.7
+111E:  POP     42
+1120:  BSET.B  81.7
+....................    LED34=1; 
+1122:  BSET.B  2CA.5
+....................    delay_ms(x);   
+1124:  PUSH    42
+1126:  BCLR.B  81.7
+1128:  SETM.B  42
+112A:  BSET.B  81.7
+112C:  MOV     80A,W0
+112E:  CALL    200
+1132:  BCLR.B  81.7
+1134:  POP     42
+1136:  BSET.B  81.7
+....................    LED34=0; 
+1138:  BCLR.B  2CA.5
+....................    delay_ms(x); 
+113A:  PUSH    42
+113C:  BCLR.B  81.7
+113E:  SETM.B  42
+1140:  BSET.B  81.7
+1142:  MOV     80A,W0
+1144:  CALL    200
+1148:  BCLR.B  81.7
+114A:  POP     42
+114C:  BSET.B  81.7
+....................     
+....................  porta=0x0000; 
+114E:  CLR     2C2
+....................  portb=0x0000; 
+1150:  CLR     2CA
+....................  portc=0x0000; 
+1152:  CLR     2D2
+....................    delay_ms(x); 
+1154:  PUSH    42
+1156:  BCLR.B  81.7
+1158:  SETM.B  42
+115A:  BSET.B  81.7
+115C:  MOV     80A,W0
+115E:  CALL    200
+1162:  BCLR.B  81.7
+1164:  POP     42
+1166:  BSET.B  81.7
+....................   
+....................   
+....................   
+....................  }  
+1168:  RETURN  
+....................   
+....................  void all (){ 
+....................   
+.................... PORTa=0xffff; 
+.................... PORTb=0xffff; 
+.................... PORTc=0xffff; 
+....................  } 
+....................   
+....................  void rnd_blink (unsigned int8 delay){ 
+....................  porta=0x0000; 
+116A:  CLR     2C2
+....................  portb=0x0000; 
+116C:  CLR     2CA
+....................  portc=0x0000; 
+116E:  CLR     2D2
+....................  delay_ms(1); 
+1170:  REPEAT  #E63
+1172:  NOP     
+....................  porta=0xaaaa; 
+1174:  MOV     #AAAA,W4
+1176:  MOV     W4,2C2
+....................  portb=0xaaaa; 
+1178:  MOV     #AAAA,W4
+117A:  MOV     W4,2CA
+....................  portc=0xaaaa; 
+117C:  MOV     #AAAA,W4
+117E:  MOV     W4,2D2
+....................  delay_ms(delay); 
+1180:  PUSH    42
+1182:  BCLR.B  81.7
+1184:  SETM.B  42
+1186:  BSET.B  81.7
+1188:  MOV.B   80A,W0L
+118A:  CLR.B   1
+118C:  CALL    200
+1190:  BCLR.B  81.7
+1192:  POP     42
+1194:  BSET.B  81.7
+....................  porta=0x0a0a0; 
+1196:  MOV     #A0A0,W4
+1198:  MOV     W4,2C2
+....................  portb=0x0a0a0; 
+119A:  MOV     #A0A0,W4
+119C:  MOV     W4,2CA
+....................  portc=0x0a0a0; 
+119E:  MOV     #A0A0,W4
+11A0:  MOV     W4,2D2
+....................  delay_ms(delay); 
+11A2:  PUSH    42
+11A4:  BCLR.B  81.7
+11A6:  SETM.B  42
+11A8:  BSET.B  81.7
+11AA:  MOV.B   80A,W0L
+11AC:  CLR.B   1
+11AE:  CALL    200
+11B2:  BCLR.B  81.7
+11B4:  POP     42
+11B6:  BSET.B  81.7
+....................  porta=0xfafaf; 
+11B8:  MOV     #AFAF,W4
+11BA:  MOV     W4,2C2
+....................  portb=0xfafaf; 
+11BC:  MOV     #AFAF,W4
+11BE:  MOV     W4,2CA
+....................  portc=0xfafaf; 
+11C0:  MOV     #AFAF,W4
+11C2:  MOV     W4,2D2
+....................  delay_ms(delay); 
+11C4:  PUSH    42
+11C6:  BCLR.B  81.7
+11C8:  SETM.B  42
+11CA:  BSET.B  81.7
+11CC:  MOV.B   80A,W0L
+11CE:  CLR.B   1
+11D0:  CALL    200
+11D4:  BCLR.B  81.7
+11D6:  POP     42
+11D8:  BSET.B  81.7
+....................  porta=0xeea3; 
+11DA:  MOV     #EEA3,W4
+11DC:  MOV     W4,2C2
+....................  portb=0xeea3; 
+11DE:  MOV     #EEA3,W4
+11E0:  MOV     W4,2CA
+....................  portc=0xeea3; 
+11E2:  MOV     #EEA3,W4
+11E4:  MOV     W4,2D2
+....................  delay_ms(delay); 
+11E6:  PUSH    42
+11E8:  BCLR.B  81.7
+11EA:  SETM.B  42
+11EC:  BSET.B  81.7
+11EE:  MOV.B   80A,W0L
+11F0:  CLR.B   1
+11F2:  CALL    200
+11F6:  BCLR.B  81.7
+11F8:  POP     42
+11FA:  BSET.B  81.7
+....................  porta=0x3333; 
+11FC:  MOV     #3333,W4
+11FE:  MOV     W4,2C2
+....................  portb=0x3333; 
+1200:  MOV     #3333,W4
+1202:  MOV     W4,2CA
+....................  portc=0x3333; 
+1204:  MOV     #3333,W4
+1206:  MOV     W4,2D2
+....................  delay_ms(delay); 
+1208:  PUSH    42
+120A:  BCLR.B  81.7
+120C:  SETM.B  42
+120E:  BSET.B  81.7
+1210:  MOV.B   80A,W0L
+1212:  CLR.B   1
+1214:  CALL    200
+1218:  BCLR.B  81.7
+121A:  POP     42
+121C:  BSET.B  81.7
+....................  porta=0x0a0a0; 
+121E:  MOV     #A0A0,W4
+1220:  MOV     W4,2C2
+....................  portb=0x0a0a0; 
+1222:  MOV     #A0A0,W4
+1224:  MOV     W4,2CA
+....................  portc=0x0a0a0; 
+1226:  MOV     #A0A0,W4
+1228:  MOV     W4,2D2
+....................  delay_ms(delay); 
+122A:  PUSH    42
+122C:  BCLR.B  81.7
+122E:  SETM.B  42
+1230:  BSET.B  81.7
+1232:  MOV.B   80A,W0L
+1234:  CLR.B   1
+1236:  CALL    200
+123A:  BCLR.B  81.7
+123C:  POP     42
+123E:  BSET.B  81.7
+....................  porta=0xfafaf; 
+1240:  MOV     #AFAF,W4
+1242:  MOV     W4,2C2
+....................  portb=0xfafaf; 
+1244:  MOV     #AFAF,W4
+1246:  MOV     W4,2CA
+....................  portc=0xfafaf; 
+1248:  MOV     #AFAF,W4
+124A:  MOV     W4,2D2
+....................  delay_ms(delay); 
+124C:  PUSH    42
+124E:  BCLR.B  81.7
+1250:  SETM.B  42
+1252:  BSET.B  81.7
+1254:  MOV.B   80A,W0L
+1256:  CLR.B   1
+1258:  CALL    200
+125C:  BCLR.B  81.7
+125E:  POP     42
+1260:  BSET.B  81.7
+....................  } 
+1262:  RETURN  
+....................   
+....................  void rnd_blink2(unsigned int8 x){ 
+....................   
+....................  porta=0x0000; 
+1264:  CLR     2C2
+....................  portb=0x0000; 
+1266:  CLR     2CA
+....................  portc=0x0000; 
+1268:  CLR     2D2
+....................  delay_ms(x); 
+126A:  PUSH    42
+126C:  BCLR.B  81.7
+126E:  SETM.B  42
+1270:  BSET.B  81.7
+1272:  MOV.B   80A,W0L
+1274:  CLR.B   1
+1276:  CALL    200
+127A:  BCLR.B  81.7
+127C:  POP     42
+127E:  BSET.B  81.7
+....................    LED1=1; 
+1280:  BSET.B  2CA.7
+....................    delay_ms(x);   
+1282:  PUSH    42
+1284:  BCLR.B  81.7
+1286:  SETM.B  42
+1288:  BSET.B  81.7
+128A:  MOV.B   80A,W0L
+128C:  CLR.B   1
+128E:  CALL    200
+1292:  BCLR.B  81.7
+1294:  POP     42
+1296:  BSET.B  81.7
+....................    LED1=0; 
+1298:  BCLR.B  2CA.7
+....................  delay_ms(x); 
+129A:  PUSH    42
+129C:  BCLR.B  81.7
+129E:  SETM.B  42
+12A0:  BSET.B  81.7
+12A2:  MOV.B   80A,W0L
+12A4:  CLR.B   1
+12A6:  CALL    200
+12AA:  BCLR.B  81.7
+12AC:  POP     42
+12AE:  BSET.B  81.7
+....................    LED14=1; 
+12B0:  BSET.B  2CB.6
+....................    delay_ms(x);   
+12B2:  PUSH    42
+12B4:  BCLR.B  81.7
+12B6:  SETM.B  42
+12B8:  BSET.B  81.7
+12BA:  MOV.B   80A,W0L
+12BC:  CLR.B   1
+12BE:  CALL    200
+12C2:  BCLR.B  81.7
+12C4:  POP     42
+12C6:  BSET.B  81.7
+....................    LED14=0; 
+12C8:  BCLR.B  2CB.6
+....................    delay_ms(x);   
+12CA:  PUSH    42
+12CC:  BCLR.B  81.7
+12CE:  SETM.B  42
+12D0:  BSET.B  81.7
+12D2:  MOV.B   80A,W0L
+12D4:  CLR.B   1
+12D6:  CALL    200
+12DA:  BCLR.B  81.7
+12DC:  POP     42
+12DE:  BSET.B  81.7
+....................    LED33=1; 
+12E0:  BSET.B  2D2.5
+....................    delay_ms(x); 
+12E2:  PUSH    42
+12E4:  BCLR.B  81.7
+12E6:  SETM.B  42
+12E8:  BSET.B  81.7
+12EA:  MOV.B   80A,W0L
+12EC:  CLR.B   1
+12EE:  CALL    200
+12F2:  BCLR.B  81.7
+12F4:  POP     42
+12F6:  BSET.B  81.7
+....................    LED33=0; 
+12F8:  BCLR.B  2D2.5
+....................    delay_ms(x); 
+12FA:  PUSH    42
+12FC:  BCLR.B  81.7
+12FE:  SETM.B  42
+1300:  BSET.B  81.7
+1302:  MOV.B   80A,W0L
+1304:  CLR.B   1
+1306:  CALL    200
+130A:  BCLR.B  81.7
+130C:  POP     42
+130E:  BSET.B  81.7
+....................    LED22=1; 
+1310:  BSET.B  2D2.0
+....................    delay_ms(x);   
+1312:  PUSH    42
+1314:  BCLR.B  81.7
+1316:  SETM.B  42
+1318:  BSET.B  81.7
+131A:  MOV.B   80A,W0L
+131C:  CLR.B   1
+131E:  CALL    200
+1322:  BCLR.B  81.7
+1324:  POP     42
+1326:  BSET.B  81.7
+....................    LED22=0; 
+1328:  BCLR.B  2D2.0
+....................    delay_ms(x);   
+132A:  PUSH    42
+132C:  BCLR.B  81.7
+132E:  SETM.B  42
+1330:  BSET.B  81.7
+1332:  MOV.B   80A,W0L
+1334:  CLR.B   1
+1336:  CALL    200
+133A:  BCLR.B  81.7
+133C:  POP     42
+133E:  BSET.B  81.7
+....................    LED1=1; 
+1340:  BSET.B  2CA.7
+....................    delay_ms(x); 
+1342:  PUSH    42
+1344:  BCLR.B  81.7
+1346:  SETM.B  42
+1348:  BSET.B  81.7
+134A:  MOV.B   80A,W0L
+134C:  CLR.B   1
+134E:  CALL    200
+1352:  BCLR.B  81.7
+1354:  POP     42
+1356:  BSET.B  81.7
+....................    LED1=0; 
+1358:  BCLR.B  2CA.7
+....................    delay_ms(x); 
+135A:  PUSH    42
+135C:  BCLR.B  81.7
+135E:  SETM.B  42
+1360:  BSET.B  81.7
+1362:  MOV.B   80A,W0L
+1364:  CLR.B   1
+1366:  CALL    200
+136A:  BCLR.B  81.7
+136C:  POP     42
+136E:  BSET.B  81.7
+....................    LED16=1; 
+1370:  BSET.B  2C2.0
+....................    delay_ms(x);  
+1372:  PUSH    42
+1374:  BCLR.B  81.7
+1376:  SETM.B  42
+1378:  BSET.B  81.7
+137A:  MOV.B   80A,W0L
+137C:  CLR.B   1
+137E:  CALL    200
+1382:  BCLR.B  81.7
+1384:  POP     42
+1386:  BSET.B  81.7
+....................    LED16=0; 
+1388:  BCLR.B  2C2.0
+....................    delay_ms(x); 
+138A:  PUSH    42
+138C:  BCLR.B  81.7
+138E:  SETM.B  42
+1390:  BSET.B  81.7
+1392:  MOV.B   80A,W0L
+1394:  CLR.B   1
+1396:  CALL    200
+139A:  BCLR.B  81.7
+139C:  POP     42
+139E:  BSET.B  81.7
+....................    LED27=1; 
+13A0:  BSET.B  2C3.0
+....................    delay_ms(x); 
+13A2:  PUSH    42
+13A4:  BCLR.B  81.7
+13A6:  SETM.B  42
+13A8:  BSET.B  81.7
+13AA:  MOV.B   80A,W0L
+13AC:  CLR.B   1
+13AE:  CALL    200
+13B2:  BCLR.B  81.7
+13B4:  POP     42
+13B6:  BSET.B  81.7
+....................    LED27=0; 
+13B8:  BCLR.B  2C3.0
+....................    delay_ms(x);   
+13BA:  PUSH    42
+13BC:  BCLR.B  81.7
+13BE:  SETM.B  42
+13C0:  BSET.B  81.7
+13C2:  MOV.B   80A,W0L
+13C4:  CLR.B   1
+13C6:  CALL    200
+13CA:  BCLR.B  81.7
+13CC:  POP     42
+13CE:  BSET.B  81.7
+....................    LED18=1; 
+13D0:  BSET.B  2CA.0
+....................    delay_ms(x); 
+13D2:  PUSH    42
+13D4:  BCLR.B  81.7
+13D6:  SETM.B  42
+13D8:  BSET.B  81.7
+13DA:  MOV.B   80A,W0L
+13DC:  CLR.B   1
+13DE:  CALL    200
+13E2:  BCLR.B  81.7
+13E4:  POP     42
+13E6:  BSET.B  81.7
+....................    LED18=0; 
+13E8:  BCLR.B  2CA.0
+....................    delay_ms(x); 
+13EA:  PUSH    42
+13EC:  BCLR.B  81.7
+13EE:  SETM.B  42
+13F0:  BSET.B  81.7
+13F2:  MOV.B   80A,W0L
+13F4:  CLR.B   1
+13F6:  CALL    200
+13FA:  BCLR.B  81.7
+13FC:  POP     42
+13FE:  BSET.B  81.7
+....................    LED2=1; 
+1400:  BSET.B  2CB.0
+....................    delay_ms(x);   
+1402:  PUSH    42
+1404:  BCLR.B  81.7
+1406:  SETM.B  42
+1408:  BSET.B  81.7
+140A:  MOV.B   80A,W0L
+140C:  CLR.B   1
+140E:  CALL    200
+1412:  BCLR.B  81.7
+1414:  POP     42
+1416:  BSET.B  81.7
+....................    LED2=0; 
+1418:  BCLR.B  2CB.0
+....................    delay_ms(x);   
+141A:  PUSH    42
+141C:  BCLR.B  81.7
+141E:  SETM.B  42
+1420:  BSET.B  81.7
+1422:  MOV.B   80A,W0L
+1424:  CLR.B   1
+1426:  CALL    200
+142A:  BCLR.B  81.7
+142C:  POP     42
+142E:  BSET.B  81.7
+....................    LED10=1; 
+1430:  BSET.B  2CB.4
+....................    delay_ms(x); 
+1432:  PUSH    42
+1434:  BCLR.B  81.7
+1436:  SETM.B  42
+1438:  BSET.B  81.7
+143A:  MOV.B   80A,W0L
+143C:  CLR.B   1
+143E:  CALL    200
+1442:  BCLR.B  81.7
+1444:  POP     42
+1446:  BSET.B  81.7
+....................    LED10=0; 
+1448:  BCLR.B  2CB.4
+....................    delay_ms(x); 
+144A:  PUSH    42
+144C:  BCLR.B  81.7
+144E:  SETM.B  42
+1450:  BSET.B  81.7
+1452:  MOV.B   80A,W0L
+1454:  CLR.B   1
+1456:  CALL    200
+145A:  BCLR.B  81.7
+145C:  POP     42
+145E:  BSET.B  81.7
+....................    LED30=1; 
+1460:  BSET.B  2C3.1
+....................    delay_ms(x);   
+1462:  PUSH    42
+1464:  BCLR.B  81.7
+1466:  SETM.B  42
+1468:  BSET.B  81.7
+146A:  MOV.B   80A,W0L
+146C:  CLR.B   1
+146E:  CALL    200
+1472:  BCLR.B  81.7
+1474:  POP     42
+1476:  BSET.B  81.7
+....................    LED30=0; 
+1478:  BCLR.B  2C3.1
+....................    delay_ms(x);   
+147A:  PUSH    42
+147C:  BCLR.B  81.7
+147E:  SETM.B  42
+1480:  BSET.B  81.7
+1482:  MOV.B   80A,W0L
+1484:  CLR.B   1
+1486:  CALL    200
+148A:  BCLR.B  81.7
+148C:  POP     42
+148E:  BSET.B  81.7
+....................    LED6=1; 
+1490:  BSET.B  2D3.0
+....................    delay_ms(x); 
+1492:  PUSH    42
+1494:  BCLR.B  81.7
+1496:  SETM.B  42
+1498:  BSET.B  81.7
+149A:  MOV.B   80A,W0L
+149C:  CLR.B   1
+149E:  CALL    200
+14A2:  BCLR.B  81.7
+14A4:  POP     42
+14A6:  BSET.B  81.7
+....................    LED6=0; 
+14A8:  BCLR.B  2D3.0
+....................    delay_ms(x); 
+14AA:  PUSH    42
+14AC:  BCLR.B  81.7
+14AE:  SETM.B  42
+14B0:  BSET.B  81.7
+14B2:  MOV.B   80A,W0L
+14B4:  CLR.B   1
+14B6:  CALL    200
+14BA:  BCLR.B  81.7
+14BC:  POP     42
+14BE:  BSET.B  81.7
+....................    LED13=1; 
+14C0:  BSET.B  2C2.7
+....................    delay_ms(x);   
+14C2:  PUSH    42
+14C4:  BCLR.B  81.7
+14C6:  SETM.B  42
+14C8:  BSET.B  81.7
+14CA:  MOV.B   80A,W0L
+14CC:  CLR.B   1
+14CE:  CALL    200
+14D2:  BCLR.B  81.7
+14D4:  POP     42
+14D6:  BSET.B  81.7
+....................    LED13=0; 
+14D8:  BCLR.B  2C2.7
+....................    delay_ms(x);   
+14DA:  PUSH    42
+14DC:  BCLR.B  81.7
+14DE:  SETM.B  42
+14E0:  BSET.B  81.7
+14E2:  MOV.B   80A,W0L
+14E4:  CLR.B   1
+14E6:  CALL    200
+14EA:  BCLR.B  81.7
+14EC:  POP     42
+14EE:  BSET.B  81.7
+....................    LED4=1; 
+14F0:  BSET.B  2D2.6
+....................    delay_ms(x); 
+14F2:  PUSH    42
+14F4:  BCLR.B  81.7
+14F6:  SETM.B  42
+14F8:  BSET.B  81.7
+14FA:  MOV.B   80A,W0L
+14FC:  CLR.B   1
+14FE:  CALL    200
+1502:  BCLR.B  81.7
+1504:  POP     42
+1506:  BSET.B  81.7
+....................    LED4=0; 
+1508:  BCLR.B  2D2.6
+....................    delay_ms(x); 
+150A:  PUSH    42
+150C:  BCLR.B  81.7
+150E:  SETM.B  42
+1510:  BSET.B  81.7
+1512:  MOV.B   80A,W0L
+1514:  CLR.B   1
+1516:  CALL    200
+151A:  BCLR.B  81.7
+151C:  POP     42
+151E:  BSET.B  81.7
+....................    LED15=1; 
+1520:  BSET.B  2CB.7
+....................    delay_ms(x);   
+1522:  PUSH    42
+1524:  BCLR.B  81.7
+1526:  SETM.B  42
+1528:  BSET.B  81.7
+152A:  MOV.B   80A,W0L
+152C:  CLR.B   1
+152E:  CALL    200
+1532:  BCLR.B  81.7
+1534:  POP     42
+1536:  BSET.B  81.7
+....................    LED15=0; 
+1538:  BCLR.B  2CB.7
+....................    delay_ms(x);   
+153A:  PUSH    42
+153C:  BCLR.B  81.7
+153E:  SETM.B  42
+1540:  BSET.B  81.7
+1542:  MOV.B   80A,W0L
+1544:  CLR.B   1
+1546:  CALL    200
+154A:  BCLR.B  81.7
+154C:  POP     42
+154E:  BSET.B  81.7
+....................    LED34=1; 
+1550:  BSET.B  2CA.5
+....................    delay_ms(x); 
+1552:  PUSH    42
+1554:  BCLR.B  81.7
+1556:  SETM.B  42
+1558:  BSET.B  81.7
+155A:  MOV.B   80A,W0L
+155C:  CLR.B   1
+155E:  CALL    200
+1562:  BCLR.B  81.7
+1564:  POP     42
+1566:  BSET.B  81.7
+....................    LED34=0; 
+1568:  BCLR.B  2CA.5
+....................    delay_ms(x); 
+156A:  PUSH    42
+156C:  BCLR.B  81.7
+156E:  SETM.B  42
+1570:  BSET.B  81.7
+1572:  MOV.B   80A,W0L
+1574:  CLR.B   1
+1576:  CALL    200
+157A:  BCLR.B  81.7
+157C:  POP     42
+157E:  BSET.B  81.7
+....................    LED5=1; 
+1580:  BSET.B  2D2.7
+....................    delay_ms(x);   
+1582:  PUSH    42
+1584:  BCLR.B  81.7
+1586:  SETM.B  42
+1588:  BSET.B  81.7
+158A:  MOV.B   80A,W0L
+158C:  CLR.B   1
+158E:  CALL    200
+1592:  BCLR.B  81.7
+1594:  POP     42
+1596:  BSET.B  81.7
+....................    LED5=0; 
+1598:  BCLR.B  2D2.7
+....................    delay_ms(x);;   
+159A:  PUSH    42
+159C:  BCLR.B  81.7
+159E:  SETM.B  42
+15A0:  BSET.B  81.7
+15A2:  MOV.B   80A,W0L
+15A4:  CLR.B   1
+15A6:  CALL    200
+15AA:  BCLR.B  81.7
+15AC:  POP     42
+15AE:  BSET.B  81.7
+....................    LED19=1; 
+15B0:  BSET.B  2CA.1
+....................    delay_ms(x); 
+15B2:  PUSH    42
+15B4:  BCLR.B  81.7
+15B6:  SETM.B  42
+15B8:  BSET.B  81.7
+15BA:  MOV.B   80A,W0L
+15BC:  CLR.B   1
+15BE:  CALL    200
+15C2:  BCLR.B  81.7
+15C4:  POP     42
+15C6:  BSET.B  81.7
+....................    LED19=0; 
+15C8:  BCLR.B  2CA.1
+....................    delay_ms(x); 
+15CA:  PUSH    42
+15CC:  BCLR.B  81.7
+15CE:  SETM.B  42
+15D0:  BSET.B  81.7
+15D2:  MOV.B   80A,W0L
+15D4:  CLR.B   1
+15D6:  CALL    200
+15DA:  BCLR.B  81.7
+15DC:  POP     42
+15DE:  BSET.B  81.7
+....................    LED9=1; 
+15E0:  BSET.B  2CB.3
+....................    delay_ms(x);   
+15E2:  PUSH    42
+15E4:  BCLR.B  81.7
+15E6:  SETM.B  42
+15E8:  BSET.B  81.7
+15EA:  MOV.B   80A,W0L
+15EC:  CLR.B   1
+15EE:  CALL    200
+15F2:  BCLR.B  81.7
+15F4:  POP     42
+15F6:  BSET.B  81.7
+....................    LED9=0; 
+15F8:  BCLR.B  2CB.3
+....................    delay_ms(x);   
+15FA:  PUSH    42
+15FC:  BCLR.B  81.7
+15FE:  SETM.B  42
+1600:  BSET.B  81.7
+1602:  MOV.B   80A,W0L
+1604:  CLR.B   1
+1606:  CALL    200
+160A:  BCLR.B  81.7
+160C:  POP     42
+160E:  BSET.B  81.7
+....................    LED20=1; 
+1610:  BSET.B  2CA.2
+....................    delay_ms(x); 
+1612:  PUSH    42
+1614:  BCLR.B  81.7
+1616:  SETM.B  42
+1618:  BSET.B  81.7
+161A:  MOV.B   80A,W0L
+161C:  CLR.B   1
+161E:  CALL    200
+1622:  BCLR.B  81.7
+1624:  POP     42
+1626:  BSET.B  81.7
+....................    LED20=0; 
+1628:  BCLR.B  2CA.2
+....................    delay_ms(x); 
+162A:  PUSH    42
+162C:  BCLR.B  81.7
+162E:  SETM.B  42
+1630:  BSET.B  81.7
+1632:  MOV.B   80A,W0L
+1634:  CLR.B   1
+1636:  CALL    200
+163A:  BCLR.B  81.7
+163C:  POP     42
+163E:  BSET.B  81.7
+....................    LED1=1; 
+1640:  BSET.B  2CA.7
+....................    delay_ms(x);   
+1642:  PUSH    42
+1644:  BCLR.B  81.7
+1646:  SETM.B  42
+1648:  BSET.B  81.7
+164A:  MOV.B   80A,W0L
+164C:  CLR.B   1
+164E:  CALL    200
+1652:  BCLR.B  81.7
+1654:  POP     42
+1656:  BSET.B  81.7
+....................    LED1=0; 
+1658:  BCLR.B  2CA.7
+....................    delay_ms(x);   
+165A:  PUSH    42
+165C:  BCLR.B  81.7
+165E:  SETM.B  42
+1660:  BSET.B  81.7
+1662:  MOV.B   80A,W0L
+1664:  CLR.B   1
+1666:  CALL    200
+166A:  BCLR.B  81.7
+166C:  POP     42
+166E:  BSET.B  81.7
+....................    LED17=1; 
+1670:  BSET.B  2C2.1
+....................    delay_ms(x); 
+1672:  PUSH    42
+1674:  BCLR.B  81.7
+1676:  SETM.B  42
+1678:  BSET.B  81.7
+167A:  MOV.B   80A,W0L
+167C:  CLR.B   1
+167E:  CALL    200
+1682:  BCLR.B  81.7
+1684:  POP     42
+1686:  BSET.B  81.7
+....................    LED17=0; 
+1688:  BCLR.B  2C2.1
+....................    delay_ms(x); 
+168A:  PUSH    42
+168C:  BCLR.B  81.7
+168E:  SETM.B  42
+1690:  BSET.B  81.7
+1692:  MOV.B   80A,W0L
+1694:  CLR.B   1
+1696:  CALL    200
+169A:  BCLR.B  81.7
+169C:  POP     42
+169E:  BSET.B  81.7
+....................    LED23=1; 
+16A0:  BSET.B  2D2.1
+....................    delay_ms(x);   
+16A2:  PUSH    42
+16A4:  BCLR.B  81.7
+16A6:  SETM.B  42
+16A8:  BSET.B  81.7
+16AA:  MOV.B   80A,W0L
+16AC:  CLR.B   1
+16AE:  CALL    200
+16B2:  BCLR.B  81.7
+16B4:  POP     42
+16B6:  BSET.B  81.7
+....................    LED23=0; 
+16B8:  BCLR.B  2D2.1
+....................    delay_ms(x);   
+16BA:  PUSH    42
+16BC:  BCLR.B  81.7
+16BE:  SETM.B  42
+16C0:  BSET.B  81.7
+16C2:  MOV.B   80A,W0L
+16C4:  CLR.B   1
+16C6:  CALL    200
+16CA:  BCLR.B  81.7
+16CC:  POP     42
+16CE:  BSET.B  81.7
+....................    LED28=1; 
+16D0:  BSET.B  2CA.4
+....................    delay_ms(x); 
+16D2:  PUSH    42
+16D4:  BCLR.B  81.7
+16D6:  SETM.B  42
+16D8:  BSET.B  81.7
+16DA:  MOV.B   80A,W0L
+16DC:  CLR.B   1
+16DE:  CALL    200
+16E2:  BCLR.B  81.7
+16E4:  POP     42
+16E6:  BSET.B  81.7
+....................    LED28=0; 
+16E8:  BCLR.B  2CA.4
+....................    delay_ms(x); 
+16EA:  PUSH    42
+16EC:  BCLR.B  81.7
+16EE:  SETM.B  42
+16F0:  BSET.B  81.7
+16F2:  MOV.B   80A,W0L
+16F4:  CLR.B   1
+16F6:  CALL    200
+16FA:  BCLR.B  81.7
+16FC:  POP     42
+16FE:  BSET.B  81.7
+....................    LED25=1; 
+1700:  BSET.B  2C2.2
+....................    delay_ms(x);   
+1702:  PUSH    42
+1704:  BCLR.B  81.7
+1706:  SETM.B  42
+1708:  BSET.B  81.7
+170A:  MOV.B   80A,W0L
+170C:  CLR.B   1
+170E:  CALL    200
+1712:  BCLR.B  81.7
+1714:  POP     42
+1716:  BSET.B  81.7
+....................    LED25=0; 
+1718:  BCLR.B  2C2.2
+....................    delay_ms(x); 
+171A:  PUSH    42
+171C:  BCLR.B  81.7
+171E:  SETM.B  42
+1720:  BSET.B  81.7
+1722:  MOV.B   80A,W0L
+1724:  CLR.B   1
+1726:  CALL    200
+172A:  BCLR.B  81.7
+172C:  POP     42
+172E:  BSET.B  81.7
+....................     LED26=1; 
+1730:  BSET.B  2C2.3
+....................    delay_ms(x);   
+1732:  PUSH    42
+1734:  BCLR.B  81.7
+1736:  SETM.B  42
+1738:  BSET.B  81.7
+173A:  MOV.B   80A,W0L
+173C:  CLR.B   1
+173E:  CALL    200
+1742:  BCLR.B  81.7
+1744:  POP     42
+1746:  BSET.B  81.7
+....................    LED26=0; 
+1748:  BCLR.B  2C2.3
+....................    delay_ms(x); 
+174A:  PUSH    42
+174C:  BCLR.B  81.7
+174E:  SETM.B  42
+1750:  BSET.B  81.7
+1752:  MOV.B   80A,W0L
+1754:  CLR.B   1
+1756:  CALL    200
+175A:  BCLR.B  81.7
+175C:  POP     42
+175E:  BSET.B  81.7
+....................    LED13=1; 
+1760:  BSET.B  2C2.7
+....................    delay_ms(x); 
+1762:  PUSH    42
+1764:  BCLR.B  81.7
+1766:  SETM.B  42
+1768:  BSET.B  81.7
+176A:  MOV.B   80A,W0L
+176C:  CLR.B   1
+176E:  CALL    200
+1772:  BCLR.B  81.7
+1774:  POP     42
+1776:  BSET.B  81.7
+....................    LED13=0; 
+1778:  BCLR.B  2C2.7
+....................    delay_ms(x);   
+177A:  PUSH    42
+177C:  BCLR.B  81.7
+177E:  SETM.B  42
+1780:  BSET.B  81.7
+1782:  MOV.B   80A,W0L
+1784:  CLR.B   1
+1786:  CALL    200
+178A:  BCLR.B  81.7
+178C:  POP     42
+178E:  BSET.B  81.7
+....................    LED6=1; 
+1790:  BSET.B  2D3.0
+....................    delay_ms(x);   
+1792:  PUSH    42
+1794:  BCLR.B  81.7
+1796:  SETM.B  42
+1798:  BSET.B  81.7
+179A:  MOV.B   80A,W0L
+179C:  CLR.B   1
+179E:  CALL    200
+17A2:  BCLR.B  81.7
+17A4:  POP     42
+17A6:  BSET.B  81.7
+....................    LED6=0; 
+17A8:  BCLR.B  2D3.0
+....................    delay_ms(x); 
+17AA:  PUSH    42
+17AC:  BCLR.B  81.7
+17AE:  SETM.B  42
+17B0:  BSET.B  81.7
+17B2:  MOV.B   80A,W0L
+17B4:  CLR.B   1
+17B6:  CALL    200
+17BA:  BCLR.B  81.7
+17BC:  POP     42
+17BE:  BSET.B  81.7
+....................    LED11=1; 
+17C0:  BSET.B  2CB.5
+....................    delay_ms(x); 
+17C2:  PUSH    42
+17C4:  BCLR.B  81.7
+17C6:  SETM.B  42
+17C8:  BSET.B  81.7
+17CA:  MOV.B   80A,W0L
+17CC:  CLR.B   1
+17CE:  CALL    200
+17D2:  BCLR.B  81.7
+17D4:  POP     42
+17D6:  BSET.B  81.7
+....................    LED11=0; 
+17D8:  BCLR.B  2CB.5
+....................    delay_ms(x);   
+17DA:  PUSH    42
+17DC:  BCLR.B  81.7
+17DE:  SETM.B  42
+17E0:  BSET.B  81.7
+17E2:  MOV.B   80A,W0L
+17E4:  CLR.B   1
+17E6:  CALL    200
+17EA:  BCLR.B  81.7
+17EC:  POP     42
+17EE:  BSET.B  81.7
+....................    LED33=1; 
+17F0:  BSET.B  2D2.5
+....................    delay_ms(x);   
+17F2:  PUSH    42
+17F4:  BCLR.B  81.7
+17F6:  SETM.B  42
+17F8:  BSET.B  81.7
+17FA:  MOV.B   80A,W0L
+17FC:  CLR.B   1
+17FE:  CALL    200
+1802:  BCLR.B  81.7
+1804:  POP     42
+1806:  BSET.B  81.7
+....................    LED33=0; 
+1808:  BCLR.B  2D2.5
+....................    delay_ms(x); 
+180A:  PUSH    42
+180C:  BCLR.B  81.7
+180E:  SETM.B  42
+1810:  BSET.B  81.7
+1812:  MOV.B   80A,W0L
+1814:  CLR.B   1
+1816:  CALL    200
+181A:  BCLR.B  81.7
+181C:  POP     42
+181E:  BSET.B  81.7
+....................    LED21=1; 
+1820:  BSET.B  2CA.3
+....................    delay_ms(x); 
+1822:  PUSH    42
+1824:  BCLR.B  81.7
+1826:  SETM.B  42
+1828:  BSET.B  81.7
+182A:  MOV.B   80A,W0L
+182C:  CLR.B   1
+182E:  CALL    200
+1832:  BCLR.B  81.7
+1834:  POP     42
+1836:  BSET.B  81.7
+....................    LED21=0; 
+1838:  BCLR.B  2CA.3
+....................    delay_ms(x);   
+183A:  PUSH    42
+183C:  BCLR.B  81.7
+183E:  SETM.B  42
+1840:  BSET.B  81.7
+1842:  MOV.B   80A,W0L
+1844:  CLR.B   1
+1846:  CALL    200
+184A:  BCLR.B  81.7
+184C:  POP     42
+184E:  BSET.B  81.7
+....................    LED28=1; 
+1850:  BSET.B  2CA.4
+....................    delay_ms(x); 
+1852:  PUSH    42
+1854:  BCLR.B  81.7
+1856:  SETM.B  42
+1858:  BSET.B  81.7
+185A:  MOV.B   80A,W0L
+185C:  CLR.B   1
+185E:  CALL    200
+1862:  BCLR.B  81.7
+1864:  POP     42
+1866:  BSET.B  81.7
+....................    LED28=0; 
+1868:  BCLR.B  2CA.4
+....................    delay_ms(x); 
+186A:  PUSH    42
+186C:  BCLR.B  81.7
+186E:  SETM.B  42
+1870:  BSET.B  81.7
+1872:  MOV.B   80A,W0L
+1874:  CLR.B   1
+1876:  CALL    200
+187A:  BCLR.B  81.7
+187C:  POP     42
+187E:  BSET.B  81.7
+....................    LED1=1; 
+1880:  BSET.B  2CA.7
+....................    delay_ms(x); 
+1882:  PUSH    42
+1884:  BCLR.B  81.7
+1886:  SETM.B  42
+1888:  BSET.B  81.7
+188A:  MOV.B   80A,W0L
+188C:  CLR.B   1
+188E:  CALL    200
+1892:  BCLR.B  81.7
+1894:  POP     42
+1896:  BSET.B  81.7
+....................    LED1=0; 
+1898:  BCLR.B  2CA.7
+....................    delay_ms(x);   
+189A:  PUSH    42
+189C:  BCLR.B  81.7
+189E:  SETM.B  42
+18A0:  BSET.B  81.7
+18A2:  MOV.B   80A,W0L
+18A4:  CLR.B   1
+18A6:  CALL    200
+18AA:  BCLR.B  81.7
+18AC:  POP     42
+18AE:  BSET.B  81.7
+....................    LED33=1; 
+18B0:  BSET.B  2D2.5
+....................    delay_ms(x); 
+18B2:  PUSH    42
+18B4:  BCLR.B  81.7
+18B6:  SETM.B  42
+18B8:  BSET.B  81.7
+18BA:  MOV.B   80A,W0L
+18BC:  CLR.B   1
+18BE:  CALL    200
+18C2:  BCLR.B  81.7
+18C4:  POP     42
+18C6:  BSET.B  81.7
+....................    LED33=0; 
+18C8:  BCLR.B  2D2.5
+....................    delay_ms(x); 
+18CA:  PUSH    42
+18CC:  BCLR.B  81.7
+18CE:  SETM.B  42
+18D0:  BSET.B  81.7
+18D2:  MOV.B   80A,W0L
+18D4:  CLR.B   1
+18D6:  CALL    200
+18DA:  BCLR.B  81.7
+18DC:  POP     42
+18DE:  BSET.B  81.7
+....................     
+....................  porta=0x0000; 
+18E0:  CLR     2C2
+....................  portb=0x0000; 
+18E2:  CLR     2CA
+....................  portc=0x0000; 
+18E4:  CLR     2D2
+....................    delay_ms(x); 
+18E6:  PUSH    42
+18E8:  BCLR.B  81.7
+18EA:  SETM.B  42
+18EC:  BSET.B  81.7
+18EE:  MOV.B   80A,W0L
+18F0:  CLR.B   1
+18F2:  CALL    200
+18F6:  BCLR.B  81.7
+18F8:  POP     42
+18FA:  BSET.B  81.7
+....................   
+....................  } 
+18FC:  RETURN  
+....................   
+....................  void main() 
+.................... { 
+18FE:  MOV     #4444,W0
+1900:  MOV     W0,A4
+1902:  BSET.B  81.7
+1904:  CLR     800
+1906:  MOV     #14,W4
+1908:  MOV     W4,802
+190A:  CLR     804
+190C:  BCLR.B  806.0
+190E:  CLR.B   807
+1910:  CLR.B   808
+1912:  CLR.B   809
+1914:  SETM    32C
+1916:  MOV     #1F80,W15
+1918:  MOV     #1FFF,W0
+191A:  MOV     W0,20
+191C:  NOP     
+191E:  MOV     #1F80,W15
+1920:  MOV     #1FFF,W0
+1922:  MOV     W0,20
+1924:  NOP     
+....................    
+....................    ENABLE_INTERRUPTS(INTR_GLOBAL); 
+1926:  BCLR.B  81.7
+1928:  CLR     42
+192A:  BSET.B  81.7
+....................    ENABLE_INTERRUPTS(INT_TIMER1); 
+192C:  BSET.B  94.3
+....................    setup_timer1(TMR_INTERNAL|TMR_DIV_BY_1); 
+192E:  CLR     104
+1930:  SETM    102
+1932:  MOV     #A000,W4
+1934:  MOV     W4,104
+....................    SET_TIMER1(65504);  // прерывание каждые 30 мкс. 
+1936:  MOV     #FFE0,W4
+1938:  MOV     W4,100
+....................     
+....................    ODCA =0; 
+193A:  CLR     2C6
+....................    ODCB =0; 
+193C:  CLR     2CE
+....................    ODCC =0;  
+193E:  CLR     2D6
+....................        
+....................    TRISA=0x0000; 
+1940:  CLR     2C0
+....................    TRISB=0b0000000001000000; // кнопка на порте Б 
+1942:  MOV     #40,W4
+1944:  MOV     W4,2C8
+....................    TRISC=0x0000; 
+1946:  CLR     2D0
+....................    
+....................     
+....................   /*    
+....................   void blink1 (char delay){ 
+....................    
+....................   LED1 =1; 
+....................  LED2 =1; 
+....................  LED3 =1; 
+....................  LED4 =1; 
+....................   LED5 =1; 
+....................   LED6 =1; 
+....................   LED7=1; 
+....................   LED8 =1; 
+....................   LED9 =1; 
+....................   LED10=1;  
+....................   LED11=1;  
+....................   LED12=1; 
+....................    LED13=1; 
+....................    LED14 =1; 
+....................    LED15 =1; 
+....................    LED16 =1; 
+....................    LED17 =1; 
+....................    LED18 =1; 
+....................    LED19 =1; 
+....................    LED20 =1; 
+....................    LED21 =1; 
+....................    LED22 =1; 
+....................    LED23 =1; 
+....................    LED24 =1; 
+....................    LED25=1; 
+....................    LED26 =1; 
+....................    LED27 =1; 
+....................    LED28 =1; 
+....................    LED29 =1; 
+....................    LED30 =1; 
+....................   LED31 =1; 
+....................   LED32 =1; 
+....................   LED33 =1; 
+....................    
+....................    } 
+....................    */ 
+....................     
+....................      
+....................    while (true){ 
+....................     
+....................    switch (n){ 
+1948:  MOV     804,W0
+194A:  XOR     #0,W0
+194C:  BRA     Z,1968
+194E:  XOR     #1,W0
+1950:  BRA     Z,1970
+1952:  XOR     #3,W0
+1954:  BRA     Z,197A
+1956:  XOR     #1,W0
+1958:  BRA     Z,19B0
+195A:  XOR     #7,W0
+195C:  BRA     Z,19BA
+195E:  XOR     #1,W0
+1960:  BRA     Z,19C4
+1962:  XOR     #3,W0
+1964:  BRA     Z,19CE
+1966:  BRA     19D8
+....................     
+....................     case 0: 
+....................       //all(); 
+.................... PORTa=0xffff; 
+1968:  SETM    2C2
+.................... PORTb=0xffff; 
+196A:  SETM    2CA
+.................... PORTc=0xffff; 
+196C:  SETM    2D2
+....................     break; 
+196E:  BRA     19D8
+....................      
+....................     case 1: 
+....................   blink1(50);     
+1970:  MOV     #32,W4
+1972:  MOV     W4,80A
+1974:  CALL    260
+....................     break; 
+1978:  BRA     19D8
+....................      
+....................     case 2:  
+.................... PORTa=0xffff; 
+197A:  SETM    2C2
+.................... PORTb=0xffff; 
+197C:  SETM    2CA
+.................... PORTc=0xffff; 
+197E:  SETM    2D2
+.................... delay_ms(100); 
+1980:  PUSH    42
+1982:  BCLR.B  81.7
+1984:  SETM.B  42
+1986:  BSET.B  81.7
+1988:  MOV     #64,W0
+198A:  CALL    200
+198E:  BCLR.B  81.7
+1990:  POP     42
+1992:  BSET.B  81.7
+.................... PORTa=0x0000; 
+1994:  CLR     2C2
+.................... PORTb=0x0000; 
+1996:  CLR     2CA
+.................... PORTc=0x0000; 
+1998:  CLR     2D2
+.................... delay_ms(100); 
+199A:  PUSH    42
+199C:  BCLR.B  81.7
+199E:  SETM.B  42
+19A0:  BSET.B  81.7
+19A2:  MOV     #64,W0
+19A4:  CALL    200
+19A8:  BCLR.B  81.7
+19AA:  POP     42
+19AC:  BSET.B  81.7
+....................     break; 
+19AE:  BRA     19D8
+....................     
+....................     case 3: 
+....................   blink2(50);  
+19B0:  MOV     #32,W4
+19B2:  MOV     W4,80A
+19B4:  CALL    582
+....................     break; 
+19B8:  BRA     19D8
+....................      
+....................     case 4: 
+....................   L1(50); 
+19BA:  MOV     #32,W4
+19BC:  MOV     W4,80A
+19BE:  CALL    B5C
+....................     break; 
+19C2:  BRA     19D8
+....................       
+....................      case 5: 
+....................   rnd_blink(50);   
+19C4:  MOV.B   #32,W0L
+19C6:  MOV.B   W0L,80A
+19C8:  CALL    116A
+....................     break; 
+19CC:  BRA     19D8
+....................      
+....................      case 6: 
+....................   rnd_blink2(80);   
+19CE:  MOV.B   #50,W0L
+19D0:  MOV.B   W0L,80A
+19D2:  CALL    1264
+....................     break; 
+19D6:  BRA     19D8
+....................      
+....................  } 
+....................  
+....................  
+....................  
+....................     
+....................  /*  
+....................    for (i=1;i<5;++i){ 
+....................    b=b+50; 
+....................    blink1(b); 
+....................    } 
+....................    b=10; 
+....................     
+....................    for (i=1;i<5;++i){ 
+....................    b=b+10; 
+....................    blink2(b); 
+....................    } 
+....................     
+....................    for (i=1;i<5;++i){ 
+....................    blink2(20); 
+....................    } 
+....................     
+....................    for (i=1;i<5;++i){ 
+....................    blink2(10); 
+....................    } 
+....................     
+....................    for (i=7;i<30;++i){ 
+....................     
+....................    blink2(i); 
+....................    } 
+....................  porta=0xffff; 
+....................  portb=0xffff; 
+....................  portc=0xffff; 
+....................    delay_ms(5000); 
+....................    /* 
+....................    for (i=0;i<16;++i){ 
+....................    PORTB = 0b0000000000000001; 
+....................    delay_us(1); 
+....................    PORTb = PORTb<<1; 
+....................    delay_us(500); 
+....................    } 
+....................   */ 
+....................  
+....................    /* 
+....................    PORTB = 0b0000000000000001; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000000000010; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000000000100; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000000001000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000000010000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000000100000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000001000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000010000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000000100000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000001000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000010000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0000100000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0001000000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0010000000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b0100000000000000; 
+....................    delay_ms(500); 
+....................    PORTB = 0b1000000000000000; 
+....................    delay_ms(500); 
+....................   PORTB = 0b0000000000000000; 
+....................    delay_ms(1000); 
+....................    */ 
+....................     
+.................... } 
+19D8:  BRA     1948
+....................     
+....................     
+.................... } 
+19DA:  PWRSAV  #0
+
+Configuration Fuses:
+   Word  1L: 00CF   NOWRTB NOBSS NORBS
+          H: FF00  
+   Word  2L: 00CF   NOWRTSS NOSSS NORSS
+          H: FF00  
+   Word  3L: 0007   NOWRT NOPROTECT
+          H: FF00  
+   Word  4L: 0080   FRC IESO
+          H: FF00  
+   Word  5L: 0023   NOPR OSCIO IOL1WAY CKSFSM
+          H: FF00  
+   Word  6L: 0040   WPOSTS1 WPRES32 WINDIS NOWDT
+          H: FF00  
+   Word  7L: 0017   PUT128 NOALTI2C
+          H: FF00  
+   Word  8L: 00C3   ICSP1 NOJTAG NODEBUG
+          H: FF00  

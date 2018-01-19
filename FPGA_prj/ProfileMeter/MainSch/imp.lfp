@@ -1,0 +1,5 @@
+# begin LFP file D:\work\Projects\FPGA_prj\ProfileMeter\MainSch\imp.lfp
+designfile SCH.vhd
+parttype xc9572xl-vq44-5
+bus_delimiter 0;
+set_busdelim_onsave 0;

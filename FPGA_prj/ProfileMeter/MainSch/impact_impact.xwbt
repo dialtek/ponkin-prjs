@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=E:\work\Projects\ponkin\FPGA_prj\ProfileMeter\MainSch\impact.xsl
+OUTFILE=E:\work\Projects\ponkin\FPGA_prj\ProfileMeter\MainSch\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=E:\work\Projects\ponkin\FPGA_prj\ProfileMeter\MainSch
+LICENSE=iMPACT
+USER_INFO=iMPACT

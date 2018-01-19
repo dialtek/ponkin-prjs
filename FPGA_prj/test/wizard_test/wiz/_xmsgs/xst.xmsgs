@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="1902" delta="new" >Value <arg fmt="%s" index="1">1.2500000000000000</arg> for attribute <arg fmt="%s" index="2">CLKDV_DIVIDE</arg> of instance <arg fmt="%s" index="3">clk_divider/DCM_SP_INST</arg> in unit <arg fmt="%s" index="4">wiz_main</arg> is not supported
+</msg>
+
+<msg type="warning" file="Xst" num="1902" delta="new" >Value <arg fmt="%s" index="1">1.2500000000000000</arg> for attribute <arg fmt="%s" index="2">CLKDV_DIVIDE</arg> of instance <arg fmt="%s" index="3">clk_divider/DCM_SP_INST</arg> in unit <arg fmt="%s" index="4">wiz_main</arg> is not supported
+</msg>
+
+</messages>
+

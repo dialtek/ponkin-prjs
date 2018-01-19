@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/test</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">C:/Xilinx/test/test/test.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/work/Projects/FPGA_prj/test/test/test.vhd</arg>&quot;.
+</msg>
+
+<msg type="warning" file="HDLParsers" num="3607" delta="new" >Unit <arg fmt="%s" index="1">work/test/beh</arg> is now defined in a different file.  It was defined in &quot;<arg fmt="%s" index="2">C:/Xilinx/test/test/test.vhd</arg>&quot;, and is now defined in &quot;<arg fmt="%s" index="3">C:/work/Projects/FPGA_prj/test/test/test.vhd</arg>&quot;.
+</msg>
+
+<msg type="internal" file="Xst" num="0" delta="new" srcfile="../interf/cmain.c" srcline="3464" srcrcs="1.56" >
+Process will terminate. For technical support on this issue, please open a WebCase with this project attached at http://www.xilinx.com/support. 
+</msg>
+
+</messages>
+

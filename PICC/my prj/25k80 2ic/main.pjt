@@ -1,0 +1,26 @@
+[PROJECT]
+Target=C:\Program Files (x86)\PICC\my prj\25k80 2ic\main.hex
+Development_Mode=
+Processor_Text=PIC18F25K80
+ToolSuite=CCS
+Processor=0xA580
+[C:\Program Files (x86)\PICC\my prj\25k80 2ic\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Program Files (x86)\PICC\my prj\25k80 2ic\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Program Files (x86)\PICC\my prj\25k80 2ic\main
+[Opened Files]
+1=main.c
+2=..\..\devices\18F25K80.h
+3=
+4=

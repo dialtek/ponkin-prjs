@@ -1,0 +1,14 @@
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe.config
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.pdb
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.Form1.resources
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.Properties.Resources.resources
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csproj.GenerateResource.Cache
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.exe
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.pdb
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csproj.ResolveComReference.cache
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe.config
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csproj.ResolveComReference.cache
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.exe
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.pdb

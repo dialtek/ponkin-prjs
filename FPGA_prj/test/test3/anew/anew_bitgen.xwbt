@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\test\test3\anew\anew.ncd
+OUTFILE=C:\Xilinx\test\test3\anew\anew.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Xilinx\test\test3\anew
+LICENSE=WebPack
+USER_INFO=__0_0_0

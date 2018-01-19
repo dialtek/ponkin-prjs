@@ -1,0 +1,16 @@
+# Output products list for <samp_ram>
+_xmsgs\pn_parser.xmsgs
+blk_mem_gen_ds512.pdf
+blk_mem_gen_readme.txt
+samp_ram.asy
+samp_ram.gise
+samp_ram.ngc
+samp_ram.v
+samp_ram.veo
+samp_ram.vhd
+samp_ram.vho
+samp_ram.xco
+samp_ram.xise
+samp_ram_flist.txt
+samp_ram_upgrade.txt
+samp_ram_xmdf.tcl

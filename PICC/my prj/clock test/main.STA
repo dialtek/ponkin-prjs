@@ -1,0 +1,44 @@
+
+ROM used: 86 (1%)
+          86 (1%) including unused fragments
+
+          0 Average locations per line
+          12 Average locations per statement
+
+RAM used: 4 (1%) at main() level
+          5 (1%) worst case
+
+Stack used: 1 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   54     7 100  main.c
+  398     0   0  ..\..\devices\18F2320.h
+----- -----
+  452     7 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40  23   1             @delay_ms1
+0     42  24   0   108  2.1  main
+ Inline        0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              7
+    Comments                97
+    Volume (V)              112
+    Difficulty (D)          1.8
+    Effort to implement (E) 206
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    136
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-01FFE    82  8106  
+
+
+

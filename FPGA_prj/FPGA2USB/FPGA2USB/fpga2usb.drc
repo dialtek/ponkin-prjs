@@ -1,0 +1,11 @@
+Release 14.4 Drc P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Fri Jan 10 15:08:50 2014
+
+drc -z FPGA2USB.ncd FPGA2USB.pcf
+
+INFO:PhysDesignRules:772 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp clk_div/DCM_SP_INST,
+   consult the device Interactive Data Sheet.
+DRC detected 0 errors and 0 warnings.

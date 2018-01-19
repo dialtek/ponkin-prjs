@@ -1,0 +1,10 @@
+E:\work\Projects\ponkin\С#\IP71testV2\bin\Debug\IP701testV2.exe.config
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.csprojResolveAssemblyReference.cache
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.Form1.resources
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.Form2_config.resources
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.Properties.Resources.resources
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.csproj.GenerateResource.Cache
+E:\work\Projects\ponkin\С#\IP71testV2\bin\Debug\IP701testV2.exe
+E:\work\Projects\ponkin\С#\IP71testV2\bin\Debug\IP701testV2.pdb
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.exe
+E:\work\Projects\ponkin\С#\IP71testV2\obj\Debug\IP701testV2.pdb

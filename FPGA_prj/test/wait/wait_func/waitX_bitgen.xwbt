@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Xilinx\test\wait\wait_func\waitX.ncd
+OUTFILE=C:\Xilinx\test\wait\wait_func\waitX.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=C:\Xilinx\test\wait\wait_func
+LICENSE=WebPack
+USER_INFO=__0_0_0

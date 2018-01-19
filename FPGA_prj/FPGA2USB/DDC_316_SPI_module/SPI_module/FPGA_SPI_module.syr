@@ -1,0 +1,184 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: FPGA_SPI_module.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "FPGA_SPI_module.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "FPGA_SPI_module"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : FPGA_SPI_module
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd" in Library work.
+Entity <fpga_spi_module> compiled.
+Entity <fpga_spi_module> (Architecture <behave>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <FPGA_SPI_module> in library <work> (architecture <behave>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <FPGA_SPI_module> in library <work> (Architecture <behave>).
+INFO:Xst:1739 - HDL ADVISOR - "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd" line 11: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:1739 - HDL ADVISOR - "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd" line 12: declaration of a buffer port will make it difficult for you to validate this design by simulation. It is preferable to declare it as output.
+INFO:Xst:2679 - Register <CLK_IN_signal> in unit <FPGA_SPI_module> has a constant value of 0 during circuit operation. The register is replaced by logic.
+Entity <FPGA_SPI_module> analyzed. Unit <FPGA_SPI_module> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <FPGA_SPI_module>.
+    Related source file is "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd".
+WARNING:Xst:647 - Input <clock_pol> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1306 - Output <DOUT> is never assigned.
+WARNING:Xst:646 - Signal <tx_buffer> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found 4-bit up counter for signal <i>.
+    Summary:
+	inferred   1 Counter(s).
+Unit <FPGA_SPI_module> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 4-bit up counter                                      : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+ERROR:Xst:528 - Multi-source in Unit <FPGA_SPI_module> on signal <DCLK>; this signal is connected to multiple drivers.
+Drivers are: 
+   Primary input port <CLK_IN_40MEG>
+   Signal <CLK_IN_40MEG> in Unit <FPGA_SPI_module> is assigned to GND
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.24 secs
+ 
+--> 
+
+Total memory usage is 252896 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

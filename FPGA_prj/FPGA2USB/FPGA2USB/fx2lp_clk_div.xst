@@ -1,0 +1,5 @@
+set -tmpdir "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/xst/projnav.tmp"
+set -xsthdpdir "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/xst"
+elaborate
+-ifn fx2lp_clk_div.prj
+-ifmt mixed

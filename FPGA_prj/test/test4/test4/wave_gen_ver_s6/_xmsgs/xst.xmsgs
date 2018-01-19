@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\clk_core.v" Line 132: Assignment to <arg fmt="%s" index="1">status_int</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v" Line 110: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v" Line 122: Result of <arg fmt="%d" index="1">5</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" Line 283: Result of <arg fmt="%d" index="1">8</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" Line 359: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">28</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 63: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 65: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 67: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 69: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 71: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 73: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 75: Result of <arg fmt="%d" index="1">16</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">14</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 83: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 85: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 87: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 89: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 91: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 93: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 95: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 97: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 99: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 101: Result of <arg fmt="%d" index="1">14</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">10</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 109: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 111: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 113: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 115: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 117: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 119: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 121: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 123: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 125: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 127: Result of <arg fmt="%d" index="1">10</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">7</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 135: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 137: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 139: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 141: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 143: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 145: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 147: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 149: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 151: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 153: Result of <arg fmt="%d" index="1">7</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="413" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 151: Result of <arg fmt="%d" index="1">32</arg>-bit expression is truncated to fit in <arg fmt="%d" index="2">4</arg>-bit target.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1309" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 213: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1309" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 222: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1309" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 232: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\char_fifo.v" Line 40: Empty module &lt;<arg fmt="%s" index="1">char_fifo</arg>&gt; remains a black box.
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 388: Assignment to <arg fmt="%s" index="1">nsamp_new_clk_tx</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 402: Assignment to <arg fmt="%s" index="1">pre_new_clk_tx</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 416: Assignment to <arg fmt="%s" index="1">spd_new_clk_tx</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v</arg>&quot; line <arg fmt="%s" index="2">238</arg>: Output port &lt;<arg fmt="%s" index="3">frm_err</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">uart_rx_i0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v</arg>&quot; line <arg fmt="%s" index="2">380</arg>: Output port &lt;<arg fmt="%s" index="3">bus_new_dst</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clkx_nsamp_i0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v</arg>&quot; line <arg fmt="%s" index="2">394</arg>: Output port &lt;<arg fmt="%s" index="3">bus_new_dst</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clkx_pre_i0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v</arg>&quot; line <arg fmt="%s" index="2">408</arg>: Output port &lt;<arg fmt="%s" index="3">bus_new_dst</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clkx_spd_i0</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="1901" delta="new" >Instance <arg fmt="%s" index="1">BUFGCE_clk_samp_i0</arg> in unit <arg fmt="%s" index="2">clk_gen</arg> of type <arg fmt="%s" index="3">BUFGCE</arg> has been replaced by <arg fmt="%s" index="4">BUFGMUX</arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">frm_err</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">uart_rx_ctl_i0</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">bus_new_dst</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">clkx_nsamp_i0</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">bus_new_dst</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">clkx_spd_i0</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">bus_new_dst</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">clkx_pre_i0</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1&gt; &lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1&gt; &lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2260" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">char_fifo_i0</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb&gt; </arg>
+</msg>
+
+</messages>
+

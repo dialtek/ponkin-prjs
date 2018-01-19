@@ -1,0 +1,27 @@
+[PROJECT]
+Target=C:\Program Files (x86)\PICC\my prj\Pic24hJ\main.hex
+Development_Mode=
+Processor_Text=PIC24HJ128GP506
+ToolSuite=CCS
+Processor=0x009F
+[C:\Program Files (x86)\PICC\my prj\Pic24hJ\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Program Files (x86)\PICC\my prj\Pic24hJ\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Program Files (x86)\PICC\my prj\Pic24hJ\main
+[Opened Files]
+1=main.c
+2=..\..\devices\24HJ128GP506.h
+3=Termo3.h
+4=LCD_16X4_Termo3.h
+5=

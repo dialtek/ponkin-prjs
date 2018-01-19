@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/wait_.xst" -ofn "C:/Xilinx/test/wait/wait_func/wait_.syr" 

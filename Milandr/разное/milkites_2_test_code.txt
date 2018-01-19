@@ -1,0 +1,140 @@
+uint16_t MCU_ADC_aver_param = 100;
+uint8_t  MCU_current_ADC_channel = 4;
+
+#define ADC_Vref 3.295	// измеренное вольтметром напряжение питания МК
+
+
+
+// ADC MCU
+    void MCU_ADC_init(){
+
+  MDR_RST_CLK->PER_CLOCK |= (1 << 17); //тактирование АЦП
+  
+  MDR_ADC->ADC1_CFG = (1 //Включение АЦП  
+  |(0 << 2)   	// источник синхросигнала
+  |(1 << 3)   	// Выбор способа запуска АЦП - послед. 
+  |(0 << 4)  	// номер канала преобразования - не важно, так как установим канал позже
+  |(1 << 9)  	// переключение включено (перебираются каналы, выбранные в регистре выбора канала)
+  |(0 << 10) 	// автоматический контроль уровней откл.
+  |(0 << 11)  	// источник опорного - внутренний (VDD)
+  |(4 << 12)  	// коэффициент деления частоты ADC_clk = HCLK/8 = 10 МГц
+  |(0 << 16)  	//  работа двух АЦП одновременн откл.
+  |(0 << 17)    //  TS_EN датчик температуры и источника опорного напряжения откл
+  |(0 << 18)    // TS_BUF_EN усилитель для датчика температуры и источника опорного напряжения откл.
+  |(0 << 19) 	// оцифровка датчика температуры откл./
+  |(0 << 20));  // оцифровка источника опорного напряжения на 1.23 В откл
+}
+
+    void MCU_ADC_start_conv(void){
+  
+  	MDR_ADC->ADC1_CFG |= 1<<1;
+  
+}
+
+    uint32_t MCU_ADC_read(void){
+	  
+	  // чтение АЦП, t выборки + t преобразования канала = 3.2 мкС при HCLK = 10М и предделителе АЦП = 1
+	  //		     t выборки + t преобразования канала = 0.5 мкС при HCLK = 70М и предделителе АЦП = 1					
+	  // вес младшего разряда АЦП = 3,3/4095 = 0,8 мВ
+	  
+	  uint32_t ADC_data = 0;
+	  
+  	  MCU_ADC_start_conv(); // начало преобразований данных
+	  
+	  while(!(MDR_ADC->ADC1_STATUS) & (1<<2)) {} // ждем готовность 
+	  ADC_data = MDR_ADC->ADC1_RESULT;			 // читаем
+	  
+	  MCU_current_ADC_channel = ADC_data << 11;  //вытаскиваем номер 
+	  MCU_current_ADC_channel = MCU_current_ADC_channel >> 27;  //канала чьи измерения
+	  
+	  ADC_data = ADC_data << 20;    // отбрасываем инфу о 
+	  ADC_data = ADC_data >> 20;    // канале измерений
+	  
+	  return ADC_data;
+}
+					   
+    void MCU_ADC_set_ch(uint8_t channel){
+	  
+	if (channel > 16) return;
+	
+	MDR_ADC->ADC1_CHSEL = 1 << channel; 
+	
+	
+}
+
+    uint32_t MCU_ADC_Rd_average(uint16_t AverValue){
+	  
+	  // чтение АЦП, t выборки + t преобразования канала = 3.2 мкС при HCLK = 10М и предделителе АЦП = 1
+	  // t выборки + t преобразования канала = 0.5 мкС при HCLK = 70М и предделителе АЦП = 1	
+	  // усреднение результатов преобразований АЦП
+	  
+	  uint32_t Aver_ADC_data = 0;
+	  
+	  for(int i = 0; i < AverValue; i++ )
+	  {
+	   Aver_ADC_data += MCU_ADC_read();
+	  }
+  
+	  Aver_ADC_data = Aver_ADC_data/AverValue; 
+	  
+	  return Aver_ADC_data;
+}
+
+    uint32_t Get_ADC_ch_voltage(uint8_t ADC_channel){
+	  // чтение усредненного результата преобраз. канала АЦП, преобразование в мВ
+	  
+	  uint32_t ADC_rd_data = 0;
+ 	  uint32_t ADC_meas_voltage = 0;
+	  
+	  MCU_ADC_set_ch(ADC_channel);	// установка канала АЦП
+	  ADC_rd_data = MCU_ADC_Rd_average(MCU_ADC_aver_param);		// читаем среднее значение отсчетов АЦП
+	  ADC_meas_voltage = (int)(ADC_Vref*ADC_rd_data*1000)/4096;	// преобразуем в волты  
+	  return ADC_meas_voltage; 
+
+}
+
+int main() {
+ 
+  
+  int counter = 0;
+
+  uint32_t V = 0;
+    
+  OSC_init();           // инициализация системы тактирования МК
+  SysTickTimer_Init();  // инициализация системного таймера
+  GPIO_init();          // инициализация портов ввода/вывода
+  MDR32_SSP1_init();    // инициализация модуля SSP1
+  
+  MCU_ADC_init();
+    
+  LCD_init(); 		// иницализация дисплея MT12864B
+  LCD_clear(); 	        // очистка дисплея
+  LCD_set_cursor(0);     // уст. курсора в 0ую стр. 
+  
+  MDR_PORTE->RXTX |= 1<<2;
+  
+  while(1)
+  { 
+   V = Get_ADC_ch_voltage(4);
+   LCD_set_cursor(3);
+   LCD_print("V [mV] = ");
+   LCD_wr_num(V);
+   LCD_print("                   ");
+   delay_ms(5);
+
+   while(MDR_PORTB->RXTX & 1<<5)
+   { // светодиод сенсорной кнопки
+    MDR_PORTA->RXTX |= 1;
+   }
+   MDR_PORTA->RXTX &= ~1;
+   
+   while (!(MDR_PORTB->RXTX & 1<<4))
+   {// выкл. подсветки дисплея
+    MDR_PORTE->RXTX &= ~ (1<<2); 
+   }
+   
+   MDR_PORTE->RXTX |= 1<<2;
+     
+   
+  }
+}

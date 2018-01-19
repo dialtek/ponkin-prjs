@@ -1,0 +1,2 @@
+vhdl isim_temp "sec_pgm.vhd"
+vhdl isim_temp "first_pgm.vhd"

@@ -1,0 +1,228 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @SCRATCH
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     @INTERRUPT_AREA
+018     buf
+018.4   buf4
+018.5   buf5
+018.6   buf6
+018.7   buf7
+019     count
+01A     hp
+01B.0   tmaxfl
+01B.1   pwrfl
+01B.2   dtfl
+01B.3   henfl
+01B.4   Pbfl
+01B.5   PbFl1
+01C     ADCNumSamples
+01D-01E tmax
+01F     MenuItemNum
+020     i
+021-024 t_out
+025-028 b_hold
+029-02C b_push
+02D     MAIN.j
+02E-035 MAIN.buf1
+036.0   MAIN.EEWrFl
+037-038 MAIN.t
+039-03A MAIN.t1
+03B-03C MAIN.t2
+03D-03E MAIN.tr
+03F-042 MAIN.ADC_value
+043     MAIN.dt
+044     MAIN.CRC1
+045     MAIN.CRC2
+046-047 Crc8.pcBlock
+046     ADC_read.ch
+046-049 LCDPutU16._u16
+046-047 LCDWelcome.u16a
+046-047 @MUL1616.P1
+046-047 @DIV1616.P2
+046     LCDInit.@SCRATCH1
+046     MAIN.@SCRATCH1
+047-04A ADC_read.ADC_value
+047     MAIN.@SCRATCH2
+048-049 @DIV1616.P1
+048     Crc8.len
+048     LCDSetCursor.ucPos
+048-049 @MUL1616.P1
+048     LCDWelcome.@SCRATCH1
+048     MAIN.@SCRATCH3
+049     Crc8.crc
+049     LCDMsg.c
+049     LCDSetCursor.@SCRATCH1
+04A     LCDCommand.uc
+04A     LCDPutU16.u8NumDigs
+04A     Crc8.i
+04A     @DIV1616.@SCRATCH1
+04A     @MUL1616.@SCRATCH1
+04B-04E LCDPutU16.u16a
+04B     ADC_read.i
+04B     Crc8.@SCRATCH1
+04B     LCDCommand.@SCRATCH1
+04C     ADC_read.@SCRATCH1
+04D     ADC_read.@SCRATCH2
+04F-052 LCDPutU16.u16b
+053-056 @MUL3232.P1
+053-056 @DIV3232.P2
+053     LCDPutU16.@SCRATCH1
+054     LCDPutCh.c
+055     LCDWriteData.uc
+056     LCDWriteData.@SCRATCH1
+057-05A @MUL3232.P1
+057     LCDWriteNibble.uc
+057-05A @DIV3232.P1
+058     @delay_ms1.P1
+05B     @DIV3232.@SCRATCH1
+05B     @MUL3232.@SCRATCH1
+05C     @DIV3232.@SCRATCH2
+05C     @MUL3232.@SCRATCH2
+05D     @DIV3232.@SCRATCH3
+05D     @MUL3232.@SCRATCH3
+05E     @DIV3232.@SCRATCH4
+05E     @MUL3232.@SCRATCH4
+05F     @DIV3232.@SCRATCH5
+05F     @MUL3232.@SCRATCH5
+060     @MUL3232.@SCRATCH6
+061     PBScan.pb
+061     TIMER1_isr.@SCRATCH1
+062     TIMER1_isr.@SCRATCH2
+F80     PORTA
+F80.2   RA2
+F81     PORTB
+F81.1   PORTB1
+F81.2   PORTB2
+F81.3   PORTB3
+F81.4   PORTB4
+F81.5   RB5
+F82     PORTC
+F82.5   PORTC5
+F83.0   LCD_RW
+F83     PSP_DATA
+F83     PORTD
+F83.2   LCD_E
+F83.3   LCD_RS
+F83.4   PORTD4
+F83.5   PORTD5
+F83.6   PORTD6
+F83.7   PORTD7
+F92     TRISA
+F92.2   TRA2
+F93     TRISB
+F94     TRISC
+F94.5   TRC5
+F95     TRISD
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB-FBC CCP_2
+FBC     CCP_2_HIGH
+FBE-FBF CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+059E  @delay_ms1
+074C  Crc8
+045E  PBScan
+05C6  LCDWriteNibble
+06C6  LCDWriteData
+060C  LCDCommand
+06FA  LCDSetCursor
+06B8  LCDClear
+062C  LCDInit
+06EA  LCDPutCh
+0862  LCDPutU16
+0794  @DIV3232
+080E  @MUL3232
+06F2  LCDMsg
+0706  LCDWelcome
+00AA  @const145
+00D4  @const146
+04AC  TIMER1_isr
+0562  TIMER3_isr
+0A5C  ADC_read
+0B2C  MAIN
+00FC  @const166
+0124  @const167
+014E  @const168
+016C  @const169
+0192  @const170
+01B2  @const171
+0ACC  @DIV1616
+0B0E  @MUL1616
+01D2  @const178
+01F0  @const179
+0212  @const180
+0230  @const181
+024E  @const182
+026C  @const184
+028A  @const185
+02AA  @const188
+02C8  @const189
+02E6  @const190
+030C  @const191
+0332  @const192
+035C  @const193
+0388  @const194
+03AC  @const195
+03CC  @const196
+03EC  @const198
+0416  @const199
+043E  @const201
+0B2C  @cinit
+
+Project Directory:
+    C:\PRJ\Termo\
+
+Project Files:
+    Termocontr.c
+    ..\..\Program Files\PICC\devices\18F4320.h
+
+Units:
+    Termocontr.c (main)
+
+Compiler Settings:
+    Processor:      PIC18F4320
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      Termocontr.err
+    Ext Symbols: Termocontr.esym
+    INHX32:      Termocontr.hex
+    Symbols:     Termocontr.sym
+    List:        Termocontr.lst
+    Debug/COFF:  Termocontr.cof
+    Project:     Termocontr.PJT
+    Call Tree:   Termocontr.tre
+    Statistics:  Termocontr.sta

@@ -1,0 +1,94 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     @I2C_WRITE_1.P1
+F6B.6   C2OUT
+F6D.6   C1OUT
+F74     CCP_4_LOW
+F74     CCP_4
+F75     CCP_4_HIGH
+F80     PORTA
+F80.0   RA0
+F80.1   RA1
+F80.2   RA3
+F80.3   RA4
+F80.5   RA5
+F81     PORTB
+F81.4   RB4
+F81.5   RB5
+F81.6   RB6
+F82     PORTC
+F82.5   RC5
+F92     TRISA
+F92.0   TRA0
+F92.1   TRA1
+F92.2   TRA3
+F92.3   TRA4
+F92.5   TRA5
+F93     TRISB
+F93.4   TRB4
+F93.6   TRB6
+F94     TRISC
+F94.5   TRC5
+FB8     CCP_3_LOW
+FB8     CCP_3
+FB9     CCP_3_HIGH
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FD3     OSCCON
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PROGRAM_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  @I2C_WRITE_1
+0072  main
+0072  @cinit1
+008C  @cinit2
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Program Files (x86)\PICC\my prj\14k50 i2c\
+
+Project Files:
+    main.c                                                  [12-ט‏כ-12 19:26  CRC=92618C89]
+    ..\..\devices\18F14K50.h                                [28-פוג-12 13:44  CRC=579E1CE6]
+
+Source signature=419DC655
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F14K50
+    Pointer Size:   16
+    ADC Range:      0-1023
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

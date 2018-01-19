@@ -1,0 +1,6 @@
+V3 3
+EN work/test1 0 FL D:/work/Projects/FPGA_prj/uni/uni/test1.vhd \
+      PB ieee/std_logic_1164 1354696159 PB ieee/std_logic_arith 1354696160 \
+      PB ieee/STD_LOGIC_UNSIGNED 1354696162
+AR work/test1/Behave 0 \
+      FL D:/work/Projects/FPGA_prj/uni/uni/test1.vhd EN work/test1 0

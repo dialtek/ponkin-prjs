@@ -1,0 +1,352 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017     buf
+017.4   buf4
+017.5   buf5
+017.6   buf6
+017.7   buf7
+018-019 strtok.save
+01A.0   int_fl
+01A.1   zero_set1
+01A.2   fl2
+01A.3   menufl1
+01A.4   menufl2
+01A.5   menufl3
+01A.6   menufl4
+01B     ff1
+01C     TMR0fl
+01D     MenuItemNum
+01E     RXd_buf
+01F     ConfigRegA
+020     ConfigRegB
+021     ModeReg
+022     xMSB
+023     xLSB
+024     zMSB
+025     zLSB
+026     yMSB
+027     yLSB
+028     StatReg
+029     idRegA
+02A     idRegB
+02B     idRegC
+02C     EEprom_adr
+02D-030 my_arr
+031-032 SumX
+033-034 SumY
+035-036 SumZ
+037-038 SumX0
+039-03A SumY0
+03B-03C SumZ0
+03D-040 average_Xg
+041-044 average_Yg
+045-048 average_Zg
+049-04A Xh
+04B     Xl
+04C-04D Yh
+04E     Yl
+04F-050 Zh
+051     Zl
+052-055 Xd
+056-059 Yd
+05A-05D Zd
+05E-061 kx_rd
+062-065 ky_rd
+066-069 kz_rd
+06A     aver_count
+06B-06E c
+06F-072 average_X
+073-076 average_Y
+077-07A average_Z
+07B-08A crc_buf_wr
+08B-09A crc_buf_rd
+09B     crc_wr_index
+09C     crc_rd_index
+09D-09E MAIN.sens_type
+09F-0A0 MAIN.sens_num
+0A1-0A2 MAIN.ROM_Adr
+0A3-0A4 MAIN.CRC_Wr
+0A5-0A6 MAIN.CRC1
+0A7-0A8 MAIN.CRC2
+0A9-0AC @DIVS3232.P1
+0A9-0AC @SFTOI.P2
+0A9-0AC @SDTOF.P3
+0A9-0AA @MUL1616.P4
+0A9     rom_rd_CRC16.ee_addr
+0A9-0AC @MULFF.P1
+0A9-0AC @PRINTF_L32D_9600_31766_31767.P2
+0A9     LCDWelcome.i
+0A9-0AA rom_rd_float.ee_addr
+0A9-0AA CRC16.data_p
+0A9-0AC @FTOSD.P1
+0A9     SensRdAll.@SCRATCH1
+0A9     MAIN.@SCRATCH1
+0AA     rom_rd_CRC16.CRC_rd_MSB
+0AA     LCDSetCursor.ucPos
+0AA     LCDWelcome.@SCRATCH1
+0AA     @PSTRINGC_841.@SCRATCH1
+0AA     SensRdAll.@SCRATCH2
+0AA     MAIN.@SCRATCH2
+0AB-0AC LCDPutS16.s16a
+0AB-0AC @MUL1616.P1
+0AB-0AC rom_rd_float.float_data_ptr
+0AB     @delay_ms1.P1
+0AB     CRC16.length
+0AB     rom_rd_CRC16.CRC_rd_LSB
+0AB     LCDSetCursor.@SCRATCH1
+0AB     @PSTRINGC_841.@SCRATCH2
+0AB     SensRdAll.@SCRATCH3
+0AC     CRC16.x
+0AC     LCDCommand.uc
+0AC-0AD rom_rd_CRC16.CRC_rd
+0AC     LCDMsg.c
+0AC     SensRdAll.@SCRATCH4
+0AD     rom_rd_float.buf
+0AD     LCDPutS16.u8NumDigs
+0AD-0B0 @DIVS3232.P1
+0AD-0B0 @MULFF.P2
+0AD-0AE CRC16.crc
+0AD     LCDCommand.@SCRATCH1
+0AD     @SDTOF.@SCRATCH1
+0AD     @PRINTF_L32D_9600_31766_31767.@SCRATCH1
+0AD     @MUL1616.@SCRATCH1
+0AD     @FTOSD.@SCRATCH1
+0AE     LCDPutS16.c
+0AE-0AF rom_rd_float.dataByte_ptr
+0AE     @PRINTF_L32D_9600_31766_31767.@SCRATCH2
+0AF-0B2 LCDPutU16._u16
+0AF     @PRINTF_L32D_9600_31766_31767.@SCRATCH3
+0AF     CRC16.@SCRATCH1
+0B0     rom_rd_float.k
+0B0     @PRINTF_L32D_9600_31766_31767.@SCRATCH4
+0B0     CRC16.@SCRATCH2
+0B1     rom_rd_float.i
+0B1     @DIVS3232.@SCRATCH1
+0B1     @MULFF.@SCRATCH1
+0B1     @PRINTF_L32D_9600_31766_31767.@SCRATCH5
+0B2-0B3 rom_rd_byte.addr
+0B2     @DIVS3232.@SCRATCH2
+0B2     @MULFF.@SCRATCH2
+0B2     @PRINTF_L32D_9600_31766_31767.@SCRATCH6
+0B2     rom_rd_float.@SCRATCH1
+0B3     LCDPutU16.u8NumDigs
+0B3     @DIVS3232.@SCRATCH3
+0B3     @MULFF.@SCRATCH3
+0B3     @PRINTF_L32D_9600_31766_31767.@SCRATCH7
+0B3     rom_rd_float.@SCRATCH2
+0B4-0B7 LCDPutU16.u16a
+0B4     rom_rd_byte.rd_data_byte
+0B4     @DIVS3232.@SCRATCH4
+0B4     @PRINTF_L32D_9600_31766_31767.@SCRATCH8
+0B5     rom_rd_byte.addr_MSB
+0B5     @DIVS3232.@SCRATCH5
+0B6     rom_rd_byte.addr_LSB
+0B6     @DIVS3232.@SCRATCH6
+0B7     rom_rd_byte.@SCRATCH1
+0B8-0BB LCDPutU16.u16b
+0B8     rom_rd_byte.@SCRATCH2
+0BC-0BF @MUL3232.P1
+0BC-0BF @DIV3232.P2
+0BC     LCDPutU16.@SCRATCH1
+0BD     LCDPutCh.c
+0BE     LCDWriteData.uc
+0BF     LCDWriteData.@SCRATCH1
+0C0     LCDWriteNibble.uc
+0C0-0C3 @MUL3232.P1
+0C0-0C3 @DIV3232.P2
+0C1     LCDWriteNibble.@SCRATCH1
+0C2     @delay_us1.P1
+0C4     @DIV3232.@SCRATCH1
+0C4     @MUL3232.@SCRATCH1
+0C5     @DIV3232.@SCRATCH2
+0C5     @MUL3232.@SCRATCH2
+0C6     @DIV3232.@SCRATCH3
+0C6     @MUL3232.@SCRATCH3
+0C7     @DIV3232.@SCRATCH4
+0C7     @MUL3232.@SCRATCH4
+0C8     @DIV3232.@SCRATCH5
+0C8     @MUL3232.@SCRATCH5
+0C9     @MUL3232.@SCRATCH6
+0CA     @I2C_READ_1.P1
+0CA     SensWrData.Adr
+0CA     int0.@SCRATCH1
+0CB     SensWrData.data
+0CB     @I2C_READ_1.@SCRATCH1
+0CB     int0.@SCRATCH2
+0CC     @I2C_WRITE_1.P1
+0CC     @I2C_READ_1.@SCRATCH2
+F48     CCP_5_LOW
+F48     CCP_5
+F49     CCP_5_HIGH
+F4B     CCP_4
+F4B     CCP_4_LOW
+F4C     CCP_4_HIGH
+F4E     CCP_3_LOW
+F4E     CCP_3
+F4F     CCP_3_HIGH
+F51     CCP_2_LOW
+F51     CCP_2
+F52     CCP_2_HIGH
+F80     PORTA
+F80.3   SW1
+F81     PORTB
+F81.0   DRDY
+F82     PORTC
+F82.2   SW2
+F8A     LATB
+F8A.3   LCD_E
+F8A.4   LCD_RW
+F8A.5   LCD_RS
+F8B.0   DB7
+F8B     LATC
+F8B.1   DB6
+F8B.2   DB5
+F8B.4   SDA_LAT
+F8B.5   DB4
+F8B.6   LED
+F92     TRISA
+F92.3   TRA3
+F93     TRISB
+F93.0   TRB0
+F93.3   TRB3
+F93.4   TRB4
+F93.5   TRB5
+F94     TRISC
+F94.0   TRC0
+F94.1   TRC1
+F94.2   TRC2
+F94.3   TRC3
+F94.4   TRC4
+F94.5   TRC5
+F94.6   TRC6
+F94.7   TRC7
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBC     CCP_1
+FBC     CCP_1_LOW
+FBD     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @READ_PROGRAM_MEMORY.P2
+FE9-FEA @WRITE_PACKED_MEMORY.P3
+FE9-FEA @READ_PACKED_MEMORY.P4
+FF1     INTCON2
+FF2     INTCON
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0000A2  @const845.call
+0000B2  @const847.call
+0000C4  @const919.call
+0000D6  @const933.call
+0000DA  @const936.call
+0000E0  @const937.call
+0000E8  @const938.call
+0000EE  @I2C_WRITE_1
+00014A  @I2C_READ_1
+0001A2  SensWrData
+0001E8  int0
+00039E  UART_RXd_isr
+0003BC  @const987.call
+0003CC  @const988.call
+0003D6  @const989.call
+0003DC  @const990.call
+0003E4  @const991.call
+0003EC  @const992.call
+0003F0  @const996.call
+0003F4  @const999.call
+0003F8  @const1000.call
+0003FC  @const1001.call
+000408  @delay_ms1
+000430  @delay_us1
+00044E  LCDWriteNibble
+000496  LCDCommand
+0004BC  LCDinit
+000530  LCDWriteData
+00055C  LCDPutCh
+000564  LCDMsg
+00056E  @PSTRINGC_841
+00058E  LCDSetCursor
+00059A  LCDClear
+0005AC  LCDWelcome
+0005DC  rom_rd_byte
+0006CA  rom_rd_float
+00070A  rom_rd_CRC16
+00073A  CRC16
+0007AA  @MUL1616
+0007CA  @DIV3232
+000858  @MUL3232
+0008AC  LCDPutU16
+000AAA  @MULFF
+000B9C  @FTOSD
+000BDA  LCDPutS16
+000C0A  @DIVS3232
+000CEE  @SDTOF
+000D44  @PRINTF_L32D_9600_31766_31767
+000E3C  @SFTOI
+000E74  SensRdAll
+0012B0  MAIN
+0012B0  @cinit1
+0013A8  @cinit2
+
+Project Directory:
+    E:\work\Projects\ponkin\PICC\my prj\XYZ magnitometer\Версия 2.3\
+
+Project Files:
+    main.c                                                  [29-дек-16 12:36  CRC=13B547A7]
+    XYZ Gaussmeter.h                                        [04-апр-15 12:44  CRC=800A40A2]
+    C:\Program Files (x86)\PICC\Devices\18F25K80.h          [12-ноя-13 14:35  CRC=83D73739]
+    C:\Program Files (x86)\PICC\Drivers\stdio.h             [31-июл-07 13:24  CRC=4E4534F4]
+    C:\Program Files (x86)\PICC\Drivers\string.h            [14-июл-11 10:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\Drivers\stddef.h            [16-июл-10 09:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-янв-08 13:55  CRC=2D1F019F]
+    LCD_XYZ_Gaussmeter.c                                    [03-апр-15 14:31  CRC=FDAC6DEF]
+
+Source signature=3BBEAAEE
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC18F25K80
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

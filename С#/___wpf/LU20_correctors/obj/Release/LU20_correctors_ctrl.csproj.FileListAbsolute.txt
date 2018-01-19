@@ -1,0 +1,32 @@
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Система вывода.exe.config
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Система вывода.exe
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Система вывода.pdb
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.AvalonDock.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.DataGrid.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\Xceed.Wpf.Toolkit.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\bin\Release\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\MainWindow.g.cs
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Settings.g.cs
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\App.g.cs
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода_Content.g.cs
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода_MarkupCompile.cache
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода_MarkupCompile.lref
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\MainWindow.baml
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Settings.baml
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода.g.resources
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\extract_system.Properties.Resources.resources
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\LU20_correctors_ctrl.csproj.GenerateResource.Cache
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода.exe
+E:\work\Projects\ponkin\С#\___wpf\LU20_correctors\obj\Release\Система вывода.pdb

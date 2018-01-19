@@ -1,0 +1,28 @@
+[PROJECT]
+Target=C:\PRJ\TK-2\main.hex
+Development_Mode=
+Processor_Text=PIC18F4320
+ToolSuite=CCS
+Processor=0xA432
+[C:\PRJ\TK-2\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\TK-2\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=C:\PRJ\TK-2\main.c
+2=C:\PRJ\TK-2\main.h
+3=C:\Program Files\PICC\devices\18F4320.h
+4=
+[Target Data]
+OptionString=-p +FH
+FileList=main.c
+[Units]
+Count=1
+1=main.c (main)

@@ -1,0 +1,9 @@
+// Created using Xilinx Cse Software [ISE - 14.4]
+// Date: Thu Oct 08 11:23:33 2015
+
+TRST OFF;
+ENDIR IDLE;
+ENDDR IDLE;
+STATE RESET;
+STATE IDLE;
+FREQUENCY 1E6 HZ;

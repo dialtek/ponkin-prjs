@@ -1,0 +1,51 @@
+
+ROM used: 6620 (15%)
+          6620 (15%) including unused fragments
+
+          4 Average locations per line
+          11 Average locations per statement
+
+RAM used: 138 (2%) at main() level
+          150 (2%) worst case
+
+Stack used: 4 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  877   587 100  main.c
+  668     0   0  ..\..\devices\33FJ64GP204.h
+----- -----
+ 1545   587 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     16   0   2             @delay_ms1
+0     80   1   0   320  5.1  TIMER1_isr
+0    802   6   2  2265  2.0  blink1
+0   1498  11   2  4466  2.0  blink2
+0   1550  12   2  4781  2.0  L1
+0    250   2   1   823  1.9  rnd_blink
+0   1690  13   1  4781  2.0  rnd_blink2
+0    222   2   0   938  4.8  MAIN
+ Inline        0             @cinit1
+
+Program metrics:
+    Functions               7
+    Statements              587
+    Comments                244
+    Volume (V)              24276
+    Difficulty (D)          20.2
+    Effort to implement (E) 490931
+    Time to implement (T)   7 hours, 35 minutes
+    Est Delivered Bugs (B)  2
+    Cyclomatic Complexity   11
+    Maintainability (MI)    70
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-0ABFE  6108  37412  
+
+
+

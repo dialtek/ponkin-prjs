@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine_isim_beh.exe" -prj "D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine_beh.prj" "work.StateMachine" 

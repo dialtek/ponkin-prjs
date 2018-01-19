@@ -1,0 +1,4 @@
+E:\work\Projects\ponkin\С#\education\TCP_read\TCP_read\Fakes\ObooltNet.fakes : warning : Невозможно создать оболочку совместимости для ObooltNet.NetConnection+<ListenAsync>d__0: тип не поддерживается из-за внутренних ограничений.
+E:\work\Projects\ponkin\С#\education\TCP_read\TCP_read\Fakes\ObooltNet.fakes : warning : Невозможно создать оболочку совместимости для ObooltNet.NetConnection+<ReceiveFromAsync>d__5: тип не поддерживается из-за внутренних ограничений.
+E:\work\Projects\ponkin\С#\education\TCP_read\TCP_read\Fakes\ObooltNet.fakes : warning : Невозможно создать оболочку совместимости для ObooltNet.NetConnection+NetConnectionEventHandler: тип является делегатом.
+E:\work\Projects\ponkin\С#\education\TCP_read\TCP_read\Fakes\ObooltNet.fakes : warning : Невозможно создать оболочку совместимости для ObooltNet.NetConnection+NetConnectionEventHandler`1: тип является делегатом.

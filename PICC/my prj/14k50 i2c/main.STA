@@ -1,0 +1,44 @@
+
+ROM used: 248 (2%)
+          248 (2%) including unused fragments
+
+          0 Average locations per line
+          21 Average locations per statement
+
+RAM used: 4 (1%) at main() level
+          5 (1%) worst case
+
+Stack used: 1 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   78    12 100  main.c
+  480     0   0  ..\..\devices\18F14K50.h
+----- -----
+  558    12 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    110  22   1             @I2C_WRITE_1
+0    134  27   0   207  2.3  main
+ Inline        0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              12
+    Comments                114
+    Volume (V)              212
+    Difficulty (D)          2.1
+    Effort to implement (E) 437
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    66
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-03FFE   244  16136  
+
+
+

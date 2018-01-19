@@ -1,0 +1,29 @@
+[PROJECT]
+Target=C:\PRJ\Termo\Termocontr.hex
+Development_Mode=
+Processor_Text=PIC18F4320
+ToolSuite=CCS
+Processor=0xA432
+[C:\PRJ\Termo\Termocontr]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\Termo\Termocontr.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=C:\PRJ\Termo\Termocontr.c
+2=C:\Program Files\PICC\devices\18F4320.h
+3=
+4=C:\Program Files\PICC\devices\18F4320.h
+5=
+[Target Data]
+OptionString=-p +FH
+FileList=Termocontr.c
+[Units]
+Count=1
+1=Termocontr.c (main)

@@ -1,0 +1,20 @@
+V3 14
+FL C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd 2013/10/01.17:22:55 P.49d
+FL C:/work/Projects/FPGA_prj/FPGA2USB/main.vhd 2013/11/20.22:12:09 P.49d
+FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd 2013/10/01.17:22:55 P.49d
+EN work/fx2lp_clk_div 1389352082 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/fx2lp_clk_div/BEHAVIORAL 1389352083 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/ipcore_dir/fx2lp_clk_div.vhd \
+      EN work/fx2lp_clk_div 1389352082 CP BUFG CP IBUFG CP DCM_SP
+FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/main.vhd 2014/01/10.15:07:59 P.49d
+EN work/FPGA2USB 1389352084 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/main.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/std_logic_arith 1341906177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1341906179 LB UNISIM PH unisim/VCOMPONENTS 1341906184
+AR work/FPGA2USB/behav 1389352085 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/main.vhd EN work/FPGA2USB 1389352084 \
+      CP fx2lp_clk_div
+FL D:/work/Projects/FPGA_prj/FPGA2USB/main.vhd 2013/12/24.13:38:21 P.49d

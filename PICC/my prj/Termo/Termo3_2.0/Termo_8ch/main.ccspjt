@@ -1,0 +1,64 @@
+[PROJECT]
+Target=main.hex
+Development_Mode=
+Processor_Text=PIC24HJ128GP506A
+ToolSuite=CCS
+Processor=0x009F
+CCSVersion=5.019
+Compiler=PCD
+[D:\work\Projects\PICC\my prj\Termo3_2.0\last\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=main.c
+2=main.h
+3=C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
+4=LCD_16X4_Termo3.h
+5=ADS1256.h
+6=C:\Program Files (x86)\PICC\Drivers\stdlib.h
+7=
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+forcecoff=0
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FD
+AdditionalOptionString=
+BuildRequired=1
+FileList=main.c
+[main.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[Units]
+Count=1
+1=main (main)

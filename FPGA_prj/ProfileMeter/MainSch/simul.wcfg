@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/StateMachine_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="statemachine" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wvobject fp_name="/statemachine/gclk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">gclk</obj_property>
+      <obj_property name="ObjectShortName">gclk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/spi_clk" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">spi_clk</obj_property>
+      <obj_property name="ObjectShortName">spi_clk</obj_property>
+      <obj_property name="label">spi_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/d" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">d</obj_property>
+      <obj_property name="ObjectShortName">d</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/q" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">q</obj_property>
+      <obj_property name="ObjectShortName">q</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/ce" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+      <obj_property name="label">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/state" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/spi_in_word" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">spi_in_word[15:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_in_word[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/idle" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">idle[3:0]</obj_property>
+      <obj_property name="ObjectShortName">idle[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/spi_get_byte" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">spi_get_byte[3:0]</obj_property>
+      <obj_property name="ObjectShortName">spi_get_byte[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/concat_bytes" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">concat_bytes[3:0]</obj_property>
+      <obj_property name="ObjectShortName">concat_bytes[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/statemachine/shift_data" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">shift_data[3:0]</obj_property>
+      <obj_property name="ObjectShortName">shift_data[3:0]</obj_property>
+   </wvobject>
+</wave_config>

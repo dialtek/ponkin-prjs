@@ -1,0 +1,199 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+netgen -intstyle ise -ar Structure -tm FPGA_SPI_module -w -dir netgen/synthesis -ofmt vhdl -sim FPGA_SPI_module.ngc FPGA_SPI_module_synthesis.vhd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 FPGA_SPI_module.ngc FPGA_SPI_module.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA_SPI_module_map.ncd FPGA_SPI_module.ngd FPGA_SPI_module.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA_SPI_module_map.ncd FPGA_SPI_module.ncd FPGA_SPI_module.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA_SPI_module.twx FPGA_SPI_module.ncd -o FPGA_SPI_module.twr FPGA_SPI_module.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module.syr" 

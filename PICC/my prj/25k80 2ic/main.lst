@@ -1,0 +1,151 @@
+CCS PCH C Compiler, Version 4.130, 5967               12-èþë-12 16:50
+
+               Filename: C:\Program Files (x86)\PICC\my prj\25k80 2ic\main.lst
+
+               ROM used: 86 bytes (0%)
+                         Largest free fragment is 32682
+               RAM used: 4 (0%) at main() level
+                         4 (0%) worst case
+               Stack:    0 locations
+
+*
+0000:  GOTO   0004
+.................... #include <18F25K80.h> 
+.................... //////// Standard Header file for the PIC18F25K80 device //////////////// 
+.................... #device PIC18F25K80 
+.................... #list 
+....................  
+.................... #device adc=16 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... //#FUSES WDT128                 //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES NOXINST                  //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES HSH                      //High speed Osc, high power 16MHz-25MHz 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES WDT_NOSLEEP              //Watch Dog Timer, disabled during SLEEP 
+.................... #FUSES  PLLEN                   //4X HW PLL enabled 
+....................  
+.................... #use delay(clock=40M) 
+.................... #use I2C(master, scl=PIN_C3, sda=PIN_C4, fast=400000) 
+....................  
+....................  
+.................... #BYTE TRISA = 0xF92 
+.................... #BYTE TRISB = 0xF93 
+.................... #BYTE TRISC = 0xF94  
+....................  
+.................... #BYTE PORTA = 0xF80 
+.................... #BYTE PORTB = 0xF81 
+.................... #BYTE PORTC = 0xF82  
+....................  
+.................... #BYTE SSPCON2 = 0xFC5       // 
+.................... #BYTE SSPCON1 = 0xFC6       //i2c config 
+.................... #BYTE SSPSTAT = 0xFC7       //  
+.................... #BYTE SSPADD = 0xFC8        //        
+.................... #BYTE SSPBUF = 0xFC9        // 
+....................  
+.................... #BIT BF = SSPSTAT.0       // buf wr status, 1 - writing is in progress 
+....................  
+.................... #BIT SEN = SSPCON2.0       // i2c start en, 1 - start 
+.................... #BIT RSEN = SSPCON2.1      // i2c repeited start en 
+.................... #BIT PEN = SSPCON2.2       // i2c stop en 
+.................... #BIT RCEN = SSPCON2.3      // i2c receive enable bit 
+.................... #BIT ACKEN = SSPCON2.4      // i2c acknowledge sequence en bit 
+.................... #BIT ACKDT = SSPCON2.5      // i2c acknowledge data bit, 1 - not acknowl, 0 - acknowl 
+.................... #BIT ACKSTAT = SSPCON2.6    // i2c acknowledge status, 1 - not acknowl, 0 - acknowl 
+....................   
+.................... #BIT RA0 = PORTA.0 
+.................... #BIT RA1 = PORTA.1 
+.................... #BIT RA2 = PORTA.2 
+.................... #BIT RA3 = PORTA.3 
+.................... #BIT RA4 = PORTA.4 
+.................... #BIT RA5 = PORTA.5 
+....................  
+.................... #BIT TRA5 = TRISA.5 
+.................... #BIT TRA4 = TRISA.4 
+.................... #BIT TRA3 = TRISA.3 
+.................... #BIT TRA2 = TRISA.2 
+.................... #BIT TRA1 = TRISA.1 
+.................... #BIT TRA0 = TRISA.0 
+....................  
+.................... #BIT TRC5 = TRISC.5 
+.................... #BIT TRC3 = TRISC.3 
+.................... #BIT TRC4 = TRISC.4 
+.................... #BIT TRC6 = TRISC.6 
+.................... #BIT TRC7 = TRISC.7 
+....................  
+.................... #BIT RC3 = PORTC.3 
+.................... #BIT RC4 = PORTC.4 
+.................... #BIT RC5 = PORTC.5 
+.................... #BIT RC6 = PORTC.6 
+.................... #BIT RC7 = PORTC.7 
+....................  
+....................  
+.................... void main() 
+.................... { 
+0004:  CLRF   FF8
+0006:  BCF    FD0.7
+0008:  CLRF   FEA
+000A:  CLRF   FE9
+000C:  MOVLB  F
+000E:  MOVF   x5C,W
+0010:  ANDLW  80
+0012:  MOVWF  x5C
+0014:  MOVLW  00
+0016:  MOVWF  x5D
+0018:  BCF    FC1.3
+001A:  BCF    FC1.4
+001C:  BCF    FC1.5
+001E:  CLRF   x5E
+0020:  CLRF   x5F
+....................     
+....................    TRC3 = 1; 
+0022:  BSF    F94.3
+....................    TRC4 = 1; 
+0024:  BSF    F94.4
+....................     
+....................    setup_timer_3(T3_DISABLED | T3_DIV_BY_1); 
+0026:  CLRF   FB0
+0028:  CLRF   FB1
+....................    setup_timer_4(T4_DISABLED,0,1); 
+002A:  MOVLW  00
+002C:  MOVWF  F88
+002E:  MOVLW  00
+0030:  MOVWF  FA9
+....................  
+....................    setup_comparator(NC_NC_NC_NC);// This device COMP currently not supported by the PICWizard 
+0032:  MOVLW  04
+0034:  MOVWF  x5E
+0036:  MOVWF  x5F
+....................  
+....................    while(TRUE) 
+....................    { 
+....................       i2c_start(); 
+0038:  BSF    F94.4
+003A:  BRA    003C
+003C:  BRA    003E
+003E:  BSF    F94.3
+0040:  BRA    0042
+0042:  BRA    0044
+0044:  NOP   
+0046:  BCF    F8B.4
+0048:  BCF    F94.4
+004A:  BRA    004C
+004C:  BRA    004E
+004E:  BCF    F8B.3
+0050:  BCF    F94.3
+....................      //i2c_read();     // Device address 
+....................       //i2c_stop();       
+....................    } 
+0052:  BRA    0038
+....................  
+.................... } 
+0054:  SLEEP 
+
+Configuration Fuses:
+   Word  1: D21D   VREGSLEEP INTRC_HP SOSC_HIGH NOXINST HSH PLLEN FCMEN IESO
+   Word  2: 7D78   PUT NOBROWNOUT BORV18 ZPBORM WDT_NOSLEEP WDT1048576
+   Word  3: 8900   CANB MSSPMSK7 MCLR
+   Word  4: 0091   STVREN BBSIZ2K NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

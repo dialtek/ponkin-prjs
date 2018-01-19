@@ -1,0 +1,761 @@
+----------------------------------------------------------------------------------
+---- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+----------------------------------------------------------------------------------
+----   ____  ____ 
+----  /   /\/   / 
+---- /___/  \  /    Vendor: Xilinx 
+---- \   \   \/     Version : 14.4
+----  \   \         Application : sch2hdl
+----  /   /         Filename : SCH.vhf
+---- /___/   /\     Timestamp : 10/12/2015 16:05:20
+---- \   \  /  \ 
+----  \___\/\___\ 
+----
+----Command: sch2hdl -intstyle ise -family xc9500xl -flat -suppress -vhdl D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.vhf -w D:/work/Projects/FPGA_prj/ProfileMeter/MainSch/SCH.sch
+----Design Name: SCH
+----Device: xc9500xl
+----Purpose:
+----    This vhdl netlist is translated from an ECS schematic. It can be 
+----    synthesized and simulated, but it should not be modified. 
+----
+--
+--library ieee;
+--use ieee.std_logic_1164.ALL;
+--use ieee.numeric_std.ALL;
+--library UNISIM;
+--use UNISIM.Vcomponents.ALL;
+--
+--entity M2_1_MXILINX_SCH is
+--   port ( D0 : in    std_logic; 
+--          D1 : in    std_logic; 
+--          S0 : in    std_logic; 
+--          O  : out   std_logic);
+--end M2_1_MXILINX_SCH;
+--
+--architecture BEHAVIORAL of M2_1_MXILINX_SCH is
+--   attribute BOX_TYPE   : string ;
+--   signal M0 : std_logic;
+--   signal M1 : std_logic;
+--   component AND2B1
+--      port ( I0 : in    std_logic; 
+--             I1 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of AND2B1 : component is "BLACK_BOX";
+--   
+--   component OR2
+--      port ( I0 : in    std_logic; 
+--             I1 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of OR2 : component is "BLACK_BOX";
+--   
+--   component AND2
+--      port ( I0 : in    std_logic; 
+--             I1 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of AND2 : component is "BLACK_BOX";
+--   
+--begin
+--   I_36_7 : AND2B1
+--      port map (I0=>S0,
+--                I1=>D0,
+--                O=>M0);
+--   
+--   I_36_8 : OR2
+--      port map (I0=>M1,
+--                I1=>M0,
+--                O=>O);
+--   
+--   I_36_9 : AND2
+--      port map (I0=>D1,
+--                I1=>S0,
+--                O=>M1);
+--   
+--end BEHAVIORAL;
+--
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.ALL;
+--use ieee.numeric_std.ALL;
+--library UNISIM;
+--use UNISIM.Vcomponents.ALL;
+--
+--entity SR4CLE_MXILINX_SCH is
+--   port ( C   : in    std_logic; 
+--          CE  : in    std_logic; 
+--          CLR : in    std_logic; 
+--          D0  : in    std_logic; 
+--          D1  : in    std_logic; 
+--          D2  : in    std_logic; 
+--          D3  : in    std_logic; 
+--          L   : in    std_logic; 
+--          SLI : in    std_logic; 
+--          Q0  : out   std_logic; 
+--          Q1  : out   std_logic; 
+--          Q2  : out   std_logic; 
+--          Q3  : out   std_logic);
+--end SR4CLE_MXILINX_SCH;
+--
+--architecture BEHAVIORAL of SR4CLE_MXILINX_SCH is
+--   attribute BOX_TYPE   : string ;
+--   attribute HU_SET     : string ;
+--   signal L_OR_CE  : std_logic;
+--   signal MD0      : std_logic;
+--   signal MD1      : std_logic;
+--   signal MD2      : std_logic;
+--   signal MD3      : std_logic;
+--   signal Q0_DUMMY : std_logic;
+--   signal Q1_DUMMY : std_logic;
+--   signal Q2_DUMMY : std_logic;
+--   component OR2
+--      port ( I0 : in    std_logic; 
+--             I1 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of OR2 : component is "BLACK_BOX";
+--   
+--   component M2_1_MXILINX_SCH
+--      port ( D0 : in    std_logic; 
+--             D1 : in    std_logic; 
+--             S0 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   
+--   component FDCE
+--      generic( INIT : bit :=  '0');
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             D   : in    std_logic; 
+--             Q   : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of FDCE : component is "BLACK_BOX";
+--   
+--   attribute HU_SET of MQ0 : label is "MQ0_0";
+--   attribute HU_SET of MQ1 : label is "MQ1_1";
+--   attribute HU_SET of MQ2 : label is "MQ2_2";
+--   attribute HU_SET of MQ3 : label is "MQ3_3";
+--begin
+--   Q0 <= Q0_DUMMY;
+--   Q1 <= Q1_DUMMY;
+--   Q2 <= Q2_DUMMY;
+--   I_36_51 : OR2
+--      port map (I0=>L,
+--                I1=>CE,
+--                O=>L_OR_CE);
+--   
+--   MQ0 : M2_1_MXILINX_SCH
+--      port map (D0=>SLI,
+--                D1=>D0,
+--                S0=>L,
+--                O=>MD0);
+--   
+--   MQ1 : M2_1_MXILINX_SCH
+--      port map (D0=>Q0_DUMMY,
+--                D1=>D1,
+--                S0=>L,
+--                O=>MD1);
+--   
+--   MQ2 : M2_1_MXILINX_SCH
+--      port map (D0=>Q1_DUMMY,
+--                D1=>D2,
+--                S0=>L,
+--                O=>MD2);
+--   
+--   MQ3 : M2_1_MXILINX_SCH
+--      port map (D0=>Q2_DUMMY,
+--                D1=>D3,
+--                S0=>L,
+--                O=>MD3);
+--   
+--   U0 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD0,
+--                Q=>Q0_DUMMY);
+--   
+--   U1 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD1,
+--                Q=>Q1_DUMMY);
+--   
+--   U2 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD2,
+--                Q=>Q2_DUMMY);
+--   
+--   U3 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD3,
+--                Q=>Q3);
+--   
+--end BEHAVIORAL;
+--
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.ALL;
+--use ieee.numeric_std.ALL;
+--library UNISIM;
+--use UNISIM.Vcomponents.ALL;
+--
+--entity SR16CLE_MXILINX_SCH is
+--   port ( C   : in    std_logic; 
+--          CE  : in    std_logic; 
+--          CLR : in    std_logic; 
+--          D   : in    std_logic_vector (15 downto 0); 
+--          L   : in    std_logic; 
+--          SLI : in    std_logic; 
+--          Q   : out   std_logic_vector (15 downto 0));
+--end SR16CLE_MXILINX_SCH;
+--
+--architecture BEHAVIORAL of SR16CLE_MXILINX_SCH is
+--   attribute BOX_TYPE   : string ;
+--   attribute HU_SET     : string ;
+--   signal L_OR_CE : std_logic;
+--   signal MD0     : std_logic;
+--   signal MD1     : std_logic;
+--   signal MD2     : std_logic;
+--   signal MD3     : std_logic;
+--   signal MD4     : std_logic;
+--   signal MD5     : std_logic;
+--   signal MD6     : std_logic;
+--   signal MD7     : std_logic;
+--   signal MD8     : std_logic;
+--   signal MD9     : std_logic;
+--   signal MD10    : std_logic;
+--   signal MD11    : std_logic;
+--   signal MD12    : std_logic;
+--   signal MD13    : std_logic;
+--   signal MD14    : std_logic;
+--   signal MD15    : std_logic;
+--   signal Q_DUMMY : std_logic_vector (15 downto 0);
+--   component OR2
+--      port ( I0 : in    std_logic; 
+--             I1 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of OR2 : component is "BLACK_BOX";
+--   
+--   component M2_1_MXILINX_SCH
+--      port ( D0 : in    std_logic; 
+--             D1 : in    std_logic; 
+--             S0 : in    std_logic; 
+--             O  : out   std_logic);
+--   end component;
+--   
+--   component FDCE
+--      generic( INIT : bit :=  '0');
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             D   : in    std_logic; 
+--             Q   : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of FDCE : component is "BLACK_BOX";
+--   
+--   attribute HU_SET of MQ0 : label is "MQ0_4";
+--   attribute HU_SET of MQ1 : label is "MQ1_5";
+--   attribute HU_SET of MQ2 : label is "MQ2_6";
+--   attribute HU_SET of MQ3 : label is "MQ3_7";
+--   attribute HU_SET of MQ4 : label is "MQ4_19";
+--   attribute HU_SET of MQ5 : label is "MQ5_18";
+--   attribute HU_SET of MQ6 : label is "MQ6_17";
+--   attribute HU_SET of MQ7 : label is "MQ7_16";
+--   attribute HU_SET of MQ8 : label is "MQ8_8";
+--   attribute HU_SET of MQ9 : label is "MQ9_9";
+--   attribute HU_SET of MQ10 : label is "MQ10_11";
+--   attribute HU_SET of MQ11 : label is "MQ11_10";
+--   attribute HU_SET of MQ12 : label is "MQ12_15";
+--   attribute HU_SET of MQ13 : label is "MQ13_14";
+--   attribute HU_SET of MQ14 : label is "MQ14_12";
+--   attribute HU_SET of MQ15 : label is "MQ15_13";
+--begin
+--   Q(15 downto 0) <= Q_DUMMY(15 downto 0);
+--   I_36_67 : OR2
+--      port map (I0=>L,
+--                I1=>CE,
+--                O=>L_OR_CE);
+--   
+--   MQ0 : M2_1_MXILINX_SCH
+--      port map (D0=>SLI,
+--                D1=>D(0),
+--                S0=>L,
+--                O=>MD0);
+--   
+--   MQ1 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(0),
+--                D1=>D(1),
+--                S0=>L,
+--                O=>MD1);
+--   
+--   MQ2 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(1),
+--                D1=>D(2),
+--                S0=>L,
+--                O=>MD2);
+--   
+--   MQ3 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(2),
+--                D1=>D(3),
+--                S0=>L,
+--                O=>MD3);
+--   
+--   MQ4 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(3),
+--                D1=>D(4),
+--                S0=>L,
+--                O=>MD4);
+--   
+--   MQ5 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(4),
+--                D1=>D(5),
+--                S0=>L,
+--                O=>MD5);
+--   
+--   MQ6 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(5),
+--                D1=>D(6),
+--                S0=>L,
+--                O=>MD6);
+--   
+--   MQ7 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(6),
+--                D1=>D(7),
+--                S0=>L,
+--                O=>MD7);
+--   
+--   MQ8 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(7),
+--                D1=>D(8),
+--                S0=>L,
+--                O=>MD8);
+--   
+--   MQ9 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(8),
+--                D1=>D(9),
+--                S0=>L,
+--                O=>MD9);
+--   
+--   MQ10 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(9),
+--                D1=>D(10),
+--                S0=>L,
+--                O=>MD10);
+--   
+--   MQ11 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(10),
+--                D1=>D(11),
+--                S0=>L,
+--                O=>MD11);
+--   
+--   MQ12 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(11),
+--                D1=>D(12),
+--                S0=>L,
+--                O=>MD12);
+--   
+--   MQ13 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(12),
+--                D1=>D(13),
+--                S0=>L,
+--                O=>MD13);
+--   
+--   MQ14 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(13),
+--                D1=>D(14),
+--                S0=>L,
+--                O=>MD14);
+--   
+--   MQ15 : M2_1_MXILINX_SCH
+--      port map (D0=>Q_DUMMY(14),
+--                D1=>D(15),
+--                S0=>L,
+--                O=>MD15);
+--   
+--   Q0 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD0,
+--                Q=>Q_DUMMY(0));
+--   
+--   Q1 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD1,
+--                Q=>Q_DUMMY(1));
+--   
+--   Q2 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD2,
+--                Q=>Q_DUMMY(2));
+--   
+--   Q3 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD3,
+--                Q=>Q_DUMMY(3));
+--   
+--   Q4 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD4,
+--                Q=>Q_DUMMY(4));
+--   
+--   Q5 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD5,
+--                Q=>Q_DUMMY(5));
+--   
+--   Q6 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD6,
+--                Q=>Q_DUMMY(6));
+--   
+--   Q7 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD7,
+--                Q=>Q_DUMMY(7));
+--   
+--   Q8 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD8,
+--                Q=>Q_DUMMY(8));
+--   
+--   Q9 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD9,
+--                Q=>Q_DUMMY(9));
+--   
+--   Q10 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD10,
+--                Q=>Q_DUMMY(10));
+--   
+--   Q11 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD11,
+--                Q=>Q_DUMMY(11));
+--   
+--   Q12 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD12,
+--                Q=>Q_DUMMY(12));
+--   
+--   Q13 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD13,
+--                Q=>Q_DUMMY(13));
+--   
+--   Q14 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD14,
+--                Q=>Q_DUMMY(14));
+--   
+--   Q15 : FDCE
+--      port map (C=>C,
+--                CE=>L_OR_CE,
+--                CLR=>CLR,
+--                D=>MD15,
+--                Q=>Q_DUMMY(15));
+--   
+--end BEHAVIORAL;
+--
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.ALL;
+--use ieee.numeric_std.ALL;
+--library UNISIM;
+--use UNISIM.Vcomponents.ALL;
+--
+--entity SR16CE_MXILINX_SCH is
+--   port ( C   : in    std_logic; 
+--          CE  : in    std_logic; 
+--          CLR : in    std_logic; 
+--          SLI : in    std_logic; 
+--          Q   : out   std_logic_vector (15 downto 0));
+--end SR16CE_MXILINX_SCH;
+--
+--architecture BEHAVIORAL of SR16CE_MXILINX_SCH is
+--   attribute BOX_TYPE   : string ;
+--   signal Q_DUMMY : std_logic_vector (15 downto 0);
+--   component FDCE
+--      generic( INIT : bit :=  '0');
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             D   : in    std_logic; 
+--             Q   : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of FDCE : component is "BLACK_BOX";
+--   
+--begin
+--   Q(15 downto 0) <= Q_DUMMY(15 downto 0);
+--   Q0 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>SLI,
+--                Q=>Q_DUMMY(0));
+--   
+--   Q1 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(0),
+--                Q=>Q_DUMMY(1));
+--   
+--   Q2 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(1),
+--                Q=>Q_DUMMY(2));
+--   
+--   Q3 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(2),
+--                Q=>Q_DUMMY(3));
+--   
+--   Q4 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(3),
+--                Q=>Q_DUMMY(4));
+--   
+--   Q5 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(4),
+--                Q=>Q_DUMMY(5));
+--   
+--   Q6 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(5),
+--                Q=>Q_DUMMY(6));
+--   
+--   Q7 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(6),
+--                Q=>Q_DUMMY(7));
+--   
+--   Q8 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(7),
+--                Q=>Q_DUMMY(8));
+--   
+--   Q9 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(8),
+--                Q=>Q_DUMMY(9));
+--   
+--   Q10 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(9),
+--                Q=>Q_DUMMY(10));
+--   
+--   Q11 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(10),
+--                Q=>Q_DUMMY(11));
+--   
+--   Q12 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(11),
+--                Q=>Q_DUMMY(12));
+--   
+--   Q13 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(12),
+--                Q=>Q_DUMMY(13));
+--   
+--   Q14 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(13),
+--                Q=>Q_DUMMY(14));
+--   
+--   Q15 : FDCE
+--      port map (C=>C,
+--                CE=>CE,
+--                CLR=>CLR,
+--                D=>Q_DUMMY(14),
+--                Q=>Q_DUMMY(15));
+--   
+--end BEHAVIORAL;
+--
+--
+--
+--library ieee;
+--use ieee.std_logic_1164.ALL;
+--use ieee.numeric_std.ALL;
+--library UNISIM;
+--use UNISIM.Vcomponents.ALL;
+--
+--entity SCH is
+--   port ( );
+--end SCH;
+--
+--architecture BEHAVIORAL of SCH is
+--   attribute HU_SET     : string ;
+--   attribute BOX_TYPE   : string ;
+--   signal XLXN_20                : std_logic_vector (15 downto 0);
+--   signal XLXN_21                : std_logic;
+--   signal XLXN_23                : std_logic;
+--   signal XLXN_26                : std_logic;
+--   signal XLXN_28                : std_logic;
+--   signal XLXN_30                : std_logic;
+--   signal XLXI_31_C_openSignal   : std_logic;
+--   signal XLXI_31_CE_openSignal  : std_logic;
+--   signal XLXI_31_CLR_openSignal : std_logic;
+--   signal XLXI_31_SLI_openSignal : std_logic;
+--   signal XLXI_36_C_openSignal   : std_logic;
+--   signal XLXI_36_CLR_openSignal : std_logic;
+--   signal XLXI_39_C_openSignal   : std_logic;
+--   signal XLXI_39_CLR_openSignal : std_logic;
+--   component SR16CE_MXILINX_SCH
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             SLI : in    std_logic; 
+--             Q   : out   std_logic_vector (15 downto 0));
+--   end component;
+--   
+--   component SR16CLE_MXILINX_SCH
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             D   : in    std_logic_vector (15 downto 0); 
+--             L   : in    std_logic; 
+--             SLI : in    std_logic; 
+--             Q   : out   std_logic_vector (15 downto 0));
+--   end component;
+--   
+--   component GND
+--      port ( G : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of GND : component is "BLACK_BOX";
+--   
+--   component VCC
+--      port ( P : out   std_logic);
+--   end component;
+--   attribute BOX_TYPE of VCC : component is "BLACK_BOX";
+--   
+--   component SR4CLE_MXILINX_SCH
+--      port ( C   : in    std_logic; 
+--             CE  : in    std_logic; 
+--             CLR : in    std_logic; 
+--             D0  : in    std_logic; 
+--             D1  : in    std_logic; 
+--             D2  : in    std_logic; 
+--             D3  : in    std_logic; 
+--             L   : in    std_logic; 
+--             SLI : in    std_logic; 
+--             Q0  : out   std_logic; 
+--             Q1  : out   std_logic; 
+--             Q2  : out   std_logic; 
+--             Q3  : out   std_logic);
+--   end component;
+--   
+--   attribute HU_SET of XLXI_31 : label is "XLXI_31_20";
+--   attribute HU_SET of XLXI_36 : label is "XLXI_36_21";
+--   attribute HU_SET of XLXI_39 : label is "XLXI_39_22";
+--begin
+--   XLXI_31 : SR16CE_MXILINX_SCH
+--      port map (C=>XLXI_31_C_openSignal,
+--                CE=>XLXI_31_CE_openSignal,
+--                CLR=>XLXI_31_CLR_openSignal,
+--                SLI=>XLXI_31_SLI_openSignal,
+--                Q(15 downto 0)=>XLXN_20(15 downto 0));
+--   
+--   XLXI_36 : SR16CLE_MXILINX_SCH
+--      port map (C=>XLXI_36_C_openSignal,
+--                CE=>XLXN_26,
+--                CLR=>XLXI_36_CLR_openSignal,
+--                D(15 downto 0)=>XLXN_20(15 downto 0),
+--                L=>XLXN_23,
+--                SLI=>XLXN_21,
+--                Q=>open);
+--   
+--   XLXI_37 : GND
+--      port map (G=>XLXN_30);
+--   
+--   XLXI_38 : VCC
+--      port map (P=>XLXN_28);
+--   
+--   XLXI_39 : SR4CLE_MXILINX_SCH
+--      port map (C=>XLXI_39_C_openSignal,
+--                CE=>XLXN_26,
+--                CLR=>XLXI_39_CLR_openSignal,
+--                D0=>XLXN_28,
+--                D1=>XLXN_30,
+--                D2=>XLXN_28,
+--                D3=>XLXN_30,
+--                L=>XLXN_23,
+--                SLI=>XLXN_30,
+--                Q0=>open,
+--                Q1=>open,
+--                Q2=>open,
+--                Q3=>XLXN_21);
+--   
+--end BEHAVIORAL;
+--
+--

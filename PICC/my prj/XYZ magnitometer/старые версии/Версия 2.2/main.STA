@@ -1,0 +1,86 @@
+
+ROM used:   4288 (13%)
+            4288 (13%) including unused fragments
+
+            2 Average locations per line
+            12 Average locations per statement
+
+RAM used:   105 (3%) at main() level
+            141 (4%) worst case
+
+Stack used: 10/31 worst case (7 in main + 3 for interrupts)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  358   142  41  main.c
+  116     0   0  XYZ Gaussmeter.h
+  526     0   0  C:\Program Files (x86)\PICC\Devices\18F25K80.h
+   37     0   0  C:\Program Files (x86)\PICC\Drivers\stdio.h
+  423   125  36  C:\Program Files (x86)\PICC\Drivers\string.h
+   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+  287    82  23  LCD_XYZ_Gaussmeter.c
+----- -----
+ 1807   349 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     38   0   1   485  7.8  @delay_ms1
+0     30   0   1   318  6.5  @delay_us1
+0     72   1   3   272  5.5  @I2C_READ_1
+0     72   1   1   351  7.0  @I2C_WRITE_1
+0     72   1   2   282  2.3  LCDWriteNibble
+0     44   1   2   140  2.2  LCDWriteData
+0     36   0   2   119  2.2  LCDCommand
+0     12   0   2    39  1.5  LCDSetCursor
+0     20   0   0    37  1.1  LCDClear
+0    108   1   0   354  1.9  LCDinit
+0      8   0   1    24  1.2  LCDPutCh
+0    512   6  14   898  5.3  LCDPutU16
+0    142   2  13   825  5.3  @DIV3232
+0     84   1  14             @MUL3232
+0     50   1   4   189  3.6  LCDPutS16
+0     10   0   1    24  1.2  LCDMsg
+0     48   1   2   123  1.6  LCDWelcome
+0     16   0   0   145  1.3  @const252
+0     32   0   2    24  1.2  @PSTRINGC_248
+0     18   0   0   123  1.6  @const254
+0     58   1   2   104  1.7  SensWrData
+0     68   1   0    78  1.6  SensInit
+0    932  11   4   974  4.3  SensRdAll
+0     18   0   0    78  1.6  @const316
+0    228   3  14   880  4.5  @DIVS3232
+0     86   1   5  1036  4.3  @SDTOF
+0    242   3  11   315  2.4  @MULFF
+0    248   3  12  1245  4.8  @PRINTF_L32D_9600_31766_31767
+0      4   0   0  1026  5.4  @const330
+0     56   1   4  1026  5.4  @SFTOI
+0      6   0   0  1026  5.4  @const333
+0      8   0   0  1824  4.9  @const334
+0      6   0   0   545  3.3  @const335
+0    414   5   2   970  5.3  int0
+0     30   0   0   176  2.7  UART_RXd_isr
+0    278   3   0   525  3.3  MAIN
+ Inline        0   961  5.3  @cinit1
+
+Program metrics:
+    Functions               36
+    Statements              349
+    Comments                615
+    Volume (V)              31454
+    Difficulty (D)          128.4
+    Effort to implement (E) 4039989
+    Time to implement (T)   62 hours, 21 minutes
+    Est Delivered Bugs (B)  8
+    Cyclomatic Complexity   33
+    Maintainability (MI)    105
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000B8   178  0  
+000BA-07FFE  4106  28476  
+
+
+

@@ -1,0 +1,25 @@
+Pin Freeze File:  version P.49d
+
+9572XL48 XC9572XL-7-CS48
+CLK S:PINA7
+RIGHT S:PINB2
+LEFT S:PING7
+STOP S:PINF2
+Q<0> S:PINB4
+Q<1> S:PINC6
+Q<2> S:PINF6
+Q<3> S:PING5
+
+
+;The remaining section of the .gyd file is for documentation purposes only.
+;It shows where your internal equations were placed in the last successful fit.
+
+PARTITION FB1_8 Q_int<1>
+PARTITION FB1_18 RUN
+PARTITION FB2_5 Q_int<3>
+PARTITION FB2_11 Q_int<2>
+PARTITION FB2_18 DIR
+PARTITION FB3_8 Q_int<0>
+
+
+

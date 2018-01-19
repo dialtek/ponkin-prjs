@@ -1,0 +1,66 @@
+
+ROM used:   2270 (3%)
+            2270 (3%) including unused fragments
+
+            2 Average locations per line
+            9 Average locations per statement
+
+RAM used:   161 (2%) at main() level
+            189 (2%) worst case
+
+Stack used: 5/31 worst case (5 in main + 0 for interrupts)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  252   108  43  main.c
+  470     0   0  ..\..\devices\24HJ128GP506.h
+  277     0   0  Termo3.h
+  293   144  57  LCD_16X4_Termo3.h
+----- -----
+ 1292   252 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     24   1   2             @delay_ms1
+0     68   1   1   370  1.9  LCDWriteNibble
+0     52   1   3   209  2.3  LCDWriteData
+0     46   1   3   163  2.3  LCDCommand
+0     20   0   3    39  1.5  LCDSetCursor
+0     16   0   0    37  1.1  LCDClear
+0    132   3   0   488  1.9  LCDInit
+0     10   0   1    24  1.2  LCDPutCh
+0    532  12  15  1641  5.4  LCDPutU32
+0     84   2   8             @DIV3232A
+0     48   1   8             @MUL3232
+0     10   0   1    24  1.2  LCDMsg
+0    108   2   3   147  1.2  LCDWelcome
+0     30   1   0             @const297
+0     30   1   0             @const298
+0     28   1   0             @const299
+0     28   1   0   197  1.8  OscSetup
+0    134   3   7   277  2.8  ADC_Init
+0    164   4   5   396  3.3  ADC_RDataC
+0    194   4   5   797  3.4  MAIN
+ Inline        0             @cinit1
+
+Program metrics:
+    Functions               14
+    Statements              252
+    Comments                275
+    Volume (V)              7553
+    Difficulty (D)          31.8
+    Effort to implement (E) 239847
+    Time to implement (T)   3 hours, 42 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   8
+    Maintainability (MI)    119
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-0FFFE  1758  63266  
+10000-157FE     0  22528  
+
+
+

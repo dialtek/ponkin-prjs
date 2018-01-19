@@ -1,0 +1,12 @@
+##	Buttons-------
+NET "BTN0" LOC = "B18";
+NET "BTN1" LOC = "D18";
+NET "BTN2" LOC = "E18";
+NET "BTN3" LOC = "H13";
+###	---------------------
+#
+#NET "CLK_50MHz" LOC = "B8";
+#
+##	Leds-------
+NET "LED0" LOC = "J14";
+NET "LED1" LOC = "J15";

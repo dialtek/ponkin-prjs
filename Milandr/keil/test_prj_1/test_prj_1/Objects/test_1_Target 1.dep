@@ -1,0 +1,52 @@
+Dependencies for Project 'test_1', Target 'Target 1': (DO NOT MODIFY !)
+F (.\config\MDR32F9Qx_board.h)(0x58690FCF)()
+F (.\main.c)(0x586955C4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\config -I .\libs-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-D__UVISION_VERSION="521" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\libs\MDR32Fx.h)(0x5290D814)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625E9A0)
+I (E:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x56BDD99C)
+I (.\libs\milkites_delay.h)(0x5869285A)
+I (.\libs\milkites_spi.h)(0x58693617)
+I (.\libs\MT_12864B_LCD.h)(0x58694FD3)
+F (.\libs\milkites_delay.h)(0x5869285A)()
+F (.\libs\milkites_spi.h)(0x58693617)()
+F (.\libs\milkites_uart.h)(0x56CF5B92)()
+F (.\libs\MT_12864B_LCD.h)(0x58694FD3)()
+F (RTE\Device\MDR1986BE92\RTE_Device.h)(0x55EC4AAE)()
+F (RTE\Device\MDR1986BE92\startup_MDR32F9Qx.s)(0x56BDD99C)(--cpu Cortex-M3 -g --apcs=interwork -IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc--pd "__UVISION_VERSION SETA 521" --pd "_RTE_ SETA 1" --pd "USE_MDR32F9Q2_Rev1 SETA 1"--list .\listings\startup_mdr32f9qx.lst --xref -o .\objects\startup_mdr32f9qx.o --depend .\objects\startup_mdr32f9qx.d)
+F (RTE\Device\MDR1986BE92\system_MDR32F9Qx.c)(0x57FFBD82)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\config -I .\libs-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-D__UVISION_VERSION="521" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\system_mdr32f9qx.o --omf_browse .\objects\system_mdr32f9qx.crf --depend .\objects\system_mdr32f9qx.d)
+I (.\libs\MDR32Fx.h)(0x5290D814)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625E9A0)
+I (E:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x56BDD99C)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config\MDR32F9Qx_config.h)(0x583FF004)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x56BDD99C)
+F (RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x56BDD99C)()
+F (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c)(0x56BDD99E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\config -I .\libs-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-D__UVISION_VERSION="521" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\mdr32f9qx_port.o --omf_browse .\objects\mdr32f9qx_port.crf --depend .\objects\mdr32f9qx_port.d)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config\MDR32F9Qx_config.h)(0x583FF004)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x56BDD99C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (.\libs\MDR32Fx.h)(0x5290D814)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625E9A0)
+I (E:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x56BDD99C)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x56BDD99C)
+F (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_rst_clk.c)(0x56BDD99E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork --split_sections -I .\config -I .\libs-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE-IE:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-D__UVISION_VERSION="521" -D_RTE_ -DUSE_MDR32F9Q2_Rev1-o .\objects\mdr32f9qx_rst_clk.o --omf_browse .\objects\mdr32f9qx_rst_clk.crf --depend .\objects\mdr32f9qx_rst_clk.d)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Config\MDR32F9Qx_config.h)(0x583FF004)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x56BDD99C)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
+I (.\libs\MDR32Fx.h)(0x5290D814)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm3.h)(0x5625FD5C)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmInstr.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\cmsis_armcc.h)(0x5625E9A0)
+I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cmFunc.h)(0x5625E9A0)
+I (E:\work\Projects\ponkin\Milandr\keil\test_prj_1\RTE\Device\MDR1986BE92\system_MDR32F9Qx.h)(0x56BDD99C)
+I (C:\Keil_v5\ARM\PACK\Milandr\MDR1986BExx\1.4.2\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x56BDD99C)

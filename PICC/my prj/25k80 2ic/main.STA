@@ -1,0 +1,43 @@
+
+ROM used: 86 (0%)
+          86 (0%) including unused fragments
+
+          0 Average locations per line
+          11 Average locations per statement
+
+RAM used: 4 (0%) at main() level
+          4 (0%) worst case
+
+Stack used: 0 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   86     8 100  main.c
+  526     0   0  ..\..\devices\18F25K80.h
+----- -----
+  612     8 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     82  48   0   160  3.1  main
+ Inline        0             @cinit1
+
+Program metrics:
+    Functions               1
+    Statements              8
+    Comments                130
+    Volume (V)              163
+    Difficulty (D)          2.9
+    Effort to implement (E) 474
+    Time to implement (T)   0 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    64
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-07FFE    82  32682  
+
+
+

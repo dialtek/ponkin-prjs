@@ -1,0 +1,31 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 
+par -w -intstyle ise -ol high -t 1 wiz_main_map.ncd wiz_main.ncd wiz_main.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml wiz_main.twx wiz_main.ncd -o wiz_main.twr wiz_main.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 
+par -w -intstyle ise -ol high -t 1 wiz_main_map.ncd wiz_main.ncd wiz_main.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml wiz_main.twx wiz_main.ncd -o wiz_main.twr wiz_main.pcf 
+bitgen -intstyle ise -f wiz_main.ut wiz_main.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wiz_imp.ucf -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 
+par -w -intstyle ise -ol high -t 1 wiz_main_map.ncd wiz_main.ncd wiz_main.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml wiz_main.twx wiz_main.ncd -o wiz_main.twr wiz_main.pcf -ucf wiz_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wiz_imp.ucf -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 
+par -w -intstyle ise -ol high -t 1 wiz_main_map.ncd wiz_main.ncd wiz_main.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml wiz_main.twx wiz_main.ncd -o wiz_main.twr wiz_main.pcf -ucf wiz_imp.ucf 
+bitgen -intstyle ise -f wiz_main.ut wiz_main.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/wizard_test/wiz/wiz_main.xst" -ofn "C:/Xilinx/test/wizard_test/wiz/wiz_main.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wiz_imp.ucf -p xc3s500e-fg320-4 wiz_main.ngc wiz_main.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 

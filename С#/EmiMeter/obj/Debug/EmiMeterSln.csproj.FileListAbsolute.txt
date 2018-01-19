@@ -1,0 +1,62 @@
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe.config
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.pdb
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csprojResolveAssemblyReference.cache
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csproj.ResolveComReference.cache
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Form1.resources
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Properties.Resources.resources
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csproj.GenerateResource.Cache
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.exe
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.pdb
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\bin\Debug\ZedGraph.dll
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Form_intensChart.resources
+E:\дими\Prj\Electron collector\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.FormBarGraph.resources
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe.config
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csproj.ResolveComReference.cache
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.exe
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.pdb
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.exe
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollecorSln.pdb
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\bin\Debug\ZedGraph.dll
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csprojResolveAssemblyReference.cache
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Form1.resources
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.FormBarGraph.resources
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Form_intensChart.resources
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.Properties.Resources.resources
+E:\work\Projects\С#\EmiMeter\Electron collector\ElectronCollecorSln\obj\Debug\EmiMeterSln.csproj.GenerateResource.Cache
+E:\work\Projects\С#\EmiMeter\bin\Debug\ElectronCollecorSln.exe.config
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.csproj.ResolveComReference.cache
+E:\work\Projects\С#\EmiMeter\obj\Debug\ElectronCollecorSln.exe
+E:\work\Projects\С#\EmiMeter\obj\Debug\ElectronCollecorSln.pdb
+E:\work\Projects\С#\EmiMeter\bin\Debug\ElectronCollecorSln.exe
+E:\work\Projects\С#\EmiMeter\bin\Debug\ElectronCollecorSln.pdb
+E:\work\Projects\С#\EmiMeter\bin\Debug\ZedGraph.dll
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.csprojResolveAssemblyReference.cache
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.Form1.resources
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.FormBarGraph.resources
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.Form_intensChart.resources
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.Properties.Resources.resources
+E:\work\Projects\С#\EmiMeter\obj\Debug\EmiMeterSln.csproj.GenerateResource.Cache
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.csproj.ResolveComReference.cache
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\ZedGraph.dll
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.csprojResolveAssemblyReference.cache
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.Form1.resources
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.FormBarGraph.resources
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.Form_intensChart.resources
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.Properties.Resources.resources
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\EmiMeterSln.csproj.GenerateResource.Cache
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\BPM V1-42.exe.config
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\BPM V1-42.exe
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\BPM V1-42.pdb
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\BPM V1-42.exe
+E:\work\Projects\ponkin\С#\EmiMeter\obj\Debug\BPM V1-42.pdb
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\ReactiveSockets.dll
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Core.dll
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Interfaces.dll
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Linq.dll
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.PlatformServices.dll
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\ReactiveSockets.xml
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Core.xml
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Interfaces.xml
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.Linq.xml
+E:\work\Projects\ponkin\С#\EmiMeter\bin\Debug\System.Reactive.PlatformServices.xml

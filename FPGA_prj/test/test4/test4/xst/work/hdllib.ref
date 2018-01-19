@@ -1,0 +1,5 @@
+EN segm_disp NULL C:/Xilinx/test/test3/anew/anew.vhd sub00/vhpl03 1375786878
+EN test_1_sec NULL C:/Xilinx/test/test4/test4/test.vhd sub00/vhpl02 1375784901
+AR segm_disp beh C:/Xilinx/test/test3/anew/anew.vhd sub00/vhpl04 1375786879
+AR test beh C:/Xilinx/test/test4/test4/test.vhd sub00/vhpl01 1375786877
+EN test NULL C:/Xilinx/test/test4/test4/test.vhd sub00/vhpl00 1375786876

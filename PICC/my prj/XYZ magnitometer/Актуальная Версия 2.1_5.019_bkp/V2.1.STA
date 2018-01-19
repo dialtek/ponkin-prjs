@@ -1,0 +1,128 @@
+
+ROM used:   7964/32768 (24%)
+            7964/32768 (24%) including unused fragments
+
+            3.1 Average locations per line
+            13.4 Average locations per statement
+
+RAM used:   169/3648 (5%) at main() level
+            205/3648 (6%) worst case
+
+Stack used: 10 worst case (7 in main + 3 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  873   355  60  V2.1.c
+   94     0   0  V2.1.h
+  907     0   0  C:\Program Files (x86)\PICC\Devices\18F25K80.h
+   37     0   0  C:\Program Files (x86)\PICC\Drivers\stdio.h
+  423   125  21  C:\Program Files (x86)\PICC\Drivers\string.h
+   32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
+   28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
+  203   114  19  LCD for V2.1.c
+----- -----
+ 2597   594 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40   0    1             @delay_ms1
+0     30   0    1             @delay_us1
+0     72   0    3             @I2C_READ_1
+0     72   0    1             @I2C_WRITE_1
+0     72   0    2   282  2.3  LCDWriteNibble
+0     44   0    2   140  2.2  LCDWriteData
+0     38   0    2   119  2.2  LCDCommand
+0     12   0    2    39  1.5  LCDSetCursor
+0     18   0    0    37  1.1  LCDClear
+0    116   1    0   354  1.9  LCDinit
+0      8   0    1    24  1.2  LCDPutCh
+0    532   3   14   959  5.3  LCDPutU16
+0    142   1   13             @DIV3232
+0     84   1   14             @MUL3232
+0    514   3   14   928  5.3  LCDPutU16n
+0     50   0    4   189  3.6  LCDPutS16
+0     10   0    1    24  1.2  LCDMsg
+0     80   1    2   214  1.8  LCDWelcome
+0     14   0    0             @const855
+0     32   0    2             @PSTRINGC_851
+0     14   0    0             @const857
+0     18   0    0             @const858
+0     18   0    0             @const859
+0     58   0    2   104  1.7  SensWrData
+0     72   0    0    78  1.6  SensInit
+0   1336   8    4  1303  4.7  SensRdAll
+0     18   0    0             @const939
+0    228   1   14             @DIVS3232
+0     86   1    5             @SDTOF
+0    242   2   11             @MULFF
+0     62   0    5             @FTOSD
+0    252   2   12             @PRINTF_L32D_9600_31766_31767
+0      6   0    0             @const955
+0     56   0    4             @SFTOI
+0      6   0    0             @const958
+0      6   0    0             @const959
+0      6   0    0             @const960
+0      6   0    0             @const961
+0      6   0    0             @const962
+0    112   1    8   373  6.5  CRC16
+0    218   1    7   449  4.3  rom_rd_byte
+0     64   0   11   287  4.6  rom_rd_float
+0     48   0    5   196  3.6  rom_rd_CRC16
+0    200   1    1   625  5.2  rom_rd_sens_data
+0     16   0    0             @const1002
+0    432   3    2  1107  5.8  int0
+0     30   0    0   176  2.7  UART_RXd_isr
+0     18   0    0    56  1.6  INT_TIMER0_isr
+0   1772  11    3  4919  7.9  MAIN
+0     18   0    0             @const1011
+0     18   0    0             @const1012
+0     18   0    0             @const1013
+0     18   0    0             @const1014
+0     12   0    0             @const1015
+0     14   0    0             @const1016
+0      6   0    0             @const1017
+0      6   0    0             @const1018
+0      6   0    0             @const1019
+0     18   0    0             @const1020
+0     14   0    0             @const1021
+0     16   0    0             @const1022
+0     16   0    0             @const1023
+0     16   0    0             @const1024
+0     16   0    0             @const1025
+0     12   0    0             @const1026
+0     36   0    2             @PSTRINGC_9600_31766_31767
+0     18   0    0             @const1029
+0     18   0    0             @const1030
+0     18   0    0             @const1031
+0     18   0    0             @const1032
+0     12   0    0             @const1033
+0     14   0    0             @const1034
+0      6   0    0             @const1035
+0      6   0    0             @const1036
+0      6   0    0             @const1037
+0     18   0    0             @const1038
+0     14   0    0             @const1039
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               24
+    Statements              594
+    Comments                709
+    Volume (V)              20581
+    Difficulty (D)          78.0
+    Effort to implement (E) 1606144
+    Time to implement (T)   24 hours, 47 minutes
+    Est Delivered Bugs (B)  5
+    Cyclomatic Complexity   28
+    Maintainability (MI)    126
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-000AC   166  0  
+000AE-07FFE  7794  24800  
+
+
+

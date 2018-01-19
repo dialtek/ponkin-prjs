@@ -1,0 +1,9 @@
+V3 3
+FL D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd 2014/05/20.15:02:03 P.49d
+EN work/FPGA_SPI_module 1400583725 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd \
+      PB ieee/std_logic_1164 1354696159 PB ieee/std_logic_arith 1354696160 \
+      PB ieee/STD_LOGIC_UNSIGNED 1354696162
+AR work/FPGA_SPI_module/Behave 1400583726 \
+      FL D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd \
+      EN work/FPGA_SPI_module 1400583725

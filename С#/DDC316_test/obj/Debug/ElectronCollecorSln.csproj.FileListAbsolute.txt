@@ -1,0 +1,14 @@
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.Form1.resources
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.Properties.Resources.resources
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csproj.GenerateResource.Cache
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollecorSln.csproj.ResolveComReference.cache
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollector.exe.config
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollector.exe
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\bin\Debug\ElectronCollector.pdb
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollector.exe
+D:\work\Projects\С#\Electron collector\ElectronCollecorSln\obj\Debug\ElectronCollector.pdb
+D:\work\Projects\С#\DDC316_test\bin\Debug\ElectronCollector.exe.config
+D:\work\Projects\С#\DDC316_test\obj\Debug\ElectronCollecorSln.csproj.ResolveComReference.cache
+D:\work\Projects\С#\DDC316_test\obj\Debug\ElectronCollector.exe
+D:\work\Projects\С#\DDC316_test\obj\Debug\ElectronCollector.pdb

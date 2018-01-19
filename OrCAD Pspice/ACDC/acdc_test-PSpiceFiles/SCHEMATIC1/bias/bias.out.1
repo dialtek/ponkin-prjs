@@ -1,0 +1,57 @@
+
+**** 11/20/16 15:19:03 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\D\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ACDC_TEST
+X_TX2         N14453 N14461 N14457 N14445 N14449 XFRM_NONLIN/CT-PRI PARAMS: 
++  LP1_TURNS=10 LP2_TURNS=10 LS_TURNS=200 COUPLING=.99 RP_VALUE=0.9 RS_VALUE=0.9
+V_V1         N14445 N14449  AC 0
++SIN 0 220 50 0 0 0
+R_R1         0 N14449  100M TC=0,0 
+R_R2         N14445 0  100M TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14453.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14457.
+
+ERROR(ORPSIM-15142): Node X_TX2.7 is floating
+
+ERROR(ORPSIM-15142): Node N14461 is floating
+
+ERROR(ORPSIM-15142): Node X_TX2.8 is floating
+
+ERROR(ORPSIM-15142): Node N14453 is floating
+
+ERROR(ORPSIM-15142): Node N14457 is floating
+

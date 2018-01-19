@@ -1,0 +1,1241 @@
+Release 14.2 - xst P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: wave_gen.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "wave_gen.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "wave_gen"
+Output Format                      : NGC
+Target Device                      : xc6slx45t-2-fgg484
+
+---- Source Options
+Top Module Name                    : wave_gen
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : NO
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : NO
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\char_fifo.v" into library work
+Parsing module <char_fifo>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\clk_core.v" into library work
+Parsing module <clk_core>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\samp_ram.v" into library work
+Parsing module <samp_ram>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\meta_harden.v" into library work
+Parsing module <meta_harden>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_tx_ctl.v" into library work
+Parsing module <uart_tx_ctl>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_rx_ctl.v" into library work
+Parsing module <uart_rx_ctl>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v" into library work
+Parsing module <uart_baud_gen>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" into library work
+Parsing module <to_bcd>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\reset_bridge.v" into library work
+Parsing module <reset_bridge>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\out_ddr_flop.v" into library work
+Parsing module <out_ddr_flop>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\debouncer.v" into library work
+Parsing module <debouncer>.
+Parsing verilog file "clogb2.txt" included at line 38.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clk_div.v" into library work
+Parsing module <clk_div>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_tx.v" into library work
+Parsing module <uart_tx>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_rx.v" into library work
+Parsing module <uart_rx>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\samp_gen.v" into library work
+Parsing module <samp_gen>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\rst_gen.v" into library work
+Parsing module <rst_gen>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" into library work
+Parsing module <resp_gen>.
+Parsing verilog file "clogb2.txt" included at line 69.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\lb_ctl.v" into library work
+Parsing module <lb_ctl>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\dac_spi.v" into library work
+Parsing module <dac_spi>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" into library work
+Parsing module <cmd_parse>.
+Parsing verilog file "clogb2.txt" included at line 128.
+INFO:HDLCompiler:693 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" Line 86. parameter declaration becomes local in cmd_parse with formal parameter declaration list
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clk_gen.v" into library work
+Parsing module <clk_gen>.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clkx_bus.v" into library work
+Parsing module <clkx_bus>.
+Parsing verilog file "clogb2.txt" included at line 48.
+Analyzing Verilog file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" into library work
+Parsing module <wave_gen>.
+Parsing VHDL file "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\clk_core\example_design\clk_core_exdes.vhd" into library work
+Parsing entity <clk_core_exdes>.
+Parsing architecture <xilinx> of entity <clk_core_exdes>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <wave_gen>.
+
+Elaborating module <IBUF>.
+
+Elaborating module <OBUF>.
+
+Elaborating module <clk_gen>.
+
+Elaborating module <clk_div>.
+
+Elaborating module <clk_core>.
+
+Elaborating module <IBUFG>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=2.0,CLKFX_DIVIDE=2,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="FALSE",CLKIN_PERIOD=37.037,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\clk_core.v" Line 132: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <BUFGCE>.
+
+Elaborating module <rst_gen>.
+
+Elaborating module <reset_bridge>.
+
+Elaborating module <uart_rx(BAUD_RATE=115200,CLOCK_RATE=27000000)>.
+
+Elaborating module <meta_harden>.
+
+Elaborating module <uart_baud_gen(BAUD_RATE=115200,CLOCK_RATE=27000000)>.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v" Line 110: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v" Line 122: Result of 5-bit expression is truncated to fit in 4-bit target.
+
+Elaborating module <uart_rx_ctl>.
+
+Elaborating module <cmd_parse(PW=3,NSAMP_WID=10)>.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" Line 283: Result of 8-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v" Line 359: Result of 32-bit expression is truncated to fit in 28-bit target.
+
+Elaborating module <samp_ram>.
+
+Elaborating module <resp_gen>.
+
+Elaborating module <to_bcd>.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 63: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 65: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 67: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 69: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 71: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 73: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 75: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 83: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 85: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 87: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 89: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 91: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 93: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 95: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 97: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 99: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 101: Result of 14-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 109: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 111: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 113: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 115: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 117: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 119: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 121: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 123: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 125: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 127: Result of 10-bit expression is truncated to fit in 7-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 135: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 137: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 139: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 141: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 143: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 145: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 147: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 149: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 151: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v" Line 153: Result of 7-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 151: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1309 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 213: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+WARNING:HDLCompiler:1309 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 222: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+WARNING:HDLCompiler:1309 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v" Line 232: Found full_case directive. Use of full_case directives may cause differences between RTL and post-synthesis simulation
+
+Elaborating module <char_fifo>.
+WARNING:HDLCompiler:1499 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\char_fifo.v" Line 40: Empty module <char_fifo> remains a black box.
+
+Elaborating module <uart_tx(BAUD_RATE=115200,CLOCK_RATE=27000000)>.
+
+Elaborating module <uart_tx_ctl>.
+
+Elaborating module <lb_ctl>.
+
+Elaborating module <debouncer(FILTER=200000)>.
+
+Elaborating module <clkx_bus(PW=3,WIDTH=11)>.
+WARNING:HDLCompiler:1127 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 388: Assignment to nsamp_new_clk_tx ignored, since the identifier is never used
+
+Elaborating module <clkx_bus(PW=3,WIDTH=16)>.
+WARNING:HDLCompiler:1127 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 402: Assignment to pre_new_clk_tx ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" Line 416: Assignment to spd_new_clk_tx ignored, since the identifier is never used
+
+Elaborating module <samp_gen(NSAMP_WID=10)>.
+
+Elaborating module <dac_spi>.
+
+Elaborating module <out_ddr_flop>.
+
+Elaborating module <ODDR2(DDR_ALIGNMENT="NONE",INIT=1'b0,SRTYPE="SYNC")>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <wave_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v".
+        BAUD_RATE = 115200
+        CLOCK_RATE_RX = 27000000
+        CLOCK_RATE_TX = 27000000
+        PW = 3
+        NSAMP_WID = 10
+INFO:Xst:3210 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" line 238: Output port <frm_err> of the instance <uart_rx_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" line 380: Output port <bus_new_dst> of the instance <clkx_nsamp_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" line 394: Output port <bus_new_dst> of the instance <clkx_pre_i0> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\wave_gen.v" line 408: Output port <bus_new_dst> of the instance <clkx_spd_i0> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <wave_gen> synthesized.
+
+Synthesizing Unit <clk_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clk_gen.v".
+    Summary:
+	no macro.
+Unit <clk_gen> synthesized.
+
+Synthesizing Unit <clk_div>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clk_div.v".
+    Found 16-bit register for signal <cnt>.
+    Found 1-bit register for signal <en_clk_samp>.
+    Found 16-bit subtractor for signal <pre_clk_tx[15]_GND_5_o_sub_4_OUT> created at line 76.
+    Found 16-bit subtractor for signal <cnt[15]_GND_5_o_sub_5_OUT> created at line 80.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <clk_div> synthesized.
+
+Synthesizing Unit <clk_core>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\ipcore_dir\clk_core.v".
+    Summary:
+	no macro.
+Unit <clk_core> synthesized.
+
+Synthesizing Unit <rst_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\rst_gen.v".
+    Summary:
+	no macro.
+Unit <rst_gen> synthesized.
+
+Synthesizing Unit <reset_bridge>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\reset_bridge.v".
+    Found 1-bit register for signal <rst_dst>.
+    Found 1-bit register for signal <rst_meta>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <reset_bridge> synthesized.
+
+Synthesizing Unit <uart_rx>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_rx.v".
+        BAUD_RATE = 115200
+        CLOCK_RATE = 27000000
+    Summary:
+	no macro.
+Unit <uart_rx> synthesized.
+
+Synthesizing Unit <meta_harden>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\meta_harden.v".
+    Found 1-bit register for signal <signal_dst>.
+    Found 1-bit register for signal <signal_meta>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <meta_harden> synthesized.
+
+Synthesizing Unit <uart_baud_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_baud_gen.v".
+        BAUD_RATE = 115200
+        CLOCK_RATE = 27000000
+    Found 1-bit register for signal <baud_x16_en_reg>.
+    Found 4-bit register for signal <internal_count>.
+    Found 4-bit subtractor for signal <internal_count_m_1> created at line 100.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   5 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <uart_baud_gen> synthesized.
+
+Synthesizing Unit <uart_rx_ctl>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_rx_ctl.v".
+    Found 4-bit register for signal <over_sample_cnt>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 8-bit register for signal <rx_data>.
+    Found 1-bit register for signal <rx_data_rdy>.
+    Found 1-bit register for signal <frm_err>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk_rx (rising_edge)                           |
+    | Reset              | rst_clk_rx (positive)                          |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit subtractor for signal <over_sample_cnt[3]_GND_17_o_sub_12_OUT> created at line 173.
+    Found 3-bit adder for signal <bit_cnt[2]_GND_17_o_add_25_OUT> created at line 213.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred  11 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx_ctl> synthesized.
+
+Synthesizing Unit <cmd_parse>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\cmd_parse.v".
+        NSAMP_WID = 10
+        PW = 3
+    Found 1-bit register for signal <send_char_val>.
+    Found 8-bit register for signal <send_char>.
+    Found 3-bit register for signal <state>.
+    Found 7-bit register for signal <cur_cmd>.
+    Found 28-bit register for signal <arg_sav>.
+    Found 3-bit register for signal <arg_cnt>.
+    Found 1-bit register for signal <send_resp_val>.
+    Found 2-bit register for signal <send_resp_type>.
+    Found 16-bit register for signal <send_resp_data>.
+    Found 1-bit register for signal <cmd_samp_ram_we>.
+    Found 10-bit register for signal <cmd_samp_ram_addr>.
+    Found 16-bit register for signal <cmd_samp_ram_din>.
+    Found 11-bit register for signal <nsamp>.
+    Found 1-bit register for signal <nsamp_new>.
+    Found 16-bit register for signal <speed>.
+    Found 1-bit register for signal <speed_new>.
+    Found 16-bit register for signal <prescale>.
+    Found 1-bit register for signal <prescale_new>.
+    Found 2-bit register for signal <samp_gen_go_ctr>.
+    Found 1-bit register for signal <samp_gen_go_cont>.
+    Found 1-bit register for signal <samp_gen_go_clk_rx>.
+    Found 1-bit register for signal <old_rx_data_rdy>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 26                                             |
+    | Inputs             | 15                                             |
+    | Outputs            | 5                                              |
+    | Clock              | clk_rx (rising_edge)                           |
+    | Reset              | rst_clk_rx (positive)                          |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit subtractor for signal <arg_cnt[2]_GND_18_o_sub_43_OUT> created at line 361.
+    Found 2-bit subtractor for signal <samp_gen_go_ctr[1]_GND_18_o_sub_154_OUT> created at line 543.
+    Found 4-bit adder for signal <rx_data[3]_PWR_20_o_add_11_OUT> created at line 185.
+    Found 7-bit comparator lessequal for signal <n0011> created at line 176
+    Found 7-bit comparator lessequal for signal <n0013> created at line 176
+    Found 7-bit comparator lessequal for signal <n0016> created at line 181
+    Found 7-bit comparator lessequal for signal <n0018> created at line 181
+    Found 7-bit comparator lessequal for signal <n0021> created at line 182
+    Found 7-bit comparator lessequal for signal <n0023> created at line 182
+    Found 16-bit comparator greater for signal <n0062> created at line 374
+    Found 16-bit comparator greater for signal <n0067> created at line 396
+    Found 16-bit comparator greater for signal <n0073> created at line 413
+    Found 16-bit comparator lessequal for signal <n0075> created at line 414
+    Found 16-bit comparator greater for signal <n0080> created at line 435
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 144 D-type flip-flop(s).
+	inferred  11 Comparator(s).
+	inferred  39 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <cmd_parse> synthesized.
+
+Synthesizing Unit <resp_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\resp_gen.v".
+    Found 4-bit register for signal <char_cnt>.
+    Found 1-bit register for signal <send_resp_done>.
+    Found 1-bit register for signal <state>.
+    Found 4-bit subtractor for signal <str_to_send_len[3]_GND_20_o_sub_9_OUT> created at line 181.
+    Found 4-bit adder for signal <char_cnt[3]_GND_20_o_add_10_OUT> created at line 189.
+    Found 7-bit adder for signal <n0160[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0125> created at line 85.
+    Found 7-bit adder for signal <n0164[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0129> created at line 85.
+    Found 7-bit adder for signal <n0168[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0133> created at line 85.
+    Found 7-bit adder for signal <n0172[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0137> created at line 85.
+    Found 7-bit adder for signal <n0176[6:0]> created at line 83.
+    Found 7-bit adder for signal <n0178[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0142> created at line 85.
+    Found 7-bit adder for signal <n0182[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0146> created at line 85.
+    Found 7-bit adder for signal <n0186[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0150> created at line 85.
+    Found 7-bit adder for signal <n0190[6:0]> created at line 83.
+    Found 8-bit adder for signal <n0154> created at line 85.
+    Found 8-bit 12-to-1 multiplexer for signal <char_cnt[3]_X_19_o_wide_mux_65_OUT> created at line 232.
+    Found 4-bit comparator equal for signal <char_cnt[3]_str_to_send_len[3]_equal_10_o> created at line 181
+    Found 4-bit comparator greater for signal <send_resp_data[15]_PWR_24_o_LessThan_33_o> created at line 82
+    Found 4-bit comparator greater for signal <send_resp_data[11]_PWR_24_o_LessThan_37_o> created at line 82
+    Found 4-bit comparator greater for signal <send_resp_data[7]_PWR_24_o_LessThan_41_o> created at line 82
+    Found 4-bit comparator greater for signal <send_resp_data[3]_PWR_24_o_LessThan_45_o> created at line 82
+    Found 4-bit comparator greater for signal <bcd_out[15]_PWR_24_o_LessThan_50_o> created at line 82
+    Found 4-bit comparator greater for signal <bcd_out[11]_PWR_24_o_LessThan_54_o> created at line 82
+    Found 4-bit comparator greater for signal <bcd_out[7]_PWR_24_o_LessThan_58_o> created at line 82
+    Found 4-bit comparator greater for signal <bcd_out[3]_PWR_24_o_LessThan_62_o> created at line 82
+    Summary:
+	inferred  19 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   9 Comparator(s).
+	inferred  14 Multiplexer(s).
+Unit <resp_gen> synthesized.
+
+Synthesizing Unit <to_bcd>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\to_bcd.v".
+    Found 1-bit register for signal <val_d1>.
+    Found 19-bit register for signal <bcd_out>.
+    Found 1-bit register for signal <old_value_val>.
+    Found 14-bit subtractor for signal <value[15]_PWR_25_o_sub_2_OUT<13:0>> created at line 63.
+    Found 14-bit subtractor for signal <value[15]_PWR_25_o_sub_4_OUT<13:0>> created at line 65.
+    Found 14-bit subtractor for signal <value[15]_PWR_25_o_sub_6_OUT<13:0>> created at line 67.
+    Found 14-bit subtractor for signal <value[15]_GND_21_o_sub_8_OUT<13:0>> created at line 69.
+    Found 14-bit subtractor for signal <value[15]_GND_21_o_sub_10_OUT<13:0>> created at line 71.
+    Found 14-bit subtractor for signal <value[15]_GND_21_o_sub_12_OUT<13:0>> created at line 73.
+    Found 10-bit subtractor for signal <rmn4[13]_PWR_25_o_sub_26_OUT<9:0>> created at line 83.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_28_OUT<9:0>> created at line 85.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_30_OUT<9:0>> created at line 87.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_32_OUT<9:0>> created at line 89.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_34_OUT<9:0>> created at line 91.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_36_OUT<9:0>> created at line 93.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_38_OUT<9:0>> created at line 95.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_40_OUT<9:0>> created at line 97.
+    Found 10-bit subtractor for signal <rmn4[13]_GND_21_o_sub_42_OUT<9:0>> created at line 99.
+    Found 7-bit subtractor for signal <rmn3[9]_PWR_25_o_sub_62_OUT<6:0>> created at line 109.
+    Found 7-bit subtractor for signal <rmn3[9]_PWR_25_o_sub_64_OUT<6:0>> created at line 111.
+    Found 7-bit subtractor for signal <rmn3[9]_PWR_25_o_sub_66_OUT<6:0>> created at line 113.
+    Found 7-bit subtractor for signal <rmn3[9]_PWR_25_o_sub_68_OUT<6:0>> created at line 115.
+    Found 7-bit subtractor for signal <rmn3[9]_GND_21_o_sub_70_OUT<6:0>> created at line 117.
+    Found 7-bit subtractor for signal <rmn3[9]_GND_21_o_sub_72_OUT<6:0>> created at line 119.
+    Found 7-bit subtractor for signal <rmn3[9]_GND_21_o_sub_74_OUT<6:0>> created at line 121.
+    Found 7-bit subtractor for signal <rmn3[9]_GND_21_o_sub_76_OUT<6:0>> created at line 123.
+    Found 7-bit subtractor for signal <rmn3[9]_GND_21_o_sub_78_OUT<6:0>> created at line 125.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_114_OUT<3:0>> created at line 151.
+    Found 4-bit subtractor for signal <rmn2[6]_PWR_25_o_sub_102_OUT<3:0>> created at line 139.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_104_OUT<3:0>> created at line 141.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_106_OUT<3:0>> created at line 143.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_108_OUT<3:0>> created at line 145.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_110_OUT<3:0>> created at line 147.
+    Found 4-bit subtractor for signal <rmn2[6]_GND_21_o_sub_112_OUT<3:0>> created at line 149.
+    Found 16-bit comparator lessequal for signal <n0000> created at line 62
+    Found 16-bit comparator lessequal for signal <n0003> created at line 64
+    Found 16-bit comparator lessequal for signal <n0006> created at line 66
+    Found 16-bit comparator lessequal for signal <n0009> created at line 68
+    Found 16-bit comparator lessequal for signal <n0012> created at line 70
+    Found 16-bit comparator lessequal for signal <n0015> created at line 72
+    Found 14-bit comparator lessequal for signal <n0030> created at line 82
+    Found 14-bit comparator lessequal for signal <n0033> created at line 84
+    Found 14-bit comparator lessequal for signal <n0036> created at line 86
+    Found 14-bit comparator lessequal for signal <n0039> created at line 88
+    Found 14-bit comparator lessequal for signal <n0042> created at line 90
+    Found 14-bit comparator lessequal for signal <n0045> created at line 92
+    Found 14-bit comparator lessequal for signal <n0048> created at line 94
+    Found 14-bit comparator lessequal for signal <n0051> created at line 96
+    Found 14-bit comparator lessequal for signal <n0054> created at line 98
+    Found 10-bit comparator lessequal for signal <n0075> created at line 108
+    Found 10-bit comparator lessequal for signal <n0078> created at line 110
+    Found 10-bit comparator lessequal for signal <n0081> created at line 112
+    Found 10-bit comparator lessequal for signal <n0084> created at line 114
+    Found 10-bit comparator lessequal for signal <n0087> created at line 116
+    Found 10-bit comparator lessequal for signal <n0090> created at line 118
+    Found 10-bit comparator lessequal for signal <n0093> created at line 120
+    Found 10-bit comparator lessequal for signal <n0096> created at line 122
+    Found 10-bit comparator lessequal for signal <n0099> created at line 124
+    Found 7-bit comparator lessequal for signal <n0120> created at line 134
+    Found 7-bit comparator lessequal for signal <n0123> created at line 136
+    Found 7-bit comparator lessequal for signal <n0126> created at line 138
+    Found 7-bit comparator lessequal for signal <n0129> created at line 140
+    Found 7-bit comparator lessequal for signal <n0132> created at line 142
+    Found 7-bit comparator lessequal for signal <n0135> created at line 144
+    Found 7-bit comparator lessequal for signal <n0138> created at line 146
+    Found 7-bit comparator lessequal for signal <n0141> created at line 148
+    Found 7-bit comparator lessequal for signal <n0144> created at line 150
+    Summary:
+	inferred  31 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred  33 Comparator(s).
+	inferred  62 Multiplexer(s).
+Unit <to_bcd> synthesized.
+
+Synthesizing Unit <uart_tx>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_tx.v".
+        BAUD_RATE = 115200
+        CLOCK_RATE = 27000000
+    Summary:
+	no macro.
+Unit <uart_tx> synthesized.
+
+Synthesizing Unit <uart_tx_ctl>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\uart_tx_ctl.v".
+    Found 1-bit register for signal <char_fifo_pop>.
+    Found 4-bit register for signal <over_sample_cnt>.
+    Found 3-bit register for signal <bit_cnt>.
+    Found 1-bit register for signal <txd_tx>.
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_2> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 14                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk_tx (rising_edge)                           |
+    | Reset              | rst_clk_tx (positive)                          |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 4-bit subtractor for signal <over_sample_cnt[3]_GND_24_o_sub_13_OUT> created at line 187.
+    Found 3-bit adder for signal <bit_cnt[2]_GND_24_o_add_26_OUT> created at line 226.
+    Found 1-bit 8-to-1 multiplexer for signal <bit_cnt[2]_char_fifo_dout[7]_Mux_38_o> created at line 256.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx_ctl> synthesized.
+
+Synthesizing Unit <lb_ctl>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\lb_ctl.v".
+        FILTER = 200000
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <lb_ctl> synthesized.
+
+Synthesizing Unit <debouncer>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\debouncer.v".
+        FILTER = 200000
+    Found 18-bit register for signal <cnt>.
+    Found 1-bit register for signal <signal_out_reg>.
+    Found 18-bit subtractor for signal <cnt[17]_GND_26_o_sub_4_OUT> created at line 102.
+    Found 1-bit comparator equal for signal <signal_in_clk_signal_out_reg_equal_2_o> created at line 87
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  19 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   3 Multiplexer(s).
+Unit <debouncer> synthesized.
+
+Synthesizing Unit <clkx_bus_1>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clkx_bus.v".
+        PW = 3
+        WIDTH = 11
+    Found 1-bit register for signal <bus_new_stretch_src>.
+    Found 11-bit register for signal <bus_samp_src>.
+    Found 1-bit register for signal <bus_new_stretch_old_dst>.
+    Found 11-bit register for signal <bus_dst>.
+    Found 1-bit register for signal <bus_new_dst>.
+    Found 2-bit register for signal <bus_new_cnt_src>.
+    Found 2-bit subtractor for signal <bus_new_cnt_src[1]_GND_27_o_sub_3_OUT> created at line 87.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <clkx_bus_1> synthesized.
+
+Synthesizing Unit <clkx_bus_2>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\clkx_bus.v".
+        PW = 3
+        WIDTH = 16
+    Found 1-bit register for signal <bus_new_stretch_src>.
+    Found 16-bit register for signal <bus_samp_src>.
+    Found 1-bit register for signal <bus_new_stretch_old_dst>.
+    Found 16-bit register for signal <bus_dst>.
+    Found 1-bit register for signal <bus_new_dst>.
+    Found 2-bit register for signal <bus_new_cnt_src>.
+    Found 2-bit subtractor for signal <bus_new_cnt_src[1]_GND_28_o_sub_3_OUT> created at line 87.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  37 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <clkx_bus_2> synthesized.
+
+Synthesizing Unit <samp_gen>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\samp_gen.v".
+        NSAMP_WID = 10
+    Found 1-bit register for signal <active>.
+    Found 16-bit register for signal <speed_cnt>.
+    Found 10-bit register for signal <samp_cnt>.
+    Found 1-bit register for signal <doing_read>.
+    Found 1-bit register for signal <read_done>.
+    Found 16-bit register for signal <samp_reg>.
+    Found 1-bit register for signal <samp_val>.
+    Found 8-bit register for signal <led_o>.
+    Found 1-bit register for signal <samp_gen_go_hold>.
+    Found 16-bit subtractor for signal <speed_cnt[15]_GND_29_o_sub_5_OUT> created at line 189.
+    Found 16-bit subtractor for signal <spd_clk_tx[15]_GND_29_o_sub_6_OUT> created at line 200.
+    Found 11-bit subtractor for signal <nsamp_clk_tx[10]_GND_29_o_sub_18_OUT> created at line 230.
+    Found 10-bit adder for signal <samp_cnt[9]_GND_29_o_add_12_OUT> created at line 225.
+    Found 11-bit comparator equal for signal <samp_cnt_done> created at line 230
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  55 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <samp_gen> synthesized.
+
+Synthesizing Unit <dac_spi>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\dac_spi.v".
+    Found 1-bit register for signal <active>.
+    Found 1-bit register for signal <old_active>.
+    Found 5-bit register for signal <bit_cnt>.
+    Found 1-bit register for signal <dac_cs_n_o>.
+    Found 1-bit register for signal <spi_mosi_o>.
+    Found 1-bit register for signal <dac_clr_n_o>.
+    Found 5-bit subtractor for signal <bit_cnt[4]_GND_30_o_sub_7_OUT> created at line 128.
+    Found 1-bit 20-to-1 multiplexer for signal <bit_cnt[4]_data_to_send[31]_Mux_4_o> created at line 121.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <dac_spi> synthesized.
+
+Synthesizing Unit <out_ddr_flop>.
+    Related source file is "C:\work\Projects\FPGA_prj\test\test4\test4\wave_gen_ver_s6\out_ddr_flop.v".
+    Summary:
+	no macro.
+Unit <out_ddr_flop> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 70
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 9
+ 11-bit subtractor                                     : 1
+ 14-bit subtractor                                     : 6
+ 16-bit subtractor                                     : 4
+ 18-bit subtractor                                     : 1
+ 2-bit subtractor                                      : 4
+ 3-bit adder                                           : 2
+ 3-bit subtractor                                      : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 12
+ 5-bit subtractor                                      : 1
+ 7-bit adder                                           : 9
+ 7-bit subtractor                                      : 9
+ 8-bit adder                                           : 8
+# Registers                                            : 95
+ 1-bit register                                        : 58
+ 10-bit register                                       : 2
+ 11-bit register                                       : 3
+ 16-bit register                                       : 11
+ 18-bit register                                       : 1
+ 19-bit register                                       : 1
+ 2-bit register                                        : 5
+ 28-bit register                                       : 1
+ 3-bit register                                        : 3
+ 4-bit register                                        : 5
+ 5-bit register                                        : 1
+ 7-bit register                                        : 1
+ 8-bit register                                        : 3
+# Comparators                                          : 55
+ 1-bit comparator equal                                : 1
+ 10-bit comparator lessequal                           : 9
+ 11-bit comparator equal                               : 1
+ 14-bit comparator lessequal                           : 9
+ 16-bit comparator greater                             : 4
+ 16-bit comparator lessequal                           : 7
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 8
+ 7-bit comparator lessequal                            : 15
+# Multiplexers                                         : 148
+ 1-bit 2-to-1 multiplexer                              : 38
+ 1-bit 20-to-1 multiplexer                             : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 12
+ 11-bit 2-to-1 multiplexer                             : 2
+ 14-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 7
+ 18-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 9
+ 3-bit 2-to-1 multiplexer                              : 8
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 37
+ 5-bit 2-to-1 multiplexer                              : 3
+ 7-bit 2-to-1 multiplexer                              : 9
+ 8-bit 12-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 10
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/samp_ram.ngc>.
+Reading core <ipcore_dir/char_fifo.ngc>.
+Loading core <samp_ram> for timing and area information for instance <samp_ram_i0>.
+Loading core <char_fifo> for timing and area information for instance <char_fifo_i0>.
+
+Synthesizing (advanced) Unit <clk_div>.
+The following registers are absorbed into counter <cnt>: 1 register on signal <cnt>.
+Unit <clk_div> synthesized (advanced).
+
+Synthesizing (advanced) Unit <cmd_parse>.
+The following registers are absorbed into counter <arg_cnt>: 1 register on signal <arg_cnt>.
+The following registers are absorbed into counter <samp_gen_go_ctr>: 1 register on signal <samp_gen_go_ctr>.
+Unit <cmd_parse> synthesized (advanced).
+
+Synthesizing (advanced) Unit <dac_spi>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+Unit <dac_spi> synthesized (advanced).
+
+Synthesizing (advanced) Unit <resp_gen>.
+The following registers are absorbed into counter <char_cnt>: 1 register on signal <char_cnt>.
+Unit <resp_gen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <samp_gen>.
+The following registers are absorbed into counter <speed_cnt>: 1 register on signal <speed_cnt>.
+The following registers are absorbed into counter <samp_cnt>: 1 register on signal <samp_cnt>.
+Unit <samp_gen> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_rx_ctl>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+The following registers are absorbed into counter <over_sample_cnt>: 1 register on signal <over_sample_cnt>.
+Unit <uart_rx_ctl> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx_ctl>.
+The following registers are absorbed into counter <bit_cnt>: 1 register on signal <bit_cnt>.
+The following registers are absorbed into counter <over_sample_cnt>: 1 register on signal <over_sample_cnt>.
+Unit <uart_tx_ctl> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 59
+ 10-bit subtractor                                     : 9
+ 11-bit subtractor                                     : 1
+ 14-bit subtractor                                     : 6
+ 16-bit subtractor                                     : 2
+ 18-bit subtractor                                     : 1
+ 2-bit subtractor                                      : 3
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 10
+ 7-bit adder                                           : 9
+ 7-bit subtractor                                      : 9
+ 8-bit adder                                           : 8
+# Counters                                             : 11
+ 10-bit up counter                                     : 1
+ 16-bit down counter                                   : 2
+ 2-bit down counter                                    : 1
+ 3-bit down counter                                    : 1
+ 3-bit up counter                                      : 2
+ 4-bit down counter                                    : 2
+ 4-bit up counter                                      : 1
+ 5-bit down counter                                    : 1
+# Registers                                            : 357
+ Flip-Flops                                            : 357
+# Comparators                                          : 55
+ 1-bit comparator equal                                : 1
+ 10-bit comparator lessequal                           : 9
+ 11-bit comparator equal                               : 1
+ 14-bit comparator lessequal                           : 9
+ 16-bit comparator greater                             : 4
+ 16-bit comparator lessequal                           : 7
+ 4-bit comparator equal                                : 1
+ 4-bit comparator greater                              : 8
+ 7-bit comparator lessequal                            : 15
+# Multiplexers                                         : 134
+ 1-bit 2-to-1 multiplexer                              : 37
+ 1-bit 20-to-1 multiplexer                             : 1
+ 1-bit 8-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 11
+ 11-bit 2-to-1 multiplexer                             : 2
+ 14-bit 2-to-1 multiplexer                             : 6
+ 16-bit 2-to-1 multiplexer                             : 5
+ 18-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 5
+ 3-bit 2-to-1 multiplexer                              : 5
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 35
+ 5-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 9
+ 8-bit 12-to-1 multiplexer                             : 1
+ 8-bit 2-to-1 multiplexer                              : 10
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart_rx_i0/uart_rx_ctl_i0/FSM_0> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <cmd_parse_i0/FSM_1> on signal <state[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 101   | 101
+ 010   | 010
+ 011   | 011
+ 100   | 100
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <uart_tx_i0/uart_tx_ctl_i0/FSM_2> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+ 11    | 11
+-------------------
+INFO:Xst:1901 - Instance BUFGCE_clk_samp_i0 in unit clk_gen of type BUFGCE has been replaced by BUFGMUX
+
+Optimizing unit <wave_gen> ...
+
+Optimizing unit <clk_core> ...
+
+Optimizing unit <reset_bridge> ...
+
+Optimizing unit <uart_rx> ...
+
+Optimizing unit <meta_harden> ...
+
+Optimizing unit <uart_tx> ...
+
+Optimizing unit <clk_gen> ...
+
+Optimizing unit <clk_div> ...
+
+Optimizing unit <rst_gen> ...
+
+Optimizing unit <uart_baud_gen> ...
+
+Optimizing unit <uart_rx_ctl> ...
+
+Optimizing unit <cmd_parse> ...
+
+Optimizing unit <resp_gen> ...
+
+Optimizing unit <to_bcd> ...
+
+Optimizing unit <clkx_bus_1> ...
+
+Optimizing unit <clkx_bus_2> ...
+
+Optimizing unit <uart_tx_ctl> ...
+
+Optimizing unit <lb_ctl> ...
+
+Optimizing unit <debouncer> ...
+
+Optimizing unit <samp_gen> ...
+
+Optimizing unit <dac_spi> ...
+
+Optimizing unit <out_ddr_flop> ...
+WARNING:Xst:2677 - Node <frm_err> of sequential type is unconnected in block <uart_rx_ctl_i0>.
+WARNING:Xst:2677 - Node <bus_new_dst> of sequential type is unconnected in block <clkx_nsamp_i0>.
+WARNING:Xst:2677 - Node <bus_new_dst> of sequential type is unconnected in block <clkx_spd_i0>.
+WARNING:Xst:2677 - Node <bus_new_dst> of sequential type is unconnected in block <clkx_pre_i0>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block wave_gen, actual ratio is 2.
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <char_fifo_i0> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_2> in Unit <char_fifo_i0> is equivalent to the following 2 FFs/Latches : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_1> <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.rd_rst_reg_0> 
+INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_i> in Unit <char_fifo_i0> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.rfwft/empty_fwft_fb> 
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 430
+ Flip-Flops                                            : 430
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : wave_gen.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 1232
+#      GND                         : 13
+#      INV                         : 84
+#      LUT1                        : 14
+#      LUT2                        : 99
+#      LUT3                        : 163
+#      LUT4                        : 118
+#      LUT5                        : 152
+#      LUT6                        : 364
+#      MUXCY                       : 110
+#      MUXF7                       : 15
+#      VCC                         : 8
+#      XORCY                       : 92
+# FlipFlops/Latches                : 600
+#      FD                          : 25
+#      FDC                         : 91
+#      FDCE                        : 49
+#      FDE                         : 88
+#      FDP                         : 20
+#      FDPE                        : 3
+#      FDR                         : 87
+#      FDRE                        : 226
+#      FDS                         : 9
+#      FDSE                        : 1
+#      ODDR2                       : 1
+# RAMS                             : 2
+#      RAMB16BWER                  : 2
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGMUX                     : 1
+# IO Buffers                       : 17
+#      IBUF                        : 3
+#      IBUFG                       : 1
+#      OBUF                        : 13
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45tfgg484-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             600  out of  54576     1%  
+ Number of Slice LUTs:                  994  out of  27288     3%  
+    Number used as Logic:               994  out of  27288     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   1293
+   Number with an unused Flip Flop:     693  out of   1293    53%  
+   Number with an unused LUT:           299  out of   1293    23%  
+   Number of fully used LUT-FF pairs:   301  out of   1293    23%  
+   Number of unique control sets:        74
+
+IO Utilization: 
+ Number of IOs:                          17
+ Number of bonded IOBs:                  16  out of    296     5%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    116     1%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_pin                            | DCM_SP:CLKFX           | 603   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 19.150ns (Maximum Frequency: 52.220MHz)
+   Minimum input arrival time before clock: 3.826ns
+   Maximum output required time after clock: 5.422ns
+   Maximum combinational path delay: 6.005ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_pin'
+  Clock period: 19.150ns (frequency: 52.220MHz)
+  Total number of paths / destination ports: 154702548 / 1506
+-------------------------------------------------------------------------
+Delay:               19.150ns (Levels of Logic = 17)
+  Source:            cmd_parse_i0/send_resp_data_6 (FF)
+  Destination:       resp_gen_i0/to_bcd_i0/bcd_out_1 (FF)
+  Source Clock:      clk_pin rising
+  Destination Clock: clk_pin rising
+
+  Data Path: cmd_parse_i0/send_resp_data_6 to resp_gen_i0/to_bcd_i0/bcd_out_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            33   0.525   1.967  send_resp_data_6 (send_resp_data_6)
+     end scope: 'cmd_parse_i0:send_resp_data<6>'
+     begin scope: 'resp_gen_i0:send_resp_data<6>'
+     begin scope: 'resp_gen_i0/to_bcd_i0:value<6>'
+     LUT6:I1->O            3   0.254   0.766  PWR_25_o_value[15]_LessThan_1_o11 (PWR_25_o_value[15]_LessThan_1_o1)
+     LUT6:I5->O            5   0.254   0.949  PWR_25_o_value[15]_LessThan_1_o12_1 (PWR_25_o_value[15]_LessThan_1_o12)
+     LUT3:I1->O           11   0.250   1.267  Mmux_dig431 (dig4<2>)
+     LUT5:I2->O           16   0.235   1.290  Mmux_rmn476 (rmn4<12>)
+     LUT3:I1->O            3   0.250   0.874  GND_21_o_rmn4[13]_LessThan_29_o1_SW0_SW0 (N77)
+     LUT6:I4->O            4   0.250   1.259  GND_21_o_rmn4[13]_LessThan_29_o1_1 (GND_21_o_rmn4[13]_LessThan_29_o1)
+     LUT6:I0->O            1   0.254   0.000  Mmux_rmn31811_F (N274)
+     MUXF7:I0->O          11   0.163   1.039  Mmux_rmn31811 (Mmux_rmn3181)
+     LUT6:I5->O            2   0.254   0.726  Mmux_rmn3271 (Mmux_rmn327)
+     LUT4:I3->O           18   0.254   1.463  Mmux_rmn3274 (rmn3<8>)
+     LUT6:I3->O           10   0.235   1.008  GND_21_o_rmn3[9]_LessThan_69_o1 (GND_21_o_rmn3[9]_LessThan_69_o)
+     LUT6:I5->O            1   0.254   0.682  Mmux_rmn22114 (Mmux_rmn22114)
+     LUT6:I5->O            1   0.254   0.682  Mmux_rmn2213_SW0 (N182)
+     LUT6:I5->O            7   0.254   0.910  Mmux_rmn2213 (rmn2<6>)
+     LUT4:I3->O            1   0.254   0.000  Mmux_dig131 (dig1<2>)
+     FDRE:D                    0.074          bcd_out_6
+    ----------------------------------------
+    Total                     19.150ns (4.268ns logic, 14.882ns route)
+                                       (22.3% logic, 77.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_pin'
+  Total number of paths / destination ports: 14 / 14
+-------------------------------------------------------------------------
+Offset:              3.826ns (Levels of Logic = 3)
+  Source:            rst_pin (PAD)
+  Destination:       rst_gen_i0/reset_bridge_clk_samp_i0/rst_meta (FF)
+  Destination Clock: clk_pin rising
+
+  Data Path: rst_pin to rst_gen_i0/reset_bridge_clk_samp_i0/rst_meta
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             7   1.328   0.910  IBUF_rst_i0 (rst_i)
+     begin scope: 'rst_gen_i0:rst_i'
+     LUT2:I1->O            6   0.254   0.875  int_rst1 (int_rst)
+     begin scope: 'rst_gen_i0/reset_bridge_clk_samp_i0:rst_in'
+     FDP:PRE                   0.459          rst_meta
+    ----------------------------------------
+    Total                      3.826ns (2.041ns logic, 1.785ns route)
+                                       (53.3% logic, 46.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_pin'
+  Total number of paths / destination ports: 14 / 13
+-------------------------------------------------------------------------
+Offset:              5.422ns (Levels of Logic = 3)
+  Source:            lb_ctl_i0/debouncer_i0/signal_out_reg (FF)
+  Destination:       txd_pin (PAD)
+  Source Clock:      clk_pin rising
+
+  Data Path: lb_ctl_i0/debouncer_i0/signal_out_reg to txd_pin
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               5   0.525   1.069  signal_out_reg (signal_out_reg)
+     end scope: 'lb_ctl_i0/debouncer_i0:signal_out'
+     LUT3:I0->O            1   0.235   0.681  Mmux_txd_o11 (txd_o)
+     end scope: 'lb_ctl_i0:txd_o'
+     OBUF:I->O                 2.912          OBUF_txd (txd_pin)
+    ----------------------------------------
+    Total                      5.422ns (3.672ns logic, 1.750ns route)
+                                       (67.7% logic, 32.3% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               6.005ns (Levels of Logic = 4)
+  Source:            rxd_pin (PAD)
+  Destination:       txd_pin (PAD)
+
+  Data Path: rxd_pin to txd_pin
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   0.834  IBUF_rxd_i0 (rxd_i)
+     begin scope: 'lb_ctl_i0:rxd_i'
+     LUT3:I1->O            1   0.250   0.681  Mmux_txd_o11 (txd_o)
+     end scope: 'lb_ctl_i0:txd_o'
+     OBUF:I->O                 2.912          OBUF_txd (txd_pin)
+    ----------------------------------------
+    Total                      6.005ns (4.490ns logic, 1.515ns route)
+                                       (74.8% logic, 25.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_pin
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_pin        |   19.150|         |    2.633|         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 18.00 secs
+Total CPU time to Xst completion: 18.45 secs
+ 
+--> 
+
+Total memory usage is 209968 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   54 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
+

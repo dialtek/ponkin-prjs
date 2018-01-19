@@ -1,0 +1,10 @@
+//! **************************************************************************
+// Written by: Map P.28xd on Thu Aug 15 12:10:24 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk_50M" LOCATE = SITE "B8" LEVEL 1;
+COMP "LED0" LOCATE = SITE "J14" LEVEL 1;
+NET "clk_50M_BUFGP/IBUFG" BEL "clk_50M_BUFGP/BUFG.GCLKMUX" USELOCALCONNECT;
+SCHEMATIC END;
+

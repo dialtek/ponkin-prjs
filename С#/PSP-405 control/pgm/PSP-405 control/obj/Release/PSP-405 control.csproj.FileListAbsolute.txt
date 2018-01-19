@@ -1,0 +1,8 @@
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\bin\Release\PSP-405 control.exe.config
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\bin\Release\PSP-405 control.exe
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\bin\Release\PSP-405 control.pdb
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\obj\Release\PSP_405_control.Form1.resources
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\obj\Release\PSP_405_control.Properties.Resources.resources
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\obj\Release\PSP-405 control.csproj.GenerateResource.Cache
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\obj\Release\PSP-405 control.exe
+D:\work\Projects\С#\PSP-405 control\pgm\PSP-405 control\obj\Release\PSP-405 control.pdb

@@ -1,0 +1,7 @@
+V3 3
+FL D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main.vhd 2015/07/15.11:28:31 P.49d
+EN work/main 1436948917 \
+      FL D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main.vhd \
+      PB ieee/std_logic_1164 1354696159
+AR work/main/Behavioral 1436948918 \
+      FL D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main.vhd EN work/main 1436948917

@@ -1,0 +1,109 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test3/anew/anew.xst" -ofn "C:/Xilinx/test/test3/anew/anew.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc anew_imp.ucf -p xc3s500e-fg320-4 anew.ngc anew.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o anew_map.ncd anew.ngd anew.pcf 
+par -w -intstyle ise -ol high -t 1 anew_map.ncd anew.ncd anew.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml anew.twx anew.ncd -o anew.twr anew.pcf -ucf anew_imp.ucf 
+bitgen -intstyle ise -f anew.ut anew.ncd 

@@ -1,0 +1,78 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     @delay_ms1.P1
+F80.0   RA0
+F80     PORTA
+F80.1   RA1
+F80.2   RA2
+F80.3   RA3
+F80.4   RA4
+F81     PORTB
+F82     PORTC
+F83     PORTD
+F92     TRISA
+F92.0   TRA0
+F92.1   TRA1
+F92.2   TRA2
+F92.3   TRA3
+F92.4   TRA4
+F92.5   TRA5
+F93     TRISB
+F94     TRISC
+F95     TRISD
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @READ_PROGRAM_MEMORY.P1
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  @delay_ms1
+002C  main
+002C  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Program Files\PICC\Projects\2480\
+
+Project Files:
+    main.c                                                  [09-фев-12 16:28  CRC=C1B9D6FD]
+    main.h                                                  [09-фев-12 16:18  CRC=0BE18EF7]
+    18F2480.h                                               [13-апр-11 15:01  CRC=EB711D44]
+
+Source signature=A47DA07C
+
+Units:
+    C:\Program Files\PICC\Projects\2480\main (main)
+
+Compiler Settings:
+    Processor:      PIC18F2480
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX32:      main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.PJT
+    Call Tree:   main.tre
+    Statistics:  main.STA

@@ -1,0 +1,11 @@
+# PROMGEN: Xilinx Prom Generator P.28xd
+# Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+SOFTWARE_VERSION P.28xd
+DATE            10/16/2013 - 12:21
+SOURCE          C:\work\Projects\FPGA_prj\FPGA2USB\FPGA2USB\rom_iso.mcs
+DEVICE          XCF04S
+DATA_WIDTH      8
+FILL_DATA       0xFF
+SIGNATURE       0x03A83AB0
+START_ADDRESS   0x00000000 END_ADDRESS 0x0004547F DIRECTION_UP   "C:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/fx2lp_slavefifo2b_streamin_fpga_top.bit" 3s500efg320

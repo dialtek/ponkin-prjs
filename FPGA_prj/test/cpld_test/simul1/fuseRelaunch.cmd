@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main_isim_beh.exe" -prj "D:/work/Projects/FPGA_prj/test/cpld_test/simul1/main_beh.prj" "work.main" 

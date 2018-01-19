@@ -1,0 +1,23 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "m_seq_8bit.ngc" m_seq_8bit.ngd  
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "m_seq_8bit.ngc" m_seq_8bit.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o m_seq_8bit_map.ncd m_seq_8bit.ngd m_seq_8bit.pcf 
+par -w -intstyle ise -ol high -t 1 m_seq_8bit_map.ncd m_seq_8bit.ncd m_seq_8bit.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml m_seq_8bit.twx m_seq_8bit.ncd -o m_seq_8bit.twr m_seq_8bit.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "m_seq_8bit.ngc" m_seq_8bit.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o m_seq_8bit_map.ncd m_seq_8bit.ngd m_seq_8bit.pcf 
+par -w -intstyle ise -ol high -t 1 m_seq_8bit_map.ncd m_seq_8bit.ncd m_seq_8bit.pcf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.xst" -ofn "D:/work/Projects/FPGA_prj/Verilog LFSR 8-bit/main/m_seq_8bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 "m_seq_8bit.ngc" m_seq_8bit.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o m_seq_8bit_map.ncd m_seq_8bit.ngd m_seq_8bit.pcf 

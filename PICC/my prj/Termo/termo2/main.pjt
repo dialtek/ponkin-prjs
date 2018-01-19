@@ -1,0 +1,23 @@
+[PROJECT]
+Target=C:\Program Files\PICC\Projects\termo2\main.hex
+Development_Mode=
+Processor_Text=PIC16C74
+ToolSuite=CCS
+[C:\Program Files\PICC\Projects\termo2\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Program Files\PICC\Projects\termo2\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Program Files\PICC\Projects\termo2\main
+[Opened Files]
+1=C:\Program Files\PICC\Projects\termo2\main.c
+2=

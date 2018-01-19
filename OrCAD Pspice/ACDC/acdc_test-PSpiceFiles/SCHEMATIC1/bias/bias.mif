@@ -1,0 +1,3 @@
+ lib=C:\Cadence\SPB_16.6\tools\PSpice\Library\ediode.lib, offset=20920, size=217
+ lib=C:\Cadence\SPB_16.6\tools\PSpice\Library\breakout.lib, offset=3839, size=444
+ lib=C:\Cadence\SPB_16.6\tools\PSpice\Library\magnetic.lib, offset=2462, size=261

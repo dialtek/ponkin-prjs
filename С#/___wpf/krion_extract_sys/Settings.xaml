@@ -1,0 +1,35 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:extract_system"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" x:Name="window_setting" x:Class="extract_system.WSettings"
+        mc:Ignorable="d"
+        Title="Настройки" Height="324.884" Width="300" Loaded="window_setting_Loaded" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="ico.ico">
+    <Grid>
+        <Button x:Name="button_extr_voltage" Content="Уст." HorizontalAlignment="Left" Margin="229,54,0,0" VerticalAlignment="Top" Width="49" Click="button_extr_voltage_Click" FontSize="16"/>
+        <Label x:Name="label" Content="Напряжение блока вывода" HorizontalAlignment="Left" Margin="12,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="label1" Content="В" HorizontalAlignment="Left" Margin="181,53,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label2" Content="id 20" HorizontalAlignment="Left" Margin="242,15,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFBD9999"/>
+        <Button x:Name="button_fast" Content="Уст." HorizontalAlignment="Left" Margin="229,151,0,0" VerticalAlignment="Top" Width="49" Click="button_fast_Click" FontSize="16"/>
+        <Label x:Name="label_Copy" Content="Быстрый вывод" HorizontalAlignment="Left" Margin="12,109,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="label1_Copy" Content="мкс." HorizontalAlignment="Left" Margin="176,149,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label x:Name="label2_Copy" Content="id 30" HorizontalAlignment="Left" Margin="152,114,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFBD9999"/>
+        <Label x:Name="label_Copy1" Content="Длительность" HorizontalAlignment="Left" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="button_IPandPort" Content="Уст." HorizontalAlignment="Left" Margin="229,246,0,0" VerticalAlignment="Top" Width="49" Click="button_IPandPort_Click" FontSize="16"/>
+        <Label x:Name="label_Copy2" Content="IP                " HorizontalAlignment="Left" Margin="48,228,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="30" IsEnabled="False"/>
+        <TextBox x:Name="IP" HorizontalAlignment="Center" Height="23" Margin="84,234,98,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="192.168.127.253" TextAlignment="Center"/>
+        <TextBox x:Name="port" HorizontalAlignment="Center" Height="23" Margin="84,262,154,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Text="4001" TextAlignment="Center"/>
+        <Label x:Name="label_Copy3" Content="Port                " HorizontalAlignment="Left" Margin="38,254,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="47" IsEnabled="False"/>
+
+        <xctk:IntegerUpDown x:Name="extract_volt" HorizontalAlignment="Left" Margin="99,56,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Maximum="3200" Minimum="0" ParsingNumberStyle="Integer" RenderTransformOrigin="0,0" TextAlignment="Center" Increment="5" DefaultValue="0" DisplayDefaultValueOnEmptyText="True"/>
+        <xctk:IntegerUpDown x:Name="qe_time" HorizontalAlignment="Left" Margin="99,153,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Maximum="200" Minimum="1" ParsingNumberStyle="Integer" RenderTransformOrigin="0,0" TextAlignment="Center" DefaultValue="1" DisplayDefaultValueOnEmptyText="True" ClipValueToMinMax="True" Text="" IsManipulationEnabled="True"/>
+        <Button x:Name="button_ion_cool_voltage" Content="Уст." HorizontalAlignment="Left" Margin="229,345,0,0" VerticalAlignment="Top" Width="49" Click="button_ion_cool_voltage_Click" FontSize="16" Opacity="0.2" IsEnabled="False"/>
+        <Label x:Name="label_Copy4" Content="Напряжение C25 ИО" HorizontalAlignment="Left" Margin="12,301,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Opacity="0.2" IsEnabled="False"/>
+        <Label x:Name="label1_Copy1" Content="В" HorizontalAlignment="Left" Margin="181,344,0,0" VerticalAlignment="Top" FontSize="16" Opacity="0.2" IsEnabled="False"/>
+        <Label x:Name="label2_Copy1" Content="id 24" HorizontalAlignment="Left" Margin="186,306,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFBD9999" Opacity="0.2" IsEnabled="False"/>
+        <xctk:IntegerUpDown x:Name="ion_cool_voltage" HorizontalAlignment="Left" Margin="99,347,0,0" VerticalAlignment="Top" Width="75" FontSize="16" Maximum="3200" Minimum="0" ParsingNumberStyle="Integer" RenderTransformOrigin="0,0" TextAlignment="Center" Increment="5" DefaultValue="0" DisplayDefaultValueOnEmptyText="True" Opacity="0.2" IsEnabled="False"/>
+
+    </Grid>
+</Window>

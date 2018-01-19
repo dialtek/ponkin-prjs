@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">uart_rx_i0/frm_err</arg> has no load.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="info" file="Timing" num="3386" delta="new" >Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx Command Line Tools User Guide for information on generating a TSI report.</msg>
+
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="warning" file="Place" num="838" delta="new" >An IO Bus with more than one IO standard is found.
+<arg fmt="%s" index="1">Components associated with this bus are as follows: 
+	 Comp: led_pins&lt;0&gt;   IOSTANDARD = LVCMOS25
+	 Comp: led_pins&lt;1&gt;   IOSTANDARD = LVCMOS25
+	 Comp: led_pins&lt;2&gt;   IOSTANDARD = LVCMOS25
+	 Comp: led_pins&lt;3&gt;   IOSTANDARD = LVCMOS25
+	 Comp: led_pins&lt;4&gt;   IOSTANDARD = LVCMOS15
+	 Comp: led_pins&lt;5&gt;   IOSTANDARD = LVCMOS15
+	 Comp: led_pins&lt;6&gt;   IOSTANDARD = LVCMOS15
+	 Comp: led_pins&lt;7&gt;   IOSTANDARD = LVCMOS15
+
+</arg>
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+<msg type="info" file="PhysDesignRules" num="1861" delta="new" >To achieve optimal frequency synthesis performance with the CLKFX and CLKFX180 outputs of the DCM comp <arg fmt="%s" index="1">clk_gen_i0/clk_core_i0/dcm_sp_inst</arg>, consult the device Data Sheet.
+</msg>
+
+</messages>
+

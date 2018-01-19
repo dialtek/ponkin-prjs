@@ -1,0 +1,14 @@
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\bin\Debug\modbus_queue_test.exe.config
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\bin\Debug\modbus_queue_test.exe
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\bin\Debug\modbus_queue_test.pdb
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.csprojResolveAssemblyReference.cache
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\MainWindow.g.cs
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\App.g.cs
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test_MarkupCompile.cache
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test_MarkupCompile.lref
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\MainWindow.baml
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.g.resources
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.Properties.Resources.resources
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.csproj.GenerateResource.Cache
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.exe
+E:\work\Projects\ponkin\С#\modbus_queue_test\modbus_queue_test\obj\Debug\modbus_queue_test.pdb

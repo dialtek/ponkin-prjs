@@ -1,0 +1,6 @@
+V3 3
+FL C:/Xilinx/test/wait/wait_func/wait.vhd 2013/08/15.12:08:53 P.28xd
+EN work/waitX 1376554135 FL C:/Xilinx/test/wait/wait_func/wait.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182
+AR work/waitX/Beh 1376554136 \
+      FL C:/Xilinx/test/wait/wait_func/wait.vhd EN work/waitX 1376554135

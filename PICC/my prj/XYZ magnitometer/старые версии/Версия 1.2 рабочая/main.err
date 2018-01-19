@@ -1,0 +1,19 @@
+>>> Warning 216 "main.c" Line 1151(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
+>>> Warning 216 "main.c" Line 1151(0,1): Interrupts disabled during call to prevent re-entrancy:  (PBScan)
+>>> Warning 202 "main.c" Line 127(11,14): Variable never used:   ff1
+>>> Warning 202 "main.c" Line 128(66,73): Variable never used:   menufl4
+>>> Warning 202 "main.c" Line 129(21,32): Variable never used:   MenuItemNum
+>>> Warning 202 "main.c" Line 133(66,70): Variable never used:   xMSB
+>>> Warning 202 "main.c" Line 133(79,83): Variable never used:   xLSB
+>>> Warning 202 "main.c" Line 134(12,16): Variable never used:   zMSB
+>>> Warning 202 "main.c" Line 134(25,29): Variable never used:   zLSB
+>>> Warning 202 "main.c" Line 134(37,41): Variable never used:   yMSB
+>>> Warning 202 "main.c" Line 134(49,53): Variable never used:   yLSB
+>>> Warning 202 "main.c" Line 134(64,71): Variable never used:   StatReg
+>>> Warning 202 "main.c" Line 134(79,85): Variable never used:   idRegA
+>>> Warning 202 "main.c" Line 135(14,20): Variable never used:   idRegB
+>>> Warning 202 "main.c" Line 135(29,35): Variable never used:   idRegC
+>>> Warning 202 "main.c" Line 963(6,10): Variable never used:   ADCh
+      Memory usage:   ROM=14%      RAM=3% - 4%
+      0 Errors,  16 Warnings.
+Build Successful.

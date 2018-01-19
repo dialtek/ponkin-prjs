@@ -1,0 +1,17 @@
+Manufacturer: GW-INSTEK
+Model: PSW7 30-72
+Serial Number: EM170089
+Kernel Built ON: 21:28:48,5 22 2011
+Firmware Version: 01.30.20120531
+Firmware Built ON: 13:57:01,May 31 2012
+Test Version: 01.00
+Test Built ON: 2011.08.01
+Keyboard CPLD: 0x030c
+Analog CPLD: 0x0423
+MAC Adress: 00:22:24:72:41:a9
+Hostname: P-170089
+IP Adress: 172.16.21.19
+Subnet Mask: 255.255.255.0
+Gateway: 172.16.21.1
+DNS: 172.16.1.252
+DHCP State: OFF

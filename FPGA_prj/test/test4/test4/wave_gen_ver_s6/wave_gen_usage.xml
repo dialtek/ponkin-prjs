@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<DeviceUsageSummary rev="1">
+<DesignStatistics TimeStamp="Thu Nov 21 00:07:32 2013"><group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="1">
+<attrib name="value" value="17"/></item>
+<item name="AGG_IO" rev="1">
+<attrib name="value" value="17"/></item>
+<item name="AGG_LOCED_IO" rev="1">
+<attrib name="value" value="17"/></item>
+<item name="AGG_SLICE" rev="1">
+<attrib name="value" value="343"/></item>
+<item name="NUM_BONDED_IOB" rev="1">
+<attrib name="value" value="17"/></item>
+<item name="NUM_BSFULL" rev="1">
+<attrib name="value" value="351"/></item>
+<item name="NUM_BSLUTONLY" rev="1">
+<attrib name="value" value="574"/></item>
+<item name="NUM_BSREGONLY" rev="1">
+<attrib name="value" value="120"/></item>
+<item name="NUM_BSUSED" rev="1">
+<attrib name="value" value="1045"/></item>
+<item name="NUM_BUFG" rev="1">
+<attrib name="value" value="2"/></item>
+<item name="NUM_BUFGMUX" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_BUFIO2" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_BUFIO2FB" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_DCM" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_IOB_FF" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_LOCED_IOB" rev="1">
+<attrib name="value" value="17"/></item>
+<item name="NUM_LOGIC_O5ANDO6" rev="1">
+<attrib name="value" value="226"/></item>
+<item name="NUM_LOGIC_O5ONLY" rev="1">
+<attrib name="value" value="13"/></item>
+<item name="NUM_LOGIC_O6ONLY" rev="1">
+<attrib name="value" value="623"/></item>
+<item name="NUM_LUT_RT_DRIVES_CARRY4" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_LUT_RT_DRIVES_FLOP" rev="1">
+<attrib name="value" value="62"/></item>
+<item name="NUM_LUT_RT_EXO5" rev="1">
+<attrib name="value" value="62"/></item>
+<item name="NUM_LUT_RT_EXO6" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_LUT_RT_O5" rev="1">
+<attrib name="value" value="2"/></item>
+<item name="NUM_LUT_RT_O6" rev="1">
+<attrib name="value" value="13"/></item>
+<item name="NUM_OLOGIC2" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="NUM_RAMB16BWER" rev="1">
+<attrib name="value" value="2"/></item>
+<item name="NUM_SLICEL" rev="1">
+<attrib name="value" value="47"/></item>
+<item name="NUM_SLICEX" rev="1">
+<attrib name="value" value="296"/></item>
+<item name="NUM_SLICE_CARRY4" rev="1">
+<attrib name="value" value="32"/></item>
+<item name="NUM_SLICE_CONTROLSET" rev="1">
+<attrib name="value" value="53"/></item>
+<item name="NUM_SLICE_CYINIT" rev="1">
+<attrib name="value" value="1176"/></item>
+<item name="NUM_SLICE_F7MUX" rev="1">
+<attrib name="value" value="15"/></item>
+<item name="NUM_SLICE_FF" rev="1">
+<attrib name="value" value="599"/></item>
+<item name="NUM_SLICE_UNUSEDCTRL" rev="1">
+<attrib name="value" value="155"/></item>
+<item name="NUM_UNUSABLE_FF_BELS" rev="1">
+<attrib name="value" value="193"/></item>
+<item name="Xilinx Core blk_mem_gen_v6_1, Xilinx CORE Generator 13.1" rev="1">
+<attrib name="value" value="1"/></item>
+<item name="Xilinx Core fifo_generator_v8_1, Xilinx CORE Generator 13.1" rev="1">
+<attrib name="value" value="1"/></item>
+</group>
+</DesignStatistics>
+<CmdHistory>
+</CmdHistory>
+</DeviceUsageSummary>

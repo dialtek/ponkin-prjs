@@ -1,0 +1,9 @@
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\bin\Debug\Shut_Down_later.exe.config
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\bin\Debug\Shut_Down_later.exe
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\bin\Debug\Shut_Down_later.pdb
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.Properties.Resources.resources
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.csproj.GenerateResource.Cache
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.exe
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.pdb
+D:\work\Projects\С#\education\Shut_Down_later\Shut_Down_later\obj\Debug\Shut_Down_later.Автовыключатель.resources

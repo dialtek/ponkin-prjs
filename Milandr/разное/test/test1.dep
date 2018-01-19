@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2882137561</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$TOOLKIT_DIR$\doc\infocenter\index.ENU.html</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\1986be91_power.h</file>
+      <file>$PROJ_DIR$\1986be91_sys.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\Milandr\MDR32F1.icf</file>
+      <file>$PROJ_DIR$\1986be91_bkp.h</file>
+      <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+      <file>$PROJ_DIR$\1986be91_comp.h</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$PROJ_DIR$\1986be91_uart.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\test1.out</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
+      <file>$PROJ_DIR$\1986be91_spi.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\test1.hex</file>
+      <file>$PROJ_DIR$\1986be91_port.h</file>
+      <file>$PROJ_DIR$\1986be91_wwdg.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
+      <file>$PROJ_DIR$\1986be91_timer.h</file>
+      <file>$PROJ_DIR$\1986be91_ext_bus_cntrl.h</file>
+      <file>$PROJ_DIR$\1986be91_can.h</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\1986be91_dac.h</file>
+      <file>$PROJ_DIR$\cm3_macro.h</file>
+      <file>$PROJ_DIR$\1986be91_iwdg.h</file>
+      <file>$PROJ_DIR$\1986be91_eeprom.h</file>
+      <file>$PROJ_DIR$\1986be91_usb.h</file>
+      <file>$PROJ_DIR$\1986be91t1.h</file>
+      <file>$PROJ_DIR$\1986be91_adc.h</file>
+      <file>$PROJ_DIR$\1986be91_rst_clk.h</file>
+      <file>$PROJ_DIR$\1986be91_i2c.h</file>
+      <file>$PROJ_DIR$\1986be91_dma.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\test1.pbd</file>
+      <file>$PROJ_DIR$\Debug\List\test1.map</file>
+      <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 27 20 23 26 25 29 31 9 12 30 2 15 24 18 28 22 7 14 5 19 3 41 34 35 37 36 38 39 40</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27 20 23 26 25 29 31 9 12 30 2 15 24 18 28 22 7 14 5 19 3 41 34 35 37 36 38 39 40</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\test1.out</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>OBJCOPY</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 4 11 21 6 17 8</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>ILINK</name>
+          <file> 10 33</file>
+        </tool>
+      </outputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>ILINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+

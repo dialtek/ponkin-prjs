@@ -1,0 +1,24 @@
+>>> Warning 216 "main.c" Line 894(0,1): Interrupts disabled during call to prevent re-entrancy:  (@delay_us1)
+>>> Warning 216 "main.c" Line 894(0,1): Interrupts disabled during call to prevent re-entrancy:  (SensWrData)
+>>> Warning 216 "main.c" Line 894(0,1): Interrupts disabled during call to prevent re-entrancy:  (PBScan)
+>>> Warning 202 "main.c" Line 112(18,21): Variable never used:   ff1
+>>> Warning 202 "main.c" Line 113(73,80): Variable never used:   menufl4
+>>> Warning 202 "main.c" Line 114(28,39): Variable never used:   MenuItemNum
+>>> Warning 202 "main.c" Line 118(66,70): Variable never used:   xMSB
+>>> Warning 202 "main.c" Line 118(79,83): Variable never used:   xLSB
+>>> Warning 202 "main.c" Line 119(12,16): Variable never used:   zMSB
+>>> Warning 202 "main.c" Line 119(25,29): Variable never used:   zLSB
+>>> Warning 202 "main.c" Line 119(37,41): Variable never used:   yMSB
+>>> Warning 202 "main.c" Line 119(49,53): Variable never used:   yLSB
+>>> Warning 202 "main.c" Line 119(64,71): Variable never used:   StatReg
+>>> Warning 202 "main.c" Line 119(79,85): Variable never used:   idRegA
+>>> Warning 202 "main.c" Line 120(14,20): Variable never used:   idRegB
+>>> Warning 202 "main.c" Line 120(29,35): Variable never used:   idRegC
+>>> Warning 202 "main.c" Line 700(11,15): Variable never used:   zero
+>>> Warning 202 "main.c" Line 702(7,10): Variable never used:   buf
+>>> Warning 202 "main.c" Line 702(13,17): Variable never used:   buf1
+>>> Warning 202 "main.c" Line 702(20,23): Variable never used:   sum
+>>> Warning 202 "main.c" Line 703(6,10): Variable never used:   ADCh
+      Memory usage:   ROM=15%      RAM=4% - 5%
+      0 Errors,  21 Warnings.
+Build Successful.

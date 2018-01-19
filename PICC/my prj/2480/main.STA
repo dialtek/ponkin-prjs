@@ -1,0 +1,44 @@
+
+ROM used: 108 (1%)
+          108 (1%) including unused fragments
+
+          0 Average locations per line
+          5 Average locations per statement
+
+RAM used: 4 (1%) at main() level
+          5 (1%) worst case
+
+Stack used: 1 worst case (out of 31 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   54    20 100  main.c
+   17     0   0  main.h
+  398     0   0  18F2480.h
+----- -----
+  469    20 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     40  19   1             @delay_ms1
+0     64  30   0   426  2.4  main
+
+Program metrics:
+    Functions               1
+    Statements              20
+    Comments                95
+    Volume (V)              428
+    Difficilty (D)          2.3
+    Effort to implement (E) 991
+    Time to implement (T)   1 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   1
+    Maintainability (MI)    119
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-03FFE   104  16276  
+
+
+

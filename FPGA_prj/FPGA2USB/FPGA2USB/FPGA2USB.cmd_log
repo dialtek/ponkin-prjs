@@ -1,0 +1,230 @@
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+xst -intstyle ise -ifn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.xst" -ofn "D:/work/Projects/FPGA_prj/FPGA2USB/FPGA2USB/FPGA2USB.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc FPGA2USB_imp.ucf -p xc3s500e-fg320-4 FPGA2USB.ngc FPGA2USB.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o FPGA2USB_map.ncd FPGA2USB.ngd FPGA2USB.pcf 
+par -w -intstyle ise -ol high -t 1 FPGA2USB_map.ncd FPGA2USB.ncd FPGA2USB.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml FPGA2USB.twx FPGA2USB.ncd -o FPGA2USB.twr FPGA2USB.pcf -ucf FPGA2USB_imp.ucf 
+bitgen -intstyle ise -f FPGA2USB.ut FPGA2USB.ncd 

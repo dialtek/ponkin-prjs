@@ -1,0 +1,19 @@
+V3 14
+FL C:/Xilinx/test/50MHz_to_40MHz/freq_conv/Freq_conv_MAIN.vhd 2013/08/14.14:14:00 P.49d
+FL C:/Xilinx/test/50MHz_to_40MHz/freq_conv/fx_conv.vhd 2013/08/09.14:59:18 P.49d
+FL C:/Xilinx/test/50MHz_to_40MHz/freq_conv/ipcore_dir/fx_conv.vhd 2013/08/09.14:58:44 P.49d
+FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/Freq_conv_MAIN.vhd 2013/08/14.14:14:00 P.49d
+EN work/Freq_conv_MAIN 1385226207 \
+      FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/Freq_conv_MAIN.vhd \
+      PB ieee/std_logic_1164 1354696159 PB ieee/NUMERIC_STD 1341906182
+AR work/Freq_conv_MAIN/Beh 1385226208 \
+      FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/Freq_conv_MAIN.vhd \
+      EN work/Freq_conv_MAIN 1385226207 CP fx_conv
+FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/ipcore_dir/fx_conv.vhd 2013/08/09.14:58:44 P.49d
+EN work/fx_conv 1385226205 \
+      FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/ipcore_dir/fx_conv.vhd \
+      PB ieee/std_logic_1164 1354696159 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/fx_conv/BEHAVIORAL 1385226206 \
+      FL D:/work/Projects/FPGA_prj/test/50MHz_to_40MHz/freq_conv/ipcore_dir/fx_conv.vhd \
+      EN work/fx_conv 1385226205 CP BUFG CP IBUFG CP DCM_SP

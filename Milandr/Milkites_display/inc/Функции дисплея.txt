@@ -1,0 +1,19 @@
+LCD_init(void) 	- инициализаци€ диспле€
+
+LCD_set_cursor (uint8_t setPoint) - установка курсора, число 0-7. 
+пример: LCD_set_cursor(2);
+
+LCD_clear(void)  - очистка диспле€, 
+пример: LCD_set_cursor(2); 
+				
+LCD_space(uint8_t SpaceMulCoef)  - пробел, указываетс€ количество пробелов. 
+пример: LCD_space(4); 
+
+LCD_Wr_num(uint32_t number,uint8_t num_lenght) - вывод числа, указываетс€ число и количество цифр дл€ вывода. 
+пример: LCD_Wr_num(255,3);
+
+LCD_print (char* full_word)   - печать слов и символов на дисплее. 
+пример: LCD_print ("ѕривет! Hello!") 
+
+LCD_inverse_ON(void) Ц вкл. инверсию 
+LCD_inverse_OFF(void) Ц выкл. инверсию 

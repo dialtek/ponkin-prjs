@@ -1,0 +1,28 @@
+Command line:
+   m_seq_8bit_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  51510
+
+Sun Feb 09 14:55:36 2014
+
+
+ Elaboration Time: 0.0468 sec
+
+ Current Memory Usage: 510.149 Meg
+
+ Total Signals          : 15
+ Total Nets             : 23
+ Total Signal Drivers   : 7
+ Total Blocks           : 2
+ Total Primitive Blocks : 2
+ Total Processes        : 9
+ Total Traceable Variables  : 19
+ Total Scalar Nets and Variables : 111
+
+ Total Simulation Time: 0.327602 sec
+
+ Current Memory Usage: 510.149 Meg
+
+Sun Feb 09 15:06:01 2014
+

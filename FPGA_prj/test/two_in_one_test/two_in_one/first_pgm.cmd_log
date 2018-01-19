@@ -1,0 +1,35 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 first_pgm.ngc first_pgm.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o first_pgm_map.ncd first_pgm.ngd first_pgm.pcf 
+par -w -intstyle ise -ol high -t 1 first_pgm_map.ncd first_pgm.ncd first_pgm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml first_pgm.twx first_pgm.ncd -o first_pgm.twr first_pgm.pcf 
+bitgen -intstyle ise -f first_pgm.ut first_pgm.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 first_pgm.ngc first_pgm.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o first_pgm_map.ncd first_pgm.ngd first_pgm.pcf 
+par -w -intstyle ise -ol high -t 1 first_pgm_map.ncd first_pgm.ncd first_pgm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml first_pgm.twx first_pgm.ncd -o first_pgm.twr first_pgm.pcf 
+bitgen -intstyle ise -f first_pgm.ut first_pgm.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc two_in_one_imp.ucf -p xc3s500e-fg320-4 first_pgm.ngc first_pgm.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o first_pgm_map.ncd first_pgm.ngd first_pgm.pcf 
+par -w -intstyle ise -ol high -t 1 first_pgm_map.ncd first_pgm.ncd first_pgm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml first_pgm.twx first_pgm.ncd -o first_pgm.twr first_pgm.pcf -ucf two_in_one_imp.ucf 
+bitgen -intstyle ise -f first_pgm.ut first_pgm.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc two_in_one_imp.ucf -p xc3s500e-fg320-4 first_pgm.ngc first_pgm.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o first_pgm_map.ncd first_pgm.ngd first_pgm.pcf 
+par -w -intstyle ise -ol high -t 1 first_pgm_map.ncd first_pgm.ncd first_pgm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml first_pgm.twx first_pgm.ncd -o first_pgm.twr first_pgm.pcf -ucf two_in_one_imp.ucf 
+bitgen -intstyle ise -f first_pgm.ut first_pgm.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.xst" -ofn "C:/Xilinx/test/two_in_one_test/two_in_one/first_pgm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc two_in_one_imp.ucf -p xc3s500e-fg320-4 first_pgm.ngc first_pgm.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o first_pgm_map.ncd first_pgm.ngd first_pgm.pcf 
+par -w -intstyle ise -ol high -t 1 first_pgm_map.ncd first_pgm.ncd first_pgm.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml first_pgm.twx first_pgm.ncd -o first_pgm.twr first_pgm.pcf -ucf two_in_one_imp.ucf 
+bitgen -intstyle ise -f first_pgm.ut first_pgm.ncd 

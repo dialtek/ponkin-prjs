@@ -1,0 +1,4727 @@
+CCS PCD C Compiler, Version 4.140, 5967               04-фев-15 14:44
+
+               Filename:   D:\work\Projects\PICC\my prj\Термометрия 2.0 рабочий вариант\main.lst
+
+               ROM used:   11522 bytes (13%)
+                           Largest free fragment is 54014
+               RAM used:   202 (2%) at main() level
+                           456 (6%) worst case
+               Stack size: 128
+
+*
+00000:  GOTO    2840
+*
+0001A:  DATA    0A,05,00
+*
+0003A:  DATA    B4,04,00
+.................... #include <main.h> 
+.................... #include <24HJ128GP506.h> 
+.................... //////// Standard Header file for the PIC24HJ128GP506 device //////////////// 
+.................... #device PIC24HJ128GP506 
+.................... #list 
+....................  
+....................  
+.................... //#FUSES PROTECT_HIGH            //General Segment Code Protect High Security 
+.................... #FUSES WRTB                      //Boot block write protected 
+.................... #FUSES CKSFSM                    //Clock Switching is enabled, fail Safe clock monitor is enabled 
+.................... #FUSES WDT                       //Watch Dog Timer 
+.................... #FUSES WPOSTS14                  //Watch Dog Timer PreScalar 1:8192 
+.................... #FUSES PR_PLL                    //Primary Oscillator with PLL 
+.................... #FUSES HS                        //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #use delay(clock=80M) 
+*
+005BE:  CP0     W0
+005C0:  BTSC.B  42.1
+005C2:  BRA     5D4
+005C4:  REPEAT  #1C3B
+005C6:  NOP     
+005C8:  REPEAT  #3FFE
+005CA:  NOP     
+005CC:  REPEAT  #3FFE
+005CE:  NOP     
+005D0:  DEC     W0,W0
+005D2:  BRA     NZ,5C4
+005D4:  RETURN  
+....................  
+.................... #WORD PLLFBD=0x0746 // osc PLL div reg 
+.................... #WORD U2BRG=0x0238 
+.................... #WORD U2MODE=0x0230 
+....................  
+.................... #WORD CLKDIV=0x0744  // osc con reg 
+.................... #BIT PLLPOST1=CLKDIV.7 
+.................... #BIT PLLPOST0=CLKDIV.6 
+.................... #BIT PLLPRE4=CLKDIV.4 
+.................... #BIT PLLPRE3=CLKDIV.3 
+.................... #BIT PLLPRE2=CLKDIV.2 
+.................... #BIT PLLPRE1=CLKDIV.1 
+.................... #BIT PLLPRE0=CLKDIV.0 
+....................  
+.................... #WORD LATA=0x02C4  
+.................... #WORD LATB=0x02CA 
+.................... #WORD LATD=0x02D6 
+.................... #WORD LATF=0x02E2 
+.................... #WORD LATG=0x02E8   
+.................... #WORD LATC=0x02D0 
+....................  
+.................... #use spi(spi2, FORCE_HW) 
+.................... #use standard_io(B)//(B_outputs=PIN_B1, PIN_B2) 
+....................  
+.................... #define STATUS 0x00     // ADC1256 Register map 
+.................... #define MUX 0x01  
+.................... #define ADCON 0x02 
+.................... #define DRATE 0x03 
+.................... #define IO 0x04 
+.................... #define OFCO 0x05 
+.................... #define OFC1 0x06 
+.................... #define OFC2 0x07 
+.................... #define FSCO 0x08 
+.................... #define FSC1 0x09 
+.................... #define FSC2 0x0A 
+....................  
+.................... #define uV 1000000 //basic 
+.................... //#define uV 10000000 //basic 
+.................... #define mV 1000 
+....................  
+.................... #WORD PORTB=0x02C8 
+.................... #WORD TRISB=0x02C6 
+.................... #BIT  TRB0=TRISB.0 
+.................... #BIT  TRB1=TRISB.1 
+.................... #BIT  CN1_TRIS=TRISB.5 
+.................... #BIT  CN2_TRIS=TRISB.4 
+.................... #BIT  CN4_TRIS=TRISB.3 
+.................... #BIT  CN3_TRIS=TRISB.2 
+.................... #BIT  CN1=PORTB.5 
+.................... #BIT  CN4=PORTB.3 
+.................... #BIT  CN2=PORTB.4 
+.................... #BIT  CN3=PORTB.2 
+.................... #BIT  XPORT_RST_n=TRISB.15 
+.................... #BIT  Status_LED_TRIS=TRISB.13 
+.................... #BIT  TRB14=TRISB.14 
+.................... #BIT  XPORT_RST_TRIS=TRISB.15 
+.................... #BIT  RB1=LATB.1 
+.................... #BIT  RB0=LATB.0 
+.................... #BIT  Status_LED=LATB.13 
+....................  
+.................... #WORD PORTC=0x02CE 
+.................... #WORD TRISC=0x02CC 
+.................... //#BIT RC13=LATC.13 
+.................... //#BIT RC14=LATC.14 
+.................... #BIT RC13=PORTC.13 
+.................... #BIT RC14=PORTC.14 
+.................... #BIT  TRC13=TRISC.13 
+.................... #BIT  TRC14=TRISC.14 
+.................... #BIT  TRC1=TRISC.1 
+.................... #BIT  TRC2=TRISC.2 
+.................... #BIT  TRC4=TRISC.4 
+.................... //_______________________________________ 
+.................... #WORD PORTD=0x02D4 
+.................... #WORD TRISD=0x02D2 
+.................... #WORD ODCD=0x06D2 
+.................... #BIT  TRD0=TRISD.0 
+.................... //#BIT  TRD1=TRISD.1 // ADC !DRDY описан ниже 
+.................... //#BIT  TRD2=TRISD.2 
+.................... //#BIT  TRD3=TRISD.3 
+.................... #BIT  TRD4=TRISD.4 
+.................... #BIT  TRD5=TRISD.5 
+.................... #BIT  TRD6=TRISD.6 
+.................... #BIT  TRD7=TRISD.7 
+.................... #BIT  TRD8=TRISD.8 
+.................... #BIT  TRD9=TRISD.9 
+.................... #BIT  TRD10=TRISD.10 
+.................... #BIT  TRD11=TRISD.11 
+....................  
+.................... #BIT  RD0=LATD.0 
+.................... //#BIT  RD1=LATD.1 // ADC !DRDY описан ниже 
+.................... //#BIT  RD2=LATD.2 
+.................... //#BIT  RD3=LATD.3 
+.................... #BIT  RD4=LATD.4 
+.................... #BIT  RD5=LATD.5 
+.................... #BIT  RD6=LATD.6 
+.................... #BIT  RD7=LATD.7 
+.................... #BIT  RD8=LATD.8 
+.................... #BIT  RD9=LATD.9 
+.................... #BIT  RD10=LATD.10 
+.................... #BIT  RD11=LATD.11 
+.................... //_________________________________________________ 
+.................... #WORD PORTF=0x02E0 
+.................... #WORD TRISF=0x02DE 
+.................... #BIT  UART2_RX_TRIS=TRISF.4 
+.................... #BIT  UART2_TX_TRIS=TRISF.5 
+....................  
+.................... #WORD PORTG=0x02E6 
+.................... #WORD TRISG=0x02E4 
+.................... #BIT RG0=LATG.0 
+.................... #BIT RG1=LATG.1 
+.................... #BIT LCD_RW=LATG.12 
+.................... #BIT LCD_RS=LATG.13 
+.................... #BIT LCD_E=LATG.14 
+.................... #BIT RG15=LATG.15 
+.................... #BIT SCK2=LATG.6 // SPI2 pins 
+.................... #BIT SDI2=LATG.7 
+.................... #BIT SDO2=LATG.8 
+.................... //#BIT SS2=LATG.9 
+.................... #BIT SCK2_TRIS=TRISG.6 // SPI2 tris 
+.................... #BIT SDI2_TRIS=TRISG.7 
+.................... #BIT SDO2_TRIS=TRISG.8 
+.................... #BIT TRG0=TRISG.0 
+.................... #BIT TRG1=TRISG.1 
+.................... #BIT LCD_RW_TRIS=TRISG.12 
+.................... #BIT LCD_RS_TRIS=TRISG.13 
+.................... #BIT LCD_E_TRIS=TRISG.14 
+....................  
+.................... //#BIT SS2_TRIS=TRISG.9 
+....................  
+.................... #define ADC_Dout SDI2 //???? Din ?? 
+.................... #define ADC_Din SDO2  //???? Dout ?? 
+....................  
+.................... #BIT  ADC_RESET_TRIS=TRISD.3 
+.................... #BIT  ADC_RESET=LATD.3 
+.................... #BIT  ADC_SYNC_TRIS=TRISD.2 
+.................... #BIT  ADC_SYNC=LATD.2 
+.................... #BIT  ADC_CS_TRIS=TRISG.9 
+.................... #BIT  ADC_CS = LATG.9 
+.................... #BIT  ADC_DRDY_TRIS = LATD.1 
+.................... #BIT  ADC_DRDY = PORTD.1 
+....................  
+.................... #define FCY      40000000 
+.................... #define BAUDRATE 9600                 
+.................... #define BRGVAL   ((FCY/BAUDRATE)/16)-1 
+....................  
+.................... //#define Flash_adr1 0xAD00 // ADC sps variable location 
+.................... //#define Flash_adr2 0xAE00 // average variable location 
+....................  
+.................... //#ORG Flash_adr1, Flash_adr2 // зарезервировал ячейки флэш для сохр. параметров 
+....................  
+.................... #define CK_FLASH_END       (getenv("PROGRAM_MEMORY")-1)       
+.................... #define CK_FLASH_PAGE_SIZE (getenv("FLASH_ERASE_SIZE")/2)  
+.................... #define CK_NUM_PAGES (CK_FLASH_END/CK_FLASH_PAGE_SIZE)  
+....................  
+.................... #define CK_USER_PAGE (CK_FLASH_PAGE_SIZE*(CK_NUM_PAGES-1))  
+....................  
+.................... #org CK_USER_PAGE,CK_FLASH_END {}  
+....................  
+....................  
+....................  
+....................    typedef unsigned int16 U16; 
+....................    typedef unsigned int8 U8; 
+....................    typedef unsigned int32 U32; 
+....................    typedef signed int32 S32; 
+....................    typedef signed int16 S16; 
+....................    typedef signed int8 S8; 
+....................  
+....................  
+.................... #use rs232(UART2,baud=9600,parity=N,bits=8) 
+....................  
+....................    static S32 ADC_RByte1=0; 
+....................    static S32 ADC_RByte2=0; 
+....................    static S32 ADC_RByte3=0; 
+....................    static S32 ADC_RByte_Sum=0; 
+....................    static S32 ADCresult=0; 
+....................    static float Vin;                           
+....................    static U8 PGA; 
+....................    //static float Vref=2.5; 
+....................    static U8 Sps_buf,Global_Ch_Number=0; 
+....................    static S16 ADCaddCoef; 
+....................    static float ADCmulCoef; 
+....................    float Final_T_in_K = 0; 
+....................    U8 ostatok_int_dec,ostatok_int_sot  = 0; 
+....................    U8 LCD_num_symb = 1;             // по умолчанию одна цифра для вывода Т на ЛСД 
+....................    U8 flash_wr_data [] = {0,0,0,0}; // заготовка массива для записи во флэш 
+....................    U8 Aver_Wr = 0; 
+....................    U8 Sps_Wr = 0; 
+....................    U8 CRC_Wr = 0; 
+....................     
+....................    U8 menu_item = 0; 
+....................    volatile S8 menu_sel = 0; 
+....................     
+....................    U8 menu_fl = 0; 
+....................    int1 meas_stop_fl = 0; 
+....................    int1 LCD_clear_fl = 1; 
+....................    int1 reset_fl = 0;    // флаг сброса системы 
+....................     
+....................    U8 NumAver = 1;       // размер усреднения 
+....................    U8 ADC_sps_var = 1;   // переменная усреднения данных АЦП  
+....................    U8 CRC1=0xFF,CRC2=0xFF, CRC_buf;   // константы EEPROM CRC 
+....................    U8 flash_rd_data[4]; // заготовка массива для чтения из флэш 
+....................    U32 temp  = 0;        // промежуточный буфер для вычислений T 
+....................    S32 ADC_data  = 0;    // отсчеты АЦП 
+....................       
+.................... static unsigned int8 buf; // lcd buf 
+.................... #BIT buf4=buf.4  
+.................... #BIT buf5=buf.5 
+.................... #BIT buf6=buf.6 
+.................... #BIT buf7=buf.7 
+....................     
+....................  
+.................... #include <LCD_16X4_Termo3.h> 
+.................... /* 
+.................... #define 'Б' 0xA0 
+.................... #define 'Г' 0xA1 
+.................... #define 'Ё' 0xA2 
+.................... #define 'Ж' 0xA3 
+.................... #define 'З' 0xA4 
+.................... #define 'И' 0xA5 
+.................... #define 'Й' 0xA6 
+.................... #define 'Л' 0xA7 
+.................... #define 'П' 0xA8 
+.................... #define 'У' 0xA9 
+.................... #define 'Ф' 0xAA 
+.................... #define 'Ч' 0xAB 
+.................... #define 'Ш' 0xAC 
+.................... #define 'Ъ' 0xAD 
+.................... #define 'Ы' 0xAE 
+.................... #define 'Э' 0xAF 
+.................... */ 
+....................  
+....................  
+.................... #define one   0x00 
+.................... #define two   0x40 
+.................... #define three 0x10 
+.................... #define four  0x50 
+....................  
+....................  
+.................... static void LCDWriteNibble(unsigned char uc) 
+.................... {                                            
+....................   uc=uc << 4; /* Align with bits 7-4*/ 
+005D6:  MOV.B   86A,W0L
+005D8:  CLR.B   1
+005DA:  SL      W0,#4,W0
+005DC:  MOV.B   W0L,86A
+....................   LCD_RW=0; 
+005DE:  BCLR.B  2E9.4
+....................   buf=uc; 
+005E0:  MOV.B   86A,W0L
+005E2:  MOV.B   W0L,844
+....................   RG0=buf4; 
+005E4:  BCLR.B  2E8.0
+005E6:  BTSC.B  844.4
+005E8:  BSET.B  2E8.0
+....................   RG1=buf5; 
+005EA:  BCLR.B  2E8.1
+005EC:  BTSC.B  844.5
+005EE:  BSET.B  2E8.1
+....................   RB1=buf6; 
+005F0:  BCLR.B  2CA.1
+005F2:  BTSC.B  844.6
+005F4:  BSET.B  2CA.1
+....................   RB0=buf7; 
+005F6:  BCLR.B  2CA.0
+005F8:  BTSC.B  844.7
+005FA:  BSET.B  2CA.0
+....................   //delay_ms(50); 
+....................   delay_ms(1); 
+005FC:  REPEAT  #1C3E
+005FE:  NOP     
+00600:  REPEAT  #3FFF
+00602:  NOP     
+00604:  REPEAT  #3FFF
+00606:  NOP     
+....................   LCD_E=1; 
+00608:  BSET.B  2E9.6
+....................   //delay_us(100); 
+....................   delay_us(2); 
+0060A:  REPEAT  #4E
+0060C:  NOP     
+....................   LCD_E=0; 
+0060E:  BCLR.B  2E9.6
+....................   delay_us(100); 
+00610:  REPEAT  #F9E
+00612:  NOP     
+....................   LCD_RW=1;    
+00614:  BSET.B  2E9.4
+.................... } 
+00616:  RETURN  
+....................  
+.................... static void LCDWriteData(unsigned char uc) 
+.................... { 
+*
+006F0:  MOV     W5,[W15++]
+....................    
+....................     LCD_RS=0; 
+006F2:  BCLR.B  2E9.5
+....................     //delay_ms(50); 
+....................     delay_us(500); 
+006F4:  REPEAT  #E1E
+006F6:  NOP     
+006F8:  REPEAT  #3FFF
+006FA:  NOP     
+....................     LCD_RS=1; 
+006FC:  BSET.B  2E9.5
+....................     LCD_RW=1;// ?????????????? ???????? ????????????? 
+006FE:  BSET.B  2E9.4
+....................     LCDWriteNibble(uc>>4);//???? ???????? ??????? 
+00700:  MOV     866,W5
+00702:  CLR.B   B
+00704:  LSR     W5,#4,W5
+00706:  PUSH    86A
+00708:  MOV.B   W5L,[W15-#2]
+0070A:  POP     86A
+0070C:  CALL    5D6
+....................     LCDWriteNibble(uc); 
+00710:  MOV.B   866,W0L
+00712:  MOV.B   W0L,86A
+00714:  CALL    5D6
+....................    
+.................... } 
+00718:  MOV     [--W15],W5
+0071A:  RETURN  
+....................  
+.................... static void LCDCommand(unsigned char uc) 
+.................... { 
+*
+00618:  MOV     W5,[W15++]
+....................     LCD_RS=0; /* Instruction mode */ 
+0061A:  BCLR.B  2E9.5
+....................     delay_us(500); 
+0061C:  REPEAT  #E1E
+0061E:  NOP     
+00620:  REPEAT  #3FFF
+00622:  NOP     
+....................     //delay_ms(5); 
+....................     LCD_RW=1;// ?????????????? ???????? ????????????? 
+00624:  BSET.B  2E9.4
+....................     LCDWriteNibble(uc>>4); 
+00626:  MOV     84E,W5
+00628:  CLR.B   B
+0062A:  LSR     W5,#4,W5
+0062C:  PUSH    86A
+0062E:  MOV.B   W5L,[W15-#2]
+00630:  POP     86A
+00632:  CALL    5D6
+....................     LCDWriteNibble(uc);   
+00636:  MOV.B   84E,W0L
+00638:  MOV.B   W0L,86A
+0063A:  CALL    5D6
+.................... } 
+0063E:  MOV     [--W15],W5
+00640:  RETURN  
+....................  
+.................... static void LCDSetCursor(unsigned char ucPos) 
+.................... { 
+*
+00730:  MOV     W5,[W15++]
+....................   LCDCommand(0x80 | ucPos); 
+00732:  MOV     84A,W5
+00734:  IOR.B   #80,W5L
+00736:  PUSH    84E
+00738:  MOV.B   W5L,[W15-#2]
+0073A:  POP     84E
+0073C:  CALL    618
+.................... } 
+00740:  MOV     [--W15],W5
+00742:  RETURN  
+....................  
+.................... static void LCDClear(void) 
+.................... { 
+....................    LCDCommand(0x1); 
+*
+006E2:  MOV.B   #1,W0L
+006E4:  MOV.B   W0L,84E
+006E6:  CALL    618
+....................    Delay_us(200); 
+006EA:  REPEAT  #1F3E
+006EC:  NOP     
+....................    //delay_ms(5); 
+.................... } 
+006EE:  RETURN  
+....................  
+.................... static void LCDInit(void) 
+.................... { 
+....................   LCD_E=0; 
+*
+00642:  BCLR.B  2E9.6
+....................   LCD_RS=0; 
+00644:  BCLR.B  2E9.5
+....................   //Delay_ms(1000); // 
+....................   delay_ms(2000); 
+00646:  MOV     #7D0,W0
+00648:  CALL    5BE
+....................   LCDWriteNibble(3); 
+0064C:  MOV.B   #3,W0L
+0064E:  MOV.B   W0L,86A
+00650:  CALL    5D6
+....................   //Delay_us(200); 
+....................   Delay_ms(1); 
+00654:  REPEAT  #1C3E
+00656:  NOP     
+00658:  REPEAT  #3FFF
+0065A:  NOP     
+0065C:  REPEAT  #3FFF
+0065E:  NOP     
+....................   LCDWriteNibble(3); 
+00660:  MOV.B   #3,W0L
+00662:  MOV.B   W0L,86A
+00664:  CALL    5D6
+....................   Delay_ms(1); 
+00668:  REPEAT  #1C3E
+0066A:  NOP     
+0066C:  REPEAT  #3FFF
+0066E:  NOP     
+00670:  REPEAT  #3FFF
+00672:  NOP     
+....................   //Delay_us(200); 
+....................   LCDWriteNibble(3); 
+00674:  MOV.B   #3,W0L
+00676:  MOV.B   W0L,86A
+00678:  CALL    5D6
+....................   Delay_ms(1); 
+0067C:  REPEAT  #1C3E
+0067E:  NOP     
+00680:  REPEAT  #3FFF
+00682:  NOP     
+00684:  REPEAT  #3FFF
+00686:  NOP     
+....................   //Delay_us(200); 
+....................   LCDWriteNibble(2); 
+00688:  MOV.B   #2,W0L
+0068A:  MOV.B   W0L,86A
+0068C:  CALL    5D6
+....................   Delay_ms(1); 
+00690:  REPEAT  #1C3E
+00692:  NOP     
+00694:  REPEAT  #3FFF
+00696:  NOP     
+00698:  REPEAT  #3FFF
+0069A:  NOP     
+....................   //Delay_us(200); 
+....................    
+....................   LCDCommand(0x28);//4-?????? ?????, 2 ??????, ????? 5x8 ????? 
+0069C:  MOV.B   #28,W0L
+0069E:  MOV.B   W0L,84E
+006A0:  CALL    618
+....................    
+....................   LCDCommand(0x08);// ????????? ???????, ????????? ??????, ????????? ???????? ??????? 
+006A4:  MOV.B   #8,W0L
+006A6:  MOV.B   W0L,84E
+006A8:  CALL    618
+....................    
+....................  // LCDCommand(0x0C);// ???????? ???????, ???????? ??????, ???????? ???????? ??????? 
+....................   LCDCommand(0b00001100);// ???????? ???????, ???????? ??????, ???????? ???????? ??????? 
+006AC:  MOV.B   #C,W0L
+006AE:  MOV.B   W0L,84E
+006B0:  CALL    618
+....................    
+....................   LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ?????? 
+006B4:  MOV.B   #6,W0L
+006B6:  MOV.B   W0L,84E
+006B8:  CALL    618
+....................   LCDCommand(0x1);// ??????? ?????? ? ??????????? ??????? ? ?????? ???????  
+006BC:  MOV.B   #1,W0L
+006BE:  MOV.B   W0L,84E
+006C0:  CALL    618
+....................   // delay_ms(2); 
+....................   Delay_ms(8); 
+006C4:  MOV     #8,W0
+006C6:  CALL    5BE
+....................   LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ??????  
+006CA:  MOV.B   #6,W0L
+006CC:  MOV.B   W0L,84E
+006CE:  CALL    618
+....................   LCDCommand(0x40);//????????? ?????? DRAM 
+006D2:  MOV.B   #40,W0L
+006D4:  MOV.B   W0L,84E
+006D6:  CALL    618
+....................   //delay_ms(10); 
+....................   Delay_ms(20); 
+006DA:  MOV     #14,W0
+006DC:  CALL    5BE
+....................  } 
+006E0:  RETURN  
+....................  
+.................... static void LCDPutCh(char c) 
+.................... { 
+....................   LCDWriteData(c); 
+*
+0071C:  MOV.B   864,W0L
+0071E:  MOV.B   W0L,866
+00720:  CALL    6F0
+.................... } 
+00724:  RETURN  
+....................  
+.................... static void LCDMsg(char c) 
+.................... { 
+....................      
+....................     LCDPutCh(c); 
+00726:  MOV.B   84C,W0L
+00728:  MOV.B   W0L,864
+0072A:  CALL    71C
+.................... } 
+0072E:  RETURN  
+....................  
+.................... static void LCDWelcome(void) 
+.................... { 
+*
+00744:  MOV     W5,[W15++]
+....................     LCDClear(); 
+00746:  CALL    6E2
+....................     LCDMsg("    KRION-6T    "); 
+0074A:  MOV     #0,W5
+0074C:  MOV     W5,W0
+0074E:  CALL    200
+00752:  IOR.B   #0,W0L
+00754:  BTSC.B  42.1
+00756:  BRA     762
+00758:  INC     W5,W5
+0075A:  MOV.B   W0L,84C
+0075C:  CALL    726
+00760:  BRA     74C
+....................     //Delay_ms(2000); 
+....................     LCDSetCursor(0x40); 
+00762:  MOV.B   #40,W0L
+00764:  MOV.B   W0L,84A
+00766:  CALL    730
+....................     LCDMsg("Thermometry v2.0"); 
+0076A:  MOV     #0,W5
+0076C:  MOV     W5,W0
+0076E:  CALL    21E
+00772:  IOR.B   #0,W0L
+00774:  BTSC.B  42.1
+00776:  BRA     782
+00778:  INC     W5,W5
+0077A:  MOV.B   W0L,84C
+0077C:  CALL    726
+00780:  BRA     76C
+....................     LCDSetCursor(0x50); 
+00782:  MOV.B   #50,W0L
+00784:  MOV.B   W0L,84A
+00786:  CALL    730
+....................     LCDMsg("___LHEP_JINR____"); 
+0078A:  MOV     #0,W5
+0078C:  MOV     W5,W0
+0078E:  CALL    23C
+00792:  IOR.B   #0,W0L
+00794:  BTSC.B  42.1
+00796:  BRA     7A2
+00798:  INC     W5,W5
+0079A:  MOV.B   W0L,84C
+0079C:  CALL    726
+007A0:  BRA     78C
+....................     Delay_ms(1000); 
+007A2:  MOV     #3E8,W0
+007A4:  CALL    5BE
+....................     LCDClear();    
+007A8:  CALL    6E2
+.................... } 
+007AC:  MOV     [--W15],W5
+007AE:  RETURN  
+....................  
+.................... static void LCDPutU16(U32 _u16,U8 u8NumDigs) 
+.................... { 
+*
+01CDC:  MOV     W5,[W15++]
+....................     
+....................     U32 u16a ,u16b; 
+....................      
+....................    u16a=_u16/10000; 
+01CDE:  BCLR.B  43.0
+01CE0:  MOV     84E,W0
+01CE2:  MOV     850,W1
+01CE4:  MOV     #2710,W2
+01CE6:  MOV     #0,W3
+01CE8:  CALL    1382
+01CEC:  MOV     W0,854
+01CEE:  MOV     W1,856
+....................    u16b=u16a*10000; 
+01CF0:  MOV     854,W0
+01CF2:  MOV     856,W1
+01CF4:  MOV     #2710,W2
+01CF6:  MOV     #0,W3
+01CF8:  CALL    1A98
+01CFC:  MOV     W0,858
+01CFE:  MOV     W1,85A
+....................  
+....................     if (u8NumDigs>=5) 
+01D00:  MOV     852,W4
+01D02:  CP.B    W4L,#5
+01D04:  BRA     NC,1D16
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01D06:  MOV     #30,W4
+01D08:  MOV     854,W3
+01D0A:  ADD.B   W3L,W4L,W5L
+01D0C:  PUSH    864
+01D0E:  MOV.B   W5L,[W15-#2]
+01D10:  POP     864
+01D12:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01D16:  MOV     84E,W4
+01D18:  MOV     858,W3
+01D1A:  SUB     W4,W3,W0
+01D1C:  MOV     W0,84E
+01D1E:  MOV     850,W4
+01D20:  MOV     85A,W3
+01D22:  SUBB    W4,W3,W0
+01D24:  MOV     W0,850
+....................     u16a=_u16/1000; 
+01D26:  BCLR.B  43.0
+01D28:  MOV     84E,W0
+01D2A:  MOV     850,W1
+01D2C:  MOV     #3E8,W2
+01D2E:  MOV     #0,W3
+01D30:  CALL    1382
+01D34:  MOV     W0,854
+01D36:  MOV     W1,856
+....................     u16b=u16a*1000; 
+01D38:  MOV     854,W0
+01D3A:  MOV     856,W1
+01D3C:  MOV     #3E8,W2
+01D3E:  MOV     #0,W3
+01D40:  CALL    1A98
+01D44:  MOV     W0,858
+01D46:  MOV     W1,85A
+....................     if (u8NumDigs>=4) 
+01D48:  MOV     852,W4
+01D4A:  CP.B    W4L,#4
+01D4C:  BRA     NC,1D5E
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01D4E:  MOV     #30,W4
+01D50:  MOV     854,W3
+01D52:  ADD.B   W3L,W4L,W5L
+01D54:  PUSH    864
+01D56:  MOV.B   W5L,[W15-#2]
+01D58:  POP     864
+01D5A:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01D5E:  MOV     84E,W4
+01D60:  MOV     858,W3
+01D62:  SUB     W4,W3,W0
+01D64:  MOV     W0,84E
+01D66:  MOV     850,W4
+01D68:  MOV     85A,W3
+01D6A:  SUBB    W4,W3,W0
+01D6C:  MOV     W0,850
+....................     u16a=_u16/100; 
+01D6E:  BCLR.B  43.0
+01D70:  MOV     84E,W0
+01D72:  MOV     850,W1
+01D74:  MOV     #64,W2
+01D76:  MOV     #0,W3
+01D78:  CALL    1382
+01D7C:  MOV     W0,854
+01D7E:  MOV     W1,856
+....................     u16b=u16a*100; 
+01D80:  MOV     854,W0
+01D82:  MOV     856,W1
+01D84:  MOV     #64,W2
+01D86:  MOV     #0,W3
+01D88:  CALL    1A98
+01D8C:  MOV     W0,858
+01D8E:  MOV     W1,85A
+....................     if (u8NumDigs>=3) 
+01D90:  MOV     852,W4
+01D92:  CP.B    W4L,#3
+01D94:  BRA     NC,1DA6
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01D96:  MOV     #30,W4
+01D98:  MOV     854,W3
+01D9A:  ADD.B   W3L,W4L,W5L
+01D9C:  PUSH    864
+01D9E:  MOV.B   W5L,[W15-#2]
+01DA0:  POP     864
+01DA2:  CALL    71C
+....................        
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01DA6:  MOV     84E,W4
+01DA8:  MOV     858,W3
+01DAA:  SUB     W4,W3,W0
+01DAC:  MOV     W0,84E
+01DAE:  MOV     850,W4
+01DB0:  MOV     85A,W3
+01DB2:  SUBB    W4,W3,W0
+01DB4:  MOV     W0,850
+....................     u16a=_u16/10; 
+01DB6:  BCLR.B  43.0
+01DB8:  MOV     84E,W0
+01DBA:  MOV     850,W1
+01DBC:  MOV     #A,W2
+01DBE:  MOV     #0,W3
+01DC0:  CALL    1382
+01DC4:  MOV     W0,854
+01DC6:  MOV     W1,856
+....................     u16b=u16a*10; 
+01DC8:  MOV     854,W0
+01DCA:  MOV     856,W1
+01DCC:  MOV     #A,W2
+01DCE:  MOV     #0,W3
+01DD0:  CALL    1A98
+01DD4:  MOV     W0,858
+01DD6:  MOV     W1,85A
+....................    if (u8NumDigs>=2) 
+01DD8:  MOV     852,W4
+01DDA:  CP.B    W4L,#2
+01DDC:  BRA     NC,1DEE
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01DDE:  MOV     #30,W4
+01DE0:  MOV     854,W3
+01DE2:  ADD.B   W3L,W4L,W5L
+01DE4:  PUSH    864
+01DE6:  MOV.B   W5L,[W15-#2]
+01DE8:  POP     864
+01DEA:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01DEE:  MOV     84E,W4
+01DF0:  MOV     858,W3
+01DF2:  SUB     W4,W3,W0
+01DF4:  MOV     W0,84E
+01DF6:  MOV     850,W4
+01DF8:  MOV     85A,W3
+01DFA:  SUBB    W4,W3,W0
+01DFC:  MOV     W0,850
+....................     if (u8NumDigs>=1) 
+01DFE:  MOV     852,W4
+01E00:  CP.B    W4L,#1
+01E02:  BRA     NC,1E14
+....................     { 
+....................       LCDPutCh((U8)_u16+'0'); 
+01E04:  MOV     #30,W4
+01E06:  MOV     84E,W3
+01E08:  ADD.B   W3L,W4L,W5L
+01E0A:  PUSH    864
+01E0C:  MOV.B   W5L,[W15-#2]
+01E0E:  POP     864
+01E10:  CALL    71C
+....................     } 
+....................    
+.................... } 
+01E14:  MOV     [--W15],W5
+01E16:  RETURN  
+....................  
+.................... static void LCDPutU32(U32 _u16,U8 u8NumDigs) 
+.................... { 
+*
+01AC8:  MOV     W5,[W15++]
+....................     U32 u16a ,u16b; 
+....................      
+....................    u16a=_u16/10000000; 
+01ACA:  BCLR.B  43.0
+01ACC:  MOV     84A,W0
+01ACE:  MOV     84C,W1
+01AD0:  MOV     #9680,W2
+01AD2:  MOV     #98,W3
+01AD4:  CALL    1382
+01AD8:  MOV     W0,850
+01ADA:  MOV     W1,852
+....................    u16b=u16a*10000000; 
+01ADC:  MOV     850,W0
+01ADE:  MOV     852,W1
+01AE0:  MOV     #9680,W2
+01AE2:  MOV     #98,W3
+01AE4:  CALL    1A98
+01AE8:  MOV     W0,854
+01AEA:  MOV     W1,856
+....................  
+....................     if (u8NumDigs>=7) 
+01AEC:  MOV     84E,W4
+01AEE:  CP.B    W4L,#7
+01AF0:  BRA     NC,1B02
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01AF2:  MOV     #30,W4
+01AF4:  MOV     850,W3
+01AF6:  ADD.B   W3L,W4L,W5L
+01AF8:  PUSH    864
+01AFA:  MOV.B   W5L,[W15-#2]
+01AFC:  POP     864
+01AFE:  CALL    71C
+....................     } 
+....................       _u16-=u16b; 
+01B02:  MOV     84A,W4
+01B04:  MOV     854,W3
+01B06:  SUB     W4,W3,W0
+01B08:  MOV     W0,84A
+01B0A:  MOV     84C,W4
+01B0C:  MOV     856,W3
+01B0E:  SUBB    W4,W3,W0
+01B10:  MOV     W0,84C
+....................        
+....................    u16a=_u16/1000000; 
+01B12:  BCLR.B  43.0
+01B14:  MOV     84A,W0
+01B16:  MOV     84C,W1
+01B18:  MOV     #4240,W2
+01B1A:  MOV     #F,W3
+01B1C:  CALL    1382
+01B20:  MOV     W0,850
+01B22:  MOV     W1,852
+....................    u16b=u16a*1000000; 
+01B24:  MOV     850,W0
+01B26:  MOV     852,W1
+01B28:  MOV     #4240,W2
+01B2A:  MOV     #F,W3
+01B2C:  CALL    1A98
+01B30:  MOV     W0,854
+01B32:  MOV     W1,856
+....................        
+....................     if (u8NumDigs>=6) 
+01B34:  MOV     84E,W4
+01B36:  CP.B    W4L,#6
+01B38:  BRA     NC,1B4A
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01B3A:  MOV     #30,W4
+01B3C:  MOV     850,W3
+01B3E:  ADD.B   W3L,W4L,W5L
+01B40:  PUSH    864
+01B42:  MOV.B   W5L,[W15-#2]
+01B44:  POP     864
+01B46:  CALL    71C
+....................     } 
+....................       _u16-=u16b; 
+01B4A:  MOV     84A,W4
+01B4C:  MOV     854,W3
+01B4E:  SUB     W4,W3,W0
+01B50:  MOV     W0,84A
+01B52:  MOV     84C,W4
+01B54:  MOV     856,W3
+01B56:  SUBB    W4,W3,W0
+01B58:  MOV     W0,84C
+....................        
+....................    u16a=_u16/100000; 
+01B5A:  BCLR.B  43.0
+01B5C:  MOV     84A,W0
+01B5E:  MOV     84C,W1
+01B60:  MOV     #86A0,W2
+01B62:  MOV     #1,W3
+01B64:  CALL    1382
+01B68:  MOV     W0,850
+01B6A:  MOV     W1,852
+....................    u16b=u16a*100000; 
+01B6C:  MOV     850,W0
+01B6E:  MOV     852,W1
+01B70:  MOV     #86A0,W2
+01B72:  MOV     #1,W3
+01B74:  CALL    1A98
+01B78:  MOV     W0,854
+01B7A:  MOV     W1,856
+....................  
+....................     if (u8NumDigs>=5) 
+01B7C:  MOV     84E,W4
+01B7E:  CP.B    W4L,#5
+01B80:  BRA     NC,1B92
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01B82:  MOV     #30,W4
+01B84:  MOV     850,W3
+01B86:  ADD.B   W3L,W4L,W5L
+01B88:  PUSH    864
+01B8A:  MOV.B   W5L,[W15-#2]
+01B8C:  POP     864
+01B8E:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01B92:  MOV     84A,W4
+01B94:  MOV     854,W3
+01B96:  SUB     W4,W3,W0
+01B98:  MOV     W0,84A
+01B9A:  MOV     84C,W4
+01B9C:  MOV     856,W3
+01B9E:  SUBB    W4,W3,W0
+01BA0:  MOV     W0,84C
+....................     u16a=_u16/10000; 
+01BA2:  BCLR.B  43.0
+01BA4:  MOV     84A,W0
+01BA6:  MOV     84C,W1
+01BA8:  MOV     #2710,W2
+01BAA:  MOV     #0,W3
+01BAC:  CALL    1382
+01BB0:  MOV     W0,850
+01BB2:  MOV     W1,852
+....................     u16b=u16a*10000; 
+01BB4:  MOV     850,W0
+01BB6:  MOV     852,W1
+01BB8:  MOV     #2710,W2
+01BBA:  MOV     #0,W3
+01BBC:  CALL    1A98
+01BC0:  MOV     W0,854
+01BC2:  MOV     W1,856
+....................     if (u8NumDigs>=4) 
+01BC4:  MOV     84E,W4
+01BC6:  CP.B    W4L,#4
+01BC8:  BRA     NC,1BDA
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01BCA:  MOV     #30,W4
+01BCC:  MOV     850,W3
+01BCE:  ADD.B   W3L,W4L,W5L
+01BD0:  PUSH    864
+01BD2:  MOV.B   W5L,[W15-#2]
+01BD4:  POP     864
+01BD6:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01BDA:  MOV     84A,W4
+01BDC:  MOV     854,W3
+01BDE:  SUB     W4,W3,W0
+01BE0:  MOV     W0,84A
+01BE2:  MOV     84C,W4
+01BE4:  MOV     856,W3
+01BE6:  SUBB    W4,W3,W0
+01BE8:  MOV     W0,84C
+....................     u16a=_u16/1000; 
+01BEA:  BCLR.B  43.0
+01BEC:  MOV     84A,W0
+01BEE:  MOV     84C,W1
+01BF0:  MOV     #3E8,W2
+01BF2:  MOV     #0,W3
+01BF4:  CALL    1382
+01BF8:  MOV     W0,850
+01BFA:  MOV     W1,852
+....................     u16b=u16a*1000; 
+01BFC:  MOV     850,W0
+01BFE:  MOV     852,W1
+01C00:  MOV     #3E8,W2
+01C02:  MOV     #0,W3
+01C04:  CALL    1A98
+01C08:  MOV     W0,854
+01C0A:  MOV     W1,856
+....................     if (u8NumDigs>=3) 
+01C0C:  MOV     84E,W4
+01C0E:  CP.B    W4L,#3
+01C10:  BRA     NC,1C22
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01C12:  MOV     #30,W4
+01C14:  MOV     850,W3
+01C16:  ADD.B   W3L,W4L,W5L
+01C18:  PUSH    864
+01C1A:  MOV.B   W5L,[W15-#2]
+01C1C:  POP     864
+01C1E:  CALL    71C
+....................        
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01C22:  MOV     84A,W4
+01C24:  MOV     854,W3
+01C26:  SUB     W4,W3,W0
+01C28:  MOV     W0,84A
+01C2A:  MOV     84C,W4
+01C2C:  MOV     856,W3
+01C2E:  SUBB    W4,W3,W0
+01C30:  MOV     W0,84C
+....................     u16a=_u16/100; 
+01C32:  BCLR.B  43.0
+01C34:  MOV     84A,W0
+01C36:  MOV     84C,W1
+01C38:  MOV     #64,W2
+01C3A:  MOV     #0,W3
+01C3C:  CALL    1382
+01C40:  MOV     W0,850
+01C42:  MOV     W1,852
+....................     u16b=u16a*100; 
+01C44:  MOV     850,W0
+01C46:  MOV     852,W1
+01C48:  MOV     #64,W2
+01C4A:  MOV     #0,W3
+01C4C:  CALL    1A98
+01C50:  MOV     W0,854
+01C52:  MOV     W1,856
+....................    if (u8NumDigs>=2) 
+01C54:  MOV     84E,W4
+01C56:  CP.B    W4L,#2
+01C58:  BRA     NC,1C6A
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01C5A:  MOV     #30,W4
+01C5C:  MOV     850,W3
+01C5E:  ADD.B   W3L,W4L,W5L
+01C60:  PUSH    864
+01C62:  MOV.B   W5L,[W15-#2]
+01C64:  POP     864
+01C66:  CALL    71C
+....................     } 
+....................  
+....................    _u16-=u16b; 
+01C6A:  MOV     84A,W4
+01C6C:  MOV     854,W3
+01C6E:  SUB     W4,W3,W0
+01C70:  MOV     W0,84A
+01C72:  MOV     84C,W4
+01C74:  MOV     856,W3
+01C76:  SUBB    W4,W3,W0
+01C78:  MOV     W0,84C
+....................     u16a=_u16/10; 
+01C7A:  BCLR.B  43.0
+01C7C:  MOV     84A,W0
+01C7E:  MOV     84C,W1
+01C80:  MOV     #A,W2
+01C82:  MOV     #0,W3
+01C84:  CALL    1382
+01C88:  MOV     W0,850
+01C8A:  MOV     W1,852
+....................     u16b=u16a*10; 
+01C8C:  MOV     850,W0
+01C8E:  MOV     852,W1
+01C90:  MOV     #A,W2
+01C92:  MOV     #0,W3
+01C94:  CALL    1A98
+01C98:  MOV     W0,854
+01C9A:  MOV     W1,856
+....................    if (u8NumDigs>=2) 
+01C9C:  MOV     84E,W4
+01C9E:  CP.B    W4L,#2
+01CA0:  BRA     NC,1CB2
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+01CA2:  MOV     #30,W4
+01CA4:  MOV     850,W3
+01CA6:  ADD.B   W3L,W4L,W5L
+01CA8:  PUSH    864
+01CAA:  MOV.B   W5L,[W15-#2]
+01CAC:  POP     864
+01CAE:  CALL    71C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+01CB2:  MOV     84A,W4
+01CB4:  MOV     854,W3
+01CB6:  SUB     W4,W3,W0
+01CB8:  MOV     W0,84A
+01CBA:  MOV     84C,W4
+01CBC:  MOV     856,W3
+01CBE:  SUBB    W4,W3,W0
+01CC0:  MOV     W0,84C
+....................     if (u8NumDigs>=1) 
+01CC2:  MOV     84E,W4
+01CC4:  CP.B    W4L,#1
+01CC6:  BRA     NC,1CD8
+....................     { 
+....................       LCDPutCh((U8)_u16+'0'); 
+01CC8:  MOV     #30,W4
+01CCA:  MOV     84A,W3
+01CCC:  ADD.B   W3L,W4L,W5L
+01CCE:  PUSH    864
+01CD0:  MOV.B   W5L,[W15-#2]
+01CD2:  POP     864
+01CD4:  CALL    71C
+....................     } 
+....................    
+.................... } 
+01CD8:  MOV     [--W15],W5
+01CDA:  RETURN  
+....................  
+.................... static void LCDPutS32(S32 s32a,U8 u8NumDigs) 
+.................... { 
+....................   char c='+'; 
+....................  
+....................   if (s32a<0) 
+....................   { 
+....................     s32a=-s32a; 
+....................     c='-'; 
+....................   } 
+....................   LCDPutCh(c); 
+....................   LCDPutU32((U32)s32a,u8NumDigs); 
+.................... } 
+....................  
+.................... #include <ADS1256.h> 
+....................  
+.................... static U8 RdReg(U8 RegName) 
+.................... { 
+....................    U8 RegValue = 0;  
+....................    //1st Command Byte: 0001 rrrr where rrrr is the address of the first register to read. 
+....................    //2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to read – 1 
+....................    ADC_CS = 0; 
+....................    delay_us(1); 
+....................    Spi_write2(0x10+RegName); // 1st Command Byte,??????? ?????? 
+....................    Spi_write2(0x00); // 1st Command Byte, ?????? ?????? ???? ???? 
+....................    delay_us(8); // 50 CLK_IN PEDIODS 
+....................    RegValue = Spi_read2(0); 
+....................    delay_us(1); 
+....................    ADC_CS =1; 
+....................    delay_us(1); 
+....................    Return RegValue;   
+.................... } 
+....................  
+.................... static void WrReg(U8 RegName,CommandByte) 
+.................... { 
+*
+00866:  MOV     W5,[W15++]
+....................    ADC_CS = 0; 
+00868:  BCLR.B  2E9.1
+....................    delay_us(5); 
+0086A:  REPEAT  #C6
+0086C:  NOP     
+....................    Spi_write2(0x50+RegName); // 1st Command Byte: 0101 (0x50) rrrr where rrrr is the address to the first register to be written. 
+0086E:  MOV     #50,W0
+00870:  ADD.B   84C,W0L
+00872:  MOV.B   W0L,A
+00874:  BCLR.B  260.6
+00876:  BTSS.B  260.0
+00878:  BRA     87E
+0087A:  MOV.B   268,W0L
+0087C:  BRA     876
+0087E:  PUSH    268
+00880:  MOV.B   W5L,[W15-#2]
+00882:  POP     268
+00884:  BTSS.B  260.0
+00886:  BRA     884
+....................    delay_us(10); 
+00888:  REPEAT  #18E
+0088A:  NOP     
+....................    Spi_write2(0);         // 2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to be written – 1. 
+0088C:  BCLR.B  260.6
+0088E:  BTSS.B  260.0
+00890:  BRA     896
+00892:  MOV.B   268,W0L
+00894:  BRA     88E
+00896:  CLR.B   268
+00898:  BTSS.B  260.0
+0089A:  BRA     898
+....................    delay_us(10); 
+0089C:  REPEAT  #18E
+0089E:  NOP     
+....................    Spi_write2(CommandByte); 
+008A0:  BCLR.B  260.6
+008A2:  BTSS.B  260.0
+008A4:  BRA     8AA
+008A6:  MOV.B   268,W0L
+008A8:  BRA     8A2
+008AA:  MOV.B   84D,W0L
+008AC:  MOV.B   W0L,268
+008AE:  BTSS.B  260.0
+008B0:  BRA     8AE
+....................    delay_us(10); 
+008B2:  REPEAT  #18E
+008B4:  NOP     
+....................    ADC_CS = 1; 
+008B6:  BSET.B  2E9.1
+....................    delay_us(50); 
+008B8:  REPEAT  #7CE
+008BA:  NOP     
+.................... } 
+008BC:  MOV     [--W15],W5
+008BE:  RETURN  
+....................  
+.................... static void ADC_Init2(U8 StartRegId,CommandByte1,CommandByte2,CommandByte3,CommandByte4) 
+....................  
+.................... { 
+....................  
+....................    ADC_CS = 0; 
+....................    delay_us(1); 
+....................    Spi_write2(0x50+StartRegId); // 1st Command Byte: 0101 (0x50) rrrr where rrrr is the address to the first register to be written. 
+....................    Spi_write2(3);         // 2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to be written – 1. 
+....................    Spi_write2(CommandByte1); 
+....................    Spi_write2(CommandByte2); 
+....................    Spi_write2(CommandByte3); 
+....................    Spi_write2(CommandByte4); 
+....................    delay_us(1); 
+....................    ADC_CS = 1; 
+....................     
+.................... } 
+....................  
+.................... static S32 ADC_RData(){             
+....................  
+....................      ADC_CS = 0; 
+....................      delay_us(1); 
+....................      Spi_write2(0x01); 
+....................      delay_us(1); 
+....................      ADC_CS = 1; 
+....................      delay_us(1); 
+....................      m1: 
+....................      if(!ADC_DRDY){ 
+....................      ADC_CS = 0; 
+....................      delay_us(1); 
+....................      ADC_Rbyte1 = Spi_read2(0); 
+....................      ADC_Rbyte2 = Spi_read2(0); 
+....................      ADC_Rbyte3 = Spi_read2(0); 
+....................      delay_us(1); 
+....................      ADC_CS = 1; 
+....................      ADC_RByte_Sum = (ADC_Rbyte1<<16) + (ADC_Rbyte2<<8) + ADC_Rbyte3; 
+....................      return ADC_RByte_Sum; 
+....................      } 
+....................      else goto m1; 
+.................... } 
+....................  
+.................... static void ADC_StartRdContin(){ 
+....................  
+....................      ADC_CS = 0;        
+*
+00B90:  BCLR.B  2E9.1
+....................      delay_us(1);                                          
+00B92:  REPEAT  #26
+00B94:  NOP     
+....................      Spi_write2(0x03);              
+00B96:  BCLR.B  260.6
+00B98:  BTSS.B  260.0
+00B9A:  BRA     BA0
+00B9C:  MOV.B   268,W0L
+00B9E:  BRA     B98
+00BA0:  MOV.B   #3,W0L
+00BA2:  MOV.B   W0L,268
+00BA4:  BTSS.B  260.0
+00BA6:  BRA     BA4
+....................      delay_us(1); 
+00BA8:  REPEAT  #26
+00BAA:  NOP     
+....................      ADC_CS = 1; 
+00BAC:  BSET.B  2E9.1
+.................... } 
+00BAE:  RETURN  
+....................  
+.................... static S32 ADC_RdataC(){                                               
+*
+00C2E:  MOV     W5,[W15++]
+00C30:  MOV     W6,[W15++]
+....................     /*   
+....................      ADC_CS = 0;        
+....................      delay_us(1);                                          
+....................      Spi_write2(0x03);              
+....................      delay_us(1); 
+....................      ADC_CS = 1; 
+....................      //delay_ms(1); 
+....................         
+....................      Switch (Sps_buf){      
+....................      
+....................       case 0xF0:    
+....................        delay_us(220);         
+....................         break;                       
+....................        
+....................       case 0xE0: 
+....................        delay_us(255);  
+....................         break; 
+....................          
+....................       case 0xD0: 
+....................        delay_us(315);  
+....................         break; 
+....................          
+....................       case 0xC0: 
+....................        delay_us(445);  
+....................         break; 
+....................          
+....................       case 0xB0: 
+....................        delay_us(685);  
+....................         break; 
+....................          
+....................       case 0xA1: 
+....................        delay_ms(1); 
+....................        delay_us(185);                
+....................         break;       
+....................          
+....................       case 0x92: 
+....................        delay_ms(5); 
+....................         break; 
+....................          
+....................       case 0x82: 
+....................        delay_ms(10); 
+....................        delay_us(200); 
+....................         break; 
+....................                     
+....................       case 0x63: 
+....................        delay_ms(21);  
+....................         break; 
+....................          
+....................       case 0x43: 
+....................        delay_ms(41);  
+....................         break; 
+....................          
+....................       case 0x23: 
+....................        delay_ms(101);  
+....................         break;          
+....................              
+....................       case 0x13: 
+....................        delay_ms(201);  
+....................         break;                           
+....................      } 
+....................      */                                                               
+....................       
+....................      ADC_StartRdContin();    
+00C32:  CALL    B90
+....................      While(ADC_DRDY) 
+....................      delay_us(1); 
+00C36:  BTSS.B  2D4.1
+00C38:  BRA     C42
+00C3A:  REPEAT  #26
+00C3C:  NOP     
+00C3E:  GOTO    C36
+....................      ADC_CS = 0; 
+00C42:  BCLR.B  2E9.1
+....................      delay_us(1); 
+00C44:  REPEAT  #26
+00C46:  NOP     
+....................      ADC_Rbyte1 = Spi_read2(0); 
+00C48:  BCLR.B  260.6
+00C4A:  BTSS.B  260.0
+00C4C:  BRA     C52
+00C4E:  MOV.B   268,W0L
+00C50:  BRA     C4A
+00C52:  CLR.B   268
+00C54:  BTSS.B  260.0
+00C56:  BRA     C54
+00C58:  MOV.B   268,W0L
+00C5A:  CLR.B   1
+00C5C:  MOV     #0,W1
+00C5E:  MOV     W0,800
+00C60:  MOV     W1,802
+....................      ADC_Rbyte2 = Spi_read2(0); 
+00C62:  BCLR.B  260.6
+00C64:  BTSS.B  260.0
+00C66:  BRA     C6C
+00C68:  MOV.B   268,W0L
+00C6A:  BRA     C64
+00C6C:  CLR.B   268
+00C6E:  BTSS.B  260.0
+00C70:  BRA     C6E
+00C72:  MOV.B   268,W0L
+00C74:  CLR.B   1
+00C76:  MOV     #0,W1
+00C78:  MOV     W0,804
+00C7A:  MOV     W1,806
+....................      ADC_Rbyte3 = Spi_read2(0); 
+00C7C:  BCLR.B  260.6
+00C7E:  BTSS.B  260.0
+00C80:  BRA     C86
+00C82:  MOV.B   268,W0L
+00C84:  BRA     C7E
+00C86:  CLR.B   268
+00C88:  BTSS.B  260.0
+00C8A:  BRA     C88
+00C8C:  MOV.B   268,W0L
+00C8E:  CLR.B   1
+00C90:  MOV     #0,W1
+00C92:  MOV     W0,808
+00C94:  MOV     W1,80A
+....................      delay_us(1); 
+00C96:  REPEAT  #26
+00C98:  NOP     
+....................      ADC_CS = 1; 
+00C9A:  BSET.B  2E9.1
+....................      ADC_RByte_Sum = (ADC_Rbyte1<<24) + (ADC_Rbyte2<<16) + (ADC_Rbyte3<<8); 
+00C9C:  MOV.B   800,W0L
+00C9E:  MOV.B   W0L,D
+00CA0:  CLR.B   W6
+00CA2:  CLR.B   B
+00CA4:  CLR.B   W5
+00CA6:  MOV     804,W1
+00CA8:  MOV     #0,W0
+00CAA:  ADD     W0,W5,W5
+00CAC:  ADDC    W1,W6,W6
+00CAE:  MOV.B   80A,W0L
+00CB0:  MOV.B   W0L,3
+00CB2:  MOV.B   809,W0L
+00CB4:  MOV.B   W0L,W1L
+00CB6:  MOV.B   808,W0L
+00CB8:  MOV.B   W0L,1
+00CBA:  CLR.B   W0
+00CBC:  ADD     W0,W5,W0
+00CBE:  MOV     W0,80C
+00CC0:  ADDC    W1,W6,W0
+00CC2:  MOV     W0,80E
+....................      return ADC_RByte_Sum/256; 
+00CC4:  BCLR.B  43.0
+00CC6:  MOV     80C,W0
+00CC8:  MOV     80E,W1
+00CCA:  MOV     #100,W2
+00CCC:  MOV     #0,W3
+00CCE:  CALL    BB0
+00CD2:  MOV.D   W0,W0
+....................      } 
+00CD4:  MOV     [--W15],W6
+00CD6:  MOV     [--W15],W5
+00CD8:  RETURN  
+....................  
+.................... static void ADC_StopRd(){ 
+....................     
+....................    ADC_CS = 0; 
+*
+00956:  BCLR.B  2E9.1
+....................    delay_us(5); 
+00958:  REPEAT  #C6
+0095A:  NOP     
+....................    Spi_write2(0x0F);   
+0095C:  BCLR.B  260.6
+0095E:  BTSS.B  260.0
+00960:  BRA     966
+00962:  MOV.B   268,W0L
+00964:  BRA     95E
+00966:  MOV.B   #F,W0L
+00968:  MOV.B   W0L,268
+0096A:  BTSS.B  260.0
+0096C:  BRA     96A
+....................    delay_us(5); 
+0096E:  REPEAT  #C6
+00970:  NOP     
+....................    ADC_CS = 1; 
+00972:  BSET.B  2E9.1
+....................    delay_us(50); 
+00974:  REPEAT  #7CE
+00976:  NOP     
+....................  
+.................... } 
+00978:  RETURN  
+....................  
+.................... static void ADC_sps_set(U8 SPS){ 
+....................  
+....................    ADC_StopRd();                                                               
+0097A:  CALL    956
+....................    Sps_buf = SPS; 
+0097E:  MOV.B   848,W0L
+00980:  MOV.B   W0L,819
+....................    WrReg(DRATE,SPS);  
+00982:  MOV.B   #3,W0L
+00984:  MOV.B   W0L,84C
+00986:  MOV.B   848,W0L
+00988:  MOV.B   W0L,84D
+0098A:  CALL    866
+....................                   
+....................    // ???????? ???_????? ? ??????????           
+.................... }  
+0098E:  RETURN  
+....................  
+.................... static void ADC_SelfCal(){ 
+....................                       
+....................    ADC_CS = 0; 
+*
+00A2C:  BCLR.B  2E9.1
+....................    delay_us(1); 
+00A2E:  REPEAT  #26
+00A30:  NOP     
+....................    Spi_write2(0xF0); 
+00A32:  BCLR.B  260.6
+00A34:  BTSS.B  260.0
+00A36:  BRA     A3C
+00A38:  MOV.B   268,W0L
+00A3A:  BRA     A34
+00A3C:  MOV.B   #F0,W0L
+00A3E:  MOV.B   W0L,268
+00A40:  BTSS.B  260.0
+00A42:  BRA     A40
+....................     delay_us(1); 
+00A44:  REPEAT  #26
+00A46:  NOP     
+....................    ADC_CS = 1;   
+00A48:  BSET.B  2E9.1
+....................    Switch (Sps_buf) {      
+00A4A:  MOV.B   819,W0L
+00A4C:  CLR.B   1
+00A4E:  XOR     #F0,W0
+00A50:  BRA     Z,A80
+00A52:  XOR     #10,W0
+00A54:  BRA     Z,A88
+00A56:  XOR     #30,W0
+00A58:  BRA     Z,A90
+00A5A:  XOR     #10,W0
+00A5C:  BRA     Z,A98
+00A5E:  XOR     #70,W0
+00A60:  BRA     Z,AA4
+00A62:  XOR     #11,W0
+00A64:  BRA     Z,AB0
+00A66:  XOR     #33,W0
+00A68:  BRA     Z,AC4
+00A6A:  XOR     #10,W0
+00A6C:  BRA     Z,ACE
+00A6E:  XOR     #E1,W0
+00A70:  BRA     Z,ADC
+00A72:  XOR     #20,W0
+00A74:  BRA     Z,AE6
+00A76:  XOR     #60,W0
+00A78:  BRA     Z,AF0
+00A7A:  XOR     #30,W0
+00A7C:  BRA     Z,AFA
+00A7E:  BRA     B04
+....................      
+....................       case 0xF0:    
+....................        delay_us(220);         
+00A80:  REPEAT  #225E
+00A82:  NOP     
+....................         break;                       
+00A84:  GOTO    B04
+....................        
+....................       case 0xE0: 
+....................        delay_us(255);  
+00A88:  REPEAT  #27D6
+00A8A:  NOP     
+....................         break; 
+00A8C:  GOTO    B04
+....................          
+....................       case 0xD0: 
+....................        delay_us(315);  
+00A90:  REPEAT  #3136
+00A92:  NOP     
+....................         break; 
+00A94:  GOTO    B04
+....................          
+....................       case 0xC0: 
+....................        delay_us(445);  
+00A98:  REPEAT  #586
+00A9A:  NOP     
+00A9C:  REPEAT  #3FFF
+00A9E:  NOP     
+....................         break; 
+00AA0:  GOTO    B04
+....................          
+....................       case 0xB0: 
+....................        delay_us(685);  
+00AA4:  REPEAT  #2B06
+00AA6:  NOP     
+00AA8:  REPEAT  #3FFF
+00AAA:  NOP     
+....................         break; 
+00AAC:  GOTO    B04
+....................          
+....................       case 0xA1: 
+....................        delay_ms(1); 
+00AB0:  REPEAT  #1C3E
+00AB2:  NOP     
+00AB4:  REPEAT  #3FFF
+00AB6:  NOP     
+00AB8:  REPEAT  #3FFF
+00ABA:  NOP     
+....................        delay_us(185);                
+00ABC:  REPEAT  #1CE6
+00ABE:  NOP     
+....................         break;       
+00AC0:  GOTO    B04
+....................          
+....................       case 0x92: 
+....................        delay_ms(5); 
+00AC4:  MOV     #5,W0
+00AC6:  CALL    5BE
+....................         break; 
+00ACA:  GOTO    B04
+....................          
+....................       case 0x82: 
+....................        delay_ms(10); 
+00ACE:  MOV     #A,W0
+00AD0:  CALL    5BE
+....................        delay_us(200); 
+00AD4:  REPEAT  #1F3E
+00AD6:  NOP     
+....................         break; 
+00AD8:  GOTO    B04
+....................                     
+....................       case 0x63: 
+....................        delay_ms(21);  
+00ADC:  MOV     #15,W0
+00ADE:  CALL    5BE
+....................         break; 
+00AE2:  GOTO    B04
+....................          
+....................       case 0x43: 
+....................        delay_ms(41);  
+00AE6:  MOV     #29,W0
+00AE8:  CALL    5BE
+....................         break; 
+00AEC:  GOTO    B04
+....................          
+....................       case 0x23: 
+....................        delay_ms(101);  
+00AF0:  MOV     #65,W0
+00AF2:  CALL    5BE
+....................         break;          
+00AF6:  GOTO    B04
+....................              
+....................       case 0x13: 
+....................        delay_ms(201);  
+00AFA:  MOV     #C9,W0
+00AFC:  CALL    5BE
+....................         break;                           
+00B00:  GOTO    B04
+....................      } 
+....................       
+.................... } 
+00B04:  RETURN  
+....................  
+.................... static void ADC_setCh(U8 Ch_Number){ 
+....................    ADC_StopRd(); 
+*
+00CDA:  CALL    956
+....................    Global_Ch_Number = Ch_Number; 
+00CDE:  MOV.B   84A,W0L
+00CE0:  MOV.B   W0L,81A
+....................    Switch (Ch_Number) { 
+00CE2:  MOV.B   84A,W0L
+00CE4:  CLR.B   1
+00CE6:  XOR     #1,W0
+00CE8:  BRA     Z,CF8
+00CEA:  XOR     #3,W0
+00CEC:  BRA     Z,D08
+00CEE:  XOR     #1,W0
+00CF0:  BRA     Z,D18
+00CF2:  XOR     #7,W0
+00CF4:  BRA     Z,D28
+00CF6:  BRA     D38
+....................  
+....................     case 1:   WrReg(MUX,0x67); //7 & 6              
+00CF8:  MOV.B   #1,W0L
+00CFA:  MOV.B   W0L,84C
+00CFC:  MOV.B   #67,W0L
+00CFE:  MOV.B   W0L,84D
+00D00:  CALL    866
+....................            break; 
+00D04:  GOTO    D38
+.................... //-------------------------------- 
+....................     case 2: WrReg(MUX,0x45);     
+00D08:  MOV.B   #1,W0L
+00D0A:  MOV.B   W0L,84C
+00D0C:  MOV.B   #45,W0L
+00D0E:  MOV.B   W0L,84D
+00D10:  CALL    866
+....................            break; 
+00D14:  GOTO    D38
+.................... //--------------------------------            
+....................     case 3: WrReg(MUX,0x23);         
+00D18:  MOV.B   #1,W0L
+00D1A:  MOV.B   W0L,84C
+00D1C:  MOV.B   #23,W0L
+00D1E:  MOV.B   W0L,84D
+00D20:  CALL    866
+....................            break; 
+00D24:  GOTO    D38
+.................... //--------------------------------     
+....................     case 4: WrReg(MUX,0x01);     
+00D28:  MOV.B   #1,W0L
+00D2A:  MOV.B   W0L,84C
+00D2C:  MOV.B   #1,W0L
+00D2E:  MOV.B   W0L,84D
+00D30:  CALL    866
+....................            break; 
+00D34:  GOTO    D38
+....................     //default:printf("bad cmd");   
+....................             } 
+.................... // ?????????? ????????? ????????? ???. Xn ? Xn-1 
+....................    ADC_SelfCal(); 
+00D38:  CALL    A2C
+....................    ADC_StartRdContin(); 
+00D3C:  CALL    B90
+....................    ADC_RdataC(); 
+00D40:  CALL    C2E
+....................    ADC_RdataC(); 
+00D44:  CALL    C2E
+....................    ADC_RdataC(); 
+00D48:  CALL    C2E
+....................    ADC_RdataC(); 
+00D4C:  CALL    C2E
+....................     
+....................  
+.................... } 
+00D50:  RETURN  
+....................  
+.................... static S32 Read_ADC_vol_in(S32 k){ 
+*
+0124C:  MOV     W5,[W15++]
+0124E:  MOV     #C,W5
+01250:  REPEAT  #4
+01252:  MOV     [W5++],[W15++]
+....................     S32 VinInt; 
+....................     ADCresult = ADC_RDataC(); 
+01254:  CALL    C2E
+01258:  MOV     W0,810
+0125A:  MOV     W1,812
+....................     ADCresult=ADCresult+ADCaddCoef; // Аддитивная ошибка, ошибка смещения  
+0125C:  MOV     81C,W0
+0125E:  CLR     W1
+01260:  BTSC    W0.F
+01262:  SETM    W1
+01264:  ADD     810
+01266:  MOV     W1,W0
+01268:  ADDC    812,W0
+0126A:  MOV     W0,812
+....................     Vin = ((ADCresult*5)/(8388608.0*PGA))*ADCmulCoef; 
+0126C:  MOV     810,W0
+0126E:  MOV     812,W1
+01270:  MOV     #5,W2
+01272:  MOV     #0,W3
+01274:  CALL    D52
+01278:  MOV     W0,W5
+0127A:  MOV     W1,W6
+0127C:  MOV     #0,W1
+0127E:  MOV     #0,W2
+01280:  MOV     #0,W3
+01282:  MOV.B   818,W0L
+01284:  CLR.B   1
+01286:  CALL    D94
+0128A:  MOV     W5,[W15++]
+0128C:  MOV     W6,[W15++]
+0128E:  MOV     W0,W4
+01290:  MOV     W1,W5
+01292:  MOV     W2,W6
+01294:  MOV     W3,W7
+01296:  MOV     #0,W0
+01298:  MOV     #0,W1
+0129A:  MOV     #0,W2
+0129C:  MOV     #4160,W3
+0129E:  CALL    DF8
+012A2:  MOV     [--W15],W6
+012A4:  MOV     [--W15],W5
+012A6:  MOV     W0,W7
+012A8:  MOV     W1,W8
+012AA:  MOV     W2,W9
+012AC:  MOV     W3,W10
+012AE:  MOV     W5,W0
+012B0:  MOV     W6,W1
+012B2:  CLR     W3
+012B4:  BTSC    W1.F
+012B6:  SETM    W3
+012B8:  MOV     W3,W2
+012BA:  CALL    F08
+012BE:  MOV     W5,[W15++]
+012C0:  MOV     W6,[W15++]
+012C2:  MOV     W7,[W15++]
+012C4:  MOV     W7,W4
+012C6:  MOV     W8,W5
+012C8:  MOV     W9,W6
+012CA:  MOV     W10,W7
+012CC:  CALL    F6C
+012D0:  MOV     [--W15],W7
+012D2:  MOV     [--W15],W6
+012D4:  MOV     [--W15],W5
+012D6:  MOV     W0,W5
+012D8:  MOV     W1,W6
+012DA:  MOV     W2,W7
+012DC:  MOV     W3,W8
+012DE:  MOV     820,W2
+012E0:  MOV     81E,W1
+012E2:  MOV     #0,W0
+012E4:  CALL    1074
+012E8:  MOV     W5,[W15++]
+012EA:  MOV     W6,[W15++]
+012EC:  MOV     W7,[W15++]
+012EE:  MOV     W0,W4
+012F0:  MOV     W5,W0
+012F2:  MOV     W1,W5
+012F4:  MOV     W6,W1
+012F6:  MOV     W2,W6
+012F8:  MOV     W7,W2
+012FA:  MOV     W3,W7
+012FC:  MOV     W8,W3
+012FE:  CALL    DF8
+01302:  MOV     [--W15],W7
+01304:  MOV     [--W15],W6
+01306:  MOV     [--W15],W5
+01308:  CALL    10BA
+0130C:  MOV     W1,814
+0130E:  MOV     W2,816
+....................     VinInt = Vin*k; 
+01310:  MOV     8B8,W0
+01312:  MOV     8BA,W1
+01314:  CALL    10FE
+01318:  MOV     W0,W2
+0131A:  MOV     W1,W3
+0131C:  MOV     814,W0
+0131E:  MOV     816,W1
+01320:  CALL    114C
+01324:  CALL    1210
+01328:  MOV     W0,8BC
+0132A:  MOV     W1,8BE
+....................     return VinInt; 
+0132C:  MOV     8BC,W0
+0132E:  MOV     8BE,W1
+.................... }                
+01330:  MOV     #14,W5
+01332:  REPEAT  #4
+01334:  MOV     [--W15],[W5--]
+01336:  MOV     [--W15],W5
+01338:  RETURN  
+....................  
+.................... static S32 ADC_vol_average(U8 NumSamples){ 
+0133A:  CLR     8B0
+0133C:  CLR     8B2
+....................     
+....................    S32 A,Sum = 0;                
+....................    U8 i; 
+....................     
+....................    for (i=0;i<NumSamples;i++){ 
+0133E:  CLR.B   8AB
+01340:  MOV.B   8AB,W0L
+01342:  MOV     8AA,W4
+01344:  CP.B    W4L,W0L
+01346:  BRA     LEU,136C
+....................         
+....................        A = Read_ADC_vol_in(uV); 
+01348:  MOV     #4240,W4
+0134A:  MOV     W4,8B8
+0134C:  MOV     #F,W4
+0134E:  MOV     W4,8BA
+01350:  CALL    124C
+01354:  MOV     W0,8AC
+01356:  MOV     W1,8AE
+....................        Sum = Sum + A;     
+01358:  MOV     8B0,W0
+0135A:  ADD     8AC,W0
+0135C:  MOV     W0,8B0
+0135E:  MOV     8AE,W4
+01360:  MOV     8B2,W3
+01362:  ADDC    W3,W4,W0
+01364:  MOV     W0,8B2
+....................    } 
+01366:  INC.B   08AB
+01368:  GOTO    1340
+....................    return Sum/NumSamples; 
+0136C:  BCLR.B  43.0
+0136E:  MOV.B   8AA,W0L
+01370:  MOV.B   W0L,4
+01372:  CLR.B   5
+01374:  MOV     #0,W3
+01376:  MOV     8B0,W0
+01378:  MOV     8B2,W1
+0137A:  CALL    BB0
+0137E:  MOV.D   W0,W0
+.................... } 
+01380:  RETURN  
+....................  
+.................... static void ADC_set_PGA(u8 PGA_val){ 
+....................    
+....................   PGA = PGA_val; 
+*
+008C0:  MOV.B   848,W0L
+008C2:  MOV.B   W0L,818
+....................  
+.................... /* PGA 
+.................... 000 = 1 (default) 
+.................... 001 = 2 
+.................... 010 = 4 
+.................... 011 = 8 
+.................... 100 = 16 
+.................... 101 = 32 
+.................... 110 = 64 
+.................... 111 = 64*/ 
+....................  
+....................    switch (PGA_val){ 
+008C4:  MOV.B   848,W0L
+008C6:  CLR.B   1
+008C8:  XOR     #1,W0
+008CA:  BRA     Z,8E6
+008CC:  XOR     #3,W0
+008CE:  BRA     Z,8F4
+008D0:  XOR     #6,W0
+008D2:  BRA     Z,904
+008D4:  XOR     #C,W0
+008D6:  BRA     Z,914
+008D8:  XOR     #18,W0
+008DA:  BRA     Z,924
+008DC:  XOR     #30,W0
+008DE:  BRA     Z,934
+008E0:  XOR     #60,W0
+008E2:  BRA     Z,944
+008E4:  BRA     954
+....................       case 1: 
+....................        WrReg(ADCON,0); 
+008E6:  MOV.B   #2,W0L
+008E8:  MOV.B   W0L,84C
+008EA:  CLR.B   84D
+008EC:  CALL    866
+....................       break; 
+008F0:  GOTO    954
+....................        
+....................       case 2: 
+....................        WrReg(ADCON,1); 
+008F4:  MOV.B   #2,W0L
+008F6:  MOV.B   W0L,84C
+008F8:  MOV.B   #1,W0L
+008FA:  MOV.B   W0L,84D
+008FC:  CALL    866
+....................       break; 
+00900:  GOTO    954
+....................        
+....................       case 4: 
+....................        WrReg(ADCON,2); 
+00904:  MOV.B   #2,W0L
+00906:  MOV.B   W0L,84C
+00908:  MOV.B   #2,W0L
+0090A:  MOV.B   W0L,84D
+0090C:  CALL    866
+....................       break; 
+00910:  GOTO    954
+....................        
+....................       case 8: 
+....................        WrReg(ADCON,3); 
+00914:  MOV.B   #2,W0L
+00916:  MOV.B   W0L,84C
+00918:  MOV.B   #3,W0L
+0091A:  MOV.B   W0L,84D
+0091C:  CALL    866
+....................       break; 
+00920:  GOTO    954
+....................        
+....................       case 16: 
+....................        WrReg(ADCON,4); 
+00924:  MOV.B   #2,W0L
+00926:  MOV.B   W0L,84C
+00928:  MOV.B   #4,W0L
+0092A:  MOV.B   W0L,84D
+0092C:  CALL    866
+....................       break; 
+00930:  GOTO    954
+....................        
+....................       case 32: 
+....................        WrReg(ADCON,5); 
+00934:  MOV.B   #2,W0L
+00936:  MOV.B   W0L,84C
+00938:  MOV.B   #5,W0L
+0093A:  MOV.B   W0L,84D
+0093C:  CALL    866
+....................       break; 
+00940:  GOTO    954
+....................        
+....................       case 64: 
+....................        WrReg(ADCON,6); 
+00944:  MOV.B   #2,W0L
+00946:  MOV.B   W0L,84C
+00948:  MOV.B   #6,W0L
+0094A:  MOV.B   W0L,84D
+0094C:  CALL    866
+....................       break;  
+00950:  GOTO    954
+....................    } 
+.................... } 
+00954:  RETURN  
+....................  
+.................... static void ADC_wakeUp(){ 
+....................  
+....................    ADC_CS = 1;                          
+*
+00846:  BSET.B  2E9.1
+....................    ADC_RESET = 0; //When using the RESET pin, take it low to force a reset. 
+00848:  BCLR.B  2D6.3
+....................    delay_us(100); 
+0084A:  REPEAT  #F9E
+0084C:  NOP     
+....................    ADC_RESET = 1; 
+0084E:  BSET.B  2D6.3
+....................    ADC_SYNC =0; 
+00850:  BCLR.B  2D6.2
+....................    delay_us(100); 
+00852:  REPEAT  #F9E
+00854:  NOP     
+....................    ADC_SYNC = 1; //To use the SYNC/PDWN pin, take it low and then high 
+00856:  BSET.B  2D6.2
+....................    delay_ms(1); 
+00858:  REPEAT  #1C3E
+0085A:  NOP     
+0085C:  REPEAT  #3FFF
+0085E:  NOP     
+00860:  REPEAT  #3FFF
+00862:  NOP     
+....................  
+.................... }  
+00864:  RETURN  
+....................  
+.................... static void ADC_init(){ 
+....................     
+....................   WrReg(STATUS,2); 
+*
+00990:  CLR.B   84C
+00992:  MOV.B   #2,W0L
+00994:  MOV.B   W0L,84D
+00996:  CALL    866
+....................   ADC_set_PGA(8);    // 
+0099A:  MOV.B   #8,W0L
+0099C:  MOV.B   W0L,848
+0099E:  CALL    8C0
+....................    if(ADC_sps_var>7)  ADC_sps_var = 7; 
+009A2:  MOV     834,W4
+009A4:  CP.B    W4L,#7
+009A6:  BRA     LEU,9AC
+009A8:  MOV.B   #7,W0L
+009AA:  MOV.B   W0L,834
+....................    if(ADC_sps_var==0) ADC_sps_var = 1; 
+009AC:  CP0.B   834
+009AE:  BRA     NZ,9B4
+009B0:  MOV.B   #1,W0L
+009B2:  MOV.B   W0L,834
+....................     switch (ADC_sps_var){                // передача величины скорости измерений АЦП  
+009B4:  MOV.B   834,W0L
+009B6:  CLR.B   1
+009B8:  XOR     #1,W0
+009BA:  BRA     Z,9D6
+009BC:  XOR     #3,W0
+009BE:  BRA     Z,9E2
+009C0:  XOR     #1,W0
+009C2:  BRA     Z,9EE
+009C4:  XOR     #7,W0
+009C6:  BRA     Z,9FA
+009C8:  XOR     #1,W0
+009CA:  BRA     Z,A06
+009CC:  XOR     #3,W0
+009CE:  BRA     Z,A12
+009D0:  XOR     #1,W0
+009D2:  BRA     Z,A1E
+009D4:  BRA     A2A
+....................       case 1: ADC_sps_set(0x23);  break; // 10   sps 
+009D6:  MOV.B   #23,W0L
+009D8:  MOV.B   W0L,848
+009DA:  CALL    97A
+009DE:  GOTO    A2A
+....................       case 2: ADC_sps_set(0x43);  break; // 25   sps 
+009E2:  MOV.B   #43,W0L
+009E4:  MOV.B   W0L,848
+009E6:  CALL    97A
+009EA:  GOTO    A2A
+....................       case 3: ADC_sps_set(0x63);  break; // 50   sps 
+009EE:  MOV.B   #63,W0L
+009F0:  MOV.B   W0L,848
+009F2:  CALL    97A
+009F6:  GOTO    A2A
+....................       case 4: ADC_sps_set(0x82);  break; // 100  sps 
+009FA:  MOV.B   #82,W0L
+009FC:  MOV.B   W0L,848
+009FE:  CALL    97A
+00A02:  GOTO    A2A
+....................       case 5: ADC_sps_set(0x91);  break; // 500  sps 
+00A06:  MOV.B   #91,W0L
+00A08:  MOV.B   W0L,848
+00A0A:  CALL    97A
+00A0E:  GOTO    A2A
+....................       case 6: ADC_sps_set(0xA1);  break; // 1000 sps 
+00A12:  MOV.B   #A1,W0L
+00A14:  MOV.B   W0L,848
+00A16:  CALL    97A
+00A1A:  GOTO    A2A
+....................       case 7: ADC_sps_set(0xC0);  break; // 3750 sps 
+00A1E:  MOV.B   #C0,W0L
+00A20:  MOV.B   W0L,848
+00A22:  CALL    97A
+00A26:  GOTO    A2A
+....................       } 
+....................  
+.................... } 
+00A2A:  RETURN  
+....................  
+.................... static float power(float t, U8 k) // возведение t в степень k 
+.................... { 
+*
+01682:  CLR     8B0
+01684:  MOV     #3F80,W4
+01686:  MOV     W4,8B2
+....................   float res = 1.0; 
+....................   while (k)  
+....................       { 
+01688:  CP0.B   8AE
+0168A:  BRA     Z,16B6
+....................         if (k & 1)  
+0168C:  BTSS.B  8AE.0
+0168E:  BRA     16A0
+....................            res *= t; 
+01690:  MOV     8B0,W0
+01692:  MOV     8B2,W1
+01694:  MOV     8AA,W2
+01696:  MOV     8AC,W3
+01698:  CALL    114C
+0169C:  MOV     W0,8B0
+0169E:  MOV     W1,8B2
+....................         t *= t; 
+016A0:  MOV     8AA,W0
+016A2:  MOV     8AC,W1
+016A4:  MOV     8AA,W2
+016A6:  MOV     8AC,W3
+016A8:  CALL    114C
+016AC:  MOV     W0,8AA
+016AE:  MOV     W1,8AC
+....................         k >>= 1; 
+016B0:  LSR.B   8AE
+....................       } 
+016B2:  GOTO    1688
+....................   return res; 
+016B6:  MOV     8B0,W0
+016B8:  MOV     8B2,W1
+.................... } 
+016BA:  RETURN  
+....................  
+.................... static float ADC_vol_to_T(){ 
+*
+0178A:  MOV     W5,[W15++]
+0178C:  MOV     W6,[W15++]
+0178E:  CLR     84A
+01790:  MOV     #447A,W4
+01792:  MOV     W4,84C
+01794:  CLR     86A
+01796:  CLR     86C
+01798:  CLR     886
+0179A:  CLR     888
+0179C:  CLR.B   88A
+....................     float R = 1000.0; 
+....................     float Temper,k1,k2,k3,k4,k5,k6,k7 = 0; 
+....................     float p,z1,z2,z3,z4,z5,z6 = 0; 
+....................     U8 Temper_int = 0; 
+....................    temp = ADC_vol_average(NumAver); 
+0179E:  MOV.B   833,W0L
+017A0:  MOV.B   W0L,8AA
+017A2:  CALL    133A
+017A6:  MOV     W0,83C
+017A8:  MOV     W1,83E
+....................    p=R/(temp/10); // приводим к кОм 
+017AA:  BCLR.B  43.0
+017AC:  MOV     83C,W0
+017AE:  MOV     83E,W1
+017B0:  MOV     #A,W2
+017B2:  MOV     #0,W3
+017B4:  CALL    1382
+017B8:  CALL    13D6
+017BC:  MOV     W0,W2
+017BE:  MOV     W1,W3
+017C0:  MOV     84A,W0
+017C2:  MOV     84C,W1
+017C4:  CALL    140E
+017C8:  MOV     W0,86E
+017CA:  MOV     W1,870
+....................     
+....................    switch (Global_Ch_Number){ 
+017CC:  MOV.B   81A,W0L
+017CE:  CLR.B   1
+017D0:  XOR     #4,W0
+017D2:  BRA     Z,17E2
+017D4:  XOR     #7,W0
+017D6:  BRA     Z,181E
+017D8:  XOR     #1,W0
+017DA:  BRA     Z,185A
+017DC:  XOR     #3,W0
+017DE:  BRA     Z,1896
+017E0:  BRA     18D2
+.................... //------------------------------------------- 
+....................       case 4: // структура 
+.................... k1=12.1972840491798706; 
+017E2:  MOV     #2813,W4
+017E4:  MOV     W4,852
+017E6:  MOV     #4143,W4
+017E8:  MOV     W4,854
+.................... k2=-103.27107382635586; 
+017EA:  MOV     #8ACA,W4
+017EC:  MOV     W4,856
+017EE:  MOV     #C2CE,W4
+017F0:  MOV     W4,858
+.................... k3=397.925821471959352; 
+017F2:  MOV     #F681,W4
+017F4:  MOV     W4,85A
+017F6:  MOV     #43C6,W4
+017F8:  MOV     W4,85C
+.................... k4=-567.703864333219826; 
+017FA:  MOV     #ED0C,W4
+017FC:  MOV     W4,85E
+017FE:  MOV     #C40D,W4
+01800:  MOV     W4,860
+.................... k5=208.592693047598004; 
+01802:  MOV     #97BB,W4
+01804:  MOV     W4,862
+01806:  MOV     #4350,W4
+01808:  MOV     W4,864
+.................... k6=315.492219684645534; 
+0180A:  MOV     #BF01,W4
+0180C:  MOV     W4,866
+0180E:  MOV     #439D,W4
+01810:  MOV     W4,868
+.................... k7=-92.5740048021543771; 
+01812:  MOV     #25E4,W4
+01814:  MOV     W4,86A
+01816:  MOV     #C2B9,W4
+01818:  MOV     W4,86C
+....................       break; 
+0181A:  GOTO    18D2
+.................... //------------------------------------------- 
+....................       case 3: // спаи 
+.................... k1=3.06244888759101741; 
+0181E:  MOV     #FF2A,W4
+01820:  MOV     W4,852
+01822:  MOV     #4043,W4
+01824:  MOV     W4,854
+.................... k2=-30.3586341044865549; 
+01826:  MOV     #DE7C,W4
+01828:  MOV     W4,856
+0182A:  MOV     #C1F2,W4
+0182C:  MOV     W4,858
+.................... k3=241.908977336715907; 
+0182E:  MOV     #E8B3,W4
+01830:  MOV     W4,85A
+01832:  MOV     #4371,W4
+01834:  MOV     W4,85C
+.................... k4=-649.756288938224316; 
+01836:  MOV     #7067,W4
+01838:  MOV     W4,85E
+0183A:  MOV     #C422,W4
+0183C:  MOV     W4,860
+.................... k5=955.307573420926928; 
+0183E:  MOV     #D3AF,W4
+01840:  MOV     W4,862
+01842:  MOV     #446E,W4
+01844:  MOV     W4,864
+.................... k6=-485.428257496096194; 
+01846:  MOV     #B6D1,W4
+01848:  MOV     W4,866
+0184A:  MOV     #C3F2,W4
+0184C:  MOV     W4,868
+.................... k7=136.248866791371256; 
+0184E:  MOV     #3FB6,W4
+01850:  MOV     W4,86A
+01852:  MOV     #4308,W4
+01854:  MOV     W4,86C
+....................       break; 
+01856:  GOTO    18D2
+....................       //------------------------------------------- 
+....................       case 2: // Пер 
+.................... k1=17.2566714868880808; 
+0185A:  MOV     #DAA,W4
+0185C:  MOV     W4,852
+0185E:  MOV     #418A,W4
+01860:  MOV     W4,854
+.................... k2=-215.322746395599097; 
+01862:  MOV     #52A0,W4
+01864:  MOV     W4,856
+01866:  MOV     #C357,W4
+01868:  MOV     W4,858
+.................... k3=1219.40785944648087; 
+0186A:  MOV     #6D0D,W4
+0186C:  MOV     W4,85A
+0186E:  MOV     #4498,W4
+01870:  MOV     W4,85C
+.................... k4=-3277.70955596119165; 
+01872:  MOV     #DB5A,W4
+01874:  MOV     W4,85E
+01876:  MOV     #C54C,W4
+01878:  MOV     W4,860
+.................... k5=4778.55193661898375; 
+0187A:  MOV     #546A,W4
+0187C:  MOV     W4,862
+0187E:  MOV     #4595,W4
+01880:  MOV     W4,864
+.................... k6=-3251.6292140185833; 
+01882:  MOV     #3A11,W4
+01884:  MOV     W4,866
+01886:  MOV     #C54B,W4
+01888:  MOV     W4,868
+.................... k7=954.333331361413002; 
+0188A:  MOV     #9555,W4
+0188C:  MOV     W4,86A
+0188E:  MOV     #446E,W4
+01890:  MOV     W4,86C
+....................       break;  
+01892:  GOTO    18D2
+.................... //------------------------------------------- 
+....................       case 1: // соленоид 
+.................... k1 = 4.005067403952125460; 
+01896:  MOV     #2983,W4
+01898:  MOV     W4,852
+0189A:  MOV     #4080,W4
+0189C:  MOV     W4,854
+.................... k2 = -55.2455571058671922; 
+0189E:  MOV     #FB73,W4
+018A0:  MOV     W4,856
+018A2:  MOV     #C25C,W4
+018A4:  MOV     W4,858
+.................... k3 = 448.087557092308998; 
+018A6:  MOV     #B35,W4
+018A8:  MOV     W4,85A
+018AA:  MOV     #43E0,W4
+018AC:  MOV     W4,85C
+.................... k4 = -1390.99036489240825;  
+018AE:  MOV     #DFB1,W4
+018B0:  MOV     W4,85E
+018B2:  MOV     #C4AD,W4
+018B4:  MOV     W4,860
+.................... k5 = 2271.71780132129788;  
+018B6:  MOV     #FB7C,W4
+018B8:  MOV     W4,862
+018BA:  MOV     #450D,W4
+018BC:  MOV     W4,864
+.................... k6 = -1387.04864621348679;  
+018BE:  MOV     #618F,W4
+018C0:  MOV     W4,866
+018C2:  MOV     #C4AD,W4
+018C4:  MOV     W4,868
+.................... k7 = 500.36806705314666; 
+018C6:  MOV     #2F1D,W4
+018C8:  MOV     W4,86A
+018CA:  MOV     #43FA,W4
+018CC:  MOV     W4,86C
+....................       break;          
+018CE:  GOTO    18D2
+.................... //------------------------------------------- 
+....................    } 
+....................    z1 = k1+k2*p; 
+018D2:  MOV     856,W0
+018D4:  MOV     858,W1
+018D6:  MOV     86E,W2
+018D8:  MOV     870,W3
+018DA:  CALL    114C
+018DE:  BCLR.B  43.0
+018E0:  MOV     W0,W2
+018E2:  MOV     W1,W3
+018E4:  MOV     852,W0
+018E6:  MOV     854,W1
+018E8:  CALL    14D8
+018EC:  MOV     W0,872
+018EE:  MOV     W1,874
+....................    z2 = k3*(power(p,2)); 
+018F0:  MOV.B   #2,W0L
+018F2:  MOV.B   W0L,8AE
+018F4:  PUSH    86E
+018F6:  POP     8AA
+018F8:  PUSH    870
+018FA:  POP     8AC
+018FC:  CALL    1682
+01900:  MOV     W0,W2
+01902:  MOV     W1,W3
+01904:  MOV     85A,W0
+01906:  MOV     85C,W1
+01908:  CALL    114C
+0190C:  MOV     W0,876
+0190E:  MOV     W1,878
+....................    z3 = k4*(power(p,3)); 
+01910:  MOV.B   #3,W0L
+01912:  MOV.B   W0L,8AE
+01914:  PUSH    86E
+01916:  POP     8AA
+01918:  PUSH    870
+0191A:  POP     8AC
+0191C:  CALL    1682
+01920:  MOV     W0,W2
+01922:  MOV     W1,W3
+01924:  MOV     85E,W0
+01926:  MOV     860,W1
+01928:  CALL    114C
+0192C:  MOV     W0,87A
+0192E:  MOV     W1,87C
+....................    z4 = k5*(power(p,4)); 
+01930:  MOV.B   #4,W0L
+01932:  MOV.B   W0L,8AE
+01934:  PUSH    86E
+01936:  POP     8AA
+01938:  PUSH    870
+0193A:  POP     8AC
+0193C:  CALL    1682
+01940:  MOV     W0,W2
+01942:  MOV     W1,W3
+01944:  MOV     862,W0
+01946:  MOV     864,W1
+01948:  CALL    114C
+0194C:  MOV     W0,87E
+0194E:  MOV     W1,880
+....................    z5 = k6*(power(p,5)); 
+01950:  MOV.B   #5,W0L
+01952:  MOV.B   W0L,8AE
+01954:  PUSH    86E
+01956:  POP     8AA
+01958:  PUSH    870
+0195A:  POP     8AC
+0195C:  CALL    1682
+01960:  MOV     W0,W2
+01962:  MOV     W1,W3
+01964:  MOV     866,W0
+01966:  MOV     868,W1
+01968:  CALL    114C
+0196C:  MOV     W0,882
+0196E:  MOV     W1,884
+....................    z6 = k7*(power(p,6)); 
+01970:  MOV.B   #6,W0L
+01972:  MOV.B   W0L,8AE
+01974:  PUSH    86E
+01976:  POP     8AA
+01978:  PUSH    870
+0197A:  POP     8AC
+0197C:  CALL    1682
+01980:  MOV     W0,W2
+01982:  MOV     W1,W3
+01984:  MOV     86A,W0
+01986:  MOV     86C,W1
+01988:  CALL    114C
+0198C:  MOV     W0,886
+0198E:  MOV     W1,888
+....................    Temper = (z1+z2+z3+z4+z5+z6); 
+01990:  BCLR.B  43.0
+01992:  MOV     872,W0
+01994:  MOV     874,W1
+01996:  MOV     876,W2
+01998:  MOV     878,W3
+0199A:  CALL    14D8
+0199E:  MOV     W0,W5
+019A0:  MOV     W1,W6
+019A2:  BCLR.B  43.0
+019A4:  MOV     W5,W0
+019A6:  MOV     W6,W1
+019A8:  MOV     87A,W2
+019AA:  MOV     87C,W3
+019AC:  CALL    14D8
+019B0:  MOV     W0,W5
+019B2:  MOV     W1,W6
+019B4:  BCLR.B  43.0
+019B6:  MOV     W5,W0
+019B8:  MOV     W6,W1
+019BA:  MOV     87E,W2
+019BC:  MOV     880,W3
+019BE:  CALL    14D8
+019C2:  MOV     W0,W5
+019C4:  MOV     W1,W6
+019C6:  BCLR.B  43.0
+019C8:  MOV     W5,W0
+019CA:  MOV     W6,W1
+019CC:  MOV     882,W2
+019CE:  MOV     884,W3
+019D0:  CALL    14D8
+019D4:  MOV     W0,W5
+019D6:  MOV     W1,W6
+019D8:  BCLR.B  43.0
+019DA:  MOV     W5,W0
+019DC:  MOV     W6,W1
+019DE:  MOV     886,W2
+019E0:  MOV     888,W3
+019E2:  CALL    14D8
+019E6:  MOV     W0,84E
+019E8:  MOV     W1,850
+....................    Temper_int = Temper; 
+019EA:  MOV     84E,W0
+019EC:  MOV     850,W1
+019EE:  CALL    16BC
+019F2:  MOV.B   W0L,88A
+....................    ostatok_int_dec = (Temper-Temper_int)*10; 
+019F4:  MOV.B   88A,W0L
+019F6:  CLR.B   1
+019F8:  CALL    16E8
+019FC:  BSET.B  43.0
+019FE:  MOV     W0,W2
+01A00:  MOV     W1,W3
+01A02:  MOV     84E,W0
+01A04:  MOV     850,W1
+01A06:  CALL    14D8
+01A0A:  MOV     W0,W5
+01A0C:  MOV     W1,W6
+01A0E:  MOV     W5,W0
+01A10:  MOV     W6,W1
+01A12:  MOV     #0,W2
+01A14:  MOV     #4120,W3
+01A16:  CALL    114C
+01A1A:  CALL    16BC
+01A1E:  MOV.B   W0L,81B
+....................    ostatok_int_sot = (Temper-Temper_int)*100; 
+01A20:  MOV.B   88A,W0L
+01A22:  CLR.B   1
+01A24:  CALL    16E8
+01A28:  BSET.B  43.0
+01A2A:  MOV     W0,W2
+01A2C:  MOV     W1,W3
+01A2E:  MOV     84E,W0
+01A30:  MOV     850,W1
+01A32:  CALL    14D8
+01A36:  MOV     W0,W5
+01A38:  MOV     W1,W6
+01A3A:  MOV     W5,W0
+01A3C:  MOV     W6,W1
+01A3E:  MOV     #0,W2
+01A40:  MOV     #42C8,W3
+01A42:  CALL    114C
+01A46:  CALL    16BC
+01A4A:  MOV.B   W0L,826
+....................    if (ostatok_int_sot > 4) ostatok_int_dec++; 
+01A4C:  MOV     826,W4
+01A4E:  CP.B    W4L,#4
+01A50:  BRA     LEU,1A54
+01A52:  INC.B   081B
+....................    if (Temper<10) { LCD_num_symb = 1;} 
+01A54:  MOV     84E,W0
+01A56:  MOV     850,W1
+01A58:  MOV     #0,W2
+01A5A:  MOV     #4120,W3
+01A5C:  CALL    1722
+01A60:  BRA     NC,1A66
+01A62:  MOV.B   #1,W0L
+01A64:  MOV.B   W0L,827
+....................    if (Temper>=10){ LCD_num_symb = 2;} 
+01A66:  MOV     #0,W0
+01A68:  MOV     #4120,W1
+01A6A:  MOV     84E,W2
+01A6C:  MOV     850,W3
+01A6E:  CALL    1722
+01A72:  BRA     C,1A76
+01A74:  BRA     NZ,1A7A
+01A76:  MOV.B   #2,W0L
+01A78:  MOV.B   W0L,827
+....................    if (Temper>=100){LCD_num_symb = 3;} 
+01A7A:  MOV     #0,W0
+01A7C:  MOV     #42C8,W1
+01A7E:  MOV     84E,W2
+01A80:  MOV     850,W3
+01A82:  CALL    1722
+01A86:  BRA     C,1A8A
+01A88:  BRA     NZ,1A8E
+01A8A:  MOV.B   #3,W0L
+01A8C:  MOV.B   W0L,827
+....................    return Temper; 
+01A8E:  MOV     84E,W0
+01A90:  MOV     850,W1
+....................    } 
+01A92:  MOV     [--W15],W6
+01A94:  MOV     [--W15],W5
+01A96:  RETURN  
+....................  
+....................  
+.................... /*############################################################################*/ 
+....................  
+.................... static void Rd_Flash(){ 
+*
+007DE:  MOV     W5,[W15++]
+....................  
+....................   read_program_memory(CK_USER_PAGE,flash_rd_data,4); 
+007E0:  MOV     #4,W3
+007E2:  MOV     #5000,W0
+007E4:  MOV     #1,W1
+007E6:  MOV     #838,W2
+007E8:  CALL    7B0
+....................   delay_ms(5); 
+007EC:  MOV     #5,W0
+007EE:  CALL    5BE
+....................   NumAver = flash_rd_data[1];  
+007F2:  MOV.B   839,W0L
+007F4:  MOV.B   W0L,833
+....................   ADC_sps_var = flash_rd_data[0]; 
+007F6:  MOV.B   838,W0L
+007F8:  MOV.B   W0L,834
+....................   CRC_buf = flash_rd_data[2]; 
+007FA:  MOV.B   83A,W0L
+007FC:  MOV.B   W0L,837
+....................  
+.................... } 
+007FE:  MOV     [--W15],W5
+00800:  RETURN  
+....................  
+.................... static void Wr_Flash(){ 
+....................  
+....................   flash_wr_data[0] = Aver_Wr;  
+*
+02804:  MOV.B   82C,W0L
+02806:  MOV.B   W0L,828
+....................   flash_wr_data[1] = Sps_Wr; 
+02808:  MOV.B   82D,W0L
+0280A:  MOV.B   W0L,829
+....................   flash_wr_data[2] = CRC_Wr; 
+0280C:  MOV.B   82E,W0L
+0280E:  MOV.B   W0L,82A
+....................   //flash_wr_data[4] = 0x00; 
+....................   write_program_memory(CK_USER_PAGE,flash_wr_data,4); 
+02810:  MOV     #4,W3
+02812:  MOV     #5000,W0
+02814:  MOV     #1,W1
+02816:  MOV     #828,W2
+02818:  CALL    2788
+....................   delay_ms(2); 
+0281C:  MOV     #2,W0
+0281E:  CALL    5BE
+....................  
+....................  //if(Rd_Flash(buf_index)==in_wr_data) return 1; else return 0; 
+.................... } 
+02822:  RETURN  
+....................  
+.................... unsigned char Crc8(unsigned char *pcBlock, unsigned int len) 
+.................... { 
+*
+00802:  MOV     W5,[W15++]
+00804:  SETM.B  84C
+....................  
+....................  
+....................   //Name  : CRC-8 
+....................   //Poly  : 0x31    x^8 + x^5 + x^4 + 1 
+....................   //Init  : 0xFF 
+....................   //Revert: false 
+....................   //XorOut: 0x00 
+....................   //Check : 0xF7 ("123456789") 
+....................   //MaxLen: 15 байт(127 бит) - обнаружение 
+....................   // одинарных, двойных, тройных и всех нечетных ошибок 
+....................  
+....................     unsigned char crc = 0xFF; 
+....................     unsigned int i; 
+....................   
+....................     while (len--) 
+....................     { 
+00806:  MOV     84A,W0
+00808:  DEC     084A
+0080A:  CP0     W0
+0080C:  BRA     Z,83E
+....................         crc ^= *pcBlock++; 
+0080E:  MOV     848,W0
+00810:  INC     0848
+00812:  MOV     W0,W4
+00814:  MOV.B   [W4],W0L
+00816:  XOR.B   84C
+....................   
+....................         for (i = 0; i < 8; i++) 
+00818:  CLR     84E
+0081A:  MOV     84E,W4
+0081C:  CP      W4,#8
+0081E:  BRA     C,83A
+....................             crc = crc & 0x80 ? (crc << 1) ^ 0x31 : crc << 1; 
+00820:  BTSS.B  84C.7
+00822:  BRA     82E
+00824:  MOV.B   84C,W0L
+00826:  SL      W0,#1,W0
+00828:  XOR.B   #31,W0L
+0082A:  GOTO    832
+0082E:  MOV.B   84C,W0L
+00830:  SL      W0,#1,W0
+00832:  MOV.B   W0L,84C
+00834:  INC     084E
+00836:  GOTO    81A
+....................     } 
+0083A:  GOTO    806
+....................   
+....................     return crc; 
+0083E:  MOV.B   84C,W0L
+00840:  MOV.B   W0L,0
+.................... } 
+00842:  MOV     [--W15],W5
+00844:  RETURN  
+....................  
+.................... static void OscSetup(){ 
+....................   //Fcy=Fosc/2 
+....................   //Fin=10M 
+....................   //Fosc=Fin(M/(N1*N2)) 
+....................   U2BRG = 259;// BAUD Rate Setting for 9600 
+*
+0052E:  MOV     #103,W4
+00530:  MOV     W4,238
+....................   U2MODE = 0b1010101010010000; 
+00532:  MOV     #AA90,W4
+00534:  MOV     W4,230
+....................   PLLFBD = 30; // ???. ????. ??????? PLL M = 30 
+00536:  MOV     #1E,W4
+00538:  MOV     W4,746
+....................    
+....................   PLLPRE4 = 0; // ???. ????. ??????? PLL N1 = 2 
+0053A:  BCLR.B  744.4
+....................   PLLPRE3 = 0; 
+0053C:  BCLR.B  744.3
+....................   PLLPRE2 = 0; 
+0053E:  BCLR.B  744.2
+....................   PLLPRE1 = 0; 
+00540:  BCLR.B  744.1
+....................   PLLPRE0 = 0; 
+00542:  BCLR.B  744.0
+....................    
+....................   PLLPOST0=0; // ???. ????. ??????? PLL N2 = 2 
+00544:  BCLR.B  744.6
+....................   PLLPOST1=0; 
+00546:  BCLR.B  744.7
+....................      
+....................    } 
+00548:  RETURN  
+....................  
+.................... static void EnableInt (){ 
+....................   ENABLE_INTERRUPTS(INTR_GLOBAL); 
+0054A:  BCLR.B  81.7
+0054C:  CLR     42
+0054E:  BSET.B  81.7
+....................   enable_interrupts(INTR_CN_PIN|PIN_B5);  
+00550:  BSET.B  60.7
+00552:  BSET.B  96.3
+....................   enable_interrupts(INTR_CN_PIN|PIN_B5); 
+00554:  BSET.B  60.7
+00556:  BSET.B  96.3
+....................   enable_interrupts(INTR_CN_PIN|PIN_B4); 
+00558:  BSET.B  60.6
+0055A:  BSET.B  96.3
+....................   enable_interrupts(INTR_CN_PIN|PIN_B3); 
+0055C:  BSET.B  60.5
+0055E:  BSET.B  96.3
+....................   enable_interrupts(INTR_CN_PIN|PIN_B2); 
+00560:  BSET.B  60.4
+00562:  BSET.B  96.3
+....................   enable_interrupts(INT_TIMER1); 
+00564:  BSET.B  94.3
+....................   EXT_INT_EDGE(L_TO_H); 
+00566:  BCLR.B  82.0
+.................... } 
+00568:  RETURN  
+....................  
+.................... static void DisableInt (){ 
+....................   DISABLE_INTERRUPTS(INTR_GLOBAL); 
+*
+004A0:  BCLR.B  81.7
+004A2:  MOV     #E0,W4
+004A4:  MOV     W4,42
+004A6:  BSET.B  81.7
+....................   disable_interrupts(INTR_CN_PIN|PIN_B5);  
+004A8:  BCLR.B  60.7
+....................   disable_interrupts(INTR_CN_PIN|PIN_B5); 
+004AA:  BCLR.B  60.7
+....................   disable_interrupts(INTR_CN_PIN|PIN_B4); 
+004AC:  BCLR.B  60.6
+....................   disable_interrupts(INTR_CN_PIN|PIN_B3); 
+004AE:  BCLR.B  60.5
+....................   disable_interrupts(INTR_CN_PIN|PIN_B2); 
+004B0:  BCLR.B  60.4
+.................... } 
+004B2:  RETURN  
+....................  
+.................... static void MCU_init(){ 
+....................  
+....................   setup_timer1(TMR_INTERNAL | TMR_DIV_BY_64); // таймер 1 сбрасывает собачий таймер 
+*
+0056A:  CLR     104
+0056C:  SETM    102
+0056E:  MOV     #8020,W4
+00570:  MOV     W4,104
+....................   set_timer1(20000); //reset the timer. 
+00572:  MOV     #4E20,W4
+00574:  MOV     W4,100
+....................    
+....................    SETUP_SPI2(SPI_MASTER|SPI_SCK_IDLE_LOW|SPI_XMIT_H_TO_L|SPI_MODE_8B|SPI_SAMPLE_AT_END|SPI_SS_DISABLED|SPI_CLK_DIV_128); 
+00576:  BCLR.B  261.7
+00578:  BCLR.B  260.6
+0057A:  MOV     #221,W4
+0057C:  MOV     W4,262
+0057E:  BSET.B  261.7
+....................    //f SCLK SPI = 312,5 kHz 
+....................    //setup_timer1(TMR_DISABLED|TMR_DIV_BY_1); 
+....................    //enable_interrupts(INT_EXT0); 
+....................    //enable_interrupts(INT_TIMER1); 
+....................    
+....................  SCK2_TRIS=0; // SPI2 tris 
+00580:  BCLR.B  2E4.6
+....................  SDI2_TRIS=1; 
+00582:  BSET.B  2E4.7
+....................  SDO2_TRIS=0; 
+00584:  BCLR.B  2E5.0
+....................   
+....................  CN1_TRIS = 1; 
+00586:  BSET.B  2C6.5
+....................  CN2_TRIS = 1; 
+00588:  BSET.B  2C6.4
+....................  CN3_TRIS = 1; 
+0058A:  BSET.B  2C6.2
+....................  CN4_TRIS = 1; 
+0058C:  BSET.B  2C6.3
+....................   
+....................  TRG0 = 0; // lcd buf tris 
+0058E:  BCLR.B  2E4.0
+....................  TRG1 = 0; 
+00590:  BCLR.B  2E4.1
+....................  TRB1 = 0; 
+00592:  BCLR.B  2C6.1
+....................  TRB0 = 0; 
+00594:  BCLR.B  2C6.0
+....................   
+....................  LCD_RS_TRIS=0; 
+00596:  BCLR.B  2E5.5
+....................  LCD_RW_TRIS=0; 
+00598:  BCLR.B  2E5.4
+....................  LCD_E_TRIS=0; 
+0059A:  BCLR.B  2E5.6
+....................   
+....................  ADC_CS_TRIS=0; 
+0059C:  BCLR.B  2E5.1
+....................  ADC_RESET_TRIS=0; 
+0059E:  BCLR.B  2D2.3
+....................  ADC_SYNC_TRIS=0; 
+005A0:  BCLR.B  2D2.2
+....................  ADC_DRDY_TRIS=1; // опрос готовнсти данных АЦП 
+005A2:  BSET.B  2D6.1
+....................  Status_LED_TRIS = 0; 
+005A4:  BCLR.B  2C7.5
+....................   
+....................  UART2_RX_TRIS=1; 
+005A6:  BSET.B  2DE.4
+....................  UART2_TX_TRIS=0; 
+005A8:  BCLR.B  2DE.5
+....................  XPORT_RST_TRIS=0; 
+005AA:  BCLR.B  2C7.7
+....................   
+....................  XPORT_RST_n = 0; 
+005AC:  BCLR.B  2C7.7
+....................  delay_us(500); 
+005AE:  REPEAT  #E1E
+005B0:  NOP     
+005B2:  REPEAT  #3FFF
+005B4:  NOP     
+....................  XPORT_RST_n = 1; 
+005B6:  BSET.B  2C7.7
+....................  EnableInt(); 
+005B8:  CALL    54A
+.................... } 
+005BC:  RETURN  
+....................  
+.................... static void Bpush_delay(){ 
+*
+0249A:  CLR     848
+....................     
+....................    U16 counter = 0; 
+....................     
+....................    do {counter++;}  
+0249C:  INC     0848
+....................    while (counter<2000);    
+0249E:  MOV     848,W4
+024A0:  MOV     #7D0,W3
+024A2:  CP      W3,W4
+024A4:  BRA     GTU,249C
+....................    EnableInt();  
+024A6:  CALL    54A
+.................... } 
+024AA:  RETURN  
+....................  
+.................... static void LCD_print_menu(){ 
+024AC:  MOV     W5,[W15++]
+.................... LCDsetCursor(one); 
+024AE:  CLR.B   84A
+024B0:  CALL    730
+.................... LCDMsg("ADC sps set  "); 
+024B4:  MOV     #0,W5
+024B6:  MOV     W5,W0
+024B8:  CALL    25A
+024BC:  IOR.B   #0,W0L
+024BE:  BTSC.B  42.1
+024C0:  BRA     24CC
+024C2:  INC     W5,W5
+024C4:  MOV.B   W0L,84C
+024C6:  CALL    726
+024CA:  BRA     24B6
+.................... LCDsetCursor(two); 
+024CC:  MOV.B   #40,W0L
+024CE:  MOV.B   W0L,84A
+024D0:  CALL    730
+.................... LCDMsg("Average set  "); 
+024D4:  MOV     #0,W5
+024D6:  MOV     W5,W0
+024D8:  CALL    274
+024DC:  IOR.B   #0,W0L
+024DE:  BTSC.B  42.1
+024E0:  BRA     24EC
+024E2:  INC     W5,W5
+024E4:  MOV.B   W0L,84C
+024E6:  CALL    726
+024EA:  BRA     24D6
+.................... LCDsetCursor(three); 
+024EC:  MOV.B   #10,W0L
+024EE:  MOV.B   W0L,84A
+024F0:  CALL    730
+.................... LCDMsg("Reset device "); 
+024F4:  MOV     #0,W5
+024F6:  MOV     W5,W0
+024F8:  CALL    28E
+024FC:  IOR.B   #0,W0L
+024FE:  BTSC.B  42.1
+02500:  BRA     250C
+02502:  INC     W5,W5
+02504:  MOV.B   W0L,84C
+02506:  CALL    726
+0250A:  BRA     24F6
+.................... LCDsetCursor(four); 
+0250C:  MOV.B   #50,W0L
+0250E:  MOV.B   W0L,84A
+02510:  CALL    730
+.................... LCDMsg("Return back  "); 
+02514:  MOV     #0,W5
+02516:  MOV     W5,W0
+02518:  CALL    2A8
+0251C:  IOR.B   #0,W0L
+0251E:  BTSC.B  42.1
+02520:  BRA     252C
+02522:  INC     W5,W5
+02524:  MOV.B   W0L,84C
+02526:  CALL    726
+0252A:  BRA     2516
+.................... } 
+0252C:  MOV     [--W15],W5
+0252E:  RETURN  
+....................  
+.................... static void LCD_main_menu (void) { 
+02530:  MOV     W5,[W15++]
+.................... //DisableInt(); 
+.................... LCD_print_menu(); 
+02532:  CALL    24AC
+....................  
+....................    //if(CN4){Bpush_delay(); if(CN4) menu_sel++;} 
+....................    //if(CN3){Bpush_delay(); if(CN3) menu_sel--;} 
+....................    switch (menu_sel){ 
+02536:  MOV.B   830,W0L
+02538:  CLR.B   1
+0253A:  XOR     #0,W0
+0253C:  BRA     Z,254C
+0253E:  XOR     #1,W0
+02540:  BRA     Z,25D0
+02542:  XOR     #3,W0
+02544:  BRA     Z,2654
+02546:  XOR     #1,W0
+02548:  BRA     Z,26D8
+0254A:  BRA     275C
+....................     case 0:  
+....................        LCDsetCursor(0x0D); LCDMsg("<--"); 
+0254C:  MOV.B   #D,W0L
+0254E:  MOV.B   W0L,84A
+02550:  CALL    730
+02554:  MOV     #0,W5
+02556:  MOV     W5,W0
+02558:  CALL    2C2
+0255C:  IOR.B   #0,W0L
+0255E:  BTSC.B  42.1
+02560:  BRA     256C
+02562:  INC     W5,W5
+02564:  MOV.B   W0L,84C
+02566:  CALL    726
+0256A:  BRA     2556
+....................        LCDsetCursor(0x4D); LCDMsg("   "); // стирание стрелки от предыдущего 
+0256C:  MOV.B   #4D,W0L
+0256E:  MOV.B   W0L,84A
+02570:  CALL    730
+02574:  MOV     #0,W5
+02576:  MOV     W5,W0
+02578:  CALL    2D2
+0257C:  IOR.B   #0,W0L
+0257E:  BTSC.B  42.1
+02580:  BRA     258C
+02582:  INC     W5,W5
+02584:  MOV.B   W0L,84C
+02586:  CALL    726
+0258A:  BRA     2576
+....................        LCDsetCursor(0x1D); LCDMsg("   "); // элемента меню 
+0258C:  MOV.B   #1D,W0L
+0258E:  MOV.B   W0L,84A
+02590:  CALL    730
+02594:  MOV     #0,W5
+02596:  MOV     W5,W0
+02598:  CALL    2D2
+0259C:  IOR.B   #0,W0L
+0259E:  BTSC.B  42.1
+025A0:  BRA     25AC
+025A2:  INC     W5,W5
+025A4:  MOV.B   W0L,84C
+025A6:  CALL    726
+025AA:  BRA     2596
+....................        LCDsetCursor(0x5D); LCDMsg("   "); 
+025AC:  MOV.B   #5D,W0L
+025AE:  MOV.B   W0L,84A
+025B0:  CALL    730
+025B4:  MOV     #0,W5
+025B6:  MOV     W5,W0
+025B8:  CALL    2D2
+025BC:  IOR.B   #0,W0L
+025BE:  BTSC.B  42.1
+025C0:  BRA     25CC
+025C2:  INC     W5,W5
+025C4:  MOV.B   W0L,84C
+025C6:  CALL    726
+025CA:  BRA     25B6
+....................     break; 
+025CC:  GOTO    275C
+....................      
+....................     case 1:  
+....................        LCDsetCursor(0x0D); LCDMsg("   "); 
+025D0:  MOV.B   #D,W0L
+025D2:  MOV.B   W0L,84A
+025D4:  CALL    730
+025D8:  MOV     #0,W5
+025DA:  MOV     W5,W0
+025DC:  CALL    2D2
+025E0:  IOR.B   #0,W0L
+025E2:  BTSC.B  42.1
+025E4:  BRA     25F0
+025E6:  INC     W5,W5
+025E8:  MOV.B   W0L,84C
+025EA:  CALL    726
+025EE:  BRA     25DA
+....................        LCDsetCursor(0x4D); LCDMsg("<--"); // стирание стрелки от предыдущего 
+025F0:  MOV.B   #4D,W0L
+025F2:  MOV.B   W0L,84A
+025F4:  CALL    730
+025F8:  MOV     #0,W5
+025FA:  MOV     W5,W0
+025FC:  CALL    2C2
+02600:  IOR.B   #0,W0L
+02602:  BTSC.B  42.1
+02604:  BRA     2610
+02606:  INC     W5,W5
+02608:  MOV.B   W0L,84C
+0260A:  CALL    726
+0260E:  BRA     25FA
+....................        LCDsetCursor(0x1D); LCDMsg("   "); // элемента меню 
+02610:  MOV.B   #1D,W0L
+02612:  MOV.B   W0L,84A
+02614:  CALL    730
+02618:  MOV     #0,W5
+0261A:  MOV     W5,W0
+0261C:  CALL    2D2
+02620:  IOR.B   #0,W0L
+02622:  BTSC.B  42.1
+02624:  BRA     2630
+02626:  INC     W5,W5
+02628:  MOV.B   W0L,84C
+0262A:  CALL    726
+0262E:  BRA     261A
+....................        LCDsetCursor(0x5D); LCDMsg("   "); 
+02630:  MOV.B   #5D,W0L
+02632:  MOV.B   W0L,84A
+02634:  CALL    730
+02638:  MOV     #0,W5
+0263A:  MOV     W5,W0
+0263C:  CALL    2D2
+02640:  IOR.B   #0,W0L
+02642:  BTSC.B  42.1
+02644:  BRA     2650
+02646:  INC     W5,W5
+02648:  MOV.B   W0L,84C
+0264A:  CALL    726
+0264E:  BRA     263A
+....................     break; 
+02650:  GOTO    275C
+....................      
+....................     case 2:  
+....................        LCDsetCursor(0x0D); LCDMsg("   "); 
+02654:  MOV.B   #D,W0L
+02656:  MOV.B   W0L,84A
+02658:  CALL    730
+0265C:  MOV     #0,W5
+0265E:  MOV     W5,W0
+02660:  CALL    2D2
+02664:  IOR.B   #0,W0L
+02666:  BTSC.B  42.1
+02668:  BRA     2674
+0266A:  INC     W5,W5
+0266C:  MOV.B   W0L,84C
+0266E:  CALL    726
+02672:  BRA     265E
+....................        LCDsetCursor(0x4D); LCDMsg("   "); // стирание стрелки от предыдущего 
+02674:  MOV.B   #4D,W0L
+02676:  MOV.B   W0L,84A
+02678:  CALL    730
+0267C:  MOV     #0,W5
+0267E:  MOV     W5,W0
+02680:  CALL    2D2
+02684:  IOR.B   #0,W0L
+02686:  BTSC.B  42.1
+02688:  BRA     2694
+0268A:  INC     W5,W5
+0268C:  MOV.B   W0L,84C
+0268E:  CALL    726
+02692:  BRA     267E
+....................        LCDsetCursor(0x1D); LCDMsg("<--"); // элемента меню 
+02694:  MOV.B   #1D,W0L
+02696:  MOV.B   W0L,84A
+02698:  CALL    730
+0269C:  MOV     #0,W5
+0269E:  MOV     W5,W0
+026A0:  CALL    2C2
+026A4:  IOR.B   #0,W0L
+026A6:  BTSC.B  42.1
+026A8:  BRA     26B4
+026AA:  INC     W5,W5
+026AC:  MOV.B   W0L,84C
+026AE:  CALL    726
+026B2:  BRA     269E
+....................        LCDsetCursor(0x5D); LCDMsg("   "); 
+026B4:  MOV.B   #5D,W0L
+026B6:  MOV.B   W0L,84A
+026B8:  CALL    730
+026BC:  MOV     #0,W5
+026BE:  MOV     W5,W0
+026C0:  CALL    2D2
+026C4:  IOR.B   #0,W0L
+026C6:  BTSC.B  42.1
+026C8:  BRA     26D4
+026CA:  INC     W5,W5
+026CC:  MOV.B   W0L,84C
+026CE:  CALL    726
+026D2:  BRA     26BE
+....................     break; 
+026D4:  GOTO    275C
+....................      
+....................     case 3:  
+....................        LCDsetCursor(0x0D); LCDMsg("   "); 
+026D8:  MOV.B   #D,W0L
+026DA:  MOV.B   W0L,84A
+026DC:  CALL    730
+026E0:  MOV     #0,W5
+026E2:  MOV     W5,W0
+026E4:  CALL    2D2
+026E8:  IOR.B   #0,W0L
+026EA:  BTSC.B  42.1
+026EC:  BRA     26F8
+026EE:  INC     W5,W5
+026F0:  MOV.B   W0L,84C
+026F2:  CALL    726
+026F6:  BRA     26E2
+....................        LCDsetCursor(0x4D); LCDMsg("   "); // стирание стрелки от предыдущего 
+026F8:  MOV.B   #4D,W0L
+026FA:  MOV.B   W0L,84A
+026FC:  CALL    730
+02700:  MOV     #0,W5
+02702:  MOV     W5,W0
+02704:  CALL    2D2
+02708:  IOR.B   #0,W0L
+0270A:  BTSC.B  42.1
+0270C:  BRA     2718
+0270E:  INC     W5,W5
+02710:  MOV.B   W0L,84C
+02712:  CALL    726
+02716:  BRA     2702
+....................        LCDsetCursor(0x1D); LCDMsg("   "); // элемента меню 
+02718:  MOV.B   #1D,W0L
+0271A:  MOV.B   W0L,84A
+0271C:  CALL    730
+02720:  MOV     #0,W5
+02722:  MOV     W5,W0
+02724:  CALL    2D2
+02728:  IOR.B   #0,W0L
+0272A:  BTSC.B  42.1
+0272C:  BRA     2738
+0272E:  INC     W5,W5
+02730:  MOV.B   W0L,84C
+02732:  CALL    726
+02736:  BRA     2722
+....................        LCDsetCursor(0x5D); LCDMsg("<--"); 
+02738:  MOV.B   #5D,W0L
+0273A:  MOV.B   W0L,84A
+0273C:  CALL    730
+02740:  MOV     #0,W5
+02742:  MOV     W5,W0
+02744:  CALL    2C2
+02748:  IOR.B   #0,W0L
+0274A:  BTSC.B  42.1
+0274C:  BRA     2758
+0274E:  INC     W5,W5
+02750:  MOV.B   W0L,84C
+02752:  CALL    726
+02756:  BRA     2742
+....................     break; 
+02758:  GOTO    275C
+....................    }   
+.................... } 
+0275C:  MOV     [--W15],W5
+0275E:  RETURN  
+....................  
+.................... static void Full_dev_reset(){ 
+*
+00B06:  MOV     W5,[W15++]
+....................   LCDClear(); 
+00B08:  CALL    6E2
+....................   LCDsetCursor(one); 
+00B0C:  CLR.B   84A
+00B0E:  CALL    730
+....................   LCDMsg("   Reset done"); 
+00B12:  MOV     #0,W5
+00B14:  MOV     W5,W0
+00B16:  CALL    2E2
+00B1A:  IOR.B   #0,W0L
+00B1C:  BTSC.B  42.1
+00B1E:  BRA     B2A
+00B20:  INC     W5,W5
+00B22:  MOV.B   W0L,84C
+00B24:  CALL    726
+00B28:  BRA     B14
+....................   LCDsetCursor(three); 
+00B2A:  MOV.B   #10,W0L
+00B2C:  MOV.B   W0L,84A
+00B2E:  CALL    730
+....................   LCDMsg("Starting device!"); 
+00B32:  MOV     #0,W5
+00B34:  MOV     W5,W0
+00B36:  CALL    2FC
+00B3A:  IOR.B   #0,W0L
+00B3C:  BTSC.B  42.1
+00B3E:  BRA     B4A
+00B40:  INC     W5,W5
+00B42:  MOV.B   W0L,84C
+00B44:  CALL    726
+00B48:  BRA     B34
+....................   delay_ms(1000); 
+00B4A:  MOV     #3E8,W0
+00B4C:  CALL    5BE
+....................   OscSetup(); 
+00B50:  CALL    52E
+....................   MCU_init(); 
+00B54:  CALL    56A
+....................   LCDInit(); 
+00B58:  CALL    642
+....................   reset_fl = 0; 
+00B5C:  BCLR.B  832.2
+....................   ADC_wakeUp(); 
+00B5E:  CALL    846
+....................   ADC_wakeUp();  
+00B62:  CALL    846
+....................   ADC_init(); 
+00B66:  CALL    990
+....................   ADC_set_PGA(8); 
+00B6A:  MOV.B   #8,W0L
+00B6C:  MOV.B   W0L,848
+00B6E:  CALL    8C0
+....................   ADC_sps_set(0x23); //0x023 - 10 sps, 0x43 - 25 sps, 0x63 - 50 sps 
+00B72:  MOV.B   #23,W0L
+00B74:  MOV.B   W0L,848
+00B76:  CALL    97A
+....................                      //0x82 - 100 sps, 0x91 - 500 sps 
+....................                      //0xA1 - 1000 sps, 0xC0 - 3750 sps 
+....................   ADC_SelfCal(); 
+00B7A:  CALL    A2C
+....................   meas_stop_fl = 0; // вкл. режим измерений 
+00B7E:  BCLR.B  832.0
+....................   menu_fl = 0;      // отключение меню 
+00B80:  CLR.B   831
+....................   menu_item = 0;    // сброс элемента меню 
+00B82:  CLR.B   82F
+....................   NumAver = 1;      // сброс величины усреднения данных АЦП 
+00B84:  MOV.B   #1,W0L
+00B86:  MOV.B   W0L,833
+....................   LCDClear();       // очистка дисплея 
+00B88:  CALL    6E2
+....................  
+.................... } 
+00B8C:  MOV     [--W15],W5
+00B8E:  RETURN  
+....................  
+.................... static void ADC_rd_and_print_ch(U8 chanel){ 
+*
+01F24:  MOV     W5,[W15++]
+01F26:  MOV     W6,[W15++]
+....................  
+....................    switch (chanel){ 
+01F28:  MOV.B   848,W0L
+01F2A:  CLR.B   1
+01F2C:  XOR     #1,W0
+01F2E:  BRA     Z,1F3E
+01F30:  XOR     #3,W0
+01F32:  BRA     Z,208A
+01F34:  XOR     #1,W0
+01F36:  BRA     Z,21E0
+01F38:  XOR     #7,W0
+01F3A:  BRA     Z,232E
+01F3C:  BRA     2494
+.................... //---------------- 1 датчик --------------------------------------//      
+....................  case 1:  
+....................   LCDsetCursor(one); 
+01F3E:  CLR.B   84A
+01F40:  CALL    730
+....................   LCDMsg("CTP"); 
+01F44:  MOV     #0,W5
+01F46:  MOV     W5,W0
+01F48:  CALL    31A
+01F4C:  IOR.B   #0,W0L
+01F4E:  BTSC.B  42.1
+01F50:  BRA     1F5C
+01F52:  INC     W5,W5
+01F54:  MOV.B   W0L,84C
+01F56:  CALL    726
+01F5A:  BRA     1F46
+....................   LCDMsg(":"); 
+01F5C:  MOV     #0,W5
+01F5E:  MOV     W5,W0
+01F60:  CALL    32A
+01F64:  IOR.B   #0,W0L
+01F66:  BTSC.B  42.1
+01F68:  BRA     1F74
+01F6A:  INC     W5,W5
+01F6C:  MOV.B   W0L,84C
+01F6E:  CALL    726
+01F72:  BRA     1F5E
+....................   ADCaddCoef = 22;      // смещение нуля для канала 1 
+01F74:  MOV     #16,W4
+01F76:  MOV     W4,81C
+....................   ADCmulCoef = 0.99978; // мультипликат. ошибка для канала 1 
+01F78:  MOV     #F195,W4
+01F7A:  MOV     W4,81E
+01F7C:  MOV     #3F7F,W4
+01F7E:  MOV     W4,820
+....................   ADC_setCh(4); 
+01F80:  MOV.B   #4,W0L
+01F82:  MOV.B   W0L,84A
+01F84:  CALL    CDA
+....................   Final_T_in_K = ADC_vol_to_T(); 
+01F88:  CALL    178A
+01F8C:  MOV     W0,822
+01F8E:  MOV     W1,824
+....................   LCDPutU32(temp,4); 
+01F90:  MOV.B   #4,W0L
+01F92:  MOV.B   W0L,84E
+01F94:  PUSH    83C
+01F96:  POP     84A
+01F98:  PUSH    83E
+01F9A:  POP     84C
+01F9C:  CALL    1AC8
+....................   LCDsetCursor(0x0A); 
+01FA0:  MOV.B   #A,W0L
+01FA2:  MOV.B   W0L,84A
+01FA4:  CALL    730
+....................   LCDPutU16(Final_T_in_K,LCD_num_symb); 
+01FA8:  MOV     822,W0
+01FAA:  MOV     824,W1
+01FAC:  CALL    1210
+01FB0:  MOV     W0,W5
+01FB2:  MOV     W1,W6
+01FB4:  MOV     W0,[W15++]
+01FB6:  MOV.B   827,W0L
+01FB8:  MOV.B   W0L,852
+01FBA:  MOV     [--W15],W0
+01FBC:  MOV     W5,84E
+01FBE:  MOV     W6,850
+01FC0:  CALL    1CDC
+....................   LCDMsg("."); 
+01FC4:  MOV     #0,W5
+01FC6:  MOV     W5,W0
+01FC8:  CALL    338
+01FCC:  IOR.B   #0,W0L
+01FCE:  BTSC.B  42.1
+01FD0:  BRA     1FDC
+01FD2:  INC     W5,W5
+01FD4:  MOV.B   W0L,84C
+01FD6:  CALL    726
+01FDA:  BRA     1FC6
+....................   LCDPutU16(ostatok_int_dec,1); 
+01FDC:  MOV.B   81B,W0L
+01FDE:  MOV.B   W0L,84E
+01FE0:  CLR.B   84F
+01FE2:  CLR     850
+01FE4:  MOV.B   #1,W0L
+01FE6:  MOV.B   W0L,852
+01FE8:  CALL    1CDC
+....................   if(LCD_num_symb==1){LCDMsg("K  ");} //очистка строки  
+01FEC:  MOV     826,W4
+01FEE:  LSR     W4,#8,W4
+01FF0:  CP.B    W4L,#1
+01FF2:  BRA     NZ,200C
+01FF4:  MOV     #0,W5
+01FF6:  MOV     W5,W0
+01FF8:  CALL    346
+01FFC:  IOR.B   #0,W0L
+01FFE:  BTSC.B  42.1
+02000:  BRA     200C
+02002:  INC     W5,W5
+02004:  MOV.B   W0L,84C
+02006:  CALL    726
+0200A:  BRA     1FF6
+....................   if(LCD_num_symb==2){LCDMsg("K "); } 
+0200C:  MOV     826,W4
+0200E:  LSR     W4,#8,W4
+02010:  CP.B    W4L,#2
+02012:  BRA     NZ,202C
+02014:  MOV     #0,W5
+02016:  MOV     W5,W0
+02018:  CALL    356
+0201C:  IOR.B   #0,W0L
+0201E:  BTSC.B  42.1
+02020:  BRA     202C
+02022:  INC     W5,W5
+02024:  MOV.B   W0L,84C
+02026:  CALL    726
+0202A:  BRA     2016
+....................   if(LCD_num_symb==3){LCDMsg("K");  } 
+0202C:  MOV     826,W4
+0202E:  LSR     W4,#8,W4
+02030:  CP.B    W4L,#3
+02032:  BRA     NZ,204C
+02034:  MOV     #0,W5
+02036:  MOV     W5,W0
+02038:  CALL    366
+0203C:  IOR.B   #0,W0L
+0203E:  BTSC.B  42.1
+02040:  BRA     204C
+02042:  INC     W5,W5
+02044:  MOV.B   W0L,84C
+02046:  CALL    726
+0204A:  BRA     2036
+....................   Printf("a%05Lu\n",temp); 
+0204C:  BTSC.B  233.1
+0204E:  BRA     204C
+02050:  MOV     #61,W4
+02052:  MOV     W4,234
+02054:  MOV     83C,W0
+02056:  MOV     83E,W1
+02058:  MOV     #8005,W4
+0205A:  CALL    1E5C
+0205E:  BTSC.B  233.1
+02060:  BRA     205E
+02062:  MOV     #A,W4
+02064:  MOV     W4,234
+....................   LCDsetCursor(0x03); 
+02066:  MOV.B   #3,W0L
+02068:  MOV.B   W0L,84A
+0206A:  CALL    730
+....................   LCDMsg(" ");  
+0206E:  MOV     #0,W5
+02070:  MOV     W5,W0
+02072:  CALL    374
+02076:  IOR.B   #0,W0L
+02078:  BTSC.B  42.1
+0207A:  BRA     2086
+0207C:  INC     W5,W5
+0207E:  MOV.B   W0L,84C
+02080:  CALL    726
+02084:  BRA     2070
+....................    
+....................  break; 
+02086:  GOTO    2494
+.................... //---------------- 2 датчик --------------------------------------// 
+....................  case 2:  
+....................   LCDsetCursor(two); 
+0208A:  MOV.B   #40,W0L
+0208C:  MOV.B   W0L,84A
+0208E:  CALL    730
+....................   LCDMsg("C"); 
+02092:  MOV     #0,W5
+02094:  MOV     W5,W0
+02096:  CALL    382
+0209A:  IOR.B   #0,W0L
+0209C:  BTSC.B  42.1
+0209E:  BRA     20AA
+020A0:  INC     W5,W5
+020A2:  MOV.B   W0L,84C
+020A4:  CALL    726
+020A8:  BRA     2094
+....................   LCDputCH(0xA8);// П 
+020AA:  MOV.B   #A8,W0L
+020AC:  MOV.B   W0L,864
+020AE:  CALL    71C
+....................   LCDMsg(" :"); 
+020B2:  MOV     #0,W5
+020B4:  MOV     W5,W0
+020B6:  CALL    390
+020BA:  IOR.B   #0,W0L
+020BC:  BTSC.B  42.1
+020BE:  BRA     20CA
+020C0:  INC     W5,W5
+020C2:  MOV.B   W0L,84C
+020C4:  CALL    726
+020C8:  BRA     20B4
+....................   ADCaddCoef =7;         // смещение нуля для канала 2 
+020CA:  MOV     #7,W4
+020CC:  MOV     W4,81C
+....................   ADCmulCoef =0.999769;  // мультипликат. ошибка для канала 2 
+020CE:  MOV     #F0DC,W4
+020D0:  MOV     W4,81E
+020D2:  MOV     #3F7F,W4
+020D4:  MOV     W4,820
+....................   ADC_setCh(3); 
+020D6:  MOV.B   #3,W0L
+020D8:  MOV.B   W0L,84A
+020DA:  CALL    CDA
+....................   Final_T_in_K = ADC_vol_to_T(); 
+020DE:  CALL    178A
+020E2:  MOV     W0,822
+020E4:  MOV     W1,824
+....................   LCDPutU32(temp,4); 
+020E6:  MOV.B   #4,W0L
+020E8:  MOV.B   W0L,84E
+020EA:  PUSH    83C
+020EC:  POP     84A
+020EE:  PUSH    83E
+020F0:  POP     84C
+020F2:  CALL    1AC8
+....................   LCDsetCursor(0x4A); 
+020F6:  MOV.B   #4A,W0L
+020F8:  MOV.B   W0L,84A
+020FA:  CALL    730
+....................   LCDPutU16(Final_T_in_K,LCD_num_symb); 
+020FE:  MOV     822,W0
+02100:  MOV     824,W1
+02102:  CALL    1210
+02106:  MOV     W0,W5
+02108:  MOV     W1,W6
+0210A:  MOV     W0,[W15++]
+0210C:  MOV.B   827,W0L
+0210E:  MOV.B   W0L,852
+02110:  MOV     [--W15],W0
+02112:  MOV     W5,84E
+02114:  MOV     W6,850
+02116:  CALL    1CDC
+....................   LCDMsg("."); 
+0211A:  MOV     #0,W5
+0211C:  MOV     W5,W0
+0211E:  CALL    338
+02122:  IOR.B   #0,W0L
+02124:  BTSC.B  42.1
+02126:  BRA     2132
+02128:  INC     W5,W5
+0212A:  MOV.B   W0L,84C
+0212C:  CALL    726
+02130:  BRA     211C
+....................   LCDPutU16(ostatok_int_dec,1); 
+02132:  MOV.B   81B,W0L
+02134:  MOV.B   W0L,84E
+02136:  CLR.B   84F
+02138:  CLR     850
+0213A:  MOV.B   #1,W0L
+0213C:  MOV.B   W0L,852
+0213E:  CALL    1CDC
+....................   if(LCD_num_symb==1){LCDMsg("K  ");} //очистка строки  
+02142:  MOV     826,W4
+02144:  LSR     W4,#8,W4
+02146:  CP.B    W4L,#1
+02148:  BRA     NZ,2162
+0214A:  MOV     #0,W5
+0214C:  MOV     W5,W0
+0214E:  CALL    346
+02152:  IOR.B   #0,W0L
+02154:  BTSC.B  42.1
+02156:  BRA     2162
+02158:  INC     W5,W5
+0215A:  MOV.B   W0L,84C
+0215C:  CALL    726
+02160:  BRA     214C
+....................   if(LCD_num_symb==2){LCDMsg("K "); } 
+02162:  MOV     826,W4
+02164:  LSR     W4,#8,W4
+02166:  CP.B    W4L,#2
+02168:  BRA     NZ,2182
+0216A:  MOV     #0,W5
+0216C:  MOV     W5,W0
+0216E:  CALL    356
+02172:  IOR.B   #0,W0L
+02174:  BTSC.B  42.1
+02176:  BRA     2182
+02178:  INC     W5,W5
+0217A:  MOV.B   W0L,84C
+0217C:  CALL    726
+02180:  BRA     216C
+....................   if(LCD_num_symb==3){LCDMsg("K");  } 
+02182:  MOV     826,W4
+02184:  LSR     W4,#8,W4
+02186:  CP.B    W4L,#3
+02188:  BRA     NZ,21A2
+0218A:  MOV     #0,W5
+0218C:  MOV     W5,W0
+0218E:  CALL    366
+02192:  IOR.B   #0,W0L
+02194:  BTSC.B  42.1
+02196:  BRA     21A2
+02198:  INC     W5,W5
+0219A:  MOV.B   W0L,84C
+0219C:  CALL    726
+021A0:  BRA     218C
+....................   Printf("b%05Lu\n",temp); 
+021A2:  BTSC.B  233.1
+021A4:  BRA     21A2
+021A6:  MOV     #62,W4
+021A8:  MOV     W4,234
+021AA:  MOV     83C,W0
+021AC:  MOV     83E,W1
+021AE:  MOV     #8005,W4
+021B0:  CALL    1E5C
+021B4:  BTSC.B  233.1
+021B6:  BRA     21B4
+021B8:  MOV     #A,W4
+021BA:  MOV     W4,234
+....................   LCDsetCursor(0x43); 
+021BC:  MOV.B   #43,W0L
+021BE:  MOV.B   W0L,84A
+021C0:  CALL    730
+....................   LCDMsg(" "); 
+021C4:  MOV     #0,W5
+021C6:  MOV     W5,W0
+021C8:  CALL    374
+021CC:  IOR.B   #0,W0L
+021CE:  BTSC.B  42.1
+021D0:  BRA     21DC
+021D2:  INC     W5,W5
+021D4:  MOV.B   W0L,84C
+021D6:  CALL    726
+021DA:  BRA     21C6
+....................  break; 
+021DC:  GOTO    2494
+.................... //---------------- 3 датчик --------------------------------------//   
+....................  case 3:  
+....................   LCDsetCursor(three); 
+021E0:  MOV.B   #10,W0L
+021E2:  MOV.B   W0L,84A
+021E4:  CALL    730
+....................   LCDputCH(0xA8);// П 
+021E8:  MOV.B   #A8,W0L
+021EA:  MOV.B   W0L,864
+021EC:  CALL    71C
+....................   LCDMsg('E'); 
+021F0:  MOV.B   #45,W0L
+021F2:  MOV.B   W0L,84C
+021F4:  CALL    726
+....................   LCDMsg('P'); 
+021F8:  MOV.B   #50,W0L
+021FA:  MOV.B   W0L,84C
+021FC:  CALL    726
+....................   LCDMsg(':'); 
+02200:  MOV.B   #3A,W0L
+02202:  MOV.B   W0L,84C
+02204:  CALL    726
+....................   ADCaddCoef =30;        // смещение нуля для канала 3 
+02208:  MOV     #1E,W4
+0220A:  MOV     W4,81C
+....................   ADCmulCoef =0.999795;  // мультипликат. ошибка для канала 3 
+0220C:  MOV     #F291,W4
+0220E:  MOV     W4,81E
+02210:  MOV     #3F7F,W4
+02212:  MOV     W4,820
+....................   ADC_setCh(2); 
+02214:  MOV.B   #2,W0L
+02216:  MOV.B   W0L,84A
+02218:  CALL    CDA
+....................   Final_T_in_K = ADC_vol_to_T(); 
+0221C:  CALL    178A
+02220:  MOV     W0,822
+02222:  MOV     W1,824
+....................   LCDPutU32(temp,4); 
+02224:  MOV.B   #4,W0L
+02226:  MOV.B   W0L,84E
+02228:  PUSH    83C
+0222A:  POP     84A
+0222C:  PUSH    83E
+0222E:  POP     84C
+02230:  CALL    1AC8
+....................   LCDMsg(" "); 
+02234:  MOV     #0,W5
+02236:  MOV     W5,W0
+02238:  CALL    374
+0223C:  IOR.B   #0,W0L
+0223E:  BTSC.B  42.1
+02240:  BRA     224C
+02242:  INC     W5,W5
+02244:  MOV.B   W0L,84C
+02246:  CALL    726
+0224A:  BRA     2236
+....................   LCDPutU16(Final_T_in_K,LCD_num_symb); 
+0224C:  MOV     822,W0
+0224E:  MOV     824,W1
+02250:  CALL    1210
+02254:  MOV     W0,W5
+02256:  MOV     W1,W6
+02258:  MOV     W0,[W15++]
+0225A:  MOV.B   827,W0L
+0225C:  MOV.B   W0L,852
+0225E:  MOV     [--W15],W0
+02260:  MOV     W5,84E
+02262:  MOV     W6,850
+02264:  CALL    1CDC
+....................   LCDMsg("."); 
+02268:  MOV     #0,W5
+0226A:  MOV     W5,W0
+0226C:  CALL    338
+02270:  IOR.B   #0,W0L
+02272:  BTSC.B  42.1
+02274:  BRA     2280
+02276:  INC     W5,W5
+02278:  MOV.B   W0L,84C
+0227A:  CALL    726
+0227E:  BRA     226A
+....................   LCDPutU16(ostatok_int_dec,1); 
+02280:  MOV.B   81B,W0L
+02282:  MOV.B   W0L,84E
+02284:  CLR.B   84F
+02286:  CLR     850
+02288:  MOV.B   #1,W0L
+0228A:  MOV.B   W0L,852
+0228C:  CALL    1CDC
+....................   if(LCD_num_symb==1){LCDMsg("K  ");} //очистка строки  
+02290:  MOV     826,W4
+02292:  LSR     W4,#8,W4
+02294:  CP.B    W4L,#1
+02296:  BRA     NZ,22B0
+02298:  MOV     #0,W5
+0229A:  MOV     W5,W0
+0229C:  CALL    346
+022A0:  IOR.B   #0,W0L
+022A2:  BTSC.B  42.1
+022A4:  BRA     22B0
+022A6:  INC     W5,W5
+022A8:  MOV.B   W0L,84C
+022AA:  CALL    726
+022AE:  BRA     229A
+....................   if(LCD_num_symb==2){LCDMsg("K "); } 
+022B0:  MOV     826,W4
+022B2:  LSR     W4,#8,W4
+022B4:  CP.B    W4L,#2
+022B6:  BRA     NZ,22D0
+022B8:  MOV     #0,W5
+022BA:  MOV     W5,W0
+022BC:  CALL    356
+022C0:  IOR.B   #0,W0L
+022C2:  BTSC.B  42.1
+022C4:  BRA     22D0
+022C6:  INC     W5,W5
+022C8:  MOV.B   W0L,84C
+022CA:  CALL    726
+022CE:  BRA     22BA
+....................   if(LCD_num_symb==3){LCDMsg("K");  } 
+022D0:  MOV     826,W4
+022D2:  LSR     W4,#8,W4
+022D4:  CP.B    W4L,#3
+022D6:  BRA     NZ,22F0
+022D8:  MOV     #0,W5
+022DA:  MOV     W5,W0
+022DC:  CALL    366
+022E0:  IOR.B   #0,W0L
+022E2:  BTSC.B  42.1
+022E4:  BRA     22F0
+022E6:  INC     W5,W5
+022E8:  MOV.B   W0L,84C
+022EA:  CALL    726
+022EE:  BRA     22DA
+....................   Printf("c%05Lu\n",temp); 
+022F0:  BTSC.B  233.1
+022F2:  BRA     22F0
+022F4:  MOV     #63,W4
+022F6:  MOV     W4,234
+022F8:  MOV     83C,W0
+022FA:  MOV     83E,W1
+022FC:  MOV     #8005,W4
+022FE:  CALL    1E5C
+02302:  BTSC.B  233.1
+02304:  BRA     2302
+02306:  MOV     #A,W4
+02308:  MOV     W4,234
+....................   LCDsetCursor(0x13); 
+0230A:  MOV.B   #13,W0L
+0230C:  MOV.B   W0L,84A
+0230E:  CALL    730
+....................   LCDMsg(" "); 
+02312:  MOV     #0,W5
+02314:  MOV     W5,W0
+02316:  CALL    374
+0231A:  IOR.B   #0,W0L
+0231C:  BTSC.B  42.1
+0231E:  BRA     232A
+02320:  INC     W5,W5
+02322:  MOV.B   W0L,84C
+02324:  CALL    726
+02328:  BRA     2314
+....................  break; 
+0232A:  GOTO    2494
+.................... //---------------- 4 датчик --------------------------------------//     
+....................    case 4:  
+....................   LCDsetCursor(four); 
+0232E:  MOV.B   #50,W0L
+02330:  MOV.B   W0L,84A
+02332:  CALL    730
+....................   LCDMsg("CO"); 
+02336:  MOV     #0,W5
+02338:  MOV     W5,W0
+0233A:  CALL    3A0
+0233E:  IOR.B   #0,W0L
+02340:  BTSC.B  42.1
+02342:  BRA     234E
+02344:  INC     W5,W5
+02346:  MOV.B   W0L,84C
+02348:  CALL    726
+0234C:  BRA     2338
+....................   LCDputCH(0xA7); // Л 
+0234E:  MOV.B   #A7,W0L
+02350:  MOV.B   W0L,864
+02352:  CALL    71C
+....................   LCDMsg(":"); 
+02356:  MOV     #0,W5
+02358:  MOV     W5,W0
+0235A:  CALL    32A
+0235E:  IOR.B   #0,W0L
+02360:  BTSC.B  42.1
+02362:  BRA     236E
+02364:  INC     W5,W5
+02366:  MOV.B   W0L,84C
+02368:  CALL    726
+0236C:  BRA     2358
+....................   ADCaddCoef = 83;         // смещение нуля для канала 4 
+0236E:  MOV     #53,W4
+02370:  MOV     W4,81C
+....................   ADCmulCoef = 0.99985;         // мультипликат. ошибка для канала 4 
+02372:  MOV     #F62B,W4
+02374:  MOV     W4,81E
+02376:  MOV     #3F7F,W4
+02378:  MOV     W4,820
+....................   ADC_setCh(1); 
+0237A:  MOV.B   #1,W0L
+0237C:  MOV.B   W0L,84A
+0237E:  CALL    CDA
+....................   Final_T_in_K = ADC_vol_to_T(); 
+02382:  CALL    178A
+02386:  MOV     W0,822
+02388:  MOV     W1,824
+....................   LCDPutU32(temp,4); 
+0238A:  MOV.B   #4,W0L
+0238C:  MOV.B   W0L,84E
+0238E:  PUSH    83C
+02390:  POP     84A
+02392:  PUSH    83E
+02394:  POP     84C
+02396:  CALL    1AC8
+....................   LCDMsg(" "); 
+0239A:  MOV     #0,W5
+0239C:  MOV     W5,W0
+0239E:  CALL    374
+023A2:  IOR.B   #0,W0L
+023A4:  BTSC.B  42.1
+023A6:  BRA     23B2
+023A8:  INC     W5,W5
+023AA:  MOV.B   W0L,84C
+023AC:  CALL    726
+023B0:  BRA     239C
+....................   LCDPutU16(Final_T_in_K,LCD_num_symb); 
+023B2:  MOV     822,W0
+023B4:  MOV     824,W1
+023B6:  CALL    1210
+023BA:  MOV     W0,W5
+023BC:  MOV     W1,W6
+023BE:  MOV     W0,[W15++]
+023C0:  MOV.B   827,W0L
+023C2:  MOV.B   W0L,852
+023C4:  MOV     [--W15],W0
+023C6:  MOV     W5,84E
+023C8:  MOV     W6,850
+023CA:  CALL    1CDC
+....................   LCDMsg("."); 
+023CE:  MOV     #0,W5
+023D0:  MOV     W5,W0
+023D2:  CALL    338
+023D6:  IOR.B   #0,W0L
+023D8:  BTSC.B  42.1
+023DA:  BRA     23E6
+023DC:  INC     W5,W5
+023DE:  MOV.B   W0L,84C
+023E0:  CALL    726
+023E4:  BRA     23D0
+....................   LCDPutU16(ostatok_int_dec,1); 
+023E6:  MOV.B   81B,W0L
+023E8:  MOV.B   W0L,84E
+023EA:  CLR.B   84F
+023EC:  CLR     850
+023EE:  MOV.B   #1,W0L
+023F0:  MOV.B   W0L,852
+023F2:  CALL    1CDC
+....................   if(LCD_num_symb==1){LCDMsg("K  ");} //очистка строки  
+023F6:  MOV     826,W4
+023F8:  LSR     W4,#8,W4
+023FA:  CP.B    W4L,#1
+023FC:  BRA     NZ,2416
+023FE:  MOV     #0,W5
+02400:  MOV     W5,W0
+02402:  CALL    346
+02406:  IOR.B   #0,W0L
+02408:  BTSC.B  42.1
+0240A:  BRA     2416
+0240C:  INC     W5,W5
+0240E:  MOV.B   W0L,84C
+02410:  CALL    726
+02414:  BRA     2400
+....................   if(LCD_num_symb==2){LCDMsg("K "); } 
+02416:  MOV     826,W4
+02418:  LSR     W4,#8,W4
+0241A:  CP.B    W4L,#2
+0241C:  BRA     NZ,2436
+0241E:  MOV     #0,W5
+02420:  MOV     W5,W0
+02422:  CALL    356
+02426:  IOR.B   #0,W0L
+02428:  BTSC.B  42.1
+0242A:  BRA     2436
+0242C:  INC     W5,W5
+0242E:  MOV.B   W0L,84C
+02430:  CALL    726
+02434:  BRA     2420
+....................   if(LCD_num_symb==3){LCDMsg("K");  } 
+02436:  MOV     826,W4
+02438:  LSR     W4,#8,W4
+0243A:  CP.B    W4L,#3
+0243C:  BRA     NZ,2456
+0243E:  MOV     #0,W5
+02440:  MOV     W5,W0
+02442:  CALL    366
+02446:  IOR.B   #0,W0L
+02448:  BTSC.B  42.1
+0244A:  BRA     2456
+0244C:  INC     W5,W5
+0244E:  MOV.B   W0L,84C
+02450:  CALL    726
+02454:  BRA     2440
+....................   Printf("d%05Lu\n",temp); 
+02456:  BTSC.B  233.1
+02458:  BRA     2456
+0245A:  MOV     #64,W4
+0245C:  MOV     W4,234
+0245E:  MOV     83C,W0
+02460:  MOV     83E,W1
+02462:  MOV     #8005,W4
+02464:  CALL    1E5C
+02468:  BTSC.B  233.1
+0246A:  BRA     2468
+0246C:  MOV     #A,W4
+0246E:  MOV     W4,234
+....................   LCDsetCursor(0x53); 
+02470:  MOV.B   #53,W0L
+02472:  MOV.B   W0L,84A
+02474:  CALL    730
+....................   LCDMsg(" ");  
+02478:  MOV     #0,W5
+0247A:  MOV     W5,W0
+0247C:  CALL    374
+02480:  IOR.B   #0,W0L
+02482:  BTSC.B  42.1
+02484:  BRA     2490
+02486:  INC     W5,W5
+02488:  MOV.B   W0L,84C
+0248A:  CALL    726
+0248E:  BRA     247A
+....................    break; 
+02490:  GOTO    2494
+.................... //----------------------------------------------------------------//    
+....................    } 
+....................  
+.................... } 
+02494:  MOV     [--W15],W6
+02496:  MOV     [--W15],W5
+02498:  RETURN  
+....................  
+.................... static void save_to_flash(){ 
+....................        
+....................    Sps_Wr = NumAver; 
+*
+02824:  MOV.B   833,W0L
+02826:  MOV.B   W0L,82D
+....................    Aver_Wr = ADC_sps_var; // сохранение sps значения во флеш 
+02828:  MOV.B   834,W0L
+0282A:  MOV.B   W0L,82C
+....................    CRC_Wr = CRC8(flash_wr_data,2); 
+0282C:  MOV     #2,W4
+0282E:  MOV     W4,84A
+02830:  MOV     #828,W4
+02832:  MOV     W4,848
+02834:  CALL    802
+02838:  MOV.B   W0L,82E
+....................    Wr_Flash(); 
+0283A:  CALL    2804
+....................     
+....................    }  
+0283E:  RETURN  
+....................  
+.................... #int_cni 
+.................... static void cn_irq_handler(void) { 
+*
+004B4:  PUSH    42
+004B6:  PUSH    36
+004B8:  MOV     W0,[W15++]
+004BA:  MOV     #2,W0
+004BC:  REPEAT  #C
+004BE:  MOV     [W0++],[W15++]
+....................  
+....................    DisableInt();                    // отключение прерываний для обработки дребезка  
+004C0:  CALL    4A0
+....................    meas_stop_fl = 1;                // взвод флага остановки измерений 
+004C4:  BSET.B  832.0
+....................    menu_fl = 1;                     // взвод флага перехода в меню 
+004C6:  MOV.B   #1,W0L
+004C8:  MOV.B   W0L,831
+....................     if (menu_item == 1) 
+004CA:  MOV     82E,W4
+004CC:  LSR     W4,#8,W4
+004CE:  CP.B    W4L,#1
+004D0:  BRA     NZ,4E4
+....................   { 
+....................     if (menu_sel>3) {menu_sel=0;} 
+004D2:  MOV     830,W4
+004D4:  CP.B    W4L,#3
+004D6:  BRA     LE,4DA
+004D8:  CLR.B   830
+....................     if (menu_sel<0) {menu_sel=3;} 
+004DA:  MOV     830,W4
+004DC:  CP.B    W4L,#0
+004DE:  BRA     GE,4E4
+004E0:  MOV.B   #3,W0L
+004E2:  MOV.B   W0L,830
+....................   } 
+....................    if (CN2==1) {menu_item = 1;} 
+004E4:  BTSS.B  2C8.4
+004E6:  BRA     4EC
+004E8:  MOV.B   #1,W0L
+004EA:  MOV.B   W0L,82F
+....................    if (CN3==1) {menu_sel--;} 
+004EC:  BTSS.B  2C8.2
+004EE:  BRA     4F2
+004F0:  DEC.B   0830
+....................    if (CN4==1) {menu_sel++;} 
+004F2:  BTSS.B  2C8.3
+004F4:  BRA     4F8
+004F6:  INC.B   0830
+....................    clear_interrupt(INTR_CN_PIN); 
+004F8:  BCLR.B  82.7
+....................  
+.................... } 
+....................  
+004FA:  BCLR.B  86.3
+004FC:  MOV     #1A,W0
+004FE:  REPEAT  #C
+00500:  MOV     [--W15],[W0--]
+00502:  MOV     [--W15],W0
+00504:  POP     36
+00506:  POP     42
+00508:  RETFIE  
+.................... #int_timer1 
+.................... static void timer1_irq_handler(void) { 
+0050A:  PUSH    42
+0050C:  PUSH    36
+0050E:  MOV     W0,[W15++]
+00510:  MOV     #2,W0
+00512:  REPEAT  #C
+00514:  MOV     [W0++],[W15++]
+.................... restart_wdt();     // сбос собачего таймера 
+00516:  CLRWDT  
+.................... set_timer1(20000); //reset the timer. 
+00518:  MOV     #4E20,W4
+0051A:  MOV     W4,100
+.................... clear_interrupt(int_timer1); 
+0051C:  BCLR.B  84.3
+.................... } 
+....................  
+....................  
+.................... /*############################################################################*/ 
+....................  
+0051E:  BCLR.B  84.3
+00520:  MOV     #1A,W0
+00522:  REPEAT  #C
+00524:  MOV     [--W15],[W0--]
+00526:  MOV     [--W15],W0
+00528:  POP     36
+0052A:  POP     42
+0052C:  RETFIE  
+.................... static void main() 
+.................... {  
+*
+02840:  MOV     #4444,W0
+02842:  MOV     W0,A4
+02844:  MOV     #4444,W0
+02846:  MOV     W0,AC
+02848:  BSET.B  81.7
+0284A:  BCLR.B  261.7
+0284C:  BCLR.B  2E5.0
+0284E:  BSET.B  2E4.7
+02850:  BCLR.B  2E4.6
+02852:  BCLR.B  260.6
+02854:  MOV     #3B,W4
+02856:  MOV     W4,262
+02858:  BSET.B  261.7
+0285A:  MOV     #8000,W4
+0285C:  MOV     W4,230
+0285E:  MOV     #400,W4
+02860:  MOV     W4,232
+02862:  MOV     #103,W4
+02864:  MOV     W4,238
+02866:  CLR     800
+02868:  CLR     802
+0286A:  CLR     804
+0286C:  CLR     806
+0286E:  CLR     808
+02870:  CLR     80A
+02872:  CLR     80C
+02874:  CLR     80E
+02876:  CLR     810
+02878:  CLR     812
+0287A:  CLR.B   81A
+0287C:  CLR     822
+0287E:  CLR     824
+02880:  CLR.B   826
+02882:  MOV.B   #1,W0L
+02884:  MOV.B   W0L,827
+02886:  CLR.B   82C
+02888:  CLR.B   82D
+0288A:  CLR.B   82E
+0288C:  CLR.B   82F
+0288E:  CLR.B   830
+02890:  CLR.B   831
+02892:  BCLR.B  832.0
+02894:  BSET.B  832.1
+02896:  BCLR.B  832.2
+02898:  MOV.B   #1,W0L
+0289A:  MOV.B   W0L,833
+0289C:  MOV.B   #1,W0L
+0289E:  MOV.B   W0L,834
+028A0:  MOV.B   #FF,W0L
+028A2:  MOV.B   W0L,835
+028A4:  SETM.B  836
+028A6:  CLR     83C
+028A8:  CLR     83E
+028AA:  CLR     840
+028AC:  CLR     842
+028AE:  SETM    32C
+028B0:  SETM    32A
+028B2:  MOV     #1F80,W15
+028B4:  MOV     #1FFF,W0
+028B6:  MOV     W0,20
+028B8:  NOP     
+028BA:  CLR     814
+028BC:  CLR     816
+028BE:  CLR.B   818
+028C0:  CLR.B   819
+028C2:  CLR     81C
+028C4:  CLR     81E
+028C6:  CLR     820
+028C8:  CLR     828
+028CA:  CLR     82A
+028CC:  CLR.B   844
+028CE:  MOV     #1F80,W15
+028D0:  MOV     #1FFF,W0
+028D2:  MOV     W0,20
+028D4:  NOP     
+028D6:  MOV.B   #1,W0L
+028D8:  MOV.B   W0L,846
+....................   U8 ch = 1;             // переменная выбора канала измерений АЦП 
+....................    
+....................   OscSetup(); 
+028DA:  CALL    52E
+....................   MCU_init();         
+028DE:  CALL    56A
+....................  
+....................   LCDInit(); 
+028E2:  CALL    642
+....................   lCDwelcome(); 
+028E6:  CALL    744
+....................  
+....................   LCDSetCursor(one); 
+028EA:  CLR.B   84A
+028EC:  CALL    730
+....................   LCDMsg("  Reading data"); 
+028F0:  MOV     #0,W5
+028F2:  MOV     W5,W0
+028F4:  CALL    3B0
+028F8:  IOR.B   #0,W0L
+028FA:  BTSC.B  42.1
+028FC:  BRA     2908
+028FE:  INC     W5,W5
+02900:  MOV.B   W0L,84C
+02902:  CALL    726
+02906:  BRA     28F2
+....................   LCDSetCursor(two); 
+02908:  MOV.B   #40,W0L
+0290A:  MOV.B   W0L,84A
+0290C:  CALL    730
+....................   LCDMsg("   from ROM..."); 
+02910:  MOV     #0,W5
+02912:  MOV     W5,W0
+02914:  CALL    3CC
+02918:  IOR.B   #0,W0L
+0291A:  BTSC.B  42.1
+0291C:  BRA     2928
+0291E:  INC     W5,W5
+02920:  MOV.B   W0L,84C
+02922:  CALL    726
+02926:  BRA     2912
+....................    
+....................   Rd_Flash();                        // чтение денных из флеш для расчета контр. суммы 
+02928:  CALL    7DE
+....................   crc1 = CRC_buf;                    // сохраненная контр. сумма     
+0292C:  MOV.B   837,W0L
+0292E:  MOV.B   W0L,835
+....................   crc2 = CRC8(flash_rd_data,2);      // текущая контр. сумма 
+02930:  MOV     #2,W4
+02932:  MOV     W4,84A
+02934:  MOV     #838,W4
+02936:  MOV     W4,848
+02938:  CALL    802
+0293C:  MOV.B   W0L,836
+....................    
+....................   LCDSetCursor(three); 
+0293E:  MOV.B   #10,W0L
+02940:  MOV.B   W0L,84A
+02942:  CALL    730
+....................    
+....................   if (crc1==crc2){LCDMsg("       OK!");} 
+02946:  MOV.B   835,W0L
+02948:  CP.B    836
+0294A:  BRA     NZ,2968
+0294C:  MOV     #0,W5
+0294E:  MOV     W5,W0
+02950:  CALL    3E8
+02954:  IOR.B   #0,W0L
+02956:  BTSC.B  42.1
+02958:  BRA     2964
+0295A:  INC     W5,W5
+0295C:  MOV.B   W0L,84C
+0295E:  CALL    726
+02962:  BRA     294E
+....................   else { 
+02964:  GOTO    2988
+....................   LCDMsg("   CRC error!"); 
+02968:  MOV     #0,W5
+0296A:  MOV     W5,W0
+0296C:  CALL    400
+02970:  IOR.B   #0,W0L
+02972:  BTSC.B  42.1
+02974:  BRA     2980
+02976:  INC     W5,W5
+02978:  MOV.B   W0L,84C
+0297A:  CALL    726
+0297E:  BRA     296A
+....................   ADC_sps_var = 1;   // сброс значений по умолчанию  
+02980:  MOV.B   #1,W0L
+02982:  MOV.B   W0L,834
+....................   NumAver = 1;       // тк произошел сбой контр. суммы 
+02984:  MOV.B   #1,W0L
+02986:  MOV.B   W0L,833
+....................    } 
+....................     
+....................       ADC_wakeUp();      // Сброс АЦП  
+02988:  CALL    846
+....................       ADC_wakeUp();      // перед инициализацией 
+0298C:  CALL    846
+....................       ADC_init();        // Инициализация АЦП 
+02990:  CALL    990
+....................       ADC_SelfCal();     // Автокалибровка АЦП 
+02994:  CALL    A2C
+....................  
+....................   delay_ms(2000); 
+02998:  MOV     #7D0,W0
+0299A:  CALL    5BE
+....................          
+....................   LCDclear(); 
+0299E:  CALL    6E2
+....................    
+.................... /*############################################################################*/   
+....................  
+....................   while(true){ 
+....................  
+....................   if (reset_fl)     {Full_dev_reset();}        // полный сброс системы  
+029A2:  BTSS.B  832.2
+029A4:  BRA     29AA
+029A6:  CALL    B06
+....................    
+....................   if (!meas_stop_fl){ADC_rd_and_print_ch(ch);} // чтение четырех каналов АЦП, 
+029AA:  BTSC.B  832.0
+029AC:  BRA     29B6
+029AE:  MOV.B   846,W0L
+029B0:  MOV.B   W0L,848
+029B2:  CALL    1F24
+....................                                                // вывод на дисплей и UART 
+....................   if (menu_fl){                                // вызов и обработка меню 
+029B6:  CP0.B   831
+029B8:  BRA     Z,2CF0
+....................    
+....................   if (LCD_clear_fl){LCD_clear_fl = 0; LCDClear();} // очистка экрана 
+029BA:  BTSS.B  832.1
+029BC:  BRA     29C4
+029BE:  BCLR.B  832.1
+029C0:  CALL    6E2
+....................    
+....................   Bpush_delay();                   // подавление дребезга кнопок 
+029C4:  CALL    249A
+....................   
+....................   switch (menu_item){                   // древо меню 
+029C8:  MOV.B   82F,W0L
+029CA:  CLR.B   1
+029CC:  XOR     #0,W0
+029CE:  BRA     Z,29E2
+029D0:  XOR     #1,W0
+029D2:  BRA     Z,29E8
+029D4:  XOR     #3,W0
+029D6:  BRA     Z,2A7C
+029D8:  XOR     #1,W0
+029DA:  BRA     Z,2BFE
+029DC:  XOR     #7,W0
+029DE:  BRA     Z,2C6C
+029E0:  BRA     2CF0
+.................... /*----------------------------------------------------------------------------*/                                                            
+....................   case 0: meas_stop_fl = 0; break;     // возврат в измерения 
+029E2:  BCLR.B  832.0
+029E4:  GOTO    2CF0
+.................... /*----------------------------------------------------------------------------*/    
+....................   case 1:  
+....................           LCD_main_menu();             // ADC average set 
+029E8:  CALL    2530
+....................            if  (CN2 == 1){ 
+029EC:  BTSS.B  2C8.4
+029EE:  BRA     2A78
+....................             Bpush_delay(); 
+029F0:  CALL    249A
+....................             if ((CN2 == 1) & (menu_sel==0)){ // ADC sps set menu 
+029F4:  CLR.B   W0
+029F6:  BTSC.B  2C8.4
+029F8:  INC     W0,W0
+029FA:  MOV.B   W0L,W6L
+029FC:  CP0.B   830
+029FE:  BRA     Z,2A06
+02A00:  CLR.B   W0
+02A02:  GOTO    2A08
+02A06:  MOV.B   #1,W0L
+02A08:  AND.B   W6L,W0L,W0L
+02A0A:  CP0.B   W0L
+02A0C:  BRA     Z,2A14
+....................                   LCD_clear_fl = 1; menu_item = 2; }    
+02A0E:  BSET.B  832.1
+02A10:  MOV.B   #2,W0L
+02A12:  MOV.B   W0L,82F
+....................                    
+....................             if ((CN2 == 1) & (menu_sel==1)){ // ADC average set 
+02A14:  CLR.B   W0
+02A16:  BTSC.B  2C8.4
+02A18:  INC     W0,W0
+02A1A:  MOV.B   W0L,W6L
+02A1C:  MOV     830,W4
+02A1E:  CP.B    W4L,#1
+02A20:  BRA     Z,2A28
+02A22:  CLR.B   W0
+02A24:  GOTO    2A2A
+02A28:  MOV.B   #1,W0L
+02A2A:  AND.B   W6L,W0L,W0L
+02A2C:  CP0.B   W0L
+02A2E:  BRA     Z,2A36
+....................                   LCD_clear_fl = 1; menu_item = 3; } 
+02A30:  BSET.B  832.1
+02A32:  MOV.B   #3,W0L
+02A34:  MOV.B   W0L,82F
+....................                    
+....................             if ((CN2 == 1) & (menu_sel==2)){ // Reset device 
+02A36:  CLR.B   W0
+02A38:  BTSC.B  2C8.4
+02A3A:  INC     W0,W0
+02A3C:  MOV.B   W0L,W6L
+02A3E:  MOV     830,W4
+02A40:  CP.B    W4L,#2
+02A42:  BRA     Z,2A4A
+02A44:  CLR.B   W0
+02A46:  GOTO    2A4C
+02A4A:  MOV.B   #1,W0L
+02A4C:  AND.B   W6L,W0L,W0L
+02A4E:  CP0.B   W0L
+02A50:  BRA     Z,2A58
+....................                   LCD_clear_fl = 1; menu_item = 4; }                    
+02A52:  BSET.B  832.1
+02A54:  MOV.B   #4,W0L
+02A56:  MOV.B   W0L,82F
+....................    
+....................             if ((CN2 == 1) & (menu_sel==3)){ // Return back 
+02A58:  CLR.B   W0
+02A5A:  BTSC.B  2C8.4
+02A5C:  INC     W0,W0
+02A5E:  MOV.B   W0L,W6L
+02A60:  MOV     830,W4
+02A62:  CP.B    W4L,#3
+02A64:  BRA     Z,2A6C
+02A66:  CLR.B   W0
+02A68:  GOTO    2A6E
+02A6C:  MOV.B   #1,W0L
+02A6E:  AND.B   W6L,W0L,W0L
+02A70:  CP0.B   W0L
+02A72:  BRA     Z,2A78
+....................                   LCD_clear_fl = 1; menu_item--; }} 
+02A74:  BSET.B  832.1
+02A76:  DEC.B   082F
+....................             break; 
+02A78:  GOTO    2CF0
+.................... /*----------------------------------------------------------------------------*/   
+....................    case 2:                               // ADC sps set menu 
+....................     
+....................    LCDsetCursor(one); 
+02A7C:  CLR.B   84A
+02A7E:  CALL    730
+....................    LCDMsg("Samples per sec."); 
+02A82:  MOV     #0,W5
+02A84:  MOV     W5,W0
+02A86:  CALL    41A
+02A8A:  IOR.B   #0,W0L
+02A8C:  BTSC.B  42.1
+02A8E:  BRA     2A9A
+02A90:  INC     W5,W5
+02A92:  MOV.B   W0L,84C
+02A94:  CALL    726
+02A98:  BRA     2A84
+....................    LCDsetCursor(three); 
+02A9A:  MOV.B   #10,W0L
+02A9C:  MOV.B   W0L,84A
+02A9E:  CALL    730
+....................    if(CN4){Bpush_delay(); if(CN4) ADC_sps_var=ADC_sps_var-1; delay_ms(200);} 
+02AA2:  BTSS.B  2C8.3
+02AA4:  BRA     2ABA
+02AA6:  CALL    249A
+02AAA:  BTSS.B  2C8.3
+02AAC:  BRA     2AB4
+02AAE:  MOV     834,W4
+02AB0:  SUB.B   W4L,#1,W0L
+02AB2:  MOV.B   W0L,834
+02AB4:  MOV     #C8,W0
+02AB6:  CALL    5BE
+....................    if(CN3){Bpush_delay(); if(CN3) ADC_sps_var=ADC_sps_var+1; delay_ms(200);} 
+02ABA:  BTSS.B  2C8.2
+02ABC:  BRA     2AD4
+02ABE:  CALL    249A
+02AC2:  BTSS.B  2C8.2
+02AC4:  BRA     2ACE
+02AC6:  MOV     834,W4
+02AC8:  ADD.B   W4L,#1,W4L
+02ACA:  MOV.B   W4L,W0L
+02ACC:  MOV.B   W0L,834
+02ACE:  MOV     #C8,W0
+02AD0:  CALL    5BE
+....................    if(ADC_sps_var>7)  ADC_sps_var = 7; 
+02AD4:  MOV     834,W4
+02AD6:  CP.B    W4L,#7
+02AD8:  BRA     LEU,2ADE
+02ADA:  MOV.B   #7,W0L
+02ADC:  MOV.B   W0L,834
+....................    if(ADC_sps_var==0) ADC_sps_var = 1; 
+02ADE:  CP0.B   834
+02AE0:  BRA     NZ,2AE6
+02AE2:  MOV.B   #1,W0L
+02AE4:  MOV.B   W0L,834
+....................     switch (ADC_sps_var){                // передача величины скорости измерений АЦП  
+02AE6:  MOV.B   834,W0L
+02AE8:  CLR.B   1
+02AEA:  XOR     #1,W0
+02AEC:  BRA     Z,2B08
+02AEE:  XOR     #3,W0
+02AF0:  BRA     Z,2B2A
+02AF2:  XOR     #1,W0
+02AF4:  BRA     Z,2B4C
+02AF6:  XOR     #7,W0
+02AF8:  BRA     Z,2B6E
+02AFA:  XOR     #1,W0
+02AFC:  BRA     Z,2B90
+02AFE:  XOR     #3,W0
+02B00:  BRA     Z,2BB2
+02B02:  XOR     #1,W0
+02B04:  BRA     Z,2BD4
+02B06:  BRA     2BF6
+....................       case 1: ADC_sps_set(0x23); LCDsetCursor(0x16); LCDputU16(10,4);  break; // 10   sps 
+02B08:  MOV.B   #23,W0L
+02B0A:  MOV.B   W0L,848
+02B0C:  CALL    97A
+02B10:  MOV.B   #16,W0L
+02B12:  MOV.B   W0L,84A
+02B14:  CALL    730
+02B18:  MOV     #A,W4
+02B1A:  MOV     W4,84E
+02B1C:  CLR     850
+02B1E:  MOV.B   #4,W0L
+02B20:  MOV.B   W0L,852
+02B22:  CALL    1CDC
+02B26:  GOTO    2BF6
+....................       case 2: ADC_sps_set(0x43); LCDsetCursor(0x16); LCDputU16(25,4);  break; // 25   sps 
+02B2A:  MOV.B   #43,W0L
+02B2C:  MOV.B   W0L,848
+02B2E:  CALL    97A
+02B32:  MOV.B   #16,W0L
+02B34:  MOV.B   W0L,84A
+02B36:  CALL    730
+02B3A:  MOV     #19,W4
+02B3C:  MOV     W4,84E
+02B3E:  CLR     850
+02B40:  MOV.B   #4,W0L
+02B42:  MOV.B   W0L,852
+02B44:  CALL    1CDC
+02B48:  GOTO    2BF6
+....................       case 3: ADC_sps_set(0x63); LCDsetCursor(0x16); LCDputU16(50,4);  break; // 50   sps 
+02B4C:  MOV.B   #63,W0L
+02B4E:  MOV.B   W0L,848
+02B50:  CALL    97A
+02B54:  MOV.B   #16,W0L
+02B56:  MOV.B   W0L,84A
+02B58:  CALL    730
+02B5C:  MOV     #32,W4
+02B5E:  MOV     W4,84E
+02B60:  CLR     850
+02B62:  MOV.B   #4,W0L
+02B64:  MOV.B   W0L,852
+02B66:  CALL    1CDC
+02B6A:  GOTO    2BF6
+....................       case 4: ADC_sps_set(0x82); LCDsetCursor(0x16); LCDputU16(100,4); break; // 100  sps 
+02B6E:  MOV.B   #82,W0L
+02B70:  MOV.B   W0L,848
+02B72:  CALL    97A
+02B76:  MOV.B   #16,W0L
+02B78:  MOV.B   W0L,84A
+02B7A:  CALL    730
+02B7E:  MOV     #64,W4
+02B80:  MOV     W4,84E
+02B82:  CLR     850
+02B84:  MOV.B   #4,W0L
+02B86:  MOV.B   W0L,852
+02B88:  CALL    1CDC
+02B8C:  GOTO    2BF6
+....................       case 5: ADC_sps_set(0x91); LCDsetCursor(0x16); LCDputU16(500,4); break; // 500  sps 
+02B90:  MOV.B   #91,W0L
+02B92:  MOV.B   W0L,848
+02B94:  CALL    97A
+02B98:  MOV.B   #16,W0L
+02B9A:  MOV.B   W0L,84A
+02B9C:  CALL    730
+02BA0:  MOV.B   #4,W0L
+02BA2:  MOV.B   W0L,852
+02BA4:  MOV     #1F4,W4
+02BA6:  MOV     W4,84E
+02BA8:  CLR     850
+02BAA:  CALL    1CDC
+02BAE:  GOTO    2BF6
+....................       case 6: ADC_sps_set(0xA1); LCDsetCursor(0x16); LCDputU16(1000,4);break; // 1000 sps 
+02BB2:  MOV.B   #A1,W0L
+02BB4:  MOV.B   W0L,848
+02BB6:  CALL    97A
+02BBA:  MOV.B   #16,W0L
+02BBC:  MOV.B   W0L,84A
+02BBE:  CALL    730
+02BC2:  MOV.B   #4,W0L
+02BC4:  MOV.B   W0L,852
+02BC6:  MOV     #3E8,W4
+02BC8:  MOV     W4,84E
+02BCA:  CLR     850
+02BCC:  CALL    1CDC
+02BD0:  GOTO    2BF6
+....................       case 7: ADC_sps_set(0xC0); LCDsetCursor(0x16); LCDputU16(3750,4);break; // 3750 sps 
+02BD4:  MOV.B   #C0,W0L
+02BD6:  MOV.B   W0L,848
+02BD8:  CALL    97A
+02BDC:  MOV.B   #16,W0L
+02BDE:  MOV.B   W0L,84A
+02BE0:  CALL    730
+02BE4:  MOV.B   #4,W0L
+02BE6:  MOV.B   W0L,852
+02BE8:  MOV     #EA6,W4
+02BEA:  MOV     W4,84E
+02BEC:  CLR     850
+02BEE:  CALL    1CDC
+02BF2:  GOTO    2BF6
+....................       }      
+....................    save_to_flash(); 
+02BF6:  CALL    2824
+....................    break;   
+02BFA:  GOTO    2CF0
+.................... /*----------------------------------------------------------------------------*/ 
+....................    case 3:                               // ADC average size menu 
+....................     
+....................    LCDsetCursor(one); 
+02BFE:  CLR.B   84A
+02C00:  CALL    730
+....................    LCDMsg("    Average"); 
+02C04:  MOV     #0,W5
+02C06:  MOV     W5,W0
+02C08:  CALL    438
+02C0C:  IOR.B   #0,W0L
+02C0E:  BTSC.B  42.1
+02C10:  BRA     2C1C
+02C12:  INC     W5,W5
+02C14:  MOV.B   W0L,84C
+02C16:  CALL    726
+02C1A:  BRA     2C06
+....................    LCDsetCursor(three); 
+02C1C:  MOV.B   #10,W0L
+02C1E:  MOV.B   W0L,84A
+02C20:  CALL    730
+....................    if(CN4){Bpush_delay(); if(CN4) --NumAver; delay_ms(100);} // декремент величины усреднения 
+02C24:  BTSS.B  2C8.3
+02C26:  BRA     2C38
+02C28:  CALL    249A
+02C2C:  BTSS.B  2C8.3
+02C2E:  BRA     2C32
+02C30:  DEC.B   0833
+02C32:  MOV     #64,W0
+02C34:  CALL    5BE
+....................    if(CN3){Bpush_delay(); if(CN3) ++NumAver; delay_ms(100);} // инкремент величины усреднения 
+02C38:  BTSS.B  2C8.2
+02C3A:  BRA     2C4C
+02C3C:  CALL    249A
+02C40:  BTSS.B  2C8.2
+02C42:  BRA     2C46
+02C44:  INC.B   0833
+02C46:  MOV     #64,W0
+02C48:  CALL    5BE
+....................    LCDsetCursor(0x16); 
+02C4C:  MOV.B   #16,W0L
+02C4E:  MOV.B   W0L,84A
+02C50:  CALL    730
+....................    LCDputU16(NumAver,3); 
+02C54:  MOV.B   833,W0L
+02C56:  MOV.B   W0L,84E
+02C58:  CLR.B   84F
+02C5A:  CLR     850
+02C5C:  MOV.B   #3,W0L
+02C5E:  MOV.B   W0L,852
+02C60:  CALL    1CDC
+....................     
+....................    save_to_flash(); 
+02C64:  CALL    2824
+....................    break; 
+02C68:  GOTO    2CF0
+.................... /*----------------------------------------------------------------------------*/   
+....................    case 4:                               // Reset menu 
+....................     
+....................    LCDsetCursor(one); 
+02C6C:  CLR.B   84A
+02C6E:  CALL    730
+....................    LCDMsg(" Reset device?"); 
+02C72:  MOV     #0,W5
+02C74:  MOV     W5,W0
+02C76:  CALL    450
+02C7A:  IOR.B   #0,W0L
+02C7C:  BTSC.B  42.1
+02C7E:  BRA     2C8A
+02C80:  INC     W5,W5
+02C82:  MOV.B   W0L,84C
+02C84:  CALL    726
+02C88:  BRA     2C74
+....................    LCDsetCursor(three); 
+02C8A:  MOV.B   #10,W0L
+02C8C:  MOV.B   W0L,84A
+02C8E:  CALL    730
+....................    LCDMsg("    Yes -> +"); 
+02C92:  MOV     #0,W5
+02C94:  MOV     W5,W0
+02C96:  CALL    46C
+02C9A:  IOR.B   #0,W0L
+02C9C:  BTSC.B  42.1
+02C9E:  BRA     2CAA
+02CA0:  INC     W5,W5
+02CA2:  MOV.B   W0L,84C
+02CA4:  CALL    726
+02CA8:  BRA     2C94
+....................    LCDsetCursor(four); 
+02CAA:  MOV.B   #50,W0L
+02CAC:  MOV.B   W0L,84A
+02CAE:  CALL    730
+....................    LCDMsg("    No  -> -"); 
+02CB2:  MOV     #0,W5
+02CB4:  MOV     W5,W0
+02CB6:  CALL    486
+02CBA:  IOR.B   #0,W0L
+02CBC:  BTSC.B  42.1
+02CBE:  BRA     2CCA
+02CC0:  INC     W5,W5
+02CC2:  MOV.B   W0L,84C
+02CC4:  CALL    726
+02CC8:  BRA     2CB4
+....................    if(CN3){Bpush_delay(); if(CN3) {reset_fl = 1;}}    // поднятие флага RESET для сброса всей системы 
+02CCA:  BTSS.B  2C8.2
+02CCC:  BRA     2CD8
+02CCE:  CALL    249A
+02CD2:  BTSS.B  2C8.2
+02CD4:  BRA     2CD8
+02CD6:  BSET.B  832.2
+....................    if(CN4){Bpush_delay(); if(CN4) {menu_item= 1;}}    // отмена и выход в меню 
+02CD8:  BTSS.B  2C8.3
+02CDA:  BRA     2CE8
+02CDC:  CALL    249A
+02CE0:  BTSS.B  2C8.3
+02CE2:  BRA     2CE8
+02CE4:  MOV.B   #1,W0L
+02CE6:  MOV.B   W0L,82F
+....................     
+....................    save_to_flash(); 
+02CE8:  CALL    2824
+....................    break; 
+02CEC:  GOTO    2CF0
+....................    }   
+....................   }   
+....................    
+....................   ch++;                                        // инкремент номера канала 
+02CF0:  INC.B   0846
+....................   if (ch > 4) ch = 1;                          // диапазон каналов 
+02CF2:  MOV     846,W4
+02CF4:  CP.B    W4L,#4
+02CF6:  BRA     LEU,2CFC
+02CF8:  MOV.B   #1,W0L
+02CFA:  MOV.B   W0L,846
+....................    
+....................  } 
+02CFC:  GOTO    29A2
+.................... } 
+.................... /*############################################################################*/ 
+02D00:  PWRSAV  #0
+
+Configuration Fuses:
+   Word  1L: 00CE   WRTB NOBSS NORBS
+          H: FF00  
+   Word  2L: 00CF   NOWRTSS NOSSS NORSS
+          H: FF00  
+   Word  3L: 0007   NOWRT NOPROTECT
+          H: FF00  
+   Word  4L: 0083   PR_PLL IESO
+          H: FF00  
+   Word  5L: 0006   HS NOOSCIO CKSFSM
+          H: FF00  
+   Word  6L: 00DD   WPOSTS14 WPRES128 WINDIS WDT
+          H: FF00  
+   Word  7L: 00E7   PUT128
+          H: FF00  
+   Word  8L: 00C3   ICSP1 NOJTAG NODEBUG
+          H: FF00  

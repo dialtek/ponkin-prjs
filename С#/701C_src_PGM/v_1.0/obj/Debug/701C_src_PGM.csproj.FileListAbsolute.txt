@@ -1,0 +1,10 @@
+D:\work\Projects\С#\701C_src_PGM\bin\Debug\701C_src_PGM.exe.config
+D:\work\Projects\С#\701C_src_PGM\bin\Debug\701C_src_PGM.exe
+D:\work\Projects\С#\701C_src_PGM\bin\Debug\701C_src_PGM.pdb
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\701C_src_PGM.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\_701C_src_PGM.Properties.Resources.resources
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\701C_src_PGM.csproj.GenerateResource.Cache
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\701C_src_PGM.exe
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\701C_src_PGM.pdb
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\_701C_src_PGM.Form1.resources
+D:\work\Projects\С#\701C_src_PGM\obj\Debug\_701C_src_PGM.Form2_config.resources

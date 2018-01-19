@@ -1,0 +1,28 @@
+[PROJECT]
+Target=C:\PRJ\RemTermo\Remtermo.hex
+Development_Mode=
+Processor_Text=PIC16F88
+ToolSuite=CCS
+Processor=0x688F
+[C:\PRJ\RemTermo\Remtermo]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\RemTermo\Remtermo.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=C:\PRJ\RemTermo\Remtermo.c
+2=C:\Program Files\PICC\devices\16F88.h
+3=
+4=
+[Target Data]
+OptionString=-p +FM
+FileList=Remtermo.c
+[Units]
+Count=1
+1=Remtermo.c (main)

@@ -1,0 +1,12 @@
+D:\work\Projects\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.exe.config
+D:\work\Projects\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.exe
+D:\work\Projects\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.pdb
+D:\work\Projects\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.exe
+D:\work\Projects\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.pdb
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.exe.config
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.exe
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.pdb
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.exe
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\bin\Debug\FuncTest.pdb
+E:\work\Projects\ponkin\С#\education\FuncTest\FuncTest\obj\Debug\FuncTest.csprojResolveAssemblyReference.cache

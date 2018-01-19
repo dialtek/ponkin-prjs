@@ -1,0 +1,223 @@
+CCS PCH C Compiler, Version 4.130, 5967               16-èþë-12 13:46
+
+               Filename: C:\Program Files (x86)\PICC\my prj\14k50 i2c\main.lst
+
+               ROM used: 248 bytes (2%)
+                         Largest free fragment is 16136
+               RAM used: 4 (1%) at main() level
+                         5 (1%) worst case
+               Stack:    1 locations
+
+*
+0000:  GOTO   0072
+.................... #include <18F14K50.h> 
+.................... //////// Standard Header file for the PIC18F14K50 device //////////////// 
+.................... #device PIC18F14K50 
+.................... #list 
+....................  
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... //#FUSES WDT128                   //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES CPUDIV1                  //System Clock by 4 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... #FUSES NOXINST                  //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES PLLEN                    //4X HW PLL enabled 
+....................  
+.................... #BYTE TRISA = 0xF92 
+.................... #BYTE TRISB = 0xF93 
+.................... #BYTE TRISC = 0xF94 
+....................  
+.................... #BYTE OSCCON = 0xFD3 
+....................  
+.................... #BYTE PORTA = 0xF80 
+.................... #BYTE PORTB = 0xF81 
+.................... #BYTE PORTC = 0xF82 
+....................  
+.................... #BIT RA0 = PORTA.0 
+.................... #BIT RA1 = PORTA.1 
+.................... #BIT RA3 = PORTA.2 // input only 
+.................... #BIT RA4 = PORTA.3 
+.................... #BIT RA5 = PORTA.5 
+....................  
+.................... #BIT TRA5 = TRISA.5 
+.................... #BIT TRA4 = TRISA.3 
+.................... #BIT TRA3 = TRISA.2 
+.................... #BIT TRA1 = TRISA.1 
+.................... #BIT TRA0 = TRISA.0 
+....................  
+.................... #BIT TRC5 = TRISC.5 
+.................... #BIT RC5 = PORTC.5 
+....................  
+.................... #BIT RB4 = PORTB.4 
+.................... #BIT RB5 = PORTB.5 
+.................... #BIT RB6 = PORTB.6 
+....................  
+.................... #BIT TRB4 = TRISB.4 
+.................... #BIT TRB6 = TRISB.6 
+....................  
+....................  
+.................... #use delay(clock=48000000) 
+.................... #use I2C(master, scl=PIN_B6, sda=PIN_B4, fast=400000) //sets the target speed to 450 KBSP 
+0004:  MOVLW  08
+0006:  MOVWF  01
+0008:  MOVLW  02
+000A:  MOVWF  00
+000C:  DECFSZ 00,F
+000E:  BRA    000C
+0010:  BCF    F8A.6
+0012:  BCF    F93.6
+0014:  MOVLW  02
+0016:  MOVWF  00
+0018:  DECFSZ 00,F
+001A:  BRA    0018
+001C:  RLCF   05,F
+001E:  BCF    F8A.4
+0020:  BTFSC  FD8.0
+0022:  BSF    F93.4
+0024:  BTFSS  FD8.0
+0026:  BCF    F93.4
+0028:  BSF    F93.6
+002A:  BTFSS  F81.6
+002C:  BRA    002A
+002E:  DECFSZ 01,F
+0030:  BRA    0008
+0032:  MOVLW  02
+0034:  MOVWF  00
+0036:  DECFSZ 00,F
+0038:  BRA    0036
+003A:  BCF    F8A.6
+003C:  BCF    F93.6
+003E:  NOP   
+0040:  BSF    F93.4
+0042:  MOVLW  02
+0044:  MOVWF  00
+0046:  DECFSZ 00,F
+0048:  BRA    0046
+004A:  MOVLW  02
+004C:  MOVWF  00
+004E:  DECFSZ 00,F
+0050:  BRA    004E
+0052:  BSF    F93.6
+0054:  BTFSS  F81.6
+0056:  BRA    0054
+0058:  CLRF   01
+005A:  MOVLW  02
+005C:  MOVWF  00
+005E:  DECFSZ 00,F
+0060:  BRA    005E
+0062:  BTFSC  F81.4
+0064:  BSF    01.0
+0066:  BCF    F8A.6
+0068:  BCF    F93.6
+006A:  BCF    F8A.4
+006C:  BCF    F93.4
+006E:  GOTO   00BC (RETURN)
+....................  
+.................... void main() 
+.................... { 
+0072:  CLRF   FF8
+0074:  BCF    FD0.7
+0076:  CLRF   FEA
+0078:  CLRF   FE9
+007A:  MOVLW  00
+007C:  MOVWF  F7E
+007E:  BCF    FC1.0
+0080:  BCF    FC1.1
+0082:  BCF    FC1.2
+0084:  BCF    FC1.3
+0086:  MOVWF  F7F
+0088:  CLRF   F6B
+008A:  CLRF   F6D
+....................    TRC5 = 0; 
+008C:  BCF    F94.5
+....................     
+....................    TRB4 = 1; 
+008E:  BSF    F93.4
+....................    TRB6 = 1; 
+0090:  BSF    F93.6
+....................     
+....................    //TRA0 = 0; 
+....................     
+....................    while(TRUE) 
+....................    { 
+....................      i2c_start(); 
+0092:  BSF    F93.4
+0094:  MOVLW  02
+0096:  MOVWF  00
+0098:  DECFSZ 00,F
+009A:  BRA    0098
+009C:  BSF    F93.6
+009E:  MOVLW  02
+00A0:  MOVWF  00
+00A2:  DECFSZ 00,F
+00A4:  BRA    00A2
+00A6:  BCF    F8A.4
+00A8:  BCF    F93.4
+00AA:  MOVLW  02
+00AC:  MOVWF  00
+00AE:  DECFSZ 00,F
+00B0:  BRA    00AE
+00B2:  BCF    F8A.6
+00B4:  BCF    F93.6
+....................  
+.................... i2c_write(0x81);     // Device addres 
+00B6:  MOVLW  81
+00B8:  MOVWF  05
+00BA:  BRA    0004
+.................... //i2c_write(0xa1);     // to change data direction 
+....................  
+.................... i2c_stop(); 
+00BC:  BCF    F93.4
+00BE:  NOP   
+00C0:  BSF    F93.6
+00C2:  BTFSS  F81.6
+00C4:  BRA    00C2
+00C6:  MOVLW  02
+00C8:  MOVWF  00
+00CA:  DECFSZ 00,F
+00CC:  BRA    00CA
+00CE:  BRA    00D0
+00D0:  NOP   
+00D2:  BSF    F93.4
+00D4:  MOVLW  02
+00D6:  MOVWF  00
+00D8:  DECFSZ 00,F
+00DA:  BRA    00D8
+....................  
+....................  
+....................       
+....................       
+....................      RC5 = 1; 
+00DC:  BSF    F82.5
+....................      delay_us(10); 
+00DE:  MOVLW  27
+00E0:  MOVWF  00
+00E2:  DECFSZ 00,F
+00E4:  BRA    00E2
+00E6:  BRA    00E8
+....................      RC5 = 0; 
+00E8:  BCF    F82.5
+....................      delay_us(15); 
+00EA:  MOVLW  3B
+00EC:  MOVWF  00
+00EE:  DECFSZ 00,F
+00F0:  BRA    00EE
+00F2:  BRA    00F4
+....................       
+....................    } 
+00F4:  BRA    0092
+....................  
+.................... } 
+00F6:  SLEEP 
+
+Configuration Fuses:
+   Word  1: F220   CPUDIV1 USBDIV2 HS PLLEN PCLKEN FCMEN IESO
+   Word  2: 1E18   PUT NOBROWNOUT BORV19 NOWDT WDT32768
+   Word  3: 8800   HFOFST MCLR
+   Word  4: 0089   STVREN NOLVP BBSIZ2K NOXINST NODEBUG
+   Word  5: C003   NOPROTECT NOCPB NOCPD
+   Word  6: E003   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 4003   NOEBTR NOEBTRB

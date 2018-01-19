@@ -1,0 +1,13 @@
+Release 14.2 Drc P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Thu Aug 08 16:24:19 2013
+
+drc -z DCM_test.ncd DCM_test.pcf
+
+WARNING:PhysDesignRules:739 - Unexpected DCM feedback loop. The signal
+   DCM_CLKFB_IBUFG on the CLKFB pin of comp DCM_SP_inst is not driven by an IOB
+   or BUFGMUX therefore the phase relationship of output clocks to CLKIN cannot
+   be guaranteed.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

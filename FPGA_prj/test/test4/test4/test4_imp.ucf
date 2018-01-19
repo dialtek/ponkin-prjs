@@ -1,0 +1,34 @@
+##	Buttons-------
+NET "BTN0" LOC = "B18";
+NET "BTN1" LOC = "D18";
+NET "BTN2" LOC = "E18";
+NET "BTN3" LOC = "H13";
+###	---------------------
+#
+NET "CLK_50MHz" LOC = "B8";
+#
+##	Leds-------
+NET "LED0" LOC = "J14";
+NET "LED1" LOC = "J15";
+#NET "LED2" LOC = "K15";
+#NET "LED3" LOC = "K14";
+#NET "LED4" LOC = "E17";
+#NET "LED5" LOC = "P15";
+#NET "LED6" LOC = "F4";
+#NET "LED7" LOC = "R4";
+###	---------------------
+#
+##	7 segment led-------
+NET "SEG_COM_ANODE1" LOC = "F15";
+NET "SEG_COM_ANODE2" LOC = "C18";
+NET "SEG_COM_ANODE3" LOC = "H17";
+NET "SEG_COM_ANODE4" LOC = "F17";
+NET "SEG_CA" LOC = "L18";
+NET "SEG_CB" LOC = "F18";
+NET "SEG_CC" LOC = "D17";
+NET "SEG_CD" LOC = "D16";
+NET "SEG_CE" LOC = "G14";
+NET "SEG_CF" LOC = "J17";
+NET "SEG_CG" LOC = "H14";
+#NET "SEG_DP" LOC = "C17";
+###	---------------------

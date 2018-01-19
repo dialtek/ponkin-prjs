@@ -1,0 +1,119 @@
+CCS PCH C Compiler, Version 4.130, 5967               28-рту-12 11:08
+
+               Filename: C:\Program Files (x86)\PICC\my prj\clock test\main.lst
+
+               ROM used: 86 bytes (1%)
+                         Largest free fragment is 8106
+               RAM used: 4 (1%) at main() level
+                         5 (1%) worst case
+               Stack:    1 locations
+
+*
+0000:  GOTO   002C
+.................... #include <18F2320.h> 
+.................... //////// Standard Header file for the PIC18F2320 device //////////////// 
+.................... #device PIC18F2320 
+.................... #list 
+....................  
+.................... #device adc=16 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... //#FUSES WDT128                   //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES HS                       //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD)                        
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOPBADEN                 //PORTB pins are configured as digital I/O on RESET 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+....................  
+.................... #use delay(clock=10000000) 
+0004:  CLRF   FEA
+0006:  MOVLW  05
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    002A
+000E:  MOVLW  03
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  3C
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  BRA    0026
+0026:  DECFSZ FEF,F
+0028:  BRA    000E
+002A:  RETURN 0
+....................  
+.................... #BYTE TRISA = 0xF92 
+.................... #BYTE TRISB = 0xF93 
+.................... #BYTE TRISC = 0xF94  
+.................... #BYTE TRISD = 0xF95 
+.................... #BYTE TRISE = 0xF96 
+....................  
+.................... #BYTE PORTA = 0xF80 
+.................... #BYTE PORTB = 0xF81 
+.................... #BYTE PORTC = 0xF82 
+.................... #BYTE PORTD = 0xF83 
+.................... #BYTE PORTE = 0xF84 
+....................  
+.................... #BIT RA0 = PORTA.0 
+.................... #BIT RA1 = PORTA.1 
+.................... #BIT RA2 = PORTA.2 
+.................... #BIT RA3 = PORTA.3 
+.................... #BIT RA4 = PORTA.4 
+.................... #BIT RA5 = PORTA.5 
+....................  
+.................... #BIT TRA5 = TRISA.5 
+.................... #BIT TRA4 = TRISA.4 
+.................... #BIT TRA3 = TRISA.3 
+.................... #BIT TRA2 = TRISA.2 
+.................... #BIT TRA1 = TRISA.1 
+.................... #BIT TRA0 = TRISA.0 
+....................  
+.................... void main() 
+.................... { 
+002C:  CLRF   FF8
+002E:  BCF    FD0.7
+0030:  CLRF   FEA
+0032:  CLRF   FE9
+0034:  MOVF   FC1,W
+0036:  ANDLW  C0
+0038:  IORLW  0F
+003A:  MOVWF  FC1
+003C:  MOVLW  07
+003E:  MOVWF  FB4
+....................    
+....................    TRA0 = 0; 
+0040:  BCF    F92.0
+....................  
+....................    while(TRUE) 
+....................    { 
+....................       RA0 = 1; 
+0042:  BSF    F80.0
+....................       delay_ms(1); 
+0044:  MOVLW  01
+0046:  MOVWF  05
+0048:  RCALL  0004
+....................       RA0 = 0; 
+004A:  BCF    F80.0
+....................       delay_ms(1); 
+004C:  MOVLW  01
+004E:  MOVWF  05
+0050:  RCALL  0004
+....................        
+....................       } 
+0052:  BRA    0042
+....................  
+.................... } 
+0054:  SLEEP 
+
+Configuration Fuses:
+   Word  1: C200   HS FCMEN IESO
+   Word  2: 1E0C   PUT NOBROWNOUT BORV20 NOWDT WDT32768
+   Word  3: 8100   CCP2C1 NOPBADEN MCLR
+   Word  4: 0081   STVREN NOLVP NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

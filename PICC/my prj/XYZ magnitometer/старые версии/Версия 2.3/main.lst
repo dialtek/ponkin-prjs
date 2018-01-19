@@ -1,0 +1,4182 @@
+CCS PCH C Compiler, Version 5.015, 5967               29-дек-16 12:37
+
+               Filename:   E:\work\Projects\ponkin\PICC\my prj\XYZ magnitometer\Версия 2.3\main.lst
+
+               ROM used:   5906 bytes (18%)
+                           Largest free fragment is 26858
+               RAM used:   171 (5%) at main() level
+                           205 (6%) worst case
+               Stack used: 10 locations (7 in main + 3 for interrupts)
+               Stack size: 31
+
+*
+0000:  GOTO   12B0
+*
+0008:  MOVWF  04
+000A:  MOVFF  FD8,05
+000E:  MOVFF  FE0,06
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0C
+0018:  MOVFF  FEA,07
+001C:  MOVFF  FE1,08
+0020:  MOVFF  FE2,09
+0024:  MOVFF  FD9,0A
+0028:  MOVFF  FDA,0B
+002C:  MOVFF  FF3,12
+0030:  MOVFF  FF4,13
+0034:  MOVFF  FFA,14
+0038:  MOVFF  00,0E
+003C:  MOVFF  01,0F
+0040:  MOVFF  02,10
+0044:  MOVFF  03,11
+0048:  BTFSS  FF2.4
+004A:  GOTO   0054
+004E:  BTFSC  FF2.1
+0050:  GOTO   01E8
+0054:  BTFSS  F9D.5
+0056:  GOTO   0060
+005A:  BTFSC  F9E.5
+005C:  GOTO   039E
+0060:  MOVFF  0E,00
+0064:  MOVFF  0F,01
+0068:  MOVFF  10,02
+006C:  MOVFF  11,03
+0070:  MOVFF  0C,FE9
+0074:  MOVFF  07,FEA
+0078:  BSF    07.7
+007A:  MOVFF  08,FE1
+007E:  MOVFF  09,FE2
+0082:  MOVFF  0A,FD9
+0086:  MOVFF  0B,FDA
+008A:  MOVFF  12,FF3
+008E:  MOVFF  13,FF4
+0092:  MOVFF  14,FFA
+0096:  MOVF   04,W
+0098:  MOVFF  06,FE0
+009C:  MOVFF  05,FD8
+00A0:  RETFIE 0
+....................  
+.................... // Измеритель магнитной индукции 2.3 // 
+.................... // дата изменения 04.04.15 
+....................  
+.................... #include <XYZ Gaussmeter.h> 
+.................... #include <18F25K80.h> 
+.................... //////////// Standard Header file for the PIC18F25K80 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC18F25K80 
+00A2:  DATA C8,E7
+00A4:  DATA EC,E5
+00A6:  DATA F0,E8
+00A8:  DATA F2,E5
+00AA:  DATA EB,FC
+00AC:  DATA 20,EC
+00AE:  DATA E0,E3
+00B0:  DATA 2E,00
+00B2:  DATA E8,ED
+00B4:  DATA E4,F3
+00B6:  DATA EA,F6
+00B8:  DATA E8,E8
+00BA:  DATA 2E,CF
+00BC:  DATA CE,20
+00BE:  DATA 76,32
+00C0:  DATA 2E,33
+00C2:  DATA 00,00
+00C4:  DATA 20,D3
+00C6:  DATA D1,D2
+00C8:  DATA C0,CD
+00CA:  DATA CE,C2
+00CC:  DATA CA,C0
+00CE:  DATA 20,CD
+00D0:  DATA D3,CB
+00D2:  DATA DF,20
+00D4:  DATA 00,00
+00D6:  DATA 42,78
+00D8:  DATA 00,00
+00DA:  DATA 20,20
+00DC:  DATA 42,79
+00DE:  DATA 00,00
+00E0:  DATA 20,20
+00E2:  DATA 20,20
+00E4:  DATA 42,7A
+00E6:  DATA 00,00
+00E8:  DATA 20,20
+00EA:  DATA C3,F1
+00EC:  DATA 2E,00
+*
+03BC:  DATA 20,D7
+03BE:  DATA F2,E5
+03C0:  DATA ED,E8
+03C2:  DATA E5,20
+03C4:  DATA CF,C7
+03C6:  DATA D3,2E
+03C8:  DATA 2E,2E
+03CA:  DATA 00,00
+03CC:  DATA 20,20
+03CE:  DATA 20,20
+03D0:  DATA 20,20
+03D2:  DATA 4F,4B
+03D4:  DATA 21,00
+03D6:  DATA D2,E8
+03D8:  DATA EF,3A
+03DA:  DATA 00,00
+03DC:  DATA 33,20
+03DE:  DATA 2D,20
+03E0:  DATA 41,78
+03E2:  DATA 2E,00
+03E4:  DATA 31,20
+03E6:  DATA 2D,20
+03E8:  DATA 41,78
+03EA:  DATA 2E,00
+03EC:  DATA 4E,3A
+03EE:  DATA 00,00
+03F0:  DATA 6B,78
+03F2:  DATA 3D,00
+03F4:  DATA 6B,79
+03F6:  DATA 3D,00
+03F8:  DATA 6B,7A
+03FA:  DATA 3D,00
+03FC:  DATA 20,20
+03FE:  DATA 20,CE
+0400:  DATA F8,E8
+0402:  DATA E1,EA
+0404:  DATA E0,21
+0406:  DATA 00,00
+*
+056E:  TBLRD*+
+0570:  MOVF   FF5,F
+0572:  BZ    058C
+0574:  MOVFF  FF6,AA
+0578:  MOVFF  FF7,AB
+057C:  MOVFF  FF5,AC
+0580:  BRA    0564
+0582:  MOVFF  AA,FF6
+0586:  MOVFF  AB,FF7
+058A:  BRA    056E
+058C:  RETURN 0
+*
+07AA:  MOVF   xA9,W
+07AC:  MULWF  xAB
+07AE:  MOVFF  FF3,01
+07B2:  MOVFF  FF4,00
+07B6:  MULWF  xAC
+07B8:  MOVF   FF3,W
+07BA:  ADDWF  00,F
+07BC:  MOVF   xAA,W
+07BE:  MULWF  xAB
+07C0:  MOVF   FF3,W
+07C2:  ADDWFC 00,W
+07C4:  MOVWF  02
+07C6:  GOTO   157C (RETURN)
+07CA:  BTFSC  FD8.1
+07CC:  BRA    07D4
+07CE:  CLRF   FEA
+07D0:  MOVLW  C4
+07D2:  MOVWF  FE9
+07D4:  CLRF   00
+07D6:  CLRF   01
+07D8:  CLRF   02
+07DA:  CLRF   03
+07DC:  CLRF   xC4
+07DE:  CLRF   xC5
+07E0:  CLRF   xC6
+07E2:  CLRF   xC7
+07E4:  MOVF   xC3,W
+07E6:  IORWF  xC2,W
+07E8:  IORWF  xC1,W
+07EA:  IORWF  xC0,W
+07EC:  BZ    0846
+07EE:  MOVLW  20
+07F0:  MOVWF  xC8
+07F2:  BCF    FD8.0
+07F4:  RLCF   xBC,F
+07F6:  RLCF   xBD,F
+07F8:  RLCF   xBE,F
+07FA:  RLCF   xBF,F
+07FC:  RLCF   xC4,F
+07FE:  RLCF   xC5,F
+0800:  RLCF   xC6,F
+0802:  RLCF   xC7,F
+0804:  MOVF   xC3,W
+0806:  SUBWF  xC7,W
+0808:  BNZ   081A
+080A:  MOVF   xC2,W
+080C:  SUBWF  xC6,W
+080E:  BNZ   081A
+0810:  MOVF   xC1,W
+0812:  SUBWF  xC5,W
+0814:  BNZ   081A
+0816:  MOVF   xC0,W
+0818:  SUBWF  xC4,W
+081A:  BNC   083A
+081C:  MOVF   xC0,W
+081E:  SUBWF  xC4,F
+0820:  MOVF   xC1,W
+0822:  BTFSS  FD8.0
+0824:  INCFSZ xC1,W
+0826:  SUBWF  xC5,F
+0828:  MOVF   xC2,W
+082A:  BTFSS  FD8.0
+082C:  INCFSZ xC2,W
+082E:  SUBWF  xC6,F
+0830:  MOVF   xC3,W
+0832:  BTFSS  FD8.0
+0834:  INCFSZ xC3,W
+0836:  SUBWF  xC7,F
+0838:  BSF    FD8.0
+083A:  RLCF   00,F
+083C:  RLCF   01,F
+083E:  RLCF   02,F
+0840:  RLCF   03,F
+0842:  DECFSZ xC8,F
+0844:  BRA    07F2
+0846:  MOVFF  C4,FEF
+084A:  MOVFF  C5,FEC
+084E:  MOVFF  C6,FEC
+0852:  MOVFF  C7,FEC
+0856:  RETURN 0
+0858:  CLRF   xC4
+085A:  CLRF   xC5
+085C:  MOVLW  01
+085E:  MOVWF  xC6
+0860:  CLRF   FDA
+0862:  CLRF   FD9
+0864:  CLRF   xC9
+0866:  MOVLW  BC
+0868:  MOVWF  xC8
+086A:  CLRF   FEA
+086C:  MOVLW  C0
+086E:  MOVWF  FE9
+0870:  MOVFF  C9,FE2
+0874:  MOVFF  C8,FE1
+0878:  MOVFF  C6,C7
+087C:  BCF    FD8.0
+087E:  MOVF   FE5,W
+0880:  MULWF  FEE
+0882:  MOVF   FF3,W
+0884:  ADDWFC xC4,F
+0886:  MOVF   FF4,W
+0888:  ADDWFC xC5,F
+088A:  DECFSZ xC7,F
+088C:  BRA    087C
+088E:  MOVFF  C4,FDE
+0892:  MOVFF  C5,C4
+0896:  CLRF   xC5
+0898:  BTFSC  FD8.0
+089A:  INCF   xC5,F
+089C:  INCF   xC8,F
+089E:  BTFSC  FD8.2
+08A0:  INCF   xC9,F
+08A2:  INCF   xC6,F
+08A4:  MOVF   xC6,W
+08A6:  SUBLW  05
+08A8:  BNZ   086A
+08AA:  RETURN 0
+*
+0AAA:  MOVF   xA9,W
+0AAC:  BTFSC  FD8.2
+0AAE:  BRA    0B92
+0AB0:  MOVWF  00
+0AB2:  MOVF   xAD,W
+0AB4:  BTFSC  FD8.2
+0AB6:  BRA    0B92
+0AB8:  ADDWF  00,F
+0ABA:  BNC   0AC4
+0ABC:  MOVLW  81
+0ABE:  ADDWF  00,F
+0AC0:  BC    0B92
+0AC2:  BRA    0ACC
+0AC4:  MOVLW  7F
+0AC6:  SUBWF  00,F
+0AC8:  BNC   0B92
+0ACA:  BZ    0B92
+0ACC:  MOVFF  AA,B1
+0AD0:  MOVF   xAE,W
+0AD2:  XORWF  xB1,F
+0AD4:  BSF    xAA.7
+0AD6:  BSF    xAE.7
+0AD8:  MOVF   xAC,W
+0ADA:  MULWF  xB0
+0ADC:  MOVFF  FF4,B3
+0AE0:  MOVF   xAB,W
+0AE2:  MULWF  xAF
+0AE4:  MOVFF  FF4,03
+0AE8:  MOVFF  FF3,B2
+0AEC:  MULWF  xB0
+0AEE:  MOVF   FF3,W
+0AF0:  ADDWF  xB3,F
+0AF2:  MOVF   FF4,W
+0AF4:  ADDWFC xB2,F
+0AF6:  MOVLW  00
+0AF8:  ADDWFC 03,F
+0AFA:  MOVF   xAC,W
+0AFC:  MULWF  xAF
+0AFE:  MOVF   FF3,W
+0B00:  ADDWF  xB3,F
+0B02:  MOVF   FF4,W
+0B04:  ADDWFC xB2,F
+0B06:  MOVLW  00
+0B08:  CLRF   02
+0B0A:  ADDWFC 03,F
+0B0C:  ADDWFC 02,F
+0B0E:  MOVF   xAA,W
+0B10:  MULWF  xB0
+0B12:  MOVF   FF3,W
+0B14:  ADDWF  xB2,F
+0B16:  MOVF   FF4,W
+0B18:  ADDWFC 03,F
+0B1A:  MOVLW  00
+0B1C:  ADDWFC 02,F
+0B1E:  MOVF   xAA,W
+0B20:  MULWF  xAF
+0B22:  MOVF   FF3,W
+0B24:  ADDWF  03,F
+0B26:  MOVF   FF4,W
+0B28:  ADDWFC 02,F
+0B2A:  MOVLW  00
+0B2C:  CLRF   01
+0B2E:  ADDWFC 01,F
+0B30:  MOVF   xAC,W
+0B32:  MULWF  xAE
+0B34:  MOVF   FF3,W
+0B36:  ADDWF  xB2,F
+0B38:  MOVF   FF4,W
+0B3A:  ADDWFC 03,F
+0B3C:  MOVLW  00
+0B3E:  ADDWFC 02,F
+0B40:  ADDWFC 01,F
+0B42:  MOVF   xAB,W
+0B44:  MULWF  xAE
+0B46:  MOVF   FF3,W
+0B48:  ADDWF  03,F
+0B4A:  MOVF   FF4,W
+0B4C:  ADDWFC 02,F
+0B4E:  MOVLW  00
+0B50:  ADDWFC 01,F
+0B52:  MOVF   xAA,W
+0B54:  MULWF  xAE
+0B56:  MOVF   FF3,W
+0B58:  ADDWF  02,F
+0B5A:  MOVF   FF4,W
+0B5C:  ADDWFC 01,F
+0B5E:  INCF   00,F
+0B60:  BTFSC  01.7
+0B62:  BRA    0B6E
+0B64:  RLCF   xB2,F
+0B66:  RLCF   03,F
+0B68:  RLCF   02,F
+0B6A:  RLCF   01,F
+0B6C:  DECF   00,F
+0B6E:  MOVLW  00
+0B70:  BTFSS  xB2.7
+0B72:  BRA    0B88
+0B74:  INCF   03,F
+0B76:  ADDWFC 02,F
+0B78:  ADDWFC 01,F
+0B7A:  MOVF   01,W
+0B7C:  BNZ   0B88
+0B7E:  MOVF   02,W
+0B80:  BNZ   0B88
+0B82:  MOVF   03,W
+0B84:  BNZ   0B88
+0B86:  INCF   00,F
+0B88:  BTFSC  xB1.7
+0B8A:  BSF    01.7
+0B8C:  BTFSS  xB1.7
+0B8E:  BCF    01.7
+0B90:  BRA    0B9A
+0B92:  CLRF   00
+0B94:  CLRF   01
+0B96:  CLRF   02
+0B98:  CLRF   03
+0B9A:  RETURN 0
+0B9C:  MOVF   xA9,W
+0B9E:  SUBLW  B6
+0BA0:  MOVWF  xA9
+0BA2:  CLRF   03
+0BA4:  MOVFF  AA,AD
+0BA8:  BSF    xAA.7
+0BAA:  BCF    FD8.0
+0BAC:  RRCF   xAA,F
+0BAE:  RRCF   xAB,F
+0BB0:  RRCF   xAC,F
+0BB2:  RRCF   03,F
+0BB4:  RRCF   02,F
+0BB6:  RRCF   01,F
+0BB8:  RRCF   00,F
+0BBA:  DECFSZ xA9,F
+0BBC:  BRA    0BAA
+0BBE:  BTFSS  xAD.7
+0BC0:  BRA    0BD8
+0BC2:  COMF   00,F
+0BC4:  COMF   01,F
+0BC6:  COMF   02,F
+0BC8:  COMF   03,F
+0BCA:  INCF   00,F
+0BCC:  BTFSC  FD8.2
+0BCE:  INCF   01,F
+0BD0:  BTFSC  FD8.2
+0BD2:  INCF   02,F
+0BD4:  BTFSC  FD8.2
+0BD6:  INCF   03,F
+0BD8:  RETURN 0
+*
+0C0A:  BTFSC  FD8.1
+0C0C:  BRA    0C14
+0C0E:  CLRF   FEA
+0C10:  MOVLW  B1
+0C12:  MOVWF  FE9
+0C14:  MOVF   xAC,W
+0C16:  XORWF  xB0,W
+0C18:  ANDLW  80
+0C1A:  MOVWF  xB6
+0C1C:  BTFSS  xAC.7
+0C1E:  BRA    0C36
+0C20:  COMF   xA9,F
+0C22:  COMF   xAA,F
+0C24:  COMF   xAB,F
+0C26:  COMF   xAC,F
+0C28:  INCF   xA9,F
+0C2A:  BTFSC  FD8.2
+0C2C:  INCF   xAA,F
+0C2E:  BTFSC  FD8.2
+0C30:  INCF   xAB,F
+0C32:  BTFSC  FD8.2
+0C34:  INCF   xAC,F
+0C36:  BTFSS  xB0.7
+0C38:  BRA    0C50
+0C3A:  COMF   xAD,F
+0C3C:  COMF   xAE,F
+0C3E:  COMF   xAF,F
+0C40:  COMF   xB0,F
+0C42:  INCF   xAD,F
+0C44:  BTFSC  FD8.2
+0C46:  INCF   xAE,F
+0C48:  BTFSC  FD8.2
+0C4A:  INCF   xAF,F
+0C4C:  BTFSC  FD8.2
+0C4E:  INCF   xB0,F
+0C50:  CLRF   00
+0C52:  CLRF   01
+0C54:  CLRF   02
+0C56:  CLRF   03
+0C58:  CLRF   xB1
+0C5A:  CLRF   xB2
+0C5C:  CLRF   xB3
+0C5E:  CLRF   xB4
+0C60:  MOVF   xB0,W
+0C62:  IORWF  xAF,W
+0C64:  IORWF  xAE,W
+0C66:  IORWF  xAD,W
+0C68:  BZ    0CC2
+0C6A:  MOVLW  20
+0C6C:  MOVWF  xB5
+0C6E:  BCF    FD8.0
+0C70:  RLCF   xA9,F
+0C72:  RLCF   xAA,F
+0C74:  RLCF   xAB,F
+0C76:  RLCF   xAC,F
+0C78:  RLCF   xB1,F
+0C7A:  RLCF   xB2,F
+0C7C:  RLCF   xB3,F
+0C7E:  RLCF   xB4,F
+0C80:  MOVF   xB0,W
+0C82:  SUBWF  xB4,W
+0C84:  BNZ   0C96
+0C86:  MOVF   xAF,W
+0C88:  SUBWF  xB3,W
+0C8A:  BNZ   0C96
+0C8C:  MOVF   xAE,W
+0C8E:  SUBWF  xB2,W
+0C90:  BNZ   0C96
+0C92:  MOVF   xAD,W
+0C94:  SUBWF  xB1,W
+0C96:  BNC   0CB6
+0C98:  MOVF   xAD,W
+0C9A:  SUBWF  xB1,F
+0C9C:  MOVF   xAE,W
+0C9E:  BTFSS  FD8.0
+0CA0:  INCFSZ xAE,W
+0CA2:  SUBWF  xB2,F
+0CA4:  MOVF   xAF,W
+0CA6:  BTFSS  FD8.0
+0CA8:  INCFSZ xAF,W
+0CAA:  SUBWF  xB3,F
+0CAC:  MOVF   xB0,W
+0CAE:  BTFSS  FD8.0
+0CB0:  INCFSZ xB0,W
+0CB2:  SUBWF  xB4,F
+0CB4:  BSF    FD8.0
+0CB6:  RLCF   00,F
+0CB8:  RLCF   01,F
+0CBA:  RLCF   02,F
+0CBC:  RLCF   03,F
+0CBE:  DECFSZ xB5,F
+0CC0:  BRA    0C6E
+0CC2:  BTFSS  xB6.7
+0CC4:  BRA    0CDC
+0CC6:  COMF   00,F
+0CC8:  COMF   01,F
+0CCA:  COMF   02,F
+0CCC:  COMF   03,F
+0CCE:  INCF   00,F
+0CD0:  BTFSC  FD8.2
+0CD2:  INCF   01,F
+0CD4:  BTFSC  FD8.2
+0CD6:  INCF   02,F
+0CD8:  BTFSC  FD8.2
+0CDA:  INCF   03,F
+0CDC:  MOVFF  B1,FEF
+0CE0:  MOVFF  B2,FEC
+0CE4:  MOVFF  B3,FEC
+0CE8:  MOVFF  B4,FEC
+0CEC:  RETURN 0
+0CEE:  MOVLW  B6
+0CF0:  MOVWF  00
+0CF2:  CLRF   03
+0CF4:  CLRF   02
+0CF6:  CLRF   01
+0CF8:  BCF    xAD.0
+0CFA:  BTFSS  xAC.7
+0CFC:  BRA    0D16
+0CFE:  BSF    xAD.0
+0D00:  COMF   xA9,F
+0D02:  COMF   xAA,F
+0D04:  COMF   xAB,F
+0D06:  COMF   xAC,F
+0D08:  INCF   xA9,F
+0D0A:  BNZ   0D16
+0D0C:  INCF   xAA,F
+0D0E:  BNZ   0D16
+0D10:  INCF   xAB,F
+0D12:  BTFSC  FD8.2
+0D14:  INCF   xAC,F
+0D16:  MOVF   xA9,W
+0D18:  IORWF  xAA,W
+0D1A:  IORWF  xAB,W
+0D1C:  IORWF  xAC,W
+0D1E:  BNZ   0D24
+0D20:  CLRF   00
+0D22:  BRA    0D42
+0D24:  BCF    FD8.0
+0D26:  BTFSC  01.7
+0D28:  BRA    0D3C
+0D2A:  RLCF   xA9,F
+0D2C:  RLCF   xAA,F
+0D2E:  RLCF   xAB,F
+0D30:  RLCF   xAC,F
+0D32:  RLCF   03,F
+0D34:  RLCF   02,F
+0D36:  RLCF   01,F
+0D38:  DECFSZ 00,F
+0D3A:  BRA    0D24
+0D3C:  BCF    01.7
+0D3E:  BTFSC  xAD.0
+0D40:  BSF    01.7
+0D42:  RETURN 0
+0D44:  MOVF   FE9,W
+0D46:  MOVWF  xAD
+0D48:  BTFSS  xAC.7
+0D4A:  BRA    0D66
+0D4C:  DECF   xAD,F
+0D4E:  BSF    xAD.5
+0D50:  COMF   xA9,F
+0D52:  COMF   xAA,F
+0D54:  COMF   xAB,F
+0D56:  COMF   xAC,F
+0D58:  INCF   xA9,F
+0D5A:  BTFSC  FD8.2
+0D5C:  INCF   xAA,F
+0D5E:  BTFSC  FD8.2
+0D60:  INCF   xAB,F
+0D62:  BTFSC  FD8.2
+0D64:  INCF   xAC,F
+0D66:  MOVLW  3B
+0D68:  MOVWF  xB4
+0D6A:  MOVLW  9A
+0D6C:  MOVWF  xB3
+0D6E:  MOVLW  CA
+0D70:  MOVWF  xB2
+0D72:  CLRF   xB1
+0D74:  MOVLW  0A
+0D76:  MOVWF  xAF
+0D78:  BSF    FD8.1
+0D7A:  CLRF   FEA
+0D7C:  MOVLW  A9
+0D7E:  MOVWF  FE9
+0D80:  MOVFF  AC,BF
+0D84:  MOVFF  AB,BE
+0D88:  MOVFF  AA,BD
+0D8C:  MOVFF  A9,BC
+0D90:  MOVFF  B4,C3
+0D94:  MOVFF  B3,C2
+0D98:  MOVFF  B2,C1
+0D9C:  MOVFF  B1,C0
+0DA0:  RCALL  07CA
+0DA2:  MOVF   01,W
+0DA4:  MOVF   00,F
+0DA6:  BNZ   0DC6
+0DA8:  MOVF   xAF,W
+0DAA:  XORLW  01
+0DAC:  BZ    0DC6
+0DAE:  MOVF   xAD,W
+0DB0:  BZ    0DCA
+0DB2:  ANDLW  0F
+0DB4:  SUBWF  xAF,W
+0DB6:  BZ    0DBA
+0DB8:  BC    0E08
+0DBA:  BTFSC  xAD.7
+0DBC:  BRA    0E08
+0DBE:  BTFSC  xAD.6
+0DC0:  BRA    0DCA
+0DC2:  MOVLW  20
+0DC4:  BRA    0DFE
+0DC6:  MOVLW  20
+0DC8:  ANDWF  xAD,F
+0DCA:  BTFSS  xAD.5
+0DCC:  BRA    0DE2
+0DCE:  BCF    xAD.5
+0DD0:  MOVFF  00,AD
+0DD4:  MOVLW  2D
+0DD6:  BTFSS  F9E.4
+0DD8:  BRA    0DD6
+0DDA:  MOVWF  FAD
+0DDC:  MOVFF  AD,00
+0DE0:  CLRF   xAD
+0DE2:  MOVLW  30
+0DE4:  BTFSS  xAD.5
+0DE6:  BRA    0DFE
+0DE8:  BCF    xAD.5
+0DEA:  MOVFF  00,AD
+0DEE:  MOVLW  2D
+0DF0:  BTFSS  F9E.4
+0DF2:  BRA    0DF0
+0DF4:  MOVWF  FAD
+0DF6:  MOVFF  AD,00
+0DFA:  CLRF   xAD
+0DFC:  MOVLW  30
+0DFE:  ADDWF  00,F
+0E00:  MOVF   00,W
+0E02:  BTFSS  F9E.4
+0E04:  BRA    0E02
+0E06:  MOVWF  FAD
+0E08:  BCF    FD8.1
+0E0A:  MOVFF  B4,BF
+0E0E:  MOVFF  B3,BE
+0E12:  MOVFF  B2,BD
+0E16:  MOVFF  B1,BC
+0E1A:  CLRF   xC3
+0E1C:  CLRF   xC2
+0E1E:  CLRF   xC1
+0E20:  MOVLW  0A
+0E22:  MOVWF  xC0
+0E24:  RCALL  07CA
+0E26:  MOVFF  03,B4
+0E2A:  MOVFF  02,B3
+0E2E:  MOVFF  01,B2
+0E32:  MOVFF  00,B1
+0E36:  DECFSZ xAF,F
+0E38:  BRA    0D78
+0E3A:  RETURN 0
+0E3C:  MOVLW  8E
+0E3E:  MOVWF  00
+0E40:  MOVF   xA9,W
+0E42:  SUBWF  00,F
+0E44:  MOVFF  AA,02
+0E48:  MOVFF  AB,01
+0E4C:  BSF    02.7
+0E4E:  MOVF   00,F
+0E50:  BZ    0E64
+0E52:  BCF    FD8.0
+0E54:  MOVF   02,F
+0E56:  BNZ   0E5C
+0E58:  MOVF   01,F
+0E5A:  BZ    0E64
+0E5C:  RRCF   02,F
+0E5E:  RRCF   01,F
+0E60:  DECFSZ 00,F
+0E62:  BRA    0E52
+0E64:  BTFSS  xAA.7
+0E66:  BRA    0E72
+0E68:  COMF   01,F
+0E6A:  COMF   02,F
+0E6C:  INCF   01,F
+0E6E:  BTFSC  FD8.2
+0E70:  INCF   02,F
+0E72:  RETURN 0
+....................  
+.................... #list 
+....................  
+.................... //#device ADC=16 
+....................  
+.................... #FUSES NOWDT                      //Watch Dog Timer 
+.................... //#FUSES WDT4096                  //Watch Dog Timer uses 1:4096 Postscale 
+.................... #FUSES SOSC_DIG                 //Digital mode, I/O port functionality of RC0 and RC1 
+.................... #FUSES NOXINST                  //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... //#fuses NOPLLEN                   //HW PLL disabled, PLL enabled in software 
+.................... #fuses HSM                       //High speed Osc, medium power 4MHz-16MHz 
+.................... //#fuses PLLEN                     //HW PLL enabled 
+.................... #fuses NOPLLEN                     //HW PLL disabled, PLL enabled in software 
+....................  
+.................... #use delay(clock=10MHz,crystal=10MHz) // изменил!!!! 
+*
+0408:  CLRF   FEA
+040A:  MOVLW  AB
+040C:  MOVWF  FE9
+040E:  MOVF   FEF,W
+0410:  BZ    042E
+0412:  MOVLW  03
+0414:  MOVWF  01
+0416:  CLRF   00
+0418:  DECFSZ 00,F
+041A:  BRA    0418
+041C:  DECFSZ 01,F
+041E:  BRA    0416
+0420:  MOVLW  3C
+0422:  MOVWF  00
+0424:  DECFSZ 00,F
+0426:  BRA    0424
+0428:  BRA    042A
+042A:  DECFSZ FEF,F
+042C:  BRA    0412
+042E:  RETURN 0
+0430:  MOVLW  07
+0432:  SUBWF  xC2,F
+0434:  BNC   044C
+0436:  CLRF   FEA
+0438:  MOVLW  C2
+043A:  MOVWF  FE9
+043C:  BCF    FD8.0
+043E:  RRCF   FEF,F
+0440:  MOVF   FEF,W
+0442:  BZ    044C
+0444:  BRA    0448
+0446:  BRA    0448
+0448:  DECFSZ FEF,F
+044A:  BRA    0446
+044C:  RETURN 0
+....................  
+.................... //#use FIXED_IO( B_outputs=PIN_B6,PIN_B5,PIN_B4,PIN_B3,PIN_B0 ) 
+.................... //#use FIXED_IO( C_outputs=PIN_C6 ) 
+.................... //#use FIXED_IO( C_outputs=PIN_C6 ) 
+....................  
+.................... #define RA0   PIN_A0 
+.................... #define RA1   PIN_A1 
+.................... #define RA2   PIN_A2 
+.................... #define RA3   PIN_A3 
+.................... #define RA4   PIN_A4 
+.................... #define RA5   PIN_A5 
+.................... #define RA6   PIN_A6 
+.................... #define RA7   PIN_A7 
+....................  
+.................... //#define DRDY   PIN_B0 
+.................... #define RB1   PIN_B1 
+.................... #define RB2   PIN_B2 
+.................... #define RB6   PIN_B6 
+.................... #define RB7   PIN_B7 
+.................... //#define SCL   PIN_C3 
+.................... //#define SDA   PIN_C4 
+.................... /* 
+.................... #define LCD_E PIN_B3 
+.................... #define LCD_RS PIN_B5 
+.................... #define LCD_RW PIN_B4 
+.................... #define DB4 PIN_C5 
+.................... #define DB5 PIN_C2 
+.................... #define DB6 PIN_C1 
+.................... #define DB7 PIN_C0 
+.................... */ 
+.................... #BYTE TRISA = 0xF92 
+.................... #BYTE TRISB = 0xF93 
+.................... #BYTE TRISC = 0xF94 
+.................... #BYTE PORTA = 0xF80 
+.................... #BYTE PORTB = 0xF81 
+.................... #BYTE PORTC = 0xF82  
+.................... #BYTE LATB = 0xF8A 
+.................... #BYTE LATC = 0xF8B 
+....................  
+.................... #BYTE INTCON = 0xFF2    // регистры конфигурации прерываний 
+.................... #BYTE INTCON2= 0xFF1 
+....................  
+.................... #BIT TRA3 = TRISA.3 
+.................... #BIT TRB0 = TRISB.0 
+.................... #BIT TRB3 = TRISB.3 
+.................... #BIT TRB4 = TRISB.4 
+.................... #BIT TRB5 = TRISB.5 
+.................... #BIT TRC0 = TRISC.0 
+.................... #BIT TRC1 = TRISC.1 
+.................... #BIT TRC2 = TRISC.2 
+.................... #BIT TRC3 = TRISC.3 
+.................... #BIT TRC4 = TRISC.4 
+.................... #BIT TRC5 = TRISC.5  
+.................... #BIT TRC6 = TRISC.6 
+.................... #BIT TRC7 = TRISC.7 
+....................  
+.................... #BIT DRDY = PORTB.0 
+....................  
+.................... #BIT DB4 = LATC.5 
+.................... #BIT DB5 = LATC.2 
+.................... #BIT DB6 = LATC.1 
+.................... #BIT DB7 = LATC.0 
+....................  
+.................... #BIT SDA_LAT = LATC.4 
+....................  
+.................... #BIT SW1 = PORTA.3 
+.................... #BIT SW2 = PORTC.2 
+.................... //#BIT SW3 = PORTC.5 
+.................... //#BIT SW4 = PORTC.5 
+....................  
+.................... #BIT LCD_RS = LATB.5  
+.................... #BIT LCD_RW = LATB.4 
+.................... #BIT LCD_E = LATB.3 
+.................... #BIT LED = LATC.6 
+.................... //#define RC6   PIN_C6 
+....................  
+.................... #use i2c(Master, sda = PIN_C4, scl = PIN_C3, SLOW)//Fast = 400000) 
+*
+00EE:  MOVLW  08
+00F0:  MOVWF  01
+00F2:  BRA    00F4
+00F4:  BRA    00F6
+00F6:  BCF    F8B.3
+00F8:  BCF    F94.3
+00FA:  BRA    00FC
+00FC:  BRA    00FE
+00FE:  NOP   
+0100:  RLCF   xCC,F
+0102:  BCF    F8B.4
+0104:  BTFSC  FD8.0
+0106:  BSF    F94.4
+0108:  BTFSS  FD8.0
+010A:  BCF    F94.4
+010C:  BSF    F94.3
+010E:  BTFSS  F82.3
+0110:  BRA    010E
+0112:  DECFSZ 01,F
+0114:  BRA    00F2
+0116:  BRA    0118
+0118:  BRA    011A
+011A:  BCF    F8B.3
+011C:  BCF    F94.3
+011E:  NOP   
+0120:  BSF    F94.4
+0122:  BRA    0124
+0124:  BRA    0126
+0126:  NOP   
+0128:  BRA    012A
+012A:  BRA    012C
+012C:  NOP   
+012E:  BSF    F94.3
+0130:  BTFSS  F82.3
+0132:  BRA    0130
+0134:  CLRF   01
+0136:  BRA    0138
+0138:  BRA    013A
+013A:  NOP   
+013C:  BTFSC  F82.4
+013E:  BSF    01.0
+0140:  BCF    F8B.3
+0142:  BCF    F94.3
+0144:  BCF    F8B.4
+0146:  BCF    F94.4
+0148:  RETURN 0
+014A:  MOVLW  08
+014C:  MOVWF  xCB
+014E:  MOVFF  00,CC
+0152:  BSF    F94.4
+0154:  BRA    0156
+0156:  BRA    0158
+0158:  NOP   
+015A:  BSF    F94.3
+015C:  BTFSS  F82.3
+015E:  BRA    015C
+0160:  BTFSC  F82.4
+0162:  BSF    FD8.0
+0164:  BTFSS  F82.4
+0166:  BCF    FD8.0
+0168:  RLCF   01,F
+016A:  BRA    016C
+016C:  BRA    016E
+016E:  BCF    F94.3
+0170:  BCF    F8B.3
+0172:  DECFSZ xCB,F
+0174:  BRA    0152
+0176:  BSF    F94.4
+0178:  BRA    017A
+017A:  BRA    017C
+017C:  NOP   
+017E:  BCF    F8B.4
+0180:  MOVF   xCC,W
+0182:  BTFSS  FD8.2
+0184:  BCF    F94.4
+0186:  NOP   
+0188:  BSF    F94.3
+018A:  BTFSS  F82.3
+018C:  BRA    018A
+018E:  BRA    0190
+0190:  BRA    0192
+0192:  BCF    F8B.3
+0194:  BCF    F94.3
+0196:  BRA    0198
+0198:  BRA    019A
+019A:  NOP   
+019C:  BCF    F8B.4
+019E:  BCF    F94.4
+01A0:  RETURN 0
+....................  
+.................... #use rs232(uart1,baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+....................  
+.................... //#define LED PIN_C6 
+.................... #define DELAY 200 
+....................  
+.................... #define one   0x00 
+.................... #define two   0x40 
+....................  
+.................... //#DEFINE DRDY RB0 
+....................  
+.................... //#define three 0x10 
+.................... //#define four  0x50 
+....................  
+.................... typedef unsigned int32 U32; 
+.................... typedef int16 U16; 
+.................... typedef signed int16 S16; 
+.................... typedef int8 U8; 
+.................... typedef signed int32 S32; 
+....................  
+.................... static U8 buf; 
+....................  
+.................... #BIT buf4=buf.4 
+.................... #BIT buf5=buf.5 
+.................... #BIT buf6=buf.6 
+.................... #BIT buf7=buf.7 
+....................  
+.................... #include <stdio.h> 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2003 Custom Computer Services           //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef _STDIO 
+.................... #define _STDIO 
+.................... #include <string.h> 
+.................... //////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2008 Custom Computer Services            //// 
+.................... //// This source code may only be used by licensed users of the CCS C   //// 
+.................... //// compiler.  This source code may only be distributed to other       //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction  //// 
+.................... //// or distribution is permitted without written permission.           //// 
+.................... //// Derivative programs created using this software in object code     //// 
+.................... //// form are not restricted in any way.                                //// 
+.................... //////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef _STRING 
+.................... #define _STRING 
+.................... #include <stddef.h> 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2003 Custom Computer Services           //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef _STDDEF 
+....................  
+.................... #define _STDDEF 
+....................  
+.................... #if sizeof(unsigned int8 *)==1 
+.................... #define ptrdiff_t unsigned int8 
+.................... #else 
+.................... #define ptrdiff_t unsigned int16 
+.................... #endif 
+....................  
+.................... #if defined(__PCB__) 
+.................... #define size_t unsigned int8 
+.................... #else 
+.................... #define size_t unsigned int16 
+.................... #endif 
+.................... #define wchar_t char 
+.................... #define NULL 0 
+....................  
+.................... #define offsetof(s,f) (offsetofbit(s,f)/8) 
+....................  
+.................... #endif 
+....................  
+.................... #include <ctype.h> 
+.................... //////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996,2003 Custom Computer Services            //// 
+.................... //// This source code may only be used by licensed users of the CCS C   //// 
+.................... //// compiler.  This source code may only be distributed to other       //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction  //// 
+.................... //// or distribution is permitted without written permission.           //// 
+.................... //// Derivative programs created using this software in object code     //// 
+.................... //// form are not restricted in any way.                                //// 
+.................... //////////////////////////////////////////////////////////////////////////// 
+....................  
+.................... #ifndef _CTYPE 
+.................... #define _CTYPE 
+....................  
+.................... #define islower(x)  isamong(x,"abcdefghijklmnopqrstuvwxyz") 
+.................... #define isupper(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZ") 
+.................... #define isalnum(x)  isamong(x,"0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") 
+.................... #define isalpha(x)  isamong(x,"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz") 
+.................... #define isdigit(x)  isamong(x,"0123456789") 
+.................... #define isspace(x)  ((x)==' ') 
+.................... #define isxdigit(x) isamong(x,"0123456789ABCDEFabcdef") 
+.................... #define iscntrl(x)  ((x)<' ') 
+.................... #define isprint(x)  ((x)>=' ') 
+.................... #define isgraph(x)  ((x)>' ') 
+.................... #define ispunct(x)  (((x)>' ')&&!isalnum(x)) 
+....................  
+.................... #endif 
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... ////////////////////////////////////////////// 
+.................... //// Uncomment the following define to    //// 
+.................... //// allow some functions to use a        //// 
+.................... //// quicker algorithm, but use more ROM  //// 
+.................... ////                                      //// 
+.................... //// #define FASTER_BUT_MORE_ROM          //// 
+.................... ////////////////////////////////////////////// 
+....................  
+....................  
+....................  
+.................... /*Copying functions*/ 
+.................... /* standard template: 
+....................    void *memmove(void *s1, void *s2, size_t n). 
+....................    Copies max of n characters safely (not following ending '\0') 
+....................    from s2 in s1; if s2 has less than n characters, appends 0 */ 
+....................  
+.................... char *memmove(void *s1,char *s2,size_t n) 
+.................... { 
+....................    char *sc1; 
+....................    char *sc2; 
+....................    sc1=s1; 
+....................    sc2=s2; 
+....................    if(sc2<sc1 && sc1 <sc2 +n) 
+....................       for(sc1+=n,sc2+=n;0<n;--n) 
+....................          *--sc1=*--sc2; 
+....................    else 
+....................       for(;0<n;--n) 
+....................          *sc1++=*sc2++; 
+....................   return s1; 
+....................   } 
+....................  
+.................... /* Standard template: char *strcpy(char *s1, const char *s2) 
+....................    copies the string s2 including the null character to s1. 
+....................    This is a compiler built in to handle the different address 
+....................    spaces */ 
+....................  
+.................... #define strcopy strcpy 
+....................  
+.................... /* standard template: 
+....................    char *strncpy(char *s1, const char *s2, size_t n). 
+....................    Copies max of n characters (not following ending '\0') 
+....................    from s2 in s1; if s2 has less than n characters, appends 0 */ 
+....................  
+.................... char *strncpy(char *s1, char *s2, size_t n) 
+.................... { 
+....................   char *s; 
+....................  
+....................   for (s = s1; n > 0 && *s2 != '\0'; n--) 
+....................      *s++ = *s2++; 
+....................   for (; n > 0; n--) 
+....................      *s++ = '\0'; 
+....................  
+....................   return(s1); 
+.................... } 
+.................... /***********************************************************/ 
+....................  
+.................... /*concatenation functions*/ 
+.................... /* standard template: char *strcat(char *s1, const char *s2) 
+.................... appends s2 to s1*/ 
+....................  
+.................... char *strcat(char *s1, char *s2) 
+.................... { 
+....................    char *s; 
+....................  
+....................    for (s = s1; *s != '\0'; ++s); 
+....................    while(*s2 != '\0') 
+....................    { 
+....................       *s = *s2; 
+....................       ++s; 
+....................       ++s2; 
+....................    } 
+....................  
+....................    *s = '\0'; 
+....................    return(s1); 
+.................... } 
+.................... /* standard template: char *strncat(char *s1, char *s2,size_t n) 
+.................... appends not more than n characters from s2 to s1*/ 
+....................  
+.................... char *strncat(char *s1, char *s2, size_t n) 
+.................... { 
+....................    char *s; 
+....................  
+....................    for (s = s1; *s != '\0'; ++s); 
+....................    while(*s2 != '\0' && 0<n) 
+....................    { 
+....................       *s = *s2; 
+....................       ++s; 
+....................       ++s2; 
+....................       --n; 
+....................    } 
+....................  
+....................    *s = '\0'; 
+....................    return(s1); 
+.................... } 
+....................  
+.................... /***********************************************************/ 
+....................  
+....................  
+.................... /*comparison functions*/ 
+.................... /* standard template: signed int memcmp(void *s1, void *s2). 
+....................    Compares s1 & s2; returns -1 if s1<s2, 0 if s1=s2, 1 if s1>s2 */ 
+....................  
+.................... signed int8 memcmp(void * s1,char *s2,size_t n) 
+.................... { 
+.................... char *su1, *su2; 
+.................... for(su1=s1, su2=s2; 0<n; ++su1, ++su2, --n) 
+.................... { 
+....................    if(*su1!=*su2) 
+....................       return ((*su1<*su2)?-1:+1); 
+.................... } 
+.................... return 0; 
+.................... } 
+....................  
+.................... /* standard template: int strcmp(const char *s1, const char *s2). 
+....................    Compares s1 & s2; returns -1 if s1<s2, 0 if s1=s2, 1 if s1>s2 */ 
+....................  
+.................... signed int8 strcmp(char *s1, char *s2) 
+.................... { 
+....................    for (; *s1 == *s2; s1++, s2++) 
+....................       if (*s1 == '\0') 
+....................          return(0); 
+....................    return((*s1 < *s2) ? -1: 1); 
+.................... } 
+.................... /* standard template: int strcoll(const char *s1, const char *s2). 
+....................    Compares s1 & s2; returns -1 if s1<s2, 0 if s1=s2, 1 if s1>s2 */ 
+....................  
+.................... signed int8 strcoll(char *s1, char *s2) 
+.................... { 
+....................    for (; *s1 == *s2; s1++, s2++) 
+....................       if (*s1 == '\0') 
+....................          return(0); 
+....................    return((*s1 < *s2) ? -1: 1); 
+.................... } 
+....................  
+.................... /* standard template: 
+....................    int strncmp(const char *s1, const char *s2, size_t n). 
+....................    Compares max of n characters (not following 0) from s1 to s2; 
+....................    returns same as strcmp */ 
+....................  
+.................... signed int8 strncmp(char *s1, char *s2, size_t n) 
+.................... { 
+....................    for (; n > 0; s1++, s2++, n--) 
+....................       if (*s1 != *s2) 
+....................          return((*s1 <*s2) ? -1: 1); 
+....................       else if (*s1 == '\0') 
+....................          return(0); 
+....................    return(0); 
+.................... } 
+.................... /* standard template: 
+....................    int strxfrm(const char *s1, const char *s2, size_t n). 
+....................    transforms maximum of n characters from s2 and places them into s1*/ 
+.................... size_t strxfrm(char *s1, char *s2, size_t n) 
+.................... { 
+....................   char *s; 
+....................   unsigned int8 n1; 
+....................   n1=n; 
+....................   for (s = s1; n > 0 && *s2 != '\0'; n--) 
+....................      *s++ = *s2++; 
+....................   for (; n > 0; n--) 
+....................      *s++ = '\0'; 
+....................  
+....................   return(n1); 
+.................... } 
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... /***********************************************************/ 
+.................... /*Search functions*/ 
+.................... /* standard template: void *memchr(const char *s, int c). 
+....................    Finds first occurrence of c in n characters of s */ 
+....................  
+.................... char *memchr(void *s,unsigned int8 c,size_t n) 
+.................... { 
+....................    char uc; 
+....................    char *su; 
+....................    uc=c; 
+....................    for(su=s;0<n;++su,--n) 
+....................       if(*su==uc) 
+....................       return su; 
+....................    return NULL; 
+.................... } 
+....................  
+.................... /* standard template: char *strchr(const char *s, int c). 
+....................    Finds first occurrence of c in s */ 
+....................  
+.................... char *strchr(char *s, unsigned int8 c) 
+.................... { 
+....................    for (; *s != c; s++) 
+....................       if (*s == '\0') 
+....................          return(0); 
+....................    return(s); 
+.................... } 
+.................... /* standard template: 
+....................    size_t strcspn(const char *s1, const char *s2). 
+....................    Computes length of max initial segment of s1 that 
+....................    consists entirely of characters NOT from s2*/ 
+....................  
+.................... unsigned int8  strcspn(char *s1, char *s2) 
+.................... { 
+....................    char *sc1, *sc2; 
+....................  
+....................    for (sc1 = s1; *sc1 != 0; sc1++) 
+....................       for (sc2 = s2; *sc2 != 0; sc2++) 
+....................          if (*sc1 == *sc2) 
+....................             return(sc1 - s1); 
+....................    return(sc1 - s1); 
+.................... } 
+.................... /* standard template: 
+....................    char *strpbrk(const char *s1, const char *s2). 
+....................    Locates first occurence of any character from s2 in s1; 
+....................    returns s1 if s2 is empty string */ 
+....................  
+.................... char *strpbrk(char *s1, char *s2) 
+.................... { 
+....................    char *sc1, *sc2; 
+....................  
+....................    for (sc1 = s1; *sc1 != 0; sc1++) 
+....................       for (sc2 = s2; *sc2 != 0; sc2++) 
+....................          if (*sc1 == *sc2) 
+....................             return(sc1); 
+....................    return(0); 
+.................... } 
+....................  
+....................  
+.................... /* standard template: char *strrchr(const char *s, int c). 
+....................    Finds last occurrence of c in s */ 
+....................  
+.................... char *strrchr(char *s, unsigned int8 c) 
+.................... { 
+....................    char *p; 
+....................  
+....................    for (p = 0; ; s++) 
+....................    { 
+....................       if (*s == c) 
+....................          p = s; 
+....................       if (*s == '\0') 
+....................          return(p); 
+....................    } 
+.................... } 
+.................... /* computes length of max initial segment of s1 consisting 
+....................    entirely of characters from s2 */ 
+....................  
+.................... unsigned int8  strspn(char *s1, char *s2) 
+.................... { 
+....................    char *sc1, *sc2; 
+....................  
+....................    for (sc1 = s1; *sc1 != 0; sc1++) 
+....................       for (sc2 = s2; ; sc2++) 
+....................     if (*sc2 == '\0') 
+....................        return(sc1 - s1); 
+....................          else if (*sc1 == *sc2) 
+....................             break; 
+....................    return(sc1 - s1); 
+.................... } 
+.................... /* standard template: 
+....................    char *strstr(const char *s1, const char *s2); 
+....................    Locates first occurence of character sequence s2 in s1; 
+....................    returns 0 if s2 is empty string 
+....................  
+....................    Uncomment #define FASTER_BUT_MORE_ROM at the top of the 
+....................    file to use the faster algorithm */ 
+.................... char *strstr(char *s1, char *s2) 
+.................... { 
+....................    char *s, *t; 
+....................  
+....................    #ifdef FASTER_BUT_MORE_ROM 
+....................    if (*s2 == '\0') 
+....................          return(s1); 
+....................    #endif 
+....................  
+....................    while (*s1) 
+....................    { 
+....................       for(s = s1, t = s2; *t && (*s == *t); ++s, ++t); 
+....................  
+....................       if (*t == '\0') 
+....................          return s1; 
+....................       ++s1; 
+....................       #ifdef FASTER_BUT_MORE_ROM 
+....................          while(*s1 != '\0' && *s1 != *s2) 
+....................             ++s1; 
+....................       #endif 
+....................    } 
+....................    return 0; 
+.................... } 
+....................  
+.................... /* standard template: char *strtok(char *s1, const char *s2). 
+....................  
+....................    Finds next token in s1 delimited by a character from separator 
+....................    string s2 (which can be different from call to call).  First call 
+....................    starts at beginning of s1 searching for first character NOT 
+....................    contained in s2; returns 0 if none is found. 
+....................    If one is found, it is the start of first token (return value). 
+....................    Function then searches from there for a character contained in s2. 
+....................    If none is found, current token extends to end of s1, and subsequent 
+....................    searches for a token will return 0.  If one is found, it is 
+....................    overwritten by '\0', which terminates current token.  Function saves 
+....................    pointer to following character from which next search will start. 
+....................    Each subsequent call, with 0 as first argument, starts searching 
+....................    from saved pointer */ 
+....................  
+.................... char *strtok(char *s1, char *s2) 
+.................... { 
+....................    char *beg, *end; 
+....................    static char *save; 
+....................  
+....................    beg = (s1)? s1: save; 
+....................    beg += strspn(beg, s2); 
+....................    if (*beg == '\0') 
+....................    { 
+....................       *save = ' '; 
+....................       return(0); 
+....................    } 
+....................    end = strpbrk(beg, s2); 
+....................    if (*end != '\0') 
+....................    { 
+....................       *end = '\0'; 
+....................       end++; 
+....................    } 
+....................    save = end; 
+....................    return(beg); 
+.................... } 
+....................  
+.................... /*****************************************************************/ 
+.................... /*Miscellaneous functions*/ 
+.................... /* standard template 
+.................... maps error number in errnum to an error message string 
+.................... Returns: Pointer to string 
+.................... */ 
+.................... #ifdef _ERRNO 
+.................... char * strerror(unsigned int8 errnum) 
+.................... { 
+.................... static char s[13]; 
+.................... switch( errnum) 
+.................... { 
+.................... case 0: 
+....................    strcpy(s,"no errors"); 
+....................    return s; 
+.................... case EDOM : 
+....................    strcpy(s,"domain error"); 
+....................    return s; 
+.................... case ERANGE: 
+....................    strcpy(s,"range error"); 
+....................    return s; 
+.................... } 
+.................... } 
+.................... #ENDIF 
+.................... /* standard template: size_t strlen(const char *s). 
+....................    Computes length of s1 (preceding terminating 0) */ 
+....................  
+.................... unsigned int8 strlen(char *s) 
+.................... { 
+....................    char *sc; 
+....................  
+....................    for (sc = s; *sc != 0; sc++); 
+....................    return(sc - s); 
+.................... } 
+....................  
+.................... /* standard template: size_t stricmp(const char *s1, const char *s2). 
+....................    Compares s1 to s2 ignoring case (upper vs. lower) */ 
+....................  
+.................... signed int8 stricmp(char *s1, char *s2) 
+.................... { 
+....................  for(; *s1==*s2||(isalpha(*s1)&&isalpha(*s2)&&(*s1==*s2+32||*s2==*s1+32)); 
+....................     s1++, s2++) 
+....................     if (*s1 == '\0') 
+....................        return(0); 
+....................  return((*s1 < *s2) ? -1: 1); 
+.................... } 
+....................  
+....................  
+.................... /* standard template: char *strlwr(char *s). 
+....................    Replaces uppercase letters by lowercase; 
+....................    returns pointer to new string s */ 
+....................  
+.................... char *strlwr(char *s) 
+.................... { 
+....................    char *p; 
+....................  
+....................    for (p = s; *p != '\0'; p++) 
+....................       if (*p >= 'A' && *p <='Z') 
+....................          *p += 'a' - 'A'; 
+....................    return(s); 
+.................... } 
+....................  
+.................... /* standard template: char *strupr(char *s). 
+....................    Replaces lowercase letters by upercase; 
+....................    returns pointer to new string s */ 
+....................  
+.................... char *strupr(char *s) 
+.................... { 
+....................    char *p; 
+....................  
+....................    for (p = s; *p != '\0'; p++) 
+....................       if (*p >= 'a' && *p <='z') 
+....................          *p -= 'a' - 'A'; 
+....................    return(s); 
+.................... } 
+....................  
+....................  
+.................... /************************************************************/ 
+....................  
+....................  
+.................... #endif 
+....................  
+.................... #ifndef getc 
+.................... #define getc getch 
+.................... #define getchar getch 
+.................... #define puts(s) {printf(s); putchar(13); putchar(10);} 
+.................... #define putc putchar 
+.................... #endif 
+.................... /* maps error number to an error message. Writes a sequence of characters to 
+.................... stderr stream thus: if s is not null then string pointed to by s follwed by 
+.................... a colon (:) and a space and the appropriate error message returned by strerror 
+.................... function with argument errno 
+....................  
+.................... Returns: no value 
+.................... */ 
+....................  
+.................... #ifdef _ERRNO 
+.................... void perror(char *s) 
+.................... { 
+....................   if(s) 
+....................   fprintf(STDERR,"%s: ",s); 
+....................   fprintf(STDERR,"%s\r\n",strerror(errno)); 
+.................... } 
+.................... #endif 
+.................... #endif 
+....................  
+.................... #include <LCD_XYZ_Gaussmeter.c> 
+.................... /***************** LCD functions *****************/ 
+....................  
+.................... static void LCDWriteNibble(unsigned char uc) // RS must be set/reset before calling  
+.................... {                                            
+....................    uc=uc << 4; // Align with bits 7-4 
+*
+044E:  SWAPF  xC0,F
+0450:  MOVLW  F0
+0452:  ANDWF  xC0,F
+.................... //   output_low(LCD_RW); 
+....................    LCD_RW=0; 
+0454:  BCF    F8A.4
+....................    buf = uc; 
+0456:  MOVFF  C0,17
+....................     DB4 = buf4; 
+045A:  BCF    F8B.5
+045C:  BTFSC  17.4
+045E:  BSF    F8B.5
+....................     DB5 = buf5; 
+0460:  BCF    F8B.2
+0462:  BTFSC  17.5
+0464:  BSF    F8B.2
+....................     DB6 = buf6; 
+0466:  BCF    F8B.1
+0468:  BTFSC  17.6
+046A:  BSF    F8B.1
+....................     DB7 = buf7; 
+046C:  BCF    F8B.0
+046E:  BTFSC  17.7
+0470:  BSF    F8B.0
+....................    delay_us(500); 
+0472:  MOVLW  02
+0474:  MOVWF  xC1
+0476:  MOVLW  F9
+0478:  MOVWF  xC2
+047A:  RCALL  0430
+047C:  DECFSZ xC1,F
+047E:  BRA    0476
+....................    LCD_E = 1; 
+0480:  BSF    F8A.3
+....................   //delay_us(100); 
+....................    delay_us(2); 
+0482:  BRA    0484
+0484:  BRA    0486
+0486:  NOP   
+....................    LCD_E = 0; 
+0488:  BCF    F8A.3
+....................    delay_us(50); 
+048A:  MOVLW  29
+048C:  MOVWF  00
+048E:  DECFSZ 00,F
+0490:  BRA    048E
+0492:  NOP   
+0494:  RETURN 0
+....................    //LCD_RW=1; !!!! ?????? ??? MT16S2H !!!!!!!    
+.................... } 
+....................  
+.................... static void LCDWriteData(unsigned char uc) 
+.................... {     
+....................    LCD_RS = 0; 
+*
+0530:  BCF    F8A.5
+....................     //delay_ms(50); 
+....................     delay_us(500); 
+0532:  MOVLW  02
+0534:  MOVWF  xBF
+0536:  MOVLW  F9
+0538:  MOVWF  xC2
+053A:  RCALL  0430
+053C:  DECFSZ xBF,F
+053E:  BRA    0536
+....................     LCD_RS = 1; 
+0540:  BSF    F8A.5
+....................     LCD_RW = 1;// Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р±Р°Р№С‚РѕРІРѕР№ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё 
+0542:  BSF    F8A.4
+....................     LCDWriteNibble(uc>>4);//РґРІРёРі СЂР°Р·СЂСЏРґРѕРІ СЃС‚Р°СЂС€РёС… 
+0544:  SWAPF  xBE,W
+0546:  MOVWF  xBF
+0548:  MOVLW  0F
+054A:  ANDWF  xBF,F
+054C:  MOVFF  BF,C0
+0550:  RCALL  044E
+....................     LCDWriteNibble(uc); 
+0552:  MOVFF  BE,C0
+0556:  RCALL  044E
+0558:  GOTO   0562 (RETURN)
+.................... } 
+....................  
+.................... static void LCDCommand(unsigned char uc) 
+.................... { 
+....................     LCD_RS = 0; // Instruction mode 
+*
+0496:  BCF    F8A.5
+....................     delay_us(250); 
+0498:  MOVLW  CF
+049A:  MOVWF  00
+049C:  DECFSZ 00,F
+049E:  BRA    049C
+04A0:  BRA    04A2
+04A2:  NOP   
+....................     LCD_RW = 1;// Р’РѕСЃСЃС‚Р°РЅРѕРІР»РµРЅРёРµ Р±Р°Р№С‚РѕРІРѕР№ СЃРёРЅС…СЂРѕРЅРёР·Р°С†РёРё 
+04A4:  BSF    F8A.4
+....................     LCDWriteNibble(uc>>4); 
+04A6:  SWAPF  xAC,W
+04A8:  MOVWF  xAD
+04AA:  MOVLW  0F
+04AC:  ANDWF  xAD,F
+04AE:  MOVFF  AD,C0
+04B2:  RCALL  044E
+....................     LCDWriteNibble(uc);   
+04B4:  MOVFF  AC,C0
+04B8:  RCALL  044E
+04BA:  RETURN 0
+.................... } 
+....................  
+....................  
+.................... static void LCDSetCursor(unsigned char ucPos) 
+.................... { 
+....................   LCDCommand(0x80 | ucPos); 
+*
+058E:  MOVF   xAA,W
+0590:  IORLW  80
+0592:  MOVWF  xAB
+0594:  MOVWF  xAC
+0596:  RCALL  0496
+0598:  RETURN 0
+.................... } 
+....................  
+.................... static void LCDClear(void) 
+.................... { 
+....................    LCDCommand(0x1); 
+059A:  MOVLW  01
+059C:  MOVWF  xAC
+059E:  RCALL  0496
+....................    delay_us(200); 
+05A0:  MOVLW  A6
+05A2:  MOVWF  00
+05A4:  DECFSZ 00,F
+05A6:  BRA    05A4
+05A8:  NOP   
+05AA:  RETURN 0
+.................... } 
+....................  
+.................... static void LCDinit(void) 
+.................... { 
+....................   LCD_E=0; 
+*
+04BC:  BCF    F8A.3
+....................   LCD_RS=0; 
+04BE:  BCF    F8A.5
+....................     
+....................   Delay_ms(20); //1000 
+04C0:  MOVLW  14
+04C2:  MOVWF  xAB
+04C4:  RCALL  0408
+....................    
+....................   LCDWriteNibble(3); 
+04C6:  MOVLW  03
+04C8:  MOVWF  xC0
+04CA:  RCALL  044E
+....................   Delay_us(40); 
+04CC:  MOVLW  20
+04CE:  MOVWF  00
+04D0:  DECFSZ 00,F
+04D2:  BRA    04D0
+04D4:  BRA    04D6
+04D6:  NOP   
+....................   LCDWriteNibble(3); 
+04D8:  MOVLW  03
+04DA:  MOVWF  xC0
+04DC:  RCALL  044E
+....................   Delay_us(40); 
+04DE:  MOVLW  20
+04E0:  MOVWF  00
+04E2:  DECFSZ 00,F
+04E4:  BRA    04E2
+04E6:  BRA    04E8
+04E8:  NOP   
+....................   LCDWriteNibble(3); 
+04EA:  MOVLW  03
+04EC:  MOVWF  xC0
+04EE:  RCALL  044E
+....................   Delay_us(40); 
+04F0:  MOVLW  20
+04F2:  MOVWF  00
+04F4:  DECFSZ 00,F
+04F6:  BRA    04F4
+04F8:  BRA    04FA
+04FA:  NOP   
+....................   LCDWriteNibble(2); 
+04FC:  MOVLW  02
+04FE:  MOVWF  xC0
+0500:  RCALL  044E
+....................   Delay_us(40); 
+0502:  MOVLW  20
+0504:  MOVWF  00
+0506:  DECFSZ 00,F
+0508:  BRA    0506
+050A:  BRA    050C
+050C:  NOP   
+....................   
+....................  // LCDCommand(0x28);//????????? ??????????? ??????????(4 ???) ? ???????? ??????????????? 
+....................  //  LCDCommand(0b00101000);//???????? 0   
+.................... // LCDCommand(0b00101010);//???????? 1 WIN CP1261 ??????? ?????  
+....................   LCDCommand(0x2A);//???????? 1 WIN CP1261 ??????? ?????  
+050E:  MOVLW  2A
+0510:  MOVWF  xAC
+0512:  RCALL  0496
+....................    
+....................   LCDCommand(0x08);// ????????? ???????, ????????? ??????, ????????? ???????? ??????? 
+0514:  MOVLW  08
+0516:  MOVWF  xAC
+0518:  RCALL  0496
+....................   //LCDCommand(0x0F);// ???????? ???????, ???????? ??????, ???????? ???????? ??????? 
+....................   //LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ?????? 
+....................   LCDCommand(0x1);// ??????? ?????? ? ??????????? ??????? ? ?????? ???????  
+051A:  MOVLW  01
+051C:  MOVWF  xAC
+051E:  RCALL  0496
+.................... //   delay_ms(2); 
+....................   LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ??????  
+0520:  MOVLW  06
+0522:  MOVWF  xAC
+0524:  RCALL  0496
+....................   LCDCommand(0b00001111); 
+0526:  MOVLW  0F
+0528:  MOVWF  xAC
+052A:  RCALL  0496
+052C:  GOTO   1428 (RETURN)
+....................  
+....................  // LCDCommand(0x00);//????????? ?????? DRAM 
+.................... //  delay_ms(10); 
+....................  } 
+....................  
+.................... static void LCDPutCh(char c) 
+.................... { 
+....................   LCDWriteData(c); 
+*
+055C:  MOVFF  BD,BE
+0560:  BRA    0530
+0562:  RETURN 0
+.................... } 
+.................... /* 
+.................... static void LCDPutU32(U32 _u16,U8 u8NumDigs) 
+.................... { 
+....................     U32 u16a ,u16b; 
+....................      
+....................    u16a=_u16/10000000; 
+....................    u16b=u16a*10000000; 
+....................  
+....................     if (u8NumDigs>=7) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................       _u16-=u16b; 
+....................        
+....................    u16a=_u16/1000000; 
+....................    u16b=u16a*1000000; 
+....................        
+....................     if (u8NumDigs>=6) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................       _u16-=u16b; 
+....................        
+....................    u16a=_u16/100000; 
+....................    u16b=u16a*100000; 
+....................  
+....................     if (u8NumDigs>=5) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     u16a=_u16/10000; 
+....................     u16b=u16a*10000; 
+....................     if (u8NumDigs>=4) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     u16a=_u16/1000; 
+....................     u16b=u16a*1000; 
+....................     if (u8NumDigs>=3) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................        
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     u16a=_u16/100; 
+....................     u16b=u16a*100; 
+....................    if (u8NumDigs>=2) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................    _u16-=u16b; 
+....................     u16a=_u16/10; 
+....................     u16b=u16a*10; 
+....................    if (u8NumDigs>=2) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     if (u8NumDigs>=1) 
+....................     { 
+....................       LCDPutCh((U8)_u16+'0'); 
+....................     } 
+....................    
+.................... } 
+.................... */ 
+.................... /**/ 
+....................  
+.................... static void LCDPutU16(U32 _u16,U8 u8NumDigs) 
+.................... { 
+....................     
+....................     U32 u16a ,u16b; 
+....................      
+....................    u16a=_u16/10000; 
+*
+08AC:  BCF    FD8.1
+08AE:  MOVFF  B2,BF
+08B2:  MOVFF  B1,BE
+08B6:  MOVFF  B0,BD
+08BA:  MOVFF  AF,BC
+08BE:  CLRF   xC3
+08C0:  CLRF   xC2
+08C2:  MOVLW  27
+08C4:  MOVWF  xC1
+08C6:  MOVLW  10
+08C8:  MOVWF  xC0
+08CA:  RCALL  07CA
+08CC:  MOVFF  03,B7
+08D0:  MOVFF  02,B6
+08D4:  MOVFF  01,B5
+08D8:  MOVFF  00,B4
+....................    u16b=u16a*10000; 
+08DC:  MOVFF  B7,BF
+08E0:  MOVFF  B6,BE
+08E4:  MOVFF  B5,BD
+08E8:  MOVFF  B4,BC
+08EC:  CLRF   xC3
+08EE:  CLRF   xC2
+08F0:  MOVLW  27
+08F2:  MOVWF  xC1
+08F4:  MOVLW  10
+08F6:  MOVWF  xC0
+08F8:  RCALL  0858
+08FA:  MOVFF  03,BB
+08FE:  MOVFF  02,BA
+0902:  MOVFF  01,B9
+0906:  MOVFF  00,B8
+....................  
+....................     if (u8NumDigs>=5) 
+090A:  MOVF   xB3,W
+090C:  SUBLW  04
+090E:  BC    091A
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+0910:  MOVLW  30
+0912:  ADDWF  xB4,W
+0914:  MOVWF  xBC
+0916:  MOVWF  xBD
+0918:  RCALL  055C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+091A:  MOVF   xB8,W
+091C:  SUBWF  xAF,F
+091E:  MOVF   xB9,W
+0920:  SUBWFB xB0,F
+0922:  MOVF   xBA,W
+0924:  SUBWFB xB1,F
+0926:  MOVF   xBB,W
+0928:  SUBWFB xB2,F
+....................     u16a=_u16/1000; 
+092A:  BCF    FD8.1
+092C:  MOVFF  B2,BF
+0930:  MOVFF  B1,BE
+0934:  MOVFF  B0,BD
+0938:  MOVFF  AF,BC
+093C:  CLRF   xC3
+093E:  CLRF   xC2
+0940:  MOVLW  03
+0942:  MOVWF  xC1
+0944:  MOVLW  E8
+0946:  MOVWF  xC0
+0948:  RCALL  07CA
+094A:  MOVFF  03,B7
+094E:  MOVFF  02,B6
+0952:  MOVFF  01,B5
+0956:  MOVFF  00,B4
+....................     u16b=u16a*1000; 
+095A:  MOVFF  B7,BF
+095E:  MOVFF  B6,BE
+0962:  MOVFF  B5,BD
+0966:  MOVFF  B4,BC
+096A:  CLRF   xC3
+096C:  CLRF   xC2
+096E:  MOVLW  03
+0970:  MOVWF  xC1
+0972:  MOVLW  E8
+0974:  MOVWF  xC0
+0976:  RCALL  0858
+0978:  MOVFF  03,BB
+097C:  MOVFF  02,BA
+0980:  MOVFF  01,B9
+0984:  MOVFF  00,B8
+....................      
+....................     if (u8NumDigs>=4) 
+0988:  MOVF   xB3,W
+098A:  SUBLW  03
+098C:  BC    099E
+....................     { 
+....................       LCDPutCh((U8)u16a +'0'); 
+098E:  MOVLW  30
+0990:  ADDWF  xB4,W
+0992:  MOVWF  xBC
+0994:  MOVWF  xBD
+0996:  RCALL  055C
+....................       LCDPutCh('.'); 
+0998:  MOVLW  2E
+099A:  MOVWF  xBD
+099C:  RCALL  055C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+099E:  MOVF   xB8,W
+09A0:  SUBWF  xAF,F
+09A2:  MOVF   xB9,W
+09A4:  SUBWFB xB0,F
+09A6:  MOVF   xBA,W
+09A8:  SUBWFB xB1,F
+09AA:  MOVF   xBB,W
+09AC:  SUBWFB xB2,F
+....................     u16a=_u16/100; 
+09AE:  BCF    FD8.1
+09B0:  MOVFF  B2,BF
+09B4:  MOVFF  B1,BE
+09B8:  MOVFF  B0,BD
+09BC:  MOVFF  AF,BC
+09C0:  CLRF   xC3
+09C2:  CLRF   xC2
+09C4:  CLRF   xC1
+09C6:  MOVLW  64
+09C8:  MOVWF  xC0
+09CA:  RCALL  07CA
+09CC:  MOVFF  03,B7
+09D0:  MOVFF  02,B6
+09D4:  MOVFF  01,B5
+09D8:  MOVFF  00,B4
+....................     u16b=u16a*100; 
+09DC:  MOVFF  B7,BF
+09E0:  MOVFF  B6,BE
+09E4:  MOVFF  B5,BD
+09E8:  MOVFF  B4,BC
+09EC:  CLRF   xC3
+09EE:  CLRF   xC2
+09F0:  CLRF   xC1
+09F2:  MOVLW  64
+09F4:  MOVWF  xC0
+09F6:  RCALL  0858
+09F8:  MOVFF  03,BB
+09FC:  MOVFF  02,BA
+0A00:  MOVFF  01,B9
+0A04:  MOVFF  00,B8
+....................      
+....................     if (u8NumDigs>=3) 
+0A08:  MOVF   xB3,W
+0A0A:  SUBLW  02
+0A0C:  BC    0A18
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+0A0E:  MOVLW  30
+0A10:  ADDWF  xB4,W
+0A12:  MOVWF  xBC
+0A14:  MOVWF  xBD
+0A16:  RCALL  055C
+....................       //LCDPutCh('.'); 
+....................     } 
+....................  
+....................     _u16-=u16b; 
+0A18:  MOVF   xB8,W
+0A1A:  SUBWF  xAF,F
+0A1C:  MOVF   xB9,W
+0A1E:  SUBWFB xB0,F
+0A20:  MOVF   xBA,W
+0A22:  SUBWFB xB1,F
+0A24:  MOVF   xBB,W
+0A26:  SUBWFB xB2,F
+....................     u16a=_u16/10; 
+0A28:  BCF    FD8.1
+0A2A:  MOVFF  B2,BF
+0A2E:  MOVFF  B1,BE
+0A32:  MOVFF  B0,BD
+0A36:  MOVFF  AF,BC
+0A3A:  CLRF   xC3
+0A3C:  CLRF   xC2
+0A3E:  CLRF   xC1
+0A40:  MOVLW  0A
+0A42:  MOVWF  xC0
+0A44:  RCALL  07CA
+0A46:  MOVFF  03,B7
+0A4A:  MOVFF  02,B6
+0A4E:  MOVFF  01,B5
+0A52:  MOVFF  00,B4
+....................     u16b=u16a*10; 
+0A56:  MOVFF  B7,BF
+0A5A:  MOVFF  B6,BE
+0A5E:  MOVFF  B5,BD
+0A62:  MOVFF  B4,BC
+0A66:  CLRF   xC3
+0A68:  CLRF   xC2
+0A6A:  CLRF   xC1
+0A6C:  MOVLW  0A
+0A6E:  MOVWF  xC0
+0A70:  RCALL  0858
+0A72:  MOVFF  03,BB
+0A76:  MOVFF  02,BA
+0A7A:  MOVFF  01,B9
+0A7E:  MOVFF  00,B8
+....................    if (u8NumDigs>=2) 
+0A82:  MOVF   xB3,W
+0A84:  SUBLW  01
+0A86:  BC    0A92
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+0A88:  MOVLW  30
+0A8A:  ADDWF  xB4,W
+0A8C:  MOVWF  xBC
+0A8E:  MOVWF  xBD
+0A90:  RCALL  055C
+....................     } 
+....................  
+....................     _u16-=u16b; 
+0A92:  MOVF   xB8,W
+0A94:  SUBWF  xAF,F
+0A96:  MOVF   xB9,W
+0A98:  SUBWFB xB0,F
+0A9A:  MOVF   xBA,W
+0A9C:  SUBWFB xB1,F
+0A9E:  MOVF   xBB,W
+0AA0:  SUBWFB xB2,F
+....................     if (u8NumDigs>=1) 
+0AA2:  MOVF   xB3,W
+0AA4:  SUBLW  00
+0AA6:  BC    0AA8
+....................     { 
+....................       //LCDPutCh((U8)_u16+'0'); 
+....................     } 
+0AA8:  RETURN 0
+....................    
+.................... } 
+....................  
+....................  
+....................  
+.................... /* // функция без изменений 
+....................  static void LCDPutU16(U32 _u16,U8 u8NumDigs) 
+.................... {  
+....................    U32 u16a ,u16b; 
+....................    u16a=_u16 / 10000; 
+....................    u16b=u16a*10000; 
+....................  
+....................     if (u8NumDigs >= 5) 
+....................    { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16 -= u16b; 
+....................     u16a = _u16 / 1000; 
+....................     u16b = u16a * 1000; 
+....................     if (u8NumDigs >= 4) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16 -= u16b; 
+....................     u16a = _u16 / 100; 
+....................     u16b = u16a * 100; 
+....................     if (u8NumDigs >= 3) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................        
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     u16a=_u16/10; 
+....................     u16b=u16a*10; 
+....................    if (u8NumDigs>=2) 
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+....................     } 
+....................  
+....................     _u16-=u16b; 
+....................     if (u8NumDigs>=1) 
+....................     { 
+....................       LCDPutCh((U8)_u16+'0'); 
+....................     } 
+.................... } 
+.................... */ 
+.................... static void LCDPutS16(S16 s16a,U8 u8NumDigs) 
+*
+0BDA:  MOVLW  2B
+0BDC:  MOVWF  xAE
+.................... { 
+....................    char c='+'; 
+....................  
+....................    if (s16a<0) 
+0BDE:  BTFSS  xAC.7
+0BE0:  BRA    0BF0
+....................    { 
+....................       s16a=-s16a; 
+0BE2:  COMF   xAB,F
+0BE4:  COMF   xAC,F
+0BE6:  INCF   xAB,F
+0BE8:  BTFSC  FD8.2
+0BEA:  INCF   xAC,F
+....................       c='-'; 
+0BEC:  MOVLW  2D
+0BEE:  MOVWF  xAE
+....................    } 
+....................    LCDPutCh(c); 
+0BF0:  MOVFF  AE,BD
+0BF4:  RCALL  055C
+....................    LCDPutU16((U16)s16a, u8NumDigs); 
+0BF6:  CLRF   xB2
+0BF8:  CLRF   xB1
+0BFA:  MOVFF  AC,B0
+0BFE:  MOVFF  AB,AF
+0C02:  MOVFF  AD,B3
+0C06:  RCALL  08AC
+0C08:  RETURN 0
+.................... } 
+....................  
+.................... static void LCDMsg(char c) 
+.................... { 
+....................     LCDPutCh(c); 
+*
+0564:  MOVFF  AC,BD
+0568:  RCALL  055C
+056A:  GOTO   0582 (RETURN)
+.................... } 
+....................  
+.................... static void LCDWelcome(void){ 
+*
+05AC:  CLRF   xA9
+....................    unsigned int8 i = 0; 
+.................... //    LCDClear(); 
+....................     LCDMsg("Измеритель маг."); 
+05AE:  MOVLW  A2
+05B0:  MOVWF  FF6
+05B2:  MOVLW  00
+05B4:  MOVWF  FF7
+05B6:  RCALL  056E
+....................     LCDSetCursor(0x40); 
+05B8:  MOVLW  40
+05BA:  MOVWF  xAA
+05BC:  RCALL  058E
+....................     LCDMsg("индукции.ПО v2.3"); 
+05BE:  MOVLW  B2
+05C0:  MOVWF  FF6
+05C2:  MOVLW  00
+05C4:  MOVWF  FF7
+05C6:  RCALL  056E
+....................     Delay_ms(1000); 
+05C8:  MOVLW  04
+05CA:  MOVWF  xAA
+05CC:  MOVLW  FA
+05CE:  MOVWF  xAB
+05D0:  RCALL  0408
+05D2:  DECFSZ xAA,F
+05D4:  BRA    05CC
+....................     LCDClear();   
+05D6:  RCALL  059A
+05D8:  GOTO   142C (RETURN)
+.................... } 
+....................  
+....................  
+.................... unsigned int1 int_fl = 0,zero_set1=0; 
+.................... static U8 ff1=0; 
+.................... unsigned int1 fl2=0, menufl1 =0, menufl2 =0, menufl3 =0, menufl4 =1; //????? ??????? ?????? 
+.................... static U8 TMR0fl=0, MenuItemNum=0;                   
+.................... static U8 RXd_buf=0; 
+....................  
+.................... char  ConfigRegA = 0x00, ConfigRegB = 0x01, ModeReg = 0x02, xMSB = 0x03, xLSB = 0x04, // ?????? ????????? ??????? ?? 
+....................       zMSB = 0x05, zLSB = 0x06,yMSB = 0x07,yLSB = 0x08,StatReg = 0x09, idRegA = 0x10, 
+....................       idRegB = 0x11, idRegC = 0x12, EEprom_adr = 0xA0; 
+....................        
+.................... U8 my_arr[4];      
+....................     
+.................... signed int16 SumX=0;  
+.................... signed int16 SumY=0;  
+.................... signed int16 SumZ=0; 
+....................         
+.................... signed int16 SumX0=0;  
+.................... signed int16 SumY0=0; 
+.................... signed int16 SumZ0=0; 
+....................  
+.................... signed int32 average_Xg=0;  
+.................... signed int32 average_Yg=0; 
+.................... signed int32 average_Zg=0; 
+....................               
+.................... unsigned int16 Xh =0;    
+.................... unsigned int8 Xl = 0; 
+.................... unsigned int16 Yh =0; 
+.................... unsigned int8 Yl = 0; 
+.................... unsigned int16 Zh =0; 
+.................... unsigned int8 Zl = 0; 
+....................  
+.................... float Xd = 0; 
+.................... float Yd = 0; 
+.................... float Zd = 0; 
+....................  
+.................... float kx_rd = 1.0; 
+.................... float ky_rd = 1.0; 
+.................... float kz_rd = 1.0; 
+....................  
+.................... U8 aver_count = 0; 
+.................... float c = 0; 
+.................... S32 average_X, average_Y, average_Z; 
+....................  
+.................... U8 crc_buf_wr[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
+.................... U8 crc_buf_rd[16] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
+.................... U8 crc_wr_index = 0; 
+.................... U8 crc_rd_index = 0; 
+....................  
+.................... //****************** Sensor func ************************************ 
+.................... static void SensWrData(unsigned int8 Adr, Data){   
+....................    i2c_start(); 
+*
+01A2:  BSF    F94.4
+01A4:  BRA    01A6
+01A6:  BRA    01A8
+01A8:  BSF    F94.3
+01AA:  BRA    01AC
+01AC:  BRA    01AE
+01AE:  NOP   
+01B0:  BCF    F8B.4
+01B2:  BCF    F94.4
+01B4:  BRA    01B6
+01B6:  BRA    01B8
+01B8:  BCF    F8B.3
+01BA:  BCF    F94.3
+....................    i2c_write(0x3C); 
+01BC:  MOVLW  3C
+01BE:  MOVWF  xCC
+01C0:  RCALL  00EE
+....................                         // The default (factory) HMC5883 7-bit slave address  
+....................                         // is 0x3C for write operations, or 0x3D for read operations. 
+....................    i2c_write(Adr); 
+01C2:  MOVFF  CA,CC
+01C6:  RCALL  00EE
+....................    i2c_write(Data); 
+01C8:  MOVFF  CB,CC
+01CC:  RCALL  00EE
+....................    i2c_stop(); 
+01CE:  BCF    F94.4
+01D0:  NOP   
+01D2:  BSF    F94.3
+01D4:  BTFSS  F82.3
+01D6:  BRA    01D4
+01D8:  BRA    01DA
+01DA:  BRA    01DC
+01DC:  BRA    01DE
+01DE:  NOP   
+01E0:  BSF    F94.4
+01E2:  BRA    01E4
+01E4:  BRA    01E6
+01E6:  RETURN 0
+....................    } 
+....................     
+.................... static char SensRdData(char Adr){    
+....................    char Data = 0; 
+....................     
+....................    i2c_start();   
+....................    i2c_write(0x3C); // The default (factory) HMC5883 7-bit slave address  
+....................                     // is 0x3C for write operations, or 0x3D for read operations. 
+....................    i2c_write(Adr); // pointer  
+....................   
+....................    i2c_stop(); 
+....................    delay_us(10); 
+....................     i2c_start(); 
+....................    i2c_write(0x3D); //i2c Read 
+....................    delay_us(10); 
+....................    Data = i2c_read(); 
+....................    delay_us(10); 
+....................    Data = i2c_read(); 
+....................    delay_us(10); 
+....................    i2c_stop(); 
+....................     
+....................    return Data; 
+....................    } 
+....................      
+.................... static void SensInit (){   
+....................    //SensWrData(ConfigRegA,0x50); //  F = 15 Hz + ??????. ?? 4 ???????? 
+....................    //SensWrData(ConfigRegA,0x44); //  F = 3 Hz + ??????. ?? 4 ???????? 
+....................    //SensWrData(ConfigRegA,0x08); //  F = 3 Hz/1 
+....................    //SensWrData(ConfigRegA,0x14); //  F = 30 Hz/1 
+....................    //SensWrData(ConfigRegA,0x70); //  F = 15 Hz/8 
+....................    //SensWrData(ConfigRegA,0x50); //  F = 15 Hz/4 
+....................    SensWrData(ConfigRegA,0x18); //  F = 30 Hz/1 
+....................    SensWrData(ConfigRegB,0xE0); // range = +/- 8.1 Ga 
+....................    SensWrData(ModeReg,0x00); // continuous measurment mode  
+....................    } 
+....................  
+.................... static signed int16 SelfCal(){   
+....................    unsigned int16 Xh = 0; 
+....................    unsigned int8 Xl = 0; 
+....................    unsigned int16 Yh = 0; 
+....................    unsigned int8 Yl = 0; 
+....................    unsigned int16 Zh = 0; 
+....................    unsigned int8 Zl = 0; 
+....................  
+....................      SensInit(); 
+....................      delay_us(10); 
+....................    if (int_fl){         
+....................       i2c_start();   
+....................       i2c_write(0x3C); // The default (factory) HMC5883 7-bit slave address  
+....................                     // is 0x3C for write operations, or 0x3D for read operations. 
+....................       i2c_write(0x03); // pointer  
+....................       i2c_stop(); 
+....................       delay_us(10); 
+....................     
+....................       i2c_start(); 
+....................       i2c_write(0x3D); //i2c Read 
+....................   
+....................       Xh = i2c_read();   // X MSB 
+....................       Xl = i2c_read();   // X LSB 
+....................       SumX = (Xh<<8)|Xl;   //?????????????? ???????? ????????. ??? ? 
+....................       Yh = i2c_read();  // Y MSB 
+....................       Yl = i2c_read();  // Y LSB 
+....................       SumY = (Yh<<8)|Yl;   //?????????????? ???????? ????????. ??? Y 
+....................       Zh = i2c_read();  // Z MSB 
+....................       Zl = i2c_read();  // Z LSB 
+....................       SumZ = (Zh<<8)|Zl;  //?????????????? ???????? ????????. ??? Z 
+....................       i2c_read();    //if adress pointer = 08, adress pointer = 03 
+....................       i2c_stop(); 
+....................       } 
+....................          
+....................    delay_us(10); 
+....................   // SensWrData(ConfigRegA,0x00); // selftest end         
+....................         //Printf("X= %Ld ",SumX); 
+....................     //Printf("Y= %Ld ",SumY); 
+....................     //Printf("Z= %Ld\n\r",SumZ); 
+....................     //restart_wdt(); 
+....................    return 1; 
+....................    } 
+....................  
+.................... static void SensRdAll(){ 
+....................     
+....................    /* 
+....................     
+....................    if (int_fl){ 
+....................       DISABLE_INTERRUPTS(INT_EXT); 
+....................       i2c_start();   
+....................       i2c_write(0x3C); // The default (factory) HMC5883 7-bit slave address  
+....................                        // is 0x3C for write operations, or 0x3D for read operations. 
+....................       i2c_write(0x03); // pointer  
+....................       i2c_stop(); 
+....................        
+....................       i2c_start(); 
+....................       i2c_write(0x3D); //i2c Read 
+....................        
+....................       Xh = i2c_read();   // X MSB 
+....................       Xl = i2c_read();   // X LSB 
+....................       SumX = (Xh<<8)|Xl;   //?????????????? ???????? ????????. ??? ?    
+....................       //delay_us(20);                                    
+....................       Yh = i2c_read();  // Y MSB 
+....................       Yl = i2c_read();  // Y LSB 
+....................       SumY = (Yh<<8)|Yl;   //?????????????? ???????? ????????. ??? Y 
+....................       //delay_us(20); 
+....................       Zh = i2c_read();  // Z MSB 
+....................       Zl = i2c_read();  // Z LSB 
+....................       SumZ = (Zh<<8)|Zl;  //?????????????? ???????? ????????. ??? Z   
+....................       //delay_us(20); 
+....................       i2c_stop(); 
+....................    */    
+....................  
+....................    if (fl2){ // ?????? ???.0 ?? ??????! 
+*
+0E74:  BTFSS  1A.2
+0E76:  BRA    0EB8
+....................                // ????? ????? "???.0" 
+....................       LCDClear(); 
+0E78:  CALL   059A
+....................       Lcdsetcursor(0); 
+0E7C:  CLRF   xAA
+0E7E:  CALL   058E
+....................       LcdMsg(" УСТАНОВКА НУЛЯ ");     
+0E82:  MOVLW  C4
+0E84:  MOVWF  FF6
+0E86:  MOVLW  00
+0E88:  MOVWF  FF7
+0E8A:  CALL   056E
+....................       SumX0=SumX; 
+0E8E:  MOVFF  32,38
+0E92:  MOVFF  31,37
+....................       SumY0=SumY; 
+0E96:  MOVFF  34,3A
+0E9A:  MOVFF  33,39
+....................       SumZ0=SumZ;   
+0E9E:  MOVFF  36,3C
+0EA2:  MOVFF  35,3B
+....................       delay_ms(1000); 
+0EA6:  MOVLW  04
+0EA8:  MOVWF  xA9
+0EAA:  MOVLW  FA
+0EAC:  MOVWF  xAB
+0EAE:  CALL   0408
+0EB2:  DECFSZ xA9,F
+0EB4:  BRA    0EAA
+....................       fl2=0; 
+0EB6:  BCF    1A.2
+....................    }      
+....................     
+....................    average_Zg = (average_Zg/10)-SumZ0; 
+0EB8:  BCF    FD8.1
+0EBA:  MOVFF  48,AC
+0EBE:  MOVFF  47,AB
+0EC2:  MOVFF  46,AA
+0EC6:  MOVFF  45,A9
+0ECA:  CLRF   xB0
+0ECC:  CLRF   xAF
+0ECE:  CLRF   xAE
+0ED0:  MOVLW  0A
+0ED2:  MOVWF  xAD
+0ED4:  RCALL  0C0A
+0ED6:  MOVFF  03,AC
+0EDA:  MOVFF  02,AB
+0EDE:  MOVFF  01,AA
+0EE2:  MOVFF  00,A9
+0EE6:  MOVFF  3B,00
+0EEA:  MOVFF  3C,01
+0EEE:  CLRF   02
+0EF0:  CLRF   03
+0EF2:  BTFSS  3C.7
+0EF4:  BRA    0EFA
+0EF6:  DECF   02,F
+0EF8:  DECF   03,F
+0EFA:  MOVF   00,W
+0EFC:  SUBWF  xA9,W
+0EFE:  MOVWF  45
+0F00:  MOVF   01,W
+0F02:  SUBWFB xAA,W
+0F04:  MOVWF  46
+0F06:  MOVF   02,W
+0F08:  SUBWFB xAB,W
+0F0A:  MOVWF  47
+0F0C:  MOVF   03,W
+0F0E:  SUBWFB xAC,W
+0F10:  MOVWF  48
+....................    average_Yg = (average_Yg/10)-SumY0; 
+0F12:  BCF    FD8.1
+0F14:  MOVFF  44,AC
+0F18:  MOVFF  43,AB
+0F1C:  MOVFF  42,AA
+0F20:  MOVFF  41,A9
+0F24:  CLRF   xB0
+0F26:  CLRF   xAF
+0F28:  CLRF   xAE
+0F2A:  MOVLW  0A
+0F2C:  MOVWF  xAD
+0F2E:  RCALL  0C0A
+0F30:  MOVFF  03,AC
+0F34:  MOVFF  02,AB
+0F38:  MOVFF  01,AA
+0F3C:  MOVFF  00,A9
+0F40:  MOVFF  39,00
+0F44:  MOVFF  3A,01
+0F48:  CLRF   02
+0F4A:  CLRF   03
+0F4C:  BTFSS  3A.7
+0F4E:  BRA    0F54
+0F50:  DECF   02,F
+0F52:  DECF   03,F
+0F54:  MOVF   00,W
+0F56:  SUBWF  xA9,W
+0F58:  MOVWF  41
+0F5A:  MOVF   01,W
+0F5C:  SUBWFB xAA,W
+0F5E:  MOVWF  42
+0F60:  MOVF   02,W
+0F62:  SUBWFB xAB,W
+0F64:  MOVWF  43
+0F66:  MOVF   03,W
+0F68:  SUBWFB xAC,W
+0F6A:  MOVWF  44
+....................    average_Xg = (average_Xg/10)-SumX0; 
+0F6C:  BCF    FD8.1
+0F6E:  MOVFF  40,AC
+0F72:  MOVFF  3F,AB
+0F76:  MOVFF  3E,AA
+0F7A:  MOVFF  3D,A9
+0F7E:  CLRF   xB0
+0F80:  CLRF   xAF
+0F82:  CLRF   xAE
+0F84:  MOVLW  0A
+0F86:  MOVWF  xAD
+0F88:  RCALL  0C0A
+0F8A:  MOVFF  03,AC
+0F8E:  MOVFF  02,AB
+0F92:  MOVFF  01,AA
+0F96:  MOVFF  00,A9
+0F9A:  MOVFF  37,00
+0F9E:  MOVFF  38,01
+0FA2:  CLRF   02
+0FA4:  CLRF   03
+0FA6:  BTFSS  38.7
+0FA8:  BRA    0FAE
+0FAA:  DECF   02,F
+0FAC:  DECF   03,F
+0FAE:  MOVF   00,W
+0FB0:  SUBWF  xA9,W
+0FB2:  MOVWF  3D
+0FB4:  MOVF   01,W
+0FB6:  SUBWFB xAA,W
+0FB8:  MOVWF  3E
+0FBA:  MOVF   02,W
+0FBC:  SUBWFB xAB,W
+0FBE:  MOVWF  3F
+0FC0:  MOVF   03,W
+0FC2:  SUBWFB xAC,W
+0FC4:  MOVWF  40
+....................     
+....................    //y = (8.1*x)/2048; 8.1/2048 = 0.0039550781252 
+....................     
+....................    Xd = average_Xg * 0.0039550781252; 
+0FC6:  MOVFF  40,AC
+0FCA:  MOVFF  3F,AB
+0FCE:  MOVFF  3E,AA
+0FD2:  MOVFF  3D,A9
+0FD6:  RCALL  0CEE
+0FD8:  MOVFF  03,AC
+0FDC:  MOVFF  02,AB
+0FE0:  MOVFF  01,AA
+0FE4:  MOVFF  00,A9
+0FE8:  MOVLW  9A
+0FEA:  MOVWF  xB0
+0FEC:  MOVLW  99
+0FEE:  MOVWF  xAF
+0FF0:  MOVLW  01
+0FF2:  MOVWF  xAE
+0FF4:  MOVLW  77
+0FF6:  MOVWF  xAD
+0FF8:  RCALL  0AAA
+0FFA:  MOVFF  03,55
+0FFE:  MOVFF  02,54
+1002:  MOVFF  01,53
+1006:  MOVFF  00,52
+....................    Xd *= kx_rd;      // умножение на поправочный коэффициент из ПЗУ 
+100A:  MOVFF  55,AC
+100E:  MOVFF  54,AB
+1012:  MOVFF  53,AA
+1016:  MOVFF  52,A9
+101A:  MOVFF  61,B0
+101E:  MOVFF  60,AF
+1022:  MOVFF  5F,AE
+1026:  MOVFF  5E,AD
+102A:  RCALL  0AAA
+102C:  MOVFF  03,55
+1030:  MOVFF  02,54
+1034:  MOVFF  01,53
+1038:  MOVFF  00,52
+....................    Yd = average_Yg * 0.0039550781252; 
+103C:  MOVFF  44,AC
+1040:  MOVFF  43,AB
+1044:  MOVFF  42,AA
+1048:  MOVFF  41,A9
+104C:  RCALL  0CEE
+104E:  MOVFF  03,AC
+1052:  MOVFF  02,AB
+1056:  MOVFF  01,AA
+105A:  MOVFF  00,A9
+105E:  MOVLW  9A
+1060:  MOVWF  xB0
+1062:  MOVLW  99
+1064:  MOVWF  xAF
+1066:  MOVLW  01
+1068:  MOVWF  xAE
+106A:  MOVLW  77
+106C:  MOVWF  xAD
+106E:  RCALL  0AAA
+1070:  MOVFF  03,59
+1074:  MOVFF  02,58
+1078:  MOVFF  01,57
+107C:  MOVFF  00,56
+....................    Yd *= ky_rd;      // умножение на поправочный коэффициент из ПЗУ 
+1080:  MOVFF  59,AC
+1084:  MOVFF  58,AB
+1088:  MOVFF  57,AA
+108C:  MOVFF  56,A9
+1090:  MOVFF  65,B0
+1094:  MOVFF  64,AF
+1098:  MOVFF  63,AE
+109C:  MOVFF  62,AD
+10A0:  RCALL  0AAA
+10A2:  MOVFF  03,59
+10A6:  MOVFF  02,58
+10AA:  MOVFF  01,57
+10AE:  MOVFF  00,56
+....................    Zd = average_Zg * 0.0039550781252; 
+10B2:  MOVFF  48,AC
+10B6:  MOVFF  47,AB
+10BA:  MOVFF  46,AA
+10BE:  MOVFF  45,A9
+10C2:  RCALL  0CEE
+10C4:  MOVFF  03,AC
+10C8:  MOVFF  02,AB
+10CC:  MOVFF  01,AA
+10D0:  MOVFF  00,A9
+10D4:  MOVLW  9A
+10D6:  MOVWF  xB0
+10D8:  MOVLW  99
+10DA:  MOVWF  xAF
+10DC:  MOVLW  01
+10DE:  MOVWF  xAE
+10E0:  MOVLW  77
+10E2:  MOVWF  xAD
+10E4:  RCALL  0AAA
+10E6:  MOVFF  03,5D
+10EA:  MOVFF  02,5C
+10EE:  MOVFF  01,5B
+10F2:  MOVFF  00,5A
+....................    Zd *= kz_rd;      // умножение на поправочный коэффициент из ПЗУ 
+10F6:  MOVFF  5D,AC
+10FA:  MOVFF  5C,AB
+10FE:  MOVFF  5B,AA
+1102:  MOVFF  5A,A9
+1106:  MOVFF  69,B0
+110A:  MOVFF  68,AF
+110E:  MOVFF  67,AE
+1112:  MOVFF  66,AD
+1116:  RCALL  0AAA
+1118:  MOVFF  03,5D
+111C:  MOVFF  02,5C
+1120:  MOVFF  01,5B
+1124:  MOVFF  00,5A
+....................      
+....................    Printf("x%05Ld\n",average_Zg); 
+1128:  MOVLW  78
+112A:  BTFSS  F9E.4
+112C:  BRA    112A
+112E:  MOVWF  FAD
+1130:  MOVLW  45
+1132:  MOVWF  FE9
+1134:  MOVFF  48,AC
+1138:  MOVFF  47,AB
+113C:  MOVFF  46,AA
+1140:  MOVFF  45,A9
+1144:  RCALL  0D44
+1146:  MOVLW  0A
+1148:  BTFSS  F9E.4
+114A:  BRA    1148
+114C:  MOVWF  FAD
+....................    Printf("y%05Ld\n",average_Yg); 
+114E:  MOVLW  79
+1150:  BTFSS  F9E.4
+1152:  BRA    1150
+1154:  MOVWF  FAD
+1156:  MOVLW  45
+1158:  MOVWF  FE9
+115A:  MOVFF  44,AC
+115E:  MOVFF  43,AB
+1162:  MOVFF  42,AA
+1166:  MOVFF  41,A9
+116A:  RCALL  0D44
+116C:  MOVLW  0A
+116E:  BTFSS  F9E.4
+1170:  BRA    116E
+1172:  MOVWF  FAD
+....................    Printf("z%05Ld\n",average_Xg); 
+1174:  MOVLW  7A
+1176:  BTFSS  F9E.4
+1178:  BRA    1176
+117A:  MOVWF  FAD
+117C:  MOVLW  45
+117E:  MOVWF  FE9
+1180:  MOVFF  40,AC
+1184:  MOVFF  3F,AB
+1188:  MOVFF  3E,AA
+118C:  MOVFF  3D,A9
+1190:  RCALL  0D44
+1192:  MOVLW  0A
+1194:  BTFSS  F9E.4
+1196:  BRA    1194
+1198:  MOVWF  FAD
+....................  
+.................... /* 
+....................   // Output value of the magnetic field along the axis "X" 
+....................    LcdMsg("Bx"); 
+....................    if (Approximation(Zd) >= 0){ 
+....................       LcdMsg(" "); LcdPutU16(Approximation(Zd*1000) / 1000, 1); 
+....................       } 
+....................    else{ 
+....................       LcdMsg("-"); LcdPutU16(abs(Approximation(Zd*1000)) / 1000, 1); 
+....................    } 
+....................    LcdMsg("."); 
+....................    LcdPutU16(Remainder(Approximation(Zd*1000)), 2); 
+....................    LcdMsg("  "); 
+....................     
+.................... // Output value of the magnetic field along the axis "Z" 
+....................    LcdMsg("Bz"); 
+....................    if (Approximation(Xd) >= 0){ 
+....................       LcdMsg(" "); LcdPutU16(Approximation(Xd*1000) / 1000, 1); 
+....................       } 
+....................    else{ 
+....................       LcdMsg("-"); LcdPutU16(abs(Approximation(Xd*1000)) / 1000, 1); 
+....................    } 
+....................    LcdMsg("."); 
+....................    LcdPutU16(Remainder(Approximation(Xd*1000)), 2); 
+.................... //   LcdMsg(" "); 
+....................  
+.................... // Output value of the magnetic field along the axis "Y" 
+....................    LcdSetCursor(0x40); 
+....................    LcdMsg("By"); 
+.................... if (Approximation(Yd) >= 0){ 
+....................       LcdMsg(" "); LcdPutU16(Approximation(Yd*1000) / 1000, 1); 
+....................       } 
+....................    else{ 
+....................       LcdMsg("-"); LcdPutU16(abs(Approximation(Yd*1000)) / 1000, 1); 
+....................    } 
+....................    LcdMsg("."); 
+....................    LcdPutU16(Remainder(Approximation(Yd*1000)), 2); 
+....................    LcdMsg("    Гс.  "); 
+....................  
+.................... */ 
+....................  
+....................      // Значения поля Bx, By, Bz выводятся согласно пожеланию заказчика // 
+....................  
+....................    LcdSetCursor(0x00); 
+119A:  CLRF   xAA
+119C:  CALL   058E
+....................    LcdMsg("Bx"); 
+11A0:  MOVLW  D6
+11A2:  MOVWF  FF6
+11A4:  MOVLW  00
+11A6:  MOVWF  FF7
+11A8:  CALL   056E
+....................    LcdPutS16(Zd*1000,4); 
+11AC:  MOVFF  5D,AC
+11B0:  MOVFF  5C,AB
+11B4:  MOVFF  5B,AA
+11B8:  MOVFF  5A,A9
+11BC:  CLRF   xB0
+11BE:  CLRF   xAF
+11C0:  MOVLW  7A
+11C2:  MOVWF  xAE
+11C4:  MOVLW  88
+11C6:  MOVWF  xAD
+11C8:  RCALL  0AAA
+11CA:  MOVFF  03,AC
+11CE:  MOVFF  02,AB
+11D2:  MOVFF  01,AA
+11D6:  MOVFF  00,A9
+11DA:  RCALL  0E3C
+11DC:  MOVFF  02,AA
+11E0:  MOVFF  01,A9
+11E4:  MOVFF  02,AC
+11E8:  MOVFF  01,AB
+11EC:  MOVLW  04
+11EE:  MOVWF  xAD
+11F0:  RCALL  0BDA
+....................    LcdMsg("  By"); 
+11F2:  MOVLW  DA
+11F4:  MOVWF  FF6
+11F6:  MOVLW  00
+11F8:  MOVWF  FF7
+11FA:  CALL   056E
+....................    LcdPutS16(Yd*1000,4); 
+11FE:  MOVFF  59,AC
+1202:  MOVFF  58,AB
+1206:  MOVFF  57,AA
+120A:  MOVFF  56,A9
+120E:  CLRF   xB0
+1210:  CLRF   xAF
+1212:  MOVLW  7A
+1214:  MOVWF  xAE
+1216:  MOVLW  88
+1218:  MOVWF  xAD
+121A:  RCALL  0AAA
+121C:  MOVFF  03,AC
+1220:  MOVFF  02,AB
+1224:  MOVFF  01,AA
+1228:  MOVFF  00,A9
+122C:  RCALL  0E3C
+122E:  MOVFF  02,AA
+1232:  MOVFF  01,A9
+1236:  MOVFF  02,AC
+123A:  MOVFF  01,AB
+123E:  MOVLW  04
+1240:  MOVWF  xAD
+1242:  RCALL  0BDA
+....................    LcdSetCursor(0x40); 
+1244:  MOVLW  40
+1246:  MOVWF  xAA
+1248:  CALL   058E
+....................    LcdMsg("    Bz"); 
+124C:  MOVLW  E0
+124E:  MOVWF  FF6
+1250:  MOVLW  00
+1252:  MOVWF  FF7
+1254:  CALL   056E
+....................    LcdPutS16(Xd*1000,4); 
+1258:  MOVFF  55,AC
+125C:  MOVFF  54,AB
+1260:  MOVFF  53,AA
+1264:  MOVFF  52,A9
+1268:  CLRF   xB0
+126A:  CLRF   xAF
+126C:  MOVLW  7A
+126E:  MOVWF  xAE
+1270:  MOVLW  88
+1272:  MOVWF  xAD
+1274:  RCALL  0AAA
+1276:  MOVFF  03,AC
+127A:  MOVFF  02,AB
+127E:  MOVFF  01,AA
+1282:  MOVFF  00,A9
+1286:  RCALL  0E3C
+1288:  MOVFF  02,AA
+128C:  MOVFF  01,A9
+1290:  MOVFF  02,AC
+1294:  MOVFF  01,AB
+1298:  MOVLW  04
+129A:  MOVWF  xAD
+129C:  RCALL  0BDA
+....................    LcdMsg("  Гс."); 
+129E:  MOVLW  E8
+12A0:  MOVWF  FF6
+12A2:  MOVLW  00
+12A4:  MOVWF  FF7
+12A6:  CALL   056E
+....................  
+....................    int_fl = false; 
+12AA:  BCF    1A.0
+12AC:  GOTO   170C (RETURN)
+....................        
+.................... } 
+....................  
+.................... //****************** Sensor func ************************************ 
+....................  
+.................... //------------------ EEPROM func ------------------------------------  
+....................  
+....................  U16 CRC16(U8* data_p, U8 length) 
+*
+073A:  SETF   xAE
+073C:  SETF   xAD
+....................  { 
+....................     // расчет контрольной суммы 
+....................     // взят из интернета 
+....................      
+....................     U8 x; 
+....................     U16 crc = 0xFFFF; 
+....................  
+....................     while (length--){ 
+073E:  MOVF   xAB,W
+0740:  DECF   xAB,F
+0742:  XORLW  00
+0744:  BZ    079E
+....................         x = crc >> 8 ^ *data_p++; 
+0746:  MOVFF  AA,03
+074A:  MOVF   xA9,W
+074C:  INCF   xA9,F
+074E:  BTFSC  FD8.2
+0750:  INCF   xAA,F
+0752:  MOVWF  FE9
+0754:  MOVFF  03,FEA
+0758:  MOVF   FEF,W
+075A:  XORWF  xAE,W
+075C:  MOVWF  xAC
+....................         x ^= x>>4; 
+075E:  SWAPF  xAC,W
+0760:  MOVWF  00
+0762:  MOVLW  0F
+0764:  ANDWF  00,F
+0766:  MOVF   00,W
+0768:  XORWF  xAC,F
+....................         crc = (crc << 8) ^ ((U16)(x << 12)) ^ ((U16)(x <<5)) ^ ((U16)x); 
+076A:  MOVFF  AD,B0
+076E:  CLRF   xAF
+0770:  MOVLW  00
+0772:  CLRF   03
+0774:  XORWF  xAF,F
+0776:  MOVF   03,W
+0778:  XORWF  xB0,F
+077A:  SWAPF  xAC,W
+077C:  MOVWF  00
+077E:  RLCF   00,F
+0780:  MOVLW  E0
+0782:  ANDWF  00,F
+0784:  MOVF   00,W
+0786:  CLRF   03
+0788:  XORWF  xAF,F
+078A:  MOVF   03,W
+078C:  XORWF  xB0,F
+078E:  CLRF   03
+0790:  MOVF   xAC,W
+0792:  XORWF  xAF,W
+0794:  MOVWF  xAD
+0796:  MOVF   03,W
+0798:  XORWF  xB0,W
+079A:  MOVWF  xAE
+079C:  BRA    073E
+....................     } 
+....................     return crc; 
+079E:  MOVFF  AD,01
+07A2:  MOVFF  AE,02
+07A6:  GOTO   14DC (RETURN)
+.................... } 
+....................  
+....................  static void rom_wr_byte(U16 addr, U8 dataByte) 
+....................    { 
+....................       /// записывает байт данных по 16-бит. адресу 
+....................        
+....................       U8 addr_MSB = 0; 
+....................       U8 addr_LSB = 0;  
+....................        
+....................       addr_MSB = (addr >> 8); 
+....................       addr_LSB = addr; 
+....................        
+....................       i2c_start(); 
+....................       i2c_write(EEprom_adr | 0); // запись 
+....................  
+....................    // A read operation is initiated if this bit is high  
+....................    // and a write operation is initiated if this bit is low. 
+....................                          
+....................       i2c_write(addr_MSB); 
+....................       i2c_write(addr_LSB); 
+....................       i2c_write(dataByte); 
+....................       i2c_stop(); 
+....................       delay_ms(15); // t записи в rom - 10 мс 
+....................       crc_buf_wr[crc_wr_index] = dataByte; 
+....................       crc_wr_index++; 
+....................    } 
+....................  
+....................  static U8 rom_rd_byte(U16 addr) 
+*
+05DC:  CLRF   xB4
+05DE:  CLRF   xB5
+05E0:  CLRF   xB6
+....................    { 
+....................       /// чтение байта данных по 16-бит. адресу 
+....................        
+....................       U8 rd_data_byte = 0; 
+....................       U8 addr_MSB = 0;        // старший байт адреса 
+....................       U8 addr_LSB = 0;        // младший байт адреса 
+....................        
+....................       addr_MSB = (addr >> 8); // заполнение ст. байта из 2-байт. адреса 
+05E2:  MOVFF  B3,B5
+....................       addr_LSB = addr;        // заполнение мл. байта из 2-байт. адреса 
+05E6:  MOVFF  B2,B6
+....................        
+....................       i2c_start(); 
+05EA:  BSF    F94.4
+05EC:  BRA    05EE
+05EE:  BRA    05F0
+05F0:  BSF    F94.3
+05F2:  BRA    05F4
+05F4:  BRA    05F6
+05F6:  NOP   
+05F8:  BCF    F8B.4
+05FA:  BCF    F94.4
+05FC:  BRA    05FE
+05FE:  BRA    0600
+0600:  BCF    F8B.3
+0602:  BCF    F94.3
+....................       i2c_write(EEprom_adr | 0); // команда чтения 
+0604:  MOVFF  2C,B7
+0608:  CLRF   16
+060A:  BTFSC  FF2.7
+060C:  BSF    16.7
+060E:  BCF    FF2.7
+0610:  MOVFF  2C,CC
+0614:  RCALL  00EE
+0616:  BTFSC  16.7
+0618:  BSF    FF2.7
+061A:  CLRF   16
+061C:  BTFSC  FF2.7
+061E:  BSF    16.7
+0620:  BCF    FF2.7
+....................    // A read operation is initiated if this bit is high  
+....................    // and a write operation is initiated if this bit is low. 
+....................                          
+....................       i2c_write(addr_MSB);    // выдача на линию ст. байта адреса 
+0622:  MOVFF  B5,CC
+0626:  RCALL  00EE
+0628:  BTFSC  16.7
+062A:  BSF    FF2.7
+062C:  CLRF   16
+062E:  BTFSC  FF2.7
+0630:  BSF    16.7
+0632:  BCF    FF2.7
+....................       i2c_write(addr_LSB);    // выдача на линию мл. байта адреса 
+0634:  MOVFF  B6,CC
+0638:  RCALL  00EE
+063A:  BTFSC  16.7
+063C:  BSF    FF2.7
+....................       i2c_start();      
+063E:  BSF    F94.4
+0640:  BRA    0642
+0642:  BRA    0644
+0644:  BSF    F94.3
+0646:  BRA    0648
+0648:  BRA    064A
+064A:  NOP   
+064C:  BTFSS  F82.3
+064E:  BRA    064C
+0650:  BCF    F8B.4
+0652:  BCF    F94.4
+0654:  BRA    0656
+0656:  BRA    0658
+0658:  BCF    F8B.3
+065A:  BCF    F94.3
+....................       i2c_write(EEprom_adr | 1); // чтение 
+065C:  MOVF   2C,W
+065E:  IORLW  01
+0660:  MOVWF  xB7
+0662:  CLRF   16
+0664:  BTFSC  FF2.7
+0666:  BSF    16.7
+0668:  BCF    FF2.7
+066A:  MOVWF  xCC
+066C:  RCALL  00EE
+066E:  BTFSC  16.7
+0670:  BSF    FF2.7
+....................       rd_data_byte = i2c_read();  
+0672:  MOVLW  01
+0674:  MOVWF  00
+0676:  CLRF   16
+0678:  BTFSC  FF2.7
+067A:  BSF    16.7
+067C:  BCF    FF2.7
+067E:  RCALL  014A
+0680:  BTFSC  16.7
+0682:  BSF    FF2.7
+0684:  MOVFF  01,B4
+0688:  CLRF   16
+068A:  BTFSC  FF2.7
+068C:  BSF    16.7
+068E:  BCF    FF2.7
+....................       i2c_write(0xff);        // без этого не работает 0_0 
+0690:  SETF   xCC
+0692:  RCALL  00EE
+0694:  BTFSC  16.7
+0696:  BSF    FF2.7
+....................       i2c_stop(); 
+0698:  BCF    F94.4
+069A:  NOP   
+069C:  BSF    F94.3
+069E:  BTFSS  F82.3
+06A0:  BRA    069E
+06A2:  BRA    06A4
+06A4:  BRA    06A6
+06A6:  BRA    06A8
+06A8:  NOP   
+06AA:  BSF    F94.4
+06AC:  BRA    06AE
+06AE:  BRA    06B0
+....................       crc_buf_rd[crc_rd_index] = rd_data_byte; 
+06B0:  CLRF   03
+06B2:  MOVF   x9C,W
+06B4:  ADDLW  8B
+06B6:  MOVWF  FE9
+06B8:  MOVLW  00
+06BA:  ADDWFC 03,W
+06BC:  MOVWF  FEA
+06BE:  MOVFF  B4,FEF
+....................       crc_rd_index++; 
+06C2:  INCF   x9C,F
+....................        
+....................       return rd_data_byte; 
+06C4:  MOVFF  B4,01
+06C8:  RETURN 0
+....................    } 
+....................     
+....................  void rom_rd_float(U16 ee_addr, void *float_data_ptr) 
+06CA:  MOVFF  AC,AF
+06CE:  MOVFF  AB,AE
+06D2:  CLRF   xB0
+06D4:  MOVLW  04
+06D6:  MOVWF  xB1
+....................  { 
+....................      /// чтение 4-байт. переменной типа float из rom  
+....................           
+....................      // передается указатель на заранее инициализир. перемен. 
+....................      // типа float, происходит побайтное считывание из rom и наполнение  
+....................      // ими адреса переданного через указатель 
+....................       
+....................      U8 buf;  
+....................      U8 *dataByte_ptr = float_data_ptr; // сохраняем указатель (адрес) 
+....................                                         // переменной для чтения 
+....................      U8 k = 0; 
+....................      U8 i = sizeof(float); 
+....................         
+....................      //Lcdsetcursor(0x50); 
+....................      //lcdPutCh('b'); 
+....................       
+....................      while( k < i)  
+06D8:  MOVF   xB1,W
+06DA:  SUBWF  xB0,W
+06DC:  BC    0708
+....................      { 
+....................         //*dataByte_ptr = my_arr[k]; 
+....................         buf = rom_rd_byte(ee_addr); // чтение байта из памяти  
+06DE:  MOVFF  AA,B3
+06E2:  MOVFF  A9,B2
+06E6:  RCALL  05DC
+06E8:  MOVFF  01,AD
+....................         *dataByte_ptr = buf;        // сох. этого байта по адресу конкретной переменной 
+06EC:  MOVFF  AE,FE9
+06F0:  MOVFF  AF,FEA
+06F4:  MOVFF  AD,FEF
+....................         //LcdPutU16(buf,3); 
+....................         //lcdPutCh('_');  
+....................         dataByte_ptr++;             // инкремент адреса байта переменной  
+06F8:  INCF   xAE,F
+06FA:  BTFSC  FD8.2
+06FC:  INCF   xAF,F
+....................         ee_addr++;                  // инкремент адреса rom 
+06FE:  INCF   xA9,F
+0700:  BTFSC  FD8.2
+0702:  INCF   xAA,F
+....................         k++;                        // инкремент итератора цикла чтения 
+0704:  INCF   xB0,F
+0706:  BRA    06D8
+....................      } 
+0708:  RETURN 0
+....................      //LCDMsg("adr="); 
+....................      //LcdPutU16((U32)ee_addr*1000,4); 
+....................      //delay_ms(1000); 
+....................      //Lcdsetcursor(0x40); 
+....................       
+....................  
+....................       
+....................      //LCDMsg("CRC_rd="); 
+....................      //LcdPutU16((U32)CRC_rd,5); 
+....................      //Lcdsetcursor(0x50); 
+....................      //LCDMsg("CRC_LSB="); 
+....................      //LcdPutU16((U32)CRC_rd_LSB*100,5); 
+....................  } 
+....................  
+....................  void rom_wr_float(U16 ee_addr, void *float_data_ptr) 
+....................  { 
+....................      /// запись 4-байт. переменной типа float в rom  
+....................       
+....................      // передается указатель на перемен. типа float для ее сохранения.   
+....................      // происходит побайтная запись этой переменной в rom 
+....................       
+....................      U8 *dataByte_ptr = float_data_ptr; // сохраняем указатель (адрес) 
+....................                                         // переменной для записи 
+....................      U8 k = 0; 
+....................      U8 i = sizeof(float);              // сохранение размера float в байтах - 4 
+....................  
+....................      //Lcdsetcursor(0); 
+....................      //lcdPutCh('a'); 
+....................       
+....................      while(k < i)  
+....................      { 
+....................          //my_arr[k] = *dataByte_ptr; 
+....................          //LcdPutU16(my_arr[k],3); 
+....................          //lcdPutCh('_');  
+....................          rom_wr_byte(ee_addr, *dataByte_ptr);// запись байта с конкретн. адресу в rom 
+....................          dataByte_ptr++;                     // инкремент адреса байта переменной 
+....................          ee_addr++;                          // инкремент адреса rom 
+....................          k++;                                // инкремент итератора цикла записи 
+....................      } 
+....................      //Lcdsetcursor(0x00); 
+....................      //LCDMsg("CRC_wr="); 
+....................      //LcdPutU16((U32)CRC_Wr,5);  
+....................  } 
+....................      
+....................  static U16 rom_wr_CRC16(ee_addr, U8 crc_buf) 
+.................... { 
+....................    U16 CRC_Wr; 
+....................     
+....................    CRC_Wr = CRC16(crc_buf,14);    // расчет CRC16 
+....................       
+....................    rom_wr_byte(ee_addr, (CRC_Wr >> 8)); // запись ст. байта CRC в rom   
+....................    ee_addr++;                           // инкремент адреса 
+....................    rom_wr_byte(ee_addr, (U8)CRC_Wr);        // запись мл. байта CRC в rom 
+....................     
+....................    return CRC_Wr;  
+.................... } 
+....................  
+....................  static U16 rom_rd_CRC16(ee_addr) 
+.................... { 
+....................      U8 CRC_rd_MSB;                     // ст. байт CRC для записи 
+....................      U8 CRC_rd_LSB;                     // мл. байт CRC для записи 
+....................      U16 CRC_rd;                        // 16-бит. CRC  
+....................       
+....................      CRC_rd_MSB = rom_rd_byte(ee_addr); // чтение ст. байта CRC из rom 
+070A:  CLRF   xB3
+070C:  MOVFF  A9,B2
+0710:  RCALL  05DC
+0712:  MOVFF  01,AA
+....................      ee_addr++; 
+0716:  INCF   xA9,F
+....................      CRC_rd_LSB = rom_rd_byte(ee_addr); // чтение мл. байта CRC из rom 
+0718:  CLRF   xB3
+071A:  MOVFF  A9,B2
+071E:  RCALL  05DC
+0720:  MOVFF  01,AB
+....................      CRC_rd = CRC_rd_MSB << 8;          // восстановление CRC  
+0724:  MOVFF  AA,AD
+0728:  CLRF   xAC
+....................      CRC_rd |= CRC_rd_LSB;              // из прочитанных байт 
+072A:  MOVF   xAB,W
+072C:  IORWF  xAC,F
+....................     
+....................    return CRC_rd;  
+072E:  MOVFF  AC,01
+0732:  MOVFF  AD,02
+0736:  GOTO   14C6 (RETURN)
+.................... } 
+....................  
+....................  
+.................... //------------------ EEPROM func ------------------------------------  
+....................  
+.................... //================== Interrupts  ==================================== 
+.................... #INT_EXT  
+.................... Void int0(void){ 
+....................  
+....................    i2c_start();   
+*
+01E8:  BSF    F94.4
+01EA:  BRA    01EC
+01EC:  BRA    01EE
+01EE:  BSF    F94.3
+01F0:  BRA    01F2
+01F2:  BRA    01F4
+01F4:  NOP   
+01F6:  BCF    F8B.4
+01F8:  BCF    F94.4
+01FA:  BRA    01FC
+01FC:  BRA    01FE
+01FE:  BCF    F8B.3
+0200:  BCF    F94.3
+....................    i2c_write(0x3C); // The default (factory) HMC5883 7-bit slave address  
+0202:  MOVLW  3C
+0204:  MOVWF  xCC
+0206:  RCALL  00EE
+....................                        // is 0x3C for write operations, or 0x3D for read operations. 
+....................    i2c_write(0x03); // pointer  
+0208:  MOVLW  03
+020A:  MOVWF  xCC
+020C:  RCALL  00EE
+....................    i2c_stop(); 
+020E:  BCF    F94.4
+0210:  NOP   
+0212:  BSF    F94.3
+0214:  BTFSS  F82.3
+0216:  BRA    0214
+0218:  BRA    021A
+021A:  BRA    021C
+021C:  BRA    021E
+021E:  NOP   
+0220:  BSF    F94.4
+0222:  BRA    0224
+0224:  BRA    0226
+....................        
+....................    i2c_start(); 
+0226:  BSF    F94.4
+0228:  BRA    022A
+022A:  BRA    022C
+022C:  BSF    F94.3
+022E:  BRA    0230
+0230:  BRA    0232
+0232:  NOP   
+0234:  BCF    F8B.4
+0236:  BCF    F94.4
+0238:  BRA    023A
+023A:  BRA    023C
+023C:  BCF    F8B.3
+023E:  BCF    F94.3
+....................    i2c_write(0x3D); //i2c Read 
+0240:  MOVLW  3D
+0242:  MOVWF  xCC
+0244:  RCALL  00EE
+....................        
+....................    Xh = i2c_read();   // X MSB 
+0246:  MOVLW  01
+0248:  MOVWF  00
+024A:  RCALL  014A
+024C:  CLRF   4A
+024E:  MOVFF  01,49
+....................    Xl = i2c_read();   // X LSB 
+0252:  MOVLW  01
+0254:  MOVWF  00
+0256:  RCALL  014A
+0258:  MOVFF  01,4B
+....................    SumX = (Xh<<8)|Xl;   //?????????????? ???????? ????????. ??? ?                                    
+025C:  CLRF   xCA
+025E:  MOVF   xCA,W
+0260:  IORWF  4B,W
+0262:  MOVWF  31
+0264:  MOVFF  49,32
+....................    Yh = i2c_read();  // Y MSB 
+0268:  MOVLW  01
+026A:  MOVWF  00
+026C:  RCALL  014A
+026E:  CLRF   4D
+0270:  MOVFF  01,4C
+....................    Yl = i2c_read();  // Y LSB 
+0274:  MOVLW  01
+0276:  MOVWF  00
+0278:  RCALL  014A
+027A:  MOVFF  01,4E
+....................    SumY = (Yh<<8)|Yl;   //?????????????? ???????? ????????. ??? Y 
+027E:  CLRF   xCA
+0280:  MOVF   xCA,W
+0282:  IORWF  4E,W
+0284:  MOVWF  33
+0286:  MOVFF  4C,34
+....................    Zh = i2c_read();  // Z MSB 
+028A:  MOVLW  01
+028C:  MOVWF  00
+028E:  RCALL  014A
+0290:  CLRF   50
+0292:  MOVFF  01,4F
+....................    Zl = i2c_read();  // Z LSB 
+0296:  MOVLW  01
+0298:  MOVWF  00
+029A:  RCALL  014A
+029C:  MOVFF  01,51
+....................    SumZ = (Zh<<8)|Zl;  //?????????????? ???????? ????????. ??? Z   
+02A0:  CLRF   xCA
+02A2:  MOVF   xCA,W
+02A4:  IORWF  51,W
+02A6:  MOVWF  35
+02A8:  MOVFF  4F,36
+....................    i2c_stop(); 
+02AC:  BCF    F94.4
+02AE:  NOP   
+02B0:  BSF    F94.3
+02B2:  BTFSS  F82.3
+02B4:  BRA    02B2
+02B6:  BRA    02B8
+02B8:  BRA    02BA
+02BA:  BRA    02BC
+02BC:  NOP   
+02BE:  BSF    F94.4
+02C0:  BRA    02C2
+02C2:  BRA    02C4
+....................     
+....................    average_X += SumX; 
+02C4:  MOVFF  31,00
+02C8:  MOVFF  32,01
+02CC:  CLRF   02
+02CE:  CLRF   03
+02D0:  BTFSS  32.7
+02D2:  BRA    02D8
+02D4:  DECF   02,F
+02D6:  DECF   03,F
+02D8:  MOVF   00,W
+02DA:  ADDWF  x6F,F
+02DC:  MOVF   01,W
+02DE:  ADDWFC x70,F
+02E0:  MOVF   02,W
+02E2:  ADDWFC x71,F
+02E4:  MOVF   03,W
+02E6:  ADDWFC x72,F
+....................    average_Y += SumY; 
+02E8:  MOVFF  33,00
+02EC:  MOVFF  34,01
+02F0:  CLRF   02
+02F2:  CLRF   03
+02F4:  BTFSS  34.7
+02F6:  BRA    02FC
+02F8:  DECF   02,F
+02FA:  DECF   03,F
+02FC:  MOVF   00,W
+02FE:  ADDWF  x73,F
+0300:  MOVF   01,W
+0302:  ADDWFC x74,F
+0304:  MOVF   02,W
+0306:  ADDWFC x75,F
+0308:  MOVF   03,W
+030A:  ADDWFC x76,F
+....................    average_Z += SumZ; 
+030C:  MOVFF  35,00
+0310:  MOVFF  36,01
+0314:  CLRF   02
+0316:  CLRF   03
+0318:  BTFSS  36.7
+031A:  BRA    0320
+031C:  DECF   02,F
+031E:  DECF   03,F
+0320:  MOVF   00,W
+0322:  ADDWF  x77,F
+0324:  MOVF   01,W
+0326:  ADDWFC x78,F
+0328:  MOVF   02,W
+032A:  ADDWFC x79,F
+032C:  MOVF   03,W
+032E:  ADDWFC x7A,F
+....................    aver_count ++; 
+0330:  INCF   x6A,F
+....................     
+....................    if (aver_count == 10)  
+0332:  MOVF   x6A,W
+0334:  SUBLW  0A
+0336:  BNZ   0384
+....................       { 
+....................         int_fl = true; 
+0338:  BSF    1A.0
+....................         aver_count = 0; 
+033A:  CLRF   x6A
+....................          
+....................         average_Xg = average_X; 
+033C:  MOVFF  72,40
+0340:  MOVFF  71,3F
+0344:  MOVFF  70,3E
+0348:  MOVFF  6F,3D
+....................         average_Yg = average_Y; 
+034C:  MOVFF  76,44
+0350:  MOVFF  75,43
+0354:  MOVFF  74,42
+0358:  MOVFF  73,41
+....................         average_Zg = average_Z; 
+035C:  MOVFF  7A,48
+0360:  MOVFF  79,47
+0364:  MOVFF  78,46
+0368:  MOVFF  77,45
+....................          
+....................         average_X = 0; 
+036C:  CLRF   x72
+036E:  CLRF   x71
+0370:  CLRF   x70
+0372:  CLRF   x6F
+....................         average_Y = 0; 
+0374:  CLRF   x76
+0376:  CLRF   x75
+0378:  CLRF   x74
+037A:  CLRF   x73
+....................         average_Z = 0; 
+037C:  CLRF   x7A
+037E:  CLRF   x79
+0380:  CLRF   x78
+0382:  CLRF   x77
+....................          
+....................       } 
+....................        
+....................    SensWrData(ConfigRegB,0xE0); // range = +/- 8.1 Gs 
+0384:  MOVFF  20,CA
+0388:  MOVLW  E0
+038A:  MOVWF  xCB
+038C:  RCALL  01A2
+....................    SensWrData(ModeReg,0x00);  // continuous measurment 
+038E:  MOVFF  21,CA
+0392:  CLRF   xCB
+0394:  RCALL  01A2
+....................     
+....................    clear_interrupt(INT_EXT); 
+0396:  BCF    FF2.1
+....................    } 
+....................     
+0398:  BCF    FF2.1
+039A:  GOTO   0060
+.................... #INT_RDA 
+.................... void UART_RXd_isr(void){ 
+....................  
+.................... RXd_buf = getc();          // ?????? ??????? ??????.... 
+039E:  BTFSS  F9E.5
+03A0:  BRA    039E
+03A2:  MOVFF  FAE,1E
+....................                            // ??? ??????, ????????? ?? ??????? ?? ??????????? 
+.................... if (RXd_buf == 'z')        // ???????????? ?????????? ???????? ???. 0... FTDI ???? ????? ??? ????. ????????? ?? 
+03A6:  MOVF   1E,W
+03A8:  SUBLW  7A
+03AA:  BNZ   03B6
+.................... { 
+.................... menufl1 = 0; 
+03AC:  BCF    1A.3
+.................... menufl2 = 0; 
+03AE:  BCF    1A.4
+.................... menufl3 = 0; 
+03B0:  BCF    1A.5
+.................... fl2=1; 
+03B2:  BSF    1A.2
+....................  
+.................... //b_push[1] = 1; 
+.................... //b_push[2] = 1; 
+.................... //b_push[3] = 1; 
+.................... zero_set1 = 1; 
+03B4:  BSF    1A.1
+.................... } 
+....................  
+.................... clear_interrupt(INT_RDA);  // ????? ????? ?????????? 
+03B6:  BCF    F9E.5
+03B8:  GOTO   0060
+.................... } 
+....................  
+.................... //================== Interrupts  ==================================== 
+....................   
+....................   
+.................... void main() { 
+*
+12B0:  CLRF   FF8
+12B2:  BCF    FD0.7
+12B4:  BSF    07.7
+12B6:  BCF    FA7.3
+12B8:  MOVLW  40
+12BA:  MOVWF  FAF
+12BC:  MOVLW  A6
+12BE:  MOVWF  FAC
+12C0:  MOVLW  90
+12C2:  MOVWF  FAB
+12C4:  BCF    1A.0
+12C6:  BCF    1A.1
+12C8:  CLRF   1B
+12CA:  BCF    1A.2
+12CC:  BCF    1A.3
+12CE:  BCF    1A.4
+12D0:  BCF    1A.5
+12D2:  BSF    1A.6
+12D4:  CLRF   1C
+12D6:  CLRF   1D
+12D8:  CLRF   1E
+12DA:  CLRF   1F
+12DC:  MOVLW  01
+12DE:  MOVWF  20
+12E0:  MOVLW  02
+12E2:  MOVWF  21
+12E4:  MOVLW  03
+12E6:  MOVWF  22
+12E8:  MOVLW  04
+12EA:  MOVWF  23
+12EC:  MOVLW  05
+12EE:  MOVWF  24
+12F0:  MOVLW  06
+12F2:  MOVWF  25
+12F4:  MOVLW  07
+12F6:  MOVWF  26
+12F8:  MOVLW  08
+12FA:  MOVWF  27
+12FC:  MOVLW  09
+12FE:  MOVWF  28
+1300:  MOVLW  10
+1302:  MOVWF  29
+1304:  MOVLW  11
+1306:  MOVWF  2A
+1308:  MOVLW  12
+130A:  MOVWF  2B
+130C:  MOVLW  A0
+130E:  MOVWF  2C
+1310:  CLRF   32
+1312:  CLRF   31
+1314:  CLRF   34
+1316:  CLRF   33
+1318:  CLRF   36
+131A:  CLRF   35
+131C:  CLRF   38
+131E:  CLRF   37
+1320:  CLRF   3A
+1322:  CLRF   39
+1324:  CLRF   3C
+1326:  CLRF   3B
+1328:  CLRF   40
+132A:  CLRF   3F
+132C:  CLRF   3E
+132E:  CLRF   3D
+1330:  CLRF   44
+1332:  CLRF   43
+1334:  CLRF   42
+1336:  CLRF   41
+1338:  CLRF   48
+133A:  CLRF   47
+133C:  CLRF   46
+133E:  CLRF   45
+1340:  CLRF   4A
+1342:  CLRF   49
+1344:  CLRF   4B
+1346:  CLRF   4D
+1348:  CLRF   4C
+134A:  CLRF   4E
+134C:  CLRF   50
+134E:  CLRF   4F
+1350:  CLRF   51
+1352:  CLRF   55
+1354:  CLRF   54
+1356:  CLRF   53
+1358:  CLRF   52
+135A:  CLRF   59
+135C:  CLRF   58
+135E:  CLRF   57
+1360:  CLRF   56
+1362:  CLRF   5D
+1364:  CLRF   5C
+1366:  CLRF   5B
+1368:  CLRF   5A
+136A:  CLRF   x61
+136C:  CLRF   x60
+136E:  CLRF   5F
+1370:  MOVLW  7F
+1372:  MOVWF  5E
+1374:  CLRF   x65
+1376:  CLRF   x64
+1378:  CLRF   x63
+137A:  MOVWF  x62
+137C:  CLRF   x69
+137E:  CLRF   x68
+1380:  CLRF   x67
+1382:  MOVWF  x66
+1384:  CLRF   x6A
+1386:  CLRF   x6E
+1388:  CLRF   x6D
+138A:  CLRF   x6C
+138C:  CLRF   x6B
+138E:  CLRF   x9B
+1390:  CLRF   x9C
+1392:  MOVLB  F
+1394:  MOVF   x5C,W
+1396:  ANDLW  80
+1398:  MOVWF  x5C
+139A:  MOVLW  00
+139C:  MOVWF  x5D
+139E:  BCF    FC1.3
+13A0:  BCF    FC1.4
+13A2:  BCF    FC1.5
+13A4:  CLRF   x5E
+13A6:  CLRF   x5F
+13A8:  BRA    13B6
+13AA:  DATA 03,00
+13AC:  DATA 17,00
+13AE:  DATA 00,00
+13B0:  DATA 20,40
+13B2:  DATA 7B,00
+13B4:  DATA 00,00
+13B6:  MOVLW  00
+13B8:  MOVWF  FF8
+13BA:  MOVLW  13
+13BC:  MOVWF  FF7
+13BE:  MOVLW  AA
+13C0:  MOVWF  FF6
+13C2:  TBLRD*+
+13C4:  MOVF   FF5,W
+13C6:  MOVWF  00
+13C8:  XORLW  00
+13CA:  BZ    13F2
+13CC:  TBLRD*+
+13CE:  MOVF   FF5,W
+13D0:  MOVWF  01
+13D2:  BTFSC  FE8.7
+13D4:  BRA    13E0
+13D6:  ANDLW  0F
+13D8:  MOVWF  FEA
+13DA:  TBLRD*+
+13DC:  MOVFF  FF5,FE9
+13E0:  BTFSC  01.6
+13E2:  TBLRD*+
+13E4:  BTFSS  01.6
+13E6:  TBLRD*+
+13E8:  MOVFF  FF5,FEE
+13EC:  DCFSNZ 00,F
+13EE:  BRA    13C2
+13F0:  BRA    13E4
+13F2:  CLRF   FF8
+13F4:  MOVLB  0
+13F6:  CLRF   xA2
+13F8:  CLRF   xA1
+13FA:  CLRF   xA6
+13FC:  CLRF   xA5
+13FE:  CLRF   xA8
+1400:  CLRF   xA7
+....................  
+.................... /* 
+.................... //-----------------------------------------------------------------------------    
+.................... // программатор ПЗУ 
+....................  
+....................    float kx = 1.0517; 
+....................    float ky = 1.2266; 
+....................    float kz = 1.0406; 
+....................     
+....................    U16 sens_type = 30; 
+....................    U16 sens_num = 3; 
+....................  
+....................    U16 ROM_Adr = 0x0000; 
+....................    U16 CRC_Wr; 
+....................    U16 CRC1 = 0; 
+....................    U16 CRC2 = 0;  
+....................  
+....................    TRB0 = 1;   // DRDY 
+....................     
+....................    TRB3 = 0;  
+....................    TRB4 = 0; 
+....................    TRB5 = 0; 
+....................    TRC0 = 0; 
+....................    TRC1 = 0; 
+....................    TRC2 = 0; 
+....................    TRC5 = 0; 
+....................   
+....................    TRC3 = 1; 
+....................    TRC4 = 1; 
+....................    TRC6 = 0;                  // UART1 - TX 
+....................    TRC7 = 1;                  // UART1 - RX 
+....................     
+....................    EXT_INT_EDGE(L_TO_H); 
+....................    enable_interrupts(INT_RDA); 
+....................    enable_interrupts(INT_EXT); 
+....................    //enable_interrupts(GLOBAL); 
+....................  
+....................    LCDInit(); 
+....................    LcdWelcome(); 
+....................    //SensInit(); 
+....................    LCDSetCursor(two); 
+....................    LCDMsg(" Запись в ПЗУ..."); 
+....................      
+....................    rom_wr_byte(ROM_Adr,sens_type);     // тип датчика   0 
+....................    rom_wr_byte (++ROM_Adr, sens_num);      // № датчика     1 
+....................    rom_wr_float(++ROM_Adr,&kx);          // Kx            2-5  
+....................    ROM_adr += 4; 
+....................    rom_wr_float(ROM_Adr,&ky);          // Ky            6-9 
+....................    ROM_adr += 4; 
+....................    rom_wr_float(ROM_Adr,&kz);          // Kz            10-13 
+....................     
+....................    ROM_Adr += 4; 
+....................    CRC1 = rom_wr_CRC16(ROM_Adr,crc_buf_wr); 
+....................    crc_wr_index = 0; 
+....................     
+....................    sens_type = 0; 
+....................    sens_num  = 0; 
+....................     
+....................    //CRC1 = rom_rd_float(0x0000,&b);    // восстановление CRC из мапяти 
+....................    //CRC2 = CRC16(&b,4);                // расчет CRC по считанным данным 
+....................    //LCDSetCursor(0x10); 
+....................   // if(CRC1 == CRC2) {LCDMsg("      OK!");} 
+....................   // else  
+....................    //{ 
+....................    //   LCDMsg("   Ошибка!"); 
+....................    //   b = 1;               // сброс значений по умолчанию  
+....................                            // тк произошел сбой контр. суммы 
+....................    //} 
+....................     
+....................    //delay_ms(2000); 
+....................     
+....................    LCDclear(); 
+....................     
+....................    while(true){ 
+....................     
+....................    ROM_Adr = 0x0000; 
+....................     
+....................     //if (int_fl) SensRdAll(); 
+....................     //if (!SW1) fl2 = 1; 
+....................  
+....................    //rom_rd_float(0x0000,&b); 
+....................    //rom_wr_float(0x0000,&a); 
+....................    kx = 0; 
+....................    ky = 0; 
+....................    kz = 0; 
+....................     
+....................    sens_type = rom_rd_byte(ROM_Adr);               // тип датчика   0 
+....................    ROM_Adr++; 
+....................    sens_num  = rom_rd_byte(ROM_Adr);               // № датчика     1 
+....................    ROM_Adr++; 
+....................    rom_rd_float(ROM_Adr,&kx);                      // Kx            2-5  
+....................    ROM_adr += 4; 
+....................    rom_rd_float(ROM_Adr,&ky);                      // Ky            6-9 
+....................    ROM_adr += 4; 
+....................    rom_rd_float(ROM_Adr,&kz);                      // Kz            10-13 
+....................    ROM_adr += 4; 
+....................    CRC2 = rom_rd_CRC16(ROM_adr);                  // расчет CRC по считанным данным 
+....................     
+....................    Lcdsetcursor(0x00); 
+....................    LCDMsg("kx="); 
+....................    LcdPutS16((S32)(kx*1000),5); 
+....................    Lcdsetcursor(0x40); 
+....................    LCDMsg("ky="); 
+....................    LcdPutS16((S32)(ky*1000),5); 
+....................    Lcdsetcursor(0x10); 
+....................    LCDMsg("kz="); 
+....................    LcdPutS16((S32)(kz*1000),5); 
+....................     
+....................    //Printf("CRC1=%LX\n",CRC1); 
+....................    //Printf("CRC2=%LX\n",CRC2); 
+....................    for(U8 i =0; i < sizeof(crc_buf_wr); i++) 
+....................    { 
+....................       //Printf("CRC_buf_wr =%LX CRC_buf_rd=%LX\n",crc_buf_wr[i], crc_buf_rd[i]); 
+....................       Printf("__"); 
+....................       Printf("CRC_buf_wr =%LX\n",crc_buf_wr[i]); 
+....................        
+....................       delay_ms(500); 
+....................    } 
+....................    Printf("\n\r"); 
+....................    Printf("\n\r"); 
+....................    //Printf("CRC1=%LX\n",CRC1); 
+....................    crc_rd_index = 0; 
+....................     
+....................    delay_ms(500); 
+....................     
+....................  }// while 
+.................... } // main 
+....................   
+.................... //----------------------------------------------------------------------------- 
+.................... */ 
+....................  
+.................... //============================================================================= 
+.................... // режим измерений 
+....................  
+....................    U16 sens_type; 
+....................    U16 sens_num; 
+....................  
+....................    U16 ROM_Adr = 0x0000; 
+....................     
+....................    U16 CRC_Wr; 
+....................    U16 CRC1 = 0; 
+....................    U16 CRC2 = 0;  
+....................  
+....................    TRB0 = 1;   // DRDY 
+1402:  BSF    F93.0
+....................     
+....................    TRB3 = 0;  
+1404:  BCF    F93.3
+....................    TRB4 = 0; 
+1406:  BCF    F93.4
+....................    TRB5 = 0; 
+1408:  BCF    F93.5
+....................    TRC0 = 0; 
+140A:  BCF    F94.0
+....................    TRC1 = 0; 
+140C:  BCF    F94.1
+....................    TRC2 = 0; 
+140E:  BCF    F94.2
+....................    TRC5 = 0; 
+1410:  BCF    F94.5
+....................   
+....................    TRC3 = 1; 
+1412:  BSF    F94.3
+....................    TRC4 = 1; 
+1414:  BSF    F94.4
+....................    TRC6 = 0;                  // UART1 - TX 
+1416:  BCF    F94.6
+....................    TRC7 = 1;                  // UART1 - RX 
+1418:  BSF    F94.7
+....................     
+....................    EXT_INT_EDGE(L_TO_H); 
+141A:  BSF    FF1.6
+....................    enable_interrupts(INT_RDA); 
+141C:  BSF    F9D.5
+....................    enable_interrupts(INT_EXT); 
+141E:  BSF    FF2.4
+....................    enable_interrupts(GLOBAL); 
+1420:  MOVLW  C0
+1422:  IORWF  FF2,F
+....................  
+....................    LCDInit(); 
+1424:  GOTO   04BC
+....................    LcdWelcome(); 
+1428:  GOTO   05AC
+....................    //SensInit(); 
+....................    LCDSetCursor(two); 
+142C:  MOVLW  40
+142E:  MOVWF  xAA
+1430:  CALL   058E
+....................    LCDMsg(" Чтение ПЗУ..."); 
+1434:  MOVLW  BC
+1436:  MOVWF  FF6
+1438:  MOVLW  03
+143A:  MOVWF  FF7
+143C:  CALL   056E
+....................     
+....................    sens_type = rom_rd_byte(ROM_Adr);     // тип датчика   0 
+1440:  MOVFF  A2,B3
+1444:  MOVFF  A1,B2
+1448:  CALL   05DC
+144C:  CLRF   x9E
+144E:  MOVFF  01,9D
+....................    ROM_Adr++; 
+1452:  INCF   xA1,F
+1454:  BTFSC  FD8.2
+1456:  INCF   xA2,F
+....................    sens_num  = rom_rd_byte(ROM_Adr);     // № датчика     1 
+1458:  MOVFF  A2,B3
+145C:  MOVFF  A1,B2
+1460:  CALL   05DC
+1464:  CLRF   xA0
+1466:  MOVFF  01,9F
+....................    ROM_Adr++; 
+146A:  INCF   xA1,F
+146C:  BTFSC  FD8.2
+146E:  INCF   xA2,F
+....................    rom_rd_float(ROM_Adr,&kx_rd);         // Kx            2-5  
+1470:  MOVFF  A2,AA
+1474:  MOVFF  A1,A9
+1478:  CLRF   xAC
+147A:  MOVLW  5E
+147C:  MOVWF  xAB
+147E:  CALL   06CA
+....................    ROM_adr += 4; 
+1482:  MOVLW  04
+1484:  ADDWF  xA1,F
+1486:  MOVLW  00
+1488:  ADDWFC xA2,F
+....................    rom_rd_float(ROM_Adr,&ky_rd);         // Ky            6-9 
+148A:  MOVFF  A2,AA
+148E:  MOVFF  A1,A9
+1492:  CLRF   xAC
+1494:  MOVLW  62
+1496:  MOVWF  xAB
+1498:  CALL   06CA
+....................    ROM_adr += 4; 
+149C:  MOVLW  04
+149E:  ADDWF  xA1,F
+14A0:  MOVLW  00
+14A2:  ADDWFC xA2,F
+....................    rom_rd_float(ROM_Adr,&kz_rd);         // Kz            10-13 
+14A4:  MOVFF  A2,AA
+14A8:  MOVFF  A1,A9
+14AC:  CLRF   xAC
+14AE:  MOVLW  66
+14B0:  MOVWF  xAB
+14B2:  CALL   06CA
+....................     
+....................    ROM_adr += 4; 
+14B6:  MOVLW  04
+14B8:  ADDWF  xA1,F
+14BA:  MOVLW  00
+14BC:  ADDWFC xA2,F
+....................    CRC1 = rom_rd_CRC16(ROM_adr);         // чтение сохраненной CRC 
+14BE:  MOVFF  A1,A9
+14C2:  GOTO   070A
+14C6:  MOVFF  02,A6
+14CA:  MOVFF  01,A5
+....................    CRC2 = CRC16(crc_buf_rd,14);          // расчет CRC по считанным данным 
+14CE:  CLRF   xAA
+14D0:  MOVLW  8B
+14D2:  MOVWF  xA9
+14D4:  MOVLW  0E
+14D6:  MOVWF  xAB
+14D8:  GOTO   073A
+14DC:  MOVFF  02,A8
+14E0:  MOVFF  01,A7
+....................  
+....................    LCDSetCursor(0x10); 
+14E4:  MOVLW  10
+14E6:  MOVWF  xAA
+14E8:  CALL   058E
+....................    if(CRC1 == CRC2)  
+14EC:  MOVF   xA7,W
+14EE:  SUBWF  xA5,W
+14F0:  BTFSS  FD8.2
+14F2:  BRA    16E0
+14F4:  MOVF   xA8,W
+14F6:  SUBWF  xA6,W
+14F8:  BTFSS  FD8.2
+14FA:  BRA    16E0
+....................    { 
+....................       LCDMsg("      OK!");    
+14FC:  MOVLW  CC
+14FE:  MOVWF  FF6
+1500:  MOVLW  03
+1502:  MOVWF  FF7
+1504:  CALL   056E
+....................       delay_ms(1000); 
+1508:  MOVLW  04
+150A:  MOVWF  xA9
+150C:  MOVLW  FA
+150E:  MOVWF  xAB
+1510:  CALL   0408
+1514:  DECFSZ xA9,F
+1516:  BRA    150C
+....................       LCDclear(); 
+1518:  CALL   059A
+....................        
+....................       LCDSetCursor(0x10); 
+151C:  MOVLW  10
+151E:  MOVWF  xAA
+1520:  CALL   058E
+....................       LCDMsg("Тип:"); 
+1524:  MOVLW  D6
+1526:  MOVWF  FF6
+1528:  MOVLW  03
+152A:  MOVWF  FF7
+152C:  CALL   056E
+....................       if(sens_type == 30) 
+1530:  MOVF   x9D,W
+1532:  SUBLW  1E
+1534:  BNZ   1548
+1536:  MOVF   x9E,F
+1538:  BNZ   1548
+....................           LCDMsg("3 - Ax."); 
+153A:  MOVLW  DC
+153C:  MOVWF  FF6
+153E:  MOVLW  03
+1540:  MOVWF  FF7
+1542:  CALL   056E
+1546:  BRA    1554
+....................       else 
+....................           LCDMsg("1 - Ax."); 
+1548:  MOVLW  E4
+154A:  MOVWF  FF6
+154C:  MOVLW  03
+154E:  MOVWF  FF7
+1550:  CALL   056E
+....................            
+....................       LCDSetCursor(0x40); 
+1554:  MOVLW  40
+1556:  MOVWF  xAA
+1558:  CALL   058E
+....................       LCDMsg("N:"); 
+155C:  MOVLW  EC
+155E:  MOVWF  FF6
+1560:  MOVLW  03
+1562:  MOVWF  FF7
+1564:  CALL   056E
+....................       LcdPutU16((U16)sens_num*1000,4); 
+1568:  MOVFF  A0,AA
+156C:  MOVFF  9F,A9
+1570:  MOVLW  03
+1572:  MOVWF  xAC
+1574:  MOVLW  E8
+1576:  MOVWF  xAB
+1578:  GOTO   07AA
+157C:  MOVFF  02,AA
+1580:  MOVFF  01,A9
+1584:  CLRF   xB2
+1586:  CLRF   xB1
+1588:  MOVFF  02,B0
+158C:  MOVFF  01,AF
+1590:  MOVLW  04
+1592:  MOVWF  xB3
+1594:  CALL   08AC
+....................        
+....................       delay_ms(2000); 
+1598:  MOVLW  08
+159A:  MOVWF  xA9
+159C:  MOVLW  FA
+159E:  MOVWF  xAB
+15A0:  CALL   0408
+15A4:  DECFSZ xA9,F
+15A6:  BRA    159C
+....................       LCDclear(); 
+15A8:  CALL   059A
+....................        
+....................       Lcdsetcursor(0x00); 
+15AC:  CLRF   xAA
+15AE:  CALL   058E
+....................       LCDMsg("kx="); 
+15B2:  MOVLW  F0
+15B4:  MOVWF  FF6
+15B6:  MOVLW  03
+15B8:  MOVWF  FF7
+15BA:  CALL   056E
+....................       LcdPutS16((S32)(kx_rd*1000),5); 
+15BE:  MOVFF  61,AC
+15C2:  MOVFF  60,AB
+15C6:  MOVFF  5F,AA
+15CA:  MOVFF  5E,A9
+15CE:  CLRF   xB0
+15D0:  CLRF   xAF
+15D2:  MOVLW  7A
+15D4:  MOVWF  xAE
+15D6:  MOVLW  88
+15D8:  MOVWF  xAD
+15DA:  CALL   0AAA
+15DE:  MOVFF  03,AC
+15E2:  MOVFF  02,AB
+15E6:  MOVFF  01,AA
+15EA:  MOVFF  00,A9
+15EE:  CALL   0B9C
+15F2:  MOVFF  01,AA
+15F6:  MOVFF  00,A9
+15FA:  MOVFF  01,AC
+15FE:  MOVFF  00,AB
+1602:  MOVLW  05
+1604:  MOVWF  xAD
+1606:  CALL   0BDA
+....................       Lcdsetcursor(0x40); 
+160A:  MOVLW  40
+160C:  MOVWF  xAA
+160E:  CALL   058E
+....................       LCDMsg("ky="); 
+1612:  MOVLW  F4
+1614:  MOVWF  FF6
+1616:  MOVLW  03
+1618:  MOVWF  FF7
+161A:  CALL   056E
+....................       LcdPutS16((S32)(ky_rd*1000),5); 
+161E:  MOVFF  65,AC
+1622:  MOVFF  64,AB
+1626:  MOVFF  63,AA
+162A:  MOVFF  62,A9
+162E:  CLRF   xB0
+1630:  CLRF   xAF
+1632:  MOVLW  7A
+1634:  MOVWF  xAE
+1636:  MOVLW  88
+1638:  MOVWF  xAD
+163A:  CALL   0AAA
+163E:  MOVFF  03,AC
+1642:  MOVFF  02,AB
+1646:  MOVFF  01,AA
+164A:  MOVFF  00,A9
+164E:  CALL   0B9C
+1652:  MOVFF  01,AA
+1656:  MOVFF  00,A9
+165A:  MOVFF  01,AC
+165E:  MOVFF  00,AB
+1662:  MOVLW  05
+1664:  MOVWF  xAD
+1666:  CALL   0BDA
+....................       Lcdsetcursor(0x10); 
+166A:  MOVLW  10
+166C:  MOVWF  xAA
+166E:  CALL   058E
+....................       LCDMsg("kz="); 
+1672:  MOVLW  F8
+1674:  MOVWF  FF6
+1676:  MOVLW  03
+1678:  MOVWF  FF7
+167A:  CALL   056E
+....................       LcdPutS16((S32)(kz_rd*1000),5); 
+167E:  MOVFF  69,AC
+1682:  MOVFF  68,AB
+1686:  MOVFF  67,AA
+168A:  MOVFF  66,A9
+168E:  CLRF   xB0
+1690:  CLRF   xAF
+1692:  MOVLW  7A
+1694:  MOVWF  xAE
+1696:  MOVLW  88
+1698:  MOVWF  xAD
+169A:  CALL   0AAA
+169E:  MOVFF  03,AC
+16A2:  MOVFF  02,AB
+16A6:  MOVFF  01,AA
+16AA:  MOVFF  00,A9
+16AE:  CALL   0B9C
+16B2:  MOVFF  01,AA
+16B6:  MOVFF  00,A9
+16BA:  MOVFF  01,AC
+16BE:  MOVFF  00,AB
+16C2:  MOVLW  05
+16C4:  MOVWF  xAD
+16C6:  CALL   0BDA
+....................        
+....................       delay_ms(3000); 
+16CA:  MOVLW  0C
+16CC:  MOVWF  xA9
+16CE:  MOVLW  FA
+16D0:  MOVWF  xAB
+16D2:  CALL   0408
+16D6:  DECFSZ xA9,F
+16D8:  BRA    16CE
+....................       LCDclear(); 
+16DA:  CALL   059A
+....................     
+....................    } 
+16DE:  BRA    1706
+....................    else  
+....................    { 
+....................       LCDMsg("   Ошибка!"); 
+16E0:  MOVLW  FC
+16E2:  MOVWF  FF6
+16E4:  MOVLW  03
+16E6:  MOVWF  FF7
+16E8:  CALL   056E
+....................       kx_rd = 1.0;                     // сброс значений по умолчанию  
+16EC:  CLRF   x61
+16EE:  CLRF   x60
+16F0:  CLRF   5F
+16F2:  MOVLW  7F
+16F4:  MOVWF  5E
+....................       ky_rd = 1.0;                     // тк произошел сбой контр. суммы 
+16F6:  CLRF   x65
+16F8:  CLRF   x64
+16FA:  CLRF   x63
+16FC:  MOVWF  x62
+....................       kz_rd = 1.0; 
+16FE:  CLRF   x69
+1700:  CLRF   x68
+1702:  CLRF   x67
+1704:  MOVWF  x66
+....................    } 
+....................     
+....................    while(true){ 
+....................        
+....................     if (int_fl) SensRdAll(); 
+1706:  BTFSC  1A.0
+1708:  GOTO   0E74
+....................     if (!SW1) fl2 = 1; 
+170C:  BTFSC  F80.3
+170E:  BRA    1712
+1710:  BSF    1A.2
+1712:  BRA    1706
+....................    } 
+.................... } 
+.................... //============================================================================= 
+1714:  SLEEP 
+....................  
+
+Configuration Fuses:
+   Word  1: C315   VREGSLEEP INTRC_HP SOSC_DIG NOXINST HSM NOPLLEN FCMEN IESO
+   Word  2: 7C78   PUT NOBROWNOUT BORV18 ZPBORM NOWDT WDT1048576
+   Word  3: 8900   CANB MSSPMSK7 MCLR
+   Word  4: 0091   STVREN BBSIZ2K NODEBUG
+   Word  5: C00F   NOPROTECT NOCPB NOCPD
+   Word  6: E00F   NOWRT NOWRTC NOWRTB NOWRTD
+   Word  7: 400F   NOEBTR NOEBTRB

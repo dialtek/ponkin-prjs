@@ -1,0 +1,24 @@
+>>> Warning 202 "main.c" Line 6(12,22): Variable never used:   ADC_RByte1
+>>> Warning 202 "main.c" Line 7(12,22): Variable never used:   ADC_RByte2
+>>> Warning 202 "main.c" Line 8(12,22): Variable never used:   ADC_RByte3
+>>> Warning 202 "main.c" Line 9(12,25): Variable never used:   ADC_RByte_Sum
+>>> Warning 202 "main.c" Line 10(12,21): Variable never used:   ADCresult
+>>> Warning 202 "main.c" Line 11(14,17): Variable never used:   Vin
+>>> Warning 202 "main.c" Line 12(11,14): Variable never used:   PGA
+>>> Warning 202 "main.c" Line 14(11,18): Variable never used:   Sps_buf
+>>> Warning 202 "main.c" Line 14(19,35): Variable never used:   Global_Ch_Number
+>>> Warning 202 "main.c" Line 37(15,23): Variable never used:   reset_fl
+>>> Warning 202 "main.c" Line 38(14,23): Variable never used:   count_CN4
+>>> Warning 202 "main.c" Line 39(14,23): Variable never used:   count_CN3
+>>> Warning 202 "main.c" Line 41(12,19): Variable never used:   NumAver
+>>> Warning 202 "main.c" Line 43(4,8): Variable never used:   CRC1
+>>> Warning 202 "main.c" Line 43(14,18): Variable never used:   CRC2
+>>> Warning 202 "main.c" Line 44(11,15): Variable never used:   temp
+>>> Warning 202 "main.c" Line 306(20,31): Variable never used:   Temporary_K
+>>> Warning 202 "main.c" Line 307(29,38): Variable never used:   Temporary
+>>> Warning 202 "main.c" Line 308(18,25): Variable never used:   Tenth_C
+>>> Warning 202 "main.c" Line 308(27,38): Variable never used:   Hundredth_C
+>>> Warning 202 "main.c" Line 308(53,65): Variable never used:   Thousandth_C
+      Memory usage:   ROM=2%      RAM=5% - 5%
+      0 Errors,  21 Warnings.
+Build Successful.

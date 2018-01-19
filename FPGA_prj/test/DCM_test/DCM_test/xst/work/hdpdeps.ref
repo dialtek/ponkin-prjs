@@ -1,0 +1,8 @@
+V3 5
+FL C:/Xilinx/test/DCM_test/DCM_test/DCM_test.vhd 2013/08/08.16:23:09 P.28xd
+EN work/DCM_test 1375964591 FL C:/Xilinx/test/DCM_test/DCM_test/DCM_test.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/DCM_test/Beh 1375964592 \
+      FL C:/Xilinx/test/DCM_test/DCM_test/DCM_test.vhd EN work/DCM_test 1375964591 \
+      CP DCM_SP

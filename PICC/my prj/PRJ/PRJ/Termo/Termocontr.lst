@@ -1,0 +1,2489 @@
+CCS PCH C Compiler, Version 4.065, 38112               03-авг-11 18:07
+
+               Filename: Termocontr.lst
+
+               ROM used: 5214 bytes (64%)
+                         Largest free fragment is 2974
+               RAM used: 73 (14%) at main() level
+                         99 (19%) worst case
+               Stack:    8 worst case (6 in main + 2 for interrupts)
+
+*
+0000:  GOTO   0B2C
+*
+0008:  MOVWF  05
+000A:  MOVFF  FD8,06
+000E:  MOVFF  FE0,07
+0012:  MOVLB  0
+0014:  MOVFF  FE9,0D
+0018:  MOVFF  FEA,08
+001C:  MOVFF  FE1,09
+0020:  MOVFF  FE2,0A
+0024:  MOVFF  FD9,0B
+0028:  MOVFF  FDA,0C
+002C:  MOVFF  FF3,14
+0030:  MOVFF  FF4,15
+0034:  MOVFF  FFA,16
+0038:  MOVFF  00,0F
+003C:  MOVFF  01,10
+0040:  MOVFF  02,11
+0044:  MOVFF  03,12
+0048:  MOVFF  04,13
+004C:  BTFSS  F9D.0
+004E:  GOTO   0058
+0052:  BTFSC  F9E.0
+0054:  GOTO   04AC
+0058:  BTFSS  FA0.1
+005A:  GOTO   0064
+005E:  BTFSC  FA1.1
+0060:  GOTO   0562
+0064:  MOVFF  0F,00
+0068:  MOVFF  10,01
+006C:  MOVFF  11,02
+0070:  MOVFF  12,03
+0074:  MOVFF  13,04
+0078:  BSF    0E.7
+007A:  MOVFF  0D,FE9
+007E:  MOVFF  08,FEA
+0082:  MOVFF  09,FE1
+0086:  MOVFF  0A,FE2
+008A:  MOVFF  0B,FD9
+008E:  MOVFF  0C,FDA
+0092:  MOVFF  14,FF3
+0096:  MOVFF  15,FF4
+009A:  MOVFF  16,FFA
+009E:  MOVF   05,W
+00A0:  MOVFF  07,FE0
+00A4:  MOVFF  06,FD8
+00A8:  RETFIE 0
+.................... //#include "C:\PRJ\Termo\ 
+.................... #include <18F4320.h> 
+.................... //////// Standard Header file for the PIC18F4320 device //////////////// 
+.................... #device PIC18F4320 
+.................... #list 
+....................  
+.................... #device adc=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... #FUSES WDT128                   //Watch Dog Timer uses 1:128 Postscale 
+.................... //#FUSES H4                       //High speed osc with HW enabled 4X PLL 
+.................... #FUSES HS                       //High speed osc  
+.................... #FUSES NOFCMEN                  //Fail-safe clock monitor disabled 
+.................... #FUSES BROWNOUT                 //Reset when brownout detected 
+.................... #FUSES BORV45                   //Brownout reset at 4.5V 
+.................... #FUSES NOPUT                    //No Power Up Timer 
+.................... #FUSES NOCPD                    //No EE protection 
+.................... #FUSES STVREN                   //Stack full/underflow will cause reset 
+.................... #FUSES NODEBUG                  //No Debug mode for ICD 
+.................... #FUSES NOLVP                      //NO Low Voltage Programming on B3(PIC16) or B5(PIC18) 
+.................... #FUSES NOWRT                    //Program memory not write protected 
+.................... #FUSES NOWRTD                   //Data EEPROM not write protected 
+.................... #FUSES IESO                     //Internal External Switch Over mode enabled 
+.................... #FUSES NOEBTR                   //Memory not protected from table reads 
+.................... #FUSES NOEBTRB                  //Boot block not protected from table reads 
+.................... #FUSES MCLR                     //Master Clear pin enabled 
+.................... #FUSES NOPROTECT                //Code not protected from reading 
+.................... #FUSES NOCPB                    //No Boot Block code protection 
+.................... #FUSES NOWRTB                   //Boot block not write protected 
+.................... #FUSES NOWRTC                   //configuration not registers write protected 
+.................... #FUSES PBADEN                   //PORTB pins are configured as analog input channels on RESET 
+....................  
+.................... #use delay(clock=10000000) 
+*
+059E:  CLRF   FEA
+05A0:  MOVLW  58
+05A2:  MOVWF  FE9
+05A4:  MOVF   FEF,W
+05A6:  BZ    05C4
+05A8:  MOVLW  03
+05AA:  MOVWF  01
+05AC:  CLRF   00
+05AE:  DECFSZ 00,F
+05B0:  BRA    05AE
+05B2:  DECFSZ 01,F
+05B4:  BRA    05AC
+05B6:  MOVLW  3C
+05B8:  MOVWF  00
+05BA:  DECFSZ 00,F
+05BC:  BRA    05BA
+05BE:  BRA    05C0
+05C0:  DECFSZ FEF,F
+05C2:  BRA    05A8
+05C4:  RETLW  00
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+.................... //память записана верно 
+.................... #BYTE TRISA = 0xF92 
+.................... #BYTE TRISB = 0xF93 
+.................... #BYTE TRISC = 0xF94  
+.................... #BYTE TRISD = 0xF95 
+....................  
+.................... #BYTE PORTA = 0xF80 
+.................... #BYTE PORTB = 0xF81 
+.................... #BYTE PORTC = 0xF82 
+.................... #BYTE PORTD = 0xF83 
+....................  
+.................... #BIT RA2 = PORTA.2 
+.................... #BIT TRA2 = TRISA.2 
+.................... #BIT TRC5 = TRISC.5 
+.................... #BIT RB5 = PORTB.5 
+.................... #BIT LCD_RS = PORTD.3 
+.................... #BIT LCD_RW = PORTD.0 
+.................... #BIT LCD_E = PORTD.2 
+.................... #BIT PORTD4 = PORTD.4 
+.................... #BIT PORTD5 = PORTD.5 
+.................... #BIT PORTD6 = PORTD.6 
+.................... #BIT PORTD7 = PORTD.7 
+.................... #BIT PORTC5 = PORTC.5 
+....................  
+.................... #BIT PORTB1 = PORTB.1 
+.................... #BIT PORTB2 = PORTB.2 
+.................... #BIT PORTB3 = PORTB.3 
+.................... #BIT PORTB4 = PORTB.4 
+....................  
+....................  
+....................  
+.................... typedef unsigned int32 U32; 
+.................... typedef int16 U16; 
+.................... typedef signed int16 S16; 
+.................... typedef unsigned int8 U8; 
+....................  
+.................... static U8 buf; 
+.................... static U8 count=0; 
+.................... static U8 hp = 33;// мощность нагревателя в %  
+.................... static int1 tmaxfl = 0,pwrfl=0,dtfl=1; 
+.................... static U8 ADCNumSamples = 20; 
+.................... static int1 henfl=0; 
+.................... static U16 tmax = 30; 
+.................... static U8 MenuItemNum = 0;//номер пункта меню 
+....................  
+....................  
+....................  static u8 i; 
+....................  static U8 t_out[4]={0,0,0,0}; 
+....................  static U8 b_hold[4]={0,0,0,0}; 
+....................  static U8 b_push[4]={0,0,0,0}; 
+....................  static int1 Pbfl = 0,PbFl1=0; 
+....................   
+....................  
+.................... #BIT buf4=buf.4 
+.................... #BIT buf5=buf.5 
+.................... #BIT buf6=buf.6 
+.................... #BIT buf7=buf.7 
+....................  
+.................... static U16 U16EERead(U8 Adr){ 
+.................... U8 value; 
+.................... U16 DATA; 
+.................... DATA = read_eeprom(Adr+1);//ст.байт 
+.................... DATA=DATA<<8; 
+.................... DATA = DATA+read_eeprom(Adr);//мл.байт 
+.................... return DATA; 
+.................... } 
+....................  
+.................... static U8 U16EEWrite(U16 Data, U8 Adr){ 
+.................... U8 value; 
+.................... value=DATA; 
+.................... write_eeprom (Adr, value);//ст.байт 
+.................... value=DATA>>8; 
+.................... write_eeprom (Adr+1, value);//мл.байт 
+.................... delay_ms(10); 
+.................... if(U16EERead(Adr)==DATA) return 1; 
+....................  else return 0; 
+.................... } 
+....................  
+.................... /* 
+....................   Name  : CRC-8 
+....................   Poly  : 0x31    x^8 + x^5 + x^4 + 1 
+....................   Init  : 0xFF 
+....................   Revert: false 
+....................   XorOut: 0x00 
+....................   Check : 0xF7 ("123456789") 
+....................   MaxLen: 15 байт(127 бит) - обнаружение 
+....................     одинарных, двойных, тройных и всех нечетных ошибок 
+.................... */ 
+.................... unsigned char Crc8(unsigned char *pcBlock, unsigned int len) 
+.................... { 
+....................     unsigned char crc = 0xFF; 
+*
+074C:  MOVLW  FF
+074E:  MOVWF  49
+....................     unsigned int i; 
+....................   
+....................     while (len--) 
+....................     { 
+0750:  MOVF   48,W
+0752:  DECF   48,F
+0754:  XORLW  00
+0756:  BZ    078E
+....................         crc ^= *pcBlock++; 
+0758:  MOVFF  47,03
+075C:  MOVF   46,W
+075E:  INCF   46,F
+0760:  BTFSC  FD8.2
+0762:  INCF   47,F
+0764:  MOVWF  FE9
+0766:  MOVFF  03,FEA
+076A:  MOVF   FEF,W
+076C:  XORWF  49,F
+....................   
+....................         for (i = 0; i < 8; i++) 
+076E:  CLRF   4A
+0770:  MOVF   4A,W
+0772:  SUBLW  07
+0774:  BNC   078C
+....................             crc = crc & 0x80 ? (crc << 1) ^ 0x31 : crc << 1; 
+0776:  BTFSS  49.7
+0778:  BRA    0782
+077A:  BCF    FD8.0
+077C:  RLCF   49,W
+077E:  XORLW  31
+0780:  BRA    0786
+0782:  BCF    FD8.0
+0784:  RLCF   49,W
+0786:  MOVWF  49
+0788:  INCF   4A,F
+078A:  BRA    0770
+....................     } 
+078C:  BRA    0750
+....................   
+....................     return crc; 
+078E:  MOVFF  49,01
+.................... } 
+0792:  RETLW  00
+....................  
+.................... static int1 PBScan(U8 pb){ 
+.................... // сканирование кнопок 
+.................... //pb-номер кнопки(0-3); 
+....................      
+....................     switch (pb){ 
+*
+045E:  MOVF   61,W
+0460:  XORLW  00
+0462:  BZ    0472
+0464:  XORLW  01
+0466:  BZ    047E
+0468:  XORLW  03
+046A:  BZ    048A
+046C:  XORLW  01
+046E:  BZ    0496
+0470:  BRA    04A2
+....................       case 0: 
+....................          return !portb1; 
+0472:  MOVLW  00
+0474:  BTFSS  F81.1
+0476:  MOVLW  01
+0478:  MOVWF  01
+047A:  BRA    04A8
+....................       break; 
+047C:  BRA    04A8
+....................       case 1: 
+....................          return !PORTB2; 
+047E:  MOVLW  00
+0480:  BTFSS  F81.2
+0482:  MOVLW  01
+0484:  MOVWF  01
+0486:  BRA    04A8
+....................       break; 
+0488:  BRA    04A8
+....................       case 2: 
+....................          return !PORTB3; 
+048A:  MOVLW  00
+048C:  BTFSS  F81.3
+048E:  MOVLW  01
+0490:  MOVWF  01
+0492:  BRA    04A8
+....................       break; 
+0494:  BRA    04A8
+....................       case 3: 
+....................          return !PORTB4; 
+0496:  MOVLW  00
+0498:  BTFSS  F81.4
+049A:  MOVLW  01
+049C:  MOVWF  01
+049E:  BRA    04A8
+....................       break; 
+04A0:  BRA    04A8
+....................       default: 
+....................          return 0; 
+04A2:  MOVLW  00
+04A4:  MOVWF  01
+04A6:  BRA    04A8
+....................      
+....................     } 
+.................... } 
+04A8:  GOTO   04C2 (RETURN)
+.................... /***************** LCD functions *****************/ 
+.................... static void LCDWriteNibble(unsigned char uc) /* RS must be set/reset before calling */ 
+.................... {                                            
+....................   uc=uc << 4; /* Align with bits 7-4*/ 
+*
+05C6:  SWAPF  57,F
+05C8:  MOVLW  F0
+05CA:  ANDWF  57,F
+....................   LCD_RW=0; 
+05CC:  BCF    F83.0
+....................   buf=uc; 
+05CE:  MOVFF  57,18
+....................   PORTD4=buf4; 
+05D2:  BTFSS  18.4
+05D4:  BCF    F83.4
+05D6:  BTFSC  18.4
+05D8:  BSF    F83.4
+....................   PORTD5=buf5; 
+05DA:  BTFSS  18.5
+05DC:  BCF    F83.5
+05DE:  BTFSC  18.5
+05E0:  BSF    F83.5
+....................   PORTD6=buf6; 
+05E2:  BTFSS  18.6
+05E4:  BCF    F83.6
+05E6:  BTFSC  18.6
+05E8:  BSF    F83.6
+....................   PORTD7=buf7; 
+05EA:  BTFSS  18.7
+05EC:  BCF    F83.7
+05EE:  BTFSC  18.7
+05F0:  BSF    F83.7
+....................   delay_ms(1); 
+05F2:  MOVLW  01
+05F4:  MOVWF  58
+05F6:  RCALL  059E
+....................   LCD_E=1; 
+05F8:  BSF    F83.2
+....................   delay_us(2); 
+05FA:  BRA    05FC
+05FC:  BRA    05FE
+05FE:  NOP   
+....................   LCD_E=0; 
+0600:  BCF    F83.2
+....................   delay_us(2); 
+0602:  BRA    0604
+0604:  BRA    0606
+0606:  NOP   
+....................   LCD_RW=1;    
+0608:  BSF    F83.0
+.................... } 
+060A:  RETLW  00
+....................  
+.................... static void LCDWriteData(unsigned char uc) 
+.................... { 
+....................    
+....................     LCD_RS=0; 
+*
+06C6:  BCF    F83.3
+....................     delay_ms(1); 
+06C8:  MOVLW  01
+06CA:  MOVWF  58
+06CC:  RCALL  059E
+....................     LCD_RS=1; 
+06CE:  BSF    F83.3
+....................     LCD_RW=1;// Восстановление байтовой синхронизации 
+06D0:  BSF    F83.0
+....................     LCDWriteNibble(uc>>4);//двиг разрядов старших 
+06D2:  SWAPF  55,W
+06D4:  MOVWF  56
+06D6:  MOVLW  0F
+06D8:  ANDWF  56,F
+06DA:  MOVFF  56,57
+06DE:  RCALL  05C6
+....................     LCDWriteNibble(uc); 
+06E0:  MOVFF  55,57
+06E4:  RCALL  05C6
+....................    
+.................... } 
+06E6:  GOTO   06F0 (RETURN)
+....................  
+.................... static void LCDCommand(unsigned char uc) 
+.................... { 
+....................    
+....................     LCD_RS=0; /* Instruction mode */ 
+*
+060C:  BCF    F83.3
+....................     delay_ms(1); 
+060E:  MOVLW  01
+0610:  MOVWF  58
+0612:  RCALL  059E
+....................     LCD_RW=1;// Восстановление байтовой синхронизации 
+0614:  BSF    F83.0
+....................     LCDWriteNibble(uc>>4); 
+0616:  SWAPF  4A,W
+0618:  MOVWF  4B
+061A:  MOVLW  0F
+061C:  ANDWF  4B,F
+061E:  MOVFF  4B,57
+0622:  RCALL  05C6
+....................     LCDWriteNibble(uc); 
+0624:  MOVFF  4A,57
+0628:  RCALL  05C6
+....................    
+.................... } 
+062A:  RETLW  00
+....................  
+.................... static void LCDSetCursor(unsigned char ucPos) 
+.................... { 
+....................   LCDCommand(0x80 | ucPos); 
+*
+06FA:  MOVF   48,W
+06FC:  IORLW  80
+06FE:  MOVWF  49
+0700:  MOVWF  4A
+0702:  RCALL  060C
+.................... } 
+0704:  RETLW  00
+....................  
+.................... static void LCDClear(void) 
+.................... { 
+....................    LCDCommand(0x1); 
+*
+06B8:  MOVLW  01
+06BA:  MOVWF  4A
+06BC:  RCALL  060C
+....................    Delay_ms(1); 
+06BE:  MOVLW  01
+06C0:  MOVWF  58
+06C2:  RCALL  059E
+....................    
+.................... } 
+06C4:  RETLW  00
+....................  
+.................... static void LCDInit(void) 
+....................  
+.................... { 
+....................     
+....................   LCD_E=0; 
+*
+062C:  BCF    F83.2
+....................   LCD_RS=0; 
+062E:  BCF    F83.3
+....................   Delay_ms(1000); // 
+0630:  MOVLW  04
+0632:  MOVWF  46
+0634:  MOVLW  FA
+0636:  MOVWF  58
+0638:  RCALL  059E
+063A:  DECFSZ 46,F
+063C:  BRA    0634
+....................   LCDWriteNibble(3); 
+063E:  MOVLW  03
+0640:  MOVWF  57
+0642:  RCALL  05C6
+....................   Delay_us(200); 
+0644:  MOVLW  A6
+0646:  MOVWF  00
+0648:  DECFSZ 00,F
+064A:  BRA    0648
+064C:  NOP   
+....................   LCDWriteNibble(3); 
+064E:  MOVLW  03
+0650:  MOVWF  57
+0652:  RCALL  05C6
+....................   Delay_us(200); 
+0654:  MOVLW  A6
+0656:  MOVWF  00
+0658:  DECFSZ 00,F
+065A:  BRA    0658
+065C:  NOP   
+....................   LCDWriteNibble(3); 
+065E:  MOVLW  03
+0660:  MOVWF  57
+0662:  RCALL  05C6
+....................   Delay_us(200); 
+0664:  MOVLW  A6
+0666:  MOVWF  00
+0668:  DECFSZ 00,F
+066A:  BRA    0668
+066C:  NOP   
+....................   LCDWriteNibble(2); 
+066E:  MOVLW  02
+0670:  MOVWF  57
+0672:  RCALL  05C6
+....................   Delay_us(200); 
+0674:  MOVLW  A6
+0676:  MOVWF  00
+0678:  DECFSZ 00,F
+067A:  BRA    0678
+067C:  NOP   
+....................    
+....................    
+....................   LCDCommand(0x28);//4-битный режим, 2 строки, шрифт 5x8 точек 
+067E:  MOVLW  28
+0680:  MOVWF  4A
+0682:  RCALL  060C
+....................    
+....................   LCDCommand(0x08);// Выключить дисплей, выключить курсор, выключить моргание курсора 
+0684:  MOVLW  08
+0686:  MOVWF  4A
+0688:  RCALL  060C
+....................    
+....................    
+....................  
+....................  // LCDCommand(0x0C);// Включить дисплей, включить курсор, включить моргание курсора 
+....................    LCDCommand(0b00001100);// Включить дисплей, включить курсор, включить моргание курсора 
+068A:  MOVLW  0C
+068C:  MOVWF  4A
+068E:  RCALL  060C
+....................    
+....................    
+....................   LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ?????? 
+0690:  MOVLW  06
+0692:  MOVWF  4A
+0694:  RCALL  060C
+....................   LCDCommand(0x1);// ??????? ?????? ? ??????????? ??????? ? ?????? ???????  
+0696:  MOVLW  01
+0698:  MOVWF  4A
+069A:  RCALL  060C
+....................    delay_ms(2); 
+069C:  MOVLW  02
+069E:  MOVWF  58
+06A0:  RCALL  059E
+....................   LCDCommand(0x06);// ?????? ????? ????????? ?????? ??? ?????? ??????  
+06A2:  MOVLW  06
+06A4:  MOVWF  4A
+06A6:  RCALL  060C
+....................   LCDCommand(0x40);//????????? ?????? DRAM 
+06A8:  MOVLW  40
+06AA:  MOVWF  4A
+06AC:  RCALL  060C
+....................   delay_ms(10); 
+06AE:  MOVLW  0A
+06B0:  MOVWF  58
+06B2:  RCALL  059E
+....................  } 
+06B4:  GOTO   0BE6 (RETURN)
+....................  
+.................... /* 
+.................... static void LCDInit(void) 
+....................  
+.................... { 
+....................    // ЧТО ЗА (3) 
+....................   LCD_E=0; 
+....................   LCD_RS=0; 
+....................   Delay_ms(1); // 
+....................   LCDWriteNibble(3); 
+....................   Delay_ms(1); 
+....................   LCDWriteNibble(3); 
+....................   Delay_ms(1); 
+....................   LCDWriteNibble(3); 
+....................   Delay_ms(1); 
+....................   LCDWriteNibble(3); 
+....................   Delay_ms(1); 
+....................   
+....................   // ИНФОРМАЦИЯ ИЗ ДАТАШИТА 
+....................    
+....................   LCDCommand(0x28);//4-битный режим, 2 строки, шрифт 5x8 точек 
+....................     
+....................   LCDCommand(0x08);// Выключить дисплей, выключить курсор, выключить моргание курсора 
+....................   
+....................   LCDCommand(0x0F);// Включить дисплей, включить курсор, включить моргание курсора 
+....................   Delay_ms(5000); 
+....................   LCDCommand(0x06);// Курсор будет двигаться вправо при выводе текста 
+....................   
+....................   LCDCommand(0x1);// Очистка экрана и перемещение курсора в первую позицию  
+....................      
+....................   LCDCommand(0x06);// Курсор будет двигаться вправо при выводе текста  
+....................    
+....................   LCDCommand(0x40);//Установка адреса DRAM 
+....................    
+....................    
+....................  } 
+....................  */ 
+....................   
+....................  static void LCDPutCh(char c) 
+.................... { 
+....................   LCDWriteData(c); 
+*
+06EA:  MOVFF  54,55
+06EE:  BRA    06C6
+.................... } 
+06F0:  RETLW  00
+....................  
+....................  static void LCDPutU16(U32 _u16,U8 u8NumDigs) 
+.................... { 
+....................     
+....................     U32 u16a ,u16b; 
+....................      
+....................     u16a=_u16/10000; 
+*
+0862:  MOVFF  49,56
+0866:  MOVFF  48,55
+086A:  MOVFF  47,54
+086E:  MOVFF  46,53
+0872:  CLRF   5A
+0874:  CLRF   59
+0876:  MOVLW  27
+0878:  MOVWF  58
+087A:  MOVLW  10
+087C:  MOVWF  57
+087E:  RCALL  0794
+0880:  MOVFF  03,4E
+0884:  MOVFF  02,4D
+0888:  MOVFF  01,4C
+088C:  MOVFF  00,4B
+....................     u16b=u16a*10000; 
+0890:  MOVFF  4E,56
+0894:  MOVFF  4D,55
+0898:  MOVFF  4C,54
+089C:  MOVFF  4B,53
+08A0:  CLRF   5A
+08A2:  CLRF   59
+08A4:  MOVLW  27
+08A6:  MOVWF  58
+08A8:  MOVLW  10
+08AA:  MOVWF  57
+08AC:  RCALL  080E
+08AE:  MOVFF  03,52
+08B2:  MOVFF  02,51
+08B6:  MOVFF  01,50
+08BA:  MOVFF  00,4F
+....................  
+....................     if (u8NumDigs>=5) 
+08BE:  MOVF   4A,W
+08C0:  SUBLW  04
+08C2:  BC    08CE
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+08C4:  MOVLW  30
+08C6:  ADDWF  4B,W
+08C8:  MOVWF  53
+08CA:  MOVWF  54
+08CC:  RCALL  06EA
+....................     } 
+....................  
+....................     _u16-=u16b; 
+08CE:  MOVF   4F,W
+08D0:  SUBWF  46,F
+08D2:  MOVF   50,W
+08D4:  SUBWFB 47,F
+08D6:  MOVF   51,W
+08D8:  SUBWFB 48,F
+08DA:  MOVF   52,W
+08DC:  SUBWFB 49,F
+....................     u16a=_u16/1000; 
+08DE:  MOVFF  49,56
+08E2:  MOVFF  48,55
+08E6:  MOVFF  47,54
+08EA:  MOVFF  46,53
+08EE:  CLRF   5A
+08F0:  CLRF   59
+08F2:  MOVLW  03
+08F4:  MOVWF  58
+08F6:  MOVLW  E8
+08F8:  MOVWF  57
+08FA:  RCALL  0794
+08FC:  MOVFF  03,4E
+0900:  MOVFF  02,4D
+0904:  MOVFF  01,4C
+0908:  MOVFF  00,4B
+....................     u16b=u16a*1000; 
+090C:  MOVFF  4E,56
+0910:  MOVFF  4D,55
+0914:  MOVFF  4C,54
+0918:  MOVFF  4B,53
+091C:  CLRF   5A
+091E:  CLRF   59
+0920:  MOVLW  03
+0922:  MOVWF  58
+0924:  MOVLW  E8
+0926:  MOVWF  57
+0928:  RCALL  080E
+092A:  MOVFF  03,52
+092E:  MOVFF  02,51
+0932:  MOVFF  01,50
+0936:  MOVFF  00,4F
+....................     if (u8NumDigs>=4) 
+093A:  MOVF   4A,W
+093C:  SUBLW  03
+093E:  BC    094A
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+0940:  MOVLW  30
+0942:  ADDWF  4B,W
+0944:  MOVWF  53
+0946:  MOVWF  54
+0948:  RCALL  06EA
+....................     } 
+....................  
+....................     _u16-=u16b; 
+094A:  MOVF   4F,W
+094C:  SUBWF  46,F
+094E:  MOVF   50,W
+0950:  SUBWFB 47,F
+0952:  MOVF   51,W
+0954:  SUBWFB 48,F
+0956:  MOVF   52,W
+0958:  SUBWFB 49,F
+....................     u16a=_u16/100; 
+095A:  MOVFF  49,56
+095E:  MOVFF  48,55
+0962:  MOVFF  47,54
+0966:  MOVFF  46,53
+096A:  CLRF   5A
+096C:  CLRF   59
+096E:  CLRF   58
+0970:  MOVLW  64
+0972:  MOVWF  57
+0974:  RCALL  0794
+0976:  MOVFF  03,4E
+097A:  MOVFF  02,4D
+097E:  MOVFF  01,4C
+0982:  MOVFF  00,4B
+....................     u16b=u16a*100; 
+0986:  MOVFF  4E,56
+098A:  MOVFF  4D,55
+098E:  MOVFF  4C,54
+0992:  MOVFF  4B,53
+0996:  CLRF   5A
+0998:  CLRF   59
+099A:  CLRF   58
+099C:  MOVLW  64
+099E:  MOVWF  57
+09A0:  RCALL  080E
+09A2:  MOVFF  03,52
+09A6:  MOVFF  02,51
+09AA:  MOVFF  01,50
+09AE:  MOVFF  00,4F
+....................     if (u8NumDigs>=3) 
+09B2:  MOVF   4A,W
+09B4:  SUBLW  02
+09B6:  BC    09C2
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+09B8:  MOVLW  30
+09BA:  ADDWF  4B,W
+09BC:  MOVWF  53
+09BE:  MOVWF  54
+09C0:  RCALL  06EA
+....................     } 
+....................  
+....................     _u16-=u16b; 
+09C2:  MOVF   4F,W
+09C4:  SUBWF  46,F
+09C6:  MOVF   50,W
+09C8:  SUBWFB 47,F
+09CA:  MOVF   51,W
+09CC:  SUBWFB 48,F
+09CE:  MOVF   52,W
+09D0:  SUBWFB 49,F
+....................     u16a=_u16/10; 
+09D2:  MOVFF  49,56
+09D6:  MOVFF  48,55
+09DA:  MOVFF  47,54
+09DE:  MOVFF  46,53
+09E2:  CLRF   5A
+09E4:  CLRF   59
+09E6:  CLRF   58
+09E8:  MOVLW  0A
+09EA:  MOVWF  57
+09EC:  RCALL  0794
+09EE:  MOVFF  03,4E
+09F2:  MOVFF  02,4D
+09F6:  MOVFF  01,4C
+09FA:  MOVFF  00,4B
+....................     u16b=u16a*10; 
+09FE:  MOVFF  4E,56
+0A02:  MOVFF  4D,55
+0A06:  MOVFF  4C,54
+0A0A:  MOVFF  4B,53
+0A0E:  CLRF   5A
+0A10:  CLRF   59
+0A12:  CLRF   58
+0A14:  MOVLW  0A
+0A16:  MOVWF  57
+0A18:  RCALL  080E
+0A1A:  MOVFF  03,52
+0A1E:  MOVFF  02,51
+0A22:  MOVFF  01,50
+0A26:  MOVFF  00,4F
+....................    if (u8NumDigs>=2) 
+0A2A:  MOVF   4A,W
+0A2C:  SUBLW  01
+0A2E:  BC    0A3A
+....................     { 
+....................       LCDPutCh((U8)u16a+'0'); 
+0A30:  MOVLW  30
+0A32:  ADDWF  4B,W
+0A34:  MOVWF  53
+0A36:  MOVWF  54
+0A38:  RCALL  06EA
+....................     } 
+....................  
+....................     _u16-=u16b; 
+0A3A:  MOVF   4F,W
+0A3C:  SUBWF  46,F
+0A3E:  MOVF   50,W
+0A40:  SUBWFB 47,F
+0A42:  MOVF   51,W
+0A44:  SUBWFB 48,F
+0A46:  MOVF   52,W
+0A48:  SUBWFB 49,F
+....................     if (u8NumDigs>=1) 
+0A4A:  MOVF   4A,W
+0A4C:  SUBLW  00
+0A4E:  BC    0A5A
+....................     { 
+....................       LCDPutCh((U8)_u16+'0'); 
+0A50:  MOVLW  30
+0A52:  ADDWF  46,W
+0A54:  MOVWF  53
+0A56:  MOVWF  54
+0A58:  RCALL  06EA
+....................     } 
+....................    
+.................... } 
+0A5A:  RETLW  00
+....................  
+.................... static void LCDPutS16(S16 s16a,U8 u8NumDigs) 
+.................... { 
+....................   char c='+'; 
+....................  
+....................   if (s16a<0) 
+....................   { 
+....................     s16a=-s16a; 
+....................     c='-'; 
+....................   } 
+....................   LCDPutCh(c); 
+....................   LCDPutU16((U16)s16a,u8NumDigs); 
+.................... } 
+....................  
+.................... static void LCDMsg(char c) 
+.................... { 
+....................    
+....................     LCDPutCh(c); 
+*
+06F2:  MOVFF  49,54
+06F6:  RCALL  06EA
+....................    
+.................... } 
+06F8:  RETLW  00
+....................  
+....................  static void LCDWelcome(void) 
+.................... { 
+....................     U16 u16a; 
+....................     LCDClear(); 
+*
+0706:  RCALL  06B8
+....................     LCDMsg("DIG. TERM. v1.0"); 
+0708:  CLRF   48
+070A:  MOVF   48,W
+070C:  RCALL  00AA
+070E:  IORLW  00
+0710:  BZ    071A
+0712:  INCF   48,F
+0714:  MOVWF  49
+0716:  RCALL  06F2
+0718:  BRA    070A
+....................     Delay_ms(20); 
+071A:  MOVLW  14
+071C:  MOVWF  58
+071E:  RCALL  059E
+....................     LCDSetCursor(0x40); 
+0720:  MOVLW  40
+0722:  MOVWF  48
+0724:  RCALL  06FA
+....................     LCDMsg("Firmware v1.0");  
+0726:  CLRF   48
+0728:  MOVF   48,W
+072A:  RCALL  00D4
+072C:  IORLW  00
+072E:  BZ    0738
+0730:  INCF   48,F
+0732:  MOVWF  49
+0734:  RCALL  06F2
+0736:  BRA    0728
+....................     Delay_ms(3000); 
+0738:  MOVLW  0C
+073A:  MOVWF  48
+073C:  MOVLW  FA
+073E:  MOVWF  58
+0740:  RCALL  059E
+0742:  DECFSZ 48,F
+0744:  BRA    073C
+....................     LCDClear();    
+0746:  RCALL  06B8
+.................... } 
+0748:  GOTO   0C08 (RETURN)
+....................  
+.................... #int_TIMER1 
+.................... void  TIMER1_isr(void){ 
+.................... // прерывание каждую мс 
+.................... set_timer1(64910);  
+*
+04AC:  MOVLW  FD
+04AE:  MOVWF  FCF
+04B0:  MOVLW  8E
+04B2:  MOVWF  FCE
+.................... for(i=0; i<4; ++i){ 
+04B4:  CLRF   20
+04B6:  MOVF   20,W
+04B8:  SUBLW  03
+04BA:  BNC   0548
+.................... //нажата ли кнопка? 
+....................  if (PBScan(i)){ 
+04BC:  MOVFF  20,61
+04C0:  BRA    045E
+04C2:  MOVF   01,F
+04C4:  BZ    0524
+....................   //кнопка зажата 
+....................    //порог подавления дребезга достигнут 
+....................    if(t_out[i]==30) { 
+04C6:  CLRF   03
+04C8:  MOVF   20,W
+04CA:  ADDLW  21
+04CC:  MOVWF  FE9
+04CE:  MOVLW  00
+04D0:  ADDWFC 03,W
+04D2:  MOVWF  FEA
+04D4:  MOVF   FEF,W
+04D6:  SUBLW  1E
+04D8:  BNZ   0512
+....................           //да 
+....................           //флаг "Удерживается" установлен 
+....................           if(!b_hold[i]){ 
+04DA:  CLRF   03
+04DC:  MOVF   20,W
+04DE:  ADDLW  25
+04E0:  MOVWF  FE9
+04E2:  MOVLW  00
+04E4:  ADDWFC 03,W
+04E6:  MOVWF  FEA
+04E8:  MOVF   FEF,F
+04EA:  BNZ   0510
+....................             //нет 
+....................             b_hold[i]=1;//утановить флаг "Удерживается" 
+04EC:  CLRF   03
+04EE:  MOVF   20,W
+04F0:  ADDLW  25
+04F2:  MOVWF  FE9
+04F4:  MOVLW  00
+04F6:  ADDWFC 03,W
+04F8:  MOVWF  FEA
+04FA:  MOVLW  01
+04FC:  MOVWF  FEF
+....................             b_push[i]=1;//установить флаг "нажато" 
+04FE:  CLRF   03
+0500:  MOVF   20,W
+0502:  ADDLW  29
+0504:  MOVWF  FE9
+0506:  MOVLW  00
+0508:  ADDWFC 03,W
+050A:  MOVWF  FEA
+050C:  MOVLW  01
+050E:  MOVWF  FEF
+....................            } 
+....................           //да 
+....................        } 
+....................       else 
+0510:  BRA    0522
+....................       //порог подавления дребезга не достигнут 
+....................       { 
+....................       ++t_out[i];//инкримент переменной подавления дребезга 
+0512:  CLRF   03
+0514:  MOVF   20,W
+0516:  ADDLW  21
+0518:  MOVWF  FE9
+051A:  MOVLW  00
+051C:  ADDWFC 03,W
+051E:  MOVWF  FEA
+0520:  INCF   FEF,F
+....................       } 
+....................    } 
+....................    else 
+0522:  BRA    0544
+....................    // кнопка не нажата 
+....................    { 
+....................    t_out[i]=0; //обнуление переменной подавления дребезга 
+0524:  CLRF   03
+0526:  MOVF   20,W
+0528:  ADDLW  21
+052A:  MOVWF  FE9
+052C:  MOVLW  00
+052E:  ADDWFC 03,W
+0530:  MOVWF  FEA
+0532:  CLRF   FEF
+....................    b_hold[i]=0; //сброс флага "удерживается" 
+0534:  CLRF   03
+0536:  MOVF   20,W
+0538:  ADDLW  25
+053A:  MOVWF  FE9
+053C:  MOVLW  00
+053E:  ADDWFC 03,W
+0540:  MOVWF  FEA
+0542:  CLRF   FEF
+....................    } 
+.................... } 
+0544:  INCF   20,F
+0546:  BRA    04B6
+.................... //***********кнопки обработаны*********************** 
+....................    
+....................   if(b_push[2]){ 
+0548:  MOVF   2B,F
+054A:  BZ    0552
+....................      b_push[2]=0; 
+054C:  CLRF   2B
+....................      Pbfl = 1; 
+054E:  BSF    1B.4
+....................        ++MenuItemNum; 
+0550:  INCF   1F,F
+....................      //   Pbfl = 1; 
+....................         
+....................    } if(MenuItemNum>6) MenuItemNum=0; 
+0552:  MOVF   1F,W
+0554:  SUBLW  06
+0556:  BTFSS  FD8.0
+0558:  CLRF   1F
+....................    
+....................        
+.................... clear_interrupt(int_timer1);//сброс прерываения..обяз 
+055A:  BCF    F9E.0
+.................... } 
+....................  
+055C:  BCF    F9E.0
+055E:  GOTO   0064
+.................... #int_TIMER3 
+.................... void  TIMER3_isr(void)  
+.................... { 
+.................... // прерывание каждые 100 мс 
+.................... // управление нагревателем 
+.................... set_timer3(59300); 
+0562:  MOVLW  E7
+0564:  MOVWF  FB3
+0566:  MOVLW  A4
+0568:  MOVWF  FB2
+....................     
+....................    if(count>hp) pwrfl=0; 
+056A:  MOVF   19,W
+056C:  SUBWF  1A,W
+056E:  BC    0574
+0570:  BCF    1B.1
+....................             else pwrfl=1; 
+0572:  BRA    0576
+0574:  BSF    1B.1
+....................              
+....................     if(tmaxfl&&pwrfl&&dtfl&&henfl){ 
+0576:  BTFSS  1B.0
+0578:  BRA    058A
+057A:  BTFSS  1B.1
+057C:  BRA    058A
+057E:  BTFSS  1B.2
+0580:  BRA    058A
+0582:  BTFSS  1B.3
+0584:  BRA    058A
+....................     PORTC5 = 1; 
+0586:  BSF    F82.5
+....................     }else PORTC5 = 0; 
+0588:  BRA    058C
+058A:  BCF    F82.5
+....................      
+....................     if(count>99){ 
+058C:  MOVF   19,W
+058E:  SUBLW  63
+0590:  BC    0594
+....................         count = 0; 
+0592:  CLRF   19
+....................         } 
+....................  count ++; 
+0594:  INCF   19,F
+....................  
+.................... clear_interrupt(int_timer3); 
+0596:  BCF    FA1.1
+.................... } 
+....................  
+0598:  BCF    FA1.1
+059A:  GOTO   0064
+.................... u16 ADC_read(u8 ch){ 
+....................   U32 ADC_value; 
+....................   u8 i; 
+....................   ADC_value=0; 
+*
+0A5C:  CLRF   4A
+0A5E:  CLRF   49
+0A60:  CLRF   48
+0A62:  CLRF   47
+....................   set_adc_channel(ch); // установка порта АЦП 
+0A64:  RLCF   46,W
+0A66:  MOVWF  00
+0A68:  RLCF   00,F
+0A6A:  MOVLW  FC
+0A6C:  ANDWF  00,F
+0A6E:  MOVF   FC2,W
+0A70:  ANDLW  C3
+0A72:  IORWF  00,W
+0A74:  MOVWF  FC2
+....................    delay_us(20); 
+0A76:  MOVLW  10
+0A78:  MOVWF  00
+0A7A:  DECFSZ 00,F
+0A7C:  BRA    0A7A
+0A7E:  NOP   
+....................    for(i=0;i<ADCNumSamples;i++){ 
+0A80:  CLRF   4B
+0A82:  MOVF   1C,W
+0A84:  SUBWF  4B,W
+0A86:  BC    0AA6
+....................    ADC_value = read_adc()+ADC_value;// получение значений с АЦП 
+0A88:  BSF    FC2.1
+0A8A:  BTFSC  FC2.1
+0A8C:  BRA    0A8A
+0A8E:  MOVF   FC3,W
+0A90:  ADDWF  47,F
+0A92:  MOVF   FC4,W
+0A94:  ADDWFC 48,F
+0A96:  MOVLW  00
+0A98:  ADDWFC 49,F
+0A9A:  ADDWFC 4A,F
+....................    delay_ms(2); 
+0A9C:  MOVLW  02
+0A9E:  MOVWF  58
+0AA0:  RCALL  059E
+....................    } 
+0AA2:  INCF   4B,F
+0AA4:  BRA    0A82
+....................    return ADC_value/ADCNumSamples; 
+0AA6:  MOVFF  4A,56
+0AAA:  MOVFF  49,55
+0AAE:  MOVFF  48,54
+0AB2:  MOVFF  47,53
+0AB6:  CLRF   5A
+0AB8:  CLRF   59
+0ABA:  CLRF   58
+0ABC:  MOVFF  1C,57
+0AC0:  RCALL  0794
+0AC2:  MOVFF  01,02
+0AC6:  MOVFF  00,01
+.................... } 
+0ACA:  RETLW  00
+....................  
+.................... void main() 
+.................... { 
+*
+0B2C:  CLRF   FF8
+0B2E:  BCF    FD0.7
+0B30:  BSF    0D.7
+0B32:  CLRF   FEA
+0B34:  CLRF   FE9
+0B36:  MOVLW  40
+0B38:  MOVWF  FAF
+0B3A:  MOVLW  A6
+0B3C:  MOVWF  FAC
+0B3E:  MOVLW  90
+0B40:  MOVWF  FAB
+0B42:  MOVF   FC1,W
+0B44:  ANDLW  C0
+0B46:  IORLW  0F
+0B48:  MOVWF  FC1
+0B4A:  MOVLW  07
+0B4C:  MOVWF  FB4
+0B4E:  CLRF   18
+0B50:  CLRF   19
+0B52:  MOVLW  21
+0B54:  MOVWF  1A
+0B56:  BCF    1B.0
+0B58:  BCF    1B.1
+0B5A:  BSF    1B.2
+0B5C:  MOVLW  14
+0B5E:  MOVWF  1C
+0B60:  BCF    1B.3
+0B62:  MOVLW  1E
+0B64:  MOVWF  1D
+0B66:  CLRF   1E
+0B68:  CLRF   1F
+0B6A:  CLRF   20
+0B6C:  CLRF   21
+0B6E:  CLRF   22
+0B70:  CLRF   23
+0B72:  CLRF   24
+0B74:  CLRF   25
+0B76:  CLRF   26
+0B78:  CLRF   27
+0B7A:  CLRF   28
+0B7C:  CLRF   29
+0B7E:  CLRF   2A
+0B80:  CLRF   2B
+0B82:  CLRF   2C
+0B84:  BCF    1B.4
+0B86:  BCF    1B.5
+....................  u8 j=0; 
+0B88:  CLRF   2D
+....................  char buf1[8]; 
+....................  int1 EEWrFl=0; 
+0B8A:  BCF    36.0
+....................  U16 t, t1, t2,tr; 
+....................  U32 ADC_value; 
+....................   
+....................  U8 dt = 2,CRC1=0xFF,CRC2=0xFF; 
+0B8C:  MOVLW  02
+0B8E:  MOVWF  43
+0B90:  MOVLW  FF
+0B92:  MOVWF  44
+0B94:  MOVWF  45
+....................   
+....................   
+....................   
+....................    setup_psp(PSP_DISABLED); 
+0B96:  BCF    F96.4
+....................    setup_spi(SPI_SS_DISABLED); 
+0B98:  BCF    FC6.5
+0B9A:  BCF    F94.5
+0B9C:  BSF    F94.4
+0B9E:  BCF    F94.3
+0BA0:  MOVLW  01
+0BA2:  MOVWF  FC6
+0BA4:  MOVLW  00
+0BA6:  MOVWF  FC7
+....................    setup_wdt(WDT_OFF); 
+0BA8:  BCF    FD1.0
+....................    setup_timer_0(RTCC_INTERNAL); 
+0BAA:  MOVLW  80
+0BAC:  MOVWF  FD5
+....................    setup_timer_1(T1_INTERNAL|T2_DIV_BY_4); 
+0BAE:  MOVLW  85
+0BB0:  MOVWF  FCD
+....................    setup_timer_2(T2_DISABLED,0,1); 
+0BB2:  MOVLW  00
+0BB4:  MOVWF  FCA
+0BB6:  MOVLW  00
+0BB8:  MOVWF  FCB
+....................    setup_timer_3(T3_INTERNAL|T3_DIV_BY_4); 
+0BBA:  MOVF   FB1,W
+0BBC:  ANDLW  48
+0BBE:  IORLW  A5
+0BC0:  MOVWF  FB1
+....................    setup_comparator(NC_NC_NC_NC); 
+0BC2:  MOVLW  07
+0BC4:  MOVWF  FB4
+0BC6:  MOVF   F92,W
+0BC8:  MOVLW  08
+0BCA:  MOVWF  00
+0BCC:  DECFSZ 00,F
+0BCE:  BRA    0BCC
+0BD0:  MOVF   FB4,W
+0BD2:  BCF    FA1.6
+....................    setup_vref(FALSE); 
+0BD4:  CLRF   FB5
+....................  
+....................    TRA2 = 1;//обозначили как вход 
+0BD6:  BSF    F92.2
+....................    TRC5 = 0;//обозначили как выход 
+0BD8:  BCF    F94.5
+....................     
+....................    TRISD=0b000000010; 
+0BDA:  MOVLW  02
+0BDC:  MOVWF  F95
+....................    TRISB=0b000011110;   //rb1-rb4 как входы 
+0BDE:  MOVLW  1E
+0BE0:  MOVWF  F93
+....................     
+....................    PORTC5=0; 
+0BE2:  BCF    F82.5
+....................     
+....................    LCDInit(); 
+0BE4:  BRA    062C
+....................   setup_adc_ports(AN0_TO_AN2|VSS_VREF);    //1100&&1010 
+0BE6:  MOVF   FC1,W
+0BE8:  ANDLW  C0
+0BEA:  IORLW  1C
+0BEC:  MOVWF  FC1
+....................   setup_adc(ADC_OFF|ADC_TAD_MUL_20);       //0&&111000 
+0BEE:  MOVF   FC0,W
+0BF0:  ANDLW  C0
+0BF2:  IORLW  38
+0BF4:  MOVWF  FC0
+0BF6:  BSF    FC0.7
+0BF8:  BSF    FC2.0
+....................   setup_adc(ADC_CLOCK_DIV_64|ADC_TAD_MUL_20);//110&&111000 
+0BFA:  MOVF   FC0,W
+0BFC:  ANDLW  C0
+0BFE:  IORLW  3E
+0C00:  MOVWF  FC0
+0C02:  BSF    FC0.7
+0C04:  BSF    FC2.0
+....................    
+....................     LCDWelcome(); 
+0C06:  BRA    0706
+....................      
+....................      LCDClear(); 
+0C08:  RCALL  06B8
+....................      LCDSetCursor(0x0); 
+0C0A:  CLRF   48
+0C0C:  RCALL  06FA
+....................     LCDMsg("Reading data "); 
+0C0E:  CLRF   46
+0C10:  MOVF   46,W
+0C12:  CALL   00FC
+0C16:  IORLW  00
+0C18:  BZ    0C22
+0C1A:  INCF   46,F
+0C1C:  MOVWF  49
+0C1E:  RCALL  06F2
+0C20:  BRA    0C10
+....................     LCDSetCursor(0x40); 
+0C22:  MOVLW  40
+0C24:  MOVWF  48
+0C26:  RCALL  06FA
+....................     LCDMsg("from EEPROM..."); 
+0C28:  CLRF   46
+0C2A:  MOVF   46,W
+0C2C:  CALL   0124
+0C30:  IORLW  00
+0C32:  BZ    0C3C
+0C34:  INCF   46,F
+0C36:  MOVWF  49
+0C38:  RCALL  06F2
+0C3A:  BRA    0C2A
+....................      
+....................     for (j=0;j<5;j++) 
+0C3C:  CLRF   2D
+0C3E:  MOVF   2D,W
+0C40:  SUBLW  04
+0C42:  BNC   0C6E
+....................           buf1[j]=read_eeprom (j); 
+0C44:  CLRF   03
+0C46:  MOVF   2D,W
+0C48:  ADDLW  2E
+0C4A:  MOVWF  FE9
+0C4C:  MOVLW  00
+0C4E:  ADDWFC 03,W
+0C50:  MOVWF  FEA
+0C52:  MOVFF  FF2,48
+0C56:  BCF    FF2.7
+0C58:  MOVFF  2D,FA9
+0C5C:  BCF    FA6.6
+0C5E:  BCF    FA6.7
+0C60:  BSF    FA6.0
+0C62:  MOVF   FA8,W
+0C64:  BTFSC  48.7
+0C66:  BSF    FF2.7
+0C68:  MOVWF  FEF
+0C6A:  INCF   2D,F
+0C6C:  BRA    0C3E
+....................        crc1=CRC8(buf1,3); 
+0C6E:  CLRF   47
+0C70:  MOVLW  2E
+0C72:  MOVWF  46
+0C74:  MOVLW  03
+0C76:  MOVWF  48
+0C78:  RCALL  074C
+0C7A:  MOVFF  01,44
+....................        crc2=buf1[3]; 
+0C7E:  MOVFF  31,45
+....................        if(crc1==crc2){     
+0C82:  MOVF   45,W
+0C84:  SUBWF  44,W
+0C86:  BNZ   0CAC
+....................      
+....................       //delay_ms(500); 
+....................       LCDMsg("OK"); 
+0C88:  CLRF   46
+0C8A:  MOVF   46,W
+0C8C:  CALL   014E
+0C90:  IORLW  00
+0C92:  BZ    0C9C
+0C94:  INCF   46,F
+0C96:  MOVWF  49
+0C98:  RCALL  06F2
+0C9A:  BRA    0C8A
+....................       tmax=buf1[0]; 
+0C9C:  CLRF   1E
+0C9E:  MOVFF  2E,1D
+....................       dt=buf1[1]; 
+0CA2:  MOVFF  2F,43
+....................       hp=buf1[2];  
+0CA6:  MOVFF  30,1A
+....................        }else { 
+0CAA:  BRA    0CC6
+....................              LCDSetCursor(0x10); 
+0CAC:  MOVLW  10
+0CAE:  MOVWF  48
+0CB0:  RCALL  06FA
+....................              LCDMsg("CRC error !"); 
+0CB2:  CLRF   46
+0CB4:  MOVF   46,W
+0CB6:  CALL   016C
+0CBA:  IORLW  00
+0CBC:  BZ    0CC6
+0CBE:  INCF   46,F
+0CC0:  MOVWF  49
+0CC2:  RCALL  06F2
+0CC4:  BRA    0CB4
+....................              } 
+....................      
+....................      
+....................     LCDSetCursor(0x50); 
+0CC6:  MOVLW  50
+0CC8:  MOVWF  48
+0CCA:  RCALL  06FA
+....................     LCDMsg("CRC1="); 
+0CCC:  CLRF   46
+0CCE:  MOVF   46,W
+0CD0:  CALL   0192
+0CD4:  IORLW  00
+0CD6:  BZ    0CE0
+0CD8:  INCF   46,F
+0CDA:  MOVWF  49
+0CDC:  RCALL  06F2
+0CDE:  BRA    0CCE
+....................     LCDPutU16(CRC1,3); 
+0CE0:  CLRF   49
+0CE2:  CLRF   48
+0CE4:  CLRF   47
+0CE6:  MOVFF  44,46
+0CEA:  MOVLW  03
+0CEC:  MOVWF  4A
+0CEE:  RCALL  0862
+....................     LCDMsg("CRC2="); 
+0CF0:  CLRF   46
+0CF2:  MOVF   46,W
+0CF4:  CALL   01B2
+0CF8:  IORLW  00
+0CFA:  BZ    0D04
+0CFC:  INCF   46,F
+0CFE:  MOVWF  49
+0D00:  RCALL  06F2
+0D02:  BRA    0CF2
+....................     LCDPutU16(crc2,3);         
+0D04:  CLRF   49
+0D06:  CLRF   48
+0D08:  CLRF   47
+0D0A:  MOVFF  45,46
+0D0E:  MOVLW  03
+0D10:  MOVWF  4A
+0D12:  RCALL  0862
+....................     delay_ms(1000); 
+0D14:  MOVLW  04
+0D16:  MOVWF  46
+0D18:  MOVLW  FA
+0D1A:  MOVWF  58
+0D1C:  RCALL  059E
+0D1E:  DECFSZ 46,F
+0D20:  BRA    0D18
+....................      
+....................      Delay_ms(1000); 
+0D22:  MOVLW  04
+0D24:  MOVWF  46
+0D26:  MOVLW  FA
+0D28:  MOVWF  58
+0D2A:  RCALL  059E
+0D2C:  DECFSZ 46,F
+0D2E:  BRA    0D26
+....................      LCDClear(); 
+0D30:  RCALL  06B8
+....................      
+....................     set_timer3(59285);  
+0D32:  MOVLW  E7
+0D34:  MOVWF  FB3
+0D36:  MOVLW  95
+0D38:  MOVWF  FB2
+....................     set_timer1(64910);  
+0D3A:  MOVLW  FD
+0D3C:  MOVWF  FCF
+0D3E:  MOVLW  8E
+0D40:  MOVWF  FCE
+....................     enable_interrupts(INT_TIMER1); 
+0D42:  BSF    F9D.0
+....................     enable_interrupts(INT_TIMER3); 
+0D44:  BSF    FA0.1
+....................     enable_interrupts(GLOBAL); 
+0D46:  MOVLW  C0
+0D48:  IORWF  FF2,F
+....................      
+....................      
+....................     
+....................     
+....................    while(true) { 
+....................    PbFl1=Pbfl; // для синхронности изменения MenuItem и PbFl 
+0D4A:  BCF    1B.5
+0D4C:  BTFSC  1B.4
+0D4E:  BSF    1B.5
+....................    switch (MenuItemNum){ 
+0D50:  MOVF   1F,W
+0D52:  BZ    0D7C
+0D54:  XORLW  01
+0D56:  BTFSC  FD8.2
+0D58:  BRA    10CC
+0D5A:  XORLW  03
+0D5C:  BTFSC  FD8.2
+0D5E:  BRA    1150
+0D60:  XORLW  01
+0D62:  BTFSC  FD8.2
+0D64:  BRA    11BC
+0D66:  XORLW  07
+0D68:  BTFSC  FD8.2
+0D6A:  BRA    1220
+0D6C:  XORLW  01
+0D6E:  BTFSC  FD8.2
+0D70:  BRA    1274
+0D72:  XORLW  03
+0D74:  BTFSC  FD8.2
+0D76:  BRA    1342
+0D78:  GOTO   145C
+....................       case 0: 
+....................       if(Pbfl1){ 
+0D7C:  BTFSS  1B.5
+0D7E:  BRA    0D8A
+....................          Pbfl=0; 
+0D80:  BCF    1B.4
+....................          delay_ms(1); 
+0D82:  MOVLW  01
+0D84:  MOVWF  58
+0D86:  RCALL  059E
+....................          LCDClear(); 
+0D88:  RCALL  06B8
+....................       } 
+....................    //нулевой пункт меню 
+....................   //****************Первый датчик****************** 
+....................    ADC_value=ADC_read(0); 
+0D8A:  CLRF   46
+0D8C:  RCALL  0A5C
+0D8E:  CLRF   42
+0D90:  CLRF   41
+0D92:  MOVFF  02,40
+0D96:  MOVFF  01,3F
+....................    LCDSetCursor(0x0);  
+0D9A:  CLRF   48
+0D9C:  RCALL  06FA
+....................    t = ADC_value*2; 
+0D9E:  BCF    FD8.0
+0DA0:  RLCF   3F,W
+0DA2:  MOVWF  00
+0DA4:  RLCF   40,W
+0DA6:  MOVWF  01
+0DA8:  RLCF   41,W
+0DAA:  RLCF   42,W
+0DAC:  MOVFF  00,37
+0DB0:  MOVFF  01,38
+....................    t1 = t/10; 
+0DB4:  MOVFF  38,47
+0DB8:  MOVFF  37,46
+0DBC:  CLRF   49
+0DBE:  MOVLW  0A
+0DC0:  MOVWF  48
+0DC2:  RCALL  0ACC
+0DC4:  MOVFF  02,3A
+0DC8:  MOVFF  01,39
+....................    t2 = t - t1*10; 
+0DCC:  MOVFF  3A,47
+0DD0:  MOVFF  39,46
+0DD4:  CLRF   49
+0DD6:  MOVLW  0A
+0DD8:  MOVWF  48
+0DDA:  RCALL  0B0E
+0DDC:  MOVF   01,W
+0DDE:  SUBWF  37,W
+0DE0:  MOVWF  3B
+0DE2:  MOVF   02,W
+0DE4:  SUBWFB 38,W
+0DE6:  MOVWF  3C
+....................    LCDMsg("t1="); 
+0DE8:  CLRF   46
+0DEA:  MOVF   46,W
+0DEC:  CALL   01D2
+0DF0:  IORLW  00
+0DF2:  BZ    0DFC
+0DF4:  INCF   46,F
+0DF6:  MOVWF  49
+0DF8:  RCALL  06F2
+0DFA:  BRA    0DEA
+....................    LCDPutU16(t1,3);//знака 
+0DFC:  CLRF   49
+0DFE:  CLRF   48
+0E00:  MOVFF  3A,47
+0E04:  MOVFF  39,46
+0E08:  MOVLW  03
+0E0A:  MOVWF  4A
+0E0C:  RCALL  0862
+....................    LCDMsg('.'); 
+0E0E:  MOVLW  2E
+0E10:  MOVWF  49
+0E12:  RCALL  06F2
+....................    LCDPutU16(t2,1); 
+0E14:  CLRF   49
+0E16:  CLRF   48
+0E18:  MOVFF  3C,47
+0E1C:  MOVFF  3B,46
+0E20:  MOVLW  01
+0E22:  MOVWF  4A
+0E24:  RCALL  0862
+....................    LCDPutCh(0xEF); 
+0E26:  MOVLW  EF
+0E28:  MOVWF  54
+0E2A:  RCALL  06EA
+....................    LCDMsg("C   HP");  
+0E2C:  CLRF   46
+0E2E:  MOVF   46,W
+0E30:  CALL   01F0
+0E34:  IORLW  00
+0E36:  BZ    0E40
+0E38:  INCF   46,F
+0E3A:  MOVWF  49
+0E3C:  RCALL  06F2
+0E3E:  BRA    0E2E
+.................... //****************второй датчик****************** 
+....................    ADC_value=ADC_read(1); // установка порта АЦП 
+0E40:  MOVLW  01
+0E42:  MOVWF  46
+0E44:  RCALL  0A5C
+0E46:  CLRF   42
+0E48:  CLRF   41
+0E4A:  MOVFF  02,40
+0E4E:  MOVFF  01,3F
+....................    LCDSetCursor(0x40);  
+0E52:  MOVLW  40
+0E54:  MOVWF  48
+0E56:  RCALL  06FA
+....................    t = ADC_value*2; 
+0E58:  BCF    FD8.0
+0E5A:  RLCF   3F,W
+0E5C:  MOVWF  00
+0E5E:  RLCF   40,W
+0E60:  MOVWF  01
+0E62:  RLCF   41,W
+0E64:  RLCF   42,W
+0E66:  MOVFF  00,37
+0E6A:  MOVFF  01,38
+....................    tr=t; 
+0E6E:  MOVFF  38,3E
+0E72:  MOVFF  37,3D
+....................    t1 = t/10; 
+0E76:  MOVFF  38,47
+0E7A:  MOVFF  37,46
+0E7E:  CLRF   49
+0E80:  MOVLW  0A
+0E82:  MOVWF  48
+0E84:  RCALL  0ACC
+0E86:  MOVFF  02,3A
+0E8A:  MOVFF  01,39
+....................    t2 = t - t1*10; 
+0E8E:  MOVFF  3A,47
+0E92:  MOVFF  39,46
+0E96:  CLRF   49
+0E98:  MOVLW  0A
+0E9A:  MOVWF  48
+0E9C:  RCALL  0B0E
+0E9E:  MOVF   01,W
+0EA0:  SUBWF  37,W
+0EA2:  MOVWF  3B
+0EA4:  MOVF   02,W
+0EA6:  SUBWFB 38,W
+0EA8:  MOVWF  3C
+....................    LCDMsg("t2="); 
+0EAA:  CLRF   46
+0EAC:  MOVF   46,W
+0EAE:  CALL   0212
+0EB2:  IORLW  00
+0EB4:  BZ    0EBE
+0EB6:  INCF   46,F
+0EB8:  MOVWF  49
+0EBA:  RCALL  06F2
+0EBC:  BRA    0EAC
+....................    LCDPutU16(t1,3); 
+0EBE:  CLRF   49
+0EC0:  CLRF   48
+0EC2:  MOVFF  3A,47
+0EC6:  MOVFF  39,46
+0ECA:  MOVLW  03
+0ECC:  MOVWF  4A
+0ECE:  RCALL  0862
+....................    LCDMsg('.'); 
+0ED0:  MOVLW  2E
+0ED2:  MOVWF  49
+0ED4:  RCALL  06F2
+....................    LCDPutU16(t2,1); 
+0ED6:  CLRF   49
+0ED8:  CLRF   48
+0EDA:  MOVFF  3C,47
+0EDE:  MOVFF  3B,46
+0EE2:  MOVLW  01
+0EE4:  MOVWF  4A
+0EE6:  RCALL  0862
+....................    LCDPutCh(0xEF); 
+0EE8:  MOVLW  EF
+0EEA:  MOVWF  54
+0EEC:  CALL   06EA
+....................    LCDMsg("C  "); 
+0EF0:  CLRF   46
+0EF2:  MOVF   46,W
+0EF4:  CALL   0230
+0EF8:  IORLW  00
+0EFA:  BZ    0F06
+0EFC:  INCF   46,F
+0EFE:  MOVWF  49
+0F00:  CALL   06F2
+0F04:  BRA    0EF2
+....................    LCDPutU16(hp,3); 
+0F06:  CLRF   49
+0F08:  CLRF   48
+0F0A:  CLRF   47
+0F0C:  MOVFF  1A,46
+0F10:  MOVLW  03
+0F12:  MOVWF  4A
+0F14:  RCALL  0862
+....................    LCDMsg('%'); 
+0F16:  MOVLW  25
+0F18:  MOVWF  49
+0F1A:  CALL   06F2
+....................     
+....................    //****************третий датчик****************** 
+....................    ADC_value=ADC_read(2); 
+0F1E:  MOVLW  02
+0F20:  MOVWF  46
+0F22:  RCALL  0A5C
+0F24:  CLRF   42
+0F26:  CLRF   41
+0F28:  MOVFF  02,40
+0F2C:  MOVFF  01,3F
+....................    LCDSetCursor(0x10);  
+0F30:  MOVLW  10
+0F32:  MOVWF  48
+0F34:  CALL   06FA
+....................    t = ADC_value*2; 
+0F38:  BCF    FD8.0
+0F3A:  RLCF   3F,W
+0F3C:  MOVWF  00
+0F3E:  RLCF   40,W
+0F40:  MOVWF  01
+0F42:  RLCF   41,W
+0F44:  RLCF   42,W
+0F46:  MOVFF  00,37
+0F4A:  MOVFF  01,38
+....................    t1 = t/10; 
+0F4E:  MOVFF  38,47
+0F52:  MOVFF  37,46
+0F56:  CLRF   49
+0F58:  MOVLW  0A
+0F5A:  MOVWF  48
+0F5C:  RCALL  0ACC
+0F5E:  MOVFF  02,3A
+0F62:  MOVFF  01,39
+....................    t2 = t - t1*10; 
+0F66:  MOVFF  3A,47
+0F6A:  MOVFF  39,46
+0F6E:  CLRF   49
+0F70:  MOVLW  0A
+0F72:  MOVWF  48
+0F74:  RCALL  0B0E
+0F76:  MOVF   01,W
+0F78:  SUBWF  37,W
+0F7A:  MOVWF  3B
+0F7C:  MOVF   02,W
+0F7E:  SUBWFB 38,W
+0F80:  MOVWF  3C
+....................    LCDMsg("t3="); 
+0F82:  CLRF   46
+0F84:  MOVF   46,W
+0F86:  CALL   024E
+0F8A:  IORLW  00
+0F8C:  BZ    0F98
+0F8E:  INCF   46,F
+0F90:  MOVWF  49
+0F92:  CALL   06F2
+0F96:  BRA    0F84
+....................    LCDPutU16(t1,3); 
+0F98:  CLRF   49
+0F9A:  CLRF   48
+0F9C:  MOVFF  3A,47
+0FA0:  MOVFF  39,46
+0FA4:  MOVLW  03
+0FA6:  MOVWF  4A
+0FA8:  RCALL  0862
+....................    LCDMsg('.'); 
+0FAA:  MOVLW  2E
+0FAC:  MOVWF  49
+0FAE:  CALL   06F2
+....................    LCDPutU16(t2,1); 
+0FB2:  CLRF   49
+0FB4:  CLRF   48
+0FB6:  MOVFF  3C,47
+0FBA:  MOVFF  3B,46
+0FBE:  MOVLW  01
+0FC0:  MOVWF  4A
+0FC2:  RCALL  0862
+....................    LCDPutCh(0xEF); 
+0FC4:  MOVLW  EF
+0FC6:  MOVWF  54
+0FC8:  CALL   06EA
+....................    LCDMsg("C  "); 
+0FCC:  CLRF   46
+0FCE:  MOVF   46,W
+0FD0:  CALL   0230
+0FD4:  IORLW  00
+0FD6:  BZ    0FE2
+0FD8:  INCF   46,F
+0FDA:  MOVWF  49
+0FDC:  CALL   06F2
+0FE0:  BRA    0FCE
+....................    LCDMsg(" dt"); 
+0FE2:  CLRF   46
+0FE4:  MOVF   46,W
+0FE6:  CALL   026C
+0FEA:  IORLW  00
+0FEC:  BZ    0FF8
+0FEE:  INCF   46,F
+0FF0:  MOVWF  49
+0FF2:  CALL   06F2
+0FF6:  BRA    0FE4
+....................     
+....................    //********************************** 
+....................    LCDSetCursor(0x50);  
+0FF8:  MOVLW  50
+0FFA:  MOVWF  48
+0FFC:  CALL   06FA
+....................    LCDMsg("tmax="); 
+1000:  CLRF   46
+1002:  MOVF   46,W
+1004:  CALL   028A
+1008:  IORLW  00
+100A:  BZ    1016
+100C:  INCF   46,F
+100E:  MOVWF  49
+1010:  CALL   06F2
+1014:  BRA    1002
+....................    LCDPutU16(tmax,3);//знака.разряда 
+1016:  CLRF   49
+1018:  CLRF   48
+101A:  MOVFF  1E,47
+101E:  MOVFF  1D,46
+1022:  MOVLW  03
+1024:  MOVWF  4A
+1026:  RCALL  0862
+....................    LCDPutCh(0xEF); 
+1028:  MOVLW  EF
+102A:  MOVWF  54
+102C:  CALL   06EA
+....................    LCDMsg("C  "); 
+1030:  CLRF   46
+1032:  MOVF   46,W
+1034:  CALL   0230
+1038:  IORLW  00
+103A:  BZ    1046
+103C:  INCF   46,F
+103E:  MOVWF  49
+1040:  CALL   06F2
+1044:  BRA    1032
+....................  //  LCDMsg("dt="); 
+....................    LCDPutU16(dt,2);//знака.разряда 
+1046:  CLRF   49
+1048:  CLRF   48
+104A:  CLRF   47
+104C:  MOVFF  43,46
+1050:  MOVLW  02
+1052:  MOVWF  4A
+1054:  RCALL  0862
+....................    LCDPutCh(0xEF); 
+1056:  MOVLW  EF
+1058:  MOVWF  54
+105A:  CALL   06EA
+....................    LCDMsg('C'); 
+105E:  MOVLW  43
+1060:  MOVWF  49
+1062:  CALL   06F2
+....................     
+....................   //**************флаг максимальн.температуры 
+....................    if (tr>=tmax*10){ 
+1066:  MOVFF  1E,47
+106A:  MOVFF  1D,46
+106E:  CLRF   49
+1070:  MOVLW  0A
+1072:  MOVWF  48
+1074:  RCALL  0B0E
+1076:  MOVF   02,W
+1078:  MOVWF  03
+107A:  SUBWF  3E,W
+107C:  BNC   108C
+107E:  BNZ   1086
+1080:  MOVF   01,W
+1082:  SUBWF  3D,W
+1084:  BNC   108C
+....................       tmaxfl = 0; 
+1086:  BCF    1B.0
+....................       dtfl=0; 
+1088:  BCF    1B.2
+....................       }else  tmaxfl=1;      
+108A:  BRA    108E
+108C:  BSF    1B.0
+....................          if(tr<=(tmax*10-dt*10)) dtfl = 1; 
+108E:  MOVFF  1E,47
+1092:  MOVFF  1D,46
+1096:  CLRF   49
+1098:  MOVLW  0A
+109A:  MOVWF  48
+109C:  RCALL  0B0E
+109E:  MOVFF  02,47
+10A2:  MOVFF  01,46
+10A6:  MOVF   43,W
+10A8:  MULLW  0A
+10AA:  MOVF   FF3,W
+10AC:  SUBWF  01,W
+10AE:  MOVWF  00
+10B0:  MOVLW  00
+10B2:  SUBWFB 02,W
+10B4:  MOVWF  03
+10B6:  MOVFF  00,01
+10BA:  MOVF   3E,W
+10BC:  SUBWF  03,W
+10BE:  BNC   10CA
+10C0:  BNZ   10C8
+10C2:  MOVF   3D,W
+10C4:  SUBWF  01,W
+10C6:  BTFSC  FD8.0
+10C8:  BSF    1B.2
+....................           
+....................       break; 
+10CA:  BRA    145E
+....................       case 1: 
+....................       if(Pbfl1){ 
+10CC:  BTFSS  1B.5
+10CE:  BRA    10D6
+....................          Pbfl=0; 
+10D0:  BCF    1B.4
+....................          LCDClear(); 
+10D2:  CALL   06B8
+....................       } 
+....................          LCDSetCursor(0x0); 
+10D6:  CLRF   48
+10D8:  CALL   06FA
+....................          LCDMsg("tmax="); 
+10DC:  CLRF   46
+10DE:  MOVF   46,W
+10E0:  CALL   028A
+10E4:  IORLW  00
+10E6:  BZ    10F2
+10E8:  INCF   46,F
+10EA:  MOVWF  49
+10EC:  CALL   06F2
+10F0:  BRA    10DE
+....................          LCDPutU16(tmax,3); 
+10F2:  CLRF   49
+10F4:  CLRF   48
+10F6:  MOVFF  1E,47
+10FA:  MOVFF  1D,46
+10FE:  MOVLW  03
+1100:  MOVWF  4A
+1102:  CALL   0862
+....................          LCDPutCh(0xEF); 
+1106:  MOVLW  EF
+1108:  MOVWF  54
+110A:  CALL   06EA
+....................          LCDMsg('C'); 
+110E:  MOVLW  43
+1110:  MOVWF  49
+1112:  CALL   06F2
+....................           
+....................           //увеличение tmax 
+....................   if (b_push[1]){ 
+1116:  MOVF   2A,F
+1118:  BZ    1122
+....................        b_push[1]=0; 
+111A:  CLRF   2A
+....................         tmax++;  
+111C:  INCF   1D,F
+111E:  BTFSC  FD8.2
+1120:  INCF   1E,F
+....................   } 
+....................   //уменьшение tmax 
+....................   if (b_push[3]){ 
+1122:  MOVF   2C,F
+1124:  BZ    1130
+....................        b_push[3]=0; 
+1126:  CLRF   2C
+....................         tmax--;  
+1128:  MOVF   1D,W
+112A:  BTFSC  FD8.2
+112C:  DECF   1E,F
+112E:  DECF   1D,F
+....................   } 
+....................   if(tmax<1)tmax = 1; 
+1130:  MOVF   1D,F
+1132:  BNZ   113E
+1134:  MOVF   1E,F
+1136:  BNZ   113E
+1138:  CLRF   1E
+113A:  MOVLW  01
+113C:  MOVWF  1D
+....................   if(tmax>150)tmax = 150; 
+113E:  MOVF   1E,F
+1140:  BNZ   1148
+1142:  MOVF   1D,W
+1144:  SUBLW  96
+1146:  BC    114E
+1148:  CLRF   1E
+114A:  MOVLW  96
+114C:  MOVWF  1D
+....................    
+....................       break; 
+114E:  BRA    145E
+....................       case 2: 
+....................        if(Pbfl1){ 
+1150:  BTFSS  1B.5
+1152:  BRA    115A
+....................          Pbfl=0; 
+1154:  BCF    1B.4
+....................          LCDClear(); 
+1156:  CALL   06B8
+....................       } 
+....................          LCDSetCursor(0x0); 
+115A:  CLRF   48
+115C:  CALL   06FA
+....................          LCDMsg("dt="); 
+1160:  CLRF   46
+1162:  MOVF   46,W
+1164:  CALL   02AA
+1168:  IORLW  00
+116A:  BZ    1176
+116C:  INCF   46,F
+116E:  MOVWF  49
+1170:  CALL   06F2
+1174:  BRA    1162
+....................          LCDPutU16(dt,2); 
+1176:  CLRF   49
+1178:  CLRF   48
+117A:  CLRF   47
+117C:  MOVFF  43,46
+1180:  MOVLW  02
+1182:  MOVWF  4A
+1184:  CALL   0862
+....................          LCDPutCh(0xEF); 
+1188:  MOVLW  EF
+118A:  MOVWF  54
+118C:  CALL   06EA
+....................          LCDMsg('C'); 
+1190:  MOVLW  43
+1192:  MOVWF  49
+1194:  CALL   06F2
+....................           
+....................            //увеличение dt 
+....................   if (b_push[1]){ 
+1198:  MOVF   2A,F
+119A:  BZ    11A0
+....................        b_push[1]=0; 
+119C:  CLRF   2A
+....................         dt++;  
+119E:  INCF   43,F
+....................   } 
+....................   //уменьшение dt 
+....................   if (b_push[3]){ 
+11A0:  MOVF   2C,F
+11A2:  BZ    11A8
+....................        b_push[3]=0; 
+11A4:  CLRF   2C
+....................         dt--; 
+11A6:  DECF   43,F
+....................   } 
+....................   if(dt<1)dt = 1; 
+11A8:  MOVF   43,F
+11AA:  BNZ   11B0
+11AC:  MOVLW  01
+11AE:  MOVWF  43
+....................   if(dt>50)dt = 50; 
+11B0:  MOVF   43,W
+11B2:  SUBLW  32
+11B4:  BC    11BA
+11B6:  MOVLW  32
+11B8:  MOVWF  43
+....................           
+....................       break; 
+11BA:  BRA    145E
+....................       case 3: 
+....................       if(Pbfl1){ 
+11BC:  BTFSS  1B.5
+11BE:  BRA    11C6
+....................          Pbfl=0; 
+11C0:  BCF    1B.4
+....................          LCDClear(); 
+11C2:  CALL   06B8
+....................       } 
+....................          LCDSetCursor(0x0); 
+11C6:  CLRF   48
+11C8:  CALL   06FA
+....................          LCDMsg("HP="); 
+11CC:  CLRF   46
+11CE:  MOVF   46,W
+11D0:  CALL   02C8
+11D4:  IORLW  00
+11D6:  BZ    11E2
+11D8:  INCF   46,F
+11DA:  MOVWF  49
+11DC:  CALL   06F2
+11E0:  BRA    11CE
+....................          LCDPutU16(hp,3); 
+11E2:  CLRF   49
+11E4:  CLRF   48
+11E6:  CLRF   47
+11E8:  MOVFF  1A,46
+11EC:  MOVLW  03
+11EE:  MOVWF  4A
+11F0:  CALL   0862
+....................          LCDMsg('%'); 
+11F4:  MOVLW  25
+11F6:  MOVWF  49
+11F8:  CALL   06F2
+....................           
+....................        //увеличение Hp 
+....................   if (b_push[1]){ 
+11FC:  MOVF   2A,F
+11FE:  BZ    1204
+....................        b_push[1]=0; 
+1200:  CLRF   2A
+....................         hp++;  
+1202:  INCF   1A,F
+....................   } 
+....................   //уменьшение Hp 
+....................   if (b_push[3]){ 
+1204:  MOVF   2C,F
+1206:  BZ    120C
+....................        b_push[3]=0; 
+1208:  CLRF   2C
+....................         hp--; 
+120A:  DECF   1A,F
+....................         
+....................   } 
+....................    if(hp<1)hp = 1; 
+120C:  MOVF   1A,F
+120E:  BNZ   1214
+1210:  MOVLW  01
+1212:  MOVWF  1A
+....................   if(hp>100)hp = 100; 
+1214:  MOVF   1A,W
+1216:  SUBLW  64
+1218:  BC    121E
+121A:  MOVLW  64
+121C:  MOVWF  1A
+....................           
+....................        break; 
+121E:  BRA    145E
+....................        case 4: 
+....................       if(Pbfl1){ 
+1220:  BTFSS  1B.5
+1222:  BRA    122A
+....................          Pbfl=0; 
+1224:  BCF    1B.4
+....................          LCDClear(); 
+1226:  CALL   06B8
+....................       } 
+....................      if (b_push[1]){ 
+122A:  MOVF   2A,F
+122C:  BZ    1232
+....................        b_push[1]=0; 
+122E:  CLRF   2A
+....................         henfl=1;//Heater en ; 
+1230:  BSF    1B.3
+....................         
+....................   } 
+....................   //уменьшение Hp 
+....................   if (b_push[3]){ 
+1232:  MOVF   2C,F
+1234:  BZ    123A
+....................        b_push[3]=0; 
+1236:  CLRF   2C
+....................        henfl=0;//Heater Dis ; 
+1238:  BCF    1B.3
+....................            
+....................   }   
+....................       LCDSetCursor(0x0); 
+123A:  CLRF   48
+123C:  CALL   06FA
+....................      if(henfl)  LCDMsg("Heater ON "); else LCDMsg("Heater OFF"); 
+1240:  BTFSS  1B.3
+1242:  BRA    125C
+1244:  CLRF   46
+1246:  MOVF   46,W
+1248:  CALL   02E6
+124C:  IORLW  00
+124E:  BZ    125A
+1250:  INCF   46,F
+1252:  MOVWF  49
+1254:  CALL   06F2
+1258:  BRA    1246
+125A:  BRA    1272
+125C:  CLRF   46
+125E:  MOVF   46,W
+1260:  CALL   030C
+1264:  IORLW  00
+1266:  BZ    1272
+1268:  INCF   46,F
+126A:  MOVWF  49
+126C:  CALL   06F2
+1270:  BRA    125E
+....................           
+....................       break; 
+1272:  BRA    145E
+....................       case 5: 
+....................         if(Pbfl1){ 
+1274:  BTFSS  1B.5
+1276:  BRA    12F4
+....................            Pbfl=0; 
+1278:  BCF    1B.4
+....................            LCDClear();  
+127A:  CALL   06B8
+....................          LCDSetCursor(0x0); 
+127E:  CLRF   48
+1280:  CALL   06FA
+....................          LCDMsg("Write current ");  
+1284:  CLRF   46
+1286:  MOVF   46,W
+1288:  CALL   0332
+128C:  IORLW  00
+128E:  BZ    129A
+1290:  INCF   46,F
+1292:  MOVWF  49
+1294:  CALL   06F2
+1298:  BRA    1286
+....................          LCDSetCursor(0x40); 
+129A:  MOVLW  40
+129C:  MOVWF  48
+129E:  CALL   06FA
+....................          LCDMsg("parameters to   "); 
+12A2:  CLRF   46
+12A4:  MOVF   46,W
+12A6:  CALL   035C
+12AA:  IORLW  00
+12AC:  BZ    12B8
+12AE:  INCF   46,F
+12B0:  MOVWF  49
+12B2:  CALL   06F2
+12B6:  BRA    12A4
+....................          LCDSetCursor(0x10); 
+12B8:  MOVLW  10
+12BA:  MOVWF  48
+12BC:  CALL   06FA
+....................          LCDMsg("EEPROM ?");   
+12C0:  CLRF   46
+12C2:  MOVF   46,W
+12C4:  CALL   0388
+12C8:  IORLW  00
+12CA:  BZ    12D6
+12CC:  INCF   46,F
+12CE:  MOVWF  49
+12D0:  CALL   06F2
+12D4:  BRA    12C2
+....................          LCDSetCursor(0x50); 
+12D6:  MOVLW  50
+12D8:  MOVWF  48
+12DA:  CALL   06FA
+....................          LCDMsg(" NO  "); 
+12DE:  CLRF   46
+12E0:  MOVF   46,W
+12E2:  CALL   03AC
+12E6:  IORLW  00
+12E8:  BZ    12F4
+12EA:  INCF   46,F
+12EC:  MOVWF  49
+12EE:  CALL   06F2
+12F2:  BRA    12E0
+....................        } 
+....................               
+....................      if (b_push[1]){ 
+12F4:  MOVF   2A,F
+12F6:  BZ    131A
+....................        b_push[1]=0; 
+12F8:  CLRF   2A
+....................        EEWrFl=1; 
+12FA:  BSF    36.0
+....................        LCDSetCursor(0x50); 
+12FC:  MOVLW  50
+12FE:  MOVWF  48
+1300:  CALL   06FA
+....................        LCDMsg(" YES "); 
+1304:  CLRF   46
+1306:  MOVF   46,W
+1308:  CALL   03CC
+130C:  IORLW  00
+130E:  BZ    131A
+1310:  INCF   46,F
+1312:  MOVWF  49
+1314:  CALL   06F2
+1318:  BRA    1306
+....................       } 
+....................     if (b_push[3]){ 
+131A:  MOVF   2C,F
+131C:  BZ    1340
+....................        b_push[3]=0; 
+131E:  CLRF   2C
+....................        EEWrFl=0; 
+1320:  BCF    36.0
+....................        LCDSetCursor(0x50); 
+1322:  MOVLW  50
+1324:  MOVWF  48
+1326:  CALL   06FA
+....................        LCDMsg(" NO  "); 
+132A:  CLRF   46
+132C:  MOVF   46,W
+132E:  CALL   03AC
+1332:  IORLW  00
+1334:  BZ    1340
+1336:  INCF   46,F
+1338:  MOVWF  49
+133A:  CALL   06F2
+133E:  BRA    132C
+....................     }        
+....................       break; 
+1340:  BRA    145E
+....................       case 6: 
+....................       if(Pbfl1){ 
+1342:  BTFSS  1B.5
+1344:  BRA    1348
+....................            Pbfl=0; 
+1346:  BCF    1B.4
+....................         // LCDClear(); 
+....................       } 
+....................          if(EEWrFl){ 
+1348:  BTFSS  36.0
+134A:  BRA    1456
+....................            LCDClear(); 
+134C:  CALL   06B8
+....................            LCDSetCursor(0x0); 
+1350:  CLRF   48
+1352:  CALL   06FA
+....................            LCDMsg("Writing data  "); 
+1356:  CLRF   46
+1358:  MOVF   46,W
+135A:  CALL   03EC
+135E:  IORLW  00
+1360:  BZ    136C
+1362:  INCF   46,F
+1364:  MOVWF  49
+1366:  CALL   06F2
+136A:  BRA    1358
+....................            LCDSetCursor(0x40); 
+136C:  MOVLW  40
+136E:  MOVWF  48
+1370:  CALL   06FA
+....................            LCDMsg("to EEPROM... "); 
+1374:  CLRF   46
+1376:  MOVF   46,W
+1378:  CALL   0416
+137C:  IORLW  00
+137E:  BZ    138A
+1380:  INCF   46,F
+1382:  MOVWF  49
+1384:  CALL   06F2
+1388:  BRA    1376
+....................            buf1[0]=tmax; 
+138A:  MOVFF  1D,2E
+....................            buf1[1]=dt; 
+138E:  MOVFF  43,2F
+....................            buf1[2]=hp; 
+1392:  MOVFF  1A,30
+....................            buf1[3]=CRC8(buf1,3);//Вычисление контрольной суммы 
+1396:  CLRF   47
+1398:  MOVLW  2E
+139A:  MOVWF  46
+139C:  MOVLW  03
+139E:  MOVWF  48
+13A0:  CALL   074C
+13A4:  MOVFF  01,31
+....................            disable_interrupts(GLOBAL); 
+13A8:  BCF    FF2.6
+13AA:  BCF    FF2.7
+13AC:  BTFSC  FF2.7
+13AE:  BRA    13AA
+....................            //устанавливать адрес последней ячейки EEPROM на неиспользуемую область!!! 
+....................             for (j=0;j<5;++j) 
+13B0:  CLRF   2D
+13B2:  MOVF   2D,W
+13B4:  SUBLW  04
+13B6:  BNC   13FA
+....................               write_eeprom (j, buf1[j]); 
+13B8:  CLRF   03
+13BA:  MOVF   2D,W
+13BC:  ADDLW  2E
+13BE:  MOVWF  FE9
+13C0:  MOVLW  00
+13C2:  ADDWFC 03,W
+13C4:  MOVWF  FEA
+13C6:  MOVFF  FEF,46
+13CA:  MOVFF  2D,FA9
+13CE:  MOVFF  46,FA8
+13D2:  BCF    FA6.6
+13D4:  BCF    FA6.7
+13D6:  BSF    FA6.2
+13D8:  MOVFF  FF2,00
+13DC:  BCF    FF2.7
+13DE:  MOVLB  F
+13E0:  MOVLW  55
+13E2:  MOVWF  FA7
+13E4:  MOVLW  AA
+13E6:  MOVWF  FA7
+13E8:  BSF    FA6.1
+13EA:  BTFSC  FA6.1
+13EC:  BRA    13EA
+13EE:  BCF    FA6.2
+13F0:  MOVF   00,W
+13F2:  IORWF  FF2,F
+13F4:  INCF   2D,F
+13F6:  MOVLB  0
+13F8:  BRA    13B2
+....................               enable_interrupts(GLOBAL); 
+13FA:  MOVLW  C0
+13FC:  IORWF  FF2,F
+....................            EEWrFl=0; 
+13FE:  BCF    36.0
+....................             
+....................            //delay_ms(500); 
+....................            //LCDClear(); 
+....................            LCDMsg("OK" ); 
+1400:  CLRF   46
+1402:  MOVF   46,W
+1404:  CALL   014E
+1408:  IORLW  00
+140A:  BZ    1416
+140C:  INCF   46,F
+140E:  MOVWF  49
+1410:  CALL   06F2
+1414:  BRA    1402
+....................            LCDSetCursor(0x10); 
+1416:  MOVLW  10
+1418:  MOVWF  48
+141A:  CALL   06FA
+....................            LCDMsg(" CRC=" ); 
+141E:  CLRF   46
+1420:  MOVF   46,W
+1422:  CALL   043E
+1426:  IORLW  00
+1428:  BZ    1434
+142A:  INCF   46,F
+142C:  MOVWF  49
+142E:  CALL   06F2
+1432:  BRA    1420
+....................            LCDPutU16(buf1[3],3); 
+1434:  CLRF   49
+1436:  CLRF   48
+1438:  CLRF   47
+143A:  MOVFF  31,46
+143E:  MOVLW  03
+1440:  MOVWF  4A
+1442:  CALL   0862
+....................            delay_ms(500); 
+1446:  MOVLW  02
+1448:  MOVWF  46
+144A:  MOVLW  FA
+144C:  MOVWF  58
+144E:  CALL   059E
+1452:  DECFSZ 46,F
+1454:  BRA    144A
+....................          } 
+....................           MenuItemNum=0; 
+1456:  CLRF   1F
+....................           PbFl=1; 
+1458:  BSF    1B.4
+....................           
+....................          break; 
+145A:  BRA    145E
+....................       
+....................       default: 
+....................       MenuItemNum=0;    
+145C:  CLRF   1F
+....................      
+....................     } 
+....................  
+....................   } 
+145E:  BRA    0D4A
+....................  
+.................... } 
+1460:  SLEEP 
+
+Configuration Fuses:
+   Word  1: 8200   HS NOFCMEN IESO
+   Word  2: 0E03   BROWNOUT WDT128 NOWDT BORV45 NOPUT
+   Word  3: 8300   CCP2C1 MCLR PBADEN
+   Word  4: 0081   STVREN NODEBUG NOLVP
+   Word  5: C00F   NOCPD NOPROTECT NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTB NOWRTC
+   Word  7: 400F   NOEBTR NOEBTRB

@@ -1,0 +1,63 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf -ucf wait_imp.ucf 
+bitgen -intstyle ise -f waitX.ut waitX.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf -ucf wait_imp.ucf 
+bitgen -intstyle ise -f waitX.ut waitX.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf -ucf wait_imp.ucf 
+bitgen -intstyle ise -f waitX.ut waitX.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/wait/wait_func/waitX.xst" -ofn "C:/Xilinx/test/wait/wait_func/waitX.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc wait_imp.ucf -p xc3s500e-fg320-4 waitX.ngc waitX.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o waitX_map.ncd waitX.ngd waitX.pcf 
+par -w -intstyle ise -ol high -t 1 waitX_map.ncd waitX.ncd waitX.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml waitX.twx waitX.ncd -o waitX.twr waitX.pcf -ucf wait_imp.ucf 
+bitgen -intstyle ise -f waitX.ut waitX.ncd 

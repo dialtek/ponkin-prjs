@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module_isim_beh.exe" -prj "D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/FPGA_SPI_module_beh.prj" "work.FPGA_SPI_module" 

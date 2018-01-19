@@ -1,0 +1,19 @@
+>>> Warning 216 "main.c" Line 359(0,1): Interrupts disabled during call to prevent re-entrancy:  (SensWrData)
+>>> Warning 202 "D:\work\Projects\PICC\my prj\XYZ magnitometer\Версия 2.2\LCD_XYZ_Gaussmeter.c" Line 279(20,21): Variable never used:   i
+>>> Warning 202 "main.c" Line 8(11,14): Variable never used:   ff1
+>>> Warning 202 "main.c" Line 9(66,73): Variable never used:   menufl4
+>>> Warning 202 "main.c" Line 10(11,17): Variable never used:   TMR0fl
+>>> Warning 202 "main.c" Line 10(21,32): Variable never used:   MenuItemNum
+>>> Warning 202 "main.c" Line 13(66,70): Variable never used:   xMSB
+>>> Warning 202 "main.c" Line 13(79,83): Variable never used:   xLSB
+>>> Warning 202 "main.c" Line 14(12,16): Variable never used:   zMSB
+>>> Warning 202 "main.c" Line 14(25,29): Variable never used:   zLSB
+>>> Warning 202 "main.c" Line 14(37,41): Variable never used:   yMSB
+>>> Warning 202 "main.c" Line 14(49,53): Variable never used:   yLSB
+>>> Warning 202 "main.c" Line 14(64,71): Variable never used:   StatReg
+>>> Warning 202 "main.c" Line 14(79,85): Variable never used:   idRegA
+>>> Warning 202 "main.c" Line 15(14,20): Variable never used:   idRegB
+>>> Warning 202 "main.c" Line 15(29,35): Variable never used:   idRegC
+      Memory usage:   ROM=13%      RAM=3% - 4%
+      0 Errors,  16 Warnings.
+Build Successful.

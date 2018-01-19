@@ -1,0 +1,20 @@
+Release 14.2 - netgen P.28xd (nt)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: netgen -intstyle ise -ar Structure -tm rs232_test -w -dir
+netgen/synthesis -ofmt vhdl -sim rs232_test.ngc rs232_test_synthesis.vhd  
+
+Reading design 'rs232_test.ngc' ...
+Flattening design ...
+Processing design ... 
+  Preping design's networks ...
+  Preping design's macros ...
+Writing VHDL netlist
+'C:\Xilinx\test\RS232_test\rs232_test\netgen\synthesis\rs232_test_synthesis.vhd'
+...
+INFO:NetListWriters:635 - The generated VHDL netlist contains Xilinx UNISIM
+   simulation primitives and has to be used with UNISIM library for correct
+   compilation and simulation. 
+Number of warnings: 0
+Number of info messages: 1
+Total memory usage is 123108 kilobytes

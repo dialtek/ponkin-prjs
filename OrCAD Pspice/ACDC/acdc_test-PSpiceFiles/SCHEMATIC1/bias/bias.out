@@ -1,0 +1,150 @@
+
+**** 11/20/16 17:52:16 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\D\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 200ms 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ACDC_TEST
+X_TX2         N16552 0 N16558 N14445 N14449 XFRM_NONLIN/CT-PRI PARAMS: 
++  LP1_TURNS=300 LP2_TURNS=300 LS_TURNS=10 COUPLING=.99 RP_VALUE=0.5 RS_VALUE=0.5
+V_V1         N14445 N14449  AC 0
++SIN 0 220 50 0 0 0
+R_R1         0 N14449  1000M TC=0,0 
+R_R2         N14445 0  1000M TC=0,0 
+R_R5         0 N16814  100k TC=0,0 
+C_C1         0 N16814  470u  TC=0,0 
+D_D1         N16552 N16814 D1N4149_1 
+D_D3         N16558 N16814 D1N4149_1 
+D_D4         0 N16558 D1N4149_1 
+D_D5         0 N16552 D1N4149_1 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 11/20/16 17:52:16 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4149_1       
+          IS    2.682000E-09 
+           N    1.836        
+         ISR    1.565000E-09 
+         IKF     .04417      
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .5664       
+          TT   11.540000E-09 
+         CJO    2.000000E-12 
+          VJ     .5          
+           M     .3333       
+
+
+**** 11/20/16 17:52:16 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     Ferromagnetic Core MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               TN33_20_11_2P90 
+       LEVEL    2            
+        AREA     .65         
+        PATH    8            
+          MS    1.289600E+06 
+           A    2.712800E+03 
+           C     .25001      
+           K    1.555100E+03 
+
+
+**** 11/20/16 17:52:16 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14445)    0.0000 (N14449)    0.0000 (N16552)-429.7E-24 (N16558)-429.8E-24     
+
+(N16814)-49.08E-21 (X_TX2.5)    0.0000                   (X_TX2.7)    0.0000    
+
+(X_TX2.8)    0.0000                   (X_TX2.9)    0.0000                       
+
+(X_TX2.10)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/20/16 17:52:16 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\ACDC\acdc_test-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+

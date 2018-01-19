@@ -1,0 +1,19 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/test sch/firstPgm/schDoc.xst" -ofn "C:/Xilinx/test/test sch/firstPgm/schDoc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-5 "schDoc.ngc" schDoc.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o schDoc_map.ncd schDoc.ngd schDoc.pcf 
+par -w -intstyle ise -ol high -t 1 schDoc_map.ncd schDoc.ncd schDoc.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml schDoc.twx schDoc.ncd -o schDoc.twr schDoc.pcf 
+bitgen -intstyle ise -f schDoc.ut schDoc.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test sch/firstPgm/schDoc.xst" -ofn "C:/Xilinx/test/test sch/firstPgm/schDoc.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test sch/firstPgm/schDoc.xst" -ofn "C:/Xilinx/test/test sch/firstPgm/schDoc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc imp.ucf -p xc3s500e-fg320-5 "schDoc.ngc" schDoc.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o schDoc_map.ncd schDoc.ngd schDoc.pcf 
+par -w -intstyle ise -ol high -t 1 schDoc_map.ncd schDoc.ncd schDoc.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml schDoc.twx schDoc.ncd -o schDoc.twr schDoc.pcf -ucf imp.ucf 
+bitgen -intstyle ise -f schDoc.ut schDoc.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test sch/firstPgm/schDoc.xst" -ofn "C:/Xilinx/test/test sch/firstPgm/schDoc.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc imp.ucf -p xc3s500e-fg320-5 "schDoc.ngc" schDoc.ngd  
+map -intstyle ise -p xc3s500e-fg320-5 -cm area -ir off -pr off -c 100 -o schDoc_map.ncd schDoc.ngd schDoc.pcf 
+par -w -intstyle ise -ol high -t 1 schDoc_map.ncd schDoc.ncd schDoc.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml schDoc.twx schDoc.ncd -o schDoc.twr schDoc.pcf -ucf imp.ucf 
+bitgen -intstyle ise -f schDoc.ut schDoc.ncd 

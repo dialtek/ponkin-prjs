@@ -1,0 +1,164 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                                                 Xilinx XPower Analyzer                                                                                                 |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Release                | 14.2 - P.28xd (nt)                                                                                                                                                                            |
+| Command Line           | C:\Xilinx\14.2\ISE_DS\ISE\bin\nt\unwrapped\xpwr.exe -intstyle ise fx2lp_slaveFIFO2b_streamIN_fpga_top.ncd fx2lp_slaveFIFO2b_streamIN_fpga_top.pcf -o fx2lp_slaveFIFO2b_streamIN_fpga_top.pwr  |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+--------------------------------
+|      Table of Contents       |
+--------------------------------
+| 1.  Settings                 |
+| 1.1.  Project                |
+| 1.2.  Device                 |
+| 1.3.  Environment            |
+| 1.4.  Default Activity Rates |
+| 2.  Summary                  |
+| 2.1.  On-Chip Power Summary  |
+| 2.2.  Thermal Summary        |
+| 2.3.  Power Supply Summary   |
+| 2.4.  Confidence Level       |
+| 3.  Detailed Reports         |
+| 3.1.  By Hierarchy           |
+| 4.  Warnings                 |
+--------------------------------
+
+1.  Settings
+1.1.  Project
+-----------------------------------------------------------------------
+|                               Project                               |
+-----------------------------------------------------------------------
+| Design File               | fx2lp_slaveFIFO2b_streamIN_fpga_top.ncd |
+| Settings File             | NA                                      |
+| Physical Constraints File | fx2lp_slaveFIFO2b_streamIN_fpga_top.pcf |
+| Simulation Activity File  | NA                                      |
+| Design Nets Matched       | NA                                      |
+| Simulation Nets Matched   | NA                                      |
+-----------------------------------------------------------------------
+
+1.2.  Device
+-----------------------------------------------
+|                   Device                    |
+-----------------------------------------------
+| Family           | Spartan3e                |
+| Part             | xc3s500e                 |
+| Package          | fg320                    |
+| Temp Grade       | Commercial               |
+| Process          | Typical                  |
+| Speed Grade      | -4                       |
+| Characterization | PRODUCTION,v1.2,06-23-09 |
+-----------------------------------------------
+
+1.3.  Environment
+---------------------------
+|       Environment       |
+---------------------------
+| Ambient Temp (C) | 25.0 |
+| Use custom TJA?  | No   |
+| Custom TJA (C/W) | NA   |
+| Airflow (LFM)    | 0    |
+---------------------------
+
+1.4.  Default Activity Rates
+----------------------------------
+|     Default Activity Rates     |
+----------------------------------
+| FF Toggle Rate (%)     | 12.5  |
+| I/O Toggle Rate (%)    | 12.5  |
+| Output Load (pF)       | 5.0   |
+| I/O Enable Rate (%)    | 100.0 |
+| BRAM Write Rate (%)    | 50.0  |
+| BRAM Enable Rate (%)   | 50.0  |
+----------------------------------
+
+2.  Summary
+2.1.  On-Chip Power Summary
+-----------------------------------------------------------------------------
+|                           On-Chip Power Summary                           |
+-----------------------------------------------------------------------------
+|        On-Chip        | Power (mW) |  Used  | Available | Utilization (%) |
+-----------------------------------------------------------------------------
+| Clocks                |       0.00 |      1 |    ---    |       ---       |
+| Signals               |       0.00 |      3 |    ---    |       ---       |
+| IOs                   |       0.00 |     21 |       232 |               9 |
+| DCMs                  |      14.20 |      1 |         4 |              25 |
+| Quiescent             |      81.16 |        |           |                 |
+| Total                 |      95.36 |        |           |                 |
+-----------------------------------------------------------------------------
+
+2.2.  Thermal Summary
+------------------------------
+|      Thermal Summary       |
+------------------------------
+| Effective TJA (C/W) | 26.1 |
+| Max Ambient (C)     | 82.5 |
+| Junction Temp (C)   | 27.5 |
+------------------------------
+
+2.3.  Power Supply Summary
+------------------------------------------------------
+|                Power Supply Summary                |
+------------------------------------------------------
+|                      | Total | Dynamic | Quiescent |
+------------------------------------------------------
+| Supply Power (mW)    | 95.36 | 0.00    | 95.36     |
+------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+|                                            Power Supply Currents                                            |
+---------------------------------------------------------------------------------------------------------------
+|     Supply Source     | Supply Voltage | Total Current (mA) | Dynamic Current (mA) | Quiescent Current (mA) |
+---------------------------------------------------------------------------------------------------------------
+| Vccint                |          1.200 |              25.97 |                 0.00 |                  25.97 |
+| Vccaux                |          2.500 |              23.68 |                 0.00 |                  23.68 |
+| Vcco25                |          2.500 |               2.00 |                 0.00 |                   2.00 |
+---------------------------------------------------------------------------------------------------------------
+
+2.4.  Confidence Level
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|                                                                                                    Confidence Level                                                                                                    |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|       User Input Data       | Confidence |                        Details                         |                                                       Action                                                       |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Design implementation state | High       | Design is completely routed                            |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | High       | User specified more than 25% of internal nodes         |                                                                                                                    |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.  Details
+3.1.  By Hierarchy
+------------------------------------------------------------------------------------------------------
+|             By Hierarchy              | Power (mW) | Logic Power (mW) | Signal Power (mW) | # DCMs |
+------------------------------------------------------------------------------------------------------
+| Hierarchy total                       |  14.20     |  14.20           |   0.00            |      1 |
+|   fx2lp_slaveFIFO2b_streamIN_fpga_top |  14.20     |  14.20           |   0.00            |      1 |
+------------------------------------------------------------------------------------------------------
+
+
+4.  Warnings
+--------------------------------------------------------------------------------
+WARNING:PowerEstimator:270 - Power estimate is considered inaccurate. To see details, generate an advanced report with the "-v" switch.
+WARNING:Power:1337 - Clock frequency for clock net "CLK0_OUT_OBUF" is zero.
+WARNING:Power:1337 - Clock frequency for clock net "CLKFX_OUT_OBUF" is zero.
+WARNING:Power:1337 - Clock frequency for clock net "CLKIN_IBUFG_OUT_OBUF" is zero.
+WARNING:Power:1337 - Clock frequency for clock net "clk_div/CLK0_BUF" is zero.
+WARNING:Power:1337 - Clock frequency for clock net "clk_div/CLKFX_BUF" is zero.
+WARNING:Power:1369 - Clock frequency for one or more clocks was not found through
+timing constraints (PCF file) or simulation data.  Without knowing the
+clock frequency of all clocks, dynamic power information for those clock
+domains will default to zero which may under-estimate the power for this
+design.  To avoid this warning, provide at least one of the following:
+  1. The proper timing constraints (PERIOD) for clocks (re-implement design
+     and load the newly generated PCF file into XPower Analyzer)
+  2. A post PAR simulation-generated VCD or SAIF file indicating clock
+     frequencies
+  3. The clock frequency for clocks in the "By Type -> Clocks" view in the
+     XPower Analyzer GUI and then applying "Update Power Analysis"
+--------------------------------------------------------------------------------
+
+Analysis completed: Wed Nov 20 15:25:20 2013
+----------------------------------------------------------------

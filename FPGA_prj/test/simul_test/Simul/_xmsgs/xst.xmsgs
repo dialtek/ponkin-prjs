@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="488" delta="old" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 11: Illegal identifier : <arg fmt="%s" index="1">simul_</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="488" delta="old" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 11: Illegal identifier : <arg fmt="%s" index="1">simul_</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="580" delta="new" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 11: Mismatch on label ; expected <arg fmt="%s" index="1">simul</arg>
+</msg>
+
+<msg type="error" file="HDLCompiler" num="854" delta="new" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 7: Unit &lt;<arg fmt="%s" index="1">simul</arg>&gt; ignored due to previous errors.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="374" delta="new" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 13: Entity &lt;<arg fmt="%s" index="1">simul</arg>&gt; is not yet compiled.
+</msg>
+
+<msg type="error" file="HDLCompiler" num="69" delta="old" >"D:\work\Projects\FPGA_prj\test\simul_test\Simul\simul_.vhd" Line 16: &lt;<arg fmt="%s" index="1">led</arg>&gt; is not declared.
+</msg>
+
+</messages>
+

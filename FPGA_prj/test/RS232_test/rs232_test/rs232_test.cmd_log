@@ -1,0 +1,27 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 rs232_test.ngc rs232_test.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 rs232_test.ngc rs232_test.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rs232_test_map.ncd rs232_test.ngd rs232_test.pcf 
+par -w -intstyle ise -ol high -t 1 rs232_test_map.ncd rs232_test.ncd rs232_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rs232_test.twx rs232_test.ncd -o rs232_test.twr rs232_test.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s500e-fg320-4 rs232_test.ngc rs232_test.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rs232_test_map.ncd rs232_test.ngd rs232_test.pcf 
+par -w -intstyle ise -ol high -t 1 rs232_test_map.ncd rs232_test.ncd rs232_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rs232_test.twx rs232_test.ncd -o rs232_test.twr rs232_test.pcf 
+bitgen -intstyle ise -f rs232_test.ut rs232_test.ncd 
+netgen -intstyle ise -ar Structure -tm rs232_test -w -dir netgen/synthesis -ofmt vhdl -sim rs232_test.ngc rs232_test_synthesis.vhd 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rs232_test_imp.ucf -p xc3s500e-fg320-4 rs232_test.ngc rs232_test.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rs232_test_map.ncd rs232_test.ngd rs232_test.pcf 
+par -w -intstyle ise -ol high -t 1 rs232_test_map.ncd rs232_test.ncd rs232_test.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml rs232_test.twx rs232_test.ncd -o rs232_test.twr rs232_test.pcf -ucf rs232_test_imp.ucf 
+bitgen -intstyle ise -f rs232_test.ut rs232_test.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.xst" -ofn "C:/Xilinx/test/RS232_test/rs232_test/rs232_test.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc rs232_test_imp.ucf -p xc3s500e-fg320-4 rs232_test.ngc rs232_test.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o rs232_test_map.ncd rs232_test.ngd rs232_test.pcf 
+bitgen -intstyle ise -f rs232_test.ut rs232_test.ncd 

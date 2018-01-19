@@ -1,0 +1,6 @@
+>>> Warning 216 "V2.1.c" Line 1246(2,3): Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITE_1)
+>>> Warning 216 "V2.1.c" Line 1246(2,3): Interrupts disabled during call to prevent re-entrancy:  (@I2C_READ_1)
+>>> Warning 216 "V2.1.c" Line 1246(2,3): Interrupts disabled during call to prevent re-entrancy:  (HMC5883l_Init)
+      Memory usage:   ROM=37%      RAM=5% - 6%
+      0 Errors,  3 Warnings.
+Build Successful.

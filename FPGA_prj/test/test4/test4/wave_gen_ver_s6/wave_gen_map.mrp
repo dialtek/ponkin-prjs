@@ -1,0 +1,264 @@
+Release 14.2 Map P.28xd (nt)
+Xilinx Mapping Report File for Design 'wave_gen'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc6slx45t-fgg484-2 -w -logic_opt off -ol
+high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off
+-ignore_keep_hierarchy -pr off -lc off -power off -o wave_gen_map.ncd
+wave_gen.ngd wave_gen.pcf 
+Target Device  : xc6slx45t
+Target Package : fgg484
+Target Speed   : -2
+Mapper Version : spartan6 -- $Revision: 1.55 $
+Mapped Date    : Thu Nov 21 00:07:06 2013
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    1
+Slice Logic Utilization:
+  Number of Slice Registers:                   599 out of  54,576    1%
+    Number used as Flip Flops:                 599
+    Number used as Latches:                      0
+    Number used as Latch-thrus:                  0
+    Number used as AND/OR logics:                0
+  Number of Slice LUTs:                        925 out of  27,288    3%
+    Number used as logic:                      862 out of  27,288    3%
+      Number using O6 output only:             623
+      Number using O5 output only:              13
+      Number using O5 and O6:                  226
+      Number used as ROM:                        0
+    Number used as Memory:                       0 out of   6,408    0%
+    Number used exclusively as route-thrus:     63
+      Number with same-slice register load:     62
+      Number with same-slice carry load:         1
+      Number with other load:                    0
+
+Slice Logic Distribution:
+  Number of occupied Slices:                   343 out of   6,822    5%
+  Nummber of MUXCYs used:                      128 out of  13,644    1%
+  Number of LUT Flip Flop pairs used:        1,045
+    Number with an unused Flip Flop:           574 out of   1,045   54%
+    Number with an unused LUT:                 120 out of   1,045   11%
+    Number of fully used LUT-FF pairs:         351 out of   1,045   33%
+    Number of unique control sets:              53
+    Number of slice register sites lost
+      to control set restrictions:             193 out of  54,576    1%
+
+  A LUT Flip Flop pair for this architecture represents one LUT paired with
+  one Flip Flop within a slice.  A control set is a unique combination of
+  clock, reset, set, and enable signals for a registered element.
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+IO Utilization:
+  Number of bonded IOBs:                        17 out of     296    5%
+    Number of LOCed IOBs:                       17 out of      17  100%
+    IOB Flip Flops:                              1
+
+Specific Feature Utilization:
+  Number of RAMB16BWERs:                         2 out of     116    1%
+  Number of RAMB8BWERs:                          0 out of     232    0%
+  Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
+    Number used as BUFIO2s:                      1
+    Number used as BUFIO2_2CLKs:                 0
+  Number of BUFIO2FB/BUFIO2FB_2CLKs:             1 out of      32    3%
+    Number used as BUFIO2FBs:                    1
+    Number used as BUFIO2FB_2CLKs:               0
+  Number of BUFG/BUFGMUXs:                       3 out of      16   18%
+    Number used as BUFGs:                        2
+    Number used as BUFGMUX:                      1
+  Number of DCM/DCM_CLKGENs:                     1 out of       8   12%
+    Number used as DCMs:                         1
+    Number used as DCM_CLKGENs:                  0
+  Number of ILOGIC2/ISERDES2s:                   0 out of     376    0%
+  Number of IODELAY2/IODRP2/IODRP2_MCBs:         0 out of     376    0%
+  Number of OLOGIC2/OSERDES2s:                   1 out of     376    1%
+    Number used as OLOGIC2s:                     1
+    Number used as OSERDES2s:                    0
+  Number of BSCANs:                              0 out of       4    0%
+  Number of BUFHs:                               0 out of     256    0%
+  Number of BUFPLLs:                             0 out of       8    0%
+  Number of BUFPLL_MCBs:                         0 out of       4    0%
+  Number of DSP48A1s:                            0 out of      58    0%
+  Number of GTPA1_DUALs:                         0 out of       2    0%
+  Number of ICAPs:                               0 out of       1    0%
+  Number of MCBs:                                0 out of       2    0%
+  Number of PCIE_A1s:                            0 out of       1    0%
+  Number of PCILOGICSEs:                         0 out of       2    0%
+  Number of PLL_ADVs:                            0 out of       4    0%
+  Number of PMVs:                                0 out of       1    0%
+  Number of STARTUPs:                            0 out of       1    0%
+  Number of SUSPEND_SYNCs:                       0 out of       1    0%
+
+Average Fanout of Non-Clock Nets:                3.89
+
+Peak Memory Usage:  334 MB
+Total REAL time to MAP completion:  25 secs 
+Total CPU time to MAP completion:   22 secs 
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:Place:838 - An IO Bus with more than one IO standard is found.
+   Components associated with this bus are as follows: 
+   	 Comp: led_pins<0>   IOSTANDARD = LVCMOS25
+   	 Comp: led_pins<1>   IOSTANDARD = LVCMOS25
+   	 Comp: led_pins<2>   IOSTANDARD = LVCMOS25
+   	 Comp: led_pins<3>   IOSTANDARD = LVCMOS25
+   	 Comp: led_pins<4>   IOSTANDARD = LVCMOS15
+   	 Comp: led_pins<5>   IOSTANDARD = LVCMOS15
+   	 Comp: led_pins<6>   IOSTANDARD = LVCMOS15
+   	 Comp: led_pins<7>   IOSTANDARD = LVCMOS15
+
+
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network uart_rx_i0/frm_err has no load.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+INFO:Pack:1716 - Initializing temperature to 85.000 Celsius. (default - Range:
+   0.000 to 85.000 Celsius)
+INFO:Pack:1720 - Initializing voltage to 1.140 Volts. (default - Range: 1.140 to
+   1.260 Volts)
+INFO:Timing:3386 - Intersecting Constraints found and resolved.  For more information, see the TSI report.  Please consult the Xilinx
+   Command Line Tools User Guide for information on generating a TSI report.
+INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
+   (.mrp).
+INFO:Pack:1650 - Map created a placed design.
+INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
+   with the CLKFX and CLKFX180 outputs of the DCM comp
+   clk_gen_i0/clk_core_i0/dcm_sp_inst, consult the device Data Sheet.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) removed
+  21 block(s) optimized away
+
+Section 5 - Removed Logic
+-------------------------
+Unused block "samp_ram_i0/GND" (ZERO) removed.
+Unused block "samp_ram_i0/VCC" (ONE) removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+GND 		char_fifo_i0/XST_GND
+VCC 		char_fifo_i0/XST_VCC
+GND 		clk_gen_i0/XST_GND
+GND 		clk_gen_i0/clk_core_i0/XST_GND
+GND 		clk_gen_i0/clk_div_i0/XST_GND
+VCC 		clk_gen_i0/clk_div_i0/XST_VCC
+VCC 		dac_spi_i0/XST_VCC
+GND 		dac_spi_i0/out_ddr_flop_spi_clk_i0/XST_GND
+VCC 		dac_spi_i0/out_ddr_flop_spi_clk_i0/XST_VCC
+GND 		lb_ctl_i0/debouncer_i0/XST_GND
+VCC 		lb_ctl_i0/debouncer_i0/XST_VCC
+GND 		resp_gen_i0/to_bcd_i0/XST_GND
+VCC 		resp_gen_i0/to_bcd_i0/XST_VCC
+GND 		rst_gen_i0/reset_bridge_clk_rx_i0/XST_GND
+GND 		rst_gen_i0/reset_bridge_clk_samp_i0/XST_GND
+GND 		rst_gen_i0/reset_bridge_clk_tx_i0/XST_GND
+GND 		samp_gen_i0/XST_GND
+VCC 		samp_gen_i0/XST_VCC
+GND 		samp_ram_i0/BU2/XST_GND
+VCC 		samp_ram_i0/BU2/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk_pin                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| dac_clr_n_pin                      | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| dac_cs_n_pin                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| lb_sel_pin                         | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| led_pins<0>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_pins<1>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_pins<2>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_pins<3>                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| led_pins<4>                        | IOB              | OUTPUT    | LVCMOS15             |       | 12       | SLOW |              |          |          |
+| led_pins<5>                        | IOB              | OUTPUT    | LVCMOS15             |       | 12       | SLOW |              |          |          |
+| led_pins<6>                        | IOB              | OUTPUT    | LVCMOS15             |       | 12       | SLOW |              |          |          |
+| led_pins<7>                        | IOB              | OUTPUT    | LVCMOS15             |       | 12       | SLOW |              |          |          |
+| rst_pin                            | IOB              | INPUT     | LVCMOS15             |       |          |      |              |          |          |
+| rxd_pin                            | IOB              | INPUT     | LVCMOS25             |       |          |      |              |          |          |
+| spi_clk_pin                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW | ODDR         |          |          |
+| spi_mosi_pin                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| txd_pin                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+A logic-level (pre-route) timing report can be generated by using Xilinx static
+timing analysis tools, Timing Analyzer (GUI) or TRCE (command line), with the
+mapped NCD and PCF files. Please note that this timing report will be generated
+using estimated delay information. For accurate numbers, please generate a
+timing report with the post Place and Route NCD file.
+
+For more information about the Timing Analyzer, consult the Xilinx Timing
+Analyzer Reference Manual; for more information about TRCE, consult the Xilinx
+Command Line Tools User Guide "TRACE" chapter.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+Use the "-detail" map option to print out Control Set Information.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.

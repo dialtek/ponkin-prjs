@@ -1,0 +1,45 @@
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+bitgen -intstyle ise -f segm_disp.ut segm_disp.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+bitgen -intstyle ise -f segm_disp.ut segm_disp.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+bitgen -intstyle ise -f segm_disp.ut segm_disp.ncd 
+xst -intstyle ise -ifn "C:/Xilinx/test/test4/test4/segm_disp.xst" -ofn "C:/Xilinx/test/test4/test4/segm_disp.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/Xilinx/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 
+par -w -intstyle ise -ol high -t 1 segm_disp_map.ncd segm_disp.ncd segm_disp.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml segm_disp.twx segm_disp.ncd -o segm_disp.twr segm_disp.pcf 
+bitgen -intstyle ise -f segm_disp.ut segm_disp.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc C:/work/Projects/FPGA_prj/test/test3/anew/anew_imp.ucf -p xc3s500e-fg320-4 segm_disp.ngc segm_disp.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o segm_disp_map.ncd segm_disp.ngd segm_disp.pcf 

@@ -1,0 +1,34 @@
+[PROJECT]
+Target=C:\Program Files\PICC\Projects\pic 18f14k50 test\main.hex
+Development_Mode=
+Processor_Text=PIC18F14K50
+ToolSuite=CCS
+Processor=0xA145
+[C:\Program Files\PICC\Projects\pic 18f14k50 test\main]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Program Files\PICC\Projects\pic 18f14k50 test\main.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=C:\Program Files\PICC\Projects\pic 18f14k50 test\main
+[Opened Files]
+1=main.c
+2=
+3=18F14K50.h
+4=usb_cdc.h
+5=pic18_usb.h
+6=usb_hw_layer.h
+7=usb_desc_cdc.h
+8=usb.h
+9=usb.c
+10=pic18_usb.c
+11=ctype.h
+12=

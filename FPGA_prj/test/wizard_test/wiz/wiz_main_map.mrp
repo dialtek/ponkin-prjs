@@ -1,0 +1,34 @@
+Release 14.2 Map P.28xd (nt)
+Xilinx Mapping Report File for Design 'wiz_main'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off
+-c 100 -o wiz_main_map.ncd wiz_main.ngd wiz_main.pcf 
+Target Device  : xc3s500e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Fri Aug 09 14:40:30 2013
+
+Design Summary
+--------------
+Number of errors   :   1
+Number of warnings :   0
+
+Section 1 - Errors
+------------------
+ERROR:Pack:1064 - Invalid "CLKDV_DIVIDE" property value of '1.3' found on DCM
+   symbol 'clk_divider/DCM_SP_INST'.  The only accepted values for
+   "CLKDV_DIVIDE"  are 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8,
+   9, 10, 11, 12, 13, 14, 15 and 16.
+
+Section 2 - Warnings
+--------------------
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.

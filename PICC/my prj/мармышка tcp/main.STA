@@ -1,0 +1,151 @@
+
+ROM used:   12656/88064 (14%)
+            12656/88064 (14%) including unused fragments
+
+            2.8 Average locations per line
+            7.4 Average locations per statement
+
+RAM used:   416/8192 (5%) at main() level
+            557/8192 (7%) worst case
+
+Stack used: 94 worst case (56 in main + 38 for interrupts)
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  683   489  29  main.c
+  183     0   0  main.h
+  838     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
+ 2229   921  54  ..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\math.h
+  250   129   8  MT-16S4A-2FLG.h
+  278   171  10  ADS1256.h
+----- -----
+ 4461  1710 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     24   0    2             @delay_ms1
+0    104   0    8             @FLT
+0     44   0    4             @SFTOI
+0     58   0    2             @ITOF
+0    196   1    8             @MULFF
+0    426   2    8             @ADDFF
+0     86   0    0             @F64TOI64
+0    100   0    0             @I64TOF64
+0    272   1    0             @MULFF64
+0    100   0    0             @SI64TOF64
+0    202   1    8             @DIVFF
+0    264   1    8             @DIVFF64
+0    254   1   21   2097 11.0  sqrt
+0     70   0    0             @F48TO64
+0     60   0    1    257  2.3  LCDWriteNibble
+0     46   0    4    140  2.2  LCDWriteData
+0     44   0    4    119  2.2  LCDCommand
+0     20   0    4     39  1.5  LCDSetCursor
+0     14   0    0     37  1.1  LCDClear
+0    106   0    0    354  1.9  LCDInit
+0     10   0    1     24  1.2  LCDPutCh
+0     10   0    1     24  1.2  LCDMsg
+0    108   0    3    145  1.3  LCDWelcome
+0     14   0    0             @const1328
+0     30   0    0             @const1329
+0     30   0    0             @const1330
+0    316   1   15    928  5.3  LCDPutU16
+0     84   0    8             @DIV3232A
+0     48   0    8             @MUL3232
+0    532   2   15   1641  5.4  LCDPutU32
+0     92   0    5    240  2.8  WrReg
+0     32   0    0     88  1.7  ADC_StartRdContin
+0    172   1    5    364  4.2  ADC_RdataC
+0    126   0    8             @DIVS3232A
+0     36   0    0    108  1.7  ADC_StopRd
+0     22   0    1     66  2.0  ADC_sps_set
+0    218   1    0    842  3.8  ADC_SelfCal
+0     80   0    1    272  4.1  ADC_setCh
+0    238   1   21    206  3.5  Read_ADC_vol_in
+0     66   0    8             @MULS3232
+0     68   0    0             @F64TO48
+0     78   0    4             @SDTOF
+0     64   0    4             @FTOSD
+0     72   0   10    224  5.0  ADC_vol_average
+0    150   1    1    486  4.2  ADC_set_PGA
+0     32   0    0    152  1.8  ADC_wakeUp
+0    156   1    0    545  5.7  ADC_init
+0    260   1   37    508  4.8  ADC_vol_to_T
+0     72   0    3    354  4.2  Wr_Flash2
+0     40   0    0             @NVR_WR
+0    130   1    0             @WRITE_PROGRAM_MEMORY
+0     98   0    0    290  4.0  Rd_Flash2
+0     46   0    0             @READ_PROGRAM_MEMORY
+0    200   1    0             @const1413
+0     56   0   10    205  7.4  CRC16
+0     28   0    0    197  1.8  OscSetup
+0     30   0    0    197  1.8  EnableInt
+0     18   0    0    130  1.8  DisableInt
+0     88   0    0    761  2.4  MCU_init
+0     14   0    2     72  3.0  Bpush_delay
+0    132   1    3    152  1.3  LCD_print_menu
+0     26   0    0             @const1427
+0     26   0    0             @const1428
+0     26   0    0             @const1429
+0     26   0    0             @const1430
+0    592   2    3   1127  3.4  LCD_main_menu
+0     16   0    0             @const1432
+0     16   0    0             @const1433
+0    138   1    3    410  1.8  Full_dev_reset
+0     26   0    0             @const1449
+0     30   0    0             @const1450
+0     62   0    9     68  2.4  Destroy_float
+0    104   0   17    374  6.4  Remainder
+0     50   0    2    125  3.4  PositiveTemperature
+0    820   3   17   2010  5.5  ADC_rd_and_print_ch
+0    148   1    0             @DIV6464B
+0    386   2    0             @PRINTF_F64_9600_5893_5892
+0     16   0    0             @const1477
+0     14   0    0             @const1478
+0     14   0    0             @const1479
+0     16   0    0             @const1480
+0     14   0    0             @const1483
+0     22   0    0     65  1.9  @const1484
+0     22   0    0    428  4.7  @const1485
+0     24   0    0     65  1.9  save_to_flash
+0     98   0    2    428  4.7  cn_irq_handler
+0     40   0    0     48  1.1  timer1_irq_handler
+0     62   0    0    172  3.1  timer2_isr_handler
+0    220   1    4    552  5.9  PI_regulator
+0   2214   9    4   8410 10.4  MAIN
+0     28   0    0    325  4.8  @const1495
+0     28   0    0   8452 10.4  @const1496
+0     24   0    0             @const1497
+0     26   0    0             @const1498
+0     30   0    0             @const1499
+0     30   0    0             @const1500
+0     14   0    0             @const1501
+0     30   0    0             @const1502
+0     28   0    0             @const1504
+0     26   0    0             @const1505
+0     26   0    0             @const1506
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               50
+    Statements              1710
+    Comments                795
+    Volume (V)              58610
+    Difficulty (D)          182.5
+    Effort to implement (E) 10693391
+    Time to implement (T)   165 hours, 1 minutes
+    Est Delivered Bugs (B)  16
+    Cyclomatic Complexity   206
+    Maintainability (MI)    71
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-0FFFE  12144  52880  
+10000-14FFE     0  20480  
+15000-157FE     0  2048  
+
+
+

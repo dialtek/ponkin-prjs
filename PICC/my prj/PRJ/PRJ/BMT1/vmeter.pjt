@@ -1,0 +1,29 @@
+[PROJECT]
+Target=C:\PRJ\BMT1\vmeter.hex
+Development_Mode=
+Processor_Text=PIC18F2320
+ToolSuite=CCS
+Processor=0xA232
+[C:\PRJ\BMT1\vmeter]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\PRJ\BMT1\vmeter.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Opened Files]
+1=C:\PRJ\BMT1\vmeter.c
+2=C:\Program Files\PICC\devices\18F2320.h
+3=
+4=
+5=
+[Target Data]
+OptionString=-p +FH
+FileList=vmeter.c
+[Units]
+Count=1
+1=vmeter.c (main)

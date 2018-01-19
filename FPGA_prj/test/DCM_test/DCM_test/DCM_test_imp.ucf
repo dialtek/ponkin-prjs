@@ -1,0 +1,7 @@
+
+
+NET "DCM_CLKIN" LOC = "B8";
+NET "Gclk_div_2" LOC = "R15";
+NET "DCM_CLK180" LOC = "R18";
+
+#NET "DCM_CLKFB" LOC = "J15";

@@ -1,0 +1,48 @@
+
+ROM used: 227 (6%)
+          227 (6%) including unused fragments
+
+          0 Average locations per line
+          5 Average locations per statement
+
+RAM used: 34 (9%) at main() level
+          34 (9%) worst case
+
+Stack used: 1 worst case (out of 7 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  162    42 100  bskt.c
+  301     0   0  ..\..\Program Files\PICC\devices\16F88.h
+----- -----
+  463    42 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0      4   2   0    21  0.9  TIMER1_isr
+0      4   2   0    21  0.9  TIMER2_isr
+0      4   2   0    21  0.9  TIMER0_isr
+0     20   9   0   138  3.4  ExtInt
+0    120  53   0   769  5.3  MAIN
+
+Program metrics:
+    Functions               5
+    Statements              42
+    Comments                94
+    Volume (V)              1216
+    Difficilty (D)          12.4
+    Effort to implement (E) 15112
+    Time to implement (T)   14 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   3
+    Maintainability (MI)    129
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-0004A    71  0  
+0004B-007FF   152  1821  
+00800-00FFF     0  2048  
+
+
+

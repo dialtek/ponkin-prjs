@@ -1,0 +1,4 @@
+EN spi_master NULL D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd sub00/vhpl02 1389789316
+AR spi_master logic D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd sub00/vhpl03 1389788923
+EN fpga_spi_module NULL D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd sub00/vhpl00 1400583725
+AR fpga_spi_module behave D:/work/Projects/FPGA_prj/FPGA2USB/DDC_316_SPI_module/SPI_module/main.vhd sub00/vhpl01 1400583726

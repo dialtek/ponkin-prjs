@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<DeviceUsageSummary rev="10">
+<DesignStatistics TimeStamp="Thu Aug 08 16:24:20 2013"><group name="NetStatistics">
+<item name="NumNets_Active" rev="10">
+<attrib name="value" value="8"/></item>
+<item name="NumNets_Vcc" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Active_CLKPIN" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_DOUBLE" rev="10">
+<attrib name="value" value="5"/></item>
+<item name="NumNodesOfType_Active_DUMMYBANK" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_DUMMYESC" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="NumNodesOfType_Active_HUNIHEX" rev="10">
+<attrib name="value" value="5"/></item>
+<item name="NumNodesOfType_Active_INPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_IOBOUTPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_OMUX" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_OUTPUT" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="NumNodesOfType_Active_VFULLHEX" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Active_VLONG" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Active_VUNIHEX" rev="10">
+<attrib name="value" value="6"/></item>
+<item name="NumNodesOfType_Vcc_CLKPIN" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="NumNodesOfType_Vcc_CNTRLPIN" rev="10">
+<attrib name="value" value="3"/></item>
+<item name="NumNodesOfType_Vcc_DUMMYBANK" rev="10">
+<attrib name="value" value="4"/></item>
+<item name="NumNodesOfType_Vcc_VCCOUT" rev="10">
+<attrib name="value" value="1"/></item>
+</group>
+<group name="MiscellaneousStatistics">
+<item name="AGG_BONDED_IO" rev="9">
+<attrib name="value" value="4"/></item>
+<item name="AGG_IO" rev="9">
+<attrib name="value" value="4"/></item>
+<item name="NUM_BONDED_IBUF" rev="9">
+<attrib name="value" value="2"/></item>
+<item name="NUM_BONDED_IOB" rev="9">
+<attrib name="value" value="2"/></item>
+<item name="NUM_DCM" rev="9">
+<attrib name="value" value="1"/></item>
+</group>
+<group name="SiteStatistics">
+<item name="IBUF-DIFFMI" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="IBUF-DIFFSI" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="IOB-DIFFM" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+</DesignStatistics>
+<DeviceUsage TimeStamp="Thu Aug 08 16:24:20 2013"><group name="SiteSummary">
+<item name="DCM" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
+<item name="DCM_DCM" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="1"/></item>
+<item name="IBUF" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<item name="IBUF_INBUF" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<item name="IBUF_PAD" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<item name="IOB" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<item name="IOB_OUTBUF" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+<item name="IOB_PAD" rev="10">
+<attrib name="total" value="1000000"/><attrib name="used" value="2"/></item>
+</group>
+</DeviceUsage>
+<ReportConfigData TimeStamp="Thu Aug 08 16:24:20 2013"><group name="IBUF_PAD">
+<item name="IOATTRBOX" rev="10">
+<attrib name="LVCMOS25" value="2"/></item>
+</group>
+<group name="IOB_OUTBUF">
+<item name="IN" rev="10">
+<attrib name="IN_INV" value="0"/><attrib name="IN" value="2"/></item>
+</group>
+<group name="IOB_PAD">
+<item name="DRIVEATTRBOX" rev="10">
+<attrib name="12" value="2"/></item>
+<item name="IOATTRBOX" rev="10">
+<attrib name="LVCMOS25" value="2"/></item>
+<item name="SLEW" rev="10">
+<attrib name="SLOW" value="2"/></item>
+</group>
+<group name="IOB">
+<item name="O1" rev="10">
+<attrib name="O1_INV" value="0"/><attrib name="O1" value="2"/></item>
+</group>
+<group name="DCM_DCM">
+<item name="CLKDV_DIVIDE" rev="10">
+<attrib name="2" value="1"/></item>
+<item name="CLKOUT_PHASE_SHIFT" rev="10">
+<attrib name="NONE" value="1"/></item>
+<item name="DESKEW_ADJUST" rev="10">
+<attrib name="6" value="1"/></item>
+<item name="DFS_FREQUENCY_MODE" rev="10">
+<attrib name="LOW" value="1"/></item>
+<item name="DLL_FREQUENCY_MODE" rev="10">
+<attrib name="LOW" value="1"/></item>
+<item name="DUTY_CYCLE_CORRECTION" rev="10">
+<attrib name="TRUE" value="1"/></item>
+<item name="FACTORY_JF1" rev="10">
+<attrib name="0XC0" value="1"/></item>
+<item name="FACTORY_JF2" rev="10">
+<attrib name="0X80" value="1"/></item>
+<item name="PSCLK" rev="10">
+<attrib name="PSCLK_INV" value="1"/><attrib name="PSCLK" value="0"/></item>
+<item name="PSEN" rev="10">
+<attrib name="PSEN_INV" value="1"/><attrib name="PSEN" value="0"/></item>
+<item name="PSINCDEC" rev="10">
+<attrib name="PSINCDEC_INV" value="1"/><attrib name="PSINCDEC" value="0"/></item>
+<item name="RST" rev="10">
+<attrib name="RST" value="0"/><attrib name="RST_INV" value="1"/></item>
+</group>
+<group name="DCM">
+<item name="PSCLK" rev="10">
+<attrib name="PSCLK_INV" value="1"/><attrib name="PSCLK" value="0"/></item>
+<item name="PSEN" rev="10">
+<attrib name="PSEN_INV" value="1"/><attrib name="PSEN" value="0"/></item>
+<item name="PSINCDEC" rev="10">
+<attrib name="PSINCDEC_INV" value="1"/><attrib name="PSINCDEC" value="0"/></item>
+<item name="RST" rev="10">
+<attrib name="RST" value="0"/><attrib name="RST_INV" value="1"/></item>
+</group>
+</ReportConfigData>
+<ReportPinData TimeStamp="Thu Aug 08 16:24:20 2013"><group name="IBUF_PAD">
+<item name="PAD" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="IBUF_INBUF">
+<item name="IN" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="OUT" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="IOB_OUTBUF">
+<item name="IN" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="OUT" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="IBUF">
+<item name="I" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="PAD" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="IOB_PAD">
+<item name="PAD" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="IOB">
+<item name="O1" rev="10">
+<attrib name="value" value="2"/></item>
+<item name="PAD" rev="10">
+<attrib name="value" value="2"/></item>
+</group>
+<group name="DCM_DCM">
+<item name="CLK180" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKDV" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKFB" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKIN" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSCLK" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSEN" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSINCDEC" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="RST" rev="10">
+<attrib name="value" value="1"/></item>
+</group>
+<group name="DCM">
+<item name="CLK180" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKDV" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKFB" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="CLKIN" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSCLK" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSEN" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="PSINCDEC" rev="10">
+<attrib name="value" value="1"/></item>
+<item name="RST" rev="10">
+<attrib name="value" value="1"/></item>
+</group>
+</ReportPinData>
+<CmdHistory>
+</CmdHistory>
+</DeviceUsageSummary>

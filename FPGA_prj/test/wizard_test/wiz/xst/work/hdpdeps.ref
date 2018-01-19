@@ -1,0 +1,14 @@
+V3 11
+FL C:/Xilinx/test/wizard_test/wiz/wiz2.vhd 2013/08/09.14:40:19 P.28xd
+EN work/wiz2 1376044821 FL C:/Xilinx/test/wizard_test/wiz/wiz2.vhd \
+      PB ieee/std_logic_1164 1341906176 PB ieee/NUMERIC_STD 1341906182 LB UNISIM \
+      PH unisim/VCOMPONENTS 1341906184
+AR work/wiz2/BEHAVIORAL 1376044822 \
+      FL C:/Xilinx/test/wizard_test/wiz/wiz2.vhd EN work/wiz2 1376044821 CP BUFG \
+      CP IBUFG CP DCM_SP
+FL C:/Xilinx/test/wizard_test/wiz/wiz_main.vhd 2013/08/08.16:46:06 P.28xd
+EN work/wiz_main 1376044823 FL C:/Xilinx/test/wizard_test/wiz/wiz_main.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/wiz_main/Beh 1376044824 \
+      FL C:/Xilinx/test/wizard_test/wiz/wiz_main.vhd EN work/wiz_main 1376044823 \
+      CP wiz2

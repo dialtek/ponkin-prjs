@@ -1,0 +1,20 @@
+D:\work\Projects\С#\AntiCryo\AntiCryo\bin\Debug\AntiCryo.exe.config
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.Form1.resources
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.Properties.Resources.resources
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.csproj.GenerateResource.Cache
+D:\work\Projects\С#\AntiCryo\AntiCryo\bin\Debug\AntiCryo.exe
+D:\work\Projects\С#\AntiCryo\AntiCryo\bin\Debug\AntiCryo.pdb
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.exe
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.pdb
+D:\work\Projects\С#\AntiCryo\AntiCryo\bin\Debug\Interop.CWUIControlsLib.dll
+D:\work\Projects\С#\AntiCryo\AntiCryo\bin\Debug\AxInterop.CWUIControlsLib.dll
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\Interop.CWUIControlsLib.dll
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AxInterop.CWUIControlsLib.dll
+D:\work\Projects\С#\AntiCryo\AntiCryo\obj\Debug\AntiCryo.csproj.ResolveComReference.cache
+D:\work\Projects\С#\KZ Vitok\bin\Debug\AntiCryo.exe.config
+D:\work\Projects\С#\KZ Vitok\obj\Debug\Interop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\obj\Debug\AxInterop.CWUIControlsLib.dll
+D:\work\Projects\С#\KZ Vitok\obj\Debug\AntiCryo.csproj.ResolveComReference.cache
+D:\work\Projects\С#\KZ Vitok\obj\Debug\AntiCryo.exe
+D:\work\Projects\С#\KZ Vitok\obj\Debug\AntiCryo.pdb

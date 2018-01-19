@@ -1,0 +1,10 @@
+D:\work\Projects\С#\DDC316_test\obj\Debug\DDC_316_test.csprojResolveAssemblyReference.cache
+D:\work\Projects\С#\DDC316_test\obj\Debug\DDC_316_test.csproj.ResolveComReference.cache
+D:\work\Projects\С#\DDC316_test\obj\Debug\DDC_316_test.csproj.GenerateResource.Cache
+D:\work\Projects\С#\DDC316_test\obj\Debug\ElectronCollector.exe
+D:\work\Projects\С#\DDC316_test\obj\Debug\DDC_316_test.Form1.resources
+D:\work\Projects\С#\DDC316_test\obj\Debug\DDC_316_test.Properties.Resources.resources
+D:\work\Projects\С#\DDC316_test\bin\Debug\ElectronCollector.exe.config
+D:\work\Projects\С#\DDC316_test\bin\Debug\ElectronCollector.exe
+D:\work\Projects\С#\DDC316_test\bin\Debug\ElectronCollector.pdb
+D:\work\Projects\С#\DDC316_test\obj\Debug\ElectronCollector.pdb
