@@ -1,0 +1,13 @@
+>>> Warning 238 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\main.h" Line 156(2,5): Duplicate #locate
+>>> Warning 229 "main.c" Line 488(1,1): Subscript out of range
+>>> Warning 229 "main.c" Line 504(1,1): Subscript out of range
+>>> Warning 229 "main.c" Line 505(1,1): Subscript out of range
+>>> Warning 216 "main.c" Line 815(1,2): Interrupts disabled during call to prevent re-entrancy:  (modbus_CRC16)
+>>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(7,11): Variable never used:   CRC1
+>>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(17,21): Variable never used:   CRC2
+>>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(28,38): Variable never used:   EE_CRC_buf
+>>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 37(7,12): Variable never used:   state
+>>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 38(8,11): Variable never used:   tmp
+      Memory usage:   ROM=7%      RAM=60% - 61%
+      0 Errors,  10 Warnings.
+Build Successful.

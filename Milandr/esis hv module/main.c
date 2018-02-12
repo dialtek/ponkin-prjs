@@ -56,7 +56,8 @@
 #define modbus_wsr_cmd  0x06    // write single register cmd id
 
 #define com_dev_id 0            // В широковещательном режиме используется адрес 0
-#define dev_id 24               // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
+//#define dev_id 24               // modbus id текущего устройства                        
+U8 dev_id = 24;                                                                         // <<<<<<<<<<=========================== ID
 #define firmware_ver    11      // версия прошивки текущего устройства
 #define device_family   3       // код семейства устройств: 1 - PBF modules, 2 - extraction modules, 3 - dc hv modules
 #define max_regs_cnt    125     // макс. кол-во регистров для чтения за 1 раз
@@ -644,20 +645,12 @@ __irq void Timer1_IRQHandler ( void )
        {
        //====
          case detect_dev_id:              // ждем обращения к устройтсву
-           switch(rx_byte)
+           if((rx_byte == dev_id) || (rx_byte == com_dev_id))
            {
-             case dev_id:                 // получена команда обращения по текущему id устройтсва
+                                          // получена команда обращения по текущему id устройтсва
                rd_state = get_cmd_header; // переход в состояние ожидания заголовка команды
-             break;
-             //----  
-             case com_dev_id:             // получена команда широковещательного обращения
-               rd_state = get_cmd_header; // переход в состояние ожидания заголовка команды
-             break;
-             //----    
-             default:                     // действия при ошибке команды 
-               rd_state = detect_dev_id;  // возврат в анализ id команды modbus
-            }
-          break;
+           }
+         break;
        //=====                          
          case get_cmd_header:             // анализ команды modbus
            switch (rx_byte)

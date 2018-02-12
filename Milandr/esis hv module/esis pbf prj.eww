@@ -2,7 +2,7 @@
 
 <workspace>
   <project>
-    <path>$WS_DIR$\..\DDC316_test\prj_file.ewp</path>
+    <path>$WS_DIR$\prj_file.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

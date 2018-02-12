@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=1644541429
+Checksum=-949010725
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -37,7 +37,7 @@ Exclusions=
 [CallStackLog]
 Enabled=0
 [CallStackStripe]
-ShowTiming=184
+ShowTiming=1
 [Log file]
 LoggingEnabled=_ 0
 LogFile=_ ""

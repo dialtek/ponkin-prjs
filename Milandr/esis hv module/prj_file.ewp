@@ -310,9 +310,9 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>E:\work\Projects\ponkin\Milandr\esis hv module\inc\</state>
-          <state>E:\work\Projects\ponkin\Milandr\esis hv module\CMSIS\</state>
-          <state>E:\work\Projects\ponkin\Milandr\esis hv module\startup\</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis hv module\inc</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis hv module\CMSIS</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis hv module\startup</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>

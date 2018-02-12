@@ -1,0 +1,24 @@
+﻿<Window x:Name="window_setting" x:Class="LXM_ctrl.WSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LXM_ctrl"
+        mc:Ignorable="d"
+        Title="Настройки" Height="321.307" Width="300" Loaded="window_setting_Loaded" AutomationProperties.IsOffscreenBehavior="Offscreen" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid Margin="1,0,-1,0">
+        <Button x:Name="button_reg_addr" Content="Уст." HorizontalAlignment="Left" Margin="229,54,0,0" VerticalAlignment="Top" Width="49" Click="button_reg_addr_Click"/>
+        <TextBox x:Name="reg_addr" HorizontalAlignment="Left" Height="26" Margin="87,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontSize="16"/>
+        <Label x:Name="label" Content="адрес регистра" HorizontalAlignment="Left" Margin="64,20,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF6D6D6D"/>
+        <Button x:Name="button_IPandPort" Content="Уст." HorizontalAlignment="Left" Margin="229,151,0,0" VerticalAlignment="Top" Width="49" Click="button_IPandPort_Click"/>
+        <Label x:Name="label_Copy2" Content="IP
+               " HorizontalAlignment="Left" Margin="67,124,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="24" IsEnabled="False"/>
+        <TextBox x:Name="IP" HorizontalAlignment="Left" Height="20" Margin="96,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" Text="192.168.127.253"/>
+        <TextBox x:Name="port" HorizontalAlignment="Left" Height="20" Margin="96,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="58" Text="4001" TextAlignment="Center"/>
+        <Label x:Name="label_Copy3" Content="Port
+               " HorizontalAlignment="Left" Margin="51,151,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="47" IsEnabled="False"/>
+        <Label x:Name="default_label" Content="ошибка считывания, настройки по умолчанию" HorizontalAlignment="Left" Margin="11,-6,0,0" VerticalAlignment="Top"/>
+        <Image x:Name="logo" HorizontalAlignment="Left" Height="80" Margin="105,205,0,0" VerticalAlignment="Top" Width="75" ToolTip="www.dialtek.org" Source="logo.png" Opacity="0.75"/>
+
+    </Grid>
+</Window>

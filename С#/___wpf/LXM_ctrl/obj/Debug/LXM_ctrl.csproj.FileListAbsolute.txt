@@ -1,0 +1,64 @@
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.exe.config
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.exe
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.pdb
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.DataGrid.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.csprojResolveAssemblyReference.cache
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\MainWindow.g.cs
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\Settings.g.cs
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\App.g.cs
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl_MarkupCompile.cache
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl_MarkupCompile.lref
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\MainWindow.baml
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\Settings.baml
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.g.resources
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.Properties.Resources.resources
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.csproj.GenerateResource.Cache
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.exe
+E:\Mega drive\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.pdb
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.exe.config
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.exe
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.pdb
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.exe
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\LXM ctrl.pdb
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.DataGrid.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.csprojResolveAssemblyReference.cache
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\MainWindow.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\Settings.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\App.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl_MarkupCompile.cache
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl_MarkupCompile.lref
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\MainWindow.baml
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\Settings.baml
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM ctrl.g.resources
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.Properties.Resources.resources
+F:\Mega\ponkin-prjs\С#\___wpf\LXM_ctrl\obj\Debug\LXM_ctrl.csproj.GenerateResource.Cache

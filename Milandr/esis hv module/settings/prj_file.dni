@@ -9,7 +9,7 @@ TriggerName=main
 LimitSize=0
 ByteLimit=50
 [DebugChecksum]
-Checksum=-1435711936
+Checksum=628657291
 [Exceptions]
 StopOnUncaught=_ 0
 StopOnThrow=_ 0
@@ -28,6 +28,9 @@ UseAuto=0
 TypeViolation=1
 UnspecRange=1
 ActionState=1
+[SfrWindow]
+Show=1 1
+Sort=4 0
 [DriverProfiling]
 Enabled=0
 Mode=1
@@ -45,9 +48,6 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[SfrWindow]
-Show=1 1
-Sort=4 0
 [InterruptLog]
 LogEnabled=0
 GraphEnabled=0

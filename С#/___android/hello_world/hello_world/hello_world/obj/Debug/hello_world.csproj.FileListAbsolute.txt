@@ -1,0 +1,32 @@
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\hello_world.dll
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\hello_world.pdb
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.dll
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Platform.dll
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.dll
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.pdb
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.xml
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Platform.pdb
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.pdb
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.xml
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.csprojResolveAssemblyReference.cache
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.csproj.CoreCompileInputs.cache
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.MainPage.xaml.g.cs
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.App.xaml.g.cs
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.dll
+E:\Mega drive\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.pdb
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\hello_world.dll
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\hello_world.pdb
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.dll
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Platform.dll
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.dll
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.pdb
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Core.xml
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Platform.pdb
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.pdb
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\bin\Debug\Xamarin.Forms.Xaml.xml
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.csprojResolveAssemblyReference.cache
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.csproj.CoreCompileInputs.cache
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.MainPage.xaml.g.cs
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.App.xaml.g.cs
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.dll
+F:\Mega\ponkin-prjs\С#\___android\hello_world\hello_world\hello_world\obj\Debug\hello_world.pdb

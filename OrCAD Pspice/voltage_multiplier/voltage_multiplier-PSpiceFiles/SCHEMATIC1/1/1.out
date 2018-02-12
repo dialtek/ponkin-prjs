@@ -1,7 +1,7 @@
-
-**** 01/05/18 13:04:29 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-1"  [ E:\work\Projects\ponkin\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.si
+**** 02/12/18 15:22:25 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -18,7 +18,7 @@
 *Libraries: 
 * Profile Libraries :
 * Local Libraries :
-* From [PSPICE NETLIST] section of C:\Users\D_laptop_PC\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+* From [PSPICE NETLIST] section of C:\Users\D_LHEP_DESKTOP\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
 .lib "nom.lib" 
 
 *Analysis directives: 
@@ -69,17 +69,100 @@ C_C14         N22414 0  0.1uF  TC=0,0
 C_C15         N15446 0  0.1uF  TC=0,0 
 V_V3         N27016 N27049  AC 1
 +SIN 0 3100 15k 0 0 0
+D_D9         N27049 N27156 Dbreak 
+R_R14         N27049 N27341  5MEG TC=0,0 
 C_C23         N27016 N27156  0.1u  TC=0,0 
 C_C24         N27016 N27220  0.1u  TC=0,0 
+D_D10         N27220 N27049 Dbreak 
+C_C25         N27049 N27341  0.1u  TC=0,0 
 D_D11         N27156 N27341 Dbreak 
 D_D12         0 N27220 Dbreak 
 C_C26         0 N27049  0.1u  TC=0,0 
+R_R15         0 N27049  5MEG TC=0,0 
 R_R16         0 N27341  6MEG TC=0,0 
 
 **** RESUMING 1.cir ****
 .END
 
-ERROR(ORPSIM-15142): Node N27016 is floating
+INFO(ORPSIM-15423): Unable to find index file nom.ind for library file nom.lib.
 
-ERROR(ORPSIM-15142): Node N27049 is floating
+INFO(ORPSIM-15422): Making new index file nom.ind for library file nom.lib.
+
+Index has 33530 entries from 201 file(s).
+
+**** 02/12/18 15:22:25 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 02/12/18 15:22:25 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14716)-649.1E-18 (N14756) 6.689E-15 (N14840) 9.961E-15 (N15043) 9.961E-15     
+
+(N15446)-2.341E-18 (N17727) 9.961E-15 (N18570) 9.961E-15 (N22336) 12.57E-15     
+
+(N22376) 8.555E-15 (N22382) 12.57E-15 (N22392) 15.57E-15 (N22414)-2.341E-18     
+
+(N22514) 15.57E-15 (N22656) 15.57E-15 (N22948) 8.555E-15 (N22955) 8.555E-15     
+
+(N22959) 8.555E-15 (N27016)-13.07E-24 (N27049)-13.07E-24 (N27156)-2.525E-18     
+
+(N27220)-564.1E-21 (N27341)-28.15E-24 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V2         0.000E+00
+    V_V3         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 02/12/18 15:22:25 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        4.05
 

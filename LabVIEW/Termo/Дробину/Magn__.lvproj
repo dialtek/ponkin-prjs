@@ -146,11 +146,12 @@
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{CA8FF739-2EDA-4134-9A70-0F5DD933FDED}</Property>
 				<Property Name="DistPartCount" Type="Int">1</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
-				<Property Name="INST_buildLocation" Type="Path">/F</Property>
+				<Property Name="INST_buildLocation" Type="Path">../Дробину/Volume</Property>
+				<Property Name="INST_buildLocation.type" Type="Str">relativeToCommon</Property>
 				<Property Name="INST_buildSpecName" Type="Str">Installer</Property>
 				<Property Name="INST_defaultDir" Type="Str">{5B48452D-EF1A-4D71-BA83-9C816F730EFB}</Property>
 				<Property Name="INST_productName" Type="Str">PKT magnitometer</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.5</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.9</Property>
 				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">15008024</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
@@ -164,7 +165,7 @@
 				<Property Name="RegDestCount" Type="Int">1</Property>
 				<Property Name="Source[0].dest" Type="Str">{5B48452D-EF1A-4D71-BA83-9C816F730EFB}</Property>
 				<Property Name="Source[0].File[0].dest" Type="Str">{5B48452D-EF1A-4D71-BA83-9C816F730EFB}</Property>
-				<Property Name="Source[0].File[0].name" Type="Str">PKT magitometer.exe</Property>
+				<Property Name="Source[0].File[0].name" Type="Str">PKT mag.exe</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].destIndex" Type="Int">0</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].name" Type="Str">PKT magnitometer</Property>
 				<Property Name="Source[0].File[0].Shortcut[0].subDir" Type="Str"></Property>
@@ -191,7 +192,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{E0A2C42D-A195-4398-83FE-65DD86CF9FED}</Property>
-				<Property Name="Bld_version.build" Type="Int">15</Property>
+				<Property Name="Bld_version.build" Type="Int">23</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">PKT mag.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../EXE/PKT mag.exe</Property>

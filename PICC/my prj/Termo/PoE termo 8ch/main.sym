@@ -1,0 +1,322 @@
+W0      @SCRATCH
+W0L     _RETURN_
+W0 -W3  @SI64TOF64.P1
+W0 -W1  @READ_ROM_MEMORY.P2
+W0 -W1  @READ_PROGRAM_MEMORY.P3
+W0      @delay_ms1.P4
+W0 -W3  @MULFF64.P5
+W0 -W1  @DIV3232B.P6
+W0 -W1  @WRITE_PROGRAM_MEMORY.P7
+W0 -W1  @MULS3232.P8
+W0 -W1  @DIVS3232A.P9
+W0 -W3  @DIVFF64.P10
+W0 -W3  @I64TOF64.P11
+W0 -W1  @FTOSD.P12
+W0 -W3  @F64TO48.P13
+W0      @delay_us1.P14
+W0 -W1  @SPI_XFERM_1.P15
+W0 -W1  @MULFF.P16
+W1      @SCRATCH
+W1      @WRITE_PACKED_MEMORY.P1
+W1      @NVR_WR.P2
+W1      @READ_PACKED_MEMORY.P3
+W2      @READ_PACKED_MEMORY.P1
+W2      @READ_PROGRAM_MEMORY.P2
+W2 -W3  @MULS3232.P3
+W2      @WRITE_PROGRAM_MEMORY.P4
+W2      @WRITE_PACKED_MEMORY.P5
+W2      @SPI_XFERM_1.P6
+W2      @READ_ROM_MEMORY.P7
+W2 -W3  @MULFF.P8
+W2 -W3  @DIV3232B.P9
+W2 -W3  @DIVS3232A.P10
+W3      @WRITE_PROGRAM_MEMORY.P1
+W3      @READ_PACKED_MEMORY.P2
+W3      @READ_ROM_MEMORY.P3
+W3      @READ_PROGRAM_MEMORY.P4
+W3      @WRITE_PACKED_MEMORY.P5
+W4 -W7  @MULFF64.P1
+W4 -W7  @DIVFF64.P2
+230     U2MODE
+232     U2STA
+233.0   U2_TRMT
+233.1   U2_UTXBF
+233.2   U2_UTXEN
+234     U2TXREG
+236     U2RXREG
+238     U2BRG
+2C4     LATA
+2C6     TRISB
+2C6.0   TRB0
+2C6.1   TRB1
+2C6.2   CN3_TRIS
+2C6.3   CN4_TRIS
+2C6.4   CN2_TRIS
+2C6.5   CN1_TRIS
+2C7.5   Status_LED_TRIS
+2C7.6   TRB14
+2C7.7   XPORT_RST_n
+2C7.7   XPORT_RST_TRIS
+2C8     PORTB
+2C8.2   CN3
+2C8.3   CN4
+2C8.4   CN2
+2C8.5   CN1
+2CA.0   RB0
+2CA     LATB
+2CA.1   RB1
+2CB.5   Status_LED
+2CC     TRISC
+2CC.1   TRC1
+2CC.2   TRC2
+2CC.4   TRC4
+2CD.5   TRC13
+2CD.6   TRC14
+2CE     PORTC
+2CF.5   RC13
+2CF.6   RC14
+2D0     LATC
+2D2     TRISD
+2D2.0   ADC2_RESET_TRIS
+2D2.1   ADC_DRDY_TRIS
+2D2.2   ADC_SYNC_TRIS
+2D2.3   ADC_RESET_TRIS
+2D2.4   TRD4
+2D2.5   TRD5
+2D2.6   TRD6
+2D2.7   TRD7
+2D3.0   TRD8
+2D3.1   ADC2_DRDY_TRIS
+2D3.2   ADC2_CS_TRIS
+2D3.3   ADC2_SYNC_TRIS
+2D4     PORTD
+2D4.1   ADC_DRDY
+2D5.1   ADC2_DRDY
+2D6.0   ADC2_RESET
+2D6     LATD
+2D6.2   ADC_SYNC
+2D6.3   ADC_RESET
+2D6.4   RD4
+2D6.5   RD5
+2D6.6   RD6
+2D6.7   RD7
+2D7.0   RD8
+2D7.2   ADC2_CS
+2D7.3   ADC2_SYNC
+2DE     TRISF
+2DE.4   UART2_RX_TRIS
+2DE.5   UART2_TX_TRIS
+2E0     PORTF
+2E2     LATF
+2E4.0   TRG0
+2E4     TRISG
+2E4.1   TRG1
+2E4.6   SCK2_TRIS
+2E4.7   SDI2_TRIS
+2E5.0   SDO2_TRIS
+2E5.1   ADC_CS_TRIS
+2E5.4   LCD_RW_TRIS
+2E5.5   LCD_RS_TRIS
+2E5.6   LCD_E_TRIS
+2E6     PORTG
+2E8     LATG
+2E8.0   RG0
+2E8.1   RG1
+2E8.6   SCK2
+2E8.7   SDI2
+2E9.0   SDO2
+2E9.1   ADC_CS
+2E9.4   LCD_RW
+2E9.5   LCD_RS
+2E9.6   LCD_E
+2E9.7   RG15
+6D2     ODCD
+744.0   PLLPRE0
+744     CLKDIV
+744.1   PLLPRE1
+744.2   PLLPRE2
+744.3   PLLPRE3
+744.4   PLLPRE4
+744.6   PLLPOST0
+744.7   PLLPOST1
+746     PLLFBD
+800-801 rs232_errors
+802-80A Mx_ch_code
+80B     PGA
+80C     PGA_val
+80D     Sps_buf
+80E     input_buf_state
+80F     Aver_Wr
+810-813 flash_wr_data
+814     Sps_Wr
+815     CRC_Wr
+816     ADC_select
+817.0   meas_stop_fl
+817.1   reset_fl
+818     NumAver
+819     ADC_sps_var
+81A     CRC1
+81B     CRC2
+81C     EE_CRC_buf
+81D     Ma_buf_index
+81E-821 flash_rd_data
+822-1821 Ch_buf
+1822-1861 ADC_counts
+1862-1865 Ch_buf_sum
+1866-1869 ADC_full_word
+186A    Ma_buf_size
+186B    Ma_buf_cnt
+186C    state
+186D    wr_ptr
+186E-186F tmp
+1870-1873 pkt8_ch_1
+1874-1877 pkt8_ch_2
+1878-187B pkt8_ch_3
+187C-187F pkt8_ch_4
+1880-1883 pkt8_ch_5
+1884-1887 pkt8_ch_6
+1888-188B pkt8_ch_7
+188C-188F pkt8_ch_8
+1890-1891 meas_status
+1892    rd_ptr
+1893    reg_addr_flag
+1894-18A3 rx_buf
+18A4    reg_wr_flag
+18A5    reg_qty_flag
+18A6    get_crc_flag
+18A7    rx_byte
+18A8    answer
+18A9    rd_state
+18AA-18AB modbus_reg_addr
+18AC-18AD temp_buf
+18AE-18AF regs2read
+18B0-19A9 crc_buf
+19AA-19AB CRC16
+19AC-19AD addr_buf_1
+19AE-19AF addr_buf_2
+19B0-19B1 reg_wr_data
+19B2-1AAB holding_register
+1AAC    MAIN.i
+1AAE    ADC_par_rd_ch.channel
+1AAE    modbus_rhr_answer.cnt
+1AAE    ADC_init.buf_state
+1AAE    modbus_refresh.cmd_type
+1AAE    Rd_Flash.a
+1AAF    Rd_Flash.b
+1AAF    ADC_init.buf_st
+1AAF    modbus_rhr_answer.i
+1AB0    ADC_set_PGA._PGA_val
+1AB0    Rd_Flash.c
+1AB0    SYNC_ADC.command
+1AB0    modbus_rhr_answer.j
+1AB0    ADC_read_aver.ADC_number
+1AB0    ADC_setCh.Ch_Number
+1AB0    ADC_sps_set.SPS
+1AB0    Clr_bufs.i
+1AB1    ADC_read_aver.ADC_ch
+1AB1    ADC_setCh.ADC_number
+1AB1    Clr_bufs.j
+1AB2    WrReg.RegName
+1AB2    Clr_bufs.a
+1AB2-1AB5 ADC_read_aver.Vin
+1AB3    Clr_bufs.b
+1AB4-1AB5 WrReg.CommandByte
+1AB4    uart_send_hex.ch
+1AB6-1AB9 ADC_read_aver._Ch_buf_sum
+1ABA    ADC_read_aver.i
+1AC0    ADC_read.ADC_number
+1AC2-1AC5 ADC_read.ADC_RByte_Sum
+1AC6-1AC9 ADC_read.ADC_RByte1
+1ACA-1ACD ADC_read.ADC_RByte2
+1ACE-1AD1 ADC_read.ADC_RByte3
+1AD2    ADC_select.command
+1AE0    get_rx_ch.rch
+1AE0-1AE1 modbus_CRC16.buf
+1AE2    modbus_CRC16.len
+1AE3    modbus_CRC16.pos
+1AE4-1AE5 modbus_CRC16.crc
+1AE6    modbus_CRC16.i
+2780-27FF Stack
+
+ROM Allocation:
+000200  get_rx_ch
+000244  modbus_CRC16
+0002B0  timer2_irq_handler
+000474  timer1_irq_handler
+00049C  UART2_RXd_isr
+0004D8  OscSetup
+0004F4  EnableInt
+000502  MCU_init
+000544  Clr_bufs
+0005D0  @READ_PROGRAM_MEMORY
+0005FE  @delay_ms1
+000612  Rd_Flash
+000670  WrReg
+0006D0  ADC_sps_set
+0006E8  ADC_set_PGA
+00079A  ADC_SelfCal
+0007DE  ADC_init
+0008D8  ADC_select
+000904  ADC_setCh
+000968  SYNC_ADC
+00099C  @DIVS3232A
+000A1A  ADC_read
+000AEA  @MULS3232
+000B2C  @I64TOF64
+000B96  @MULFF64
+000CA6  @SI64TOF64
+000D10  @DIVFF64
+000E18  @F64TO48
+000E5C  @MULFF
+000F20  @FTOSD
+000F60  ADC_read_aver
+0010B4  ADC_par_rd_ch
+00124C  modbus_refresh
+0013BA  uart_send_hex
+0013CE  modbus_rhr_answer
+0014E4  modbus_wsr_answer
+001596  @NVR_WR
+0015BE  @WRITE_PROGRAM_MEMORY
+001640  Wr_Flash
+001662  modbus_poll
+0016AC  @cinit1
+0016AC  MAIN
+001750  @cinit2
+
+Project Directory:
+    F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\
+
+Project Files:
+    main.c                                                  [22-янв-18 14:43  CRC=5811296C]
+    main.h                                                  [05-дек-17 12:19  CRC=7EF5E759]
+    C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [08-сен-15 15:17  CRC=C83E8947]
+    ADS1256.h                                               [15-янв-18 16:20  CRC=394CA984]
+
+Source signature=11DEED14
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=8169
+
+Units:
+    main (main)
+
+Compiler Settings:
+    Processor:      PIC24HJ128GP506A
+    Pointer Size:   16
+    ADC Range:      0-65535
+    Opt Level:      9
+    Short,Int,Long: SIGNED: 8,16,32
+    Float,Double:   32,64
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   main.xsym
+    Errors:      main.err
+    Ext Symbols: main.esym
+    INHX8:       main.hex
+    Symbols:     main.sym
+    List:        main.lst
+    Debug/COFF:  main.cof
+    Project:     main.ccspjt
+    Call Tree:   main.tre
+    Statistics:  main.STA

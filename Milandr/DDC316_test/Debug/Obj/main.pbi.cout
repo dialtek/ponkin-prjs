@@ -1,22 +1,22 @@
-"E:\work\Projects\ponkin\Milandr\DDC316_test\main.c"
+"F:\Mega\ponkin-prjs\Milandr\DDC316_test\main.c"
 -std=c99
 -ferror-limit=100
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\inc
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\inc
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\CMSIS
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\CMSIS
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\startup
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\startup
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\inc\c
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\inc
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\inc
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\CMSIS
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\CMSIS
 -I
-E:\work\Projects\ponkin\Milandr\DDC316_test\startup
+F:\Mega\ponkin-prjs\Milandr\DDC316_test\startup
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff
 -D__CHAR_MIN__=0

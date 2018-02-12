@@ -1,0 +1,89 @@
+
+ROM used:   6142/88064 (7%)
+            6142/88064 (7%) including unused fragments
+
+            2.8 Average locations per line
+            10.8 Average locations per statement
+
+RAM used:   4913/8192 (60%) at main() level
+            4967/8192 (61%) worst case
+
+Stack used: 80 worst case (36 in main + 44 for interrupts)
+Stack size: 128
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  819   420  74  main.c
+  179     0   0  main.h
+  863     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
+  360   149  26  ADS1256.h
+----- -----
+ 2221   569 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     20   0    2             @delay_ms1
+0     96   1    6    290  2.8  WrReg
+0     24   0    1     72  2.0  ADC_sps_set
+0    178   1    1    685  4.3  ADC_set_PGA
+0     68   1    4    165  2.7  ADC_SelfCal
+0    250   2    2    941  5.8  ADC_init
+0     52   0    1    275  3.7  SYNC_ADC
+0     44   0    1    226  3.6  ADC_select
+0    100   1    4    235  2.8  ADC_setCh
+0    208   2   22    534  3.8  ADC_read
+0    126   1    8             @DIVS3232A
+0    340   3   24    699  7.9  ADC_read_aver
+0     66   1    8             @MULS3232
+0    106   1    0             @I64TOF64
+0    272   2    0             @MULFF64
+0    106   1    0             @SI64TOF64
+0    264   2    8             @DIVFF64
+0     68   1    0             @F64TO48
+0    196   2    8             @MULFF
+0     64   1    4             @FTOSD
+0    140   1    7    488  3.8  Clr_bufs
+0    366   3    6   4904  5.9  modbus_refresh
+0     68   1    4    318  6.3  get_rx_ch
+0    108   1   12    548  9.5  modbus_CRC16
+0    178   1    2    779  3.9  modbus_wsr_answer
+0    278   2    8   1031  6.3  modbus_rhr_answer
+0     74   1    3    253  3.7  modbus_poll
+0    452   4    0   3310  9.4  timer2_irq_handler
+0     94   1    3    577  5.7  Rd_Flash
+0     46   0    0             @READ_PROGRAM_MEMORY
+0     34   0    0    287  4.2  Wr_Flash
+0     40   0    0             @NVR_WR
+0    130   1    0             @WRITE_PROGRAM_MEMORY
+0     20   0    1     65  3.0  uart_send_hex
+0     28   0    0    197  1.8  OscSetup
+0     14   0    0     67  1.2  EnableInt
+0     66   1    0    530  2.4  MCU_init
+0    408   3    1   1509  5.4  ADC_par_rd_ch
+0     40   0    0     48  1.1  timer1_irq_handler
+0     60   0    5     98  3.3  UART2_RXd_isr
+0    338   3    5    538  4.8  MAIN
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               28
+    Statements              569
+    Comments                598
+    Volume (V)              32332
+    Difficulty (D)          122.7
+    Effort to implement (E) 3967869
+    Time to implement (T)   61 hours, 14 minutes
+    Est Delivered Bugs (B)  8
+    Cyclomatic Complexity   78
+    Maintainability (MI)    123
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-001FE   508  0  
+00200-0FFFE  5630  59394  
+10000-14FFE     0  20480  
+15000-157FE     0  2048  
+
+
+
