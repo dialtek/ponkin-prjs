@@ -1931,6 +1931,9 @@
         <name>$PROJ_DIR$\inc\core_cm3.h</name>
       </file>
       <file>
+        <name>$PROJ_DIR$\inc\dialtek_modbus.h</name>
+      </file>
+      <file>
         <name>$PROJ_DIR$\inc\MDR32Fx.h</name>
       </file>
       <file>

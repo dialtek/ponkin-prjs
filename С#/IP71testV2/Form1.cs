@@ -114,7 +114,7 @@ namespace IP701testV2
             SrcNames.Add("L1");
 
 
-            PGM_IP.Text = "1- " + Src[0].IpAdress;
+            //PGM_IP.Text = "1- " + Src[0].IpAdress;
      
         }
 
@@ -125,6 +125,7 @@ namespace IP701testV2
             NumberOfSources = 1;
 
             AddNewSource_B.Enabled = false;
+
 
             //try
             //{

@@ -54,13 +54,18 @@
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
-    (T
-      (FullPartName "T.Normal")
+    (VDC
+      (FullPartName "VDC.Normal")
       (LibraryName
-         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))
-    (S_ST
-      (FullPartName "S_ST.Normal")
+    (IDC
+      (FullPartName "IDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (R_var
+      (FullPartName "R_var.Normal")
       (LibraryName
          "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
@@ -70,6 +75,21 @@
       (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (OPAMP
+      (FullPartName "OPAMP.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (T
+      (FullPartName "T.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (S_ST
+      (FullPartName "S_ST.Normal")
       (LibraryName
          "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
@@ -100,50 +120,34 @@
     (VSTIM
       (FullPartName "VSTIM.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCSTM.OLB")
-      (DeviceIndex "0"))
-    (VDC
-      (FullPartName "VDC.Normal")
-      (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
   (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
-  (MPSSessionName "D")
+  (MPSSessionName "D_LHEP_DESKTOP")
   (GlobalState
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\voltage_multiplier\voltage_multiplier.dsn")
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier.dsn")
       (Path "Design Resources"
-         "E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\voltage_multiplier\voltage_multiplier.dsn"
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier.dsn"
          "SCHEMATIC1")
-      (Path "Outputs")
       (Select "Design Resources"
-         "E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\voltage_multiplier\voltage_multiplier.dsn"
-         "SCHEMATIC1" "PAGE2"))
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier.dsn"
+         "SCHEMATIC1" "inv_noninv_amp"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 0 200 0 219"))
+        (Placement "44 0 1 -1 -1 -8 -31 0 304 0 491"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -8 -30 50 1240 50 307")
-        (Scroll "-125 0")
-        (Zoom "92")
+        (Placement "44 2 3 -1 -1 -8 -31 305 1966 3 494")
+        (Scroll "592 90")
+        (Zoom "134")
         (Occurrence "/"))
       (Path
-         "E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
+         "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 2 3 -1 -1 -8 -30 75 1723 75 554")
-        (Scroll "228 60")
-        (Zoom "184")
-        (Occurrence "/"))
-      (Path
-         "E:\WORK\PROJECTS\PONKIN\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE2"))))
+      (Page "inv_noninv_amp"))))

@@ -31,7 +31,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>ICD3PlatformTool</platformTool>
         <languageToolchain>C30</languageToolchain>
-        <languageToolchainVersion>3_31</languageToolchainVersion>
+        <languageToolchainVersion></languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>

@@ -3,7 +3,7 @@
 
 /// ФАЙЛ ПРОШИВКИ CPLD ЗАГРУЖАТЬ С ПОМОЩЬЮ DIGILENT ADEPT
 
-// modbus версия
+// modbus версия 2.0
 
 #include "MDR32Fx.h"
 #define F_CPU 80000000
@@ -16,59 +16,8 @@
 
 #include "mdr_delay.h"
 
-//================================ state-machine ===============================
-#define detect_dev_id      10      // код 0 состояния кон.автомата
-#define get_cmd_header     11      // код 1 состояния кон.автомата
-#define get_modbus_word_msb   12   // код 2 состояния кон.автомата
-#define get_modbus_word_lsb   13   // код 3 состояния кон.автомата
-#define get_reg_cnt_msb    14      // код 4 состояния кон.автомата
-#define get_reg_cnt_lsb    15      // код 5 состояния кон.автомата
-#define calc_crc1          16      // код 6 состояния кон.автомата
-#define calc_crc2          17      // код 7 состояния кон.автомата
-#define get_modbus_word    18      // код 8 состояния кон.автомата
-
-
-U8 wr_ptr = 0, rd_ptr = 0;   // счетчики чтения и записи в массив UART
-// буфер для сохр. принятных команд
-U8 rx_buf[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
-//==============================================================================
-
-//============================== RS485 defines =================================
-#define RS485_RX_EN     MDR_PORTB->RXTX &= ~(1<<10)  // вкл.  приемник RS485   \_ 
-#define RS485_RX_DIS    MDR_PORTB->RXTX |=  (1<<10)  // выкл. приемник RS485   _/
-#define RS485_TX_EN     MDR_PORTB->RXTX |=  (1<<9)   // вкл.  передатчик RS485 _/
-#define RS485_TX_DIS    MDR_PORTB->RXTX &= ~(1<<9)  // выкл. передатчик RS485 \_
-
-#define modbus_rhr_cmd  0x03    // read holding registers cmd id
-#define modbus_wsr_cmd  0x06    // write single register cmd id
-
-#define com_dev_id      0       // В широковещательном режиме используется адрес 0
-#define dev_id 80               // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
-#define firmware_ver    11      // версия прошивки текущего устройства
-#define device_family   5       // код семейства устройств: 5 - профилометры
-#define max_regs_cnt    125     // макс. кол-во регистров для чтения за 1 раз
-
-U8 reg_addr_flag = 0;
-U8 reg_wr_flag = 0;
-U8 reg_qty_flag = 0;
-U8 get_crc_flag = 0;
-
-U8 rx_byte;       // байт принятый с ПК
- 
-U8 answer = 0;    // тип ответа на команду с ПК
-U8 rd_state = detect_dev_id; // машина состояний по умолчанию ждет обращения по id устройста modbus
-U16 modbus_reg_addr = 0;    // адрес регистра для R/W по запросу от modbus мастера
-U16 temp_buf = 0;           // временный буфер
- 
-U16 regs2read = 0;          // число регистров для чтения по команде modbus rhr
-U8  crc_buf[250];           // буфер для хранения байтов для расчета CRC16
-U16 CRC16 = 0;              // для хранения рассчитаной контрольной суммы
-U16 addr_buf_1, addr_buf_2;
-
-U16 reg_wr_data = 0;
-U16  holding_register[125];  // буфер для хранения переменных чтения, макс. число регистров - 124
-//==============================================================================
-
+//========================== USER DEFINES AND VARS==============================
+  
 // сигналы запуска и остановки блока ресинхронизации данных в ПЛИС
 #define CPLD_CE_ON  	 MDR_PORTB->RXTX |=   1<<7   
 #define CPLD_CE_OFF  	 MDR_PORTB->RXTX &=  ~(1<<7) 
@@ -128,8 +77,11 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   U32 full_current = 0;                 // ток мишени
   U32 ADC_noise = 0;                    // смещение АЦП МК в режиме холостого хода
   U32 ADC_code = 0;                    
+//==============================================================================  
+
+  #include "dialtek_modbus.h"
   
-    void OSC_init(void){
+  void OSC_init(void){
 
 	#define	_HSEBYP				1		// 0 - режим осциллятора, 1 - режим внешнего генератора
 	#define	_HSEON				1		// 0 - выключен, 1 - включен
@@ -155,7 +107,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   MDR_RST_CLK->TIM_CLOCK = 0x00000000;
   }
    
-    void GPIO_init (void){  
+  void GPIO_init (void){  
   
   MDR_PORTA->OE      = 0xFFD5; // PA5 - dvalid3, PA3 - DVALID2, PA1 - DVALID1, PA0 - MCU_CONV
   MDR_PORTA->FUNC    = 0x0000; //0x0800; // функция - порт, для РА5 альтернативная функция 
@@ -193,7 +145,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 
    }
 
-    void timer3_init(void) {
+  void timer3_init(void) {
           
   // настройка таймера для режима захвата переднего фронта _/
   // + настройка прерывани каждые ~ 300 мкс, подача холостых импульсов CONV на АЦП 
@@ -212,7 +164,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
  
 /*=========================================================================== */
 // SPI
-    void MDR32_SSP1_init (U8 data_lenght){
+  void MDR32_SSP1_init (U8 data_lenght){
 	  
 	MDR_RST_CLK->PER_CLOCK |= 1 << 8;       // Разрешения тактирования периферийного блока SPI 1 (SSP1)
 	MDR_RST_CLK->SSP_CLOCK = (1 << 24) | 0; // Разрешение тактовой частоты на SSP 1
@@ -233,14 +185,14 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 			(1 << 1); 	        // Разрешение работы приемопередатчика
 	}
 
-    void SPI1_Wr_Data (U16 data){
+  void SPI1_Wr_Data (U16 data){
 	  
 	  // функция отправки данных на шину SSP1
 	  // регистр DR - 16 бит !!!!
 	  MDR_SSP1->DR = data;
 	}
 
-    U16 SPI1_Rd_Data (void){
+  U16 SPI1_Rd_Data (void){
 	  
           
           #define SSP_SR_RNE ((uint32_t)0x00000004) // бит заполнения FIFO SSP
@@ -259,7 +211,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
  
 /*=========================================================================== */
 // ADC MCU
-    void MCU_ADC_init(){
+  void MCU_ADC_init(){
 
   MDR_RST_CLK->PER_CLOCK |= (1 << 17); //тактирование АЦП
   
@@ -281,14 +233,14 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   //MDR_ADC->ADC2_CFG |= 1 << 17; // Выбор источника опорного напряжения 1.23 В от датчика температуры (точный) 
 }
 
-    void MCU_ADC_start_conv(void){
+  void MCU_ADC_start_conv(void){
   
   	MDR_ADC->ADC1_CFG |= 1<<1;
         MDR_ADC->ADC1_CFG |= 1;
   
 }
 
-    U32 MCU_ADC_read(void){
+  U32 MCU_ADC_read(void){
 	  
 	  // чтение АЦП, t выборки + t преобразования канала = 3.2 мкС при HCLK = 10М и предделителе АЦП = 1
 	  //		     t выборки + t преобразования канала = 0.5 мкС при HCLK = 70М и предделителе АЦП = 1					
@@ -305,7 +257,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 	  return ADC_data;
 }
 					   
-    void MCU_ADC_set_ch(U8 channel){
+  void MCU_ADC_set_ch(U8 channel){
 	  
 	if (channel > 15) return;
 	
@@ -313,7 +265,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
         delay_us(20);			
 }
 
-    U32 MCU_ADC_Rd_average(U16 AverValue){
+  U32 MCU_ADC_Rd_average(U16 AverValue){
 	  
 	  // чтение АЦП, t выборки + t преобразования канала = 3.2 мкС при HCLK = 10М и предделителе АЦП = 1
 	  // t выборки + t преобразования канала = 0.5 мкС при HCLK = 70М и предделителе АЦП = 1	
@@ -331,7 +283,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 	  return Aver_ADC_data;
 }
 
-    U32 Get_ADC_ch_voltage(U8 ADC_channel){
+  U32 Get_ADC_ch_voltage(U8 ADC_channel){
 	  // чтение усредненного результата преобраз. канала АЦП, преобразование в мВ
 	  
 	  U32 ADC_rd_data = 0;
@@ -344,7 +296,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 }   
 /*=========================================================================== */
 // ADC DDC
-    void ADC_config (U8 ADC_scale_code) {
+  void ADC_config (U8 ADC_scale_code) {
 	  
           U32 config_word; // cmd word 
             
@@ -372,7 +324,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 	  CPLD_CE_OFF;	
         }
 
-    void ADC_init (U8 ADC_scale_code) {
+  void ADC_init (U8 ADC_scale_code) {
 	  
       ADC1_RST_ON;
       ADC2_RST_ON;
@@ -383,7 +335,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   
 	}
        
-    void ADC_change_scale(void) {
+  void ADC_change_scale(void) {
     
       // обновление шкалы АЦП
       ADC1_RST_OFF; ADC2_RST_OFF; ADC3_RST_OFF; // сброс всех АЦП
@@ -392,7 +344,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
       
     }    
     
-    void ADC_read_all(void) {
+  void ADC_read_all(void) {
         // в режиме послед. чтения каналов
         // выдвигается сначала последний вход АЦП, потом предпоследний и тд   
       
@@ -408,7 +360,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 
     }
     
-    void convert_to_charge(void) {
+  void convert_to_charge(void) {
       
        for (U8 i = 0; i < 16; i++) 
         {     
@@ -431,7 +383,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
     
     }
      
-    void ADC_ch_swap(void) {
+  void ADC_ch_swap(void) {
       // заполнение массива всех трех АЦП 
      // ADC 1
      for(U8 i = 0; i <= 15; i++) 
@@ -492,7 +444,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
       
     }
     
-    void perform_integrate(void) {
+  void perform_integrate(void) {
         
         // этот дрызг необходим для вывода АЦП из сна и подготовке к новым изм.
         MDR_PORTC->RXTX = ~ MDR_PORTC->RXTX;  
@@ -511,7 +463,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
         IVC_STOP_INT;      
     }
     
-    void cacl_beam_Q(void) {   
+  void cacl_beam_Q(void) {   
       // расчет заряда мишени
         IVC_SET;                            // конец сброса интегратора
         delay_us(10);                       // необх. задержка  
@@ -529,7 +481,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
     
 /*=========================================================================== */
 // UART
-    void Uart_init (void){
+  void Uart_init (void){
   MDR_RST_CLK->PER_CLOCK |= (1UL << 22); //тактирование порта B
   MDR_PORTB->FUNC |= ((2 << 5*2) | (2 << 6*2)); //режим работы порта
   MDR_PORTB->ANALOG |= ((1 << 5) | (1 << 6)); //цифровой
@@ -559,29 +511,29 @@ MDR_UART1->CR = ((1 << 8)|(1 << 9)|1);     // передачик и приемник разрешен,
 
 }
 	
-    void Uart_send_hex(U8 hex_data){
+  void uart_send_hex(unsigned char hex_data){
 	  
       // пока Буфер   FIFO   передатчика   заполнен...  
-	while(MDR_UART1->FR & (1<<5)) { }; // ждем готовности UART1;
+   while(MDR_UART1->FR & (1<<5)) { }; // ждем готовности UART1;
 
-    MDR_UART1->DR = hex_data;
+   MDR_UART1->DR = hex_data;
   
-	}
+  }
 	  
-    void Uart_CR_LF_send (void){
+  void Uart_CR_LF_send (void){
 	  
-        Uart_send_hex(0x0A);
-	Uart_send_hex(0x0D);
+        uart_send_hex(0x0A);
+	uart_send_hex(0x0D);
 	
 	}
 
-    void Uart_num_send(int32_t data){
+  void Uart_num_send(int32_t data){
 	  
   unsigned char temp[10],count=0;
   if (data<0) 
   {
     data=-data;
-    Uart_send_hex('-');
+    uart_send_hex('-');
   }     
   if (data)
   {
@@ -591,149 +543,16 @@ MDR_UART1->CR = ((1 << 8)|(1 << 9)|1);     // передачик и приемник разрешен,
       data/=10;                 
     }                           
     while (count)           
-      Uart_send_hex(temp[--count]);          
+      uart_send_hex(temp[--count]);          
   }
-  else Uart_send_hex('0');           
+  else uart_send_hex('0');           
 }
 
-    void Uart_send_text(unsigned char *s){
+  void Uart_send_text(unsigned char *s){
   while (*s != 0)
-    Uart_send_hex(*s++);
+    uart_send_hex(*s++);
 }
 
-/*========================================================================== */
-// MODBUS
-  char get_rx_ch (void){                                                     
-// Get RX char
-char rch;
-
-   if (rd_ptr < wr_ptr) // буфер не пуст
-   {
-      rd_ptr++;                    // инкремент счетчика считаных байт
-      rch = rx_buf[rd_ptr & 0x0f]; // сохр. элемента по индексу
-   }
-   else rch = 'x';   
-   
-   // запрет прерываний по UART на время сравнение указателей  
-   // на счит. и запис. элементы массива
-   NVIC_DisableIRQ(UART1_IRQn);    
-           
-   if ((wr_ptr==rd_ptr) && (wr_ptr > 15)) // если буфер заполнен                                            
-   {  
-      wr_ptr=0;                                                                   
-      rd_ptr=0;                                                       
-   } 
-
-   NVIC_EnableIRQ(UART1_IRQn);         // разрешение прерываний
-
-return rch;
-}
-
-  U8 is_reg (U16 reg_addr)
-  {  
-   // был ли прочитан этот регистр
-   U8 rd_status = 0;
-      for(unsigned int t = addr_buf_1; t <= regs2read; t++)
-      { 
-        if (t == reg_addr) 
-	{
-	  rd_status = 1;  
-	  break;
-	}
-      }
-      if ( reg_addr == (1000 + reg_addr) ) rd_status = 1; 
-      return rd_status;
-  }
-  
-  U16 modbus_CRC16(U8 buf[], int len) {
-    //-------crc16
-  U16 crc = 0xFFFF;
-  //U8 crc_lsb, crc_msb;
-  for (int pos = 0; pos < len; pos++)
-  {
-    crc ^= (U16)buf[pos];          // XOR byte into least sig. byte of crc
-    for (int i = 8; i != 0; i--)
-    {    // Loop over each bit
-      if ((crc & 0x0001) != 0)
-       {      // If the LSB is set
-         crc >>= 1;                // Shift right and XOR 0xA001
-         crc ^= 0xA001;
-       }
-       else                          // Else LSB is not set
-         crc >>= 1;                  // Just shift right
-     }
-   }
-  
-   // Note, this number has low and high bytes swapped, 
-   // so use it accordingly (or swap bytes)
-   // swapping bytes
-   crc = ((crc<<8)&0xff00)|((crc>>8)&0x00ff);
-   
-   return crc;
-}
-
-  void modbus_wsr_answer() { 
-    // ответ на команды записи в регистр
-    
-    // расчет CRC
-    crc_buf[0] = dev_id;
-    crc_buf[1] = modbus_wsr_cmd;
-    crc_buf[2] = (U8)(modbus_reg_addr >> 8);
-    crc_buf[3] = (U8)(modbus_reg_addr & 0x00ff);
-    crc_buf[4] = (U8)(reg_wr_data >> 8);
-    crc_buf[5] = (U8)(reg_wr_data & 0x00ff);
-    CRC16 = modbus_CRC16(crc_buf, 6);
-
-    //--------------------------------------------------------------------
-    // отправка пакета мастеру
-    Uart_send_hex(dev_id);                // ID устройства
-    Uart_send_hex(modbus_wsr_cmd);        // код команды
-    Uart_send_hex((U8)(modbus_reg_addr >> 8));           // ст. байт адреса регистра
-    Uart_send_hex((U8)(modbus_reg_addr & 0x00ff));       // мл. байт адреса регистра
-    Uart_send_hex((U8)(reg_wr_data >> 8));
-    Uart_send_hex((U8)(reg_wr_data & 0x00ff));
-     // отправка CRC
-    Uart_send_hex((U8)(CRC16 >> 8));      // msb
-    Uart_send_hex((U8)(CRC16 & 0x00ff));  // lsb   
-          //--------------------------------------------------------------------
-  }
-
-  void modbus_rhr_answer() {
-    // ответ на команды чтения регистров
-  	  addr_buf_2 = addr_buf_1;             // сохр. адрес без смещения в двух переменных	  
-          // расчет CRC
-          crc_buf[0] = dev_id;
-          crc_buf[1] = modbus_rhr_cmd;
-          crc_buf[2] = regs2read*2;
-          
-          U8 cnt = 3;      // величина смещения данных при расчете CRC
-
-          for(U8 i = 0; i < regs2read; i++)
-          { // заполнение буфера CRC для расчета
-            crc_buf[cnt++] = (U8)(holding_register[addr_buf_1] >> 8);
-            crc_buf[cnt++] = (U8)(holding_register[addr_buf_1] & 0x00ff);
-            ++addr_buf_1;
-          }
-            // расчет CRC  
-          CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3);
-          //--------------------------------------------------------------------
-          // отправка пакета мастеру 
-          Uart_send_hex(dev_id);                // ID устройства
-          Uart_send_hex(modbus_rhr_cmd);        // код команды
-          Uart_send_hex(regs2read*2);           // кол-во передаваемых байт 
-
-          for(U8 i = 0; i < regs2read; i++)
-          {   // отправка байт данных с инкрементом адреса
-            Uart_send_hex((U8)(holding_register[addr_buf_2] >> 8));     // msb
-            Uart_send_hex((U8)(holding_register[addr_buf_2] & 0x00ff)); // lsb
-            ++addr_buf_2;
-          }
-          // отправка CRC
-          Uart_send_hex((U8)(CRC16 >> 8));      // msb
-          Uart_send_hex((U8)(CRC16 & 0x00ff));  // lsb    
-          //--------------------------------------------------------------------
-  
-  }
 /*=========================================================================== */
 // Interupts
 __irq void Timer3_IRQHandler(void) 
@@ -763,8 +582,8 @@ __irq void UART1_IRQHandler( void )
  //функция обработки прерывания irq UART1
 {
   /// прерывание возникает при поступлении 1 байта на UART1
-        wr_ptr++;               // инкремент счетчика записанных байт
-        rx_buf[wr_ptr & 0x0f] = MDR_UART1->DR; 
+       
+        modbus_uart_byte((unsigned char)MDR_UART1->DR); 
       
         MDR_UART1->ICR  = 1<<4; // сброс прерывания от приемника  
 }
@@ -783,7 +602,8 @@ __irq void UART1_IRQHandler( void )
  U16 cnt = 0;   // счетчик длительности вкл. статусного светодиода
  
  MCU_init();	// иницализация систем тактирования, портов, SPI и UART
-      
+ modbus_init(); // инициализация MODBUS
+ 
  ADC_init(ADC_scale);
  MCU_ADC_init();
                   
@@ -791,9 +611,6 @@ __irq void UART1_IRQHandler( void )
  NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
  __enable_irq();	      // Enable Interrupts global
  MDR_TIMER3->CNTRL |= 1;      // Запуск Т3 --
- 
- for(U8 i = 0; i < 125; i++) 
-   holding_register[i] = 0;   // clearing resgisters  
 
  // предварительная уст. стробов интеграторов
  ADC_CONV_DOWN;
@@ -803,204 +620,21 @@ __irq void UART1_IRQHandler( void )
 
  while(1)
 {   
-/// обработка команд
-    while(rd_ptr < wr_ptr) // буфер не пуст, получен байт 
-    {                                     
-       rx_byte = get_rx_ch();  
-              
-       switch(rd_state)  // конечный автомат состояний чтения команд
-       {
-       //====
-         case detect_dev_id:              // ждем обращения к устройтсву
-           switch(rx_byte)
-           {
-             case dev_id:                 // получена команда обращения по текущему id устройтсва
-               rd_state = get_cmd_header; // переход в состояние ожидания заголовка команды
-             break;
-             //----  
-             case com_dev_id:             // получена команда широковещательного обращения
-               rd_state = get_cmd_header; // переход в состояние ожидания заголовка команды
-             break;
-             //----    
-             default:                     // действия при ошибке команды 
-               rd_state = detect_dev_id;  // возврат в анализ id команды modbus
-            }
-          break;
-       //=====                          
-         case get_cmd_header:             // анализ команды modbus
-           switch (rx_byte)
-           { 
-             case modbus_rhr_cmd:                 // чтение регистров
-                  reg_addr_flag = 1;              // уст. флага чтения адреса регистра
-                  regs2read = 0;
-                  reg_wr_data = 0;
-                  rd_state = get_modbus_word_msb; // переход в сост. получения двух байт с ПК
-             break;      
-             //---- 
-             case modbus_wsr_cmd:                 // запись в регистр
-                  reg_addr_flag = 1;              // уст. флага чтения адреса регистра
-                  reg_wr_flag   = 1;              // уст. флага записи в регистр 
-                  regs2read = 0;
-                  reg_wr_data = 0;
-                  rd_state = get_modbus_word_msb; // переход в сост. получения двух байт с ПК 
-             break; 
-             //---- 
-             // возврат в сост. анализ id устройства в случае ошибки  
-             default: rd_state = detect_dev_id;
-           }
-         break;
-        //=====
-         case get_modbus_word_msb:              // получение ст. байта
-             temp_buf = (U16)rx_byte;           // сохр. ст. байт
-             temp_buf = temp_buf << 8;
-             rd_state = get_modbus_word_lsb;    // переход в сост. чтения мл. байта
-         break;
-         //=====
-         case get_modbus_word_lsb:              // получение мл. байта 
-             temp_buf |= (U16)rx_byte;          // сохр. мл. байт
-             /// анализ флагов для дальнейших действий
-             if(reg_addr_flag)                 // флаг принятия байт адреса?
-             {
-               modbus_reg_addr = temp_buf;     // сохр. адреса начального регистра для чтения
-               reg_addr_flag = 0;              // сброс флага чтения адреса
-               if(reg_wr_flag) reg_qty_flag = 0; // сброс флага приема числа регистров для чтения если была команда записи             
-               else reg_qty_flag = 1;            // уст. флага приема числа регистров для чтения если был запрос
-               rd_state = get_modbus_word_msb;   // переход в сост. чтения 2 байт кол-ва регистров для чтения
-               temp_buf = 0;                     // обнуление временного буфера
-               break;
-             }
-             
-             if(reg_wr_flag)                   // флаг записи в регистр?
-             { 
-                reg_wr_data = temp_buf;        // сохр. значения для записи
-                reg_wr_flag = 0;               // сброс флага записи в регистр
-                get_crc_flag = modbus_wsr_cmd; // уст. кода расчета CRC для команды записи
-                rd_state = get_modbus_word_msb;// переход в сост. чтения 2 байт CRC
-                break;
-             }
-             
-             if(reg_qty_flag)                  // флаг приема ко-ва регистров для чтения?
-             { 
-               if(temp_buf < max_regs_cnt)     // проверка на предел числа регистров для чтения
-               {  // ок
-                regs2read = temp_buf;           // сохранение числа регистров для чтения
-                get_crc_flag = modbus_rhr_cmd;  // уст. кода расчета CRC для команды чтения
-                rd_state = get_modbus_word_msb; // переход в сост. чтения 2 байт CRC
-               }
-                 // ошибка, возврат в сост. чтения id устройства
-               else rd_state = detect_dev_id; 
-               reg_qty_flag = 0;                // сброс флага чтения кол-ва регистров       
-               break;
-             }
-             
-             if(get_crc_flag == modbus_rhr_cmd)// расчет CRC16 для команды чтения регистров
-             {
-                crc_buf[0] = dev_id;
-                crc_buf[1] = modbus_rhr_cmd;
-                crc_buf[2] = (U8)(modbus_reg_addr >> 8);
-                crc_buf[3] = (U8)(modbus_reg_addr & 0x00ff);
-                crc_buf[4] = (U8)(regs2read >> 8);
-                crc_buf[5] = (U8)(regs2read & 0x00ff);
-                CRC16 = modbus_CRC16(crc_buf,6); 
-                if(CRC16 == temp_buf) 
-                { 
-                  answer = modbus_rhr_cmd;
-                  rd_state = detect_dev_id;
-                }
-                else rd_state = detect_dev_id; 
-                get_crc_flag = 0;              // сброс флага расчета CRC16 
-             }
-               
-             if(get_crc_flag == modbus_wsr_cmd)// расчет при команде записи в регистр
-             { 
-                crc_buf[0] = dev_id;
-                crc_buf[1] = modbus_wsr_cmd;
-                crc_buf[2] = (U8)(modbus_reg_addr >> 8);
-                crc_buf[3] = (U8)(modbus_reg_addr & 0x00ff);
-                crc_buf[4] = (U8)(reg_wr_data >> 8);
-                crc_buf[5] = (U8)(reg_wr_data & 0x00ff);
-             
-                CRC16 = modbus_CRC16(crc_buf,6);
-                if(CRC16 == temp_buf) 
-                {
-                  answer = modbus_wsr_cmd;
-                  rd_state = detect_dev_id;
-                }
-                else rd_state = detect_dev_id; 
-                get_crc_flag = 0;
-               }
-              
-         break; 
-         //=====
-          default: rd_state = detect_dev_id;    
-        } // switch
-    }  // while 
-//---------------------------------------------    
-/// работа с модбас регистрами, формирование и отсылка ответа
+  modbus_rx_sm(); // анализ команды мастера
+  modbus_poll();  // работа с модбас регистрами, формирование и отсылка ответа на запросы
     
-    // гасим статусный светодиод для индикации активности RS485 для текущего устройства 
-    if(meas_mode == 0) // если режим непрерывных измерений
+  // гасим статусный светодиод для индикации активности RS485 для текущего устройства 
+  if(meas_mode == 0) // если режим непрерывных измерений
+  {
+    if(answer != 0) 
     {
-      if(answer != 0) 
-      {
-        SYNC_LED_ON;  
-        cnt = 0;
-      }
-    }   
-/// ЧТЕНИЕ
-    if(answer == modbus_rhr_cmd) // ответ при команде чтения регистров
-    {
-         addr_buf_1 = modbus_reg_addr - 1000; // избавляемся от смещения в адресе
-        //-----------------------------------
-         holding_register[0] = new_meas;      // '0' - измерения не были обновлены, '1' - обновлены
-        // ADCs
-         for(U8 i = 1; i <= 42; i++) 
-           holding_register[i] = InputConnPin[i]; // сохр. 42 каналов в ресгистры
-        
-         holding_register[50] = meas_mode;    // режим измерений 0 - непрерывные, 1 - импульсный по запуск   
-         holding_register[51] = int_time;     // время интегирования
-         holding_register[52] = ADC_scale;    // шкала измерений'0' - 3pC, '1' - 6pC, '2' - 12pC
-         
-         holding_register[55] = (U16)dev_id;
-         holding_register[56] = (U16)device_family;
-         holding_register[57] = (U16)firmware_ver;
-         
-         if(is_reg(42)) // если были прочитаны все измерения 
-          new_meas = 0; // то сбрасываем флаг обновленных измерений
-         
-         modbus_rhr_answer();             // отсылка значений запрашиваемых регистров
-         answer = 0;                      // сброс флага ответа
-     }
-/// ЗАПИСЬ 
-    if(answer == modbus_wsr_cmd) // ответ при команде записи в регистр
-    {
-         addr_buf_1 = modbus_reg_addr-1000;          // избавление от смещения
-         holding_register[addr_buf_1] = reg_wr_data; // запись переданных данных в регистр по адресу
-	 //--------------------------------------------------------------------
-         // заполнение переменных новыми значениями регистров
-         meas_mode = holding_register[50];// режим измерений 0 - непрерывные, 1 - импульсный по запуску
-                                 
-         if(holding_register[51] > 65000)  
-           holding_register[51] = 65000; // 65 ms max
-         else if(holding_register[51] < 10)
-           holding_register[51] = 10;    // 10 us min
-         
-         int_time = holding_register[51]; // сохр. t интегрирования
-         
-         if(addr_buf_1 == 52)
-         {
-            if(holding_register[52] > 2)  
-              holding_register[52] = 2;   // 12 pC max
-            ADC_scale = holding_register[52]; // шкала измерений'0' - 3pC, '1' - 6pC, '2' - 12pC
-            ADC_change_scale();               // смена шкалы
-         }
-         //--------------------------------------------------------------------  
-         modbus_wsr_answer();             // отсылка ответа на команду записи в регистр
-         answer = 0;                      // сброс флага ответа
-     }   
-//------------------------------------------------------------------------------  
-    switch(meas_mode)      // режимы измерений
-    {
+      SYNC_LED_ON;  
+      cnt = 0;
+    }
+  }   
+    
+  switch(meas_mode)      // режимы измерений
+  {
     case 0:
     /// режим непрерывных измерений  
         ADC_noise = (U32)(ADC_code*0.805664);//ADC_Vref*1000.0)/4096.0);   
@@ -1010,7 +644,7 @@ __irq void UART1_IRQHandler( void )
         convert_to_charge();                // преобразование отсчетов в заряды
         ADC_ch_swap();                      // приведение каналов АЦП к пинам разъема    
     break;
-//----- 
+  //----- 
     case 1:
     /// импульсный режим 
     if(meas_updated) // анализ флага обновления данных
@@ -1034,13 +668,13 @@ __irq void UART1_IRQHandler( void )
     default: break;
     }//switch 
  
-    delay_ms(10);
-    cnt++;
-    if(cnt > 10)
-    {
-      SYNC_LED_OFF;
-      cnt = 0;
-    }
+  delay_ms(10);
+  cnt++;
+  if(cnt > 10)
+  {
+    SYNC_LED_OFF;
+    cnt = 0;
+  }
     
   }// while	
 }// main
