@@ -1,34 +1,3 @@
-/**
- * C library for the ESP8266 WiFi module with a PIC microcontroller
- * Copyright (C) 2015 Camil Staps <info@camilstaps.nl>
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along
- * with this program; if not, write to the Free Software Foundation, Inc.,
- * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
- *
- *****************************************************************************
- *
- * File:    esp8266.c
- * Author:  Camil Staps <info@camilstaps.nl>
- * Website: http://github.com/camilstaps/ESP8266_PIC
- * Version: 0.1
- *
- * See:     esp8266.h
- *
- * C library for interfacing the ESP8266 Wi-Fi transceiver module with a PIC18
- * microcontroller. Should be used with the XC8 compiler.
- */
-
 #include "esp8266.h"
 #include <stdio.h>
 #include <string.h>

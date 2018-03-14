@@ -252,11 +252,11 @@ __irq void UART1_IRQHandler( void )
         
         // перенаправление данных от оптического приемника в RS485
         RS485_TX_EN;                    // разрешение передатчика
-        MDR_TIMER3->CNTRL |= 1;         // Запуск Т3, начало отсчета времени разрешения передатчика
+        //MDR_TIMER3->CNTRL |= 1;         // Запуск Т3, начало отсчета времени разрешения передатчика
         MDR_UART2->DR  = MDR_UART1->DR; 
         //Status_LED_OFF; // гасим статусный светодиод для индикации активности RS485
         MDR_UART1->ICR  = 1<<4; // сброс прерывания от приемника  
-        MDR_TIMER3->CNT = 0;     // установка знач. счетчика на 0
+        //MDR_TIMER3->CNT = 0;     // установка знач. счетчика на 0
 }
 
 __irq void UART2_IRQHandler( void )
@@ -309,25 +309,56 @@ __irq void Timer3_IRQHandler(void)
 	}
 
 /*=========================================================================== */
-// MAIN    
-        
+// MAIN  
+
  int main()
 {     
  MCU_init();	// иницализация систем тактирования, портов, SPI и UART  
  
- RS485_RX_EN; // вкл. приемника   RS485
+ RS485_RX_EN;  // вкл. приемника   RS485
  RS485_TX_DIS; // вкл. передатчика RS485
  
  //NVIC_EnableIRQ(Timer1_IRQn); // Разрешение прерывания для T1 - внешние стробы
- NVIC_EnableIRQ(Timer3_IRQn); // Разрешение прерывания для T3 - П-регулятор
- NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1, Оптика -> RS485
- NVIC_EnableIRQ(UART2_IRQn);  // Разрешение прерывания для UART2, RS485 -> Оптика 
- __enable_irq();	      // Enable Interrupts global
- //MDR_TIMER1->CNTRL |= 1;    // Запуск Т1
-
+ //NVIC_EnableIRQ(Timer3_IRQn); // Разрешение прерывания для T3 - П-регулятор
+ NVIC_EnableIRQ(UART1_IRQn);    // Разрешение прерывания для UART1, Оптика -> RS485
+ //NVIC_EnableIRQ(UART2_IRQn);  // Разрешение прерывания для UART2, RS485 -> Оптика 
+ __enable_irq();	        // Enable Interrupts global
+ //MDR_TIMER1->CNTRL |= 1;      // Запуск Т1
+ 
+ delay_ms(2000);
+ 
+ Uart1_send_text("AT+CWMODE=3");	
+ Uart1_send_hex(0x0D);
+ Uart1_send_hex(0x0A);
+ delay_ms(100);
+ 
+ Uart1_send_text("AT+CIPMUX=1");	
+ Uart1_send_hex(0x0D);
+ Uart1_send_hex(0x0A);
+ delay_ms(100);
+ 
+ Uart1_send_text("AT+CIPSERVER=1,4001");	
+ Uart1_send_hex(0x0D);
+ Uart1_send_hex(0x0A);	
+ delay_ms(1000);
+ 
+ unsigned char* msg = "11110000";
+ //Uart2_num_send(sizeof(*msg));
  while(1)
   {
-    delay_ms(35);
+
+
+    Uart1_send_text("AT+CIPSEND=0,4");
+    
+    Uart1_send_hex(0x0D);
+    Uart1_send_hex(0x0A);
+    
+    delay_ms(1);
+    Uart1_send_text(msg);
+
+    delay_ms(2000);
+
+	
     
   } // while  
 } // main
