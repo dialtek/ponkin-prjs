@@ -1,5 +1,5 @@
 ÀÄmain
-   ÃÄMAIN  0/1268  Ram=8
+   ÃÄMAIN  0/1276  Ram=8
    ³  ÃÄ@cinit1  (Inline)  Ram=0
    ³  ÃÄOscSetup  0/28  Ram=0
    ³  ÃÄMCU_init  0/84  Ram=0
@@ -10,138 +10,96 @@
    ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
    ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
    ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
    ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
    ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDCommand  0/44  Ram=4
+   ³  ³  ³  ÀÄ*
    ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄLCDWelcome  0/108  Ram=3
    ³  ³  ÃÄLCDClear  0/14  Ram=0
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const218  0/30  Ram=0
+   ³  ³  ³  ÀÄLCDCommand  0/44  Ram=4
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@const913  0/30  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
    ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
+   ³  ³  ³     ÀÄLCDWriteData  0/46  Ram=4
    ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
    ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const219  0/24  Ram=0
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄLCDCommand  0/44  Ram=4
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄ@const917  0/24  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const220  0/30  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const918  0/30  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ³  ÀÄLCDClear  0/14  Ram=0
-   ³  ³     ÀÄLCDCommand  0/42  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const431  0/28  Ram=0
+   ³  ³     ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1129  0/28  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const432  0/28  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1130  0/28  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄRd_Flash  0/36  Ram=0
    ³  ³  ÃÄ@READ_PROGRAM_MEMORY  0/46  Ram=0
    ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
-   ³  ÃÄCrc8  0/68  Ram=9
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const433  0/24  Ram=0
+   ³  ÃÄCrc8  0/78  Ram=10
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1131  0/24  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const434  0/26  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1132  0/26  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄADC_wakeUp  0/32  Ram=0
    ³  ÃÄADC_wakeUp  0/32  Ram=0
    ³  ÃÄADC_init  0/156  Ram=0
-   ³  ³  ÃÄWrReg  0/90  Ram=4
+   ³  ³  ÃÄWrReg  0/92  Ram=6
    ³  ³  ÃÄADC_set_PGA  0/150  Ram=1
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ³  ÀÄWrReg  0/92  Ram=6
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
    ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÀÄADC_sps_set  0/22  Ram=1
-   ³  ³     ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³     ÀÄWrReg  0/90  Ram=4
+   ³  ³  ³  ÀÄWrReg  0/92  Ram=6
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄADC_sps_set  0/24  Ram=1
+   ³  ³     ÀÄ*
    ³  ÃÄADC_SelfCal  0/218  Ram=0
    ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
@@ -151,758 +109,301 @@
    ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄLCDClear  0/14  Ram=0
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄADC_setCh  0/120  Ram=1
    ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄWrReg  0/90  Ram=4
+   ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ÃÄWrReg  0/92  Ram=6
+   ³  ³  ÃÄWrReg  0/92  Ram=6
    ³  ³  ÃÄADC_SelfCal  0/218  Ram=0
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄADC_StartRdContin  0/32  Ram=0
-   ³  ³  ÃÄADC_RdataC  0/172  Ram=5
+   ³  ³  ÃÄADC_RdataC  0/174  Ram=5
    ³  ³  ³  ÃÄADC_StartRdContin  0/32  Ram=0
    ³  ³  ³  ÀÄ@DIVS3232A  0/126  Ram=8
-   ³  ³  ÃÄADC_RdataC  0/172  Ram=5
-   ³  ³  ³  ÃÄADC_StartRdContin  0/32  Ram=0
-   ³  ³  ³  ÀÄ@DIVS3232A  0/126  Ram=8
-   ³  ³  ÃÄADC_RdataC  0/172  Ram=5
-   ³  ³  ³  ÃÄADC_StartRdContin  0/32  Ram=0
-   ³  ³  ³  ÀÄ@DIVS3232A  0/126  Ram=8
-   ³  ³  ÀÄADC_RdataC  0/172  Ram=5
-   ³  ³     ÃÄADC_StartRdContin  0/32  Ram=0
-   ³  ³     ÀÄ@DIVS3232A  0/126  Ram=8
+   ³  ³  ÃÄADC_RdataC  0/174  Ram=5
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_RdataC  0/174  Ram=5
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÀÄADC_RdataC  0/174  Ram=5
+   ³  ³     ÀÄ*
    ³  ÃÄFull_dev_reset  0/138  Ram=3
    ³  ³  ÃÄLCDClear  0/14  Ram=0
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const385  0/26  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1083  0/26  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const386  0/30  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1084  0/30  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ³  ÃÄOscSetup  0/28  Ram=0
    ³  ³  ÃÄMCU_init  0/84  Ram=0
-   ³  ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄLCDInit  0/160  Ram=0
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³  ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³  ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄADC_wakeUp  0/32  Ram=0
    ³  ³  ÃÄADC_wakeUp  0/32  Ram=0
    ³  ³  ÃÄADC_init  0/156  Ram=0
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_set_PGA  0/150  Ram=1
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÀÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³     ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³     ÀÄWrReg  0/90  Ram=4
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄADC_set_PGA  0/150  Ram=1
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÃÄWrReg  0/90  Ram=4
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ³  ÀÄWrReg  0/90  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄADC_SelfCal  0/218  Ram=0
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ³  ³  ÀÄ@delay_ms1  0/24  Ram=2
+   ³  ³  ³  ÀÄ*
    ³  ³  ÀÄLCDClear  0/14  Ram=0
-   ³  ³     ÀÄLCDCommand  0/42  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³     ÀÄ*
    ³  ÃÄRead_ADC_vol_in  0/238  Ram=21
-   ³  ³  ÃÄADC_RdataC  0/172  Ram=5
-   ³  ³  ³  ÃÄADC_StartRdContin  0/32  Ram=0
-   ³  ³  ³  ÀÄ@DIVS3232A  0/126  Ram=8
+   ³  ³  ÃÄADC_RdataC  0/174  Ram=5
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@MULS3232  0/66  Ram=8
-   ³  ³  ÃÄ@I64TOF64  0/100  Ram=0
+   ³  ³  ÃÄ@I64TOF64  0/106  Ram=0
    ³  ³  ÃÄ@MULFF64  0/272  Ram=0
-   ³  ³  ÃÄ@SI64TOF64  0/100  Ram=0
+   ³  ³  ÃÄ@SI64TOF64  0/106  Ram=0
    ³  ³  ÃÄ@DIVFF64  0/264  Ram=8
-   ³  ³  ÃÄ@F48TO64  0/70  Ram=0
+   ³  ³  ÃÄ@F48TO64  0/74  Ram=0
    ³  ³  ÃÄ@MULFF64  0/272  Ram=0
    ³  ³  ÃÄ@F64TO48  0/68  Ram=0
    ³  ³  ÃÄ@SDTOF  0/78  Ram=4
    ³  ³  ÃÄ@MULFF  0/196  Ram=8
-   ³  ³  ÀÄ@FTOSD  0/60  Ram=4
-   ³  ÃÄ@PRINTFD32_9600_5893_5892  0/276  Ram=0
+   ³  ³  ÀÄ@FTOSD  0/64  Ram=4
+   ³  ÃÄ@PRINTFD32_9600_5893_5892  0/280  Ram=0
    ³  ³  ÀÄ@DIV3232B  0/68  Ram=8
+   ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄLCDClear  0/14  Ram=0
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
    ³  ³  ÀÄEnableInt  0/32  Ram=0
    ³  ÃÄLCD_main_menu  0/560  Ram=3
    ³  ³  ÃÄLCD_print_menu  0/132  Ram=3
-   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄ@const363  0/26  Ram=0
+   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@const1061  0/26  Ram=0
    ³  ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄ@const364  0/26  Ram=0
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@const1062  0/26  Ram=0
    ³  ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄ@const365  0/26  Ram=0
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@const1063  0/26  Ram=0
    ³  ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³  ÃÄ@const366  0/26  Ram=0
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ³  ÀÄ*
+   ³  ³  ³  ÃÄ@const1064  0/26  Ram=0
    ³  ³  ³  ÀÄLCDMsg  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³        ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³           ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³           ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const368  0/16  Ram=0
+   ³  ³  ³     ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1066  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const368  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1066  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const368  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1066  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const369  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1067  0/16  Ram=0
    ³  ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@const368  0/16  Ram=0
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ³  ÀÄ*
+   ³  ³  ÃÄ@const1066  0/16  Ram=0
    ³  ³  ÀÄLCDMsg  0/10  Ram=1
-   ³  ³     ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³        ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³           ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³           ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³     ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const439  0/30  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1137  0/30  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
    ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
    ³  ³  ÃÄ@MUL3232  0/48  Ram=8
    ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
    ³  ³  ÃÄ@MUL3232  0/48  Ram=8
    ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
    ³  ³  ÃÄ@MUL3232  0/48  Ram=8
    ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
    ³  ³  ÃÄ@MUL3232  0/48  Ram=8
    ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ³  ÀÄ*
    ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³     ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄADC_sps_set  0/22  Ram=1
-   ³  ³  ÃÄADC_StopRd  0/36  Ram=0
-   ³  ³  ÀÄWrReg  0/90  Ram=4
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄADC_sps_set  0/24  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄsave_to_flash  0/28  Ram=0
-   ³  ³  ÃÄCrc8  0/68  Ram=9
+   ³  ³  ÃÄCrc8  0/78  Ram=10
    ³  ³  ÀÄWr_Flash  0/32  Ram=0
-   ³  ³     ÃÄ@WRITE_PROGRAM_MEMORY  0/124  Ram=0
+   ³  ³     ÃÄ@WRITE_PROGRAM_MEMORY  0/130  Ram=0
    ³  ³     ³  ÃÄ@NVR_WR  0/40  Ram=0
    ³  ³     ³  ÃÄ@NVR_WR  0/40  Ram=0
    ³  ³     ³  ÀÄ@NVR_WR  0/40  Ram=0
    ³  ³     ÀÄ@delay_ms1  0/24  Ram=2
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const440  0/24  Ram=0
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1138  0/24  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÃÄ@delay_ms1  0/24  Ram=2
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÃÄ@delay_ms1  0/24  Ram=2
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
    ³  ÃÄLCDPutU16  0/316  Ram=15
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÃÄ@DIV3232A  0/84  Ram=8
-   ³  ³  ÃÄ@MUL3232  0/48  Ram=8
-   ³  ³  ÃÄLCDPutCh  0/10  Ram=1
-   ³  ³  ³  ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄsave_to_flash  0/28  Ram=0
-   ³  ³  ÃÄCrc8  0/68  Ram=9
-   ³  ³  ÀÄWr_Flash  0/32  Ram=0
-   ³  ³     ÃÄ@WRITE_PROGRAM_MEMORY  0/124  Ram=0
-   ³  ³     ³  ÃÄ@NVR_WR  0/40  Ram=0
-   ³  ³     ³  ÃÄ@NVR_WR  0/40  Ram=0
-   ³  ³     ³  ÀÄ@NVR_WR  0/40  Ram=0
-   ³  ³     ÀÄ@delay_ms1  0/24  Ram=2
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const441  0/28  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1139  0/28  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const442  0/26  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1140  0/26  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄLCDSetCursor  0/20  Ram=3
-   ³  ³  ÀÄLCDCommand  0/42  Ram=3
-   ³  ³     ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³     ÀÄLCDWriteNibble  0/66  Ram=1
-   ³  ÃÄ@const443  0/26  Ram=0
+   ³  ³  ÀÄ*
+   ³  ÃÄLCDSetCursor  0/20  Ram=4
+   ³  ³  ÀÄ*
+   ³  ÃÄ@const1141  0/26  Ram=0
    ³  ÃÄLCDMsg  0/10  Ram=1
-   ³  ³  ÀÄLCDPutCh  0/10  Ram=1
-   ³  ³     ÀÄLCDWriteData  0/44  Ram=3
-   ³  ³        ÃÄLCDWriteNibble  0/66  Ram=1
-   ³  ³        ÀÄLCDWriteNibble  0/66  Ram=1
+   ³  ³  ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÃÄBpush_delay  0/18  Ram=2
-   ³  ³  ÀÄEnableInt  0/32  Ram=0
+   ³  ³  ÀÄ*
    ³  ÀÄsave_to_flash  0/28  Ram=0
-   ³     ÃÄCrc8  0/68  Ram=9
-   ³     ÀÄWr_Flash  0/32  Ram=0
-   ³        ÃÄ@WRITE_PROGRAM_MEMORY  0/124  Ram=0
-   ³        ³  ÃÄ@NVR_WR  0/40  Ram=0
-   ³        ³  ÃÄ@NVR_WR  0/40  Ram=0
-   ³        ³  ÀÄ@NVR_WR  0/40  Ram=0
-   ³        ÀÄ@delay_ms1  0/24  Ram=2
-   ÃÄcn_irq_handler  0/86  Ram=2
+   ³     ÀÄ*
+   ÃÄcn_irq_handler  0/94  Ram=2
    ³  ÀÄDisableInt  0/20  Ram=0
-   ÀÄtimer1_irq_handler  0/36  Ram=0
+   ÀÄtimer1_irq_handler  0/40  Ram=0

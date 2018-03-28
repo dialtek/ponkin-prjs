@@ -1,4 +1,4 @@
->>> Warning 202 "main.c" Line 36(18,26): Variable never used:   ADC_data
-      Memory usage:   ROM=9%      RAM=3% - 4%
+>>> Warning 202 "main.c" Line 36(8,16): Variable never used:   ADC_data
+      Memory usage:   ROM=9%      RAM=3% - 3%
       0 Errors,  1 Warnings.
 Build Successful.

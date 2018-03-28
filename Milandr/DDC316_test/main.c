@@ -607,74 +607,121 @@ __irq void UART1_IRQHandler( void )
  ADC_init(ADC_scale);
  MCU_ADC_init();
                   
- NVIC_EnableIRQ(Timer3_IRQn); // Разрешение прерывания для T3 - Вход внешней синхр.
- NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
- __enable_irq();	      // Enable Interrupts global
- MDR_TIMER3->CNTRL |= 1;      // Запуск Т3 --
+ //NVIC_EnableIRQ(Timer3_IRQn); // Разрешение прерывания для T3 - Вход внешней синхр.
+ //NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
+ //__enable_irq();	      // Enable Interrupts global
+ //MDR_TIMER3->CNTRL |= 1;      // Запуск Т3 --
 
  // предварительная уст. стробов интеграторов
  ADC_CONV_DOWN;
  IVC_SET;
  IVC_STOP_INT;
  delay_us(100);
+ 
+ int32_t data = -65;
+ int32_t count = 0;
+ 
+ int16_t del = 20;
 
  while(1)
 {   
-  modbus_rx_sm(); // анализ команды мастера
-  modbus_poll();  // работа с модбас регистрами, формирование и отсылка ответа на запросы
-    
-  // гасим статусный светодиод для индикации активности RS485 для текущего устройства 
-  if(meas_mode == 0) // если режим непрерывных измерений
+  
+  
+  if(count > 1 && count < 90)   data += 11;
+  
+  if(count > 100 && count < 160) data = 924;
+  
+  if(count > 190 && count < 280) data -= 11;
+  
+  if(count>280) 
   {
-    if(answer != 0) 
+    data = -65;
+    count = 0;
+    
+    for(int32_t i = 0; i < 100;i++)
     {
-      SYNC_LED_ON;  
-      cnt = 0;
+      uart_send_hex('V');
+      Uart_num_send(data);
+      uart_send_hex(0x0A);
+      delay_ms(del);
     }
-  }   
     
-  switch(meas_mode)      // режимы измерений
-  {
-    case 0:
-    /// режим непрерывных измерений  
-        ADC_noise = (U32)(ADC_code*0.805664);//ADC_Vref*1000.0)/4096.0);   
-        perform_integrate();                // выполнение интегрирования 
-        cacl_beam_Q();                      // расчет заряда мишени для 43 канала
-        ADC_read_all();                     // чтение всех трех АЦП
-        convert_to_charge();                // преобразование отсчетов в заряды
-        ADC_ch_swap();                      // приведение каналов АЦП к пинам разъема    
-    break;
-  //----- 
-    case 1:
-    /// импульсный режим 
-    if(meas_updated) // анализ флага обновления данных
-     { 
-        meas_updated = 0;
-        cnt =0;
-        SYNC_LED_ON;  
-        // сигнал проинтегрирован
-        delay_us(10);                       // ждем готовность данных, ~ 6 мкс 
-        ADC_noise = (U32)(ADC_code*0.805664);//ADC_Vref*1000.0)/4096.0);     
-        cacl_beam_Q();                      // расчет заряда мишени для 43 канала
-        ADC_read_all();                     // чтение всех трех АЦП
-        convert_to_charge();                // преобразование отсчетов в заряды
-        ADC_ch_swap();                      // приведение каналов АЦП к пинам разъема
-                
-       MDR_TIMER3->CNTRL |= 1;            // запуск Т3 --          
-       new_meas = 1;
-      }
-    break;
-//-----     
-    default: break;
-    }//switch 
- 
-  delay_ms(10);
-  cnt++;
-  if(cnt > 10)
-  {
-    SYNC_LED_OFF;
-    cnt = 0;
   }
+
+  uart_send_hex('V');
+  Uart_num_send(data);
+  uart_send_hex(0x0A);
+  delay_ms(del); 
+  count++;
+  
+  
+  
+  
+  
+  
+  
+  
+//  modbus_rx_sm(); // анализ команды мастера
+//  modbus_poll();  // работа с модбас регистрами, формирование и отсылка ответа на запросы
+//    
+//  // гасим статусный светодиод для индикации активности RS485 для текущего устройства 
+//  if(meas_mode == 0) // если режим непрерывных измерений
+//  {
+//    if(answer != 0) 
+//    {
+//      SYNC_LED_ON;  
+//      cnt = 0;
+//    }
+//  }   
+//    
+//  switch(meas_mode)      // режимы измерений
+//  {
+//    case 0:
+//    /// режим непрерывных измерений  
+//        ADC_noise = (U32)(ADC_code*0.805664);//ADC_Vref*1000.0)/4096.0);   
+//        perform_integrate();                // выполнение интегрирования 
+//        cacl_beam_Q();                      // расчет заряда мишени для 43 канала
+//        ADC_read_all();                     // чтение всех трех АЦП
+//        convert_to_charge();                // преобразование отсчетов в заряды
+//        ADC_ch_swap();                      // приведение каналов АЦП к пинам разъема    
+//    break;
+//  //----- 
+//    case 1:
+//    /// импульсный режим 
+//    if(meas_updated) // анализ флага обновления данных
+//     { 
+//        meas_updated = 0;
+//        cnt =0;
+//        SYNC_LED_ON;  
+//        // сигнал проинтегрирован
+//        delay_us(10);                       // ждем готовность данных, ~ 6 мкс 
+//        ADC_noise = (U32)(ADC_code*0.805664);//ADC_Vref*1000.0)/4096.0);     
+//        cacl_beam_Q();                      // расчет заряда мишени для 43 канала
+//        ADC_read_all();                     // чтение всех трех АЦП
+//        convert_to_charge();                // преобразование отсчетов в заряды
+//        ADC_ch_swap();                      // приведение каналов АЦП к пинам разъема
+//                
+//       MDR_TIMER3->CNTRL |= 1;            // запуск Т3 --          
+//       new_meas = 1;
+//      }
+//    break;
+////-----     
+//    default: break;
+//    }//switch 
+//  delay_ms(10);
+//  cnt++;
+//  if(cnt > 10)
+//  {
+//    SYNC_LED_OFF;
+//    cnt = 0;
+//  }
+  
+  
+  
+  
+  
+  
+  
     
   }// while	
 }// main

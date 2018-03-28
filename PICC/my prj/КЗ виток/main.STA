@@ -1,121 +1,122 @@
 
-ROM used:   7760 (9%)
-            7760 (9%) including unused fragments
+ROM used:   7830/88064 (9%)
+            7830/88064 (9%) including unused fragments
 
-            4 Average locations per line
-            10 Average locations per statement
+            3.4 Average locations per line
+            9.7 Average locations per statement
 
-RAM used:   205 (3%) at main() level
-            306 (4%) worst case
+RAM used:   207/8192 (3%) at main() level
+            248/8192 (3%) worst case
 
-Stack used: 8/31 worst case (6 in main + 2 for interrupts)
+Stack used: 74 worst case (34 in main + 40 for interrupts)
+Stack size: 128
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  536   430  53  main.c
+  537   431  53  main.c
   180     0   0  main.h
-  470     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506.h
+  863     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506.h
   270   135  17  LCD_16X4_Termo3.h
   448   243  30  ADS1256.h
 ----- -----
- 1904   808 Total
+ 2298   809 Total
 
-Page ROM  %  RAM   Vol Diff  Functions:
----- --- --- ---   --- ----  ----------
-0     68   0   8             @DIV3232B
-0     24   0   2             @delay_ms1
-0     66   0   1   307  2.3  LCDWriteNibble
-0     44   0   3   140  2.2  LCDWriteData
-0     42   0   3   119  2.2  LCDCommand
-0     20   0   3    39  1.5  LCDSetCursor
-0     14   0   0    37  1.1  LCDClear
-0    160   1   0   461  1.9  LCDInit
-0     10   0   1    24  1.2  LCDPutCh
-0     10   0   1    24  1.2  LCDMsg
-0    108   1   3   145  1.3  LCDWelcome
-0     30   0   0             @const218
-0     24   0   0             @const219
-0     30   0   0             @const220
-0    316   2  15   928  5.3  LCDPutU16
-0     84   1   8             @DIV3232A
-0     48   0   8             @MUL3232
-0     90   1   4   240  2.8  WrReg
-0     32   0   0    88  1.7  ADC_StartRdContin
-0    172   1   5   364  4.2  ADC_RdataC
-0    126   1   8             @DIVS3232A
-0     36   0   0   108  1.7  ADC_StopRd
-0     22   0   1    66  2.0  ADC_sps_set
-0    218   1   0   842  3.8  ADC_SelfCal
-0    120   1   1   407  4.2  ADC_setCh
-0    238   2  21   206  3.5  Read_ADC_vol_in
-0     66   0   8             @MULS3232
-0    100   1   0             @I64TOF64
-0    272   2   0             @MULFF64
-0    100   1   0             @SI64TOF64
-0    264   2   8             @DIVFF64
-0     70   0   0             @F48TO64
-0     68   0   0             @F64TO48
-0     78   1   4             @SDTOF
-0    196   1   8             @MULFF
-0     60   0   4             @FTOSD
-0    150   1   1   486  4.2  ADC_set_PGA
-0     32   0   0   152  1.8  ADC_wakeUp
-0    156   1   0   545  5.7  ADC_init
-0     36   0   0   250  4.1  Rd_Flash
-0     46   0   0             @READ_PROGRAM_MEMORY
-0     32   0   0   250  4.1  Wr_Flash
-0     40   0   0             @NVR_WR
-0    124   1   0             @WRITE_PROGRAM_MEMORY
-0     68   0   9   346 10.0  Crc8
-0     28   0   0   197  1.8  OscSetup
-0     32   0   0   209  1.8  EnableInt
-0     20   0   0   163  1.8  DisableInt
-0     84   1   0   806  2.4  MCU_init
-0     18   0   2    86  3.1  Bpush_delay
-0    132   1   3   152  1.3  LCD_print_menu
-0     26   0   0             @const363
-0     26   0   0             @const364
-0     26   0   0             @const365
-0     26   0   0             @const366
-0    560   4   3  1002  3.4  LCD_main_menu
-0     16   0   0             @const368
-0     16   0   0             @const369
-0    138   1   3   410  1.8  Full_dev_reset
-0     26   0   0             @const385
-0     30   0   0             @const386
-0     28   0   0    84  2.0  save_to_flash
-0     86   1   2   383  4.7  cn_irq_handler
-0     36   0   0    48  1.1  timer1_irq_handler
-0   1268   8   8  4870  9.8  MAIN
-0     28   0   0             @const431
-0     28   0   0             @const432
-0     24   0   0             @const433
-0     26   0   0             @const434
-0    276   2   0             @PRINTFD32_9600_5893_5892
-0     30   0   0             @const439
-0     24   0   0             @const440
-0     28   0   0             @const441
-0     26   0   0             @const442
-0     26   0   0             @const443
- Inline        0             @cinit1
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     68   0    8             @DIV3232B
+0     24   0    2             @delay_ms1
+0     66   0    1    307  2.3  LCDWriteNibble
+0     46   0    4    140  2.2  LCDWriteData
+0     44   0    4    119  2.2  LCDCommand
+0     20   0    4     39  1.5  LCDSetCursor
+0     14   0    0     37  1.1  LCDClear
+0    160   1    0    461  1.9  LCDInit
+0     10   0    1     24  1.2  LCDPutCh
+0     10   0    1     24  1.2  LCDMsg
+0    108   1    3    145  1.3  LCDWelcome
+0     30   0    0             @const913
+0     24   0    0             @const917
+0     30   0    0             @const918
+0    316   2   15    928  5.3  LCDPutU16
+0     84   1    8             @DIV3232A
+0     48   0    8             @MUL3232
+0     92   1    6    240  2.8  WrReg
+0     32   0    0     88  1.7  ADC_StartRdContin
+0    174   1    5    364  4.2  ADC_RdataC
+0    126   1    8             @DIVS3232A
+0     36   0    0    108  1.7  ADC_StopRd
+0     24   0    1     66  2.0  ADC_sps_set
+0    218   1    0    842  3.8  ADC_SelfCal
+0    120   1    1    407  4.2  ADC_setCh
+0    238   2   21    206  3.5  Read_ADC_vol_in
+0     66   0    8             @MULS3232
+0    106   1    0             @I64TOF64
+0    272   2    0             @MULFF64
+0    106   1    0             @SI64TOF64
+0    264   2    8             @DIVFF64
+0     74   0    0             @F48TO64
+0     68   0    0             @F64TO48
+0     78   0    4             @SDTOF
+0    196   1    8             @MULFF
+0     64   0    4             @FTOSD
+0    150   1    1    486  4.2  ADC_set_PGA
+0     32   0    0    152  1.8  ADC_wakeUp
+0    156   1    0    545  5.7  ADC_init
+0     36   0    0    250  4.1  Rd_Flash
+0     46   0    0             @READ_PROGRAM_MEMORY
+0     32   0    0    250  4.1  Wr_Flash
+0     40   0    0             @NVR_WR
+0    130   1    0             @WRITE_PROGRAM_MEMORY
+0     78   0   10    346 10.0  Crc8
+0     28   0    0    197  1.8  OscSetup
+0     32   0    0    209  1.8  EnableInt
+0     20   0    0    163  1.8  DisableInt
+0     84   1    0    806  2.4  MCU_init
+0     18   0    2     86  3.1  Bpush_delay
+0    132   1    3    152  1.3  LCD_print_menu
+0     26   0    0             @const1061
+0     26   0    0             @const1062
+0     26   0    0             @const1063
+0     26   0    0             @const1064
+0    560   4    3   1002  3.4  LCD_main_menu
+0     16   0    0             @const1066
+0     16   0    0             @const1067
+0    138   1    3    410  1.8  Full_dev_reset
+0     26   0    0             @const1083
+0     30   0    0             @const1084
+0     28   0    0     84  2.0  save_to_flash
+0     94   1    2    383  4.7  cn_irq_handler
+0     40   0    0     48  1.1  timer1_irq_handler
+0   1276   8    8   4909  9.8  MAIN
+0     28   0    0             @const1129
+0     28   0    0             @const1130
+0     24   0    0             @const1131
+0     26   0    0             @const1132
+0    280   2    0             @PRINTFD32_9600_5893_5892
+0     30   0    0             @const1137
+0     24   0    0             @const1138
+0     28   0    0             @const1139
+0     26   0    0             @const1140
+0     26   0    0             @const1141
+ Inline         0             @cinit1
 
 Program metrics:
     Functions               36
-    Statements              808
-    Comments                419
-    Volume (V)              26158
+    Statements              809
+    Comments                452
+    Volume (V)              26205
     Difficulty (D)          107.3
-    Effort to implement (E) 2807237
-    Time to implement (T)   43 hours, 19 minutes
+    Effort to implement (E) 2812770
+    Time to implement (T)   43 hours, 24 minutes
     Est Delivered Bugs (B)  7
     Cyclomatic Complexity   85
-    Maintainability (MI)    44
+    Maintainability (MI)    50
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-001FE   508  0  
-00200-0FFFE  7248  57776  
+00200-0FFFE  7318  57706  
 10000-14FFE     0  20480  
 15000-157FE     0  2048  
 

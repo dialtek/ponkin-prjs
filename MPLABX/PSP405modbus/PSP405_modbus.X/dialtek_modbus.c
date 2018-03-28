@@ -137,7 +137,7 @@ void PSP405_set_output(unsigned int state);
        default: break;  }
       
        for(unsigned int i = 0; i < 400; i++) 
-         delay_ms(1);      // ??????????? ????????
+         delay_ms(1);      
    } 
   }
 

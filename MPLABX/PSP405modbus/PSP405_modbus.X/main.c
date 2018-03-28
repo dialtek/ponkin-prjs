@@ -39,7 +39,6 @@ unsigned int rd_status, rd_voltage = 0, rd_current = 0,
 void uart2_text_send(char *s);
 void uart_num_send(long data);
 
-
 #include "dialtek_modbus.h"
 
   /// MODBUS IRQ
@@ -100,7 +99,7 @@ void UART2_init()
     // RX interrupt UART2 settings 
     IPC7bits.U2RXIP = 7;   // Set UART2 RX interrupt priority to 4
     IFS1bits.U2RXIF = 0;   // Reset UART2 RX interrupt flag
-    IEC1bits.U2RXIE = 1;   // dis UART2 RX interrupt
+    IEC1bits.U2RXIE = 1;   // EN UART2 RX interrupt
     
     U2BRG = U2BRGVAL;       // Baud Rate setting for 2400 
     U2MODEbits.UARTEN = 1;  // 1 = UARTx is enabled; all UARTx pins are controlled by UARTx as defined by UEN <1:0>
@@ -134,7 +133,7 @@ void uart_send_hex (unsigned char Ch)
     
     U1TXREG = Ch;
     while(U1STAbits.TRMT == 0){ }
-    delay_us(100);
+    delay_us(200);
     // waiting for trancsaction to be complete
    
 }
@@ -195,8 +194,8 @@ void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX
 
 void _ISR_PSV _U2RXInterrupt(void)      //interupt UART 2 RX
 {   /// RS2-232 RX int   
+    
     uart2_rx_buf[uart2_rx_ptr] = U2RXREG; 
-   
     if(uart2_rx_buf[uart2_rx_ptr] == 0x0A)
     {
       uart2_rx_ptr = 0;
@@ -340,8 +339,10 @@ void PSP405_rx_parse(unsigned char parse_state)
   break;
   //====================================================
   case 1:
+    // PSP2010 - uart2_rx_buf[37] == 0x0D, PSP4005 uart2_rx_buf[38] == 0x0D  !!!
+      
     //------- checking answer to be Vvv.vv<cr>
-    if(uart2_rx_buf[0] == 'V' && uart2_rx_buf[38] == 0x0D)
+    if(uart2_rx_buf[0] == 'V' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
     {  // ok, got nice answer
        rd_voltage = char2num(uart2_rx_buf[1]) * 10000 + 
                     char2num(uart2_rx_buf[2]) * 1000  +
@@ -349,7 +350,7 @@ void PSP405_rx_parse(unsigned char parse_state)
                     char2num(uart2_rx_buf[5]) * 10;
     }
     //------- checking answer to be Av.vvv<cr>
-    if(uart2_rx_buf[6] == 'A' && uart2_rx_buf[38] == 0x0D) 
+    if(uart2_rx_buf[6] == 'A' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D)) 
     {  // ok, got nice answer
        rd_current = char2num(uart2_rx_buf[7]) * 1000 + 
                     char2num(uart2_rx_buf[9]) * 100  +
@@ -357,19 +358,19 @@ void PSP405_rx_parse(unsigned char parse_state)
                     char2num(uart2_rx_buf[11]);
     }
     //------- checking src answer to be Uuu<cr>
-    if(uart2_rx_buf[18] == 'U' && uart2_rx_buf[38] == 0x0D)
+    if(uart2_rx_buf[18] == 'U' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
     {  // ok, got nice answer
        rd_voltage_lim =  char2num(uart2_rx_buf[19]) * 10 + char2num(uart2_rx_buf[20]);
     }
     //------- checking src answer to be Ii.ii<cr>
-    if(uart2_rx_buf[21] == 'I' && uart2_rx_buf[38] == 0x0D)
+    if(uart2_rx_buf[21] == 'I' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
     {  // ok, got nice answer
        rd_current_lim = char2num((unsigned char)uart2_rx_buf[22]) * 1000 + 
                         char2num((unsigned char)uart2_rx_buf[24]) * 100  +
                         char2num((unsigned char)uart2_rx_buf[25]) * 10;
     }
     //------- checking src answer to be Fffffff<cr> 
-    if(uart2_rx_buf[30] == 'F' && uart2_rx_buf[38] == 0x0D)
+    if(uart2_rx_buf[30] == 'F' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
     {  // ok, got nice answer
         rd_status = char2num(uart2_rx_buf[31]);
     }
@@ -390,8 +391,6 @@ int main(void)
     UART2_init();
     Timer1_init();
     modbus_init();
-    TX_EN; // !!!!!!!!!!!
-    //RX_EN;  // разрешение приема даннных по RS-485 (если не впаян резистор)
 
     unsigned int count = 0;
 
@@ -417,6 +416,8 @@ while(1)
       count = 0;
       data_ready=0;
     }
+    
+    //if(U2RXREG != 0) K1_ON;
     
    }
   

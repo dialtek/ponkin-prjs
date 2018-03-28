@@ -4,6 +4,8 @@ Development_Mode=
 Processor_Text=PIC24HJ128GP506
 ToolSuite=CCS
 Processor=0x009F
+CCSVersion=5.049
+Compiler=PCD
 [D:\work\Projects\PICC\my prj\Termo3_2.0\last\main]
 Type=4
 Path=
@@ -15,10 +17,6 @@ AdditionalOptionString=
 1=main.c
 [Windows]
 0=0000 %S 0 0 796 451 3 0
-[Units]
-Link=0
-Count=1
-1=main
 [Opened Files]
 1=main.c
 2=ADS1256.h
@@ -27,6 +25,12 @@ Count=1
 5=main.h
 6=
 7=
+t1=444
+t2=1
+t3=1
+t4=1
+t5=162
+Count=5
 [Directories]
 Include=C:\Program Files (x86)\PICC\Devices;C:\Program Files (x86)\PICC\Drivers;
 Library=
@@ -35,6 +39,7 @@ LinkerScript=
 enabled=0
 D1=
 V1=
+buildcount=6
 [fileformats]
 debug=4
 error=2
@@ -53,6 +58,7 @@ BuildTool=C-COMPILER
 OptionString=+FD
 AdditionalOptionString=
 BuildRequired=1
+FileList=main.c
 [..\Termo3_2.0\last\main.c]
 Type=4
 Path=
@@ -67,3 +73,25 @@ FileList=
 BuildTool=
 OptionString=
 AdditionalOptionString=
+
+[ProjectLog]
+Days=1
+D1=19-03-2018
+D1_L=10
+D1_L1=[39926]Project Opened.
+D1_L2=[42775]Started Editing.
+D1_L3=[43092]Stopped Editing.
+D1_L4=[51216]Started Editing.
+D1_L5=[51223]Stopped Editing.
+TotalEdit=5
+TotalDebug=0
+D1_E=5
+D1_D=0
+D1_L6=[51223]Project Closed.
+D1_L7=[51504]Project Opened.
+D1_L8=[51556]Started Editing.
+D1_L9=[51783]Stopped Editing.
+D1_L10=[51783]Project Closed.
+[Units]
+Count=1
+1=main (main)

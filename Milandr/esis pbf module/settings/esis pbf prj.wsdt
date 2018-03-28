@@ -8,6 +8,12 @@
   </ConfigDictionary>
   <Desktop>
     <Static>
+      <Build>
+        <ColumnWidth0>20</ColumnWidth0>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
+      </Build>
       <Workspace>
         <ColumnWidths>
           <Column0>124</Column0>
@@ -16,19 +22,34 @@
           <Column3>27</Column3>
         </ColumnWidths>
       </Workspace>
-      <Build>
+      <Debug-Log>
         <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>1395</ColumnWidth1>
-        <ColumnWidth2>372</ColumnWidth2>
-        <ColumnWidth3>93</ColumnWidth3>
-      </Build>
+        <ColumnWidth1>1861</ColumnWidth1>
+      </Debug-Log>
       <TerminalIO/>
     </Static>
     <Windows>
       <Wnd1>
         <Tabs>
           <Tab>
-            <Identity>TabID-220-10372</Identity>
+            <Identity>TabID-29684-17512</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+          <Tab>
+            <Identity>TabID-14753-17587</Identity>
+            <TabName>Debug Log</TabName>
+            <Factory>Debug-Log</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        <SelectedTab>0</SelectedTab>
+      </Wnd1>
+      <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-7664-17515</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -40,24 +61,13 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd1>
-      <Wnd0>
-        <Tabs>
-          <Tab>
-            <Identity>TabID-20964-10597</Identity>
-            <TabName>Build</TabName>
-            <Factory>Build</Factory>
-            <Session/>
-          </Tab>
-        </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd0>
+      </Wnd2>
     </Windows>
     <Editor>
       <Pane>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\arm\doc\infocenter\index.ENU.html</Filename>
+          <Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\doc\infocenter\index.ENU.html</Filename>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -67,9 +77,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>30</YPos2>
-          <SelStart2>2935</SelStart2>
-          <SelEnd2>2935</SelEnd2>
+          <YPos2>58</YPos2>
+          <SelStart2>3072</SelStart2>
+          <SelEnd2>3072</SelEnd2>
         </Tab>
         <ActiveTab>1</ActiveTab>
       </Pane>
@@ -86,38 +96,34 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-002021f8>
+            <Toolbar-088BE098>
               <key>iaridepm.enu1</key>
-            </Toolbar-002021f8>
+            </Toolbar-088BE098>
           </Sizes>
         </Row0>
         <Row1>
-          <Sizes>
-            <Toolbar-032ddc38>
-              <key>debuggergui.enu1</key>
-            </Toolbar-032ddc38>
-          </Sizes>
+          <Sizes/>
         </Row1>
       </Top>
       <Left>
         <Row0>
           <Sizes>
-            <Wnd1>
+            <Wnd2>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>755</Bottom>
+                <Bottom>754</Bottom>
                 <Right>198</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>200</xscreen>
                 <yscreen>200</yscreen>
                 <sizeHorzCX>104167</sizeHorzCX>
-                <sizeHorzCY>200401</sizeHorzCY>
+                <sizeHorzCY>200602</sizeHorzCY>
                 <sizeVertCX>104167</sizeVertCX>
-                <sizeVertCY>758517</sizeVertCY>
+                <sizeVertCY>758275</sizeVertCY>
               </Rect>
-            </Wnd1>
+            </Wnd2>
           </Sizes>
         </Row0>
       </Left>
@@ -129,7 +135,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd0>
+            <Wnd1>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -140,11 +146,11 @@
                 <xscreen>1924</xscreen>
                 <yscreen>200</yscreen>
                 <sizeHorzCX>1002083</sizeHorzCX>
-                <sizeHorzCY>200401</sizeHorzCY>
+                <sizeHorzCY>200602</sizeHorzCY>
                 <sizeVertCX>104167</sizeVertCX>
-                <sizeVertCY>200401</sizeVertCY>
+                <sizeVertCY>200602</sizeVertCY>
               </Rect>
-            </Wnd0>
+            </Wnd1>
           </Sizes>
         </Row0>
       </Bottom>

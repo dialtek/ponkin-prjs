@@ -450,6 +450,7 @@ static void main()
   
   ADC_voltage = Read_ADC_vol_in(uV);
   Printf("V%Ld\n\r",ADC_voltage);
+  delay_ms(10);
   
   } 
                                                // вывод на дисплей и UART
