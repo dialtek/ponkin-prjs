@@ -23,7 +23,7 @@
 #define RX_LED_ON  LATCbits.LATC4 = 1
 #define RX_LED_OFF LATCbits.LATC4 = 0
 
-#define DEFAULT_DEV_ID (unsigned short)11
+#define DEFAULT_DEV_ID (unsigned char)10
 
 unsigned int flag = 0; // Переменная для возведения флага прерывания
 unsigned int flag_2 = 0; // Переменная для флага прерывания по заднему фронту посыки 
@@ -151,7 +151,7 @@ unsigned char EEPROM_RdByte(unsigned char bAdd)
 
 #define com_dev_id 0           // ? ????????????????? ?????? ???????????? ????? 0
 unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========================================= ID
-#define firmware_ver    11     // ?????? ???????? ???????? ??????????
+#define firmware_ver    12     // ?????? ???????? ???????? ??????????
 #define device_family   10     // ??? ????????? ?????????: 10 - PKT-8
 #define max_regs_cnt    125    // ????. ???-?? ????????? ??? ?????? ?? 1 ???
 #define meas_status_reg 16     // № статус регистра обновления измерений
@@ -227,6 +227,10 @@ unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========
         holding_register[13] = ADC_current_max;
         holding_register[14] = ADC_current_min;
         holding_register[16] = (unsigned int)bd_rate_code;
+        
+        holding_register[21] = (unsigned int)dev_id;
+        holding_register[25] = (unsigned int)firmware_ver;
+                
    }
    //-------------------------------------------------------------------------//
    /// обновление переменных из регистров  <<<=========================================================
@@ -248,7 +252,6 @@ unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========
            current_max = holding_register[6];  
            EEPROM_WrByte(5,current_max & 0x00ff); // lsb
            EEPROM_WrByte(6,current_max >> 8); 
-           
         break; 
         //---------
         case 16: // reg 16 - baud rate settings
@@ -567,11 +570,13 @@ return rch;
         
      if(id_change == 1)
      {
-         dev_id = (unsigned char)holding_register[20];
-         EEPROM_WrByte(2,dev_id);
-         holding_register[19] = 0;
-         holding_register[20] =  EEPROM_RdByte(2);
-         id_change = 0;
+        if((dev_id >= 255 )|| (dev_id == 0)) return;
+                 
+        dev_id = (unsigned char)holding_register[20];
+        EEPROM_WrByte(2,dev_id);
+        holding_register[19] = 0;
+        //dev_id =  EEPROM_RdByte(2);
+        id_change = 0;
      }  
 
   }
@@ -807,24 +812,31 @@ return rch;
         if(bd_rate_code > 5)
             bd_rate_code = 4;
         UART_Init(bd_rate_code);
-        
+        // offce
         dev_id = EEPROM_RdByte(2);
         if((dev_id >= 255 )|| (dev_id == 0))
-            dev_id = 10;
+            dev_id = DEFAULT_DEV_ID;
         
         // num_of_turns
         eeprom_buf = 0x00ff & EEPROM_RdByte(3);
         eeprom_buf |= EEPROM_RdByte(4) << 8;
-        if((eeprom_buf >= 500 )|| (eeprom_buf == 0))
-            eeprom_buf = 100;
+        if(eeprom_buf > 9)
+            eeprom_buf = 5;
         num_of_turns = eeprom_buf;
         
         // current_max
         eeprom_buf = 0x00ff & EEPROM_RdByte(5);
         eeprom_buf |= EEPROM_RdByte(6) << 8;
-        if((eeprom_buf >= 500 )|| (eeprom_buf == 0))
-            eeprom_buf = 100;
+        if(eeprom_buf > 1200)
+            eeprom_buf = 1000;
         current_max = eeprom_buf;
+        
+        // offset
+        eeprom_buf = 0x00ff & EEPROM_RdByte(7);
+        eeprom_buf |= EEPROM_RdByte(8) << 8;
+        if(eeprom_buf >= 4095)
+            eeprom_buf = 0;
+        offset = eeprom_buf;
         
         Interrupt_Init();
         
@@ -845,7 +857,7 @@ return rch;
         }
         else    // сброс настроек на заводские
         {   
-            dev_id = 10;
+            dev_id = DEFAULT_DEV_ID;
             bd_rate_code = 4;
             
             UART_Init(bd_rate_code);
@@ -883,6 +895,10 @@ return rch;
         if (set_zero)
         {
            offset = ADC_read_turns();
+           //reg 1 - offset
+           EEPROM_WrByte(7,offset & 0x00ff); // lsb
+           EEPROM_WrByte(8,offset >> 8); 
+        break; 
            set_zero = 0;
         }
                  
