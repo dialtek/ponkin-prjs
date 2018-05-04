@@ -1690,51 +1690,51 @@ __c30_signature
                     0x0b85                  _firmware_ver
                     0x0b86                  _device_family
 
-_06F5E6C0_at_address_00F80000
+_06E6E6C0_at_address_00F80000
                   0xf80000          0x2
- _06F5E6C0_at_address_00F80000
+ _06E6E6C0_at_address_00F80000
                   0xf80000          0x2 build/default/production/main.o
                   0xf80000                  _FBS
 
-_06F5E720_at_address_00F80002
+_06E6E720_at_address_00F80002
                   0xf80002          0x2
- _06F5E720_at_address_00F80002
+ _06E6E720_at_address_00F80002
                   0xf80002          0x2 build/default/production/main.o
                   0xf80002                  _FSS
 
-_06F5E780_at_address_00F80004
+_06E6E780_at_address_00F80004
                   0xf80004          0x2
- _06F5E780_at_address_00F80004
+ _06E6E780_at_address_00F80004
                   0xf80004          0x2 build/default/production/main.o
                   0xf80004                  _FGS
 
-_06F5E7E0_at_address_00F80006
+_06E6E7E0_at_address_00F80006
                   0xf80006          0x2
- _06F5E7E0_at_address_00F80006
+ _06E6E7E0_at_address_00F80006
                   0xf80006          0x2 build/default/production/main.o
                   0xf80006                  _FOSCSEL
 
-_06F5E840_at_address_00F80008
+_06E6E840_at_address_00F80008
                   0xf80008          0x2
- _06F5E840_at_address_00F80008
+ _06E6E840_at_address_00F80008
                   0xf80008          0x2 build/default/production/main.o
                   0xf80008                  _FOSC
 
-_06F5E8A0_at_address_00F8000A
+_06E6E8A0_at_address_00F8000A
                   0xf8000a          0x2
- _06F5E8A0_at_address_00F8000A
+ _06E6E8A0_at_address_00F8000A
                   0xf8000a          0x2 build/default/production/main.o
                   0xf8000a                  _FWDT
 
-_06F5E900_at_address_00F8000C
+_06E6E900_at_address_00F8000C
                   0xf8000c          0x2
- _06F5E900_at_address_00F8000C
+ _06E6E900_at_address_00F8000C
                   0xf8000c          0x2 build/default/production/main.o
                   0xf8000c                  _FPOR
 
-_06F5E960_at_address_00F8000E
+_06E6E960_at_address_00F8000E
                   0xf8000e          0x2
- _06F5E960_at_address_00F8000E
+ _06E6E960_at_address_00F8000E
                   0xf8000e          0x2 build/default/production/main.o
                   0xf8000e                  _FICD
 

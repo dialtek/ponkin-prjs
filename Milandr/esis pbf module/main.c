@@ -22,6 +22,9 @@
 #define SYNC_LED_ON  	MDR_PORTE->RXTX |=  1<<3 
 #define SYNC_LED_OFF  	MDR_PORTE->RXTX &= ~(1<<3) 
 
+#define TRIG_LED_ON  	MDR_PORTE->RXTX |=  1<<7 
+#define TRIG_LED_OFF  	MDR_PORTE->RXTX &= ~(1<<7) 
+
 // сигнал готовности данных АЦП для чтения 
 #define RXFE                1<<4                    // равен 1 если пуст буфер FIFO приемника 
 #define FIFO_has_byte       !(MDR_UART1->FR & RXFE)
@@ -68,6 +71,7 @@
 
 #define volt_lvl_reg    1000     // адрес регистра измеренного напряжения с HV-делителя
 #define internal_load   6290000  // собственная нагрузка блока - 6М29   
+#define I_aver_size     25
   
 U8 reg_addr_flag = 0;
 U8 reg_wr_flag = 0;
@@ -103,8 +107,6 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   S32 ADC_code = 0;                // отсчеты АЦП напряжения ОС HV-части
   U32 ADC_V = 0;                   // для хранения текущего измерянного вых. напряжения
   U16 V2set = 0;                   // для хранения уставки с ПК
-  
-  
 
   float p = 0;           // П-звено регулятора 
   float i = 0;           // I-звено регулятора 
@@ -117,11 +119,15 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   float kd = 0.0;        // коэффициент D-звена регулятора
   
   float i_lim_r = 100.0;        // сопротивление резистора в возвратной цепи тока
+  U32  I_load_buf[25] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
   
   U8  I_lim_state = 0;
   U32 I_load = 0;               // ток в нагрузке в мкА
+  U32 I_load_temp = 0;          // врем. ток в нагрузке в мкА
+  
   U32 I_load_code = 0;          // отсчеты тока в нагрузке
-  U16 I_lim_val = 8000;         // уровень срабатывания защиты по току в мкА
+  U16 I_lim_val = 10000;        // уровень срабатывания защиты по току в мкА
+  U16 I_lim_cnt = 0;            // счетчик срабатывания защиты по току
   U16 overcurrent_bit = 0;      // статус-бит перегрузки по току: 0 - ок, 1 - сработала защита по току
   U8 overcurrent_count = 0;     // число попыток автомат. сброса перегрузки по току
   U16 HV_EN_bit = 0;            // статус-бит вкл. высокого из регистра
@@ -181,6 +187,7 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
   MDR_PORTE->OE = 0xffbf;               // порт E на выход, PB6 - вход - анализ вкл. тумблера высокого
   MDR_PORTE->FUNC = 0x0000;             // функция - порт 
   MDR_PORTE->ANALOG  = 0xfff0;          // режим потра - цифровой, PE0 - DAC2 out
+  MDR_PORTE->PWR    = 0xFFFFFFF0;       // максимально быстрый фронт
   //---------------------------------------------------------------------------//
   MDR_PORTF->OE = 0xffb7;               // порт F на выход,PF3 - RxD
   MDR_PORTF->FUNC = (2 << 6) |		    // режим  пинов 1, 2, 3, 4 порта 
@@ -192,31 +199,36 @@ U16  holding_register[125];  // буфер для хранения переменных чтения, макс. числ
 
    }
  
-  void timer1_init(void) {
+  void timer1_init(void) { 
     
-  // настройка таймера для прерывания   
-  MDR_RST_CLK->TIM_CLOCK  |= (1 << 24) | 3;      // разрешение тактирования Timer1, TIM1_CLK = HCLK/8 = 10МГц												
+  // настройка таймера для прерывания прерывание 0,125 мкс + пер и зад. фронт
+    
+  MDR_RST_CLK->TIM_CLOCK  |= (1 << 24);      // разрешение тактирования Timer1, TIM1_CLK = HCLK/8 = 10МГц												
 
-  MDR_TIMER1->CNTRL = 0x00000000;        	 // направление счета основного счетчика от нуля до ARR,
-						 // начальное значение - число из регистра CNT 
-  MDR_TIMER1->PSG   = 1999;                       // предделитель частоты = 2000, TIM1_CLK = 5 кГц
-  MDR_TIMER1->ARR   = 4;                	 // основание счета = 5, 200 мкс * 5 = 1 мс
-  MDR_TIMER1->CNT   = 0;       	                 // начальное значение счетчика 
-  MDR_TIMER1->IE    = (1 << 1);                  // разрешение прерывания по совпадению
-  
-// настройка таймера для режима захвата падающего фронта -> \_          
-//  MDR_TIMER1->CNTRL = 4<<8;                               // источник событий - событие на 1 канале «Режим 1» 
-//  MDR_TIMER1->CH1_CNTRL = (1<<15) | (1<<4);               // канал работает в режиме Захват | отрицательный фронт
-//  MDR_TIMER1->CH1_CNTRL1 = 0;
-//  MDR_TIMER1->CNT   = 0;                                  // Начальное значение счетчика - 0
-//  MDR_TIMER1->PSG   = 0;                         	  // Предделитель частоты тактирования Т1 - 1
-//  MDR_TIMER1->ARR   = 0xffff;                             // Основание счета, таймер тикает до 65535
-//  MDR_TIMER1->IE    = (1<<5)|(1<<13);                     // разрешения прерывания по переднему и заднему фронту 1 канала
-//  MDR_RST_CLK->TIM_CLOCK  |= (1 << 24);                   // делитель частоты|разрешение тактирования Таймера 1
-//  MDR_TIMER1->STATUS= 0;                                  // сбрасываем флаги
-  
+  MDR_TIMER1->CNTRL = 4<<8;                           // источник событий - событие на 1 канале «Режим 1» 
+  MDR_TIMER1->CH1_CNTRL = (1<<15)| (1<<4);            // канал работает в режиме Захват | отрицательный фронт
+  MDR_TIMER1->CH1_CNTRL1 = (1<<2)|(1<<1);	      // спад по CCR11; отрицательный фронт по Chi
+                                                      // начальное значение - число из регистра CNT 
+  MDR_TIMER1->PSG   = 0;                           
+  MDR_TIMER1->ARR   = 1999;                	      
+  MDR_TIMER1->CNT   = 0;       	                      // начальное значение счетчика 
+  MDR_TIMER1->IE    = (1<<5) | (1<<13);               // разрешение прерывания по совпадению, по переднему и заднему фронту 1 канала
+  MDR_TIMER1->STATUS= 0;                              // сбрасываем флаги
  }
 
+  void timer2_init() {
+          
+  // настройка таймера для прерывания  1 мс
+  MDR_RST_CLK->TIM_CLOCK  |= (1 << 25) | (3<<8);      // разрешение тактирования Timer2, TIM2_CLK = HCLK/8 = 10МГц												
+
+  MDR_TIMER2->CNTRL = 0x00000000;        	 // направление счета основного счетчика от нуля до ARR,
+						 // начальное значение - число из регистра CNT 
+  MDR_TIMER2->PSG   = 1999;                       // предделитель частоты = 2000, TIM1_CLK = 5 кГц
+  MDR_TIMER2->ARR   = 4;                	 // основание счета = 5, 200 мкс * 5 = 1 мс
+  MDR_TIMER2->CNT   = 0;       	                 // начальное значение счетчика 
+  MDR_TIMER2->IE    = (1 << 1);                  // разрешение прерывания по совпадению
+ }
+ 
   void timer3_init(void) {
           
   // настройка таймера для прерывания   
@@ -397,23 +409,28 @@ MDR_UART1->CR = ((1 << 8)|(1 << 9)|1);     // передачик и приемник разрешен,
 /*=========================================================================== */
 
 __irq void Timer1_IRQHandler(void) 
-//функция обработки прерывания irq Timer 1 - СТРОБЫ ВНЕШНЕЙ СИНХРОНИЗАЦИИ
-{    
- // прерывание 1 мс
-
-    if(DAC_code_ramp > DAC_code)     // если установка больше текущей
-     DAC_code++;                     // инкремент переменной уст. ЦАП, пока не достигнет заданн. знач.
-    else                             // если установка меньше текущей  
-    {   
-     DAC_code = DAC_code_ramp;       // записываем новую установку
-     MDR_TIMER1->CNTRL &= ~1;        // стоп Т1 - RAMP
-     ramp_in_progress = 0;           // сброс флага плавного поднятия напряжения
-    }
+{       
+  
+   U32 int_flag = MDR_TIMER1->STATUS;       // сохр. флаги источников прерываний от Т1   
+   
+   if(int_flag & (1<<5))   //  ___/ флаг прерывания по переднему фронту
+   {  
+       //TRIG_LED_ON;                         // вкл. светодиод запуска
+       //trig_led_delay_cnt = 0;            // сброс счетчика вкл. светодиода
+   }     
+   
+   if(int_flag & (1<<13))  //  \___ флаг прерывания по заднему фронту
+   {  
+      //trig_in_progress = 0;               // сброс статус-бита импульса запуска 
+     //TRIG_LED_OFF;
+   }
+   
  
   MDR_TIMER1->CNT = 0x0000;
   MDR_TIMER1->STATUS = 0x0000;
   NVIC_ClearPendingIRQ(Timer1_IRQn); // обязательно!
 }
+
 __irq void UART1_IRQHandler( void )
  //функция обработки прерывания irq UART1
 {
@@ -423,8 +440,25 @@ __irq void UART1_IRQHandler( void )
         MDR_UART1->ICR  = 1<<4; // сброс прерывания от приемника  
 }
 
+__irq void Timer2_IRQHandler(void)
+{
+    // прерывание 1 мс
+    if(DAC_code_ramp > DAC_code)     // если установка больше текущей
+     DAC_code++;                     // инкремент переменной уст. ЦАП, пока не достигнет заданн. знач.
+    else                             // если установка меньше текущей  
+    {   
+     DAC_code = DAC_code_ramp;       // записываем новую установку
+     MDR_TIMER2->CNTRL &= ~1;        // стоп Т2 - RAMP
+     ramp_in_progress = 0;           // сброс флага плавного поднятия напряжения
+    }
+    MDR_TIMER2->CNT = 0;                     // установка знач. счетчика на 0
+    MDR_TIMER2->STATUS = 0x0000;             // сброс статуса прерывания
+    NVIC_ClearPendingIRQ(Timer2_IRQn);       // обязательно!
+
+}
+
 __irq void Timer3_IRQHandler(void) 
-{  // защита от перегрузкит перегрузки по току
+{  // защита от перегрузки по току
   
     if(I_load >= (U32)I_lim_val) overcurr_state = 1;
     
@@ -463,7 +497,7 @@ __irq void Timer3_IRQHandler(void)
         
         overcurr_state = 0;
         MDR_TIMER3->ARR   = 19;    // уст. порог прерывания на каждые 100 мс.
-        MDR_TIMER1->CNTRL |= 1;
+        MDR_TIMER2->CNTRL |= 1;
       break;
       
     default: break;
@@ -660,12 +694,14 @@ return rch;
 	 SysTickTimer_Init();
  	 GPIO_init();  
 	 timer1_init();
+         timer2_init();
          timer3_init();
          MCU_ADC_init();
          Uart_init();           // UART1 - RS485
          MCU_DAC2_init();       // инициализация DAC2
   
 	}
+  
   
 /*=========================================================================== */
 // MAIN    
@@ -679,6 +715,7 @@ return rch;
  
  MCU_init();	// иницализация систем тактирования, портов, SPI и UART  
  NVIC_EnableIRQ(Timer1_IRQn); // Разрешение прерывания для T1 - запуск
+ NVIC_EnableIRQ(Timer2_IRQn); // Разрешение прерывания для T2 - RAMP
  NVIC_EnableIRQ(Timer3_IRQn); // Разрешение прерывания для T3 - пид регулятор
  NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
  
@@ -687,11 +724,11 @@ return rch;
 
  MDR_DAC->DAC2_DATA = 0;      // сброс значения ЦАП
  MDR_TIMER3->CNTRL |= 1;      
+ MDR_TIMER1->CNTRL |= 1; 
  __enable_irq();	      // Enable Interrupts global
  
  HV_SUPPLY_ON;                // вкл. питания HV-части
  HV_EN_bit = 1;               // вкл. при подаче питания по умолч. -> для работы без программы
- 
  
  for(U8 i = 0; i < 125; i++) holding_register[i] = 0; // очистка буфера переменных чтения
  // -----------------------------------
@@ -894,7 +931,7 @@ return rch;
          }
          
           // уровень срабатывания защиты по току в мкА  
-         if(holding_register[10] > I_lim_val) holding_register[10] = I_lim_val;   // 8 мА - макс.
+         if(holding_register[10] > I_lim_val) holding_register[10] = I_lim_val;   // 10 мА - макс.
          else if (holding_register[10] < 500)  holding_register[10] = 500;        // 500 мкА - мин.
          I_lim_val = holding_register[10];               
          
@@ -929,7 +966,7 @@ return rch;
       {
        DAC_code_ramp_prev = DAC_code_ramp;   // перезапись предыдущего значения переменной кода ЦАП  
        ramp_in_progress = 1;       // уст. флага плавного поднятия напряжения
-       MDR_TIMER1->CNTRL |= 1;     // старт Т1 - RAMP
+       MDR_TIMER2->CNTRL |= 1;     // старт Т2 - RAMP
        }  	           
      //--------- 
      error = (float)(DAC_code - ADC_code);       // вычисление ошибки
@@ -957,9 +994,39 @@ return rch;
      MCU_ADC_init();                             // сброс предыдущих настроек
      MCU_ADC_set_ch(4);                          // установка канала АЦП
      I_load_code  = (S32)(MCU_ADC_Rd_average(MCU_ADC_aver_param));  // чтение отсчетов АЦП 
-     I_load = (U32)((I_load_code*0.8056640625/ i_lim_r) * 333.333); // коэффициент усиления оу = 3
+     I_load_temp = (U32)((I_load_code*0.8056640625/ i_lim_r) * 333.333); // коэффициент усиления оу = 3
                                                                     // измерение тока в нагрузке в мкА 
-     I_load = (U32)(I_load - ((float)ADC_V/internal_load)*1000000);    // вычет тока внутренней нагрузки (контр .делитель и изм. АЦП) 
+     I_load_temp = (U32)(I_load_temp - ((float)ADC_V/internal_load)*1000000);    // вычет тока внутренней нагрузки (контр .делитель и изм. АЦП) 
+     
+     I_load_buf[I_lim_cnt] = I_load_temp;
+     
+     I_lim_cnt++;
+     if(I_lim_cnt > I_aver_size-1) I_lim_cnt = 0;
+
+     I_load_temp = 0;
+     for(U8 i = 0; i < I_aver_size; i++)
+      I_load_temp += I_load_buf[i];
+     
+     I_load = I_load_temp/(I_aver_size);
+     
+     holding_register[20] = I_load_buf[0];
+     holding_register[21] = I_load_buf[1];
+     holding_register[22] = I_load_buf[2];
+     holding_register[23] = I_load_buf[3];
+     holding_register[24] = I_load_buf[4];
+     holding_register[25] = I_load_buf[5];
+     holding_register[26] = I_load_buf[6];
+     holding_register[27] = I_load_buf[7];
+     holding_register[28] = I_load_buf[8];
+     holding_register[29] = I_load_buf[9];
+
+     
+     
+     
+     
+     
+      
+     
      
 //======================================     
      if(HV_SWITCH_ON)       // если тумблер высокого вкл.
@@ -995,6 +1062,6 @@ return rch;
       else                { Error_LED_OFF; Status_LED_ON; }
       status_led_delay_cnt=0;
      }
-//====================================== 
+//======================================  
   } // while  
 } // main
