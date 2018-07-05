@@ -263,7 +263,7 @@
             this.IP.Name = "IP";
             this.IP.Size = new System.Drawing.Size(108, 20);
             this.IP.TabIndex = 26;
-            this.IP.Text = "172.16.21.148";
+            this.IP.Text = "192.168.127.254";
             this.IP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.IP.TextChanged += new System.EventHandler(this.IP_TextChanged);
             // 

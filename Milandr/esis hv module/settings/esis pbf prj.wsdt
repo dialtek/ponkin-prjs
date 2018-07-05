@@ -29,27 +29,27 @@
       <TerminalIO/>
     </Static>
     <Windows>
-      <Wnd1>
+      <Wnd2>
         <Tabs>
           <Tab>
-            <Identity>TabID-3021-7832</Identity>
+            <Identity>TabID-15576-21357</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
           </Tab>
           <Tab>
-            <Identity>TabID-16509-8602</Identity>
+            <Identity>TabID-32368-21452</Identity>
             <TabName>Debug Log</TabName>
             <Factory>Debug-Log</Factory>
             <Session/>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd1>
-      <Wnd2>
+      </Wnd2>
+      <Wnd3>
         <Tabs>
           <Tab>
-            <Identity>TabID-13769-7835</Identity>
+            <Identity>TabID-26325-21360</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -61,7 +61,7 @@
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
+      </Wnd3>
     </Windows>
     <Editor>
       <Pane>
@@ -78,8 +78,8 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>39</YPos2>
-          <SelStart2>26724</SelStart2>
-          <SelEnd2>26724</SelEnd2>
+          <SelStart2>2861</SelStart2>
+          <SelEnd2>2861</SelEnd2>
         </Tab>
         <ActiveTab>1</ActiveTab>
       </Pane>
@@ -96,9 +96,9 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-0537EE98>
+            <Toolbar-0687CBB0>
               <key>iaridepm.enu1</key>
-            </Toolbar-0537EE98>
+            </Toolbar-0687CBB0>
           </Sizes>
         </Row0>
         <Row1>
@@ -108,7 +108,7 @@
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd3>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -123,7 +123,7 @@
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>758275</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd3>
           </Sizes>
         </Row0>
       </Left>
@@ -135,7 +135,7 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd1>
+            <Wnd2>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -150,7 +150,7 @@
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>200602</sizeVertCY>
               </Rect>
-            </Wnd1>
+            </Wnd2>
           </Sizes>
         </Row0>
       </Bottom>

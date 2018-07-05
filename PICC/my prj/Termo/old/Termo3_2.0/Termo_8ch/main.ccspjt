@@ -25,6 +25,13 @@ AdditionalOptionString=
 5=ADS1256.h
 6=C:\Program Files (x86)\PICC\Drivers\stdlib.h
 7=
+t1=65
+t2=1
+t3=1
+t4=1
+t5=1
+t6=1
+Count=6
 [Directories]
 Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\
 Library=
@@ -62,3 +69,10 @@ AdditionalOptionString=
 [Units]
 Count=1
 1=main (main)
+
+[ProjectLog]
+Days=1
+D1=31-05-2018
+D1_L=2
+D1_L1=[46931]Project Opened.
+D1_L2=[46955]Project Closed.

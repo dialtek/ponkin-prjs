@@ -287,12 +287,12 @@ Project Directory:
     F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\
 
 Project Files:
-    main.c                                                  [22-янв-18 14:43  CRC=5811296C]
+    main.c                                                  [29-май-18 11:30  CRC=BC33C32C]
     main.h                                                  [05-дек-17 12:19  CRC=7EF5E759]
     C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [08-сен-15 15:17  CRC=C83E8947]
     ADS1256.h                                               [15-янв-18 16:20  CRC=394CA984]
 
-Source signature=11DEED14
+Source signature=760186D4
 Program memory checksum=0000
 Program memory CRC=0000
 Hex file CRC=8169

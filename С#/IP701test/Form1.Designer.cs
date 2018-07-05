@@ -411,7 +411,7 @@
             this.IP_1.Name = "IP_1";
             this.IP_1.Size = new System.Drawing.Size(90, 20);
             this.IP_1.TabIndex = 25;
-            this.IP_1.Text = "172.16.21.12";
+            this.IP_1.Text = "192.168.127.254";
             this.IP_1.TextChanged += new System.EventHandler(this.IP_1_TextChanged);
             // 
             // IP_1n

@@ -1,0 +1,33 @@
+﻿<Window x:Name="window_setting" x:Class="klystron_mod.WSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:klystron_mod"
+        mc:Ignorable="d"
+        Title="Настройки" Height="377" Width="300" Loaded="window_setting_Loaded">
+    <Grid Margin="1,0,-1,0">
+        <Button x:Name="button_delay" Content="Уст." HorizontalAlignment="Left" Margin="229,54,0,0" VerticalAlignment="Top" Width="49" Click="button_delay_Click"/>
+        <TextBox x:Name="rf_delay_tb" HorizontalAlignment="Left" Height="26" Margin="87,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontSize="16"/>
+        <Label x:Name="label" Content="Задержка ВЧ" HorizontalAlignment="Left" Margin="70,18,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF6D6D6D"/>
+        <Label x:Name="label1" Content="мкс" HorizontalAlignment="Left" Margin="162,48,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Button x:Name="button_with" Content="Уст." HorizontalAlignment="Left" Margin="229,136,0,0" VerticalAlignment="Top" Width="49" Click="button_with_Click"/>
+        <TextBox x:Name="rf_with_tb" HorizontalAlignment="Left" Height="26" Margin="88,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontSize="16"/>
+        <Label x:Name="label_Copy" Content="Длительность ВЧ" HorizontalAlignment="Left" Margin="61,97,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Foreground="#FF6D6D6D"/>
+        <Button x:Name="button_IPandPort" Content="Уст." HorizontalAlignment="Left" Margin="229,289,0,0" VerticalAlignment="Top" Width="49" Click="button_IPandPort_Click"/>
+        <Label x:Name="label_Copy2" Content="IP
+               " HorizontalAlignment="Left" Margin="49,271,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="24" IsEnabled="False"/>
+        <TextBox x:Name="IP" HorizontalAlignment="Left" Height="23" Margin="78,277,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" Text="192.168.127.253"/>
+        <TextBox x:Name="port" HorizontalAlignment="Left" Height="23" Margin="78,305,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Text="4001"/>
+        <Label x:Name="label_Copy3" Content="Port
+               " HorizontalAlignment="Left" Margin="33,297,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="16" Width="47" IsEnabled="False"/>
+        <Label x:Name="label1_Copy" Content="мкс" HorizontalAlignment="Left" Margin="162,129,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="default_label" Content="ошибка считывания, настройки по умолчанию" HorizontalAlignment="Left" Margin="11,-6,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_rf_lvl" Content="Уст." HorizontalAlignment="Left" Margin="229,227,0,0" VerticalAlignment="Top" Width="49" Click="button_rf_lvl_Click"/>
+        <TextBox x:Name="rf_level_tb" HorizontalAlignment="Left" Height="26" Margin="88,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontSize="16"/>
+        <Label x:Name="label_Copy1" Content="Уровень срабатывания индикатора" HorizontalAlignment="Left" Margin="4,175,-10,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="30" Width="298" Foreground="#FF6D6D6D"/>
+        <Label x:Name="label1_Copy1" Content="ед." HorizontalAlignment="Left" Margin="162,220,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="label_Copy4" Content="выхода СВЧ" HorizontalAlignment="Left" Margin="92,193,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15" Height="30" Width="105" Foreground="#FF6D6D6D"/>
+
+    </Grid>
+</Window>

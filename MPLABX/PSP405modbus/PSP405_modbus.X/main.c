@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include "fuses.h"
 #include "p24Hxxxx.h"
-#include <timer.h>
 
 #include "c30_delay.h"
 #include <p24HJ128GP506A.h>
@@ -19,6 +18,7 @@
 
 #define MAX_VOLTAGE 40000 // PSP405 max voltage
 #define MAX_CURRENT 5000  // PSP405 max current
+#define MAX_POWER   200   // PSP405 max power
 #define ERROR_CODE 65535  // value on reading error
 #define READ_TIMEOUT 1000 // reading timeout in ms 
 #define RX_BUF_SIZE 38    // rx buf size 
@@ -32,25 +32,13 @@ unsigned char rx_msg[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 unsigned char uart2_rx_ptr = 0;
 unsigned char data_ready = 0;
 unsigned int rd_status, rd_voltage = 0, rd_current = 0, 
-             rd_voltage_lim = 0, rd_current_lim = 0;
-
+             rd_voltage_lim = 0, rd_current_lim = 0, rd_power_lim = 0;
 
 // funcs prototypes
 void uart2_text_send(char *s);
 void uart_num_send(long data);
 
 #include "dialtek_modbus.h"
-
-  /// MODBUS IRQ
- void _ISR_PSV _T1Interrupt() 
-  {
-      
-   modbus_rx_sm();
-    
-//--------------------------------------------- 
-PR1 = 3125;          // Load the period value = 5 ms
-IFS0bits.T1IF = 0;   // Clear Timer interrupt flag
-}
 
 void OSC_init()
 {
@@ -141,8 +129,9 @@ void uart_send_hex (unsigned char Ch)
 void uart2_send_hex (unsigned char Ch)
 { // RS-232 send byte
     
-    U2TXREG = Ch;
     while(U2STAbits.TRMT == 0){ }
+    U2TXREG = Ch;
+     __delay_us(50);
     // waiting for trancsaction to be complete
 }
 
@@ -238,25 +227,6 @@ void GPIO_init()
     TRISGbits.TRISG15=0;  // OUT1
 } 
 
-void Timer1_init()
-{
-    // 5 ms int
-    
-    //interrupt timer settings
-  
-    IPC0bits.T1IP = 5; // Set Timer1 interrupt priority to 3 
-    IFS0bits.T1IF = 0; // Reset Timer1 interrupt flag      
-    IEC0bits.T1IE = 1; // Enable Timer1 interrupt 
-            
-    T1CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
-    T1CONbits.TCS = 0;           // Timer Clock Source Select bit; 0 - Internal clock (FOSC/2)
-    T1CONbits.TGATE = 0;         // Disable Gated Timer mode
-    T1CONbits.TCKPS = 0b10;      // Prescaler = (00=1, 01=8, 10=64, 11=256) 
-    TMR1 = 0x00;                 // Clear timer register
-    PR1 = 3125;                 // Load the period value
-    T1CONbits.TON = 1;           // Start Timer 
-    
-}
 /*=========================================================================== */
 /// PSP405 functions
 unsigned char char2num (unsigned char ch)
@@ -298,6 +268,20 @@ void PSP405_set_voltage_lim(unsigned int voltage_lim)
   uart2_send_hex(0x0D);    
 }
 
+void PSP405_set_power_lim(unsigned int power_lim)
+{
+  // get chars from number
+  unsigned int first_num  = power_lim/100;
+  unsigned int sec_num    = (power_lim - first_num * 100)/10;
+  unsigned int third_num  = (power_lim - first_num * 100 - sec_num * 10);
+  // send Wwww.w<cr> 6 characters totally + CR/LF
+  uart2_text_send("SP ");
+  uart2_send_hex(num2char(first_num));
+  uart2_send_hex(num2char(sec_num));
+  uart2_send_hex(num2char(third_num));
+  uart2_send_hex(0x0D);    
+}
+
 void PSP405_set_current(unsigned int current)
 { // current in mA
   // get chars from number
@@ -335,6 +319,7 @@ void PSP405_rx_parse(unsigned char parse_state)
     rd_current     = ERROR_CODE;
     rd_voltage_lim = ERROR_CODE;
     rd_current_lim = ERROR_CODE;
+    rd_power_lim   = ERROR_CODE;
     rd_status      = ERROR_CODE;
   break;
   //====================================================
@@ -342,7 +327,7 @@ void PSP405_rx_parse(unsigned char parse_state)
     // PSP2010 - uart2_rx_buf[37] == 0x0D, PSP4005 uart2_rx_buf[38] == 0x0D  !!!
       
     //------- checking answer to be Vvv.vv<cr>
-    if(uart2_rx_buf[0] == 'V' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
+    if(uart2_rx_buf[0] == 'V' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D))
     {  // ok, got nice answer
        rd_voltage = char2num(uart2_rx_buf[1]) * 10000 + 
                     char2num(uart2_rx_buf[2]) * 1000  +
@@ -350,7 +335,7 @@ void PSP405_rx_parse(unsigned char parse_state)
                     char2num(uart2_rx_buf[5]) * 10;
     }
     //------- checking answer to be Av.vvv<cr>
-    if(uart2_rx_buf[6] == 'A' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D)) 
+    if(uart2_rx_buf[6] == 'A' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D)) 
     {  // ok, got nice answer
        rd_current = char2num(uart2_rx_buf[7]) * 1000 + 
                     char2num(uart2_rx_buf[9]) * 100  +
@@ -358,19 +343,26 @@ void PSP405_rx_parse(unsigned char parse_state)
                     char2num(uart2_rx_buf[11]);
     }
     //------- checking src answer to be Uuu<cr>
-    if(uart2_rx_buf[18] == 'U' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
+    if(uart2_rx_buf[18] == 'U' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D))
     {  // ok, got nice answer
        rd_voltage_lim =  char2num(uart2_rx_buf[19]) * 10 + char2num(uart2_rx_buf[20]);
     }
     //------- checking src answer to be Ii.ii<cr>
-    if(uart2_rx_buf[21] == 'I' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
+    if(uart2_rx_buf[21] == 'I' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D))
     {  // ok, got nice answer
        rd_current_lim = char2num((unsigned char)uart2_rx_buf[22]) * 1000 + 
                         char2num((unsigned char)uart2_rx_buf[24]) * 100  +
                         char2num((unsigned char)uart2_rx_buf[25]) * 10;
     }
+    //------- checking src answer to be Pxxx<cr>
+    if(uart2_rx_buf[26] == 'P' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D))
+    {  // ok, got nice answer
+       rd_power_lim =   char2num((unsigned char)uart2_rx_buf[27]) * 100 + 
+                        char2num((unsigned char)uart2_rx_buf[28]) * 10  +
+                        char2num((unsigned char)uart2_rx_buf[29]);
+    }
     //------- checking src answer to be Fffffff<cr> 
-    if(uart2_rx_buf[30] == 'F' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[37] == 0x0D))
+    if(uart2_rx_buf[30] == 'F' && (uart2_rx_buf[37] == 0x0D || uart2_rx_buf[38] == 0x0D))
     {  // ok, got nice answer
         rd_status = char2num(uart2_rx_buf[31]);
     }
@@ -389,13 +381,15 @@ int main(void)
     GPIO_init();
     UART1_init();
     UART2_init();
-    Timer1_init();
+    //Timer1_init();
     modbus_init();
 
     unsigned int count = 0;
 
 while(1)
 {        
+  
+  modbus_rx_sm();
   modbus_poll();
   __delay_ms(1); 
 
@@ -417,9 +411,8 @@ while(1)
       data_ready=0;
     }
     
-    //if(U2RXREG != 0) K1_ON;
-    
    }
+  
   
   }
 }

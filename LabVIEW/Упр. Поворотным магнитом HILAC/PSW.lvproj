@@ -17,7 +17,7 @@
 		<Item Name="SetVoltage.vi" Type="VI" URL="../SetVoltage.vi"/>
 		<Item Name="SetCurrent.vi" Type="VI" URL="../SetCurrent.vi"/>
 		<Item Name="SetOutput.vi" Type="VI" URL="../SetOutput.vi"/>
-		<Item Name="GetOutState_ins.vi" Type="VI" URL="../../He Src Bevatech/GetOutState_ins.vi"/>
+		<Item Name="GetOutState_ins.vi" Type="VI" URL="../GetOutState_ins.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>

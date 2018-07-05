@@ -1,4 +1,4 @@
-CCS PCD C Compiler, Version 5.049, 5967               22-ÿםג-18 14:43
+CCS PCD C Compiler, Version 5.049, 5967               29-לאי-18 11:30
 
                Filename:   F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\main.lst
 
@@ -2139,6 +2139,7 @@ CCS PCD C Compiler, Version 5.049, 5967               22-ÿםג-18 14:43
 01264:  MOV     W6,W0
 01266:  MOV     #0,W1
 01268:  MOV     W0,19B4
+....................           
 ....................           
 ....................          holding_register[2] = (U16) (pkt8_ch_2 & 0x0000ffff);          // LSB ךאםאכא 2 
 0126A:  CLR     W1

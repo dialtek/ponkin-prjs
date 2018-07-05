@@ -40,14 +40,12 @@
 
 #define TX_EN  LATBbits.LATB14=1
 #define TX_DIS LATBbits.LATB14=0
-//#define RX_EN  LATBbits.LATB9=0
-//#define RX_DIS LATBbits.LATB9=1
 
 /* HARDWARE INFO */
 
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства для широковещательного режима, лучше не трогать 
   unsigned char dev_id        = 61;                 // MODBUS ID устройства                                      <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 20;                 // версия прошивки текущего устройства
+  unsigned char firmware_ver  = 21;                 // версия прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
 
 /* ПРОТОТИПЫ */
@@ -61,6 +59,7 @@ unsigned int PSP405_get_status();
 unsigned int PSP405_get_voltage_lim();
 unsigned int PSP405_get_current_lim();
 void PSP405_set_output(unsigned int state);
+void PSP405_set_power_lim(unsigned int power_lim);
   
 /* USER FUNCS */
   
@@ -87,6 +86,7 @@ void PSP405_set_output(unsigned int state);
        holding_register[2] = rd_current;
        holding_register[3] = rd_current_lim;      
        holding_register[4] = rd_status; // the relay status 0:OFF 1:ON
+       holding_register[5] = rd_power_lim;     
    }         
    //-------------------------------------------------------------------------//
    /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
@@ -134,6 +134,11 @@ void PSP405_set_output(unsigned int state);
            PSP405_set_output(1);
         break;
          //---------
+        //---------
+        case 11: // reg 1 - power limit
+           if(holding_register[11] > MAX_POWER) holding_register[11] = MAX_POWER;
+           PSP405_set_power_lim(holding_register[11]);
+        break;
        default: break;  }
       
        for(unsigned int i = 0; i < 400; i++) 

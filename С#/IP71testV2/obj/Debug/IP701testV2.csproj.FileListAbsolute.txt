@@ -19,3 +19,13 @@ F:\Mega\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.pdb
 F:\Mega\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.exe.config
 F:\Mega\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.exe
 F:\Mega\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.pdb
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.exe.config
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.exe
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.pdb
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.exe
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\bin\Debug\IP701testV2.pdb
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.csprojResolveAssemblyReference.cache
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.Form1.resources
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.Form2_config.resources
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.Properties.Resources.resources
+E:\Mega drive\ponkin-prjs\С#\IP71testV2\obj\Debug\IP701testV2.csproj.GenerateResource.Cache

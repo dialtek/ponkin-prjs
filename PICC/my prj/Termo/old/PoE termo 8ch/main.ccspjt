@@ -4,7 +4,7 @@ Development_Mode=
 Processor_Text=PIC24HJ128GP506A
 ToolSuite=CCS
 Processor=0x009F
-CCSVersion=5.015
+CCSVersion=5.049
 Compiler=PCD
 [D:\work\Projects\PICC\my prj\Termo3_2.0\last\main]
 Type=4
@@ -25,6 +25,9 @@ AdditionalOptionString=
 5=
 6=
 7=
+t1=1
+t2=1
+Count=2
 [Directories]
 Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\
 Library=
@@ -33,6 +36,7 @@ LinkerScript=
 enabled=0
 D1=
 V1=
+buildcount=1
 [fileformats]
 debug=4
 error=2
@@ -59,6 +63,23 @@ FileList=
 BuildTool=
 OptionString=
 AdditionalOptionString=
+
+[ProjectLog]
+Days=1
+D1=31-05-2018
+D1_L=8
+D1_L1=[46884]Project Opened.
+D1_L2=[46911]Project Closed.
+D1_L3=[47136]Project Opened.
+D1_L4=[47177]Started Editing.
+D1_L5=[47348]Stopped Editing.
+TotalEdit=3
+TotalDebug=0
+D1_E=3
+D1_D=0
+D1_L6=[47348]Project Closed.
+D1_L7=[47384]Project Opened.
+D1_L8=[47732]Project Closed.
 [Units]
 Count=1
 1=main (main)

@@ -1,0 +1,8 @@
+>>> Warning 238 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\old\PoE termo 8ch\main.h" Line 156(2,5): Duplicate #locate
+>>> Warning 202 "main.c" Line 26(7,11): Variable never used:   CRC1
+>>> Warning 202 "main.c" Line 26(17,21): Variable never used:   CRC2
+>>> Warning 202 "main.c" Line 36(7,14): Variable never used:   RXd_buf
+>>> Warning 202 "main.c" Line 509(8,12): Variable never used:   buf1
+      Memory usage:   ROM=7%      RAM=53% - 54%
+      0 Errors,  5 Warnings.
+Build Successful.

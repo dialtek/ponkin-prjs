@@ -1,78 +1,81 @@
 W0      @SCRATCH
 W0L     _RETURN_
-W0 -W1  @WRITE_PROGRAM_MEMORY.P1
+W0 -W1  @MULS3232.P1
 W0 -W1  @READ_ROM_MEMORY.P2
-W0 -W1  @ADDFF.P3
-W0 -W3  @I64TOF64.P4
-W0      @PRINTFU16_115200_5893_5892.P5
-W0 -W1  @DIV3232B.P6
-W0 -W2  @DIVFF48.P7
-W0 -W1  @MULFF.P8
-W0 -W3  @MULS6464.P9
-W0      @SITOF.P10
-W0 -W3  @DIVS6464.P11
-W0 -W3  @SI64TOF64.P12
-W0 -W3  @SI64TOF48.P13
-W0 -W1  @DIVFF.P14
-W0 -W2  @MULFF48.P15
-W0      @delay_us1.P16
-W0 -W2  @DIVS4848.P17
-W0 -W2  @ADDFF48.P18
-W0 -W3  @MULFF64.P19
-W0 -W1  @SPI_XFERM_1.P20
-W0 -W1  @FTOSD.P21
-W0 -W3  @F64TO48.P22
+W0 -W3  @I64TOF64.P3
+W0      @PRINTFU16_230400_5893_5892.P4
+W0 -W1  @DIV3232B.P5
+W0 -W3  @F64TO48.P6
+W0 -W1  @FTOSD.P7
+W0 -W1  @PRINTFD32_230400_5893_5892.P8
+W0      @delay_ms1.P9
+W0 -W1  @MULFF.P10
+W0 -W2  @ADDFF48.P11
+W0 -W3  @MULFF64.P12
+W0      @SITOF.P13
+W0 -W2  @MULFF48.P14
+W0 -W1  @ADDFF.P15
+W0 -W2  @MULS4848.P16
+W0 -W1  @DIVFF.P17
+W0 -W2  @DIVFF48.P18
+W0 -W1  @WRITE_PROGRAM_MEMORY.P19
+W0      @delay_us1.P20
+W0 -W3  @MULS6464.P21
+W0 -W1  @DIVS3232A.P22
 W0 -W1  @MUL3232.P23
-W0 -W1  @MULS3232.P24
-W0 -W1  @PRINTFD32_115200_5893_5892.P25
-W0 -W2  @MULS4848.P26
-W0 -W3  @DIVFF64.P27
-W0 -W3  @ADDFF64.P28
-W0 -W1  @DIVS3232A.P29
-W0      @delay_ms1.P30
-W0 -W1  @READ_PROGRAM_MEMORY.P31
+W0 -W3  @SI64TOF64.P24
+W0 -W3  @ADDFF64.P25
+W0 -W3  @DIVFF64.P26
+W0 -W3  @SI64TOF48.P27
+W0 -W1  @READ_PROGRAM_MEMORY.P28
+W0 -W2  @DIVS4848.P29
+W0 -W3  @DIVS6464.P30
+W0 -W1  @SPI_XFERM_1.P31
 W1      @SCRATCH
 W1      @READ_PACKED_MEMORY.P1
-W1      @WRITE_PACKED_MEMORY.P2
-W1      @NVR_WR.P3
-W2      @WRITE_PROGRAM_MEMORY.P1
-W2 -W3  @DIV3232B.P2
-W2      @READ_ROM_MEMORY.P3
-W2      @READ_PACKED_MEMORY.P4
-W2 -W3  @DIVS3232A.P5
-W2 -W3  @DIVFF.P6
-W2      @READ_PROGRAM_MEMORY.P7
-W2      @SPI_XFERM_1.P8
-W2 -W3  @MULFF.P9
-W2 -W3  @MUL3232.P10
-W2 -W3  @MULS3232.P11
-W2      @WRITE_PACKED_MEMORY.P12
-W2 -W3  @ADDFF.P13
-W3 -W5  @ADDFF48.P1
-W3      @WRITE_PROGRAM_MEMORY.P2
-W3      @READ_ROM_MEMORY.P3
-W3 -W5  @MULS4848.P4
-W3 -W5  @DIVFF48.P5
-W3 -W5  @MULFF48.P6
-W3 -W5  @DIVS4848.P7
+W1      @NVR_WR.P2
+W1      @WRITE_PACKED_MEMORY.P3
+W2      @READ_PACKED_MEMORY.P1
+W2      @SPI_XFERM_1.P2
+W2 -W3  @DIVS3232A.P3
+W2 -W3  @MULFF.P4
+W2 -W3  @MUL3232.P5
+W2 -W3  @ADDFF.P6
+W2 -W3  @DIVFF.P7
+W2      @READ_ROM_MEMORY.P8
+W2 -W3  @DIV3232B.P9
+W2      @READ_PROGRAM_MEMORY.P10
+W2      @WRITE_PROGRAM_MEMORY.P11
+W2 -W3  @MULS3232.P12
+W2      @WRITE_PACKED_MEMORY.P13
+W3      @WRITE_PROGRAM_MEMORY.P1
+W3 -W5  @ADDFF48.P2
+W3      @WRITE_PACKED_MEMORY.P3
+W3 -W5  @MULFF48.P4
+W3 -W5  @MULS4848.P5
+W3      @READ_ROM_MEMORY.P6
+W3 -W5  @DIVFF48.P7
 W3      @READ_PACKED_MEMORY.P8
 W3      @READ_PROGRAM_MEMORY.P9
-W3      @WRITE_PACKED_MEMORY.P10
-W4 -W7  @MULFF64.P1
-W4 -W7  @DIVFF64.P2
-W4 -W7  @MULS6464.P3
-W4 -W7  @ADDFF64.P4
-W4      @PRINTFD32_115200_5893_5892.P5
-W4      @PRINTFU16_115200_5893_5892.P6
+W3 -W5  @DIVS4848.P10
+W4 -W7  @ADDFF64.P1
+W4 -W7  @MULFF64.P2
+W4      @PRINTFD32_230400_5893_5892.P3
+W4 -W7  @DIVFF64.P4
+W4 -W7  @MULS6464.P5
+W4      @PRINTFU16_230400_5893_5892.P6
 W4 -W7  @DIVS6464.P7
 230     U2MODE
 232     U2STA
+233.0   U2_TRMT
+233.1   U2_UTXBF
+233.2   U2_UTXEN
 234     U2TXREG
 236     U2RXREG
 238     U2BRG
 2C4     LATA
-2C6     TRISB
 2C6.0   TRB0
+2C6     TRISB
 2C6.1   TRB1
 2C6.2   CN3_TRIS
 2C6.3   CN4_TRIS
@@ -101,8 +104,8 @@ W4 -W7  @DIVS6464.P7
 2CF.5   RC13
 2CF.6   RC14
 2D0     LATC
-2D2.0   ADC2_RESET_TRIS
 2D2     TRISD
+2D2.0   ADC2_RESET_TRIS
 2D2.1   ADC_DRDY_TRIS
 2D2.2   ADC_SYNC_TRIS
 2D2.3   ADC_RESET_TRIS
@@ -117,8 +120,8 @@ W4 -W7  @DIVS6464.P7
 2D4     PORTD
 2D4.1   ADC_DRDY
 2D5.1   ADC2_DRDY
-2D6.0   ADC2_RESET
 2D6     LATD
+2D6.0   ADC2_RESET
 2D6.2   ADC_SYNC
 2D6.3   ADC_RESET
 2D6.4   RD4
@@ -144,8 +147,8 @@ W4 -W7  @DIVS6464.P7
 2E5.5   LCD_RS_TRIS
 2E5.6   LCD_E_TRIS
 2E6     PORTG
-2E8.0   RG0
 2E8     LATG
+2E8.0   RG0
 2E8.1   RG1
 2E8.6   SCK2
 2E8.7   SDI2
@@ -156,8 +159,8 @@ W4 -W7  @DIVS6464.P7
 2E9.6   LCD_E
 2E9.7   RG15
 6D2     ODCD
-744     CLKDIV
 744.0   PLLPRE0
+744     CLKDIV
 744.1   PLLPRE1
 744.2   PLLPRE2
 744.3   PLLPRE3
@@ -201,96 +204,98 @@ W4 -W7  @DIVS6464.P7
 1885    ADC_Par_rd_and_print_ch.rchr
 1886    ADC_Par_rd_and_print_ch.dg
 1888-1889 ADC_Par_rd_and_print_ch.buf1
-188C    ch_to_int.ch
-188C    ADC_read_aver.ADC_number
-188C    getrxch.rch
-188C    ADC_setCh.Ch_Number
-188C    Clr_bufs.i
-188C    ADC_sps_set.SPS
-188C    SYNC_ADC.command
-188C    ADC_set_PGA.PGA_val
-188D    ch_to_int.dg
-188D    Clr_bufs.j
-188D    ADC_setCh.ADC_number
-188D    ADC_read_aver.ADC_ch
-188E    WrReg.RegName
-188E-1891 ADC_read_aver._Ch_buf_sum
-188F    WrReg.CommandByte
-1892    ADC_read_aver.i
-1898    ADC_read.ADC_number
-189A-189D ADC_read.ADC_RByte1
-189E-18A1 ADC_read.ADC_RByte2
-18A2-18A5 ADC_read.ADC_RByte3
-18A6-18A9 ADC_read.ADC_RByte_Sum
-18AA-18AD ADC_read.Vin
-18B6    ADC_select.command
-1F80-1FFF Stack
+188A    ADC_setCh.Ch_Number
+188A    SYNC_ADC.command
+188A    ADC_set_PGA.PGA_val
+188A    Clr_bufs.i
+188A    ADC_read_aver.ADC_number
+188A    getrxch.rch
+188A    ch_to_int.ch
+188A    ADC_sps_set.SPS
+188B    ADC_setCh.ADC_number
+188B    Clr_bufs.j
+188B    ADC_read_aver.ADC_ch
+188B    ch_to_int.dg
+188C-188F ADC_read_aver._Ch_buf_sum
+188C    WrReg.RegName
+188E-188F WrReg.CommandByte
+1890    ADC_read_aver.i
+1896    ADC_read.ADC_number
+1898-189B ADC_read.ADC_RByte1
+189C-189F ADC_read.ADC_RByte2
+18A0-18A3 ADC_read.ADC_RByte3
+18A4-18A7 ADC_read.ADC_RByte_Sum
+18A8-18AB ADC_read.Vin
+18AE    ADC_select.command
+2780-27FF Stack
 
 ROM Allocation:
-000200  @const1303.call
-000216  @const1304.call
-00022A  @const1305.call
-000242  @const1306.call
-000258  @const1310.call
-000278  @const1311.call
-000290  @const1312.call
-0002A6  @const1313.call
-0002C6  @const1314.call
-0002DC  @const1315.call
-0002F2  @const1316.call
-000308  @const1317.call
-000328  @const1318.call
-00034C  timer1_irq_handler
-000374  UART2_RXd_isr
-0003B0  OscSetup
-0003CC  EnableInt
-0003DC  MCU_init
-000412  Clr_bufs
-000458  WrReg
-0004B8  ADC_sps_set
-0004CE  ADC_set_PGA
-000580  ADC_SelfCal
-0005C4  ADC_init
-000680  ADC_select
-0006AC  ADC_setCh
-000710  SYNC_ADC
-000744  @DIVS3232A
-0007C2  @MULS3232
-000804  @I64TOF64
-000868  @MULFF64
-000978  @SI64TOF64
-0009DC  @DIVFF64
-000AE4  @F64TO48
-000B28  @MULFF
-000BEC  @FTOSD
-000C2C  ADC_read
-000E02  ADC_read_aver
-000E82  @DIV3232B
-000EC6  @PRINTFD32_115200_5893_5892
-000FDA  getrxch
-00101E  ch_to_int
-0010A6  @PRINTFU16_115200_5893_5892
-001158  ADC_Par_rd_and_print_ch
-00171C  @cinit1
-00171C  MAIN
-00177C  @cinit2
+000200  @const1319.call
+000216  @const1320.call
+00022A  @const1321.call
+000242  @const1322.call
+000258  @const1326.call
+000278  @const1327.call
+00028E  @const1328.call
+0002A4  @const1329.call
+0002BA  @const1330.call
+0002DA  @const1333.call
+0002F0  @const1334.call
+000310  @const1335.call
+000334  timer1_irq_handler
+00035C  UART2_RXd_isr
+00038C  OscSetup
+0003A8  EnableInt
+0003B8  MCU_init
+0003EE  Clr_bufs
+000434  WrReg
+000494  ADC_sps_set
+0004AC  ADC_set_PGA
+00055E  ADC_SelfCal
+0005A2  ADC_init
+00065E  ADC_select
+00068A  ADC_setCh
+0006EE  SYNC_ADC
+000722  @DIVS3232A
+0007A0  @MULS3232
+0007E2  @I64TOF64
+00084C  @MULFF64
+00095C  @SI64TOF64
+0009C6  @DIVFF64
+000ACE  @F64TO48
+000B12  @MULFF
+000BD6  @FTOSD
+000C16  ADC_read
+000DEE  ADC_read_aver
+000E6E  @DIV3232B
+000EB2  @PRINTFD32_230400_5893_5892
+000FCA  getrxch
+00100E  ch_to_int
+001096  @PRINTFU16_230400_5893_5892
+00114C  ADC_Par_rd_and_print_ch
+001744  @cinit1
+001744  MAIN
+0017A4  @cinit2
 0136  StrtoulGO
 0136  StrtolGO
 
 Project Directory:
-    E:\work\Projects\PICC\my prj\PoE termo 8ch 1.1\PoE termo 8ch\
+    F:\Mega\ponkin-prjs\PICC\my prj\Termo\old\PoE termo 8ch\
 
 Project Files:
-    main.c                                                  [11-дек-15 15:51  CRC=F708339B]
-    main.h                                                  [01-июн-15 11:29  CRC=79F3E5ED]
-    C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [12-ноя-13 14:36  CRC=D01F2ECD]
-    C:\Program Files (x86)\PICC\Drivers\stdlib.h            [08-июн-11 14:39  CRC=0B6669CF]
-    C:\Program Files (x86)\PICC\Drivers\stddef.h            [16-июл-10 09:27  CRC=897CEC6C]
-    C:\Program Files (x86)\PICC\Drivers\string.h            [14-июл-11 10:13  CRC=23EDEC8F]
-    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-янв-08 13:55  CRC=2D1F019F]
+    main.c                                                  [31-май-18 13:07  CRC=CE3AD206]
+    main.h                                                  [31-май-18 13:09  CRC=7EF5E759]
+    C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h     [08-сен-15 15:17  CRC=C83E8947]
+    C:\Program Files (x86)\PICC\Drivers\stdlib.h            [07-дек-14 17:58  CRC=07F0FCBD]
+    C:\Program Files (x86)\PICC\Drivers\stddef.h            [05-сен-14 11:47  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\Drivers\string.h            [26-мар-15 12:34  CRC=C4814297]
+    C:\Program Files (x86)\PICC\Drivers\ctype.h             [03-янв-08 14:55  CRC=2D1F019F]
     ADS1256.h                                               [11-дек-15 15:51  CRC=73320FE0]
 
-Source signature=0D6FAC7E
+Source signature=7EE18FC5
+Program memory checksum=0000
+Program memory CRC=0000
+Hex file CRC=3A7B
 
 Units:
     main (main)
@@ -302,6 +307,7 @@ Compiler Settings:
     Opt Level:      9
     Short,Int,Long: SIGNED: 8,16,32
     Float,Double:   32,64
+    Compile Mode:       CCS5
 
 Output Files:
     XREF file:   main.xsym

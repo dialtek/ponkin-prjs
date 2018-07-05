@@ -1,10 +1,13 @@
-f N "a" 2 510 ""
-D G "__PCD__" 2 510 ""5.049""
-D G "__DEVICE__" 2 510 "8506"
-D G "__DATE__" 2 510 ""22-янв-18""
-D G "__TIME__" 2 510 ""14:43:23""
-D G "_UNICODE" 2 510 ""?""
-D G "__EVAL" 2 510 ""?"" "Standard Header file for the PIC24HJ128GP506A device ////////////////"
+C L "MAIN" 0 482 1 "FUNCTION"
+C L "MAIN" 0 482 1 "FUNCTION"
+C L "MAIN" 0 482 1 "FUNCTION"
+C L "MAIN" 0 482 1 "FUNCTION"
+D G "__PCD__" 0 823 ""5.049""
+D G "__DEVICE__" 0 823 "8506"
+D G "__DATE__" 0 823 ""29-май-18""
+D G "__TIME__" 0 823 ""11:30:04""
+D G "_UNICODE" 0 823 ""?""
+D G "__EVAL" 0 823 ""?"" "Standard Header file for the PIC24HJ128GP506A device ////////////////"
 c L "set_tris_b" 2 3 6 "FUNCTION"
 f N "set_tris_b" 2 47 ""
 v L "value" 2 47 "int16" `53 
@@ -648,7 +651,7 @@ v L "channel" 2 509 "int8" `315
 v L "mode" 2 509 "int16" `316 
 v L "addressa" 2 509 "int16" `317 
 v L "addressb" 2 509 "int16" `323 
-f G "dma_start" 2 509 "void(int8 channel,int16 mode,int16 addressa,int16 addressb,int8 S)" `319 
+f B "dma_start" 2 509 "void(int8 channel,int16 mode,int16 addressa,int16 addressb,int16 count)" `319 
 f N "dma_start" 2 510 ""
 v L "channel" 2 510 "int8" `320 
 v L "mode" 2 510 "int16" `321 
@@ -1043,9 +1046,9 @@ f B "i2c_init" 2 663 "void(int8 stream,int32 baud)" `573  "#use spi() Prototypes
 f N "spi_xfer" 2 666 ""
 f B "spi_xfer" 2 666 "int8()" `576 
 f N "spi_xfer" 2 667 ""
-f G "spi_xfer" 2 667 "int16()" `577 
+f B "spi_xfer" 2 667 "int16(int8 data)" `577 
 f N "spi_xfer" 2 668 ""
-f G "spi_xfer" 2 668 "int32()" `577 
+f B "spi_xfer" 2 668 "int32(int8 data)" `577 
 f N "spi_xfer" 2 669 ""
 v L "data" 2 669 "int8" `578 
 f B "spi_xfer" 2 669 "int8(int8 data)" `577 
@@ -1125,18 +1128,18 @@ f B "spi_prewrite" 2 688 "void(int8 ,int32 data)" `630
 f N "spi_xfer_in" 2 689 ""
 f B "spi_xfer_in" 2 689 "int8()" `633 
 f N "spi_xfer_in" 2 690 ""
-f G "spi_xfer_in" 2 690 "int16()" `634 
+f B "spi_xfer_in" 2 690 "int16(int8 bits)" `634 
 f N "spi_xfer_in" 2 691 ""
-f G "spi_xfer_in" 2 691 "int32()" `634 
+f B "spi_xfer_in" 2 691 "int32(int8 bits)" `634 
 f N "spi_xfer_in" 2 692 ""
 v L "bits" 2 692 "int8" `635 
 f B "spi_xfer_in" 2 692 "int8(int8 bits)" `634 
 f N "spi_xfer_in" 2 693 ""
 v L "bits" 2 693 "int8" `637 
-f G "spi_xfer_in" 2 693 "int16(int8 bits)" `636 
+f B "spi_xfer_in" 2 693 "int16(int8 bits,int8 bits)" `636 
 f N "spi_xfer_in" 2 694 ""
 v L "bits" 2 694 "int8" `637 
-f G "spi_xfer_in" 2 694 "int32(int8 bits)" `636 
+f B "spi_xfer_in" 2 694 "int32(int8 bits,int8 bits)" `636 
 f N "spi_xfer_in" 2 695 ""
 v L "stream" 2 695 "int8" `637 
 v L "bits" 2 695 "int8" `638 
@@ -1144,15 +1147,15 @@ f B "spi_xfer_in" 2 695 "int8(int8 stream,int8 bits)" `636
 f N "spi_xfer_in" 2 696 ""
 v L "stream" 2 696 "int8" `637 
 v L "bits" 2 696 "int8" `641 
-f G "spi_xfer_in" 2 696 "int16(int8 stream,int8 bits)" `639 
+f B "spi_xfer_in" 2 696 "int16(int8 stream,int8 bits,int8 task)" `639 
 f N "spi_xfer_in" 2 697 ""
 v L "stream" 2 697 "int8" `637 
 v L "bits" 2 697 "int8" `641 
-f G "spi_xfer_in" 2 697 "int32(int8 stream,int8 bits)" `639  "#use rtos() Prototypes:"
+f B "spi_xfer_in" 2 697 "int32(int8 stream,int8 bits,int8 task)" `639  "#use rtos() Prototypes:"
 f N "rtos_run" 2 700 ""
-f B "rtos_run" 2 700 "void(int8 stream,int8 bits)" `639 
+f B "rtos_run" 2 700 "void(int8 stream,int8 bits,int8 task)" `639 
 f N "rtos_yield" 2 701 ""
-f B "rtos_yield" 2 701 "void(int8 bits)" `640 
+f B "rtos_yield" 2 701 "void(int8 bits,int8 task)" `640 
 f N "rtos_enable" 2 702 ""
 v L "task" 2 702 "int8" `642 
 f B "rtos_enable" 2 702 "void(int8 task)" `641 
@@ -1188,23 +1191,23 @@ f B "rtos_stats" 2 712 "void(int8 task,*int8 stat)" `659  "#use timer() Prototyp
 f N "get_ticks" 2 715 ""
 f B "get_ticks" 2 715 "int8()" `662 
 f N "get_ticks" 2 716 ""
-f G "get_ticks" 2 716 "int16()" `663 
+f B "get_ticks" 2 716 "int16(int8 stream)" `663 
 f N "get_ticks" 2 717 ""
-f G "get_ticks" 2 717 "int32()" `663 
+f B "get_ticks" 2 717 "int32(int8 stream)" `663 
 f N "get_ticks" 2 718 ""
-f G "get_ticks" 2 718 "?()" `663 
+f B "get_ticks" 2 718 "?(int8 stream)" `663 
 f N "get_ticks" 2 719 ""
 v L "stream" 2 719 "int8" `664 
 f B "get_ticks" 2 719 "int8(int8 stream)" `663 
 f N "get_ticks" 2 720 ""
 v L "stream" 2 720 "int8" `666 
-f G "get_ticks" 2 720 "int16(int8 stream)" `665 
+f B "get_ticks" 2 720 "int16(int8 stream)" `665 
 f N "get_ticks" 2 721 ""
 v L "stream" 2 721 "int8" `666 
-f G "get_ticks" 2 721 "int32(int8 stream)" `665 
+f B "get_ticks" 2 721 "int32(int8 stream)" `665 
 f N "get_ticks" 2 722 ""
 v L "stream" 2 722 "int8" `666 
-f G "get_ticks" 2 722 "?(int8 stream)" `665 
+f B "get_ticks" 2 722 "?(int8 stream)" `665 
 f N "set_ticks" 2 723 ""
 v L "value" 2 723 "int8" `666 
 f B "set_ticks" 2 723 "void(int8 value)" `665 
@@ -1688,9 +1691,9 @@ C L "modbus_refresh" 0 10 1 "FUNCTION"
 C L "modbus_refresh" 0 10 1 "FUNCTION"
 C L "modbus_refresh" 0 10 1 "FUNCTION"
 C L "modbus_refresh" 0 10 1 "FUNCTION"
-F N "get_rx_ch" 0 195 ""
-F G "get_rx_ch" 0 195 "U8()" `995  "Get RX char"
-V L "rch" 0 197 "U8" `996 
+F N "get_rx_ch" 0 196 ""
+F G "get_rx_ch" 0 196 "U8()" `995  "Get RX char"
+V L "rch" 0 198 "U8" `996 
 C L "get_rx_ch" 0 10 1 "FUNCTION"
 C L "get_rx_ch" 0 10 1 "FUNCTION"
 C L "get_rx_ch" 0 10 1 "FUNCTION"
@@ -1698,23 +1701,23 @@ C L "get_rx_ch" 0 10 2 "FUNCTION"
 C L "get_rx_ch" 0 10 1 "FUNCTION"
 C L "get_rx_ch" 0 10 1 "FUNCTION"
 C L "get_rx_ch" 0 10 1 "FUNCTION"
-F N "modbus_CRC16" 0 221 ""
-V L "buf" 0 221 "??0 *" `998 
-V L "len" 0 221 "U8" `999 
-F G "modbus_CRC16" 0 221 "U16(??0 * buf,U8 len)" `997  "-------crc16"
-V L "crc" 0 222 "U16" `1001 
+F N "modbus_CRC16" 0 222 ""
+V L "buf" 0 222 "??0 *" `998 
+V L "len" 0 222 "U8" `999 
+F G "modbus_CRC16" 0 222 "U16(??0 * buf,U8 len)" `997  "-------crc16"
+V L "crc" 0 223 "U16" `1001 
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
-V L "pos" 0 224 "U8" `1002 
+V L "pos" 0 225 "U8" `1002 
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
-V L "i" 0 227 "U8" `1003 
+V L "i" 0 228 "U8" `1003 
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
 C L "modbus_CRC16" 0 10 1 "FUNCTION"
 C L "modbus_CRC16" 0 10 3 "FUNCTION"
-F N "modbus_wsr_answer" 0 247 ""
-F G "modbus_wsr_answer" 0 247 "void()" `1004  "????? ?? ??????? ?????? ? ???????"
+F N "modbus_wsr_answer" 0 248 ""
+F G "modbus_wsr_answer" 0 248 "void()" `1004  "????? ?? ??????? ?????? ? ???????"
 C L "modbus_wsr_answer" 0 10 1 "FUNCTION"
 C L "modbus_wsr_answer" 0 10 2 "FUNCTION"
 C L "modbus_wsr_answer" 0 10 1 "FUNCTION"
@@ -1724,27 +1727,27 @@ C L "modbus_wsr_answer" 0 10 1 "FUNCTION"
 C L "modbus_wsr_answer" 0 10 1 "FUNCTION"
 C L "modbus_wsr_answer" 0 10 1 "FUNCTION"
 C L "modbus_wsr_answer" 0 10 3 "FUNCTION"
-F N "modbus_rhr_answer" 0 274 ""
-F G "modbus_rhr_answer" 0 274 "void()" `1005  "????? ?? ??????? ?????? ?????????"
+F N "modbus_rhr_answer" 0 275 ""
+F G "modbus_rhr_answer" 0 275 "void()" `1005  "????? ?? ??????? ?????? ?????????"
 C L "modbus_rhr_answer" 0 10 2 "FUNCTION"
-V L "cnt" 0 282 "U8" `1006 
+V L "cnt" 0 283 "U8" `1006 
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
-V L "i" 0 284 "U8" `1007 
+V L "i" 0 285 "U8" `1007 
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 2 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
-V L "j" 0 298 "U8" `1008 
+V L "j" 0 299 "U8" `1008 
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 1 "FUNCTION"
 C L "modbus_rhr_answer" 0 10 3 "FUNCTION"
-F N "modbus_poll" 0 312 ""
-F G "modbus_poll" 0 312 "void()" `1009  "update modbus regs and vars, send answer to master"
+F N "modbus_poll" 0 313 ""
+F G "modbus_poll" 0 313 "void()" `1009  "update modbus regs and vars, send answer to master"
 C L "modbus_poll" 0 10 2 "FUNCTION"
 C L "modbus_poll" 0 10 1 "FUNCTION"
 C L "modbus_poll" 0 10 1 "FUNCTION"
@@ -1755,8 +1758,8 @@ C L "modbus_poll" 0 10 1 "FUNCTION"
 C L "modbus_poll" 0 10 1 "FUNCTION"
 C L "modbus_poll" 0 10 1 "FUNCTION"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
-F N "timer2_irq_handler" 0 339 ""
-F G "timer2_irq_handler" 0 339 "void()" `1010  "/ обработка команды modbus"
+F N "timer2_irq_handler" 0 340 ""
+F G "timer2_irq_handler" 0 340 "void()" `1010  "/ обработка команды modbus"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
@@ -1806,119 +1809,119 @@ C L "timer2_irq_handler" 0 10 1 "FUNCTION"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
 C L "timer2_irq_handler" 0 10 1 "FUNCTION"
 C L "Rd_Flash" 0 10 1 "FUNCTION"
-C L "Rd_Flash" 0 479 1 "*"
-F N "Rd_Flash" 0 480 ""
-F G "Rd_Flash" 0 480 "void()" `1011 
-V L "a" 0 481 "U8" `1012 
-V L "b" 0 481 "U8" `1013 
-V L "c" 0 481 "U8" `1014 
-F N "Wr_Flash" 0 500 ""
-F G "Wr_Flash" 0 500 "void()" `988 
-C L "Wr_Flash" 0 479 1 "FUNCTION"
-F N "Crc8" 0 512 ""
-V L "pcBlock" 0 512 "*int8" `1026 
-V L "len" 0 512 "int16" `1027 
-F G "Crc8" 0 513 "sint8(*int8 pcBlock,int16 len)" `1025  "Name  : CRC-8"
-C L "Crc8" 0 479 7 "FUNCTION"
-V L "crc" 0 524 "int8" `1028 
-V L "i" 0 525 "int16" `1029 
-F N "UART2_init" 0 538 ""
-F G "UART2_init" 0 538 "void()" `1030 
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-C L "UART2_init" 0 479 1 "FUNCTION"
-F N "uart_send_hex" 0 556 ""
-V L "ch" 0 556 "U8" `1032 
-F G "uart_send_hex" 0 556 "void(U8 ch)" `986 
-C L "uart_send_hex" 0 479 1 "FUNCTION"
-C L "uart_send_hex" 0 479 1 "FUNCTION"
-F N "OscSetup" 0 563 ""
-F G "OscSetup" 0 563 "void(U8 ch)" `1031  "Fcy=Fosc/2"
-C L "OscSetup" 0 479 5 "FUNCTION"
-C L "OscSetup" 0 479 1 "FUNCTION"
-C L "OscSetup" 0 479 1 "FUNCTION"
-C L "OscSetup" 0 479 1 "FUNCTION"
-C L "OscSetup" 0 479 1 "FUNCTION"
-C L "OscSetup" 0 479 1 "FUNCTION"
-F N "EnableInt" 0 587 ""
-F G "EnableInt" 0 587 "void()" `1032  "enable_interrupts(INT_RDA); // UART Int"
-C L "EnableInt" 0 479 1 "FUNCTION"
-C L "EnableInt" 0 479 2 "FUNCTION"
-F N "MCU_init" 0 601 ""
-F G "MCU_init" 0 601 "void()" `1033 
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-C L "MCU_init" 0 479 1 "FUNCTION"
-F N "Full_dev_reset" 0 626 ""
-F G "Full_dev_reset" 0 626 "void()" `1034 
-C L "Full_dev_reset" 0 479 2 "FUNCTION"
-C L "Full_dev_reset" 0 479 3 "FUNCTION"
-C L "Full_dev_reset" 0 479 1 "FUNCTION"
-C L "Full_dev_reset" 0 479 1 "FUNCTION"
-F N "ch_to_int" 0 644 ""
-V L "ch" 0 644 "U8" `1036 
-F G "ch_to_int" 0 644 "U8(U8 ch)" `1035 
-V L "dg" 0 645 "U8" `1037 
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-F N "ADC_par_rd_ch" 0 673 ""
-V L "channel" 0 673 "U8" `1039 
-F G "ADC_par_rd_ch" 0 674 "void(U8 channel)" `1038 
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-C L "ADC_par_rd_ch" 0 479 1 "FUNCTION"
-F N "save_to_flash" 0 754 ""
-F G "save_to_flash" 0 754 "void()" `1040 
-C L "save_to_flash" 0 479 1 "FUNCTION"
-F N "timer1_irq_handler" 0 764 ""
-F G "timer1_irq_handler" 0 764 "void()" `1041 
-C L "timer1_irq_handler" 0 479 1 "FUNCTION"
-C L "timer1_irq_handler" 0 479 1 "FUNCTION"
-F N "UART2_RXd_isr" 0 771 ""
-F G "UART2_RXd_isr" 0 771 "void()" `1042 
-C L "UART2_RXd_isr" 0 479 1 "FUNCTION"
-C L "MAIN" 0 479 1 "FUNCTION"
-F N "MAIN" 0 782 ""
-F G "MAIN" 0 783 "void()" `1043 
-V L "i" 0 787 "U8" `1046 
-C L "MAIN" 0 479 1 "FUNCTION"
-C L "MAIN" 0 479 2 "FUNCTION"
-C L "MAIN" 0 479 1 "FUNCTION"
-C L "MAIN" 0 479 2 "FUNCTION"
-C L "MAIN" 0 479 1 "FUNCTION"
-C L "MAIN" 0 479 1 "FUNCTION"
-C L "MAIN" 0 479 1 "FUNCTION"
+C L "Rd_Flash" 0 480 1 "*"
+F N "Rd_Flash" 0 481 ""
+F G "Rd_Flash" 0 481 "void()" `1011 
+V L "a" 0 482 "U8" `1012 
+V L "b" 0 482 "U8" `1013 
+V L "c" 0 482 "U8" `1014 
+F N "Wr_Flash" 0 501 ""
+F G "Wr_Flash" 0 501 "void()" `988 
+C L "Wr_Flash" 0 480 1 "FUNCTION"
+F N "Crc8" 0 513 ""
+V L "pcBlock" 0 513 "*int8" `1026 
+V L "len" 0 513 "int16" `1027 
+F G "Crc8" 0 514 "sint8(*int8 pcBlock,int16 len)" `1025  "Name  : CRC-8"
+C L "Crc8" 0 480 7 "FUNCTION"
+V L "crc" 0 525 "int8" `1028 
+V L "i" 0 526 "int16" `1029 
+F N "UART2_init" 0 539 ""
+F G "UART2_init" 0 539 "void()" `1030 
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+C L "UART2_init" 0 480 1 "FUNCTION"
+F N "uart_send_hex" 0 557 ""
+V L "ch" 0 557 "U8" `1032 
+F G "uart_send_hex" 0 557 "void(U8 ch)" `986 
+C L "uart_send_hex" 0 480 1 "FUNCTION"
+C L "uart_send_hex" 0 480 1 "FUNCTION"
+F N "OscSetup" 0 564 ""
+F G "OscSetup" 0 564 "void(U8 ch)" `1031  "Fcy=Fosc/2"
+C L "OscSetup" 0 480 5 "FUNCTION"
+C L "OscSetup" 0 480 1 "FUNCTION"
+C L "OscSetup" 0 480 1 "FUNCTION"
+C L "OscSetup" 0 480 1 "FUNCTION"
+C L "OscSetup" 0 480 1 "FUNCTION"
+C L "OscSetup" 0 480 1 "FUNCTION"
+F N "EnableInt" 0 588 ""
+F G "EnableInt" 0 588 "void()" `1032  "enable_interrupts(INT_RDA); // UART Int"
+C L "EnableInt" 0 480 1 "FUNCTION"
+C L "EnableInt" 0 480 2 "FUNCTION"
+F N "MCU_init" 0 602 ""
+F G "MCU_init" 0 602 "void()" `1033 
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+C L "MCU_init" 0 480 1 "FUNCTION"
+F N "Full_dev_reset" 0 627 ""
+F G "Full_dev_reset" 0 627 "void()" `1034 
+C L "Full_dev_reset" 0 480 2 "FUNCTION"
+C L "Full_dev_reset" 0 480 3 "FUNCTION"
+C L "Full_dev_reset" 0 480 1 "FUNCTION"
+C L "Full_dev_reset" 0 480 1 "FUNCTION"
+F N "ch_to_int" 0 645 ""
+V L "ch" 0 645 "U8" `1036 
+F G "ch_to_int" 0 645 "U8(U8 ch)" `1035 
+V L "dg" 0 646 "U8" `1037 
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+F N "ADC_par_rd_ch" 0 674 ""
+V L "channel" 0 674 "U8" `1039 
+F G "ADC_par_rd_ch" 0 675 "void(U8 channel)" `1038 
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+C L "ADC_par_rd_ch" 0 480 1 "FUNCTION"
+F N "save_to_flash" 0 755 ""
+F G "save_to_flash" 0 755 "void()" `1040 
+C L "save_to_flash" 0 480 1 "FUNCTION"
+F N "timer1_irq_handler" 0 765 ""
+F G "timer1_irq_handler" 0 765 "void()" `1041 
+C L "timer1_irq_handler" 0 480 1 "FUNCTION"
+C L "timer1_irq_handler" 0 480 1 "FUNCTION"
+F N "UART2_RXd_isr" 0 772 ""
+F G "UART2_RXd_isr" 0 772 "void()" `1042 
+C L "UART2_RXd_isr" 0 480 1 "FUNCTION"
+C L "MAIN" 0 480 1 "FUNCTION"
+F N "MAIN" 0 783 ""
+F G "MAIN" 0 784 "void()" `1043 
+V L "i" 0 788 "U8" `1046 
+C L "MAIN" 0 480 1 "FUNCTION"
+C L "MAIN" 0 480 2 "FUNCTION"
+C L "MAIN" 0 480 1 "FUNCTION"
+C L "MAIN" 0 480 2 "FUNCTION"
+C L "MAIN" 0 480 1 "FUNCTION"
+C L "MAIN" 0 480 1 "FUNCTION"
+C L "MAIN" 0 480 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

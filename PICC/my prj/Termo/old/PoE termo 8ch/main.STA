@@ -1,94 +1,94 @@
 
-ROM used:   6146/88064 (7%)
-            6146/88064 (7%) including unused fragments
+ROM used:   6186/88064 (7%)
+            6186/88064 (7%) including unused fragments
 
             1.6 Average locations per line
             5.8 Average locations per statement
 
 RAM used:   4358/8192 (53%) at main() level
-            4452/8192 (54%) worst case
+            4418/8192 (54%) worst case
 
+Stack used: 78 worst case (40 in main + 38 for interrupts)
 Stack size: 128
 
 Lines Stmts  %   Files
 ----- ----- ---  -----
-  709   274  26  main.c
-  176     0   0  main.h
-  838     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
+  719   284  26  main.c
+  179     0   0  main.h
+  863     0   0  C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h
  1351   524  49  C:\Program Files (x86)\PICC\Drivers\stdlib.h
    32     0   0  C:\Program Files (x86)\PICC\Drivers\stddef.h
-  423   125  12  C:\Program Files (x86)\PICC\Drivers\string.h
+  435   129  12  C:\Program Files (x86)\PICC\Drivers\string.h
    28     0   0  C:\Program Files (x86)\PICC\Drivers\ctype.h
   320   136  13  ADS1256.h
 ----- -----
- 3877  1059 Total
+ 3927  1073 Total
 
-Page ROM  %  RAM   Vol Diff  Functions:
----- --- --- ---   --- ----  ----------
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
 0     68   1    8             @DIV3232B
 0    126   1    8             @DIVS3232A
 0     66   1    8             @MULS3232
 0    196   2    8             @MULFF
 0    272   2    0             @MULFF64
-0    100   1    0             @SI64TOF64
+0    106   1    0             @SI64TOF64
 0    264   2    8             @DIVFF64
-0     96   1    5   290  2.8  WrReg
-0     22   0    1    72  2.0  ADC_sps_set
-0    178   1    1   685  4.3  ADC_set_PGA
-0     68   1    4   165  2.7  ADC_SelfCal
-0    188   2    0   647  5.2  ADC_init
-0     52   0    1   275  3.7  SYNC_ADC
-0     44   0    1   226  3.6  ADC_select
-0    100   1    4   235  2.8  ADC_setCh
-0    470   4   14   791  6.2  ADC_read
-0    100   1    0             @I64TOF64
+0     96   1    6    290  2.8  WrReg
+0     24   0    1     72  2.0  ADC_sps_set
+0    178   1    1    685  4.3  ADC_set_PGA
+0     68   1    4    165  2.7  ADC_SelfCal
+0    188   2    0    647  5.2  ADC_init
+0     52   0    1    275  3.7  SYNC_ADC
+0     44   0    1    226  3.6  ADC_select
+0    100   1    4    235  2.8  ADC_setCh
+0    472   4   34    791  6.2  ADC_read
+0    106   1    0             @I64TOF64
 0     68   1    0             @F64TO48
 0     64   1    4             @FTOSD
-0    128   1    9   320  5.6  ADC_read_aver
-0     28   0    0   197  1.8  OscSetup
-0     16   0    0    86  1.3  EnableInt
-0     54   0    0   461  2.4  MCU_init
-0     70   1    3   185  3.6  Clr_bufs
-0    136   1    2   650  5.2  ch_to_int
-0     68   1    4   324  6.5  getrxch
-0   1476  12    7  5464 11.9  ADC_Par_rd_and_print_ch
-0    276   2    0             @PRINTFD32_115200_5893_5892
-0     22   0    0             @const1303
-0     20   0    0             @const1304
-0     24   0    0             @const1305
-0     22   0    0             @const1306
-0    178   1    0             @PRINTFU16_115200_5893_5892
-0     32   0    0             @const1310
-0     24   0    0             @const1311
-0     22   0    0             @const1312
-0     32   0    0             @const1313
-0     22   0    0             @const1314
-0     22   0    0             @const1315
-0     22   0    0             @const1316
-0     32   0    0             @const1317
-0     36   0    0             @const1318
-0     40   0    0    48  1.1  timer1_irq_handler
-0     60   0    5    98  3.3  UART2_RXd_isr
-0    230   2    5   467  4.3  MAIN
+0    128   1   10    320  5.6  ADC_read_aver
+0     28   0    0    197  1.8  OscSetup
+0     16   0    0     86  1.3  EnableInt
+0     54   0    0    461  2.4  MCU_init
+0     70   1    5    185  3.6  Clr_bufs
+0    136   1    2    650  5.2  ch_to_int
+0     68   1    4    324  6.5  getrxch
+0   1528  12   10   5970 11.9  ADC_Par_rd_and_print_ch
+0    280   2    0             @PRINTFD32_230400_5893_5892
+0     22   0    0             @const1319
+0     20   0    0             @const1320
+0     24   0    0             @const1321
+0     22   0    0             @const1322
+0    182   1    0             @PRINTFU16_230400_5893_5892
+0     32   0    0             @const1326
+0     22   0    0             @const1327
+0     22   0    0             @const1328
+0     22   0    0             @const1329
+0     32   0    0             @const1330
+0     22   0    0             @const1333
+0     32   0    0             @const1334
+0     36   0    0             @const1335
+0     40   0    0     48  1.1  timer1_irq_handler
+0     48   0    5     68  2.7  UART2_RXd_isr
+0    230   2    5    467  4.3  MAIN
  Inline         0             @cinit1
 
 Program metrics:
     Functions               20
-    Statements              1059
-    Comments                1460
-    Volume (V)              18161
-    Difficulty (D)          79.5
-    Effort to implement (E) 1443168
-    Time to implement (T)   22 hours, 16 minutes
+    Statements              1073
+    Comments                1464
+    Volume (V)              18675
+    Difficulty (D)          79.3
+    Effort to implement (E) 1480069
+    Time to implement (T)   22 hours, 50 minutes
     Est Delivered Bugs (B)  4
-    Cyclomatic Complexity   72
-    Maintainability (MI)    101
+    Cyclomatic Complexity   75
+    Maintainability (MI)    102
 
  Segment     Used  Free
 -----------  ----  ----
 00000-00002     4  0  
 00004-001FE   508  0  
-00200-0FFFE  5634  59390  
+00200-0FFFE  5674  59350  
 10000-14FFE     0  20480  
 15000-157FE     0  2048  
 

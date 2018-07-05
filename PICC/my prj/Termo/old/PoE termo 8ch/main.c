@@ -1,9 +1,9 @@
 #include <main.h>
 #INCLUDE <stdlib.h>
-#use rs232(UART2,xmit=PIN_F5,rcv=PIN_F4,baud=115200,BRGH1OK,ERRORS,parity=N,bits=8)
+#use rs232(UART2,xmit=PIN_F5,rcv=PIN_F4,baud=230400,BRGH1OK,ERRORS,parity=N,bits=8)
  
     // коды каналов мультиплексора..
-    U8 Mx_ch_code[9] = {0, 0x76, 0x54, 0x32, 0x10};//0x10 76
+    U8 Mx_ch_code[9] = {0, 0x76, 0x54, 0x32, 0x10};
 
     U8 PGA;
     U8 PGA_val = 3; // PGA = 8
@@ -113,11 +113,12 @@ static void UART2_init(){
 static void OscSetup(){
   //Fcy=Fosc/2
   //Fin=10M
-  //Fosc=Fin(M/(N1*N2))
-  
+  //Fosc=Fin(M/(N1*N2)) = 40M
+  // 
   //U2BRG = 259;// BAUD Rate Setting for 9600
   //U2MODE = 0b1010101010000000; // brgh = 0
-  U2BRG = 21;// BAUD Rate Setting for 115200
+  //U2BRG = 21;// BAUD Rate Setting for 115200
+  U2BRG = 10;  // BAUD Rate Setting for 230400
   U2MODE = 0b1010101010000000; // brgh = 0
   
   PLLFBD = 30; // ???. ????. ??????? PLL M = 30
@@ -432,7 +433,7 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
  ADC_setCh(1,2);
 
  SYNC_ADC(1);  // синхр. измерений АЦП 1
- delay_ms(1);  
+ delay_us(200);  
  SYNC_ADC(2);  // синхр. измерений АЦП 2
  
  While(ADC_DRDY) { } // ждем готовности АЦП 1
@@ -450,7 +451,7 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
  ADC_setCh(2,2);
  
  SYNC_ADC(1);   // синхр. измерений АЦП 1
- delay_ms(1);  
+ delay_us(200);  
  SYNC_ADC(2);    // синхр. измерений АЦП 2
  
  While(ADC_DRDY) { } // ждем готовности АЦП 1
@@ -468,7 +469,7 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
  ADC_setCh(3,2);
  
  SYNC_ADC(1);   // синхр. измерений АЦП 1
- delay_ms(1);  
+ delay_us(200);  
  SYNC_ADC(2);   // синхр. измерений АЦП 2
  
  While(ADC_DRDY) { } // ждем готовности АЦП 1
@@ -486,7 +487,7 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
  ADC_setCh(4,2);
  
  SYNC_ADC(1);   // синхр. измерений АЦП 1
- delay_ms(1);  
+ delay_us(200);  
  SYNC_ADC(2);    // синхр. измерений АЦП 2
  
  While(ADC_DRDY) { } // ждем готовности АЦП 1
@@ -531,7 +532,7 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
                if(!stop_fl) state=0;           
                break;
                //----------
-               case 'b': state = 3; // aver_buf_size
+               case 'b': state = 5; // aver_buf_size
                if(!stop_fl) state=0;           
                break;
 
@@ -564,20 +565,38 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
             dg = ch_to_int(rchr);
             if(dg == -1){ 
               state=0;
-              printf("SPS err \r\n"); 
+              printf("err p1 \r\n"); 
               break;
                   }
-                  
-              tmp = (U16)dg;
-                  
-            if(tmp>=0 && tmp<=7){
+          // 1 цифра   
+          tmp=0;
+          tmp+=(U16)dg*10;
+          state=3;
+          // ПОЧЕМУ НАДО СЛАТЬ 3 СИМВОЛА?
+         break;
+         
+         case 3: 
+         // уст. SPS
+            dg = ch_to_int(rchr);
+            if(dg == -1){ 
+              state=0;
+              printf("err p2 \r\n"); 
+              break;
+                  }
+          // 2 цифра        
+          tmp+=(U16)dg; 
+          state=4;
+         break;
+         
+         case 4: 
+            if(tmp>=0 && tmp<=12){
                ADC_sps_var = tmp;
                printf("SPS=%u \r\n",ADC_sps_var);
                } else printf("SPS out of range\r\n");
                   state=0;     
          break;
          
-         case 3: 
+         case 5: 
          // уст. размера буфера усреднения
             dg = ch_to_int(rchr);
             if(dg == -1){ 
@@ -588,11 +607,11 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
           // 1 цифра   
           tmp=0;
           tmp+=(U16)dg*100;
-          state=4;
+          state=6;
           
          break;
          
-         case 4: 
+         case 6: 
          // уст. размера буфера усреднения
             dg = ch_to_int(rchr);
             if(dg == -1){ 
@@ -602,11 +621,11 @@ static void ADC_Par_rd_and_print_ch(U8 channel)
                   }
           // 2 цифра        
           tmp+=(U16)dg*10;
-          state=5;
+          state=7;
           
          break;
          
-         case 5: 
+         case 7: 
          // уст. размера буфера усреднения
             dg = ch_to_int(rchr);
             if(dg == -1){ 
@@ -651,18 +670,9 @@ clear_interrupt(int_timer1);
 #INT_RDA2
 void UART2_RXd_isr(void){
 
-//while(U2STA & 0x0001)
-//{ //if(U2STA & 2) { U2STA = 0x0000; }
-   //printf("%X", 0x00FF & U2RXREG);
-//  U2TXREG = 0x00FF & U2RXREG; 
-//}
-
-while(U2STA & 0x0001)
-{ // Receive buffer has data, at least one more character can be read
    wrptr++;
    RxData[wrptr & 0x0F] = (U8)(U2RXREG);
-  
-}
+
 }
 
 /*############################################################################*/

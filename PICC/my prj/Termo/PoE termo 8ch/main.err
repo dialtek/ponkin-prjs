@@ -1,13 +1,101 @@
->>> Warning 238 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\main.h" Line 156(2,5): Duplicate #locate
->>> Warning 229 "main.c" Line 488(1,1): Subscript out of range
->>> Warning 229 "main.c" Line 504(1,1): Subscript out of range
->>> Warning 229 "main.c" Line 505(1,1): Subscript out of range
->>> Warning 216 "main.c" Line 815(1,2): Interrupts disabled during call to prevent re-entrancy:  (modbus_CRC16)
->>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(7,11): Variable never used:   CRC1
->>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(17,21): Variable never used:   CRC2
->>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 23(28,38): Variable never used:   EE_CRC_buf
->>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 37(7,12): Variable never used:   state
->>> Warning 202 "F:\Mega\ponkin-prjs\PICC\my prj\Termo\PoE termo 8ch\ADS1256.h" Line 38(8,11): Variable never used:   tmp
-      Memory usage:   ROM=7%      RAM=60% - 61%
-      0 Errors,  10 Warnings.
-Build Successful.
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(1,2): Illegal C character in input file  0x80
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(1,2): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(1,2): Illegal C character in input file  0x01
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0xFF
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0xFF
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0xFF
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x06
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(2,3): Illegal C character in input file  0x00
+*** Error 32 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(1,2): Expecting a , or )
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(7,8): Illegal C character in input file  0x94
+*** Error 43 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(7,8): Expecting a declaration
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(9,10): Illegal C character in input file  0xE0
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(9,10): Illegal C character in input file  0xE1
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(9,10): Illegal C character in input file  0x89
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(9,10): Illegal C character in input file  0x0B
+*** Error 7 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Invalid Pre-Processor directive
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x1E
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0xE5
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x40
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00
+*** Error 1 "C:\Program Files (x86)\PICC\Devices\24HJ128GP506A.h" Line 510(13,14): Illegal C character in input file  0x00

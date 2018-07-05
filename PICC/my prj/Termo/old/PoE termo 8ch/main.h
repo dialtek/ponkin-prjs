@@ -10,7 +10,7 @@
 #FUSES HS                        //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD)
 #FUSES NOPROTECT                 //Code not protected from reading
 #FUSES NOWRT                     //Program memory not write protected
-#use delay(clock=80M)
+#use delay(clock=40M)
 
 #WORD PLLFBD=0x0746 // osc PLL div reg
 
@@ -44,7 +44,6 @@
 #define FSCO 0x08
 #define FSC1 0x09
 #define FSC2 0x0A
-
 #define uV 10000000  // для калибровки 
 //#define uV 100000 // по умолчанию
 #define mV 1000
@@ -148,14 +147,18 @@
 #BIT  ADC_DRDY = PORTD.1
 #BIT  ADC2_DRDY= PORTD.9
 
-#byte U2TXREG = 0x0234 
-#byte U2RXREG = 0x0236 // регистр принимаемых Uart2 данных  
+#WORD U2TXREG = 0x0234 
+#WORD U2RXREG = 0x0236 // регистр принимаемых Uart2 данных  
 #Word U2STA = 0x0232
 #WORD U2BRG=0x0238
 #WORD U2MODE=0x0230
+#WORD U2STA=0x0232
+#BIT  U2_TRMT  = U2STA.8   // Transmit Shift Register is Empty bit (read-only)
+#BIT  U2_UTXBF = U2STA.9   // Transmit Buffer Full Status bit (read-only)
+#BIT  U2_UTXEN = U2STA.10  // Transmit Enable bit
 
 #define FCY      40000000
-#define BAUDRATE 9600                
+#define BAUDRATE 230400                
 #define BRGVAL   ((FCY/BAUDRATE)/16)-1
 
 #define CK_FLASH_END       (getenv("PROGRAM_MEMORY")-1)      
