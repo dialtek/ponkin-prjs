@@ -184,7 +184,7 @@ namespace Insitek_src
             SrcRdData = Insitek.GetData(Convert.ToByte(mCurrentSrcId), SrcIpAndPort);
 
             OnSrcRdComplete(this, new EventArgs()); // обновляем событие получения данных
-
+           
             Start(); // включаем таймер для нового измерения
         }
     }

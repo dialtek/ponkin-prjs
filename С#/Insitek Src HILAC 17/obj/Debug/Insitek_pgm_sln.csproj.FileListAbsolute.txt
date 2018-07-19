@@ -48,3 +48,13 @@ E:\work\Projects\ponkin\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Form1.res
 E:\work\Projects\ponkin\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Form2_config.resources
 E:\work\Projects\ponkin\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Properties.Resources.resources
 E:\work\Projects\ponkin\С#\Insitek Src HILAC 17\obj\Debug\Insitek_pgm_sln.csproj.GenerateResource.Cache
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\bin\Debug\701C_src_PGM.exe.config
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\701C_src_PGM.exe
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\701C_src_PGM.pdb
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\bin\Debug\701C_src_PGM.exe
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\bin\Debug\701C_src_PGM.pdb
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\Insitek_pgm_sln.csprojResolveAssemblyReference.cache
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Form1.resources
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Form2_config.resources
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\Insitek_src.Properties.Resources.resources
+E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Debug\Insitek_pgm_sln.csproj.GenerateResource.Cache

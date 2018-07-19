@@ -126,7 +126,7 @@ namespace Insitek_src
 
             Src[0] = new AsyncRdTimer();
 
-            Src[0].Interval = 200;
+            Src[0].Interval = 1000;
             Src[0].IpAdress = "172.16.21.125";//"172.16.21.70";    //IPadrList[NumberOfSources];
             Src[0].Port = 4001;                     //Convert.ToInt32(PortList[NumberOfSources]);
             Src[0].ID = 30;                         //NumberOfSources;

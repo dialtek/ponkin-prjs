@@ -31,11 +31,11 @@ namespace Insitek_src
                 ///
 
                 server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                server.ReceiveTimeout = 300;
+                server.ReceiveTimeout = 500;
                 try
                 {
                     IAsyncResult result = server.BeginConnect(IpAndPort, null, null);
-                    bool success = result.AsyncWaitHandle.WaitOne(300, true);
+                    bool success = result.AsyncWaitHandle.WaitOne(500, true);
 
                     if (!success)
                     {
@@ -55,10 +55,10 @@ namespace Insitek_src
                     if (server.Connected)
                     {
                         ns = new NetworkStream(server);
-                        ns.ReadTimeout = 300;
+                        ns.ReadTimeout = 500;
 
                         sr = new StreamReader(ns,System.Text.Encoding.ASCII,true);
-                        sr.BaseStream.ReadTimeout = 300;
+                        sr.BaseStream.ReadTimeout = 500;
                         SrcCmd = new SourceCommand();
                         return true;
                     }
@@ -109,10 +109,12 @@ namespace Insitek_src
 
             if (Connect2server(IpAndPort))
                 {   // читаем ток и напряжение источника
-                    Data[0] = SrcCmd.GetCurrent(SRC_ID, ns);
+                SrcCmd.GetCurrent(SRC_ID, ns);
+                SrcCmd.GetCurrent(SRC_ID, ns);
+
+                Data[0] = SrcCmd.GetCurrent(SRC_ID, ns);
                     Data[1] = SrcCmd.GetVoltage(SRC_ID, ns);
                     Data[2] = SrcCmd.GetStatus(SRC_ID, ns);
-
                 }
                 DisconnectServer();
 

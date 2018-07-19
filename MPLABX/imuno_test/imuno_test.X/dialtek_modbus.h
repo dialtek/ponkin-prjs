@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 2.1                */
 
 /* ЗАГОЛОВКИ, ПЕРЕМЕННЫЕ И СЛУЖЕБНЫЕ ФУНКЦИИ */
 
@@ -163,7 +163,7 @@ return rch;
     /// ответ на команды записи в регистр
     
     // расчет CRC
-    crc_buf[0] = (unsigned char) ID_flag == 0 ? dev_id : com_dev_id;
+    crc_buf[0] = (unsigned char) dev_id;
     crc_buf[1] = (unsigned char) MODBUS_WSR_CMD;
     crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8);
     crc_buf[3] = (unsigned char)(modbus_reg_addr & 0x00ff);
@@ -174,7 +174,7 @@ return rch;
     //--------------------------------------------------------------------
     // отправка пакета мастеру
     TX_EN;
-    uart_send_hex((unsigned char)ID_flag == 0 ? dev_id : com_dev_id); // ID устройства
+    uart_send_hex((unsigned char)dev_id); // ID устройства
     uart_send_hex((unsigned char)MODBUS_WSR_CMD);                     // код команды
     uart_send_hex((unsigned char)(modbus_reg_addr >> 8));             // ст. байт адреса регистра
     uart_send_hex((unsigned char)(modbus_reg_addr & 0x00ff));         // мл. байт адреса регистра
@@ -194,7 +194,7 @@ return rch;
     
   	  addr_buf_2 = addr_buf_1;             // сохр. адрес без смещения в двух переменных	  
           // расчет CRC
-          crc_buf[0] = ID_flag == 0 ? dev_id : com_dev_id;
+          crc_buf[0] = dev_id;
           crc_buf[1] = MODBUS_RHR_CMD;
           crc_buf[2] = regs2read*2;
           
@@ -211,7 +211,7 @@ return rch;
           //--------------------------------------------------------------------
           // отправка пакета мастеру 
 	  TX_EN;
-          uart_send_hex((unsigned char)ID_flag == 0 ? dev_id : com_dev_id);   // ID устройства
+          uart_send_hex((unsigned char)dev_id);   // ID устройства
           uart_send_hex((unsigned char)MODBUS_RHR_CMD);                       // код команды
           uart_send_hex((unsigned char)regs2read*2);                          // кол-во передаваемых байт 
 
@@ -236,7 +236,7 @@ return rch;
     
   	  addr_buf_2 = addr_buf_1;             // сохр. адрес без смещения в двух переменных	  
           // расчет CRC
-          crc_buf[0] = ID_flag == 0 ? dev_id : com_dev_id;
+          crc_buf[0] = dev_id;
           crc_buf[1] = MODBUS_RIR_CMD;
           crc_buf[2] = regs2read*2;
           
@@ -253,7 +253,7 @@ return rch;
           //--------------------------------------------------------------------
           // отправка пакета мастеру 
 	  TX_EN;
-          uart_send_hex((unsigned char)ID_flag == 0 ? dev_id : com_dev_id);   // ID устройства
+          uart_send_hex((unsigned char) dev_id);   // ID устройства
           uart_send_hex((unsigned char)MODBUS_RIR_CMD);                       // код команды
           uart_send_hex((unsigned char)regs2read*2);                          // кол-во передаваемых байт 
 
@@ -293,7 +293,7 @@ return rch;
   void modbus_rx_CRC_check(unsigned char modbus_cmd) {
   /// заполнение массива CRC для рассчета и сравнения с прочитанным  
    // эл. 1,4,5 заполнены в rx_sm	
-   crc_buf[0] = ID_flag == 0 ? dev_id : com_dev_id;
+   crc_buf[0] = dev_id;
    crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8);
    crc_buf[3] = (unsigned char)(modbus_reg_addr & 0x00ff);
    CRC16 = modbus_CRC16(crc_buf,6); 
@@ -305,7 +305,7 @@ return rch;
    else 
    {
      rd_state = DETECT_DEV_ID;
-     modbus_exc_rsp(EXC_CRC_ERR);
+     //modbus_exc_rsp(EXC_CRC_ERR);
    }
    
    get_crc_flag = 0;              // сброс флага расчета CRC16 
@@ -329,12 +329,12 @@ return rch;
                rd_state = GET_CMD_HEADER; // переход в состояние ожидания заголовка команды
                ID_flag = 0;               // уст. режима осн. ID
            }
-           if(rx_byte == com_dev_id)      // или широковещательному ID
-           {
-                                          // получена команда обращения по текущему id устройтсва
-               rd_state = GET_CMD_HEADER; // переход в состояние ожидания заголовка команды
-               ID_flag = 1;               // уст. режима широковещательного ID
-           }
+//           if(rx_byte == com_dev_id)      // или широковещательному ID
+//           {
+//                                          // получена команда обращения по текущему id устройтсва
+//               rd_state = GET_CMD_HEADER; // переход в состояние ожидания заголовка команды
+//               ID_flag = 1;               // уст. режима широковещательного ID
+//           }
           break;
        //=====                          
          case GET_CMD_HEADER:             // анализ команды modbus
@@ -367,7 +367,7 @@ return rch;
              //---- 
              // возврат в сост. анализ id устройства в случае ошибки  
              default: 
-		  modbus_exc_rsp(EXC_ILLEG_FUNC);    
+		  //modbus_exc_rsp(EXC_ILLEG_FUNC);    
 		  rd_state = DETECT_DEV_ID;	     
            }
 
@@ -414,7 +414,7 @@ return rch;
                else 
 	       {
 		 rd_state = DETECT_DEV_ID; 
-		 modbus_exc_rsp(EXC_REG_QTY);        
+		 //modbus_exc_rsp(EXC_REG_QTY);        
 	       }
                reg_qty_flag = 0;                // сброс флага чтения кол-ва регистров       
                break;

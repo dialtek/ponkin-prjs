@@ -309,13 +309,13 @@ namespace Insitek_src
             {
                 ns.Write(SourceCmd, 0, 8); // отсылка команды в источник  
 
-                while (!ns.DataAvailable)
-                {
-                    // искусственный таймаут чтения...
-                    if (count >= 4) { break; }
-                    count++;
-                    Thread.Sleep(1);
-                }
+                //while (!ns.DataAvailable)
+                //{
+                //    // искусственный таймаут чтения...
+                //    if (count >= 1000) { break; }
+                //    count++;
+                    Thread.Sleep(50);
+                //}
 
             }
             catch (Exception)
@@ -388,13 +388,13 @@ namespace Insitek_src
             {
                 ns.Write(SourceCmd, 0, 8); // отсылка команды в источник  
 
-                while (!ns.DataAvailable)
-                {
-                    // искусственный таймаут чтения...
-                    if (count >= 4) { break; }
-                    count++;
-                    Thread.Sleep(1);
-                }
+                //while (!ns.DataAvailable)
+                //{
+                //     искусственный таймаут чтения...
+                //    if (count >= 1000) { break; }
+                //    count++;
+                    Thread.Sleep(100);
+                //}
 
             }
             catch (Exception)
@@ -462,13 +462,13 @@ namespace Insitek_src
             {
                 ns.Write(SourceCmd, 0, 8); // отсылка команды в источник  
 
-                while (!ns.DataAvailable)
-                {
-                    // искусственный таймаут чтения...
-                    if (count >= 4) { break; }
-                    count++;
-                    Thread.Sleep(1);
-                }
+                //while (!ns.DataAvailable)
+                //{
+                //    искусственный таймаут чтения...
+                //    if (count >= 1000) { break; }
+                //    count++;
+                    Thread.Sleep(50);
+                //}
 
             }
             catch (Exception)
