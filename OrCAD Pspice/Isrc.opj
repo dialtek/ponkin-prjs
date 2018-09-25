@@ -4,19 +4,24 @@
   (Folder "Design Resources"
     (Folder "Library"
       (File "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\analog.olb"
-        (DisplayName "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\analog.olb")
+        (DisplayName
+           "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\analog.olb")
         (Type "Schematic Library"))
       (File "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\breakout.olb"
-        (DisplayName "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\breakout.olb")
+        (DisplayName
+           "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\breakout.olb")
         (Type "Schematic Library"))
       (File "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\source.olb"
-        (DisplayName "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\source.olb")
+        (DisplayName
+           "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\source.olb")
         (Type "Schematic Library"))
       (File "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\sourcstm.olb"
-        (DisplayName "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\sourcstm.olb")
+        (DisplayName
+           "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\sourcstm.olb")
         (Type "Schematic Library"))
       (File "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\special.olb"
-        (DisplayName "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\special.olb")
+        (DisplayName
+           "C:\OrCAD\OrCAD_10.5\tools\capture\library\pspice\special.olb")
         (Type "Schematic Library")))
     (NoModify)
     (File "isrc.dsn"
@@ -28,8 +33,11 @@
     (ANNOTATE_Action "1")
     (ANNOTATE_Reset_References_to_1 "FALSE")
     (ANNOTATE_No_Page_Number_Change "TRUE")
-    (ANNOTATE_Property_Combine "{Value}{Source Package}"))
-  (Folder "Outputs")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE"))
+  (Folder "Outputs"
+    (File ".\isrc-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
   (Folder "PSpice Resources"
     (Folder "Model Libraries")
     (Folder "Stimulus Files")
@@ -42,6 +50,16 @@
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
+    (OPAMP
+      (FullPartName "OPAMP.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\ANALOG.OLB")
@@ -63,4 +81,29 @@
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
   (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
-  (MPSSessionName "aapte")
+  (MPSSessionName "D_LHEP_DESKTOP")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "F:\Mega\ponkin-prjs\OrCAD Pspice\isrc.dsn")
+      (Path "Design Resources" "F:\Mega\ponkin-prjs\OrCAD Pspice\isrc.dsn"
+         "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources" "F:\Mega\ponkin-prjs\OrCAD Pspice\isrc.dsn"
+         "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 452"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 52 1869 0 699")
+        (Scroll "-50 502")
+        (Zoom "172")
+        (Occurrence "/"))
+      (Path "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\ISRC.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

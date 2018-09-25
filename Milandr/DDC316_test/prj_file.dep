@@ -6,155 +6,65 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</file>
-      <file>$PROJ_DIR$\inc\system_MDR32F9Qx.h</file>
-      <file>$PROJ_DIR$\inc\core_cm3.h</file>
-      <file>$PROJ_DIR$\CMSIS\core_cm3.c</file>
-      <file>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</file>
-      <file>$PROJ_DIR$\inc\dialtek_modbus.h</file>
-      <file>$PROJ_DIR$\inc\mdr_delay.h</file>
-      <file>$PROJ_DIR$\main.c</file>
-      <file>$PROJ_DIR$\inc\MDR32Fx.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\dialtek_modbus.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\prj_file.pbd</file>
-      <file>$TOOLKIT_DIR$\config\linker\Milandr\MDR1986VE9x\MDR32F1.icf</file>
-      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\dialtek_modbus.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.__cstat.et</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
       <file>$PROJ_DIR$\inc\dialtek_modbus.c</file>
       <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\core_cm3.o</file>
-      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
-      <file>$PROJ_DIR$\Debug\Obj\startup_MDR32F9Qx.o</file>
-      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
       <file>$TOOLKIT_DIR$\inc\c\xencoding_limits.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\core_cm3.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\inc\c\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
       <file>$PROJ_DIR$\Debug\Obj\core_cm3.__cstat.et</file>
       <file>$TOOLKIT_DIR$\lib\m7M_tl.a</file>
-      <file>$PROJ_DIR$\Debug\Obj\core_cm3.pbi</file>
-      <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+      <file>$PROJ_DIR$\Debug\Obj\startup_MDR32F9Qx.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\core_cm3.o</file>
+      <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\dialtek_modbus.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
       <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.o</file>
       <file>$PROJ_DIR$\Debug\Exe\prj_file.out</file>
       <file>$PROJ_DIR$\Debug\Exe\prj_file.hex</file>
+      <file>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</file>
+      <file>$PROJ_DIR$\inc\system_MDR32F9Qx.h</file>
+      <file>$PROJ_DIR$\inc\MDR32Fx.h</file>
+      <file>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</file>
+      <file>$TOOLKIT_DIR$\config\linker\Milandr\MDR1986VE9x\MDR32F1.icf</file>
+      <file>$PROJ_DIR$\Debug\Obj\prj_file.pbd</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\dialtek_modbus.o</file>
+      <file>$PROJ_DIR$\Debug\Obj\system_MDR32F9Qx.o</file>
+      <file>$PROJ_DIR$\inc\dialtek_modbus.h</file>
+      <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
+      <file>$PROJ_DIR$\inc\core_cm3.h</file>
+      <file>$PROJ_DIR$\inc\mdr_delay.h</file>
+      <file>$PROJ_DIR$\CMSIS\core_cm3.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
       <outputs>
         <tool>
           <name>ILINK</name>
-          <file> 37</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</name>
-      <outputs>
-        <tool>
-          <name>AARM</name>
-          <file> 28</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CMSIS\core_cm3.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 34</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
           <file> 23</file>
         </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 32</file>
-        </tool>
       </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 31 36 24 15 18 13 30 26</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 13 36 24 15 30 26 31 18</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 29</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 12</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 17</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 15 36 18 2 13 1 25 31 24 8 30 26</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 8 2 13 36 24 15 30 26 31 18 25 1</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 14</file>
-        </tool>
-        <tool>
-          <name>__cstat</name>
-          <file> 27</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 25 5 1 13 6 2 24 36 18 8 15 31 30 26 20</file>
-        </tool>
-        <tool>
-          <name>ICCARM</name>
-          <file> 8 2 13 36 24 15 30 26 31 18 25 1 6 5 20</file>
-        </tool>
-      </inputs>
     </file>
     <file>
       <name>$PROJ_DIR$\inc\dialtek_modbus.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 16</file>
+          <file> 15</file>
         </tool>
         <tool>
           <name>ICCARM</name>
-          <file> 9</file>
+          <file> 32</file>
         </tool>
       </outputs>
     </file>
@@ -163,13 +73,103 @@
       <outputs>
         <tool>
           <name>OBJCOPY</name>
-          <file> 38</file>
+          <file> 24</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>ILINK</name>
-          <file> 11 23 14 28 12 35 21 33 22</file>
+          <file> 29 13 22 12 33 4 1 11 17</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\system_MDR32F9Qx.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 33</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9 20 21 36 35 26 7 2 14 27 19 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27 36 35 20 14 9 19 18 2 21 7 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\startup\startup_MDR32F9Qx.s</name>
+      <outputs>
+        <tool>
+          <name>AARM</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 3</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 16</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 34 36 37 26 35 7 14 20 21 27 9 2 19 18 0</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 27 36 35 20 14 9 19 18 2 21 7 26 37 34 0</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\CMSIS\core_cm3.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2 20 14 9 21 35 19 18</file>
+        </tool>
+        <tool>
+          <name>ICCARM</name>
+          <file> 35 20 14 9 19 18 2 21</file>
         </tool>
       </inputs>
     </file>

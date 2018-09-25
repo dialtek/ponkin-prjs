@@ -34,6 +34,8 @@
                     ("RBA"	"1/SLP")
                     ("TMAX"	"MAX_TEMP")
                     ("TB"	"TMAX")
+                    ("RTKNEE"	"TKNEE")
+                    ("RTRISE"	"TRISE")
                 )
                 ("smoke_tests"
                     ("PDM"
@@ -53,189 +55,137 @@
                 ("device_max_ops")
             )
         )
-        ("VDC")
-        ("OPA336/BB"
-            ("info"
-                ("spice_dsg"	"X")
-            )
-            ("smoke"
-                ("max_ops_desc"
-                    ("IPLUS"
-                        ("description"	"Max input current(+)")
-                        ("unit"	"A")
-                    )
-                    ("IMINUS"
-                        ("description"	"Max input current(-)")
-                        ("unit"	"A")
-                    )
-                    ("IOUT"
-                        ("description"	"Output current")
-                        ("unit"	"A")
-                    )
-                    ("VDIFF"
-                        ("description"	"Differential VIN")
-                        ("unit"	"V")
-                    )
-                    ("VSUPM"
-                        ("description"	"Max supply volt diff")
-                        ("unit"	"V")
-                    )
-                    ("VSMAX"
-                        ("description"	"Max supply volt diff")
-                        ("unit"	"V")
-                    )
-                    ("VCCMAX"
-                        ("description"	"Max Pos supply volt")
-                        ("unit"	"V")
-                    )
-                    ("VEEMAX"
-                        ("description"	"Max Neg supply volt")
-                        ("unit"	"V")
-                    )
-                    ("VPMAX"
-                        ("description"	"Max input voltage(+)")
-                        ("unit"	"V")
-                    )
-                    ("VPMIN"
-                        ("description"	"Min input voltage(+)")
-                        ("unit"	"V")
-                    )
-                    ("VMMAX"
-                        ("description"	"Max input voltage(-)")
-                        ("unit"	"V")
-                    )
-                    ("VMMIN"
-                        ("description"	"Min input voltage(-)")
-                        ("unit"	"V")
-                    )
-                )
-                ("pre_smoke"
-                    ("NODE_POS"	"PIN")
-                    ("NODE_NEG"	"NIN")
-                    ("NODE_VCC"	"PVss")
-                    ("NODE_VEE"	"NVss")
-                    ("NODE_GND"	"0")
-                    ("TERM_POS"	"-1")
-                    ("TERM_NEG"	"-2")
-                    ("TERM_OUT"	"-3")
-                    ("DERATE_TYPE"	"OPAMP")
-                )
-                ("max_ops")
-                ("smoke_tests"
-                    ("IMINUS"
-                        ("test"	"current_test")
-                        ("term"	"TERM_NEG")
-                    )
-                    ("IPLUS"
-                        ("test"	"current_test")
-                        ("term"	"TERM_POS")
-                    )
-                    ("IOUT"
-                        ("test"	"abs_current_test")
-                        ("term"	"TERM_OUT")
-                    )
-                    ("VDIFF"
-                        ("test"	"abs_voltage_test")
-                        ("nodes"
-                            ("NODE_POS")
-                            ("NODE_NEG")
-                        )
-                    )
-                    ("VMMAX"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_NEG")
-                            ("NODE_VCC")
-                        )
-                    )
-                    ("VMMIN"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_VEE")
-                            ("NODE_NEG")
-                        )
-                    )
-                    ("VPMAX"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_POS")
-                            ("NODE_VCC")
-                        )
-                    )
-                    ("VPMIN"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_VEE")
-                            ("NODE_POS")
-                        )
-                    )
-                    ("VCCMAX"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_VCC")
-                            ("NODE_GND")
-                        )
-                    )
-                    ("VEEMAX"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_GND")
-                            ("NODE_VEE")
-                        )
-                    )
-                    ("VSUPM"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_VCC")
-                            ("NODE_VEE")
-                        )
-                    )
-                    ("VSMAX"
-                        ("test"	"voltage_test")
-                        ("nodes"
-                            ("NODE_VCC")
-                            ("NODE_VEE")
-                        )
-                    )
-                )
-                ("device_max_ops"
-                    ("VPMIN"	"0.3")
-                    ("VMMIN"	"0.3")
-                    ("IPLUS"	"10m")
-                    ("IMINUS"	"10m")
-                    ("IOUT"	"5m")
-                    ("VSMAX"	"5.5")
-                    ("VSMIN"	"0")
-                    ("VPMAX"	"0.3")
-                    ("VMMAX"	"0.3")
-                    ("PDM"	"1.25")
-                    ("VCCMAX"	"5.5")
-                    ("VEEMAX"	"0")
-                )
-                ("device_pre_smoke"
-                    ("TERM_POS"	"+")
-                    ("TERM_NEG"	"-")
-                    ("TERM_OUT"	"OUT")
-                    ("NODE_POS"	"+")
-                    ("NODE_NEG"	"-")
-                    ("NODE_GND"	"0")
-                    ("NODE_VCC"	"V+")
-                    ("NODE_VEE"	"V-")
-                    ("DERATE_TYPE"	"OPAMP")
-                )
-            )
-        )
+        ("VPULSE")
+        ("OPAMP")
     )
     ("instances"
+        ("R1"
+            ("device_name"	"R")
+            ("pspice_path"	"R_R1")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"1.1k")
+                    ("pspice_param"	"VALUE")
+                    ("distrib"	"FLAT")
+                )
+                ("BiasValue Power"
+                    ("value"	"0W")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("POWER"
+                    ("value"	"RMAX")
+                    ("pspice_param"	"POWER")
+                )
+                ("MAX_TEMP"
+                    ("value"	"RTMAX")
+                    ("pspice_param"	"MAX_TEMP")
+                )
+                ("SLOPE"
+                    ("value"	"RSMAX")
+                    ("pspice_param"	"SLOPE")
+                )
+                ("VOLTAGE"
+                    ("value"	"RVMAX")
+                    ("pspice_param"	"VOLTAGE")
+                )
+                ("TOLERANCE"
+                    ("value"	"")
+                    ("pspice_param"	"TOLERANCE")
+                )
+                ("DIST"
+                    ("value"	"FLAT")
+                    ("pspice_param"	"DIST")
+                )
+            )
+            ("smoke_vars"
+                ("POWER"	"0.25")
+                ("SLOPE"	"0.005")
+                ("MAX_TEMP"	"200.0")
+            )
+        )
+        ("R2"
+            ("device_name"	"R")
+            ("pspice_path"	"R_R2")
+            ("level"	"0")
+            ("model_params"
+                ("VALUE"
+                    ("value"	"9.1k")
+                    ("pspice_param"	"VALUE")
+                    ("distrib"	"FLAT")
+                )
+                ("BiasValue Power"
+                    ("value"	"0W")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("POWER"
+                    ("value"	"RMAX")
+                    ("pspice_param"	"POWER")
+                )
+                ("MAX_TEMP"
+                    ("value"	"RTMAX")
+                    ("pspice_param"	"MAX_TEMP")
+                )
+                ("SLOPE"
+                    ("value"	"RSMAX")
+                    ("pspice_param"	"SLOPE")
+                )
+                ("VOLTAGE"
+                    ("value"	"RVMAX")
+                    ("pspice_param"	"VOLTAGE")
+                )
+                ("TOLERANCE"
+                    ("value"	"")
+                    ("pspice_param"	"TOLERANCE")
+                )
+                ("DIST"
+                    ("value"	"FLAT")
+                    ("pspice_param"	"DIST")
+                )
+            )
+            ("smoke_vars"
+                ("POWER"	"0.25")
+                ("SLOPE"	"0.005")
+                ("MAX_TEMP"	"200.0")
+            )
+        )
         ("R4"
             ("device_name"	"R")
             ("pspice_path"	"R_R4")
             ("level"	"0")
             ("model_params"
                 ("VALUE"
-                    ("value"	"100k")
+                    ("value"	"1k")
                     ("pspice_param"	"VALUE")
                     ("distrib"	"FLAT")
+                )
+                ("BiasValue Power"
+                    ("value"	"0W")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("POWER"
+                    ("value"	"RMAX")
+                    ("pspice_param"	"POWER")
+                )
+                ("MAX_TEMP"
+                    ("value"	"RTMAX")
+                    ("pspice_param"	"MAX_TEMP")
+                )
+                ("SLOPE"
+                    ("value"	"RSMAX")
+                    ("pspice_param"	"SLOPE")
+                )
+                ("VOLTAGE"
+                    ("value"	"RVMAX")
+                    ("pspice_param"	"VOLTAGE")
+                )
+                ("TOLERANCE"
+                    ("value"	"")
+                    ("pspice_param"	"TOLERANCE")
+                )
+                ("DIST"
+                    ("value"	"FLAT")
+                    ("pspice_param"	"DIST")
                 )
             )
             ("smoke_vars"
@@ -245,119 +195,76 @@
             )
         )
         ("V4"
-            ("device_name"	"VDC")
+            ("device_name"	"VPULSE")
             ("pspice_path"	"V_V4")
             ("level"	"0")
             ("model_params"
+                ("BiasValue Power"
+                    ("value"	"0W")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("PER"
+                    ("value"	"200us")
+                    ("pspice_param"	"PER")
+                )
+                ("PW"
+                    ("value"	"100us")
+                    ("pspice_param"	"PW")
+                )
+                ("TF"
+                    ("value"	"3us")
+                    ("pspice_param"	"TF")
+                )
+                ("TD"
+                    ("value"	"0")
+                    ("pspice_param"	"TD")
+                )
+                ("V1"
+                    ("value"	"0")
+                    ("pspice_param"	"V1")
+                )
+                ("V2"
+                    ("value"	"0.1V")
+                    ("pspice_param"	"V2")
+                )
+                ("TR"
+                    ("value"	"3us")
+                    ("pspice_param"	"TR")
+                )
+                ("AC"
+                    ("value"	"")
+                    ("pspice_param"	"AC")
+                )
                 ("DC"
-                    ("value"	"2.5")
+                    ("value"	"")
                     ("pspice_param"	"DC")
                 )
             )
         )
-        ("U2"
-            ("device_name"	"OPA336/BB")
-            ("pspice_path"	"X_U2")
-            ("level"	"0")
-        )
-        ("R2"
-            ("device_name"	"R")
-            ("pspice_path"	"R_R2")
+        ("U3"
+            ("device_name"	"OPAMP")
+            ("pspice_path"	"E_U3")
             ("level"	"0")
             ("model_params"
-                ("VALUE"
-                    ("value"	"100k")
-                    ("pspice_param"	"VALUE")
-                    ("distrib"	"FLAT")
+                ("BiasValue Power"
+                    ("value"	"0W")
+                    ("pspice_param"	"BiasValue Power")
                 )
-            )
-            ("smoke_vars"
-                ("POWER"	"0.25")
-                ("SLOPE"	"0.005")
-                ("MAX_TEMP"	"200.0")
-            )
-        )
-        ("R1"
-            ("device_name"	"R")
-            ("pspice_path"	"R_R1")
-            ("level"	"0")
-            ("model_params"
-                ("VALUE"
-                    ("value"	"100k")
-                    ("pspice_param"	"VALUE")
-                    ("distrib"	"FLAT")
+                ("Schematics' Source Library"
+                    ("value"	"E:\\library\\tmp\\analog.slb")
+                    ("pspice_param"	"Schematics' Source Library")
                 )
-            )
-            ("smoke_vars"
-                ("POWER"	"0.25")
-                ("SLOPE"	"0.005")
-                ("MAX_TEMP"	"200.0")
-            )
-        )
-        ("V1"
-            ("device_name"	"VDC")
-            ("pspice_path"	"V_V1")
-            ("level"	"0")
-            ("model_params"
-                ("DC"
-                    ("value"	"15")
-                    ("pspice_param"	"DC")
+                ("GAIN"
+                    ("value"	"1E6")
+                    ("pspice_param"	"GAIN")
                 )
-            )
-        )
-        ("R5"
-            ("device_name"	"R")
-            ("pspice_path"	"R_R5")
-            ("level"	"0")
-            ("model_params"
-                ("VALUE"
-                    ("value"	"10M")
-                    ("pspice_param"	"VALUE")
-                    ("distrib"	"FLAT")
+                ("VNEG"
+                    ("value"	"-15V")
+                    ("pspice_param"	"VNEG")
                 )
-            )
-            ("smoke_vars"
-                ("POWER"	"0.25")
-                ("SLOPE"	"0.005")
-                ("MAX_TEMP"	"200.0")
-            )
-        )
-        ("R3"
-            ("device_name"	"R")
-            ("pspice_path"	"R_R3")
-            ("level"	"0")
-            ("model_params"
-                ("VALUE"
-                    ("value"	"100k")
-                    ("pspice_param"	"VALUE")
-                    ("distrib"	"FLAT")
-                )
-            )
-            ("smoke_vars"
-                ("POWER"	"0.25")
-                ("SLOPE"	"0.005")
-                ("MAX_TEMP"	"200.0")
-            )
-        )
-        ("V3"
-            ("device_name"	"VDC")
-            ("pspice_path"	"V_V3")
-            ("level"	"0")
-            ("model_params"
-                ("DC"
-                    ("value"	"5")
-                    ("pspice_param"	"DC")
-                )
-            )
-        )
-        ("V2"
-            ("device_name"	"VDC")
-            ("pspice_path"	"V_V2")
-            ("level"	"0")
-            ("model_params"
-                ("DC"
-                    ("value"	"15")
-                    ("pspice_param"	"DC")
+                ("VPOS"
+                    ("value"	"+15V")
+                    ("pspice_param"	"VPOS")
                 )
             )
         )

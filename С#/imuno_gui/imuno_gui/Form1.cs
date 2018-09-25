@@ -31,5 +31,15 @@ namespace imuno_gui
         {
 
         }
+
+        private void label51_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

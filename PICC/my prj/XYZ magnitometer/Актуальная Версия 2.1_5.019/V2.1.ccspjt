@@ -3,7 +3,7 @@ Target=V2.1.hex
 Processor_Text=PIC18F25K80
 CCSVerions=5.019
 Compiler=PCH
-CCSVersion=5.015
+CCSVersion=5.049
 Development_Mode=
 ToolSuite=CCS
 [Target Data]
@@ -27,6 +27,10 @@ Type=4
 3=LCD for V2.1.c
 4=
 5=
+t1=1018
+t2=1
+t3=1
+Count=3
 [V2.1.c]
 Type=4
 Path=
@@ -39,6 +43,7 @@ enabled=0
 chip=1
 D1=
 V1=
+buildcount=8
 [fileformats]
 forcecoff=1
 debug=4
@@ -57,6 +62,27 @@ stayupoe=0
 0=0000 %S 0 0 796 451 3 0
 [CompilerVersion]
 Fixed=
+
+[ProjectLog]
+Days=1
+D1=20-07-2018
+D1_L=12
+D1_L1=[42837]Project Opened.
+D1_L2=[42910]Started Editing.
+D1_L3=[43275]Stopped Editing.
+D1_L4=[43312]Started Editing.
+D1_L5=[43733]Stopped Editing.
+D1_L6=[47432]Started Editing.
+D1_L7=[47732]Stopped Editing.
+D1_L8=[47920]Started Editing.
+D1_L9=[48234]Stopped Editing.
+D1_L10=[51251]Started Editing.
+D1_L11=[51851]Stopped Editing.
+TotalEdit=9
+TotalDebug=0
+D1_E=9
+D1_D=0
+D1_L12=[52997]Project Closed.
 [Units]
 Count=1
 1=V2.1 (main)

@@ -1,7 +1,7 @@
 
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
+**** 08/08/18 23:19:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
+ ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -18,281 +18,63 @@
 *Libraries: 
 * Profile Libraries :
 * Local Libraries :
-* From [PSPICE NETLIST] section of C:\OrCAD\OrCAD_10.5\tools\PSpice\PSpice.ini file:
+* From [PSPICE NETLIST] section of C:\Users\D_LHEP_DESKTOP\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 100ms 0 1ms 
-.PROBE V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.TRAN  0 1ms 0 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
 
 
 
 **** INCLUDING SCHEMATIC1.net ****
 * source ISRC
-R_R4         N01004 N01079  100k  
-V_V4         N00558 0 2.5
-X_U1         N00558 0 N00189 N00229 N00769 N00284 N01476 N01433 AD620/AD
-X_U2         N01079 N00284 N000972 0 N00284 OPA336/BB
-R_R2         N00866 N01004  100k  
-R_R1         N00769 N00866  100k  
-V_V1         N00189 0 15
-R_R5         N01433 N01476  10M  
-R_R3         N01004 N01079  100k  
-V_V3         N000972 0 5
-V_V2         0 N00229 15
+R_R1         0 N01285  1.1k  
+R_R2         N01368 N01285  9.1k  
+R_R4         0 N01368  1k  
+V_V4         N01249 0  
++PULSE 0 0.1V 0 3us 3us 100us 200us
+E_U3         N01368 0 VALUE {LIMIT(V(N01249,N01285)*1E6,-15V,+15V)}
 
 **** RESUMING bias.cir ****
 .END
 
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
+**** 08/08/18 23:19:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     Diode MODEL PARAMETERS
+ ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
 
 
-******************************************************************************
-
-
-
-
-               X_U1.DX         X_U1.DY         
-          IS    1.000000E-12    1.000000E-12 
-          BV                   50            
-
-
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     BJT MODEL PARAMETERS
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
 
 
 ******************************************************************************
 
 
-
-
-               X_U1.QN1        X_U1.QN2        
-               NPN             NPN             
-       LEVEL    1               1            
-          IS  100.000000E-18  100.000000E-18 
-          BF   10.000000E+03  250            
-          NF    1               1            
-          BR    1               1            
-          NR    1               1            
-         ISS    0               0            
-          RE    0               0            
-          RC    0               0            
-         CJE    0               0            
-         VJE     .75             .75         
-         CJC    0               0            
-         VJC     .75             .75         
-         MJC     .33             .33         
-        XCJC    1               1            
-         CJS    0               0            
-         VJS     .75             .75         
-          KF  700.000000E-18    5.000000E-15 
-          AF    1               1            
-          CN    2.42            2.42         
-           D     .87             .87         
-
-
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     MOSFET MODEL PARAMETERS
-
-
-******************************************************************************
-
-
-
-
-               X_U2.PCH        X_U2.NCH        
-               PMOS            NMOS            
-       LEVEL    3               3            
-         TPG                   -1            
-           L  100.000000E-06  100.000000E-06 
-           W  100.000000E-06  100.000000E-06 
-          LD   12.000000E-09   34.000000E-09 
-          WD   43.000000E-09   17.000000E-09 
-         VTO    -.892            .81         
-          KP   69.062880E-06   69.062880E-06 
-       GAMMA     .6              .6          
-         PHI     .71             .792        
-      LAMBDA    0               0            
-         RSH  117              68            
-          IS   10.000000E-15   10.000000E-15 
-          JS  400.000000E-09  200.000000E-09 
-        JSSW  300.000000E-15  500.000000E-15 
-          PB     .8              .8          
-        PBSW     .8              .8          
-          CJ  719.900000E-06  630.000000E-06 
-        CJSW  340.000000E-12  383.000000E-12 
-          MJ     .47             .25         
-        MJSW     .16             .11         
-        CGSO  180.000000E-12  155.000000E-12 
-        CGDO  180.000000E-12  155.000000E-12 
-        CGBO    0               0            
-         TOX   30.000000E-09   30.000000E-09 
-          XJ    0               0            
-       UCRIT   10.000000E+03   10.000000E+03 
-          KF    0               0            
-          AF    1.05            1.05         
-      DIOMOD    1               1            
-         VFB    -.34            -.784        
-        LETA    0               0            
-        WETA    0               0            
-          U0    0               0            
-        TEMP    0               0            
-         VDD    0               0            
-       XPART    0               0            
-
-
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     Resistor MODEL PARAMETERS
-
-
-******************************************************************************
-
-
-
-
-               X_U2.RPO2       X_U2.RNW        
-           R    1               1            
-         TC1  630.000000E-06    5.500000E-03 
-         TC2    1.100000E-06  -13.000000E-06 
-
-
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
-
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
-
-
- ****     Capacitor MODEL PARAMETERS
-
-
-******************************************************************************
-
-
-
-
-               X_U2.CP1P2      
-           C    1            
-
-
-ERROR -- Convergence problem in transient bias point calculation
-
-
-  Last node voltages tried were:
 
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(N00189)    5.2172 (N00229)   -5.2172 (N00284)  -77.4180 (N00558)     .8695     
-
-(N00769)    -.6695 (N00866)    -.6695 (N01004)    -.6695 (N01079)    -.6695     
-
-(N01433)     .2573 (N01476)    -.6073 (X_U1.3)     .8695 (X_U1.4)-37.89E-09     
-
-(X_U1.5)    5.0596 (X_U1.6)    5.0269 (X_U1.9)-2.136E+06 (N000972)    1.7391    
-
-(X_U1.10) 2.136E+06                   (X_U1.11)    5.0433                       
-
-(X_U1.12)    5.2172                   (X_U1.13)   -5.8271                       
-
-(X_U1.14)    5.1842                   (X_U1.15)    5.2173                       
-
-(X_U1.16)    5.8271                   (X_U1.17)    5.1994                       
-
-(X_U1.18)    5.1842                   (X_U1.19) 2.136E+06                       
-
-(X_U1.21)     .8695                   (X_U1.25)   -4.9580                       
-
-(X_U1.26)    4.6850                   (X_U1.27)   -4.7546                       
-
-(X_U1.36)     .1512                   (X_U1.38) 151.2E-09                       
-
-(X_U1.40)   -1.7243                   (X_U1.41)    -.0956                       
-
-(X_U1.42)   -1.2434                   (X_U1.43)   45.2100                       
-
-(X_U1.44)    4.6712                   (X_U1.45)    -.6695                       
-
-(X_U1.51)    4.9737                   (X_U1.52)    4.9737                       
-
-(X_U1.53)   -4.9737                   (X_U1.54)   -4.9737                       
-
-(X_U1.98)    0.0000                   (X_U2.20)    1.3217                       
-
-(X_U2.23)    7.8874                   (X_U2.25)    2.5463                       
-
-(X_U2.27)    1.0026                   (X_U2.29)    6.8104                       
-
-(X_U2.32)    2.9637                   (X_U2.34)    7.2277                       
-
-(X_U2.43)     .6975                   (X_U2.44)  -78.2510                       
-
-(X_U2.45)     .9683                   (X_U2.47)     .9683                       
-
-(X_U2.51)    -.3106                   (X_U2.53)     .6536                       
-
-(X_U2.54)    0.0000                   (X_U2.55)    2.4461                       
-
-(X_U2.60)     .6763                   (X_U2.62)     .2973                       
-
-(X_U2.64)    1.1025                   (X_U2.67)    2.6371                       
-
-(X_U2.76)  -78.2510                   (X_U2.GNDS) 157.6E-12                 
+(N01249)    0.0000 (N01285)    0.0000 (N01368)    0.0000 
 
 
-  These voltages failed to converge:
 
-    V(N00284)                 =  -864.31mV  \    -77.42V
-    V(X_U2.55)                =     2.086V  \     2.446V
-    V(X_U2.53)                =   789.83mV  \   653.60mV
-    V(X_U2.51)                =  -226.11mV  \  -310.57mV
-    V(X_U2.45)                =   779.99mV  \   968.28mV
-    V(X_U2.67)                =     1.739V  \     2.637V
-    V(X_U2.47)                =   779.99mV  \   968.28mV
-    V(X_U2.23)                =     2.459V  \     7.887V
-    V(X_U2.27)                =   769.13mV  \     1.003V
-    V(X_U2.29)                =     2.461V  \     6.810V
-    V(X_U2.32)                =     2.878V  \     2.964V
-    V(X_U2.25)                =     2.461V  \     2.546V
-    V(X_U2.34)                =     2.878V  \     7.228V
-    V(X_U2.43)                =   770.16mV  \   697.48mV
-    V(X_U2.76)                =  -931.23mV  \    -78.25V
-    V(X_U2.44)                =  -931.23mV  \    -78.25V
 
-  These supply currents failed to converge:
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
 
-    I(V_V3)                   =    1.762mA  \    8.068mA
-    I(X_U1.V7)                =   -2.616nA  \   -2.607nA
+    V_V4         0.000E+00
 
-  These devices failed to converge:
-    X_U2.M61  X_U2.M59  X_U2.M55  X_U2.M53  X_U2.M57  X_U2.M67  X_U2.M24  
-    X_U2.M26  X_U2.M20  X_U2.M23  X_U2.M47  X_U2.M43  X_U2.M45  X_U2.M73  
-    X_U2.M25  X_U2.M49  
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
 
-ERROR -- Discontinuing simulation due to convergence problem
-**** Interrupt ****
 
-          JOB ABORTED
+
+          JOB CONCLUDED
 
-**** 03/11/13 16:19:26 ******* PSpice 10.5.0 (Jan 2005) ******* ID# 0 ********
+**** 08/08/18 23:19:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
- ** Profile: "SCHEMATIC1-bias"  [ D:\WORK\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
+ ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY
@@ -302,5 +84,5 @@ ERROR -- Discontinuing simulation due to convergence problem
 
 
 
-  Total job time (using Solver 1)   =        4.35
+  Total job time (using Solver 1)   =         .03
 

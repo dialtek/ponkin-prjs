@@ -65,7 +65,7 @@ OptionString=
 AdditionalOptionString=
 
 [ProjectLog]
-Days=1
+Days=2
 D1=31-05-2018
 D1_L=8
 D1_L1=[46884]Project Opened.
@@ -80,6 +80,10 @@ D1_D=0
 D1_L6=[47348]Project Closed.
 D1_L7=[47384]Project Opened.
 D1_L8=[47732]Project Closed.
+D2=20-07-2018
+D2_L=2
+D2_L1=[42800]Project Opened.
+D2_L2=[42815]Project Closed.
 [Units]
 Count=1
 1=main (main)

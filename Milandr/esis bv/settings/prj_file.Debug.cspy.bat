@@ -19,6 +19,22 @@
 @REM 
 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\common\bin\cspybat" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\bin\armproc.dll" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\bin\armsim2.dll"  %1 --plugin "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\bin\armbat.dll" --backend -B "--endian=little" "--cpu=Cortex-M3" "--fpu=None" "-p" "C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.0\arm\config\debugger\Milandr\jbr_1986BE9x.ddf" "--semihosting" "--device=1986BE9x" "--multicore_nr_of_cores=1" 
+@echo off 
 
+if not "%~1" == "" goto debugFile 
 
+@echo on 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "F:\Mega\ponkin-prjs\Milandr\esis bv\settings\prj_file.Debug.general.xcl" --backend -f "F:\Mega\ponkin-prjs\Milandr\esis bv\settings\prj_file.Debug.driver.xcl" 
+
+@echo off 
+goto end 
+
+:debugFile 
+
+@echo on 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "F:\Mega\ponkin-prjs\Milandr\esis bv\settings\prj_file.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\Mega\ponkin-prjs\Milandr\esis bv\settings\prj_file.Debug.driver.xcl" 
+
+@echo off 
+:end

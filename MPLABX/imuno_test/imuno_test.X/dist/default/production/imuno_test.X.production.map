@@ -52,32 +52,28 @@ c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(dat
                               c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o) (__data_init_standard)
 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
                               build/default/production/main.o (___delay32)
-c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(divsi3.eo)
-                              build/default/production/main.o (___divsi3)
-c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                              c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(divsi3.eo) (___udivsi3)
 
 
 Program Memory  [Origin = 0x200, Length = 0x15600]
 
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
-.text                        0x200                0xdc           0x14a  (330)
-.text                        0x2dc              0x118a          0x1a4f  (6735)
-.init.delay32               0x1466                0x1c            0x2a  (42)
-.dinit                      0x1482                0x18            0x24  (36)
+.text                        0x200                0x9e            0xed  (237)
+.text                        0x29e               0x866           0xc99  (3225)
+.init.delay32                0xb04                0x1c            0x2a  (42)
+.dinit                       0xb20                0x12            0x1b  (27)
 
-                     Total program memory used (bytes):         0x1be7  (7143) 5%
+                     Total program memory used (bytes):          0xdcb  (3531) 2%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0           0x3ae  (942)
-.ndata                       0xbae                   0             0xe  (14)
+.nbss                        0x800                   0           0x326  (806)
+.ndata                       0xb26                   0             0x4  (4)
 
-                        Total data memory used (bytes):          0x3bc  (956) 11%
+                        Total data memory used (bytes):          0x32a  (810) 9%
 
 
 Dynamic Memory Usage
@@ -85,92 +81,66 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0xbbc                              0x1c44  (7236)
+stack                        0xb2a                              0x1cd6  (7382)
 
-                        Maximum dynamic memory (bytes):         0x1c44  (7236)
+                        Maximum dynamic memory (bytes):         0x1cd6  (7382)
 
 
 External Symbols in Data Memory (by address):
 
-                    0x0800                  _crc_buf_wr
-                    0x0810                  _crc_buf_rd
-                    0x0820                  _crc_wr_index
-                    0x0821                  _crc_rd_index
-                    0x0822                  _buf
-                    0x082a                  _wr_ptr
-                    0x082b                  _rd_ptr
-                    0x082c                  _rx_buf
-                    0x084c                  _reg_addr_flag
-                    0x084d                  _ID_flag
-                    0x084e                  _reg_wr_flag
-                    0x084f                  _rir_flag
-                    0x0850                  _reg_qty_flag
-                    0x0851                  _get_crc_flag
-                    0x0852                  _rx_byte
-                    0x0853                  _answer
-                    0x0854                  _modbus_reg_addr
-                    0x0856                  _temp_buf
-                    0x0858                  _regs2read
-                    0x085a                  _crc_buf
-                    0x0954                  _CRC16
-                    0x0956                  _addr_buf_1
-                    0x0958                  _addr_buf_2
-                    0x095a                  _reg_wr_data
-                    0x095c                  _holding_register
-                    0x0a56                  _input_register
-                    0x0b50                  _ID_buf
-                    0x0b58                  _add_count
-                    0x0b59                  _eq_cnt
-                    0x0b5a                  _index_exist
-                    0x0b5b                  _Sens_ID
-                    0x0bab                  _sensors_qty
-                    0x0bac                  _sensor_index
-                    0x0bae                  _rd_state
-                    0x0baf                  _dev_id
-                    0x0bb0                  _firmware_ver
-                    0x0bb1                  _device_family
-                    0x0bb2                  _index_buf
+                    0x0800                  _wr_ptr
+                    0x0801                  _rd_ptr
+                    0x0802                  _rx_buf
+                    0x0822                  _reg_addr_flag
+                    0x0823                  _ID_flag
+                    0x0824                  _reg_wr_flag
+                    0x0825                  _rir_flag
+                    0x0826                  _reg_qty_flag
+                    0x0827                  _get_crc_flag
+                    0x0828                  _rx_byte
+                    0x0829                  _answer
+                    0x082a                  _modbus_reg_addr
+                    0x082c                  _temp_buf
+                    0x082e                  _regs2read
+                    0x0830                  _crc_buf
+                    0x092a                  _CRC16
+                    0x092c                  _addr_buf_1
+                    0x092e                  _addr_buf_2
+                    0x0930                  _reg_wr_data
+                    0x0932                  _holding_register
+                    0x0a2c                  _input_register
+                    0x0b26                  _rd_state
+                    0x0b27                  _dev_id
+                    0x0b28                  _firmware_ver
+                    0x0b29                  _device_family
 
 External Symbols in Data Memory (by name):
 
-                    0x0954                  _CRC16
-                    0x0b50                  _ID_buf
-                    0x084d                  _ID_flag
-                    0x0b5b                  _Sens_ID
-                    0x0b58                  _add_count
-                    0x0956                  _addr_buf_1
-                    0x0958                  _addr_buf_2
-                    0x0853                  _answer
-                    0x0822                  _buf
-                    0x085a                  _crc_buf
-                    0x0810                  _crc_buf_rd
-                    0x0800                  _crc_buf_wr
-                    0x0821                  _crc_rd_index
-                    0x0820                  _crc_wr_index
-                    0x0baf                  _dev_id
-                    0x0bb1                  _device_family
-                    0x0b59                  _eq_cnt
-                    0x0bb0                  _firmware_ver
-                    0x0851                  _get_crc_flag
-                    0x095c                  _holding_register
-                    0x0bb2                  _index_buf
-                    0x0b5a                  _index_exist
-                    0x0a56                  _input_register
-                    0x0854                  _modbus_reg_addr
-                    0x082b                  _rd_ptr
-                    0x0bae                  _rd_state
-                    0x084c                  _reg_addr_flag
-                    0x0850                  _reg_qty_flag
-                    0x095a                  _reg_wr_data
-                    0x084e                  _reg_wr_flag
-                    0x0858                  _regs2read
-                    0x084f                  _rir_flag
-                    0x082c                  _rx_buf
-                    0x0852                  _rx_byte
-                    0x0bac                  _sensor_index
-                    0x0bab                  _sensors_qty
-                    0x0856                  _temp_buf
-                    0x082a                  _wr_ptr
+                    0x092a                  _CRC16
+                    0x0823                  _ID_flag
+                    0x092c                  _addr_buf_1
+                    0x092e                  _addr_buf_2
+                    0x0829                  _answer
+                    0x0830                  _crc_buf
+                    0x0b27                  _dev_id
+                    0x0b29                  _device_family
+                    0x0b28                  _firmware_ver
+                    0x0827                  _get_crc_flag
+                    0x0932                  _holding_register
+                    0x0a2c                  _input_register
+                    0x082a                  _modbus_reg_addr
+                    0x0801                  _rd_ptr
+                    0x0b26                  _rd_state
+                    0x0822                  _reg_addr_flag
+                    0x0826                  _reg_qty_flag
+                    0x0930                  _reg_wr_data
+                    0x0824                  _reg_wr_flag
+                    0x082e                  _regs2read
+                    0x0825                  _rir_flag
+                    0x0802                  _rx_buf
+                    0x0828                  _rx_byte
+                    0x082c                  _temp_buf
+                    0x0800                  _wr_ptr
 
 External Symbols in Program Memory (by address):
 
@@ -179,56 +149,30 @@ External Symbols in Program Memory (by address):
                   0x00023c                  __data_init_standard
                   0x00023c                  __data_init
                   0x00029a                  __DefaultInterrupt
-                  0x00029e                  ___divsi3
-                  0x0002bc                  ___udivsi3
-                  0x0002dc                  _OneWire_tx_state
-                  0x0002f8                  _OneWire_rx_state
-                  0x000310                  _OneWire_reset
-                  0x00035a                  _OneWire_send_bit
-                  0x00038e                  _OneWire_read_bit
-                  0x0003c2                  _OneWire_read
-                  0x0003f6                  _OneWire_send
-                  0x00041c                  _crc8
-                  0x000464                  _OneWire_skip
-                  0x00047e                  _OneWire_all_rd_t
-                  0x0004a6                  _onewire_read_rom
-                  0x0004e2                  _OneWire_match_ID
-                  0x00051a                  _ds18b20_i_rd_t
-                  0x000614                  _get_sensor_ID
-                  0x000646                  _match_sensor_ID
-                  0x0006c4                  _reset_cfg
-                  0x00074e                  _modbus_int_mode
-                  0x000762                  _modbus_refresh
-                  0x000992                  _modbus_init
-                  0x0009c4                  _is_reg
-                  0x0009f6                  _modbus_uart_byte
-                  0x000a16                  _get_rx_ch
-                  0x000a76                  _modbus_CRC16
-                  0x000ade                  _modbus_wsr_answer
-                  0x000b66                  _modbus_rhr_answer
-                  0x000c5a                  _modbus_rir_answer
-                  0x000d4e                  _modbus_exc_rsp
-                  0x000da8                  _modbus_rx_CRC_check
-                  0x000df6                  _modbus_rx_sm
-                  0x001032                  _modbus_poll
-                  0x00107a                  _OSC_init
-                  0x0010a6                  _GPIO_init
-                  0x0010d4                  _Timer2_init
-                  0x0010f4                  _Timer2_set
-                  0x001100                  _I2C_init
-                  0x001130                  _I2C_stop
-                  0x00117a                  _I2C_start
-                  0x0011fe                  _I2C_write
-                  0x001260                  _I2C_read
-                  0x0012d8                  _ROM_CRC16
-                  0x00133c                  _ROM_wr_byte
-                  0x001370                  _ROM_rd_byte
-                  0x0013aa                  _UART1_init
-                  0x0013ea                  _uart_send_hex
-                  0x00140a                  __U1RXInterrupt
-                  0x001436                  __T2Interrupt
-                  0x00144a                  _main
-                  0x001466                  ___delay32
+                  0x00029e                  _modbus_int_mode
+                  0x0002b2                  _modbus_refresh
+                  0x0002e2                  _modbus_init
+                  0x000314                  _is_reg
+                  0x000346                  _modbus_uart_byte
+                  0x000366                  _get_rx_ch
+                  0x0003c6                  _modbus_CRC16
+                  0x00042e                  _modbus_wsr_answer
+                  0x0004b6                  _modbus_rhr_answer
+                  0x0005aa                  _modbus_rir_answer
+                  0x00069e                  _modbus_exc_rsp
+                  0x0006f8                  _modbus_rx_CRC_check
+                  0x000746                  _modbus_rx_sm
+                  0x000982                  _modbus_poll
+                  0x0009ca                  _OSC_init
+                  0x0009f6                  _GPIO_init
+                  0x000a1e                  _Timer2_init
+                  0x000a3e                  _Timer2_set
+                  0x000a4a                  _UART1_init
+                  0x000a8a                  _uart_send_hex
+                  0x000aaa                  __U1RXInterrupt
+                  0x000ad6                  __T2Interrupt
+                  0x000aea                  _main
+                  0x000b04                  ___delay32
                   0xf80000                  _FBS
                   0xf80002                  _FSS
                   0xf80004                  _FGS
@@ -248,61 +192,35 @@ External Symbols in Program Memory (by name):
                   0xf8000c                  _FPOR
                   0xf80002                  _FSS
                   0xf8000a                  _FWDT
-                  0x0010a6                  _GPIO_init
-                  0x001100                  _I2C_init
-                  0x001260                  _I2C_read
-                  0x00117a                  _I2C_start
-                  0x001130                  _I2C_stop
-                  0x0011fe                  _I2C_write
-                  0x00107a                  _OSC_init
-                  0x00047e                  _OneWire_all_rd_t
-                  0x0004e2                  _OneWire_match_ID
-                  0x0003c2                  _OneWire_read
-                  0x00038e                  _OneWire_read_bit
-                  0x000310                  _OneWire_reset
-                  0x0002f8                  _OneWire_rx_state
-                  0x0003f6                  _OneWire_send
-                  0x00035a                  _OneWire_send_bit
-                  0x000464                  _OneWire_skip
-                  0x0002dc                  _OneWire_tx_state
-                  0x0012d8                  _ROM_CRC16
-                  0x001370                  _ROM_rd_byte
-                  0x00133c                  _ROM_wr_byte
-                  0x0010d4                  _Timer2_init
-                  0x0010f4                  _Timer2_set
-                  0x0013aa                  _UART1_init
+                  0x0009f6                  _GPIO_init
+                  0x0009ca                  _OSC_init
+                  0x000a1e                  _Timer2_init
+                  0x000a3e                  _Timer2_set
+                  0x000a4a                  _UART1_init
                   0x00029a                  __DefaultInterrupt
-                  0x001436                  __T2Interrupt
-                  0x00140a                  __U1RXInterrupt
-                  0x001466                  ___delay32
-                  0x00029e                  ___divsi3
-                  0x0002bc                  ___udivsi3
+                  0x000ad6                  __T2Interrupt
+                  0x000aaa                  __U1RXInterrupt
+                  0x000b04                  ___delay32
                   0x00023c                  __data_init
                   0x00023c                  __data_init_standard
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x00041c                  _crc8
-                  0x00051a                  _ds18b20_i_rd_t
-                  0x000a16                  _get_rx_ch
-                  0x000614                  _get_sensor_ID
-                  0x0009c4                  _is_reg
-                  0x00144a                  _main
-                  0x000646                  _match_sensor_ID
-                  0x000a76                  _modbus_CRC16
-                  0x000d4e                  _modbus_exc_rsp
-                  0x000992                  _modbus_init
-                  0x00074e                  _modbus_int_mode
-                  0x001032                  _modbus_poll
-                  0x000762                  _modbus_refresh
-                  0x000b66                  _modbus_rhr_answer
-                  0x000c5a                  _modbus_rir_answer
-                  0x000da8                  _modbus_rx_CRC_check
-                  0x000df6                  _modbus_rx_sm
-                  0x0009f6                  _modbus_uart_byte
-                  0x000ade                  _modbus_wsr_answer
-                  0x0004a6                  _onewire_read_rom
-                  0x0006c4                  _reset_cfg
-                  0x0013ea                  _uart_send_hex
+                  0x000366                  _get_rx_ch
+                  0x000314                  _is_reg
+                  0x000aea                  _main
+                  0x0003c6                  _modbus_CRC16
+                  0x00069e                  _modbus_exc_rsp
+                  0x0002e2                  _modbus_init
+                  0x00029e                  _modbus_int_mode
+                  0x000982                  _modbus_poll
+                  0x0002b2                  _modbus_refresh
+                  0x0004b6                  _modbus_rhr_answer
+                  0x0005aa                  _modbus_rir_answer
+                  0x0006f8                  _modbus_rx_CRC_check
+                  0x000746                  _modbus_rx_sm
+                  0x000346                  _modbus_uart_byte
+                  0x00042e                  _modbus_wsr_answer
+                  0x000a8a                  _uart_send_hex
 
 Memory Configuration
 
@@ -359,7 +277,7 @@ LOAD c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib/PIC24H\libp24
                   0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
                   0x000003          0x2 SHORT 0x0
 
-.text             0x000200         0xdc
+.text             0x000200         0x9e
  *(.init)
  .init            0x000200         0x3c c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
                   0x000200                  __resetPRI
@@ -377,10 +295,6 @@ LOAD c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib/PIC24H\libp24
  *(.libm)
  *(.libdsp)
  *(.lib*)
- .libm.divsi3     0x00029e         0x1e c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(divsi3.eo)
-                  0x00029e                  ___divsi3
- .libm.udivsi3    0x0002bc         0x20 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
-                  0x0002bc                  ___udivsi3
 
 usercode
  *(usercode)
@@ -424,26 +338,26 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2d72
+.debug_info       0x000000       0x1e45
  *(.debug_info)
- .debug_info      0x000000       0x2d72 build/default/production/main.o
+ .debug_info      0x000000       0x1e45 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x294
+.debug_abbrev     0x000000        0x255
  *(.debug_abbrev)
- .debug_abbrev    0x000000        0x294 build/default/production/main.o
+ .debug_abbrev    0x000000        0x255 build/default/production/main.o
 
-.debug_line       0x000000       0x17ea
+.debug_line       0x000000        0xbf0
  *(.debug_line)
- .debug_line      0x000000       0x17ea build/default/production/main.o
+ .debug_line      0x000000        0xbf0 build/default/production/main.o
 
-.debug_frame      0x000000        0x304
+.debug_frame      0x000000        0x184
  *(.debug_frame)
- .debug_frame     0x000000        0x304 build/default/production/main.o
+ .debug_frame     0x000000        0x184 build/default/production/main.o
 
-.debug_str        0x000000        0x1e1
+.debug_str        0x000000        0x16a
  *(.debug_str)
- .debug_str       0x000000        0x1e1 build/default/production/main.o
+ .debug_str       0x000000        0x16a build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -452,10 +366,10 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x5a1
+                  0x000000        0x351
  *(.debug_pubnames)
  .debug_pubnames
-                  0x000000        0x5a1 build/default/production/main.o
+                  0x000000        0x351 build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -481,11 +395,11 @@ __FUID3
                   0x00001c          0x4 LONG 0x29a DEFINED (__DMA0Interrupt)?ABSOLUTE (__DMA0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00001e          0x4 LONG 0x29a DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000020          0x4 LONG 0x29a DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000022          0x4 LONG 0x1436 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000022          0x4 LONG 0xad6 DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000024          0x4 LONG 0x29a DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x29a DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x29a DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x140a DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0xaaa DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x29a DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x29a DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x29a DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -609,11 +523,11 @@ __FUID3
                   0x00011c          0x4 LONG 0x29a DEFINED (__AltDMA0Interrupt)?ABSOLUTE (__AltDMA0Interrupt):DEFINED (__DMA0Interrupt)?ABSOLUTE (__DMA0Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00011e          0x4 LONG 0x29a DEFINED (__AltIC2Interrupt)?ABSOLUTE (__AltIC2Interrupt):DEFINED (__IC2Interrupt)?ABSOLUTE (__IC2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000120          0x4 LONG 0x29a DEFINED (__AltOC2Interrupt)?ABSOLUTE (__AltOC2Interrupt):DEFINED (__OC2Interrupt)?ABSOLUTE (__OC2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000122          0x4 LONG 0x1436 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000122          0x4 LONG 0xad6 DEFINED (__AltT2Interrupt)?ABSOLUTE (__AltT2Interrupt):DEFINED (__T2Interrupt)?ABSOLUTE (__T2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000124          0x4 LONG 0x29a DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000126          0x4 LONG 0x29a DEFINED (__AltSPI1ErrInterrupt)?ABSOLUTE (__AltSPI1ErrInterrupt):DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000128          0x4 LONG 0x29a DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012a          0x4 LONG 0x140a DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012a          0x4 LONG 0xaaa DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012c          0x4 LONG 0x29a DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012e          0x4 LONG 0x29a DEFINED (__AltADC1Interrupt)?ABSOLUTE (__AltADC1Interrupt):DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000130          0x4 LONG 0x29a DEFINED (__AltDMA1Interrupt)?ABSOLUTE (__AltDMA1Interrupt):DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -1635,170 +1549,129 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000018        0x244
+                  0x000018        0x1c0
  .debug_pubtypes
-                  0x000018        0x244 build/default/production/main.o
+                  0x000018        0x1c0 build/default/production/main.o
 
 __c30_signature
-                  0x00025c         0x24
+                  0x0001d8         0x18
  __c30_signature
-                  0x00025c          0x6 build/default/production/main.o
+                  0x0001d8          0x6 build/default/production/main.o
  __c30_signature
-                  0x000262          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
+                  0x0001de          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000268          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
+                  0x0001e4          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x00026e          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
- __c30_signature
-                  0x000274          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(divsi3.eo)
- __c30_signature
-                  0x00027a          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libm-elf.a(udivsi3.eo)
+                  0x0001ea          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
 
-.nbss               0x0800        0x3ae
- .nbss              0x0800        0x3ae build/default/production/main.o
-                    0x0800                  _crc_buf_wr
-                    0x0810                  _crc_buf_rd
-                    0x0820                  _crc_wr_index
-                    0x0821                  _crc_rd_index
-                    0x0822                  _buf
-                    0x082a                  _wr_ptr
-                    0x082b                  _rd_ptr
-                    0x082c                  _rx_buf
-                    0x084c                  _reg_addr_flag
-                    0x084d                  _ID_flag
-                    0x084e                  _reg_wr_flag
-                    0x084f                  _rir_flag
-                    0x0850                  _reg_qty_flag
-                    0x0851                  _get_crc_flag
-                    0x0852                  _rx_byte
-                    0x0853                  _answer
-                    0x0854                  _modbus_reg_addr
-                    0x0856                  _temp_buf
-                    0x0858                  _regs2read
-                    0x085a                  _crc_buf
-                    0x0954                  _CRC16
-                    0x0956                  _addr_buf_1
-                    0x0958                  _addr_buf_2
-                    0x095a                  _reg_wr_data
-                    0x095c                  _holding_register
-                    0x0a56                  _input_register
-                    0x0b50                  _ID_buf
-                    0x0b58                  _add_count
-                    0x0b59                  _eq_cnt
-                    0x0b5a                  _index_exist
-                    0x0b5b                  _Sens_ID
-                    0x0bab                  _sensors_qty
-                    0x0bac                  _sensor_index
+.nbss               0x0800        0x326
+ .nbss              0x0800        0x326 build/default/production/main.o
+                    0x0800                  _wr_ptr
+                    0x0801                  _rd_ptr
+                    0x0802                  _rx_buf
+                    0x0822                  _reg_addr_flag
+                    0x0823                  _ID_flag
+                    0x0824                  _reg_wr_flag
+                    0x0825                  _rir_flag
+                    0x0826                  _reg_qty_flag
+                    0x0827                  _get_crc_flag
+                    0x0828                  _rx_byte
+                    0x0829                  _answer
+                    0x082a                  _modbus_reg_addr
+                    0x082c                  _temp_buf
+                    0x082e                  _regs2read
+                    0x0830                  _crc_buf
+                    0x092a                  _CRC16
+                    0x092c                  _addr_buf_1
+                    0x092e                  _addr_buf_2
+                    0x0930                  _reg_wr_data
+                    0x0932                  _holding_register
+                    0x0a2c                  _input_register
 
-.ndata              0x0bae          0xe
- .ndata             0x0bae          0xe build/default/production/main.o
-                    0x0bae                  _rd_state
-                    0x0baf                  _dev_id
-                    0x0bb0                  _firmware_ver
-                    0x0bb1                  _device_family
-                    0x0bb2                  _index_buf
+.ndata              0x0b26          0x4
+ .ndata             0x0b26          0x4 build/default/production/main.o
+                    0x0b26                  _rd_state
+                    0x0b27                  _dev_id
+                    0x0b28                  _firmware_ver
+                    0x0b29                  _device_family
 
-_07134420_at_address_00F80000
+_06FC0420_at_address_00F80000
                   0xf80000          0x2
- _07134420_at_address_00F80000
+ _06FC0420_at_address_00F80000
                   0xf80000          0x2 build/default/production/main.o
                   0xf80000                  _FBS
 
-_07134480_at_address_00F80002
+_06FC0480_at_address_00F80002
                   0xf80002          0x2
- _07134480_at_address_00F80002
+ _06FC0480_at_address_00F80002
                   0xf80002          0x2 build/default/production/main.o
                   0xf80002                  _FSS
 
-_071344E0_at_address_00F80004
+_06FC04E0_at_address_00F80004
                   0xf80004          0x2
- _071344E0_at_address_00F80004
+ _06FC04E0_at_address_00F80004
                   0xf80004          0x2 build/default/production/main.o
                   0xf80004                  _FGS
 
-_07134540_at_address_00F80006
+_06FC0540_at_address_00F80006
                   0xf80006          0x2
- _07134540_at_address_00F80006
+ _06FC0540_at_address_00F80006
                   0xf80006          0x2 build/default/production/main.o
                   0xf80006                  _FOSCSEL
 
-_071345A0_at_address_00F80008
+_06FC05A0_at_address_00F80008
                   0xf80008          0x2
- _071345A0_at_address_00F80008
+ _06FC05A0_at_address_00F80008
                   0xf80008          0x2 build/default/production/main.o
                   0xf80008                  _FOSC
 
-_07134600_at_address_00F8000A
+_06FC0600_at_address_00F8000A
                   0xf8000a          0x2
- _07134600_at_address_00F8000A
+ _06FC0600_at_address_00F8000A
                   0xf8000a          0x2 build/default/production/main.o
                   0xf8000a                  _FWDT
 
-_07134660_at_address_00F8000C
+_06FC0660_at_address_00F8000C
                   0xf8000c          0x2
- _07134660_at_address_00F8000C
+ _06FC0660_at_address_00F8000C
                   0xf8000c          0x2 build/default/production/main.o
                   0xf8000c                  _FPOR
 
-_071346C0_at_address_00F8000E
+_06FC06C0_at_address_00F8000E
                   0xf8000e          0x2
- _071346C0_at_address_00F8000E
+ _06FC06C0_at_address_00F8000E
                   0xf8000e          0x2 build/default/production/main.o
                   0xf8000e                  _FICD
 
-.text             0x0002dc       0x118a
- .text            0x0002dc       0x118a build/default/production/main.o
-                  0x0002dc                  _OneWire_tx_state
-                  0x0002f8                  _OneWire_rx_state
-                  0x000310                  _OneWire_reset
-                  0x00035a                  _OneWire_send_bit
-                  0x00038e                  _OneWire_read_bit
-                  0x0003c2                  _OneWire_read
-                  0x0003f6                  _OneWire_send
-                  0x00041c                  _crc8
-                  0x000464                  _OneWire_skip
-                  0x00047e                  _OneWire_all_rd_t
-                  0x0004a6                  _onewire_read_rom
-                  0x0004e2                  _OneWire_match_ID
-                  0x00051a                  _ds18b20_i_rd_t
-                  0x000614                  _get_sensor_ID
-                  0x000646                  _match_sensor_ID
-                  0x0006c4                  _reset_cfg
-                  0x00074e                  _modbus_int_mode
-                  0x000762                  _modbus_refresh
-                  0x000992                  _modbus_init
-                  0x0009c4                  _is_reg
-                  0x0009f6                  _modbus_uart_byte
-                  0x000a16                  _get_rx_ch
-                  0x000a76                  _modbus_CRC16
-                  0x000ade                  _modbus_wsr_answer
-                  0x000b66                  _modbus_rhr_answer
-                  0x000c5a                  _modbus_rir_answer
-                  0x000d4e                  _modbus_exc_rsp
-                  0x000da8                  _modbus_rx_CRC_check
-                  0x000df6                  _modbus_rx_sm
-                  0x001032                  _modbus_poll
-                  0x00107a                  _OSC_init
-                  0x0010a6                  _GPIO_init
-                  0x0010d4                  _Timer2_init
-                  0x0010f4                  _Timer2_set
-                  0x001100                  _I2C_init
-                  0x001130                  _I2C_stop
-                  0x00117a                  _I2C_start
-                  0x0011fe                  _I2C_write
-                  0x001260                  _I2C_read
-                  0x0012d8                  _ROM_CRC16
-                  0x00133c                  _ROM_wr_byte
-                  0x001370                  _ROM_rd_byte
-                  0x0013aa                  _UART1_init
-                  0x0013ea                  _uart_send_hex
-                  0x00140a                  __U1RXInterrupt
-                  0x001436                  __T2Interrupt
-                  0x00144a                  _main
+.text             0x00029e        0x866
+ .text            0x00029e        0x866 build/default/production/main.o
+                  0x00029e                  _modbus_int_mode
+                  0x0002b2                  _modbus_refresh
+                  0x0002e2                  _modbus_init
+                  0x000314                  _is_reg
+                  0x000346                  _modbus_uart_byte
+                  0x000366                  _get_rx_ch
+                  0x0003c6                  _modbus_CRC16
+                  0x00042e                  _modbus_wsr_answer
+                  0x0004b6                  _modbus_rhr_answer
+                  0x0005aa                  _modbus_rir_answer
+                  0x00069e                  _modbus_exc_rsp
+                  0x0006f8                  _modbus_rx_CRC_check
+                  0x000746                  _modbus_rx_sm
+                  0x000982                  _modbus_poll
+                  0x0009ca                  _OSC_init
+                  0x0009f6                  _GPIO_init
+                  0x000a1e                  _Timer2_init
+                  0x000a3e                  _Timer2_set
+                  0x000a4a                  _UART1_init
+                  0x000a8a                  _uart_send_hex
+                  0x000aaa                  __U1RXInterrupt
+                  0x000ad6                  __T2Interrupt
+                  0x000aea                  _main
 
-.init.delay32     0x001466         0x1c
- .init.delay32    0x001466         0x1c c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x001466                  ___delay32
+.init.delay32     0x000b04         0x1c
+ .init.delay32    0x000b04         0x1c c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x000b04                  ___delay32
 
-.dinit            0x001482         0x18
- .dinit           0x001482         0x18 data_init
+.dinit            0x000b20         0x12
+ .dinit           0x000b20         0x12 data_init

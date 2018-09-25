@@ -17,3 +17,6 @@ E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\Insitek_src.Form1
 E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\Insitek_src.Form2_config.resources
 E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\Insitek_src.Properties.Resources.resources
 E:\Mega drive\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\Insitek_pgm_sln.csproj.GenerateResource.Cache
+F:\Mega\ponkin-prjs\С#\Insitek Src HILAC 17\bin\Release\701C_src_PGM.exe.config
+F:\Mega\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\701C_src_PGM.exe
+F:\Mega\ponkin-prjs\С#\Insitek Src HILAC 17\obj\Release\701C_src_PGM.pdb

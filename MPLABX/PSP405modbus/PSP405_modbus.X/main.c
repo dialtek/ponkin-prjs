@@ -1,11 +1,9 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "fuses.h"
 #include "p24Hxxxx.h"
 
 #include "c30_delay.h"
-#include <p24HJ128GP506A.h>
 
 #define _ISR_PSV __attribute__((__interrupt__, __auto_psv__))
   
@@ -63,7 +61,7 @@ void UART1_init()
     IFS0bits.U1RXIF = 0; // Reset UART1 RX interrupt flag
     IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt
     
-    U1BRG = U1BRGVAL;      // Baud Rate setting for 115200 uart
+    U1BRG = U1BRGVAL;       // Baud Rate setting 
     U1MODEbits.UARTEN = 1;  // 1 = UARTx is enabled; all UARTx pins are controlled by UARTx as defined by UEN <1:0>
     U1MODEbits.UEN = 0;     // 0 = UxTX and UxRX pins are enabled and used; UxCTS and UxRTS/BCLK pins controlled by port latches
     U1MODEbits.PDSEL = 0;   // 0 = No Parity, 8-Data bits
@@ -85,7 +83,7 @@ void UART1_init()
 void UART2_init()
 {   /// RS-232 
     // RX interrupt UART2 settings 
-    IPC7bits.U2RXIP = 7;   // Set UART2 RX interrupt priority to 4
+    IPC7bits.U2RXIP = 6;   // Set UART2 RX interrupt priority to 4
     IFS1bits.U2RXIF = 0;   // Reset UART2 RX interrupt flag
     IEC1bits.U2RXIE = 1;   // EN UART2 RX interrupt
     
@@ -121,7 +119,7 @@ void uart_send_hex (unsigned char Ch)
     
     U1TXREG = Ch;
     while(U1STAbits.TRMT == 0){ }
-    delay_us(200);
+    __delay_us(50);
     // waiting for trancsaction to be complete
    
 }
@@ -129,9 +127,10 @@ void uart_send_hex (unsigned char Ch)
 void uart2_send_hex (unsigned char Ch)
 { // RS-232 send byte
     
-    while(U2STAbits.TRMT == 0){ }
+    
     U2TXREG = Ch;
-     __delay_us(50);
+    while(U2STAbits.TRMT == 0){ }
+    __delay_us(50);
     // waiting for trancsaction to be complete
 }
 
@@ -381,7 +380,7 @@ int main(void)
     GPIO_init();
     UART1_init();
     UART2_init();
-    //Timer1_init();
+   
     modbus_init();
 
     unsigned int count = 0;
@@ -391,7 +390,7 @@ while(1)
   
   modbus_rx_sm();
   modbus_poll();
-  __delay_ms(1); 
+  __delay_ms(1);
 
    if(data_ready)
    { 

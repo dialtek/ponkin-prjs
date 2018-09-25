@@ -440,7 +440,11 @@ void SensRdAll()
     
     i2c_write (addr_MSB);
     i2c_write (addr_LSB);
-    i2c_write (dataByte);
+   for(unsigned char i =0; i < 64; i++)
+  {
+      i2c_write (i);
+  }
+    
     i2c_stop ();
     delay_ms (15); // t записи в rom - 10 мс
     crc_buf_wr[crc_wr_index] = dataByte;
@@ -467,8 +471,9 @@ void SensRdAll()
     i2c_write (addr_LSB); // выдача на линию мл. байта адреса
     i2c_start ();
     i2c_write (EEprom_adr|1); // чтение
-    rd_data_byte = i2c_read ();
-    i2c_write (0xff); // без этого не работает 0_0
+    for(U8 i = 0; i < 64; i++ )
+      rd_data_byte = i2c_read ();
+    //i2c_write (0xff); // без этого не работает 0_0
     i2c_stop ();
     crc_buf_rd[crc_rd_index] = rd_data_byte;
     crc_rd_index++;
@@ -1022,15 +1027,24 @@ void main  ()
     
     LCDInit ();
     LCDWelcome ();
-    if(detect_sensors() != 0) LCDsensInfoMsg();
+    //if(detect_sensors() != 0) LCDsensInfoMsg();
 
-    enable_interrupts (int_RDA);
-    enable_interrupts (GLOBAL);
+    //enable_interrupts (int_RDA);
+    //enable_interrupts (GLOBAL);
+    
+    rom_wr_byte(0,0);
+    
 //-----------------------------------------------------------------------------   
     while (true)
     { 
        restart_wdt(); 
+      // rom_wr_byte(0x0000,0x82);
+       
+       //LcdPutU16(rom_rd_byte(0x0000), 3);
+       rom_rd_byte(0x0000);
+       delay_ms(100);
 //-----------------------------------------------------------------------------   
+/*
        switch(sens_type) // анализ типа текущего датчика
        {
         case TLV493D:    // тип - 1.3 kGs
@@ -1241,7 +1255,7 @@ void main  ()
               delay_ms(75);
               LCDMsg("              ");
             }  // while
-            
+            */
     } // while
  }  // main
 //=============================================================================

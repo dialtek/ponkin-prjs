@@ -322,7 +322,6 @@ return rch;
    else 
    {
      rd_state = DETECT_DEV_ID;
-     modbus_exc_rsp(EXC_CRC_ERR);
    }
    
    get_crc_flag = 0;              // סבנמס פכאדא נאסקועא CRC16 
