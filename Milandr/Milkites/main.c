@@ -1101,66 +1101,50 @@ __irq void UART1_IRQHandler( void )
  while(1)
   {
     
-    if(MDR_PORTB->RXTX & (1<<2))
-    {
-      ones_t++;
-      MDR_PORTC->RXTX = 0xffff;
-      delay_200ms();
-      delay_200ms();
-      delay_200ms();
-      
-    }
-    MDR_PORTC->RXTX = 0x0000;
-    LCD_set_cursor(0);
-    LCD_Wr_num(ones_t,2);
-    delay_50ms();
-    
-    
-    
-    
-//     Temper = ds18b20_rd_t();
-//	 
-//     tens_t = Temper/10000;  									// выделяем десятки Т            
-//     ones_t = Temper-(tens_t*10000); 							// выделяем единицы Т
-//     ones_t = ones_t/1000; 									 
-//     hunds_t = Temper-(tens_t*10000+ones_t*1000); 				// выделяем десятые Т
-//     hunds_t = hunds_t/100;
-//     subtens_t = Temper-(tens_t*10000+ones_t*1000+hunds_t*100);  // выделяем сотые Т
-//     subtens_t = subtens_t/10;
-//	 if(subtens_t >= 5) hunds_t++;							    // округление десятых	 
-//	 
-//	 if(Uart_rx_fl == 1)
-//	 {  
-//	    Uart_rx_fl = 0; 		// сброс флага запроса
-//
-//	 	Uart_num_send(tens_t);   // отсылка T на ПК
-//		Uart_num_send(ones_t);   // отсылка T на ПК
-//		Uart_send_text(".");
-//		Uart_num_send(hunds_t);  // отсылка T на ПК
-//	 	Uart_CR_LF_send();
-//		// посылка - 6 байт, фиксированный формат
-//	 }
-//	 else if (Uart_rx_fl == 2)
-//	 {
-//	    Uart_rx_fl = 0; 		// сброс флага ошибки
-//	 	Uart_send_text("err.");  // отсылка сообщ. об ошибке на ПК
-//	 	Uart_CR_LF_send();
-//		// посылка - 6 байт, фиксированный формат
-//	 }
-//         
-//
-//
-//	 LCD_set_cursor(1);  
-//         LCD_print("Т = ");       
-//         if(Temper<0)
-//              LCD_print("-");
-//         else LCD_print("+");
-//	 
-//	 LCD_Wr_num(tens_t,1);
-//	 LCD_Wr_num(ones_t,1);
-//	 LCD_print(".");
-//	 LCD_Wr_num(hunds_t,1);
-//         LCD_print(" C");
+
+     Temper = ds18b20_rd_t();
+	 
+     tens_t = Temper/10000;  									// выделяем десятки Т            
+     ones_t = Temper-(tens_t*10000); 							// выделяем единицы Т
+     ones_t = ones_t/1000; 									 
+     hunds_t = Temper-(tens_t*10000+ones_t*1000); 				// выделяем десятые Т
+     hunds_t = hunds_t/100;
+     subtens_t = Temper-(tens_t*10000+ones_t*1000+hunds_t*100);  // выделяем сотые Т
+     subtens_t = subtens_t/10;
+	 if(subtens_t >= 5) hunds_t++;							    // округление десятых	 
+	 
+	 if(Uart_rx_fl == 1)
+	 {  
+	    Uart_rx_fl = 0; 		// сброс флага запроса
+
+	 	Uart_num_send(tens_t);   // отсылка T на ПК
+		Uart_num_send(ones_t);   // отсылка T на ПК
+		Uart_send_text(".");
+		Uart_num_send(hunds_t);  // отсылка T на ПК
+	 	Uart_CR_LF_send();
+		// посылка - 6 байт, фиксированный формат
+	 }
+	 else if (Uart_rx_fl == 2)
+	 {
+	    Uart_rx_fl = 0; 		// сброс флага ошибки
+	 	Uart_send_text("err.");  // отсылка сообщ. об ошибке на ПК
+	 	Uart_CR_LF_send();
+		// посылка - 6 байт, фиксированный формат
+	 }
+         
+
+
+	 LCD_set_cursor(1);  
+         LCD_print("Т = ");       
+         if(Temper<0)
+              LCD_print("-");
+         else LCD_print("+");
+	 
+	 LCD_Wr_num(tens_t,1);
+	 LCD_Wr_num(ones_t,1);
+	 LCD_print(".");
+	 LCD_Wr_num(hunds_t,1);
+         LCD_print(" C");
  
  	}
   }	

@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 2.1               */
 
 /* ЗАГОЛОВКИ, ПЕРЕМЕННЫЕ И СЛУЖЕБНЫЕ ФУНКЦИИ */
 
@@ -30,9 +30,9 @@
 
 unsigned char wr_ptr = 0, rd_ptr = 0; // указатели чтения и записи в массив UART
 // буфер для сохр. принятных команд
-unsigned char rx_buf[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
+unsigned char rx_buf[128]; //= {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
 
-// флаги промежуточных состояний state-machine
+// флаги промежуточных состояний state-machine 
 unsigned char reg_addr_flag = 0;  
 unsigned char ID_flag = 0;     // 0 - осн. ID, 1 - широковещательный 
 unsigned char reg_wr_flag = 0;
@@ -61,18 +61,33 @@ void modbus_refresh  (unsigned char cmd_type); // работа с пользовательскими пер
 unsigned char is_reg (unsigned int reg_addr);  // был ли прочитан регистр
 void uart_send_hex (unsigned char ch);         // функция чтения 1 байта UART
 
+#define DEFAULT_DEV_ID (unsigned char) 70
+#define MODBUS_RX_LED LATBbits.LATB0 // LED_RX_485
+#define MODBUS_TX_LED LATBbits.LATB1 // LED_TX_485
+
 #include "dialtek_modbus.c"
 
   /* очистка массивов регистров */
   void modbus_init (void) {
    /// обнуление регистров
     
-   for(unsigned char i = 0; i < 125; i++) 
+   for(unsigned char i = 0; i < 124; i++) 
    {
-      holding_register[i] = 0;   // clearing RW resgisters 
-      input_register[i] = 0;     // clearing read-only resgisters 
+      holding_register[i] = 0;    // clearing RW resgisters 
+      input_register[i]   = 0;    // clearing read-only resgisters 
    }
    }
+  
+  void modbus_reset(void)
+  { 
+   for(int i = 0; i < 126; i++) 
+        rx_buf[i] = 0;
+   
+      //PIE1bits.RC1IE = 0;    // запрет UART recive // UART Int
+      wr_ptr=0;                                                                   
+      rd_ptr=0;       
+      //PIE1bits.RC1IE = 1;    // разрешение UART recive   
+  }
   
   /* был ли прочитан регистр */
   unsigned char is_reg (unsigned int reg_addr){  
@@ -98,7 +113,7 @@ void uart_send_hex (unsigned char ch);         // функция чтения 1 байта UART
   void modbus_uart_byte (unsigned char rx_byte) {
   /// прием байта данных в буфер 
   wr_ptr++;               // инкремент счетчика записанных байт
-  rx_buf[wr_ptr & 0x0f] = rx_byte;
+  rx_buf[wr_ptr] = rx_byte;
   }
   
   /* заполнение буфера приемника */
@@ -110,21 +125,21 @@ void uart_send_hex (unsigned char ch);         // функция чтения 1 байта UART
    if (rd_ptr < wr_ptr) // буфер не пуст
    {
       rd_ptr++;                    // инкремент счетчика считаных байт
-      rch = rx_buf[rd_ptr & 0x0f]; // сохр. элемента по индексу
+      rch = rx_buf[rd_ptr]; // сохр. элемента по индексу
    }
    else rch = 'x';   
    
    // запрет прерываний по UART на время сравнение указателей  
    // на счит. и запис. элементы массива
-   modbus_int_mode(0);
+   //modbus_int_mode(0);
            
-   if ((wr_ptr==rd_ptr) && (wr_ptr > 15)) // если буфер заполнен                                            
+   if ((wr_ptr==rd_ptr) && (wr_ptr > 126)) // если буфер заполнен                                            
    {  
       wr_ptr=0;                                                                   
       rd_ptr=0;                                                       
    } 
 
-   modbus_int_mode(1);        // разрешение прерываний
+   //modbus_int_mode(1);        // разрешение прерываний
 
 return rch;
 }
@@ -172,6 +187,7 @@ return rch;
     CRC16 = modbus_CRC16(crc_buf, 6);
 
     //--------------------------------------------------------------------
+    IEC1bits.U2RXIE = 0;      // DIS RS232 interrupt
     // отправка пакета мастеру
     TX_EN;
     uart_send_hex((unsigned char)dev_id); // ID устройства
@@ -184,6 +200,7 @@ return rch;
     uart_send_hex((unsigned char)(CRC16 >> 8));      // msb
     uart_send_hex((unsigned char)(CRC16 & 0x00ff));  // lsb   
     TX_DIS;
+    IEC1bits.U2RXIE = 1;      // EN RS232 interrupt
     //--------------------------------------------------------------------
   }
   
@@ -191,7 +208,6 @@ return rch;
   void modbus_rhr_answer() {
     
     /// ответ на команды чтения регистров
-    
   	  addr_buf_2 = addr_buf_1;             // сохр. адрес без смещения в двух переменных	  
           // расчет CRC
           crc_buf[0] = dev_id;
@@ -223,7 +239,7 @@ return rch;
           }
           // отправка CRC
           uart_send_hex((unsigned char)(CRC16 >> 8));      // msb
-          uart_send_hex((unsigned char)(CRC16 & 0x00ff));  // lsb   
+          uart_send_hex((unsigned char)(CRC16 & 0x00ff));  // lsb  
 	  TX_DIS;
           //--------------------------------------------------------------------
   
@@ -266,6 +282,7 @@ return rch;
           // отправка CRC
           uart_send_hex((unsigned char)(CRC16 >> 8));      // msb
           uart_send_hex((unsigned char)(CRC16 & 0x00ff));  // lsb   
+	  __delay_ms(1);
 	  TX_DIS;
           //--------------------------------------------------------------------
   
@@ -327,14 +344,7 @@ return rch;
            {
                                           // получена команда обращения по текущему id устройтсва
                rd_state = GET_CMD_HEADER; // переход в состояние ожидания заголовка команды
-               ID_flag = 0;               // уст. режима осн. ID
            }
-//           if(rx_byte == com_dev_id)      // или широковещательному ID
-//           {
-//                                          // получена команда обращения по текущему id устройтсва
-//               rd_state = GET_CMD_HEADER; // переход в состояние ожидания заголовка команды
-//               ID_flag = 1;               // уст. режима широковещательного ID
-//           }
           break;
        //=====                          
          case GET_CMD_HEADER:             // анализ команды modbus
@@ -456,31 +466,55 @@ return rch;
   /* работа с регистрами */
   void modbus_poll()  {
     /// update modbus regs and vars, send answer to master
-  
     addr_buf_1 = modbus_reg_addr - 1000; // избавляемся от смещекния в адресе
     
-    // если команда - чтение R/W регистров
+    //  чтение R/W регистров
     if(answer == MODBUS_RHR_CMD) 
-    {
+    {    
+	 MODBUS_RX_LED = 1;
+	 MODBUS_TX_LED = 1;
          modbus_refresh(MODBUS_RHR_CMD);
-         modbus_rhr_answer();           
+         modbus_rhr_answer();  
+	 answer = 0;   // сброс флага завершения ответа на запрос   
+	 modbus_reset(); 
+	 
+	 __delay_ms(10);
+         MODBUS_RX_LED = 0;
+	 MODBUS_TX_LED = 0;
     }
 //--------------------------------------------------------------------
-    // если команда - запись в регистр
+    // запись в регистр
     if(answer == MODBUS_WSR_CMD) 
     {
+	 MODBUS_RX_LED = 1;
+	 MODBUS_TX_LED = 1;
+	 
          holding_register[addr_buf_1] = reg_wr_data; 
          modbus_refresh(MODBUS_WSR_CMD);
-         modbus_wsr_answer();             
+         modbus_wsr_answer();     
+	 answer = 0;   // сброс флага завершения ответа на запрос   
+	 modbus_reset();
+
+         MODBUS_RX_LED = 0;
+	 MODBUS_TX_LED = 0;
     }  
 //--------------------------------------------------------------------
-    // если команда - чтение Read-only регистров
+    // чтение Read-only регистров
     if(answer == MODBUS_RIR_CMD) 
-    {
+    {    
+	 MODBUS_RX_LED = 1;
+	 MODBUS_TX_LED = 1;
+	 
          modbus_refresh(MODBUS_RIR_CMD);
-         modbus_rir_answer();             
+         modbus_rir_answer();   
+	 answer = 0;   // сброс флага завершения ответа на запрос   
+	 modbus_reset();
+	 
+	 __delay_ms(10);
+         MODBUS_RX_LED = 0;
+	 MODBUS_TX_LED = 0;
     }
-     answer = 0;   // сброс флага завершения ответа на запрос
+ //--------------------------------------------------------------------
   }
  
 

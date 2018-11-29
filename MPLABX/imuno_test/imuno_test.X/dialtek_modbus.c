@@ -52,8 +52,84 @@ unsigned char device_family = 90;                 // код семейства устройств
 //==============================================================================
 /* USER FUNCS */
 
-/* USER FUNCS */
-//==============================================================================
+#define ID_lenght	8 // кол-во байт в ID датчика
+#define MAX_sens_qty 10   // макс. число датчиков 
+
+unsigned char ID_buf [8]     = {0,0,0,0,0,0,0,0};     // временный массив ID
+unsigned char index_buf [10] = {255,255,255,255,255,255,255,255,255,255}; // массив с занятыми ID
+unsigned char add_count;       // счетчик попыток добавления
+unsigned char eq_cnt = 0;      // счетчик совпадений массива ID  
+unsigned char index_exist = 0; // флаг наличия индекса среди уже записанных
+
+
+unsigned char Sens_ID[MAX_sens_qty][ID_lenght]; // ID датчиков в двумерном виде  
+unsigned char sensors_qty  = 0;			// кол-во датчиков на шине 1-wire
+unsigned char sensor_index;       // индекс датчика для сохр. его id
+
+/*--------------------------------------------------------------------------- */
+#include "one_wire.h"
+
+  // запись ID нового датчика во временный массив
+  void get_sensor_ID()
+  {
+     if (OneWire_reset())
+     {
+        OneWire_send(Read_ROM);
+        for (unsigned char i = 0; i < ID_lenght; i++)
+            ID_buf[i] = OneWire_read(); // сохранение ID датчика во временный буфер 
+     }
+  }
+  
+  // поиск ID нового датчика среди уже сохраненных
+  unsigned char match_sensor_ID()
+  {
+     unsigned char sensor_exist = 0;
+      
+     // сравнение ID нового датчика с теми, что были добавлены ранее
+     for(unsigned char i = 0; i < sensors_qty; i++)
+     {
+        for(unsigned char j = 0; j < ID_lenght; j++)
+        {
+            if(Sens_ID[i][j] == ID_buf[j])
+                eq_cnt++;          
+        }
+        
+        if(eq_cnt < ID_lenght) eq_cnt = 0; // сброс счетчика перед новым поиском
+     }
+      
+     if(eq_cnt >= ID_lenght) 
+         sensor_exist = 1;
+      
+      return sensor_exist;
+  }
+
+  // сброс конфигурации датчиков
+  void reset_cfg()
+  {
+      // очитска массива с ID датчиков       
+      for(unsigned char i = 0; i < MAX_sens_qty; i++)
+      {
+         index_buf[i] = 255;  // массив с занятыми ID
+                 
+         for(unsigned char j = 0; j < ID_lenght; j++) 
+             Sens_ID[i][j] = 0;
+      }
+         
+      // очитска регистров, содержащих ID датчиков  
+      for(unsigned char i = 10; i < 110; i++)
+      {
+          input_register[i] = 0;
+          holding_register[i-10] = 0;
+      }
+      
+      sensors_qty = 0;                     // сброс числа датчиков    
+      add_count = 0;
+      index_exist = 0;
+  }
+  
+  
+  /* USER FUNCS */
+  //==============================================================================
   
   void modbus_int_mode (unsigned char mode)  {      // управление прерыванием UART RX
   
@@ -74,8 +150,25 @@ unsigned char device_family = 90;                 // код семейства устройств
    if(cmd_type == MODBUS_RHR_CMD)
    {   
        
-   
-          holding_register[0] = 1; 
+    long t = 0;
+    unsigned char cnt = 0;
+    if(sensors_qty > 0)
+    {
+        OneWire_all_rd_t(); // Команда измерения Т для всех датчиков
+                        // задержка измер. Т 760 мс внутри функции
+
+        for(unsigned char i = 0; i < sensors_qty; i++)// Опрос Тemper с датчиков поочередно
+        {
+          t = ds18b20_i_rd_t(Sens_ID[i]);  //присвоение Temper значения температуры
+       
+          holding_register[cnt]   = (unsigned int)  (t >> 16);
+          cnt++;
+          holding_register[cnt] = (unsigned int)  (t & 0x0000ffff);
+          cnt++;
+        }
+          holding_register[30] = sensor_index;
+    }
+       
    }         
    //-------------------------------------------------------------------------//
    /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
@@ -84,7 +177,12 @@ unsigned char device_family = 90;                 // код семейства устройств
        input_register[0] = (unsigned int)dev_id;       
        input_register[1] = (unsigned int)device_family;
        input_register[2] = (unsigned int)firmware_ver;
-
+       
+       input_register[9] = (unsigned int)sensors_qty;
+                 
+       // 1st sensor ID: 10 - 17 input regs
+       // 2nd sensor ID: 20 - 27 input regs
+       // etc.
    }         
    //-------------------------------------------------------------------------//
   
@@ -105,6 +203,77 @@ unsigned char device_family = 90;                 // код семейства устройств
         case 2: // 
 
         break;
+        //---
+        case 30: // set sensor number
+          
+          // добавляем новый датчик, если его индекс в диапазоне 0 - MAX_sens_qty-1
+          if(holding_register[30] <= MAX_sens_qty -1)
+          {
+            // смотрим, бы ли ранее записан этот индекс датчика
+            for(unsigned char i = 0; i < MAX_sens_qty; i++)
+            {
+                if(index_buf[i] == holding_register[30])
+                    index_exist = 1; // да, взводим флаг
+            }
+            
+            // если это новый датчик..
+            if(!index_exist)
+            {
+               index_buf[add_count] = sensor_index; // сохр. его индекс в буфер
+               add_count++; // инкремент числа операций добавления
+            }
+          }
+          
+          else holding_register[30] = MAX_sens_qty - 1;
+          sensor_index = holding_register[30];
+          
+          if(add_count > 10) add_count = 0;
+            
+        break;
+        //---
+        case 31: // добавление нового датчика
+        
+        eq_cnt = 0;  // сброс счетчика совпадений байт ID
+        
+        //get 8 ROM bytes - считывание ID датчка во временный буфер
+        get_sensor_ID();  
+        
+        // сброс операции добавления датчика, если он добавлен ранее
+        if(match_sensor_ID() == 1) break;            
+        // если это новый датчик - добавляем его
+        else
+        {
+            for (unsigned char i = 0; i < ID_lenght; i++) 
+            {
+              input_register[(10+10*sensor_index) + i] = ID_buf[i];  
+              Sens_ID[sensor_index][i] = input_register[(10+10*sensor_index) + i];
+            } 
+            
+            if(index_exist)
+              index_exist = 0; // сброс флага наличия индекса среди уже записанных
+            else 
+            {
+                sensors_qty++; // инкремент числа датчиков, если это новый
+                index_exist = 0;
+            }
+            sensor_index = 255;
+           
+          // 1st sensor ID: 10 - 17 input regs
+          // 2nd sensor ID: 20 - 27 input regs
+          // etc.
+        }
+          
+        break;
+        //---
+        case 32:  
+        /* очистка массива с ID и возвражение прибора к исходному состоянию
+          без датчиков */
+            
+            reset_cfg();
+
+        break;
+        //---
+
         //---
           default: break;
     } // switch

@@ -12,6 +12,7 @@
 #define U1BRGVAL ((FP/U1_BAUDRATE)/16)-1
 
 #include "dialtek_modbus.h"
+
  
 void OSC_init()
 {

@@ -46,10 +46,10 @@ unsigned int POT_MIN = 400;
 unsigned int SET_MIN = 0;
 unsigned int POT_MAX = 1600;
 unsigned int SET_MAX = 0;
-unsigned int GRAD_2 = 0;
+unsigned int GRAD_MAX = 0;
 unsigned int TURN_PERCENT_2 = 0;
-unsigned int grad_step; 
-unsigned int percent_step;
+unsigned int grad_step;  //unsigned int 
+unsigned int percent_step;            //unsigned int
 
 unsigned char bd_rate_code = 4;  // default - 115200
 unsigned char bd_rate_fl = 0;    // флаг смены bdrate
@@ -82,8 +82,6 @@ void EEPROM_WrByte(unsigned char bAdd, unsigned char bData)
     
     GIEBitsVal = INTCONbits.GIE;
     INTCONbits.GIE = 0;
-    Nop(); //Nop may be required for latency at high frequencies
-    Nop(); //Nop may be required for latency at high frequencies
     EECON2 = 0x55;
     EECON2 = 0xAA;
     EECON1bits.WR = 1;
@@ -91,8 +89,7 @@ void EEPROM_WrByte(unsigned char bAdd, unsigned char bData)
     EECON1bits.WREN = 0;
     INTCONbits.GIE = 1;
     INTCONbits.GIE = GIEBitsVal;   
-    Nop(); //Nop may be required for latency at high frequencies
-    Nop(); //Nop may be required for latency at high frequencies
+
 }
     
 unsigned char EEPROM_RdByte(unsigned char bAdd)
@@ -135,7 +132,7 @@ unsigned char EEPROM_RdByte(unsigned char bAdd)
 #define MODBUS_WSR_CMD       0x06     // write single register cmd id
 
 unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========================================= ID
-#define firmware_ver    16     // ?????? ???????? ???????? ??????????
+#define firmware_ver    20     // ?????? ???????? ???????? ??????????
 #define device_family   10     // ??? ????????? ?????????: 10 - PKT-8
 #define max_regs_cnt    125    // ????. ???-?? ????????? ??? ?????? ?? 1 ???
 #define meas_status_reg 16     // № статус регистра обновления измерений
@@ -217,6 +214,7 @@ unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========
         holding_register[12] = ADC_current_result;
         holding_register[13] = ADC_current_max;
         holding_register[14] = ADC_current_min;
+        holding_register[15] = GRAD_cutoff_null;
         holding_register[16] = (unsigned int)bd_rate_code;
         
         holding_register[21] = (unsigned int)dev_id;
@@ -227,7 +225,7 @@ unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========
         holding_register[32] = (unsigned int)SET_MIN;
         holding_register[33] = (unsigned int)POT_MAX;
         holding_register[34] = (unsigned int)SET_MAX;
-        holding_register[35] = (unsigned int)GRAD_2;
+        holding_register[35] = (unsigned int)GRAD_MAX;            // Максимальное количество градусов, на которое будет поворачиваться мотор
         holding_register[36] = (unsigned int)TURN_PERCENT_2;
                 
    }
@@ -273,6 +271,12 @@ unsigned char dev_id  = DEFAULT_DEV_ID;          // modbus id <<<<<<<<<<========
         
         case 34: // reg 19 - ID
                SET_MAX = (unsigned char)holding_register[34];
+        break;
+        
+        case 35: // reg 19 - ID
+               GRAD_MAX = (unsigned int)holding_register[35];
+               EEPROM_WrByte(15,GRAD_MAX & 0x00ff); // lsb
+               EEPROM_WrByte(16,GRAD_MAX >> 8); 
         break;
         
         default: break;  }
@@ -816,8 +820,8 @@ return rch;
         current_max = eeprom_buf;
         
         // offset
-        eeprom_buf = 0x00ff & EEPROM_RdByte(7);
-        eeprom_buf |= EEPROM_RdByte(8) << 8;
+        eeprom_buf =  (unsigned int)(0x00ff & EEPROM_RdByte(7));
+        eeprom_buf |= (unsigned int)(EEPROM_RdByte(8) << 8);
         if(eeprom_buf >= 4095)
             eeprom_buf = 0;
         offset = eeprom_buf;
@@ -836,6 +840,14 @@ return rch;
         eeprom_buf |= EEPROM_RdByte(14) << 8;
         if(eeprom_buf > 2) eeprom_buf = 1;
         CHANGE_MOTOR = eeprom_buf; 
+        //
+        eeprom_buf = 0x00ff & EEPROM_RdByte(15);
+        eeprom_buf |= EEPROM_RdByte(16) << 8;
+        if(eeprom_buf > 360) eeprom_buf = 360;
+        GRAD_MAX = eeprom_buf; 
+        
+        
+        
 
     }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -871,13 +883,24 @@ return rch;
             
         }
         else    // сброс настроек на заводские
-        {   
+        {  
+                // задержка 3 сек - проверка на длительное нажатие
+          for(int i = 0; i < 60; i++)  
+          {
+              __delay_ms(5);
+          }
+          
+          if(RES_BUT) { }
+          else 
+          {
             dev_id = DEFAULT_DEV_ID;
             bd_rate_code = 4;
             
             UART_Init(bd_rate_code);
             EEPROM_WrByte(1,bd_rate_code);
             EEPROM_WrByte(2,dev_id);
+          }
+          
         }
         
         ADC_current_max = 0;
@@ -919,7 +942,7 @@ return rch;
 if(CHANGE_MOTOR == 1)
 {
          
-        ADCON0bits.CHS = 0;
+        ADCON0bits.CHS = 0;    // Чтение АЦП, запись положения привода.
         __delay_us(10);
         GO_nDONE = 1;          // Начало преобразования, после преобразований он скинет регистр в 0
         __delay_us(20);
@@ -928,8 +951,8 @@ if(CHANGE_MOTOR == 1)
         PIR1bits.ADIF = 0;
         
                 
-        GRAD_cutoff_null = (GRAD_cutoff_null - offset)*0.879;
-        if((GRAD_cutoff_null < 0)||(GRAD_cutoff_null > 4096))
+        GRAD_cutoff_null = (GRAD_cutoff_null - offset)*0.879;   //Пересчёт положения потенциометра в градусы с учётом принятого "0"
+        if((GRAD_cutoff_null < 0)||(GRAD_cutoff_null > 4096))   //
           {
             grad = 0;
           }   
@@ -937,8 +960,8 @@ if(CHANGE_MOTOR == 1)
           {
             grad = GRAD_cutoff_null;
           }
-           turns_percent = grad/((num_of_turns * 360)/100);
-           turns_percent_press = (grad*10)/((num_of_turns * 360)/100);
+           turns_percent = (grad*10)/((num_of_turns * 3600)/100);      //Пересчёт градусов в проценты относительно выбранного количества оборотов
+           turns_percent_press = (unsigned int)((grad*10)/(((float)num_of_turns*360.0)/100.0)); ////Пересчёт градусов в проценты с точностью до десятичного знака 100.0%
            
         if(ADC_current_rms > current_max)
          overcurrent = 1;
@@ -983,8 +1006,10 @@ if(CHANGE_MOTOR == 2)
            __delay_ms(5);
            SET_MAX = 0;
           }
-        grad_step = (POT_MAX-POT_MIN)/90;
-        percent_step = (POT_MAX-POT_MIN)/100;
+        
+        unsigned long y = 100;  
+        grad_step = ((POT_MAX-POT_MIN)*y)/GRAD_MAX;
+        percent_step = ((POT_MAX-POT_MIN)*y)/100;     
         
         
            ADCON0bits.CHS = 0;
@@ -1000,8 +1025,12 @@ if(CHANGE_MOTOR == 2)
             ADC_RES_BUF = POT_MIN;
         }
         
-        grad = (ADC_RES_BUF-POT_MIN)/grad_step;
-        turns_percent = (ADC_RES_BUF-POT_MIN)/percent_step;   
+        
+        grad = ((ADC_RES_BUF-POT_MIN)*y)/grad_step;
+        
+        turns_percent = ((ADC_RES_BUF-POT_MIN)*y)/percent_step; 
+       
+        turns_percent_press = ((ADC_RES_BUF-POT_MIN)*y*10)/percent_step; 
 }         
         
         modbus_rx_sm();
@@ -1014,6 +1043,7 @@ if(CHANGE_MOTOR == 2)
              RX_LED_OFF;
              TX_LED_OFF;    
         }  
+    
         
          if (set_zero)
         {
@@ -1021,14 +1051,14 @@ if(CHANGE_MOTOR == 2)
            ADCON0bits.CHS = 0;
            __delay_us(10);
            GO_nDONE = 1;          // Начало преобразования, после преобразований он скинет регистр в 0
-           __delay_us(100);
+           __delay_us(20);
        
            offset = (ADRESH<<8) | ADRESL; // Возвращаем "сумму" старшего и младшего полубайта
            PIR1bits.ADIF = 0;
         
-           EEPROM_WrByte(7,(unsigned char)offset & 0x00ff); // lsb
+           EEPROM_WrByte(7,offset & 0x00ff); // lsb
            __delay_ms(5);
-           EEPROM_WrByte(8,(unsigned char)offset >> 8); 
+           EEPROM_WrByte(8,offset >> 8); 
            __delay_ms(5);
         }
         

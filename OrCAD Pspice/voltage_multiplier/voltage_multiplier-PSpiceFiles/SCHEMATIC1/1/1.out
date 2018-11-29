@@ -1,5 +1,5 @@
 
-**** 02/22/18 15:17:44 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 2ms 0 0.1ms 
+.TRAN  0 30ms 0 0.1ms 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -112,7 +112,7 @@ R_R42         0 N41580  1k TC=0,0
 **** RESUMING 1.cir ****
 .END
 
-**** 02/22/18 15:17:44 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -131,7 +131,7 @@ R_R42         0 N41580  1k TC=0,0
          CJO  100.000000E-15 
 
 
-**** 02/22/18 15:17:44 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -186,7 +186,7 @@ R_R42         0 N41580  1k TC=0,0
 
           JOB CONCLUDED
 
-**** 02/22/18 15:17:44 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -198,5 +198,5 @@ R_R42         0 N41580  1k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =         .27
+  Total job time (using Solver 1)   =        2.67
 

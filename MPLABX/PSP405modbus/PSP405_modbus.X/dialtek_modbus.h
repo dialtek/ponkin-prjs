@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 2.1                */
 
 /* гюцнкнбйх, оепелеммше х яксфеамше тсмйжхх */
 

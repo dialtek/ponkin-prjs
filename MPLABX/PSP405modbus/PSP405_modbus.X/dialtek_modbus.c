@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 2.1                */
 
 /* ИНСТРУМЕНТЫ ПОЛЬЗОВАТЕЛЯ */
 
@@ -44,7 +44,7 @@
 /* HARDWARE INFO */
 
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства для широковещательного режима, лучше не трогать 
-  unsigned char dev_id        = 70;                 // MODBUS ID устройства                                      <<<<<<<<<<======== ID
+  unsigned char dev_id        = 61;                 // MODBUS ID устройства                                      <<<<<<<<<<======== ID
   unsigned char firmware_ver  = 21;                 // версия прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
 

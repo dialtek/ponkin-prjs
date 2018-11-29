@@ -21,6 +21,7 @@ unsigned char buf[8];
    // установление лог. упровня на линии 1-wire
    
   One_wire_TX_pin = state;
+  //TRISBbits.TRISB2 = 0;  // OW TX off
  
  }
  
@@ -68,12 +69,12 @@ unsigned char buf[8];
   if (bit) {
     __delay_us(8); // Низкий импульс, от 1 до 15 мкс (с учётом времени восстановления уровня)
     OneWire_tx_state(1);
-    __delay_us(80); // Ожидание до завершения таймслота (не менее 60 мкс)
+    __delay_us(65); // Ожидание до завершения таймслота (не менее 60 мкс)
   } 
   else {
     __delay_us(70); // Низкий уровень на весь таймслот (не менее 60 мкс, не более 120 мкс)
     OneWire_tx_state(1);
-    __delay_us(10); // Время восстановления высокого уровеня на шине + 1 мс (минимум)
+    __delay_ms(1); // Время восстановления высокого уровеня на шине + 1 мс (минимум)
   }
 }
 
@@ -85,13 +86,12 @@ unsigned char buf[8];
   unsigned char retVal = 0;
   
   OneWire_tx_state(0);
-  __delay_us(10); // Длительность низкого уровня, минимум 1 мкс
+  __delay_us(5); // Длительность низкого уровня, минимум 1 мкс
   OneWire_tx_state(1);
-  __delay_us(5); // Пауза до момента сэмплирования, всего не более 15 мкс
+  __delay_us(3); // Пауза до момента сэмплирования, всего не более 15 мкс
   
   if(OneWire_rx_state()) retVal = 1;
- 
-  __delay_us(80); // Ожидание до следующего тайм-слота, минимум 60 мкс с начала низкого уровня
+  __delay_us(65); // Ожидание до следующего тайм-слота, минимум 60 мкс с начала низкого уровня
   
   return retVal;
 }
@@ -157,20 +157,18 @@ unsigned char buf[8];
 	// Если импульс присутствия получен, выполняет команду SKIP ROM
 	// Дает команду измерение температуры
         // Ждет 760мс пока датчик измерит температуру   
-  if (OneWire_reset()){
-      OneWire_send(Skip_ROM);             // Обращение ко всем датчикам на шине 
+  if (OneWire_reset())
+  {
+      OneWire_send(Skip_ROM);             // Обращение ко всем датчикам на шине
       OneWire_send(Convert_T); 		  //  запуск измерения Т 
-      OneWire_tx_state(1);
-      __delay_ms(760);
-
+      __delay_ms(750);
+     
       return 1;
   }
-  else{
-     return 0;
-  }
+  else return 0;
 }  
 
- unsigned char onewire_read_rom(unsigned char *sens_ID) {
+ unsigned char onewire_read_rom(unsigned char *s_ID) {
   // Выполняет последовательность инициализации (reset + ожидает импульс присутствия)
   // Если импульс присутствия получен, выполняет команду READ ROM, затем читает 8-байтовый код устройства
   // сохраняет его в буфер по указателю buf, начиная с младшего байта
@@ -179,7 +177,7 @@ unsigned char buf[8];
     return 0; 
   OneWire_send(Read_ROM);
   for (unsigned char p = 0; p < 8; p++) {
-    sens_ID[p] = OneWire_read(); /// сохранение ID датчика в переменную
+    s_ID[p] = OneWire_read(); /// сохранение ID датчика в переменную
   }
   return 1;
   /*вывод данных памяти датчика 8 байт в 2 строки
@@ -198,18 +196,17 @@ for (unsigned char i = 4; i < 8; i++)
   */
 }
 
- unsigned char OneWire_match_ID(unsigned char *sens_ID) {
+ unsigned char OneWire_match_ID(unsigned char *s_ID) {
   
-  if (!OneWire_reset())
-    return 0;
+  if (!OneWire_reset()) return 0;
+  
   OneWire_send(Match_ROM);
-  for (unsigned char p = 0; p < 8; p++) {
-    OneWire_send(sens_ID[p]);
-  }
+  for (unsigned char p = 0; p < 8; p++) 
+    OneWire_send(s_ID[p]);
   return 1;
 }
 		
- long ds18b20_i_rd_t () {
+ long ds18b20_i_rd_t (unsigned char *s_ID) {
 	  // чтение показаний конкретного датчика
 	 	 
 	 unsigned char scratchpad[8];		// буфер чтения датчика
@@ -217,9 +214,16 @@ for (unsigned char i = 4; i < 8; i++)
          unsigned char CRC_calc = 0;
 	 unsigned char OneWireRdByte = 0;	
  	 long Temper = 0; 
-	 
-	  OneWire_send(Read_scr);			// Запрос на выдачу данных  
-	  
+
+//       OneWire_reset();
+//       OneWire_send(Skip_ROM);             // Обращение ко всем датчикам на шине
+//       OneWire_send(Convert_T); 		  //  запуск измерения Т 
+//       __delay_ms(760);
+       OneWire_reset();
+      // OneWire_send(Skip_ROM);  
+       OneWire_match_ID(s_ID);
+       OneWire_send(Read_scr);			// Запрос на выдачу данных 
+
      for (unsigned char i = 0; i < 9; i++) 
      {		// Считывание данных датчика
         OneWireRdByte = OneWire_read();
@@ -227,12 +231,11 @@ for (unsigned char i = 4; i < 8; i++)
 	
 	if(i == 8) CRC_read = scratchpad[8];// сохр црц
      }
-     
+	  
      for (unsigned char i = 0; i < 8; i++) 
      {		// Считывание даннх датчика
         CRC_calc = crc8(scratchpad[i], CRC_calc); // расчет CRC
      }
-
      if(CRC_calc == CRC_read) // CRC верна...
 	{
 	 		Temper = (scratchpad[1] << 8) | scratchpad[0]; // соединяем ст. и мл байты данных
@@ -244,11 +247,9 @@ for (unsigned char i = 4; i < 8; i++)
 				Temper = (55 * Temper*1000)/879;			   // отрицательная Т
 			}
 	}
- //	 }
+
  return Temper;	
 }
-
-
 
 // 1-wire
 /*=========================================================================== */

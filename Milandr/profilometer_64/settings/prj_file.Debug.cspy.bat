@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "F:\Mega\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.general.xcl" --backend -f "F:\Mega\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\Mega drive\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.general.xcl" --backend -f "E:\Mega drive\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "F:\Mega\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.general.xcl" "--debug_file=%~1" --backend -f "F:\Mega\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\common\bin\cspybat" -f "E:\Mega drive\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.general.xcl" "--debug_file=%~1" --backend -f "E:\Mega drive\ponkin-prjs\Milandr\profilometer_64\settings\prj_file.Debug.driver.xcl" 
 
 @echo off 
 :end

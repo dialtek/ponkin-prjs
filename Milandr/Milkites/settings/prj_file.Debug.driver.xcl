@@ -1,0 +1,19 @@
+"--endian=little" 
+
+"--cpu=Cortex-M3" 
+
+"--fpu=None" 
+
+"-p" 
+
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\config\debugger\Milandr\jbr_1986BE9x.ddf" 
+
+"--semihosting" 
+
+"--device=1986BE9x" 
+
+"--multicore_nr_of_cores=1" 
+
+
+
+

@@ -80,3 +80,37 @@ O:\projects\С#\___wpf\krion_extract_sys\obj\Debug\Settings.baml
 O:\projects\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода.g.resources
 O:\projects\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.Properties.Resources.resources
 O:\projects\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.csproj.GenerateResource.Cache
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Система вывода.exe.config
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Система вывода.exe
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Система вывода.pdb
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.DataGrid.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.csprojResolveAssemblyReference.cache
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\MainWindow.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Settings.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\App.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода_Content.g.cs
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода_MarkupCompile.cache
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода_MarkupCompile.lref
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\MainWindow.baml
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Settings.baml
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода.g.resources
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.Properties.Resources.resources
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.csproj.GenerateResource.Cache
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\extract_system.csproj.CoreCompileInputs.cache
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода.exe
+F:\Mega\ponkin-prjs\С#\___wpf\krion_extract_sys\obj\Debug\Система вывода.pdb

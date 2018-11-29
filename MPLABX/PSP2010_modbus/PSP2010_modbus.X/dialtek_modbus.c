@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 2.1                */
 
 /* »Ќ—“–”ћ≈Ќ“џ ѕќЋ№«ќ¬ј“≈Ћя */
 
@@ -42,9 +42,7 @@
 #define TX_DIS LATBbits.LATB14=0
 
 /* HARDWARE INFO */
-
-  unsigned char com_dev_id    = 247;                // MODBUS ID устройства дл€ широковещательного режима, лучше не трогать 
-  unsigned char dev_id        = 70;                 // MODBUS ID устройства                                      <<<<<<<<<<======== ID
+  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства                                      <<<<<<<<<<======== ID
   unsigned char firmware_ver  = 21;                 // верси€ прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
 
@@ -60,6 +58,10 @@ unsigned int PSP405_get_voltage_lim();
 unsigned int PSP405_get_current_lim();
 void PSP405_set_output(unsigned int state);
 void PSP405_set_power_lim(unsigned int power_lim);
+
+//void eeprom_wr_page(unsigned int address);
+void eeprom_wr_regs(void);
+//unsigned int eeprom_rd_regs(unsigned int address);
   
 /* USER FUNCS */
   
@@ -75,7 +77,8 @@ void PSP405_set_power_lim(unsigned int power_lim);
     }
   }
   
-  void modbus_refresh(unsigned char cmd_type){      // работа с регистрами
+  void modbus_refresh(unsigned char cmd_type) // работа с регистрами
+  {     
     
    /// „тение R/W регистров, TODO - обновление переменных перед отправкой мастеру    
     
@@ -105,45 +108,76 @@ void PSP405_set_power_lim(unsigned int power_lim);
    {  // анализ регистра записи 
       switch(addr_buf_1) {  
           case 4: // reg 4 - set output
+            RS232_TX_LED = 1;
            PSP405_set_output(holding_register[4]);
         break;
         //---------
         case 7: // reg 7 - set voltage
            if(holding_register[7] > MAX_VOLTAGE) holding_register[7] = MAX_VOLTAGE;
+           RS232_TX_LED = 1;
            PSP405_set_voltage(holding_register[7]);
         break;
         //---------
         case 8: // reg 8 - set voltage limit
            if(holding_register[8] > MAX_VOLTAGE/100) holding_register[8] = MAX_VOLTAGE/100;
+           RS232_TX_LED = 1;
            PSP405_set_voltage_lim(holding_register[8]);
         break;
         //---------
         case 9: // reg 9 - set current
            if(holding_register[9] > MAX_CURRENT) holding_register[9] = MAX_CURRENT;
+           RS232_TX_LED = 1;
            PSP405_set_current(holding_register[9]);
         break;
         //---------
         case 10: // reg 10 - K1 relay ctrl
+           RS232_TX_LED = 1;
            PSP405_set_output(0);
            for(unsigned int i = 0; i < 2000; i++) 
              delay_ms(1);
-           if     (holding_register[10] == 1) K1_ON;
-           else if(holding_register[10] == 0) K1_OFF; 
+           if     (holding_register[10] == 1) 
+           {
+               K1_ON;
+               POL_RELAY_LED = 1;
+           }
+           else if(holding_register[10] == 0) 
+           {
+               K1_OFF;
+               POL_RELAY_LED = 0;
+           }
            for(unsigned int i = 0; i < 100; i++) 
              delay_ms(1);
            PSP405_set_output(1);
         break;
-         //---------
+        //---------
         //---------
         case 11: // reg 1 - power limit
            if(holding_register[11] > MAX_POWER) holding_register[11] = MAX_POWER;
+           RS232_TX_LED = 1;
            PSP405_set_power_lim(holding_register[11]);
         break;
-       default: break;  }
+       //---------
+        case 19: // reg 19 - ID
+            // modbus id change seq     
+            if((dev_id >= 254 ) || (dev_id == 0)) break;
+            else
+            {  
+             dev_id = (unsigned char)holding_register[20];
+             holding_register[19] = 0;
+            }
+            
+       break;
+       default: break;  
+      }
       
        for(unsigned int i = 0; i < 400; i++) 
-         delay_ms(1);      
-   } 
+         delay_ms(1); 
+         eeprom_wr_regs(); // save registers state       
+         RS232_TX_LED = 0;
+   }
+   
+      
+   
   }
 
 /*############################################################################*/  

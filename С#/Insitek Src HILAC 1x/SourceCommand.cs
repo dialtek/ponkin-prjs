@@ -126,7 +126,7 @@ namespace Insitek_src
         }
 
         /// <summary>
-        /// Формирование посылки байт для записи одного бита
+        /// Формирование посылки байт для записи одного байта
         /// </summary>
         /// <param name="Src_ID"></param>
         /// <param name="reg2write"></param>
@@ -163,7 +163,7 @@ namespace Insitek_src
         }
 
         /// <summary>
-        /// Формирование посылки байт для чтения одного бита
+        /// Формирование посылки байт для чтения одного байта
         /// </summary>
         /// <param name="Src_ID"></param>
         /// <param name="reg2write"></param>

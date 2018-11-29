@@ -1,0 +1,7 @@
+.ALIASES
+I_I1            I1(+=0 -=N14419 ) CN @AMP.SCHEMATIC1(sch_1):INS14321@SOURCE.IPULSE.Normal(chips)
+R_R1            R1(1=N14419 2=0 ) CN @AMP.SCHEMATIC1(sch_1):INS14390@ANALOG.R.Normal(chips)
+R_R2            R2(1=N145651 2=N14419 ) CN @AMP.SCHEMATIC1(sch_1):INS14555@ANALOG.R.Normal(chips)
+V_V1            V1(+=N145651 -=0 ) CN @AMP.SCHEMATIC1(sch_1):INS14595@SOURCE.VDC.Normal(chips)
+_    _(GND_0=0)
+.ENDALIASES
