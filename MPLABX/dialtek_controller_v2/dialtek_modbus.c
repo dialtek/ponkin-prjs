@@ -37,17 +37,18 @@
 /*                    ПОЛЯ ИЗМЕНЯЕМЫЕ ПОЛЬЗОВАТЕЛЕМ !!!                       */ 
 
 /* RS485 EN/DIS DEFINE */
-
 #define TX_EN  LATEbits.LATE8=1
 #define TX_DIS LATEbits.LATE8=0
 
 /* HARDWARE INFO */
   unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства                                      <<<<<<<<<<======== ID
   unsigned char firmware_ver  = 10;                 // версия прошивки текущего устройства
-  unsigned char device_family = 200;                 // код семейства устройств
+  unsigned char device_family = 200;                // код семейства устройств
 
 /* ПРОТОТИПЫ */
-unsigned int pump_get_pos (unsigned char);
+unsigned int get_syr_pos (unsigned char);
+unsigned int get_syr_vel (unsigned char);
+unsigned int get_valve_angle (unsigned char);
   
 /* USER FUNCS */
 /*--------------------------------------------------------------------------- */  
@@ -73,11 +74,14 @@ unsigned int pump_get_pos (unsigned char);
    if(cmd_type == MODBUS_RHR_CMD)
    {
        
-    if(is_reg(0)) holding_register[0] = pump_get_pos(1);
-    
+    if(is_reg(0)) holding_register[0] = get_syr_pos(1);
+    if(is_reg(1)) holding_register[1] = get_syr_vel(1);
+    if(is_reg(2)) holding_register[2] = get_valve_angle(1);       
+
+ 
     delay_ms(10);
-    MODBUS_RX_LED = 0;
     
+    MODBUS_RX_LED = 0;   
    }         
    //-------------------------------------------------------------------------//
    /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
@@ -105,16 +109,26 @@ unsigned int pump_get_pos (unsigned char);
 
         break;
         //---------
-        case 2: // set syringe position   
-            if(holding_register[2] <= 3000) 
-               pump_set_pos(1, holding_register[2]);
+        case 6: // set syringe position   
+            if(holding_register[6] <= 3000) 
+               set_syr_pos(1, holding_register[6]);
         break;
         //---------
-        case 10:  pump_init_protocol(1);  break;    
-        //---------    
-        case 11:  pump_init_valve(1);     break;    
+        case 7: // set syringe velocity   
+            if(holding_register[7] <= 40) 
+               set_syr_vel(1, holding_register[7]);
+        break;
         //---------
-        case 12:  pump_init_syringe(1);   break;    
+        case 8: // set valve angle   
+            if(holding_register[8] <= 345) 
+               set_valve_angle(1, holding_register[8], 0);
+        break;
+        //---------
+        case 10:  init_protocol(1);  break;    
+        //---------    
+        case 11:  init_valve(1);     break;    
+        //---------
+        case 12:  init_syringe(1);   break;    
         //---------              
         default: break;  
       }
