@@ -32,13 +32,13 @@
       <Wnd2>
         <Tabs>
           <Tab>
-            <Identity>TabID-15203-28744</Identity>
+            <Identity>TabID-27478-24924</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
           </Tab>
           <Tab>
-            <Identity>TabID-31472-28849</Identity>
+            <Identity>TabID-13592-24980</Identity>
             <TabName>Debug Log</TabName>
             <Factory>Debug-Log</Factory>
             <Session/>
@@ -49,7 +49,7 @@
       <Wnd3>
         <Tabs>
           <Tab>
-            <Identity>TabID-25952-28747</Identity>
+            <Identity>TabID-5458-24928</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
@@ -67,17 +67,21 @@
       <Pane>
         <Tab>
           <Factory>TextEditor</Factory>
+          <Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.3\arm\doc\infocenter\index.ENU.html</Filename>
+        </Tab>
+        <Tab>
+          <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\main.c</Filename>
           <XPos>0</XPos>
           <YPos>0</YPos>
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>39</YPos2>
-          <SelStart2>0</SelStart2>
-          <SelEnd2>0</SelEnd2>
+          <YPos2>559</YPos2>
+          <SelStart2>29514</SelStart2>
+          <SelEnd2>29514</SelEnd2>
         </Tab>
-        <ActiveTab>0</ActiveTab>
+        <ActiveTab>1</ActiveTab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -92,9 +96,9 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-066AF510>
+            <Toolbar-085AF510>
               <key>iaridepm.enu1</key>
-            </Toolbar-066AF510>
+            </Toolbar-085AF510>
           </Sizes>
         </Row0>
         <Row1>

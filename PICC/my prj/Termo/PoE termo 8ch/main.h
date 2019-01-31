@@ -1,4 +1,4 @@
-#include <24HJ128GP506A.h>
+#include <24HJ128GP506.h>
 
 
 //#FUSES PROTECT_HIGH            //General Segment Code Protect High Security

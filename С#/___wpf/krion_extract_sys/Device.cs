@@ -1400,11 +1400,11 @@ namespace extract_system
                 var combobox = (ComboBox)controls["combobox_sector"].WPFControl;
                 if (combobox.SelectedItem != null)
                 {
-                    combobox.SelectedItem = (combobox.SelectedItem.ToString() == "51 R") ? "1 k" : combobox.SelectedItem;
+                    combobox.SelectedItem = (combobox.SelectedItem.ToString() == "200 R") ? "1 k" : combobox.SelectedItem;
                     if(combobox.SelectedItem.ToString() == "1 k")
                         SendMsgDeviceManager(this, new QueueElementW(Convert.ToInt32(Id), 1000, 1));
                 }
-                combobox.Items.Remove("51 R");
+                combobox.Items.Remove("200 R");
             }
             else
             {
@@ -1413,12 +1413,12 @@ namespace extract_system
                 var flag_500 = 0;
                 foreach(var item in combobox.Items)
                 {
-                    flag_500 = (item.ToString() == "51 R") ? 1 : 0;
+                    flag_500 = (item.ToString() == "200 R") ? 1 : 0;
                     if (flag_500 == 1)
                         break;
                 }
                 if(flag_500 == 0)
-                    combobox.Items.Add("51 R");
+                    combobox.Items.Add("200 R");
             }
         }
 

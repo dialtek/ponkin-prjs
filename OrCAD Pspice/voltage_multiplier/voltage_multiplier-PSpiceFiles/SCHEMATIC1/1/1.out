@@ -1,5 +1,5 @@
 
-**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 30ms 0 0.1ms 
+.TRAN  0 20ms 0 0.1ms SKIPBP 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -108,11 +108,16 @@ E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
 R_R43         0 N41684  100 TC=0,0 
 I_I4         N41672 N41684 DC 3ma  
 R_R42         0 N41580  1k TC=0,0 
+V_V11         0 N45640 1600
+R_R45         0 N45693  1MEG TC=0,0 
+V_V12         N45909 N45640  
++PULSE 0 15 0 100ns 100ns 1ms 5ms
+Z_Z4         N45693 N45909 N45640 IXGH10N170     
 
 **** RESUMING 1.cir ****
 .END
 
-**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -131,62 +136,39 @@ R_R42         0 N41580  1k TC=0,0
          CJO  100.000000E-15 
 
 
-**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
 
- ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+ ****     IGBT MODEL PARAMETERS
 
 
 ******************************************************************************
 
 
 
- NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
-
-(N14716)-6.131E-15 (N14756)-5.217E-15 (N14840)-4.970E-15 (N15043)-4.970E-15     
-
-(N15446)-2.340E-18 (N17727)-4.970E-15 (N18570)-4.970E-15 (N22336) 45.37E-15     
-
-(N22376) 32.33E-15 (N22382) 45.37E-15 (N22392) 60.99E-15 (N22414)-2.341E-18     
-
-(N22514) 60.99E-15 (N22656) 60.99E-15 (N22948) 32.33E-15 (N22955) 32.33E-15     
-
-(N22959) 32.33E-15 (N27016)-11.04E-24 (N27049)-11.04E-24 (N27156)-5.022E-18     
-
-(N27220) 63.57E-21 (N27341)-30.43E-24 (N33200)    3.3669 (N33228)    3.3669     
-
-(N33264)   12.0000 (N33276)    3.3669 (N34639)-3.360E-06 (N34655)    3.3600     
-
-(N34659)  -12.0000 (N34739)    0.0000 (N35514)    3.3669 (N35551)    3.2400     
-
-(N40610)     .0200 (N40634)     .0200 (N40732) 12.00E+03 (N40736)     .0200     
-
-(N41566) 297.0E-09 (N41580)    -.2970 (N41672) 12.00E+03 (N41684)     .2970 
-
-
-
-
-    VOLTAGE SOURCE CURRENTS
-    NAME         CURRENT
-
-    V_V1         0.000E+00
-    V_V2         0.000E+00
-    V_V3         0.000E+00
-    V_V5        -8.633E-04
-    V_V6        -1.200E-03
-    V_V9        -2.000E-04
-    V_V10       -3.000E-03
-
-    TOTAL POWER DISSIPATION   3.84E+01  WATTS
+               IXGH10N170      
+               NIGBT           
+          VT    4.6879       
+         MUN   10.000000E+03 
+         MUP   50            
+         BVF    3.268        
+          KF     .5005       
+         CGS   12.656000E-09 
+        COXD   23.277000E-09 
+         VTD   -5            
+         TAU  220.000000E-09 
+          KP    2            
+         AGD    4.000000E-06 
+          WB  117.000000E-06 
 
 
 
           JOB CONCLUDED
 
-**** 11/09/18 16:55:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -198,5 +180,5 @@ R_R42         0 N41580  1k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =        2.67
+  Total job time (using Solver 1)   =        2.36
 

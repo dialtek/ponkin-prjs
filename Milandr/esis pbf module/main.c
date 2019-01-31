@@ -64,7 +64,7 @@
 #define modbus_wsr_cmd  0x06    // write single register cmd id
 
 #define com_dev_id 0            // ¬ широковещательном режиме используетс€ адрес 0
-#define dev_id 7                // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
+#define dev_id 8               // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
 #define firmware_ver 13         // верси€ прошивки текущего устройства
 #define device_family 1         // код семейства устройств: 1 - PBF modules, 2 - extraction modules, 3 - dc hv modules
 #define max_regs_cnt   125      // макс. кол-во регистров дл€ чтени€ за 1 раз
@@ -724,7 +724,7 @@ return rch;
 
  MDR_DAC->DAC2_DATA = 0;      // сброс значени€ ÷јѕ
  MDR_TIMER3->CNTRL |= 1;      
- MDR_TIMER1->CNTRL |= 1; 
+ //MDR_TIMER1->CNTRL |= 1; 
  __enable_irq();	      // Enable Interrupts global
  
  HV_SUPPLY_ON;                // вкл. питани€ HV-части

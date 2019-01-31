@@ -60,10 +60,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200                0xee           0x165  (357)
 .const                       0x2ee                0x3c            0x5a  (90)
-.text                        0x32a              0x12a8          0x1bfc  (7164)
-.dinit                      0x15d2                0x12            0x1b  (27)
+.text                        0x32a              0x1326          0x1cb9  (7353)
+.dinit                      0x1650                0x12            0x1b  (27)
 
-                     Total program memory used (bytes):         0x1dd6  (7638) 2%
+                     Total program memory used (bytes):         0x1e93  (7827) 2%
 
 
 Auxflash Memory  [Origin = 0x7fc000, Length = 0x3ffa]
@@ -162,121 +162,121 @@ External Symbols in Program Memory (by address):
 
                   0x000200                  __resetPRI
                   0x00022c                  __psv_init
-                  0x000238                  __data_init
                   0x000238                  __data_init_extended
+                  0x000238                  __data_init
                   0x0002ea                  __DefaultInterrupt
                   0x00032a                  _modbus_int_mode
                   0x00033e                  _modbus_refresh
-                  0x00044c                  _modbus_init
-                  0x00047e                  _modbus_reset
-                  0x0004a8                  _is_reg
-                  0x0004da                  _modbus_uart_byte
-                  0x0004f8                  _get_rx_ch
-                  0x000550                  _modbus_CRC16
-                  0x0005b8                  _modbus_wsr_answer
-                  0x000644                  _modbus_rhr_answer
-                  0x000738                  _modbus_rir_answer
-                  0x00082c                  _modbus_exc_rsp
-                  0x000886                  _modbus_rx_CRC_check
-                  0x0008d4                  _modbus_rx_sm
-                  0x000b08                  _modbus_poll
-                  0x000b80                  _OSC_init
-                  0x000bc4                  _GPIO_init
-                  0x000c62                  _TIMER8_delay_init
-                  0x000c7a                  _delay_us
-                  0x000cb0                  _delay_ms
-                  0x000cfc                  _UART1_init
-                  0x000d3c                  _uart_send_hex
-                  0x000d56                  __U1RXInterrupt
-                  0x000d84                  _UART2_init
-                  0x000dc4                  _uart2_send_byte
-                  0x000dde                  _uart2_send_text
-                  0x000dfa                  _uart2_CR_LF_send
-                  0x000e08                  __U2RXInterrupt
-                  0x000e5e                  _SPI2_init
-                  0x000e9e                  _SPI2_write_byte
-                  0x000ec0                  _SPI2_read_byte
-                  0x000efe                  _SPI3_init
-                  0x000f3e                  _SPI3_write_byte
-                  0x000f5c                  _SPI3_read_byte
-                  0x000f96                  _eeprom_wr_page
-                  0x001010                  _eeprom_wr_regs
-                  0x001036                  _eeprom_rd_regs
-                  0x001098                  _main
-                  0x0010ba                  _char2num
-                  0x0010c8                  _num2char
-                  0x0010d6                  _chars2number
-                  0x001224                  _answer_refresh
-                  0x00124e                  _search_answer
-                  0x0012e8                  _init_protocol
-                  0x001308                  _init_valve
-                  0x001320                  _init_syringe
-                  0x001348                  _get_syr_pos
-                  0x001380                  _set_syr_pos
-                  0x00144c                  _get_syr_vel
-                  0x001484                  _set_syr_vel
-                  0x0014f0                  _get_valve_angle
-                  0x001528                  _set_valve_angle
+                  0x000456                  _modbus_init
+                  0x000488                  _modbus_reset
+                  0x0004b2                  _is_reg
+                  0x0004e4                  _modbus_uart_byte
+                  0x000502                  _get_rx_ch
+                  0x00055a                  _modbus_CRC16
+                  0x0005c2                  _modbus_wsr_answer
+                  0x00064e                  _modbus_rhr_answer
+                  0x000742                  _modbus_rir_answer
+                  0x000836                  _modbus_exc_rsp
+                  0x000890                  _modbus_rx_CRC_check
+                  0x0008de                  _modbus_rx_sm
+                  0x000b12                  _modbus_poll
+                  0x000ba6                  _OSC_init
+                  0x000bea                  _GPIO_init
+                  0x000cb6                  _TIMER8_delay_init
+                  0x000cce                  _delay_us
+                  0x000d04                  _delay_ms
+                  0x000d50                  _UART1_init
+                  0x000d90                  _uart_send_hex
+                  0x000daa                  __U1RXInterrupt
+                  0x000dd8                  _UART2_init
+                  0x000e18                  _uart2_send_byte
+                  0x000e32                  _uart2_send_text
+                  0x000e4e                  _uart2_CR_LF_send
+                  0x000e5c                  __U2RXInterrupt
+                  0x000eb2                  _SPI1_init
+                  0x000ef2                  _SPI1_write_byte
+                  0x000f14                  _SPI1_read_byte
+                  0x000f52                  _SPI3_init
+                  0x000f92                  _SPI3_write_byte
+                  0x000fb0                  _SPI3_read_byte
+                  0x000fea                  _eeprom_wr_page
+                  0x001064                  _eeprom_wr_regs
+                  0x00108a                  _eeprom_rd_regs
+                  0x0010ec                  _main
+                  0x001138                  _char2num
+                  0x001146                  _num2char
+                  0x001154                  _chars2number
+                  0x0012a2                  _answer_refresh
+                  0x0012cc                  _search_answer
+                  0x001366                  _init_protocol
+                  0x001386                  _init_valve
+                  0x00139e                  _init_syringe
+                  0x0013c6                  _get_syr_pos
+                  0x0013fe                  _set_syr_pos
+                  0x0014ca                  _get_syr_vel
+                  0x001502                  _set_syr_vel
+                  0x00156e                  _get_valve_angle
+                  0x0015a6                  _set_valve_angle
 
 External Symbols in Program Memory (by name):
 
-                  0x000bc4                  _GPIO_init
-                  0x000b80                  _OSC_init
-                  0x000e5e                  _SPI2_init
-                  0x000ec0                  _SPI2_read_byte
-                  0x000e9e                  _SPI2_write_byte
-                  0x000efe                  _SPI3_init
-                  0x000f5c                  _SPI3_read_byte
-                  0x000f3e                  _SPI3_write_byte
-                  0x000c62                  _TIMER8_delay_init
-                  0x000cfc                  _UART1_init
-                  0x000d84                  _UART2_init
+                  0x000bea                  _GPIO_init
+                  0x000ba6                  _OSC_init
+                  0x000eb2                  _SPI1_init
+                  0x000f14                  _SPI1_read_byte
+                  0x000ef2                  _SPI1_write_byte
+                  0x000f52                  _SPI3_init
+                  0x000fb0                  _SPI3_read_byte
+                  0x000f92                  _SPI3_write_byte
+                  0x000cb6                  _TIMER8_delay_init
+                  0x000d50                  _UART1_init
+                  0x000dd8                  _UART2_init
                   0x0002ea                  __DefaultInterrupt
-                  0x000d56                  __U1RXInterrupt
-                  0x000e08                  __U2RXInterrupt
+                  0x000daa                  __U1RXInterrupt
+                  0x000e5c                  __U2RXInterrupt
                   0x000238                  __data_init
                   0x000238                  __data_init_extended
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x001224                  _answer_refresh
-                  0x0010ba                  _char2num
-                  0x0010d6                  _chars2number
-                  0x000cb0                  _delay_ms
-                  0x000c7a                  _delay_us
-                  0x001036                  _eeprom_rd_regs
-                  0x000f96                  _eeprom_wr_page
-                  0x001010                  _eeprom_wr_regs
-                  0x0004f8                  _get_rx_ch
-                  0x001348                  _get_syr_pos
-                  0x00144c                  _get_syr_vel
-                  0x0014f0                  _get_valve_angle
-                  0x0012e8                  _init_protocol
-                  0x001320                  _init_syringe
-                  0x001308                  _init_valve
-                  0x0004a8                  _is_reg
-                  0x001098                  _main
-                  0x000550                  _modbus_CRC16
-                  0x00082c                  _modbus_exc_rsp
-                  0x00044c                  _modbus_init
+                  0x0012a2                  _answer_refresh
+                  0x001138                  _char2num
+                  0x001154                  _chars2number
+                  0x000d04                  _delay_ms
+                  0x000cce                  _delay_us
+                  0x00108a                  _eeprom_rd_regs
+                  0x000fea                  _eeprom_wr_page
+                  0x001064                  _eeprom_wr_regs
+                  0x000502                  _get_rx_ch
+                  0x0013c6                  _get_syr_pos
+                  0x0014ca                  _get_syr_vel
+                  0x00156e                  _get_valve_angle
+                  0x001366                  _init_protocol
+                  0x00139e                  _init_syringe
+                  0x001386                  _init_valve
+                  0x0004b2                  _is_reg
+                  0x0010ec                  _main
+                  0x00055a                  _modbus_CRC16
+                  0x000836                  _modbus_exc_rsp
+                  0x000456                  _modbus_init
                   0x00032a                  _modbus_int_mode
-                  0x000b08                  _modbus_poll
+                  0x000b12                  _modbus_poll
                   0x00033e                  _modbus_refresh
-                  0x00047e                  _modbus_reset
-                  0x000644                  _modbus_rhr_answer
-                  0x000738                  _modbus_rir_answer
-                  0x000886                  _modbus_rx_CRC_check
-                  0x0008d4                  _modbus_rx_sm
-                  0x0004da                  _modbus_uart_byte
-                  0x0005b8                  _modbus_wsr_answer
-                  0x0010c8                  _num2char
-                  0x00124e                  _search_answer
-                  0x001380                  _set_syr_pos
-                  0x001484                  _set_syr_vel
-                  0x001528                  _set_valve_angle
-                  0x000dfa                  _uart2_CR_LF_send
-                  0x000dc4                  _uart2_send_byte
-                  0x000dde                  _uart2_send_text
-                  0x000d3c                  _uart_send_hex
+                  0x000488                  _modbus_reset
+                  0x00064e                  _modbus_rhr_answer
+                  0x000742                  _modbus_rir_answer
+                  0x000890                  _modbus_rx_CRC_check
+                  0x0008de                  _modbus_rx_sm
+                  0x0004e4                  _modbus_uart_byte
+                  0x0005c2                  _modbus_wsr_answer
+                  0x001146                  _num2char
+                  0x0012cc                  _search_answer
+                  0x0013fe                  _set_syr_pos
+                  0x001502                  _set_syr_vel
+                  0x0015a6                  _set_valve_angle
+                  0x000e4e                  _uart2_CR_LF_send
+                  0x000e18                  _uart2_send_byte
+                  0x000e32                  _uart2_send_text
+                  0x000d90                  _uart_send_hex
 
 Memory Configuration
 
@@ -375,31 +375,31 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x50b4
+.debug_info       0x000000       0x5590
  *(.debug_info)
- .debug_info      0x000000       0x484e build/default/production/main.o
- .debug_info      0x00484e        0x866 build/default/production/hamilton_pump.o
+ .debug_info      0x000000       0x4d2e build/default/production/main.o
+ .debug_info      0x004d2e        0x862 build/default/production/hamilton_pump.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000        0x43e
+.debug_abbrev     0x000000        0x409
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x2d5 build/default/production/main.o
- .debug_abbrev    0x0002d5        0x169 build/default/production/hamilton_pump.o
+ .debug_abbrev    0x0002d5        0x134 build/default/production/hamilton_pump.o
 
-.debug_line       0x000000       0x1ae6
+.debug_line       0x000000       0x1ad3
  *(.debug_line)
- .debug_line      0x000000       0x144f build/default/production/main.o
- .debug_line      0x00144f        0x697 build/default/production/hamilton_pump.o
+ .debug_line      0x000000       0x143f build/default/production/main.o
+ .debug_line      0x00143f        0x694 build/default/production/hamilton_pump.o
 
 .debug_frame      0x000000        0x368
  *(.debug_frame)
  .debug_frame     0x000000        0x274 build/default/production/main.o
  .debug_frame     0x000274         0xf4 build/default/production/hamilton_pump.o
 
-.debug_str        0x000000        0x33d
+.debug_str        0x000000        0x3bb
  *(.debug_str)
- .debug_str       0x000000        0x2a4 build/default/production/main.o
- .debug_str       0x0002a4         0x99 build/default/production/hamilton_pump.o
+ .debug_str       0x000000        0x322 build/default/production/main.o
+ .debug_str       0x000322         0x99 build/default/production/hamilton_pump.o
 
 .debug_loc
  *(.debug_loc)
@@ -445,7 +445,7 @@ __FUID0
                   0x000024          0x4 LONG 0x2ea DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x2ea DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x2ea DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0xd56 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0xdaa DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x2ea DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x2ea DEFINED (__AD1Interrupt)?ABSOLUTE (__AD1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x2ea DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -464,7 +464,7 @@ __FUID0
                   0x00004a          0x4 LONG 0x2ea DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x2ea DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x2ea DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0xe08 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0xe5c DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000052          0x4 LONG 0x2ea DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000054          0x4 LONG 0x2ea DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000056          0x4 LONG 0x2ea DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -3269,22 +3269,22 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000030        0x4f3
+                  0x000030        0x560
  .debug_pubtypes
-                  0x000030        0x4c4 build/default/production/main.o
+                  0x000030        0x531 build/default/production/main.o
  .debug_pubtypes
-                  0x0004f4         0x2f build/default/production/hamilton_pump.o
+                  0x000561         0x2f build/default/production/hamilton_pump.o
 
 __c30_signature
-                  0x000524         0x18
+                  0x000590         0x18
  __c30_signature
-                  0x000524          0x6 build/default/production/main.o
+                  0x000590          0x6 build/default/production/main.o
  __c30_signature
-                  0x00052a          0x6 build/default/production/hamilton_pump.o
+                  0x000596          0x6 build/default/production/hamilton_pump.o
  __c30_signature
-                  0x000530          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_extendedep.o)
+                  0x00059c          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_extendedep.o)
  __c30_signature
-                  0x000536          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(data_init_extendedep.o)
+                  0x0005a2          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(data_init_extendedep.o)
 
 .nbss               0x1000        0x3b0
  .nbss              0x1000        0x3b0 build/default/production/main.o
@@ -3349,61 +3349,61 @@ __c30_signature
 .const              0x82ee         0x3c load address 0x0002ee  
  .const             0x82ee         0x3c build/default/production/hamilton_pump.o
 
-.text             0x00032a       0x12a8
- .text            0x00032a        0xd90 build/default/production/main.o
+.text             0x00032a       0x1326
+ .text            0x00032a        0xe0e build/default/production/main.o
                   0x00032a                  _modbus_int_mode
                   0x00033e                  _modbus_refresh
-                  0x00044c                  _modbus_init
-                  0x00047e                  _modbus_reset
-                  0x0004a8                  _is_reg
-                  0x0004da                  _modbus_uart_byte
-                  0x0004f8                  _get_rx_ch
-                  0x000550                  _modbus_CRC16
-                  0x0005b8                  _modbus_wsr_answer
-                  0x000644                  _modbus_rhr_answer
-                  0x000738                  _modbus_rir_answer
-                  0x00082c                  _modbus_exc_rsp
-                  0x000886                  _modbus_rx_CRC_check
-                  0x0008d4                  _modbus_rx_sm
-                  0x000b08                  _modbus_poll
-                  0x000b80                  _OSC_init
-                  0x000bc4                  _GPIO_init
-                  0x000c62                  _TIMER8_delay_init
-                  0x000c7a                  _delay_us
-                  0x000cb0                  _delay_ms
-                  0x000cfc                  _UART1_init
-                  0x000d3c                  _uart_send_hex
-                  0x000d56                  __U1RXInterrupt
-                  0x000d84                  _UART2_init
-                  0x000dc4                  _uart2_send_byte
-                  0x000dde                  _uart2_send_text
-                  0x000dfa                  _uart2_CR_LF_send
-                  0x000e08                  __U2RXInterrupt
-                  0x000e5e                  _SPI2_init
-                  0x000e9e                  _SPI2_write_byte
-                  0x000ec0                  _SPI2_read_byte
-                  0x000efe                  _SPI3_init
-                  0x000f3e                  _SPI3_write_byte
-                  0x000f5c                  _SPI3_read_byte
-                  0x000f96                  _eeprom_wr_page
-                  0x001010                  _eeprom_wr_regs
-                  0x001036                  _eeprom_rd_regs
-                  0x001098                  _main
- .text            0x0010ba        0x518 build/default/production/hamilton_pump.o
-                  0x0010ba                  _char2num
-                  0x0010c8                  _num2char
-                  0x0010d6                  _chars2number
-                  0x001224                  _answer_refresh
-                  0x00124e                  _search_answer
-                  0x0012e8                  _init_protocol
-                  0x001308                  _init_valve
-                  0x001320                  _init_syringe
-                  0x001348                  _get_syr_pos
-                  0x001380                  _set_syr_pos
-                  0x00144c                  _get_syr_vel
-                  0x001484                  _set_syr_vel
-                  0x0014f0                  _get_valve_angle
-                  0x001528                  _set_valve_angle
+                  0x000456                  _modbus_init
+                  0x000488                  _modbus_reset
+                  0x0004b2                  _is_reg
+                  0x0004e4                  _modbus_uart_byte
+                  0x000502                  _get_rx_ch
+                  0x00055a                  _modbus_CRC16
+                  0x0005c2                  _modbus_wsr_answer
+                  0x00064e                  _modbus_rhr_answer
+                  0x000742                  _modbus_rir_answer
+                  0x000836                  _modbus_exc_rsp
+                  0x000890                  _modbus_rx_CRC_check
+                  0x0008de                  _modbus_rx_sm
+                  0x000b12                  _modbus_poll
+                  0x000ba6                  _OSC_init
+                  0x000bea                  _GPIO_init
+                  0x000cb6                  _TIMER8_delay_init
+                  0x000cce                  _delay_us
+                  0x000d04                  _delay_ms
+                  0x000d50                  _UART1_init
+                  0x000d90                  _uart_send_hex
+                  0x000daa                  __U1RXInterrupt
+                  0x000dd8                  _UART2_init
+                  0x000e18                  _uart2_send_byte
+                  0x000e32                  _uart2_send_text
+                  0x000e4e                  _uart2_CR_LF_send
+                  0x000e5c                  __U2RXInterrupt
+                  0x000eb2                  _SPI1_init
+                  0x000ef2                  _SPI1_write_byte
+                  0x000f14                  _SPI1_read_byte
+                  0x000f52                  _SPI3_init
+                  0x000f92                  _SPI3_write_byte
+                  0x000fb0                  _SPI3_read_byte
+                  0x000fea                  _eeprom_wr_page
+                  0x001064                  _eeprom_wr_regs
+                  0x00108a                  _eeprom_rd_regs
+                  0x0010ec                  _main
+ .text            0x001138        0x518 build/default/production/hamilton_pump.o
+                  0x001138                  _char2num
+                  0x001146                  _num2char
+                  0x001154                  _chars2number
+                  0x0012a2                  _answer_refresh
+                  0x0012cc                  _search_answer
+                  0x001366                  _init_protocol
+                  0x001386                  _init_valve
+                  0x00139e                  _init_syringe
+                  0x0013c6                  _get_syr_pos
+                  0x0013fe                  _set_syr_pos
+                  0x0014ca                  _get_syr_vel
+                  0x001502                  _set_syr_vel
+                  0x00156e                  _get_valve_angle
+                  0x0015a6                  _set_valve_angle
 
-.dinit            0x0015d2         0x12
- .dinit           0x0015d2         0x12 data_init
+.dinit            0x001650         0x12
+ .dinit           0x001650         0x12 data_init

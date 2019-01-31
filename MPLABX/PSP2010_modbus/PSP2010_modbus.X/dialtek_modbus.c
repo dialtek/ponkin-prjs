@@ -42,9 +42,10 @@
 #define TX_DIS LATBbits.LATB14=0
 
 /* HARDWARE INFO */
-  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства                                      <<<<<<<<<<======== ID
+  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства <<<<<<<<<<======== ID
   unsigned char firmware_ver  = 21;                 // верси€ прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
+  unsigned char com_dev_id    = 247;                // MODBUS ID устройства для широковещательного режима, лучше не трогать 
 
 /* ѕ–ќ“ќ“»ѕџ */
 
@@ -63,19 +64,7 @@ void PSP405_set_power_lim(unsigned int power_lim);
 void eeprom_wr_regs(void);
 //unsigned int eeprom_rd_regs(unsigned int address);
   
-/* USER FUNCS */
-  
-  void modbus_int_mode (unsigned char mode)  {      // управление прерыванием UART RX
-  
-    if(mode == 1) // разрешение прерываний RX UART MODBUS
-    {
-      IEC0bits.U1RXIE = 1; // en UART1 RX interrupt   
-    }
-    else         // запрет прерываний RX UART MODBUS
-    {
-      IEC0bits.U1RXIE = 0; // dis UART1 RX interrupt   
-    }
-  }
+/* USER FUNCS */ 
   
   void modbus_refresh(unsigned char cmd_type) // работа с регистрами
   {     
@@ -134,7 +123,7 @@ void eeprom_wr_regs(void);
            RS232_TX_LED = 1;
            PSP405_set_output(0);
            for(unsigned int i = 0; i < 2000; i++) 
-             delay_ms(1);
+             __delay_ms(1);
            if     (holding_register[10] == 1) 
            {
                K1_ON;
@@ -146,7 +135,7 @@ void eeprom_wr_regs(void);
                POL_RELAY_LED = 0;
            }
            for(unsigned int i = 0; i < 100; i++) 
-             delay_ms(1);
+             __delay_ms(1);
            PSP405_set_output(1);
         break;
         //---------
@@ -171,7 +160,7 @@ void eeprom_wr_regs(void);
       }
       
        for(unsigned int i = 0; i < 400; i++) 
-         delay_ms(1); 
+         __delay_ms(1); 
          eeprom_wr_regs(); // save registers state       
          RS232_TX_LED = 0;
    }

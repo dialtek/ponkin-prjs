@@ -1,0 +1,4162 @@
+CCS PCD C Compiler, Version 5.049, 5967               02-янв-19 23:14
+
+               Filename:   F:\Mega\ponkin-prjs\PICC\my prj\Termo\Termo 3.2\main.lst
+
+               ROM used:   6194 bytes (7%)
+                           Largest free fragment is 59342
+               RAM used:   5210 (64%) at main() level
+                           5263 (64%) worst case
+               Stack used: 78 locations (40 in main + 38 for interrupts)
+               Stack size: 128
+
+*
+00000:  GOTO    16EE
+*
+0002A:  DATA    2C,02,00
+*
+0007C:  DATA    00,02,00
+.................... #include <main.h> 
+.................... #include <24HJ128GP506.h> 
+.................... //////////// Standard Header file for the PIC24HJ128GP506 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC24HJ128GP506 
+*
+00366:  MOV     W1,32
+00368:  CP0     W3
+0036A:  BRA     Z,392
+0036C:  BTSC.B  0.0
+0036E:  BRA     37C
+00370:  TBLRDL.B[W0++],[W2++]
+00372:  DEC     W3,W3
+00374:  BRA     Z,392
+00376:  TBLRDL.B[W0],[W2++]
+00378:  DEC     W3,W3
+0037A:  BRA     Z,392
+0037C:  DEC     W0,W0
+0037E:  TBLRDH.B[W0++],[W2++]
+00380:  DEC     W3,W3
+00382:  BRA     Z,392
+00384:  CLR.B   [W2++]
+00386:  DEC     W3,W3
+00388:  INC     W0,W0
+0038A:  CP0     W0
+0038C:  BTSC.B  42.1
+0038E:  INC     0032
+00390:  BRA     368
+00392:  RETURN  
+*
+00732:  MOV     W5,[W15++]
+00734:  MOV     #C,W5
+00736:  REPEAT  #3
+00738:  MOV     [W5++],[W15++]
+0073A:  MOV     #0,W9
+0073C:  BTSC.B  43.0
+0073E:  MOV     #1,W9
+00740:  MOV     W9,[W15++]
+00742:  XOR     W1,W3,W9
+00744:  BTSS    W1.F
+00746:  BRA     74E
+00748:  COM     W1,W1
+0074A:  NEG     W0,W0
+0074C:  ADDC    W1,#0,W1
+0074E:  BTSS    W3.F
+00750:  BRA     758
+00752:  COM     W3,W3
+00754:  NEG     W2,W2
+00756:  ADDC    W3,#0,W3
+00758:  XOR     W2,W3,W4
+0075A:  BRA     Z,786
+0075C:  CLR     W4
+0075E:  CLR     W5
+00760:  CLR     W6
+00762:  CLR     W7
+00764:  MOV     #20,W8
+00766:  BCLR.B  42.0
+00768:  RLC     W0,W0
+0076A:  RLC     W1,W1
+0076C:  RLC     W4,W4
+0076E:  RLC     W5,W5
+00770:  CP      W5,W3
+00772:  BRA     NZ,776
+00774:  CPB     W4,W2
+00776:  BRA     NC,77E
+00778:  SUB     W4,W2,W4
+0077A:  SUBB    W5,W3,W5
+0077C:  BSET.B  42.0
+0077E:  RLC     W6,W6
+00780:  RLC     W7,W7
+00782:  DEC     W8,W8
+00784:  BRA     NZ,766
+00786:  BTSS    W9.F
+00788:  BRA     798
+0078A:  NEG     W6,W0
+0078C:  BRA     Z,790
+0078E:  BRA     NZ,794
+00790:  NEG     W7,W1
+00792:  BRA     79E
+00794:  COM     W7,W1
+00796:  BRA     79E
+00798:  MOV     W7,W1
+0079A:  MOV     W6,W0
+0079C:  BRA     79E
+0079E:  MOV     [--W15],W9
+007A0:  CP0     W9
+007A2:  BRA     Z,7A6
+007A4:  MOV.D   W4,W0
+007A6:  MOV     #12,W5
+007A8:  REPEAT  #3
+007AA:  MOV     [--W15],[W5--]
+007AC:  MOV     [--W15],W5
+007AE:  RETURN  
+*
+00880:  MOV     W5,[W15++]
+00882:  MOV     #C,W5
+00884:  REPEAT  #3
+00886:  MOV     [W5++],[W15++]
+00888:  MUL.UU  W0,W2,W4
+0088A:  BTSS    W3.F
+0088C:  BRA     892
+0088E:  MUL.SS  W0,W3,W6
+00890:  BRA     894
+00892:  MUL.UU  W0,W3,W6
+00894:  BCLR.B  42.0
+00896:  ADD     W6,W5,W5
+00898:  ADDC    W7,#0,W8
+0089A:  BTSS    W1.F
+0089C:  BRA     8A2
+0089E:  MUL.SS  W1,W2,W6
+008A0:  BRA     8A4
+008A2:  MUL.UU  W1,W2,W6
+008A4:  ADDC    W6,W5,W5
+008A6:  ADDC    W7,W8,W8
+008A8:  ADDC    #0,W9
+008AA:  MUL.SS  W1,W3,W6
+008AC:  ADDC    W6,W8,W8
+008AE:  ADDC    W9,W7,W7
+008B0:  MOV     W7,W3
+008B2:  MOV     W8,W2
+008B4:  MOV     W5,W1
+008B6:  MOV     W4,W0
+008B8:  MOV     #12,W5
+008BA:  REPEAT  #3
+008BC:  MOV     [--W15],[W5--]
+008BE:  MOV     [--W15],W5
+008C0:  RETURN  
+008C2:  MOV     W5,[W15++]
+008C4:  MOV     #C,W5
+008C6:  REPEAT  #3
+008C8:  MOV     [W5++],[W15++]
+008CA:  MOV     W0,W4
+008CC:  MOV     W1,W5
+008CE:  MOV     W2,W6
+008D0:  MOV     W3,W7
+008D2:  CLR     W0
+008D4:  CLR     W1
+008D6:  CLR     W2
+008D8:  CLR     W3
+008DA:  BCLR    W8.0
+008DC:  BTSS    W7.F
+008DE:  BRA     8F0
+008E0:  BSET    W8.0
+008E2:  COM     W7,W7
+008E4:  COM     W6,W6
+008E6:  COM     W5,W5
+008E8:  NEG     W4,W4
+008EA:  ADDC    W5,#0,W5
+008EC:  ADDC    W6,#0,W6
+008EE:  ADDC    W7,#0,W7
+008F0:  IOR      W4,  W5,W9
+008F2:  BRA     NZ,8F8
+008F4:  IOR      W6,  W7,W9
+008F6:  BRA     Z,922
+008F8:  MOV     #473,W9
+008FA:  BTSC    W3.4
+008FC:  BRA     914
+008FE:  BCLR.B  42.0
+00900:  RLC     W4,W4
+00902:  RLC     W5,W5
+00904:  RLC     W6,W6
+00906:  RLC     W7,W7
+00908:  RLC     W0,W0
+0090A:  RLC     W1,W1
+0090C:  RLC     W2,W2
+0090E:  RLC     W3,W3
+00910:  DEC     W9,W9
+00912:  BRA     NZ,8FA
+00914:  SL      W9,#4,W9
+00916:  BCLR.B  42.0
+00918:  BCLR    W9.F
+0091A:  BCLR    W3.4
+0091C:  XOR     W9,W3,W3
+0091E:  BTSC    W8.0
+00920:  BSET    W3.F
+00922:  MOV     #12,W5
+00924:  REPEAT  #3
+00926:  MOV     [--W15],[W5--]
+00928:  MOV     [--W15],W5
+0092A:  RETURN  
+0092C:  MOV     W8,[W15++]
+0092E:  MOV     #12,W8
+00930:  REPEAT  #4
+00932:  MOV     [W8++],[W15++]
+00934:  CLR     W11
+00936:  MUL.UU  W12,#0,W12
+00938:  MOV     W3,W8
+0093A:  MOV     W7,W9
+0093C:  MOV     #7FF,W10
+0093E:  BCLR.B  42.0
+00940:  BCLR.B  42.1
+00942:  ASR     W8,#4,W8
+00944:  AND     W10,W8,W8
+00946:  CP0     W8
+00948:  BRA     Z,A2C
+0094A:  BCLR.B  42.0
+0094C:  BCLR.B  42.1
+0094E:  ASR     W9,#4,W9
+00950:  AND     W10,W9,W9
+00952:  CP0     W9
+00954:  BRA     Z,A2C
+00956:  ADD     W9,W8,W8
+00958:  BTSC    W9.B
+0095A:  BRA     964
+0095C:  SUB     #3FF,W8
+0095E:  BRA     Z,A2C
+00960:  BRA     NC,A2C
+00962:  BRA     96A
+00964:  MOV     #401,W10
+00966:  ADD.B   W10L,W5L,W5L
+00968:  BRA     C,A2C
+0096A:  XOR     W3,W7,W13
+0096C:  BCLR.B  42.0
+0096E:  BCLR.B  42.1
+00970:  AND     #F,W3
+00972:  BSET    W3.4
+00974:  AND     #F,W7
+00976:  BSET    W7.4
+00978:  MOV     W8,[W15++]
+0097A:  MUL.UU  W4,W1,W8
+0097C:  MUL.UU  W5,W0,W10
+0097E:  ADD     W8,W10,W10
+00980:  ADDC    W9,W11,W11
+00982:  ADDC    #0,W12
+00984:  MUL.UU  W4,W2,W8
+00986:  ADD     W8,W11,W11
+00988:  ADDC    W9,W12,W12
+0098A:  MUL.UU  W5,W1,W8
+0098C:  CLR     W10
+0098E:  ADD     W8,W11,W11
+00990:  ADDC    W9,W12,W12
+00992:  ADDC    #0,W10
+00994:  MUL.UU  W6,W0,W8
+00996:  ADD     W8,W11,W11
+00998:  ADDC    W9,W12,W12
+0099A:  ADDC    #0,W10
+0099C:  CLR     W11
+0099E:  MUL.UU  W4,W3,W8
+009A0:  ADD     W8,W12,W12
+009A2:  ADDC    W9,W10,W10
+009A4:  ADDC    #0,W11
+009A6:  MUL.UU  W5,W2,W8
+009A8:  ADD     W8,W12,W12
+009AA:  ADDC    W9,W10,W10
+009AC:  ADDC    #0,W11
+009AE:  MUL.UU  W6,W1,W8
+009B0:  ADD     W8,W12,W12
+009B2:  ADDC    W9,W10,W10
+009B4:  ADDC    #0,W11
+009B6:  MUL.UU  W7,W0,W8
+009B8:  ADD     W8,W12,W12
+009BA:  ADDC    W9,W10,W10
+009BC:  ADDC    #0,W11
+009BE:  MOV     W12,W0
+009C0:  CLR     W12
+009C2:  MUL.UU  W5,W3,W8
+009C4:  ADD     W8,W10,W10
+009C6:  ADDC    W9,W11,W11
+009C8:  ADDC    #0,W12
+009CA:  MUL.UU  W6,W2,W8
+009CC:  ADD     W8,W10,W10
+009CE:  ADDC    W9,W11,W11
+009D0:  ADDC    #0,W12
+009D2:  MUL.UU  W6,W3,W8
+009D4:  ADD     W8,W11,W11
+009D6:  ADDC    W9,W12,W12
+009D8:  MUL.UU  W7,W1,W8
+009DA:  ADD     W8,W10,W10
+009DC:  ADDC    W9,W11,W11
+009DE:  ADDC    #0,W12
+009E0:  MUL.UU  W7,W2,W8
+009E2:  ADD     W8,W11,W11
+009E4:  ADDC    W9,W12,W12
+009E6:  MUL.UU  W7,W3,W8
+009E8:  ADD     W8,W12,W12
+009EA:  MOV     W10,W1
+009EC:  MOV     W11,W2
+009EE:  MOV     W12,W3
+009F0:  MOV     #5,W4
+009F2:  BCLR.B  42.0
+009F4:  RRC     W3,W3
+009F6:  RRC     W2,W2
+009F8:  RRC     W1,W1
+009FA:  RRC     W0,W0
+009FC:  DEC     W4,W4
+009FE:  BRA     NZ,9F2
+00A00:  MOV     [--W15],W8
+00A02:  INC     W8,W8
+00A04:  IOR      W0,  W1,W6
+00A06:  BRA     Z,A0A
+00A08:  BRA     A0E
+00A0A:  IOR      W2,  W3,W6
+00A0C:  BRA     Z,A1E
+00A0E:  BTSC    W3.4
+00A10:  BRA     A1E
+00A12:  BCLR.B  42.0
+00A14:  RLC     W0,W0
+00A16:  RLC     W1,W1
+00A18:  RLC     W2,W2
+00A1A:  RLC     W3,W3
+00A1C:  DEC     W8,W8
+00A1E:  SL      W8,#4,W8
+00A20:  BCLR    W3.F
+00A22:  BTSC    W13.F
+00A24:  BSET    W3.F
+00A26:  BCLR    W3.4
+00A28:  XOR     W8,W3,W3
+00A2A:  BRA     A32
+00A2C:  MUL.UU  W0,#0,W0
+00A2E:  MUL.UU  W0,#0,W2
+00A30:  BRA     A32
+00A32:  MOV     #1A,W8
+00A34:  REPEAT  #4
+00A36:  MOV     [--W15],[W8--]
+00A38:  MOV     [--W15],W8
+00A3A:  RETURN  
+00A3C:  MOV     W5,[W15++]
+00A3E:  MOV     #C,W5
+00A40:  REPEAT  #3
+00A42:  MOV     [W5++],[W15++]
+00A44:  MOV     W0,W4
+00A46:  MOV     W1,W5
+00A48:  MOV     W2,W6
+00A4A:  MOV     W3,W7
+00A4C:  CLR     W0
+00A4E:  CLR     W1
+00A50:  CLR     W2
+00A52:  CLR     W3
+00A54:  BCLR    W8.0
+00A56:  BTSS    W7.F
+00A58:  BRA     A6A
+00A5A:  BSET    W8.0
+00A5C:  COM     W7,W7
+00A5E:  COM     W6,W6
+00A60:  COM     W5,W5
+00A62:  NEG     W4,W4
+00A64:  ADDC    W5,#0,W5
+00A66:  ADDC    W6,#0,W6
+00A68:  ADDC    W7,#0,W7
+00A6A:  IOR      W4,  W5,W9
+00A6C:  BRA     NZ,A72
+00A6E:  IOR      W6,  W7,W9
+00A70:  BRA     Z,A9C
+00A72:  MOV     #473,W9
+00A74:  BTSC    W3.4
+00A76:  BRA     A8E
+00A78:  BCLR.B  42.0
+00A7A:  RLC     W4,W4
+00A7C:  RLC     W5,W5
+00A7E:  RLC     W6,W6
+00A80:  RLC     W7,W7
+00A82:  RLC     W0,W0
+00A84:  RLC     W1,W1
+00A86:  RLC     W2,W2
+00A88:  RLC     W3,W3
+00A8A:  DEC     W9,W9
+00A8C:  BRA     NZ,A74
+00A8E:  SL      W9,#4,W9
+00A90:  BCLR.B  42.0
+00A92:  BCLR    W9.F
+00A94:  BCLR    W3.4
+00A96:  XOR     W9,W3,W3
+00A98:  BTSC    W8.0
+00A9A:  BSET    W3.F
+00A9C:  MOV     #12,W5
+00A9E:  REPEAT  #3
+00AA0:  MOV     [--W15],[W5--]
+00AA2:  MOV     [--W15],W5
+00AA4:  RETURN  
+00AA6:  MOV     W8,[W15++]
+00AA8:  MOV     #12,W8
+00AAA:  REPEAT  #4
+00AAC:  MOV     [W8++],[W15++]
+00AAE:  XOR     W3,W7,W13
+00AB0:  MOV     W3,W8
+00AB2:  MOV     W7,W9
+00AB4:  MOV     #7FF,W10
+00AB6:  BCLR.B  42.0
+00AB8:  BCLR.B  42.1
+00ABA:  ASR     W8,#4,W8
+00ABC:  AND     W10,W8,W8
+00ABE:  CP0     W8
+00AC0:  BRA     Z,B9A
+00AC2:  BCLR.B  42.0
+00AC4:  BCLR.B  42.1
+00AC6:  ASR     W9,#4,W9
+00AC8:  AND     W10,W9,W9
+00ACA:  CP0     W9
+00ACC:  BRA     Z,B9A
+00ACE:  CLR     W10
+00AD0:  SUB     W8,W9,W12
+00AD2:  BRA     NC,ADA
+00AD4:  ADD     #3FF,W12
+00AD6:  BRA     C,B9A
+00AD8:  BRA     AE2
+00ADA:  MOV     #401,W11
+00ADC:  SUB     W12,W11,W12
+00ADE:  BRA     NC,B9A
+00AE0:  BRA     Z,B9A
+00AE2:  CLR     W8
+00AE4:  CLR     W9
+00AE6:  CLR     W10
+00AE8:  CLR     W11
+00AEA:  AND     #1F,W3
+00AEC:  BSET    W3.4
+00AEE:  AND     #1F,W7
+00AF0:  BSET    W7.4
+00AF2:  MOV     W12,[W15++]
+00AF4:  MOV     #36,W12
+00AF6:  SUB     W0,W4,W0
+00AF8:  SUBB    W1,W5,W1
+00AFA:  SUBB    W2,W6,W2
+00AFC:  SUBB    W3,W7,W3
+00AFE:  BRA     N,B04
+00B00:  BRA     C,B0E
+00B02:  BRA     NZ,B10
+00B04:  ADD     W0,W4,W0
+00B06:  ADDC    W1,W5,W1
+00B08:  ADDC    W2,W6,W2
+00B0A:  ADDC    W3,W7,W3
+00B0C:  BRA     B10
+00B0E:  BSET    W8.0
+00B10:  DEC     W12,W12
+00B12:  BRA     Z,B2A
+00B14:  BCLR.B  42.0
+00B16:  RLC     W0,W0
+00B18:  RLC     W1,W1
+00B1A:  RLC     W2,W2
+00B1C:  RLC     W3,W3
+00B1E:  BCLR.B  42.0
+00B20:  RLC     W8,W8
+00B22:  RLC     W9,W9
+00B24:  RLC     W10,W10
+00B26:  RLC     W11,W11
+00B28:  BRA     AF6
+00B2A:  MOV     [--W15],W12
+00B2C:  BTSC    W11.5
+00B2E:  BRA     B32
+00B30:  BRA     B3E
+00B32:  BCLR.B  42.0
+00B34:  RRC     W11,W11
+00B36:  RRC     W10,W10
+00B38:  RRC     W9,W9
+00B3A:  RRC     W8,W8
+00B3C:  BRA     B44
+00B3E:  DEC     W12,W12
+00B40:  BCLR.B  42.0
+00B42:  BRA     Z,B9A
+00B44:  BTSC.B  42.0
+00B46:  BRA     B5A
+00B48:  RLC     W0,W0
+00B4A:  RLC     W1,W1
+00B4C:  RLC     W2,W2
+00B4E:  RLC     W3,W3
+00B50:  SUB     W0,W4,W4
+00B52:  SUBB    W1,W5,W5
+00B54:  SUBB    W2,W6,W6
+00B56:  SUBB    W3,W7,W7
+00B58:  BRA     NC,B84
+00B5A:  INC     W8,W8
+00B5C:  BRA     NZ,B84
+00B5E:  INC     W9,W9
+00B60:  BRA     NZ,B84
+00B62:  INC     W10,W10
+00B64:  BRA     NZ,B84
+00B66:  INC     W11,W11
+00B68:  BRA     NZ,B84
+00B6A:  INC     W12,W12
+00B6C:  BRA     Z,B9A
+00B6E:  BRA     B84
+00B70:  DEC     W12,W12
+00B72:  BRA     Z,B9A
+00B74:  BTSC    W11.4
+00B76:  BRA     B84
+00B78:  BCLR.B  42.0
+00B7A:  RLC     W8,W8
+00B7C:  RLC     W9,W9
+00B7E:  RLC     W10,W10
+00B80:  RLC     W11,W11
+00B82:  BRA     B74
+00B84:  SL      W12,#4,W12
+00B86:  BCLR.B  42.0
+00B88:  BCLR    W12.F
+00B8A:  BTSC    W13.F
+00B8C:  BSET    W12.F
+00B8E:  BCLR    W11.4
+00B90:  XOR     W12,W11,W3
+00B92:  MOV     W10,W2
+00B94:  MOV     W9,W1
+00B96:  MOV     W8,W0
+00B98:  BRA     BA4
+00B9A:  MOV     #0,W0
+00B9C:  MOV     #0,W1
+00B9E:  MOV     #0,W2
+00BA0:  MOV     #0,W3
+00BA2:  BRA     BA4
+00BA4:  MOV     #1A,W8
+00BA6:  REPEAT  #4
+00BA8:  MOV     [--W15],[W8--]
+00BAA:  MOV     [--W15],W8
+00BAC:  RETURN  
+00BAE:  MOV     W5,[W15++]
+00BB0:  MOV     W6,[W15++]
+00BB2:  MOV     W3,W4
+00BB4:  MOV     W3,W6
+00BB6:  BCLR.B  42.0
+00BB8:  ASR     W4,#4,W4
+00BBA:  MOV     #7FF,W5
+00BBC:  AND     W5,W4,W4
+00BBE:  BRA     NZ,BC6
+00BC0:  MUL.UU  W0,#0,W0
+00BC2:  CLR     W2
+00BC4:  BRA     BEC
+00BC6:  SUB     #380,W4
+00BC8:  AND     #F,W3
+00BCA:  MOV     #3,W7
+00BCC:  BCLR.B  42.0
+00BCE:  RLC     W0,W0
+00BD0:  RLC     W1,W1
+00BD2:  RLC     W2,W2
+00BD4:  RLC     W3,W3
+00BD6:  DEC     W7,W7
+00BD8:  BRA     NZ,BCC
+00BDA:  MOV     W1,W0
+00BDC:  MOV     W2,W1
+00BDE:  BCLR    W3.7
+00BE0:  SWAP    W4
+00BE2:  BCLR.B  42.0
+00BE4:  RRC     W4,W4
+00BE6:  BTSC    W6.F
+00BE8:  BSET    W4.F
+00BEA:  XOR     W4,W3,W2
+00BEC:  MOV     [--W15],W6
+00BEE:  MOV     [--W15],W5
+00BF0:  RETURN  
+00BF2:  MOV     W5,[W15++]
+00BF4:  MOV     #C,W5
+00BF6:  REPEAT  #4
+00BF8:  MOV     [W5++],[W15++]
+00BFA:  MOV     W0,W4
+00BFC:  MOV     W1,W5
+00BFE:  MOV     W3,W7
+00C00:  MOV     W2,W6
+00C02:  BCLR.B  42.0
+00C04:  BCLR.B  42.1
+00C06:  RLC     W1,W1
+00C08:  SWAP    W1
+00C0A:  AND     #FF,W1
+00C0C:  CP0     W1
+00C0E:  BRA     Z,CA6
+00C10:  BCLR.B  42.0
+00C12:  BCLR.B  42.1
+00C14:  RLC     W3,W3
+00C16:  SWAP    W3
+00C18:  AND     #FF,W3
+00C1A:  CP0     W3
+00C1C:  BRA     Z,CA6
+00C1E:  ZE      W0,W0
+00C20:  ADD.B   W3L,W1L,W0L
+00C22:  BRA     C,C2C
+00C24:  SUB     #7F,W0
+00C26:  BRA     Z,CA6
+00C28:  BRA     NC,CA6
+00C2A:  BRA     C30
+00C2C:  ADD.B   #81,W0L
+00C2E:  BRA     C,CA6
+00C30:  XOR     W5,W7,W10
+00C32:  BCLR.B  42.0
+00C34:  BCLR.B  42.1
+00C36:  AND     #FF,W5
+00C38:  BSET    W5.7
+00C3A:  BCLR.B  42.0
+00C3C:  AND     #FF,W7
+00C3E:  BSET    W7.7
+00C40:  MUL.UU  W4,W6,W2
+00C42:  MUL.UU  W5,W6,W8
+00C44:  ADDC    W8,W3,W3
+00C46:  MOV     W9,W1
+00C48:  BTSC.B  42.0
+00C4A:  INC     W1,W1
+00C4C:  BCLR.B  42.0
+00C4E:  MUL.UU  W7,W4,W8
+00C50:  ADDC    W8,W3,W3
+00C52:  ADDC    W9,W1,W1
+00C54:  MUL.UU  W5,W7,W8
+00C56:  ADDC    W8,W1,W1
+00C58:  INC     W0,W0
+00C5A:  CP0     W1
+00C5C:  BTSC.B  42.1
+00C5E:  BRA     C62
+00C60:  BRA     C68
+00C62:  CP0     W3
+00C64:  BTSC.B  42.1
+00C66:  BRA     C72
+00C68:  BTSC    W1.F
+00C6A:  BRA     C72
+00C6C:  RLC     W3,W3
+00C6E:  RLC     W1,W1
+00C70:  DEC     W0,W0
+00C72:  MOV     W1,W2
+00C74:  BCLR.B  42.0
+00C76:  BTSS    W3.7
+00C78:  BRA     C8C
+00C7A:  MOV     #FF00,W7
+00C7C:  AND     W3,W7,W3
+00C7E:  ADD     #100,W3
+00C80:  ADDC    W2,#0,W2
+00C82:  CP0     W2
+00C84:  BRA     NZ,C8C
+00C86:  CP0     W3
+00C88:  BRA     NZ,C8C
+00C8A:  INC     W0,W0
+00C8C:  SWAP    W0
+00C8E:  BCLR.B  42.0
+00C90:  BCLR.B  42.1
+00C92:  RRC     W0,W1
+00C94:  BTSC    W10.F
+00C96:  BSET    W1.F
+00C98:  BCLR    W2.F
+00C9A:  SWAP    W2
+00C9C:  XOR.B   W2L,W1L,W1L
+00C9E:  SWAP    W3
+00CA0:  MOV.B   W3L,W2L
+00CA2:  MOV     W2,W0
+00CA4:  BRA     CAC
+00CA6:  MOV     #0,W0
+00CA8:  MOV     #0,W1
+00CAA:  BRA     CAC
+00CAC:  MOV     #14,W5
+00CAE:  REPEAT  #4
+00CB0:  MOV     [--W15],[W5--]
+00CB2:  MOV     [--W15],W5
+00CB4:  RETURN  
+00CB6:  MOV     W5,[W15++]
+00CB8:  MOV     W1,W5
+00CBA:  MOV     W0,W2
+00CBC:  MOV     #B6,W4
+00CBE:  RLC     W1,W1
+00CC0:  SWAP    W1
+00CC2:  AND     #FF,W1
+00CC4:  SUB.B   W4L,W1L,W4L
+00CC6:  MOV.B   W5L,W3L
+00CC8:  BSET    W3.7
+00CCA:  AND     #FF,W3
+00CCC:  CLR     W0
+00CCE:  CLR     W1
+00CD0:  CP      W4,#18
+00CD2:  BRA     N,CF2
+00CD4:  BCLR.B  42.0
+00CD6:  RRC     W3,W3
+00CD8:  RRC     W2,W2
+00CDA:  RRC     W1,W1
+00CDC:  RRC     W0,W0
+00CDE:  DEC     W4,W4
+00CE0:  BRA     NZ,CD4
+00CE2:  BTSS    W5.F
+00CE4:  BRA     CF2
+00CE6:  NEG     W0,W0
+00CE8:  BRA     Z,CEE
+00CEA:  COM     W1,W1
+00CEC:  BRA     CF2
+00CEE:  NEG     W1,W1
+00CF0:  BRA     CF2
+00CF2:  MOV     [--W15],W5
+00CF4:  RETURN  
+*
+00E4A:  MOV     W5,[W15++]
+00E4C:  MOV     W6,[W15++]
+00E4E:  MOV     W0,W4
+00E50:  MOV     W1,W5
+00E52:  CLR     W0
+00E54:  CLR     W1
+00E56:  BCLR    W6.0
+00E58:  BTSS    W5.F
+00E5A:  BRA     E68
+00E5C:  BSET    W6.0
+00E5E:  NEG     W4,W4
+00E60:  BRA     Z,E66
+00E62:  COM     W5,W5
+00E64:  BRA     E68
+00E66:  NEG     W5,W5
+00E68:  IOR      W4,  W5,W3
+00E6A:  BRA     Z,E92
+00E6C:  CLR     W2
+00E6E:  MOV     #B6,W1
+00E70:  BTSC    W2.7
+00E72:  BRA     E82
+00E74:  BCLR.B  42.0
+00E76:  RLC     W4,W4
+00E78:  RLC     W5,W5
+00E7A:  RLC     W0,W0
+00E7C:  RLC     W2,W2
+00E7E:  DEC     W1,W1
+00E80:  BRA     NZ,E70
+00E82:  SWAP    W1
+00E84:  BCLR.B  42.0
+00E86:  RRC     W1,W1
+00E88:  BCLR    W1.F
+00E8A:  BCLR    W2.7
+00E8C:  XOR.B   W2L,W1L,W1L
+00E8E:  BTSC    W6.0
+00E90:  BSET    W1.F
+00E92:  MOV     [--W15],W6
+00E94:  MOV     [--W15],W5
+00E96:  RETURN  
+....................  
+.................... #list 
+....................  
+....................  
+....................  
+.................... //#FUSES PROTECT_HIGH            //General Segment Code Protect High Security 
+.................... #FUSES WRTB                      //Boot block write protected 
+.................... #FUSES CKSFSM                    //Clock Switching is enabled, fail Safe clock monitor is enabled 
+.................... #FUSES WDT                       //no Watch Dog Timer 
+.................... #FUSES WPOSTS14                  //Watch Dog Timer PreScalar 1:8192 
+.................... #FUSES PR_PLL                    //Primary Oscillator with PLL 
+.................... #FUSES HS                        //High speed Osc (> 4mhz for PCM/PCH) (>10mhz for PCD) 
+.................... #FUSES NOPROTECT                 //Code not protected from reading 
+.................... #FUSES NOWRT                     //Program memory not write protected 
+.................... #use delay(clock=40M) 
+*
+00394:  CP0     W0
+00396:  BTSC.B  42.1
+00398:  BRA     3A6
+0039A:  REPEAT  #E1B
+0039C:  NOP     
+0039E:  REPEAT  #3FFE
+003A0:  NOP     
+003A2:  DEC     W0,W0
+003A4:  BRA     NZ,39A
+003A6:  RETURN  
+....................  
+.................... #WORD PLLFBD=0x0746 // osc PLL div reg 
+....................  
+.................... #WORD CLKDIV=0x0744  // osc con reg 
+.................... #BIT PLLPOST1=CLKDIV.7 
+.................... #BIT PLLPOST0=CLKDIV.6 
+.................... #BIT PLLPRE4=CLKDIV.4 
+.................... #BIT PLLPRE3=CLKDIV.3 
+.................... #BIT PLLPRE2=CLKDIV.2 
+.................... #BIT PLLPRE1=CLKDIV.1 
+.................... #BIT PLLPRE0=CLKDIV.0 
+....................  
+.................... #WORD LATA=0x02C4  
+.................... #WORD LATB=0x02CA 
+.................... #WORD LATD=0x02D6 
+.................... #WORD LATF=0x02E2 
+.................... #WORD LATG=0x02E8   
+.................... #WORD LATC=0x02D0 
+....................  
+.................... #use spi(spi2, FORCE_HW) 
+.................... #use standard_io(B)//(B_outputs=PIN_B1, PIN_B2) 
+....................  
+.................... #define STATUS 0x00     // ADC1256 Register map 
+.................... #define MUX 0x01  
+.................... #define ADCON 0x02 
+.................... #define DRATE 0x03 
+.................... #define IO 0x04 
+.................... #define OFCO 0x05 
+.................... #define OFC1 0x06 
+.................... #define OFC2 0x07 
+.................... #define FSCO 0x08 
+.................... #define FSC1 0x09 
+.................... #define FSC2 0x0A 
+.................... #define uV 10000000  // для калибровки  
+.................... //#define uV 100000 // по умолчанию 
+.................... #define mV 1000 
+....................  
+.................... #WORD PORTB=0x02C8 
+.................... #WORD TRISB=0x02C6 
+.................... #BIT  TRB0=TRISB.0 
+.................... #BIT  TRB1=TRISB.1 
+.................... #BIT  CN1_TRIS=TRISB.5 
+.................... #BIT  CN2_TRIS=TRISB.4 
+.................... #BIT  CN4_TRIS=TRISB.3 
+.................... #BIT  CN3_TRIS=TRISB.2 
+.................... #BIT  CN1=PORTB.5 
+.................... #BIT  CN4=PORTB.3 
+.................... #BIT  CN2=PORTB.4 
+.................... #BIT  CN3=PORTB.2 
+.................... #BIT  Status_LED_TRIS=TRISB.13 
+.................... #BIT  TRB14=TRISB.14 
+.................... #BIT  RB1=LATB.1 
+.................... #BIT  RB0=LATB.0 
+.................... #BIT  Status_LED=LATB.13 
+....................  
+.................... #WORD PORTC=0x02CE 
+.................... #WORD TRISC=0x02CC 
+.................... #BIT RC13=PORTC.13 
+.................... #BIT  TRC13=TRISC.13 
+.................... #BIT  TRC14=TRISC.14 // RX-485 TX EN 
+.................... #BIT  TRC1=TRISC.1 
+.................... #BIT  TRC2=TRISC.2 
+.................... #BIT  TRC4=TRISC.4 
+....................  
+.................... #BIT  RC14=LATC.14   // RX-485 TX EN 
+.................... //_______________________________________ 
+.................... #WORD PORTD=0x02D4 
+.................... #WORD TRISD=0x02D2 
+.................... #WORD ODCD=0x06D2 
+....................  
+.................... #BIT  TRD4=TRISD.4 
+.................... #BIT  TRD5=TRISD.5 
+.................... #BIT  TRD6=TRISD.6 
+.................... #BIT  TRD7=TRISD.7 
+.................... #BIT  TRD8=TRISD.8 
+....................  
+.................... #BIT  RD4=LATD.4 
+.................... #BIT  RD5=LATD.5 
+.................... #BIT  RD6=LATD.6 
+.................... #BIT  RD7=LATD.7 
+.................... #BIT  RD8=LATD.8 
+.................... //_________________________________________________ 
+.................... #WORD PORTF=0x02E0 
+.................... #WORD TRISF=0x02DE 
+....................  
+.................... #BIT  UART1_RX_TRIS=TRISF.2 
+.................... #BIT  UART1_TX_TRIS=TRISF.3 
+....................  
+.................... #WORD PORTF=0x02E0 
+....................  
+.................... #WORD PORTG=0x02E6 
+.................... #WORD TRISG=0x02E4 
+.................... #BIT RG0=LATG.0 
+.................... #BIT RG1=LATG.1 
+.................... #BIT RG15=LATG.15 
+.................... #BIT SCK2=LATG.6 // SPI2 pins 
+.................... #BIT SDI2=LATG.7 
+.................... #BIT SDO2=LATG.8 
+.................... //#BIT SS2=LATG.9 
+.................... #BIT SCK2_TRIS=TRISG.6 // SPI2 tris 
+.................... #BIT SDI2_TRIS=TRISG.7 
+.................... #BIT SDO2_TRIS=TRISG.8 
+.................... #BIT TRG0=TRISG.0 
+.................... #BIT TRG1=TRISG.1 
+....................  
+.................... //#BIT SS2_TRIS=TRISG.9 
+....................  
+.................... #define ADC_Dout SDI2 //???? Din ?? 
+.................... #define ADC_Din SDO2  //???? Dout ?? 
+....................  
+.................... #BIT  ADC_RESET_TRIS=TRISD.3 
+.................... #BIT  ADC2_RESET_TRIS=TRISD.0 
+.................... #BIT  ADC_RESET=LATD.3 
+.................... #BIT  ADC2_RESET=LATD.0 
+....................  
+.................... #BIT  ADC_SYNC_TRIS=TRISD.2 
+.................... #BIT  ADC2_SYNC_TRIS=TRISD.11 
+.................... #BIT  ADC_SYNC=LATD.2 
+.................... #BIT  ADC2_SYNC=LATD.11 
+....................  
+.................... #BIT  ADC_CS_TRIS =TRISG.9 
+.................... #BIT  ADC2_CS_TRIS=TRISD.10 
+.................... #BIT  ADC_CS = LATG.9 
+.................... #BIT  ADC2_CS= LATD.10 
+....................  
+.................... #BIT  ADC_DRDY_TRIS = TRISD.1 
+.................... #BIT  ADC2_DRDY_TRIS= TRISD.9 
+.................... #BIT  ADC_DRDY = PORTD.1 
+.................... #BIT  ADC2_DRDY= PORTD.9 
+....................  
+.................... #WORD U1TXREG = 0x0224  
+.................... #WORD U1RXREG = 0x0226 // регистр принимаемых Uart1 данных   
+.................... #WORD U1BRG=0x0228 
+.................... #WORD U1MODE=0x0220 
+.................... #WORD U1STA=0x0222 
+.................... #WORD IEC0 = 0x0094   
+.................... #BIT U1RXIE = IEC0.11 
+.................... #BIT  U1_RXDA = U1STA.0  
+.................... #BIT  U1_TRMT  = U1STA.8   // Transmit Shift Register is Empty bit (read-only) 
+.................... #BIT  U1_UTXBF = U1STA.9   // Transmit Buffer Full Status bit (read-only) 
+.................... #BIT  U1_UTXEN = U1STA.10  // Transmit Enable bit 
+....................  
+....................  
+....................  
+.................... #define FCY      40000000 
+.................... #define BAUDRATE 115200                 
+.................... #define BRGVAL   ((FCY/BAUDRATE)/16)-1 
+....................  
+.................... #WORD TMR9 = 0x0134 
+.................... #WORD T9CON = 0x013C 
+.................... #BIT T9ON = T9CON.15 
+....................  
+.................... #WORD FWDT = 0xF8000A  
+.................... #BIT FWDTEN = FWDT.7 
+....................  
+....................  
+.................... #define CK_FLASH_END       (getenv("PROGRAM_MEMORY")-1)       
+.................... #define CK_FLASH_PAGE_SIZE (getenv("FLASH_ERASE_SIZE")/2)  
+.................... #define CK_NUM_PAGES (CK_FLASH_END/CK_FLASH_PAGE_SIZE)  
+....................  
+.................... #define CK_USER_PAGE (CK_FLASH_PAGE_SIZE*(CK_NUM_PAGES-1))  
+....................  
+.................... #org CK_USER_PAGE,CK_FLASH_END {}  
+....................  
+....................    typedef unsigned int16 U16; 
+....................    typedef unsigned int8 U8; 
+....................    typedef unsigned int32 U32; 
+....................    typedef signed int32 S32; 
+....................    typedef signed int16 S16; 
+....................    typedef signed int8 S8; 
+....................  
+....................  
+.................... #use rs232(UART1,xmit=PIN_F3,rcv=PIN_F2,baud=115200,BRGH1OK,ERRORS,parity=N,bits=8) 
+.................... #include <ADS1256.h> // ADC 
+.................... // изменена для версии PoE без дисплея 
+.................... // 15.01.17 
+....................  
+.................... // коды каналов мультиплексора.. 
+....................    U8 Mx_ch_code[9] = {0, 0x76, 0x54, 0x32, 0x10}; 
+....................  
+....................    U8 PGA; 
+....................    U8 PGA_val = 4; // PGA = 16, +- 312,5 мВ 
+....................    U8 Sps_buf=0; 
+....................    U8 input_buf_state=1; // вх. буфер АЦП 
+....................     
+....................    U8 flash_wr_data [] = {0,0,0,0}; // заготовка массива для записи во флэш 
+....................    U8 Aver_Wr = 0; 
+....................    U8 Sps_Wr = 0; 
+....................    U8 CRC_Wr = 0; 
+....................    U8 ADC_select = 0; // флаг выбора АЦП: 1ый или 2ой 
+....................  
+....................    int1 meas_stop_fl = 0; 
+....................    int1 reset_fl = 0;    // флаг сброса системы 
+....................  
+....................    U8 NumAver = 1;       // размер усреднения 
+....................    U8 ADC_sps_var = 2;   // переменная усреднения данных АЦП - 10sps default 
+....................    U8 CRC1=0xFF,CRC2=0xFF, EE_CRC_buf;   // константы EEPROM CRC 
+....................    U8 flash_rd_data[4]; // заготовка массива для чтения из флэш 
+....................  
+....................    //Ma - Moving Average 
+....................    S32 Ch_buf[8][128];      // буфер скользящего среднего  
+....................    U32 ADC_counts[2][8];    // буфер отсчетов АЦП 
+....................    S32 Ch_buf_sum;          // сумма буфера скользящего среднего 
+....................     
+....................    S32 ADC_full_word = 0; 
+....................  
+....................    U8 Ma_buf_index = 0; // индекс элемента скользящ. средн. 
+....................    U8 Ma_buf_size = 5;  // РАЗМЕР БУФЕРА!!! 
+....................    U8 Ma_buf_cnt = 0;   // счетчик эл. буфера 
+....................  
+....................    U8 state; 
+....................    U16 tmp=0; 
+....................  
+.................... //-------------------- работа с регистрами АЦП ------------------------------// 
+....................  
+.................... static U8 RdReg(U8 RegName) 
+.................... { 
+....................    U8 RegValue = 0;  
+....................    //1st Command Byte: 0001 rrrr where rrrr is the address of the first register to read. 
+....................    //2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to read – 1 
+....................    ADC_CS = 0; 
+....................    delay_us(1); 
+....................    Spi_write2(0x10+RegName); // 1st Command Byte,??????? ?????? 
+....................    Spi_write2(0x00); // 1st Command Byte, ?????? ?????? ???? ???? 
+....................    delay_us(8); // 50 CLK_IN PEDIODS 
+....................    RegValue = Spi_read2(0); 
+....................    delay_us(1); 
+....................    ADC_CS =1; 
+....................    delay_us(1); 
+....................    Return RegValue;   
+.................... } 
+....................  
+.................... static void WrReg(U8 RegName,CommandByte) 
+*
+00406:  MOV     W5,[W15++]
+.................... { 
+....................    ADC_CS = 0; 
+00408:  BCLR.B  2E9.1
+....................    ADC2_CS = 0; 
+0040A:  BCLR.B  2D7.2
+....................    delay_us(5); 
+0040C:  REPEAT  #62
+0040E:  NOP     
+....................    Spi_write2(0x50+RegName); // 1st Command Byte: 0101 (0x50) rrrr where rrrr is the address to the first register to be written. 
+00410:  MOV     1BDC,W4
+00412:  CLR.B   9
+00414:  MOV     #50,W3
+00416:  ADD     W3,W4,W5
+00418:  BCLR.B  260.6
+0041A:  BTSS.B  260.0
+0041C:  BRA     422
+0041E:  MOV.B   268,W0L
+00420:  BRA     41A
+00422:  PUSH    268
+00424:  MOV.B   W5L,[W15-#2]
+00426:  POP     268
+00428:  BTSS.B  260.0
+0042A:  BRA     428
+....................    delay_us(10); 
+0042C:  REPEAT  #C6
+0042E:  NOP     
+....................    Spi_write2(0);         // 2nd Command Byte: 0000 nnnn where nnnn is the number of bytes to be written – 1. 
+00430:  BCLR.B  260.6
+00432:  BTSS.B  260.0
+00434:  BRA     43A
+00436:  MOV.B   268,W0L
+00438:  BRA     432
+0043A:  CLR.B   268
+0043C:  BTSS.B  260.0
+0043E:  BRA     43C
+....................    delay_us(10); 
+00440:  REPEAT  #C6
+00442:  NOP     
+....................    Spi_write2(CommandByte); 
+00444:  BCLR.B  260.6
+00446:  BTSS.B  260.0
+00448:  BRA     44E
+0044A:  MOV.B   268,W0L
+0044C:  BRA     446
+0044E:  MOV.B   1BDE,W0L
+00450:  MOV.B   W0L,268
+00452:  BTSS.B  260.0
+00454:  BRA     452
+....................    delay_us(10); 
+00456:  REPEAT  #C6
+00458:  NOP     
+....................    ADC_CS = 1; 
+0045A:  BSET.B  2E9.1
+....................    ADC2_CS = 1; 
+0045C:  BSET.B  2D7.2
+....................   
+....................    delay_us(20); 
+0045E:  REPEAT  #18E
+00460:  NOP     
+00462:  MOV     [--W15],W5
+00464:  RETURN  
+.................... } 
+.................... //---------------------------------------------------------------------------// 
+....................  
+.................... //==================== настройка и нинициализация АЦП =======================// 
+....................  
+.................... static void ADC_sps_set(U8 SPS){ 
+....................                                                            
+....................    Sps_buf = SPS; 
+00466:  MOV.B   1BDA,W0L
+00468:  MOV.B   W0L,80D
+....................    WrReg(DRATE,SPS);  
+0046A:  MOV.B   #3,W0L
+0046C:  MOV.B   W0L,1BDC
+0046E:  MOV.B   1BDA,W0L
+00470:  MOV.B   W0L,1BDE
+00472:  CLR.B   1BDF
+00474:  CALL    406
+....................    delay_us(20);   
+00478:  REPEAT  #18E
+0047A:  NOP     
+0047C:  RETURN  
+.................... } 
+....................  
+.................... static void ADC_set_PGA(u8 _PGA_val){ 
+....................    
+.................... /* PGA 
+.................... 000 = 1 (default) 
+.................... 001 = 2 
+.................... 010 = 4 
+.................... 011 = 8 
+.................... 100 = 16 
+.................... 101 = 32 
+.................... 110 = 64 
+.................... 111 = 64*/ 
+.................... /**/ 
+....................  
+.................... // PGA присваевается для расчета  
+....................  
+....................    switch (_PGA_val){ 
+0047E:  MOV.B   1BDA,W0L
+00480:  CLR.B   1
+00482:  XOR     #0,W0
+00484:  BRA     Z,4A0
+00486:  XOR     #1,W0
+00488:  BRA     Z,4B2
+0048A:  XOR     #3,W0
+0048C:  BRA     Z,4C6
+0048E:  XOR     #1,W0
+00490:  BRA     Z,4DA
+00492:  XOR     #7,W0
+00494:  BRA     Z,4EE
+00496:  XOR     #1,W0
+00498:  BRA     Z,502
+0049A:  XOR     #3,W0
+0049C:  BRA     Z,516
+0049E:  BRA     52A
+....................       case 0: 
+....................        WrReg(ADCON,0); 
+004A0:  MOV.B   #2,W0L
+004A2:  MOV.B   W0L,1BDC
+004A4:  CLR     1BDE
+004A6:  CALL    406
+....................        PGA = 1; 
+004AA:  MOV.B   #1,W0L
+004AC:  MOV.B   W0L,80B
+....................       break; 
+004AE:  GOTO    52A
+....................        
+....................       case 1: 
+....................        WrReg(ADCON,1); 
+004B2:  MOV.B   #2,W0L
+004B4:  MOV.B   W0L,1BDC
+004B6:  MOV     #1,W4
+004B8:  MOV     W4,1BDE
+004BA:  CALL    406
+....................        PGA = 2; 
+004BE:  MOV.B   #2,W0L
+004C0:  MOV.B   W0L,80B
+....................       break; 
+004C2:  GOTO    52A
+....................        
+....................       case 2: 
+....................        WrReg(ADCON,2); 
+004C6:  MOV.B   #2,W0L
+004C8:  MOV.B   W0L,1BDC
+004CA:  MOV     #2,W4
+004CC:  MOV     W4,1BDE
+004CE:  CALL    406
+....................        PGA = 4; 
+004D2:  MOV.B   #4,W0L
+004D4:  MOV.B   W0L,80B
+....................       break; 
+004D6:  GOTO    52A
+....................        
+....................       case 3: 
+....................        WrReg(ADCON,3); 
+004DA:  MOV.B   #2,W0L
+004DC:  MOV.B   W0L,1BDC
+004DE:  MOV     #3,W4
+004E0:  MOV     W4,1BDE
+004E2:  CALL    406
+....................        PGA = 8; 
+004E6:  MOV.B   #8,W0L
+004E8:  MOV.B   W0L,80B
+....................       break; 
+004EA:  GOTO    52A
+....................        
+....................       case 4: 
+....................        WrReg(ADCON,4); 
+004EE:  MOV.B   #2,W0L
+004F0:  MOV.B   W0L,1BDC
+004F2:  MOV     #4,W4
+004F4:  MOV     W4,1BDE
+004F6:  CALL    406
+....................        PGA = 16; 
+004FA:  MOV.B   #10,W0L
+004FC:  MOV.B   W0L,80B
+....................       break; 
+004FE:  GOTO    52A
+....................        
+....................       case 5: 
+....................        WrReg(ADCON,5); 
+00502:  MOV.B   #2,W0L
+00504:  MOV.B   W0L,1BDC
+00506:  MOV     #5,W4
+00508:  MOV     W4,1BDE
+0050A:  CALL    406
+....................        PGA = 32; 
+0050E:  MOV.B   #20,W0L
+00510:  MOV.B   W0L,80B
+....................       break; 
+00512:  GOTO    52A
+....................        
+....................       case 6: 
+....................        WrReg(ADCON,6); 
+00516:  MOV.B   #2,W0L
+00518:  MOV.B   W0L,1BDC
+0051A:  MOV     #6,W4
+0051C:  MOV     W4,1BDE
+0051E:  CALL    406
+....................        PGA = 64; 
+00522:  MOV.B   #40,W0L
+00524:  MOV.B   W0L,80B
+....................       break;  
+00526:  GOTO    52A
+....................    } 
+....................    delay_us(20); 
+0052A:  REPEAT  #18E
+0052C:  NOP     
+0052E:  RETURN  
+.................... } 
+....................  
+.................... static void ADC_SelfCal(){ 
+00530:  MOV     W5,[W15++]
+00532:  MOV     W6,[W15++]
+....................                       
+....................    ADC_CS = 0; 
+00534:  BCLR.B  2E9.1
+....................    ADC2_CS = 0; 
+00536:  BCLR.B  2D7.2
+....................    delay_us(1); 
+00538:  REPEAT  #12
+0053A:  NOP     
+....................     
+....................    Spi_write2(0xF0); 
+0053C:  BCLR.B  260.6
+0053E:  BTSS.B  260.0
+00540:  BRA     546
+00542:  MOV.B   268,W0L
+00544:  BRA     53E
+00546:  MOV.B   #F0,W0L
+00548:  MOV.B   W0L,268
+0054A:  BTSS.B  260.0
+0054C:  BRA     54A
+....................    delay_us(1); 
+0054E:  REPEAT  #12
+00550:  NOP     
+....................     
+....................    ADC_CS = 1; 
+00552:  BSET.B  2E9.1
+....................    ADC2_CS = 1; 
+00554:  BSET.B  2D7.2
+....................     
+....................    While(ADC_DRDY | ADC2_DRDY) { }   // ждем готовности обоих АЦП 
+00556:  CLR     W0
+00558:  BTSC.B  2D4.1
+0055A:  INC     W0,W0
+0055C:  MOV.B   W0L,W6L
+0055E:  CLR     W0
+00560:  BTSC.B  2D5.1
+00562:  INC     W0,W0
+00564:  IOR.B    W6L,  W0L,W0L
+00566:  CP0.B   W0L
+00568:  BRA     Z,56E
+0056A:  GOTO    556
+0056E:  MOV     [--W15],W6
+00570:  MOV     [--W15],W5
+00572:  RETURN  
+....................      
+....................    /* 
+....................    Switch (Sps_buf) {      
+....................      
+....................       case 0xF0:    
+....................        delay_us(220);         
+....................         break;                       
+....................        
+....................       case 0xE0: 
+....................        delay_us(255);  
+....................         break; 
+....................          
+....................       case 0xD0: 
+....................        delay_us(315);  
+....................         break; 
+....................          
+....................       case 0xC0: 
+....................        delay_us(445);  
+....................         break; 
+....................          
+....................       case 0xB0: 
+....................        delay_us(685);  
+....................         break; 
+....................          
+....................       case 0xA1: 
+....................        delay_ms(1); 
+....................        delay_us(185);                
+....................         break;       
+....................          
+....................       case 0x92: 
+....................        delay_ms(5); 
+....................         break; 
+....................          
+....................       case 0x82: 
+....................        delay_ms(10); 
+....................        delay_us(200); 
+....................         break; 
+....................                     
+....................       case 0x63: 
+....................        delay_ms(21);  
+....................         break; 
+....................          
+....................       case 0x43: 
+....................        delay_ms(41);  
+....................         break; 
+....................          
+....................       case 0x23: 
+....................        delay_ms(101);  
+....................         break;          
+....................              
+....................       case 0x13: 
+....................        delay_ms(201);  
+....................         break;                           
+....................      } 
+....................      */ 
+.................... } 
+....................  
+.................... static void ADC_init(U8 buf_state){ 
+00574:  MOV.B   1BD8,W0L
+00576:  MOV.B   W0L,1BD9
+00578:  SL.B    1BD9
+....................    
+....................   U8 buf_st = buf_state << 1; // подготовка команды вх. буфера 
+....................    
+....................   WrReg(STATUS,buf_st);   // упр. входным буфером 
+0057A:  CLR.B   1BDC
+0057C:  MOV.B   1BD9,W0L
+0057E:  MOV.B   W0L,1BDE
+00580:  CLR.B   1BDF
+00582:  CALL    406
+....................   delay_us(20); 
+00586:  REPEAT  #18E
+00588:  NOP     
+....................  
+....................    if(ADC_sps_var>8)  ADC_sps_var = 8; 
+0058A:  MOV     818,W4
+0058C:  LSR     W4,#8,W4
+0058E:  CP.B    W4L,#8
+00590:  BRA     LEU,596
+00592:  MOV.B   #8,W0L
+00594:  MOV.B   W0L,819
+....................    // установка sps 
+....................    switch (ADC_sps_var){                // передача величины скорости измерений АЦП  
+00596:  MOV.B   819,W0L
+00598:  CLR.B   1
+0059A:  XOR     #0,W0
+0059C:  BRA     Z,5CC
+0059E:  XOR     #1,W0
+005A0:  BRA     Z,5D8
+005A2:  XOR     #3,W0
+005A4:  BRA     Z,5E4
+005A6:  XOR     #1,W0
+005A8:  BRA     Z,5F0
+005AA:  XOR     #7,W0
+005AC:  BRA     Z,5FC
+005AE:  XOR     #1,W0
+005B0:  BRA     Z,608
+005B2:  XOR     #3,W0
+005B4:  BRA     Z,614
+005B6:  XOR     #1,W0
+005B8:  BRA     Z,620
+005BA:  XOR     #F,W0
+005BC:  BRA     Z,62C
+005BE:  XOR     #1,W0
+005C0:  BRA     Z,638
+005C2:  XOR     #3,W0
+005C4:  BRA     Z,644
+005C6:  XOR     #1,W0
+005C8:  BRA     Z,650
+005CA:  BRA     65C
+....................      
+....................       case 0: ADC_sps_set(0x03);  break; // 2,5   sps 
+005CC:  MOV.B   #3,W0L
+005CE:  MOV.B   W0L,1BDA
+005D0:  CALL    466
+005D4:  GOTO    65C
+....................       case 1: ADC_sps_set(0x13);  break; // 5   sps 
+005D8:  MOV.B   #13,W0L
+005DA:  MOV.B   W0L,1BDA
+005DC:  CALL    466
+005E0:  GOTO    65C
+....................       case 2: ADC_sps_set(0x23);  break; // 10   sps 
+005E4:  MOV.B   #23,W0L
+005E6:  MOV.B   W0L,1BDA
+005E8:  CALL    466
+005EC:  GOTO    65C
+....................       case 3: ADC_sps_set(0x43);  break; // 25   sps 
+005F0:  MOV.B   #43,W0L
+005F2:  MOV.B   W0L,1BDA
+005F4:  CALL    466
+005F8:  GOTO    65C
+....................       case 4: ADC_sps_set(0x63);  break; // 50   sps 
+005FC:  MOV.B   #63,W0L
+005FE:  MOV.B   W0L,1BDA
+00600:  CALL    466
+00604:  GOTO    65C
+....................       case 5: ADC_sps_set(0x82);  break; // 100  sps 
+00608:  MOV.B   #82,W0L
+0060A:  MOV.B   W0L,1BDA
+0060C:  CALL    466
+00610:  GOTO    65C
+....................       case 6: ADC_sps_set(0x91);  break; // 500  sps 
+00614:  MOV.B   #91,W0L
+00616:  MOV.B   W0L,1BDA
+00618:  CALL    466
+0061C:  GOTO    65C
+....................       case 7: ADC_sps_set(0xA1);  break; // 1000 sps 
+00620:  MOV.B   #A1,W0L
+00622:  MOV.B   W0L,1BDA
+00624:  CALL    466
+00628:  GOTO    65C
+....................       case 8: ADC_sps_set(0xC0);  break; // 3750 sps 
+0062C:  MOV.B   #C0,W0L
+0062E:  MOV.B   W0L,1BDA
+00630:  CALL    466
+00634:  GOTO    65C
+....................       case 9: ADC_sps_set(0xd0);  break; // 7500  sps 
+00638:  MOV.B   #D0,W0L
+0063A:  MOV.B   W0L,1BDA
+0063C:  CALL    466
+00640:  GOTO    65C
+....................       case 10: ADC_sps_set(0xe0);  break; // 15000 sps 
+00644:  MOV.B   #E0,W0L
+00646:  MOV.B   W0L,1BDA
+00648:  CALL    466
+0064C:  GOTO    65C
+....................       case 11: ADC_sps_set(0xf0);  break; // 30000 sps 
+00650:  MOV.B   #F0,W0L
+00652:  MOV.B   W0L,1BDA
+00654:  CALL    466
+00658:  GOTO    65C
+....................       } 
+....................        
+....................    ADC_set_PGA(PGA_val);    // Уст. PGA 
+0065C:  MOV.B   80C,W0L
+0065E:  MOV.B   W0L,1BDA
+00660:  CALL    47E
+....................    ADC_SelfCal();           // Автокалибровка обоих АЦП  
+00664:  CALL    530
+....................    delay_us(100); 
+00668:  REPEAT  #7CE
+0066A:  NOP     
+0066C:  RETURN  
+.................... } 
+.................... //---------------------- уст. каналов и чтение АЦП --------------------------// 
+....................  
+.................... static void SYNC_ADC(U8 command) { /// синхронизация АЦП 
+....................    
+....................    //command 0 - не выбран ни один АЦП 
+....................    //command 1 - выбран АЦП 1 
+....................    //command 2 - выбран АЦП 2 
+....................     
+....................    switch(command) 
+*
+006FE:  MOV.B   1BDA,W0L
+00700:  CLR.B   1
+00702:  XOR     #0,W0
+00704:  BRA     Z,710
+00706:  XOR     #1,W0
+00708:  BRA     Z,718
+0070A:  XOR     #3,W0
+0070C:  BRA     Z,724
+0070E:  BRA     730
+....................    { 
+....................          case 0:      
+....................             ADC_SYNC = 1;  
+00710:  BSET.B  2D6.2
+....................             ADC2_SYNC = 1; 
+00712:  BSET.B  2D7.3
+....................          break; 
+00714:  GOTO    730
+....................           
+....................          case 1:  
+....................             ADC_SYNC = 0;  
+00718:  BCLR.B  2D6.2
+....................             delay_us(20); 
+0071A:  REPEAT  #18E
+0071C:  NOP     
+....................             ADC_SYNC = 1; 
+0071E:  BSET.B  2D6.2
+....................          break; 
+00720:  GOTO    730
+....................           
+....................          case 2:  
+....................             ADC2_SYNC = 0;  
+00724:  BCLR.B  2D7.3
+....................             delay_us(20); 
+00726:  REPEAT  #18E
+00728:  NOP     
+....................             ADC2_SYNC = 1;  
+0072A:  BSET.B  2D7.3
+....................          break; 
+0072C:  GOTO    730
+....................    } 
+00730:  RETURN  
+....................   } 
+....................  
+.................... static void ADC_select(U8 command) { /// выбор АЦП 
+....................    
+....................    //command 0 - не выбран ни один АЦП 
+....................    //command 1 - выбран АЦП 1 
+....................    //command 2 - выбран АЦП 2 
+....................     
+....................    switch(command) 
+*
+0066E:  MOV.B   1BFC,W0L
+00670:  CLR.B   1
+00672:  XOR     #0,W0
+00674:  BRA     Z,680
+00676:  XOR     #1,W0
+00678:  BRA     Z,688
+0067A:  XOR     #3,W0
+0067C:  BRA     Z,690
+0067E:  BRA     698
+....................    { 
+....................          case 0: ADC_CS = 1; ADC2_CS = 1; break; 
+00680:  BSET.B  2E9.1
+00682:  BSET.B  2D7.2
+00684:  GOTO    698
+....................          case 1: ADC_CS = 0; ADC2_CS = 1; break; 
+00688:  BCLR.B  2E9.1
+0068A:  BSET.B  2D7.2
+0068C:  GOTO    698
+....................          case 2: ADC_CS = 1; ADC2_CS = 0; break; 
+00690:  BSET.B  2E9.1
+00692:  BCLR.B  2D7.2
+00694:  GOTO    698
+....................    } 
+00698:  RETURN  
+....................   } 
+....................  
+.................... static void ADC_setCh(U8 Ch_Number, U8 ADC_number){ 
+0069A:  MOV     W5,[W15++]
+....................  
+....................  // уст. каналоа АЦП 
+....................  // 1 канал пользователя - 4 канал АЦП по факту (13(+) и 12(-) ножки) и тд. 
+....................   
+....................   ADC_select(ADC_number); // выбор АЦП 
+0069C:  MOV.B   1BDB,W0L
+0069E:  MOV.B   W0L,1BFC
+006A0:  CALL    66E
+....................   delay_us(2); 
+006A4:  REPEAT  #26
+006A6:  NOP     
+....................   
+....................   Spi_write2(0x50+MUX);  // уст. канал АЦП    
+006A8:  BCLR.B  260.6
+006AA:  BTSS.B  260.0
+006AC:  BRA     6B2
+006AE:  MOV.B   268,W0L
+006B0:  BRA     6AA
+006B2:  MOV.B   #51,W0L
+006B4:  MOV.B   W0L,268
+006B6:  BTSS.B  260.0
+006B8:  BRA     6B6
+....................   delay_us(10); 
+006BA:  REPEAT  #C6
+006BC:  NOP     
+....................   Spi_write2(0);          
+006BE:  BCLR.B  260.6
+006C0:  BTSS.B  260.0
+006C2:  BRA     6C8
+006C4:  MOV.B   268,W0L
+006C6:  BRA     6C0
+006C8:  CLR.B   268
+006CA:  BTSS.B  260.0
+006CC:  BRA     6CA
+....................   delay_us(10); 
+006CE:  REPEAT  #C6
+006D0:  NOP     
+....................   Spi_write2(Mx_ch_code[Ch_Number]); 
+006D2:  MOV     1BDA,W4
+006D4:  CLR.B   9
+006D6:  MOV     #802,W3
+006D8:  ADD     W4,W3,W0
+006DA:  MOV.B   [W0],W5L
+006DC:  BCLR.B  260.6
+006DE:  BTSS.B  260.0
+006E0:  BRA     6E6
+006E2:  MOV.B   268,W0L
+006E4:  BRA     6DE
+006E6:  PUSH    268
+006E8:  MOV.B   W5L,[W15-#2]
+006EA:  POP     268
+006EC:  BTSS.B  260.0
+006EE:  BRA     6EC
+....................    
+....................   ADC_select(0); 
+006F0:  CLR.B   1BFC
+006F2:  CALL    66E
+....................   delay_us(20);   
+006F6:  REPEAT  #18E
+006F8:  NOP     
+006FA:  MOV     [--W15],W5
+006FC:  RETURN  
+.................... } 
+....................  
+.................... static S32 ADC_read(U8 ADC_number) 
+*
+007B0:  MOV     W5,[W15++]
+007B2:  MOV     W6,[W15++]
+....................   { 
+....................   S32 ADC_RByte_Sum; // суммарные отсчеты АЦП - 24 бита 
+....................   ADC_select(ADC_number); // выбор АЦП 
+007B4:  MOV.B   1BEA,W0L
+007B6:  MOV.B   W0L,1BFC
+007B8:  CALL    66E
+....................    
+....................   S32 ADC_RByte1=0;  // ст. байт данных АЦП 
+....................   S32 ADC_RByte2=0;  // ср. байт данных АЦП 
+....................   S32 ADC_RByte3=0;  // мл. байт данных АЦП 
+007BC:  CLR     1BF0
+007BE:  CLR     1BF2
+007C0:  CLR     1BF4
+007C2:  CLR     1BF6
+007C4:  CLR     1BF8
+007C6:  CLR     1BFA
+....................   
+....................   Spi_write2(0x01);        // команда чтения Rdata 
+007C8:  BCLR.B  260.6
+007CA:  BTSS.B  260.0
+007CC:  BRA     7D2
+007CE:  MOV.B   268,W0L
+007D0:  BRA     7CA
+007D2:  MOV.B   #1,W0L
+007D4:  MOV.B   W0L,268
+007D6:  BTSS.B  260.0
+007D8:  BRA     7D6
+....................   delay_us(20); 
+007DA:  REPEAT  #18E
+007DC:  NOP     
+....................   ADC_Rbyte1 = Spi_read2(0);   // чтение 
+007DE:  BCLR.B  260.6
+007E0:  BTSS.B  260.0
+007E2:  BRA     7E8
+007E4:  MOV.B   268,W0L
+007E6:  BRA     7E0
+007E8:  CLR.B   268
+007EA:  BTSS.B  260.0
+007EC:  BRA     7EA
+007EE:  MOV.B   268,W0L
+007F0:  CLR.B   1
+007F2:  MOV     #0,W1
+007F4:  MOV     W0,1BF0
+007F6:  MOV     W1,1BF2
+....................   ADC_Rbyte2 = Spi_read2(0); 
+007F8:  BCLR.B  260.6
+007FA:  BTSS.B  260.0
+007FC:  BRA     802
+007FE:  MOV.B   268,W0L
+00800:  BRA     7FA
+00802:  CLR.B   268
+00804:  BTSS.B  260.0
+00806:  BRA     804
+00808:  MOV.B   268,W0L
+0080A:  CLR.B   1
+0080C:  MOV     #0,W1
+0080E:  MOV     W0,1BF4
+00810:  MOV     W1,1BF6
+....................   ADC_Rbyte3 = Spi_read2(0); 
+00812:  BCLR.B  260.6
+00814:  BTSS.B  260.0
+00816:  BRA     81C
+00818:  MOV.B   268,W0L
+0081A:  BRA     814
+0081C:  CLR.B   268
+0081E:  BTSS.B  260.0
+00820:  BRA     81E
+00822:  MOV.B   268,W0L
+00824:  CLR.B   1
+00826:  MOV     #0,W1
+00828:  MOV     W0,1BF8
+0082A:  MOV     W1,1BFA
+....................    
+....................   ADC_select(0); // сброс выбора АЦП 
+0082C:  CLR.B   1BFC
+0082E:  CALL    66E
+....................    
+....................   // склеивание трех байт отсчетов АЦП 
+....................   ADC_RByte_Sum = ((S32)ADC_Rbyte1<<24) | ((S32)ADC_Rbyte2<<16) | ((S32)ADC_Rbyte3<<8); 
+00832:  MOV.B   1BF0,W0L
+00834:  MOV.B   W0L,D
+00836:  CLR.B   W6
+00838:  CLR.B   B
+0083A:  CLR.B   W5
+0083C:  MOV     1BF6,W2
+0083E:  MOV     1BF4,W1
+00840:  MOV     #0,W0
+00842:  IOR      W5,  W0,W5
+00844:  IOR      W6,  W1,W6
+00846:  MOV.B   1BFA,W0L
+00848:  MOV.B   W0L,3
+0084A:  MOV.B   1BF9,W0L
+0084C:  MOV.B   W0L,W1L
+0084E:  MOV.B   1BF8,W0L
+00850:  MOV.B   W0L,1
+00852:  CLR.B   W0
+00854:  IOR      W6,  W1,W1
+00856:  IOR      W5,  W0,W0
+00858:  MOV     W0,1BEC
+0085A:  MOV     W1,1BEE
+....................   ADC_RByte_Sum = ADC_RByte_Sum/256; // приведение 24 бит к 32-битной переменной 
+0085C:  BCLR.B  43.0
+0085E:  MOV     1BEC,W0
+00860:  MOV     1BEE,W1
+00862:  MOV     #100,W2
+00864:  MOV     #0,W3
+00866:  CALL    732
+0086A:  MOV     W0,1BEC
+0086C:  MOV     W1,1BEE
+....................   ADC_full_word = ADC_RByte_Sum;     // запоминаем в глоб. переменую 
+0086E:  PUSH    1BEC
+00870:  POP     1866
+00872:  PUSH    1BEE
+00874:  POP     1868
+....................  
+....................   return ADC_RByte_Sum; 
+00876:  MOV     1BEC,W0
+00878:  MOV     1BEE,W1
+0087A:  MOV     [--W15],W6
+0087C:  MOV     [--W15],W5
+0087E:  RETURN  
+....................    
+....................   } 
+....................  
+.................... static S32 ADC_read_aver(U8 ADC_number,U8 ADC_ch) 
+*
+00CF6:  MOV     W5,[W15++]
+00CF8:  MOV     #C,W5
+00CFA:  REPEAT  #4
+00CFC:  MOV     [W5++],[W15++]
+.................... { 
+....................  float Vin;         // измеренное напряжение  
+....................  S32 _Ch_buf_sum; // переменн. для хранения текущ. усредн. значения 
+....................  
+....................  if(Ma_buf_index > Ma_buf_size) Ma_buf_index = 0;     // сброс индекса буфера 
+00CFE:  MOV.B   186A,W0L
+00D00:  MOV     81C,W4
+00D02:  LSR     W4,#8,W4
+00D04:  CP.B    W4L,W0L
+00D06:  BRA     LEU,D0A
+00D08:  CLR.B   81D
+....................   
+....................  Ch_buf[ADC_ch][Ma_buf_index] = ADC_read(ADC_number); // считываем текщее изм. в буфер 
+00D0A:  MOV.B   1BDB,W0L
+00D0C:  CLR.B   1
+00D0E:  SL      W0,#9,W5
+00D10:  MOV.B   81D,W0L
+00D12:  CLR.B   1
+00D14:  SL      W0,#2,W0
+00D16:  ADD     W0,W5,W0
+00D18:  MOV     #822,W4
+00D1A:  ADD     W0,W4,W5
+00D1C:  MOV.B   1BDA,W0L
+00D1E:  MOV.B   W0L,1BEA
+00D20:  CALL    7B0
+00D24:  MOV     #0,W4
+00D26:  MOV     [W4++],[W5++]
+00D28:  MOV     [W4++],[W5++]
+....................  ADC_counts[ADC_number-1][ADC_ch] = ADC_full_word;    // сохр. отсчетов канала АЦП. приведение N АЦП к индексу 
+00D2A:  MOV     1BDA,W4
+00D2C:  CLR.B   9
+00D2E:  SUB     W4,#1,W5
+00D30:  SL      W5,#5,W5
+00D32:  MOV.B   1BDB,W0L
+00D34:  CLR.B   1
+00D36:  SL      W0,#2,W0
+00D38:  ADD     W0,W5,W0
+00D3A:  MOV     #1822,W4
+00D3C:  ADD     W0,W4,W5
+00D3E:  MOV     #1866,W4
+00D40:  MOV     [W4++],[W5++]
+00D42:  MOV     [W4++],[W5++]
+....................   
+....................  for(U8 i = 0; i < Ma_buf_size; i++)                  // суммируем весь буфер 
+00D44:  CLR.B   1BE4
+00D46:  MOV.B   1BE4,W0L
+00D48:  MOV     186A,W4
+00D4A:  CP.B    W4L,W0L
+00D4C:  BRA     LEU,D76
+....................  { 
+....................    Ch_buf_sum += Ch_buf[ADC_ch][i];   // меняем элемент буфера на новый 
+00D4E:  MOV.B   1BDB,W0L
+00D50:  CLR.B   1
+00D52:  SL      W0,#9,W5
+00D54:  MOV.B   1BE4,W0L
+00D56:  CLR.B   1
+00D58:  SL      W0,#2,W0
+00D5A:  ADD     W0,W5,W0
+00D5C:  MOV     #822,W4
+00D5E:  ADD     W0,W4,W0
+00D60:  MOV     W0,W4
+00D62:  MOV     #0,W3
+00D64:  MOV     [W4++],[W3++]
+00D66:  MOV     [W4++],[W3++]
+00D68:  ADD     1862
+00D6A:  MOV     1864,W4
+00D6C:  ADDC    W1,W4,W0
+00D6E:  MOV     W0,1864
+00D70:  INC.B   1BE4
+00D72:  GOTO    D46
+....................  }  
+....................   
+....................  if(Ma_buf_cnt < Ma_buf_size) 
+00D76:  MOV.B   186B,W0L
+00D78:  MOV     186A,W4
+00D7A:  CP.B    W4L,W0L
+00D7C:  BRA     LEU,D9A
+....................  { 
+....................    Ma_buf_cnt++;                        // инкремент счетчика эл. массива 
+00D7E:  INC.B   186B
+....................    Ch_buf_sum = Ch_buf_sum/Ma_buf_cnt;  // вычисляем среднее 
+00D80:  BCLR.B  43.0
+00D82:  MOV.B   186B,W0L
+00D84:  MOV.B   W0L,W2L
+00D86:  CLR.B   5
+00D88:  MOV     #0,W3
+00D8A:  MOV     1862,W0
+00D8C:  MOV     1864,W1
+00D8E:  CALL    732
+00D92:  MOV     W0,1862
+00D94:  MOV     W1,1864
+....................  } 
+00D96:  GOTO    DB0
+....................  else 
+....................  { 
+....................    Ch_buf_sum = Ch_buf_sum/Ma_buf_size; // вычисляем среднее когда буфер полон 
+00D9A:  BCLR.B  43.0
+00D9C:  MOV.B   186A,W0L
+00D9E:  MOV.B   W0L,4
+00DA0:  CLR.B   5
+00DA2:  MOV     #0,W3
+00DA4:  MOV     1862,W0
+00DA6:  MOV     1864,W1
+00DA8:  CALL    732
+00DAC:  MOV     W0,1862
+00DAE:  MOV     W1,1864
+....................  } 
+....................  
+....................  _Ch_buf_sum = Ch_buf_sum; // пересохраняем для возврата 
+00DB0:  PUSH    1862
+00DB2:  POP     1BE0
+00DB4:  PUSH    1864
+00DB6:  POP     1BE2
+....................  Ch_buf_sum = 0;           // сброс глоб переменной 
+00DB8:  CLR     1862
+00DBA:  CLR     1864
+....................   
+....................   Vin = ((_Ch_buf_sum*5)/(8388608.0*PGA)); // расчет U 
+00DBC:  MOV     1BE0,W0
+00DBE:  MOV     1BE2,W1
+00DC0:  MOV     #5,W2
+00DC2:  MOV     #0,W3
+00DC4:  CALL    880
+00DC8:  MOV     W0,W5
+00DCA:  MOV     W1,W6
+00DCC:  MOV     #0,W1
+00DCE:  MOV     #0,W2
+00DD0:  MOV     #0,W3
+00DD2:  MOV.B   80B,W0L
+00DD4:  CLR.B   1
+00DD6:  CALL    8C2
+00DDA:  MOV     W5,[W15++]
+00DDC:  MOV     W6,[W15++]
+00DDE:  MOV     W0,W4
+00DE0:  MOV     W1,W5
+00DE2:  MOV     W2,W6
+00DE4:  MOV     W3,W7
+00DE6:  MOV     #0,W0
+00DE8:  MOV     #0,W1
+00DEA:  MOV     #0,W2
+00DEC:  MOV     #4160,W3
+00DEE:  CALL    92C
+00DF2:  MOV     [--W15],W6
+00DF4:  MOV     [--W15],W5
+00DF6:  MOV     W0,W7
+00DF8:  MOV     W1,W8
+00DFA:  MOV     W2,W9
+00DFC:  MOV     W3,W10
+00DFE:  MOV     W5,W0
+00E00:  MOV     W6,W1
+00E02:  CLR     W3
+00E04:  BTSC    W1.F
+00E06:  SETM    W3
+00E08:  MOV     W3,W2
+00E0A:  CALL    A3C
+00E0E:  MOV     W5,[W15++]
+00E10:  MOV     W6,[W15++]
+00E12:  MOV     W7,[W15++]
+00E14:  MOV     W7,W4
+00E16:  MOV     W8,W5
+00E18:  MOV     W9,W6
+00E1A:  MOV     W10,W7
+00E1C:  CALL    AA6
+00E20:  MOV     [--W15],W7
+00E22:  MOV     [--W15],W6
+00E24:  MOV     [--W15],W5
+00E26:  CALL    BAE
+00E2A:  MOV     W1,1BDC
+00E2C:  MOV     W2,1BDE
+....................   return Vin*uV; // возврат масштабированного U 
+00E2E:  MOV     1BDC,W0
+00E30:  MOV     1BDE,W1
+00E32:  MOV     #9680,W2
+00E34:  MOV     #4B18,W3
+00E36:  CALL    BF2
+00E3A:  CALL    CB6
+00E3E:  MOV.D   W0,W0
+00E40:  MOV     #14,W5
+00E42:  REPEAT  #4
+00E44:  MOV     [--W15],[W5--]
+00E46:  MOV     [--W15],W5
+00E48:  RETURN  
+....................  //return _Ch_buf_sum; 
+.................... } 
+....................  
+.................... //---------------------------------------------------------------------------// 
+....................  
+....................  
+....................   // результаты измерений 
+....................   S32 pkt8_ch_1 = 0, pkt8_ch_2 = 0, pkt8_ch_3 = 0, pkt8_ch_4 = 0,  
+....................       pkt8_ch_5 = 0, pkt8_ch_6 = 0, pkt8_ch_7 = 0, pkt8_ch_8 = 0; 
+....................   U16 meas_status; // статус бит обновления измерений 
+....................    
+....................   void Clr_bufs(void) 
+*
+002DA:  MOV     W5,[W15++]
+.................... { 
+....................   Ma_buf_cnt = 0; 
+002DC:  CLR.B   186B
+....................   Ma_buf_index = 0; 
+002DE:  CLR.B   81D
+....................   Ch_buf_sum = 0; 
+002E0:  CLR     1862
+002E2:  CLR     1864
+....................    
+....................   for (U8 i = 0; i < 8; i++) 
+002E4:  CLR.B   1BDA
+002E6:  MOV     1BDA,W4
+002E8:  CP.B    W4L,#8
+002EA:  BRA     C,324
+....................   { 
+....................   // заполнение буферов скольз. ср. нулями 
+....................    for (U8 j = 0; j < 128; j++)  
+002EC:  CLR.B   1BDB
+002EE:  MOV     1BDA,W4
+002F0:  LSR     W4,#8,W4
+002F2:  MOV     #80,W3
+002F4:  CP.B    W3L,W4L
+002F6:  BRA     LEU,31E
+....................       { 
+....................          Ch_buf[i][j] = 0; 
+002F8:  MOV.B   1BDA,W0L
+002FA:  CLR.B   1
+002FC:  SL      W0,#9,W5
+002FE:  MOV.B   1BDB,W0L
+00300:  CLR.B   1
+00302:  SL      W0,#2,W0
+00304:  ADD     W0,W5,W0
+00306:  MOV     #822,W4
+00308:  ADD     W0,W4,W5
+0030A:  CLR.B   [W5]
+0030C:  MOV.B   #0,W0L
+0030E:  MOV.B   W0L,[W5+#1]
+00310:  MOV.B   #0,W0L
+00312:  MOV.B   W0L,[W5+#2]
+00314:  MOV.B   #0,W0L
+00316:  MOV.B   W0L,[W5+#3]
+00318:  INC.B   1BDB
+0031A:  GOTO    2EE
+....................       } 
+0031E:  INC.B   1BDA
+00320:  GOTO    2E6
+....................   } 
+....................    
+....................   for (U8 a = 0; a < 2; a++) 
+00324:  CLR.B   1BDC
+00326:  MOV     1BDC,W4
+00328:  CP.B    W4L,#2
+0032A:  BRA     C,362
+....................   { 
+....................   // заполнение буферов отсчетов нулями 
+....................    for (U8 b = 0; b < 8; b++)  
+0032C:  CLR.B   1BDD
+0032E:  MOV     1BDC,W4
+00330:  LSR     W4,#8,W4
+00332:  CP.B    W4L,#8
+00334:  BRA     C,35C
+....................       { 
+....................          ADC_counts[a][b] = 0; 
+00336:  MOV.B   1BDC,W0L
+00338:  CLR.B   1
+0033A:  SL      W0,#5,W5
+0033C:  MOV.B   1BDD,W0L
+0033E:  CLR.B   1
+00340:  SL      W0,#2,W0
+00342:  ADD     W0,W5,W0
+00344:  MOV     #1822,W4
+00346:  ADD     W0,W4,W5
+00348:  CLR.B   [W5]
+0034A:  MOV.B   #0,W0L
+0034C:  MOV.B   W0L,[W5+#1]
+0034E:  MOV.B   #0,W0L
+00350:  MOV.B   W0L,[W5+#2]
+00352:  MOV.B   #0,W0L
+00354:  MOV.B   W0L,[W5+#3]
+00356:  INC.B   1BDD
+00358:  GOTO    32E
+....................       } 
+0035C:  INC.B   1BDC
+0035E:  GOTO    326
+....................   } 
+00362:  MOV     [--W15],W5
+00364:  RETURN  
+.................... } 
+....................  
+.................... #include <dialtek_modbus.h>  
+.................... /*                D I A L T E K    M O D B U S   R T U   v 3.0                */ 
+....................  
+.................... /* ЗАГОЛОВКИ, ПЕРЕМЕННЫЕ И СЛУЖЕБНЫЕ ФУНКЦИИ */ 
+....................  
+.................... /* изменения необходимо вносить в файл dialtek_modbus.с */ 
+....................  
+.................... //================================ STATE MACHINE =============================== 
+....................  
+.................... #define MODBUS_RHR_CMD       0x03     // read holding registers cmd id 
+.................... #define MODBUS_RIR_CMD       0x04     // read input registers cmd id 
+.................... #define MODBUS_WSR_CMD       0x06     // write single register cmd id 
+....................  
+.................... #define max_regs_cnt         125      // макс. кол-во регистров для чтения за 1 раз 
+....................  
+.................... //==========================  VARIABLES AND PROTOTYPES  ======================== 
+....................  
+.................... volatile unsigned int rx_buf_ptr = 0; // указатель записи в массив UART 
+.................... // буфер для сохр. принятных команд 
+.................... unsigned char rx_buf[64]; 
+....................  
+.................... unsigned char modbus_cmd = 0; // 0x03 | 0x06 | 0x04 
+....................  
+.................... unsigned char rx_byte;       // байт принятый с ПК 
+....................   
+.................... unsigned char answer = 0;    // тип ответа на команду с ПК 
+.................... unsigned int modbus_reg_addr = 0;       // адрес регистра для R/W по запросу от modbus мастера 
+.................... unsigned int addr_buf_1 = 0, addr_buf_2 = 0; 
+.................... unsigned int regs2read = 0;             // число регистров для чтения по команде modbus rhr 
+.................... unsigned int CRC16 = 0;         // полученная контрольная сумма 
+.................... unsigned char  crc_buf[250];            // буфер для хранения байтов для расчета CRC16 
+....................  
+.................... unsigned int reg_wr_data = 0; 
+.................... unsigned int holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124 
+.................... unsigned int input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124 
+....................  
+.................... unsigned char rx_flag = 0, timer_state = 0; 
+....................  
+.................... void modbus_int_mode (unsigned char mode);     // упр. прерываниями MODBUS UART      
+.................... void modbus_refresh  (unsigned char cmd_type); // работа с пользовательскими пермеменными 
+.................... unsigned char is_reg (unsigned int reg_addr);  // был ли прочитан регистр 
+.................... void uart_send_byte (unsigned char ch);         // функция чтения 1 байта UART 
+.................... void UART1_init(); 
+.................... void Timer9_init(unsigned long); 
+....................  
+.................... #include "dialtek_modbus.c" 
+.................... /*                D I A L T E K    M O D B U S   R T U   v 3.0                */ 
+....................  
+.................... /* README */ 
+.................... /* 
+.................... „лЯ работы библиотеки MODBUS RTU необходимо: 
+....................  
+.................... 1. настроить прерывание UART RX по приему одного байта  
+....................  
+.................... 2. вставить в обработчик прерываниЯ UART RX функцию modbus_uart_byte, например: 
+....................       modbus_uart_byte(MDR_UART1->DR); или modbus_uart_byte(U1RXREG); 
+....................  
+.................... 3. создать функцию отправки одного байта UART TX следующего вида: 
+....................       void uart_send_byte(unsigned char hex_data){ } 
+....................  
+.................... 4. поместить функцию modbus_rx_sm() в обработчик прерываниЯ по таймеру (’ >= 1 мс) или цикл while(1) 
+....................  
+.................... 5. поместить функцию modbus_init() в main() 
+....................  
+.................... 6. поместить функцию modbus_poll() в цикл while(1) (T >= 1 мс) 
+....................  
+.................... 7. настроить порты длЯ управлениЯ разрешением работы приемника (если необходимо) и передатчика в поле RS485 EN/DIS DEFINE 
+....................  
+.................... 8. настроить аттрибуты устройства в поле HARDWARE INFO  
+....................  
+.................... 9. заполнить функцию modbus_int_mode() кодом с разрешением и запретом прерываний UART RX 
+....................  
+.................... 10.составить регистровую карту устройства в фукции modbus_refresh() : 
+....................       A) при чтении регистров, выполнЯетсЯ код if(cmd_type == MODBUS_RHR_CMD) 
+....................       B) при записи регистров, выполнЯетсЯ код if(cmd_type == MODBUS_WSR_CMD) 
+....................  
+.................... 11. при необходимости использованиЯ своих функции внутри modbus_refresh(), следует создать их прототипы в поле PROTOTYPES   
+.................... */ 
+....................  
+.................... /*############################################################################*/  
+.................... /*                   ПОЛЯ, ИЗМЕНЯЕМЫЕ ПОЛЬЗОВАТЕЛЕМ !!!                       */  
+....................  
+.................... /* RS485 EN/DIS DEFINE */ 
+....................  
+.................... #define TX_EN  RC14=1  
+.................... #define TX_DIS RC14=0 
+....................  
+.................... /* HARDWARE INFO */ 
+....................  
+....................  // unsigned char com_dev_id    = 247;              // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать  
+....................   unsigned char dev_id        = 100;                  // MODBUS ID устройства   <<<<<<<<<<======== ID 
+....................   unsigned char firmware_ver  = 15;                 // версиЯ прошивки текущего устройства 
+....................   unsigned char device_family = 5;                  // код семейства устройств 
+....................  
+.................... /* PROTOTYPES */ 
+....................  
+....................  
+....................  /* USER FUNCS */ 
+....................    
+....................    
+....................   void modbus_refresh(unsigned char cmd_type){      // работа с регистрами 
+*
+01222:  MOV     W5,[W15++]
+01224:  MOV     W6,[W15++]
+....................      
+....................   /// RW регистров, TODO - обновление переменных перед отправкой мастеру        
+....................   if(cmd_type == MODBUS_RHR_CMD) 
+01226:  MOV     1BD8,W4
+01228:  CP.B    W4L,#3
+0122A:  BRA     NZ,135C
+....................    {    
+....................       //U8 read_complete = is_reading_reg(meas_status_reg); 
+....................       if(meas_status)   
+0122C:  CP0     1890
+0122E:  BRA     Z,1332
+....................       {  // цикл измерений завершен, обновление регистров 
+....................          // 0. 000 000  0 V - формат, последнее число - сотни нВ 
+....................          holding_register[0] = (U16) (pkt8_ch_1 & 0x0000ffff);          // LSB канала 1 
+01230:  CLR     W1
+01232:  MOV     1870,W0
+01234:  MOV     W0,19DC
+....................          holding_register[1] = (U16)((pkt8_ch_1 & 0xffff0000) >> 16);   // MSB канала 1 
+01236:  CLR     W5
+01238:  MOV     1872,W6
+0123A:  MOV     W6,W0
+0123C:  MOV     #0,W1
+0123E:  MOV     W0,19DE
+....................           
+....................           
+....................          holding_register[2] = (U16) (pkt8_ch_2 & 0x0000ffff);          // LSB канала 2 
+01240:  CLR     W1
+01242:  MOV     1874,W0
+01244:  MOV     W0,19E0
+....................          holding_register[3] = (U16)((pkt8_ch_2 & 0xffff0000) >> 16);   // LSB канала 2 
+01246:  CLR     W5
+01248:  MOV     1876,W6
+0124A:  MOV     W6,W0
+0124C:  MOV     #0,W1
+0124E:  MOV     W0,19E2
+....................           
+....................          holding_register[4] = (U16) (pkt8_ch_3 & 0x0000ffff);          // LSB канала 3 
+01250:  CLR     W1
+01252:  MOV     1878,W0
+01254:  MOV     W0,19E4
+....................          holding_register[5] = (U16)((pkt8_ch_3 & 0xffff0000) >> 16);   // MSB канала 3 
+01256:  CLR     W5
+01258:  MOV     187A,W6
+0125A:  MOV     W6,W0
+0125C:  MOV     #0,W1
+0125E:  MOV     W0,19E6
+....................           
+....................          holding_register[6] = (U16) (pkt8_ch_4 & 0x0000ffff);          // LSB канала 4 
+01260:  CLR     W1
+01262:  MOV     187C,W0
+01264:  MOV     W0,19E8
+....................          holding_register[7] = (U16)((pkt8_ch_4 & 0xffff0000) >> 16);   // LSB канала 4 
+01266:  CLR     W5
+01268:  MOV     187E,W6
+0126A:  MOV     W6,W0
+0126C:  MOV     #0,W1
+0126E:  MOV     W0,19EA
+....................           
+....................          holding_register[8] = (U16) (pkt8_ch_5 & 0x0000ffff);          // LSB канала 5 
+01270:  CLR     W1
+01272:  MOV     1880,W0
+01274:  MOV     W0,19EC
+....................          holding_register[9] = (U16)((pkt8_ch_5 & 0xffff0000) >> 16);   // MSB канала 5 
+01276:  CLR     W5
+01278:  MOV     1882,W6
+0127A:  MOV     W6,W0
+0127C:  MOV     #0,W1
+0127E:  MOV     W0,19EE
+....................           
+....................          holding_register[10] = (U16) (pkt8_ch_6 & 0x0000ffff);         // LSB канала 6 
+01280:  CLR     W1
+01282:  MOV     1884,W0
+01284:  MOV     W0,19F0
+....................          holding_register[11] = (U16)((pkt8_ch_6 & 0xffff0000) >> 16);  // LSB канала 6 
+01286:  CLR     W5
+01288:  MOV     1886,W6
+0128A:  MOV     W6,W0
+0128C:  MOV     #0,W1
+0128E:  MOV     W0,19F2
+....................           
+....................          holding_register[12] = (U16) (pkt8_ch_7 & 0x0000ffff);         // LSB канала 7 
+01290:  CLR     W1
+01292:  MOV     1888,W0
+01294:  MOV     W0,19F4
+....................          holding_register[13] = (U16)((pkt8_ch_7 & 0xffff0000) >> 16);  // MSB канала 7 
+01296:  CLR     W5
+01298:  MOV     188A,W6
+0129A:  MOV     W6,W0
+0129C:  MOV     #0,W1
+0129E:  MOV     W0,19F6
+....................           
+....................          holding_register[14] = (U16) (pkt8_ch_8 & 0x0000ffff);         // LSB канала 8 
+012A0:  CLR     W1
+012A2:  MOV     188C,W0
+012A4:  MOV     W0,19F8
+....................          holding_register[15] = (U16)((pkt8_ch_8 & 0xffff0000) >> 16);  // LSB канала 8 
+012A6:  CLR     W5
+012A8:  MOV     188E,W6
+012AA:  MOV     W6,W0
+012AC:  MOV     #0,W1
+012AE:  MOV     W0,19FA
+....................          // =================================================================== 
+....................          // обновление отсчетов 
+....................          holding_register[24] = (U16) (ADC_counts[0][0] & 0x0000ffff);         // LSB канала 1 
+012B0:  CLR     W1
+012B2:  MOV     1822,W0
+012B4:  MOV     W0,1A0C
+....................          holding_register[25] = (U16)((ADC_counts[0][0] & 0xffff0000) >> 16);  // MSB канала 1 
+012B6:  CLR     W5
+012B8:  MOV     1824,W6
+012BA:  MOV     W6,W0
+012BC:  MOV     #0,W1
+012BE:  MOV     W0,1A0E
+....................           
+....................          holding_register[26] = (U16) (ADC_counts[0][1] & 0x0000ffff);         // LSB канала 2 
+012C0:  CLR     W1
+012C2:  MOV     1826,W0
+012C4:  MOV     W0,1A10
+....................          holding_register[27] = (U16)((ADC_counts[0][1] & 0xffff0000) >> 16);  // LSB канала 2 
+012C6:  CLR     W5
+012C8:  MOV     1828,W6
+012CA:  MOV     W6,W0
+012CC:  MOV     #0,W1
+012CE:  MOV     W0,1A12
+....................           
+....................          holding_register[28] = (U16) (ADC_counts[0][2] & 0x0000ffff);         // LSB канала 3 
+012D0:  CLR     W1
+012D2:  MOV     182A,W0
+012D4:  MOV     W0,1A14
+....................          holding_register[29] = (U16)((ADC_counts[0][2] & 0xffff0000) >> 16);  // MSB канала 3 
+012D6:  CLR     W5
+012D8:  MOV     182C,W6
+012DA:  MOV     W6,W0
+012DC:  MOV     #0,W1
+012DE:  MOV     W0,1A16
+....................           
+....................          holding_register[30] = (U16) (ADC_counts[0][3] & 0x0000ffff);         // LSB канала 4 
+012E0:  CLR     W1
+012E2:  MOV     182E,W0
+012E4:  MOV     W0,1A18
+....................          holding_register[31] = (U16)((ADC_counts[0][3] & 0xffff0000) >> 16);  // LSB канала 4 
+012E6:  CLR     W5
+012E8:  MOV     1830,W6
+012EA:  MOV     W6,W0
+012EC:  MOV     #0,W1
+012EE:  MOV     W0,1A1A
+....................           
+....................          holding_register[32] = (U16) (ADC_counts[1][0] & 0x0000ffff);         // LSB канала 5 
+012F0:  CLR     W1
+012F2:  MOV     1842,W0
+012F4:  MOV     W0,1A1C
+....................          holding_register[33] = (U16)((ADC_counts[1][0] & 0xffff0000) >> 16);  // MSB канала 5 
+012F6:  CLR     W5
+012F8:  MOV     1844,W6
+012FA:  MOV     W6,W0
+012FC:  MOV     #0,W1
+012FE:  MOV     W0,1A1E
+....................           
+....................          holding_register[34] = (U16) (ADC_counts[1][1] & 0x0000ffff);         // LSB канала 6 
+01300:  CLR     W1
+01302:  MOV     1846,W0
+01304:  MOV     W0,1A20
+....................          holding_register[35] = (U16)((ADC_counts[1][1] & 0xffff0000) >> 16);  // LSB канала 6 
+01306:  CLR     W5
+01308:  MOV     1848,W6
+0130A:  MOV     W6,W0
+0130C:  MOV     #0,W1
+0130E:  MOV     W0,1A22
+....................           
+....................          holding_register[36] = (U16) (ADC_counts[1][2] & 0x0000ffff);         // LSB канала 7 
+01310:  CLR     W1
+01312:  MOV     184A,W0
+01314:  MOV     W0,1A24
+....................          holding_register[37] = (U16)((ADC_counts[1][2] & 0xffff0000) >> 16);  // MSB канала 7 
+01316:  CLR     W5
+01318:  MOV     184C,W6
+0131A:  MOV     W6,W0
+0131C:  MOV     #0,W1
+0131E:  MOV     W0,1A26
+....................           
+....................          holding_register[38] = (U16) (ADC_counts[1][3] & 0x0000ffff);         // LSB канала 8 
+01320:  CLR     W1
+01322:  MOV     184E,W0
+01324:  MOV     W0,1A28
+....................          holding_register[39] = (U16)((ADC_counts[1][3] & 0xffff0000) >> 16);  // LSB канала 8 
+01326:  CLR     W5
+01328:  MOV     1850,W6
+0132A:  MOV     W6,W0
+0132C:  MOV     #0,W1
+0132E:  MOV     W0,1A2A
+....................           
+....................          // сброс статус флага новых измерений 
+....................          meas_status = 0; 
+01330:  CLR     1890
+....................       } 
+....................       holding_register[16] = (U16)input_buf_state; // сост. вх. буфера АЦП 
+01332:  MOV.B   80E,W0L
+01334:  MOV.B   W0L,19FC
+01336:  CLR.B   19FD
+....................       holding_register[18] = PGA_val; 
+01338:  MOV.B   80C,W0L
+0133A:  MOV.B   W0L,1A00
+0133C:  CLR.B   1A01
+....................       holding_register[19] = ADC_sps_var; 
+0133E:  MOV.B   819,W0L
+01340:  MOV.B   W0L,1A02
+01342:  CLR.B   1A03
+....................       holding_register[20] = Ma_buf_size; 
+01344:  MOV.B   186A,W0L
+01346:  MOV.B   W0L,1A04
+01348:  CLR.B   1A05
+....................       holding_register[21] = dev_id; 
+0134A:  MOV.B   1BD2,W0L
+0134C:  MOV.B   W0L,1A06
+0134E:  CLR.B   1A07
+....................       holding_register[22] = firmware_ver; 
+01350:  MOV.B   1BD3,W0L
+01352:  MOV.B   W0L,1A08
+01354:  CLR.B   1A09
+....................       holding_register[23] = device_family; 
+01356:  MOV.B   1BD4,W0L
+01358:  MOV.B   W0L,1A0A
+0135A:  CLR.B   1A0B
+....................    }          
+....................    //-------------------------------------------------------------------------// 
+....................   /// —тение Read-only регистров, TODO - обновление переменных перед отправкой мастеру    
+....................     
+....................    if(cmd_type == MODBUS_RIR_CMD) 
+0135C:  MOV     1BD8,W4
+0135E:  CP.B    W4L,#4
+01360:  BRA     NZ,1374
+....................    {    
+....................        input_register[0] = (unsigned int)dev_id;        
+01362:  MOV.B   1BD2,W0L
+01364:  MOV.B   W0L,1AD6
+01366:  CLR.B   1AD7
+....................        input_register[1] = (unsigned int)device_family; 
+01368:  MOV.B   1BD4,W0L
+0136A:  MOV.B   W0L,1AD8
+0136C:  CLR.B   1AD9
+....................        input_register[2] = (unsigned int)firmware_ver; 
+0136E:  MOV.B   1BD3,W0L
+01370:  MOV.B   W0L,1ADA
+01372:  CLR.B   1ADB
+....................    }  
+....................    //-------------------------------------------------------------------------// 
+....................    /// TODO - получение новых значений от мастера 
+....................    //  addr_buf_1 = адрес регистра, в который идет запись (1000 = 0, 1001 = 1 и тд) 
+....................    if(cmd_type == MODBUS_WSR_CMD)  
+01374:  MOV     1BD8,W4
+01376:  CP.B    W4L,#6
+01378:  BRA     NZ,13A8
+....................    {  // анализ регистра записи  
+....................   
+....................         // range 
+....................          if(holding_register[18] >= 0 && holding_register[19] <= 6)  
+0137A:  MOV     1A02,W4
+0137C:  CP      W4,#6
+0137E:  BRA     GTU,1384
+....................              PGA_val = holding_register[18]; 
+01380:  MOV.B   1A00,W0L
+01382:  MOV.B   W0L,80C
+....................          // SPS 
+....................          if(holding_register[19] >= 0 && holding_register[19] <= 8)  
+01384:  MOV     1A02,W4
+01386:  CP      W4,#8
+01388:  BRA     GTU,138E
+....................              ADC_sps_var = holding_register[19]; 
+0138A:  MOV.B   1A02,W0L
+0138C:  MOV.B   W0L,819
+....................          // averfge buf size 
+....................          if(holding_register[20] >= 1 && holding_register[20] <= 128)  
+0138E:  MOV     1A04,W4
+01390:  CP      W4,#1
+01392:  BRA     NC,13A4
+01394:  MOV     1A04,W4
+01396:  MOV     #80,W3
+01398:  CP      W3,W4
+0139A:  BRA     NC,13A4
+....................          { 
+....................              Clr_bufs(); // очистка буфера скользящ. среднего 
+0139C:  CALL    2DA
+....................              Ma_buf_size = holding_register[20]; 
+013A0:  MOV.B   1A04,W0L
+013A2:  MOV.B   W0L,186A
+....................          } 
+....................          input_buf_state = (U8)holding_register[16]; // сост. вх. буфера 
+013A4:  MOV.B   19FC,W0L
+013A6:  MOV.B   W0L,80E
+....................                  
+....................    } //if(cmd_type == MODBUS_WSR_CMD)  
+013A8:  MOV     [--W15],W6
+013AA:  MOV     [--W15],W5
+013AC:  RETURN  
+....................   } 
+....................    
+....................  
+.................... /*############################################################################*/   
+....................    
+.................... /*                         M O D B U S   E N D                                */ 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................    
+.................... /* сброс modbus приемника */ 
+....................   void modbus_reset() 
+*
+01058:  MOV     W5,[W15++]
+....................   {  
+....................    for(int i = 0; i < 64; i++)  
+0105A:  CLR     1BDE
+0105C:  MOV     1BDE,W4
+0105E:  MOV     #40,W3
+01060:  CP      W3,W4
+01062:  BRA     LE,1072
+....................         rx_buf[i] = 0; 
+01064:  MOV     #1894,W4
+01066:  MOV     1BDE,W3
+01068:  ADD     W3,W4,W5
+0106A:  CLR.B   [W5]
+0106C:  INC     1BDE
+0106E:  GOTO    105C
+....................     
+....................    rx_buf_ptr = 0; 
+01072:  CLR     1892
+....................    rx_flag = 0; 
+01074:  CLR.B   1BD0
+01076:  MOV     [--W15],W5
+01078:  RETURN  
+....................  
+....................   } 
+....................    
+....................   /* очистка массивов регистров */ 
+....................   void modbus_init (void) { 
+....................    /// обнуление регистров 
+....................      
+....................    for(unsigned char i = 0; i < 125; i++)  
+....................    { 
+....................       holding_register[i] = 0;   // clearing RW resgisters  
+....................       input_register[i] = 0;     // clearing read-only resgisters  
+....................    } 
+....................     
+....................    modbus_reset(); 
+....................    } 
+....................  
+....................   /* был ли прочитан регистр */ 
+....................   unsigned char is_reg (unsigned int reg_addr){   
+....................    /// проверка чтения конкретного регистра 
+....................      
+....................    unsigned char rd_status = 0; 
+....................  
+....................       for(unsigned int t = modbus_reg_addr; t <= regs2read; t++) 
+....................       {  
+....................         if (t == reg_addr)  
+....................    { 
+....................     rd_status = 1;   
+....................     break; 
+....................    } 
+....................       } 
+....................  
+....................       if ( reg_addr == (1000 + reg_addr) ) rd_status = 1; 
+....................        
+....................       return rd_status; 
+....................   } 
+....................    
+....................   /* чтение 1 байта данных */ 
+.................... //  void modbus_uart_byte (unsigned char rx_byte) { 
+.................... //  /// прием байта данных в буфер  
+.................... //  wr_ptr++;               // инкремент счетчика записанных байт 
+.................... //  rx_buf[wr_ptr & 0x0f] = rx_byte; 
+.................... //  } 
+....................     
+....................   /* расчет контрольной суммы */ 
+....................   unsigned int modbus_CRC16(unsigned char buf[], unsigned int len) { 
+0107A:  MOV     W5,[W15++]
+0107C:  MOV     W6,[W15++]
+0107E:  SETM    1BE2
+....................   /// расчет crc16 
+....................      
+....................   unsigned int crc = 0xFFFF; 
+....................   //U8 crc_lsb, crc_msb; 
+....................   for (int pos = 0; pos < len; pos++) 
+01080:  CLR     1BE4
+01082:  MOV     1BE4,W0
+01084:  MOV     1BE0,W4
+01086:  CP      W4,W0
+01088:  BRA     LE,10BE
+....................   { 
+....................     crc ^= (unsigned int)buf[pos];          // XOR byte into least sig. byte of crc 
+0108A:  MOV     1BE4,W0
+0108C:  ADD     1BDE,W0
+0108E:  MOV     W0,W4
+01090:  MOV.B   [W4],W0L
+01092:  CLR.B   1
+01094:  XOR     1BE2
+....................     for (int i = 8; i != 0; i--) 
+01096:  MOV     #8,W4
+01098:  MOV     W4,1BE6
+0109A:  CP0     1BE6
+0109C:  BRA     Z,10B8
+....................     {    // Loop over each bit 
+....................       if ((crc & 0x0001) != 0) 
+0109E:  MOV     1BE2,W0
+010A0:  AND     W0,#1,W5
+010A2:  CP0     W5
+010A4:  BRA     Z,10B0
+....................        {      // If the LSB is set 
+....................          crc >>= 1;                // Shift right and XOR 0xA001 
+010A6:  LSR     1BE2
+....................          crc ^= 0xA001; 
+010A8:  MOV     #A001,W0
+010AA:  XOR     1BE2
+....................        } 
+010AC:  GOTO    10B2
+....................        else                          // Else LSB is not set 
+....................          crc >>= 1;                  // Just shift right 
+010B0:  LSR     1BE2
+010B2:  DEC     1BE6
+010B4:  GOTO    109A
+....................      } 
+010B8:  INC     1BE4
+010BA:  GOTO    1082
+....................    } 
+....................    
+....................    // Note, this number has low and high bytes swapped,  
+....................    // so use it accordingly (or swap bytes) 
+....................    // swapping bytes 
+....................    crc = ((crc<<8)&0xff00)|((crc>>8)&0x00ff); 
+010BE:  MOV.B   1BE2,W0L
+010C0:  MOV.B   W0L,B
+010C2:  CLR.B   W5
+010C4:  MOV     #FF00,W0
+010C6:  AND     W0,W5,W5
+010C8:  MOV.B   1BE3,W0L
+010CA:  MOV.B   W0L,W6L
+010CC:  CLR.B   D
+010CE:  MOV     W6,W0
+010D0:  AND     #FF,W0
+010D2:  MOV     W0,1BE2
+010D4:  MOV     W5,W0
+010D6:  IOR     1BE2
+....................     
+....................    return crc; 
+010D8:  PUSH    1BE2
+010DA:  POP     0
+010DC:  MOV     [--W15],W6
+010DE:  MOV     [--W15],W5
+010E0:  RETURN  
+.................... } 
+....................    
+....................   /* формирование и отправка ответа на команду записи одного регистра */ 
+....................   void modbus_wsr_answer() {  
+*
+014D4:  MOV     W5,[W15++]
+....................     /// ответ на команды записи в регистр 
+....................      
+....................     // расчет CRC 
+....................     crc_buf[0] = (unsigned char) dev_id; 
+014D6:  MOV.B   1BD2,W0L
+014D8:  MOV.B   W0L,18E0
+....................     crc_buf[1] = (unsigned char) MODBUS_WSR_CMD; 
+014DA:  MOV.B   #6,W0L
+014DC:  MOV.B   W0L,18E1
+....................     crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8); 
+014DE:  CLR.B   1
+014E0:  MOV.B   18D7,W0L
+014E2:  MOV.B   W0L,18E2
+....................     crc_buf[3] = (unsigned char)(modbus_reg_addr & 0x00ff); 
+014E4:  MOV     18D6,W0
+014E6:  AND     #FF,W0
+014E8:  MOV.B   W0L,18E3
+....................     crc_buf[4] = (unsigned char)(reg_wr_data >> 8); 
+014EA:  CLR.B   1
+014EC:  MOV.B   19DB,W0L
+014EE:  MOV.B   W0L,18E4
+....................     crc_buf[5] = (unsigned char)(reg_wr_data & 0x00ff); 
+014F0:  MOV     19DA,W0
+014F2:  AND     #FF,W0
+014F4:  MOV.B   W0L,18E5
+....................     CRC16 = modbus_CRC16(crc_buf, 6); 
+014F6:  MOV     #18E0,W4
+014F8:  MOV     W4,1BDE
+014FA:  MOV     #6,W4
+014FC:  MOV     W4,1BE0
+014FE:  CALL    107A
+01502:  MOV     W0,18DE
+....................  
+....................     //-------------------------------------------------------------------- 
+....................     // отправка пакета мастеру 
+....................     TX_EN; 
+01504:  BSET.B  2D1.6
+....................     uart_send_byte((unsigned char)dev_id); // ID устройства 
+01506:  MOV.B   1BD2,W0L
+01508:  MOV.B   W0L,1BDE
+0150A:  CALL    13AE
+....................     uart_send_byte((unsigned char)MODBUS_WSR_CMD);                     // код команды 
+0150E:  MOV.B   #6,W0L
+01510:  MOV.B   W0L,1BDE
+01512:  CALL    13AE
+....................     uart_send_byte((unsigned char)(modbus_reg_addr >> 8));             // ст. байт адреса регистра 
+01516:  CLR.B   1
+01518:  MOV.B   18D7,W0L
+0151A:  MOV.B   W0L,W5L
+0151C:  PUSH    1BDE
+0151E:  MOV.B   W5L,[W15-#2]
+01520:  POP     1BDE
+01522:  CALL    13AE
+....................     uart_send_byte((unsigned char)(modbus_reg_addr & 0x00ff));         // мл. байт адреса регистра 
+01526:  MOV     18D6,W0
+01528:  AND     #FF,W0
+0152A:  MOV.B   W0L,W5L
+0152C:  PUSH    1BDE
+0152E:  MOV.B   W5L,[W15-#2]
+01530:  POP     1BDE
+01532:  CALL    13AE
+....................     uart_send_byte((unsigned char)(reg_wr_data >> 8)); 
+01536:  CLR.B   1
+01538:  MOV.B   19DB,W0L
+0153A:  MOV.B   W0L,W5L
+0153C:  PUSH    1BDE
+0153E:  MOV.B   W5L,[W15-#2]
+01540:  POP     1BDE
+01542:  CALL    13AE
+....................     uart_send_byte((unsigned char)(reg_wr_data & 0x00ff)); 
+01546:  MOV     19DA,W0
+01548:  AND     #FF,W0
+0154A:  MOV.B   W0L,W5L
+0154C:  PUSH    1BDE
+0154E:  MOV.B   W5L,[W15-#2]
+01550:  POP     1BDE
+01552:  CALL    13AE
+....................      // отправка CRC 
+....................     uart_send_byte((unsigned char)(CRC16 >> 8));      // msb 
+01556:  CLR.B   1
+01558:  MOV.B   18DF,W0L
+0155A:  MOV.B   W0L,W5L
+0155C:  PUSH    1BDE
+0155E:  MOV.B   W5L,[W15-#2]
+01560:  POP     1BDE
+01562:  CALL    13AE
+....................     uart_send_byte((unsigned char)(CRC16 & 0x00ff));  // lsb  
+01566:  MOV     18DE,W0
+01568:  AND     #FF,W0
+0156A:  MOV.B   W0L,W5L
+0156C:  PUSH    1BDE
+0156E:  MOV.B   W5L,[W15-#2]
+01570:  POP     1BDE
+01572:  CALL    13AE
+....................     TX_DIS; 
+01576:  BCLR.B  2D1.6
+01578:  MOV     [--W15],W5
+0157A:  RETURN  
+....................     //-------------------------------------------------------------------- 
+....................   } 
+....................    
+....................   /* формирование и отправка ответа на команду чтения RW регистров */ 
+....................   void modbus_rhr_answer() { 
+*
+013C6:  MOV     W5,[W15++]
+013C8:  MOV     W6,[W15++]
+....................      
+....................     /// ответ на команды чтения регистров 
+....................           addr_buf_1 = modbus_reg_addr;  
+013CA:  PUSH    18D6
+013CC:  POP     18D8
+....................        addr_buf_2 = addr_buf_1;             // сохр. адрес в двух переменных      
+013CE:  PUSH    18D8
+013D0:  POP     18DA
+....................           // расчет CRC 
+....................           crc_buf[0] = dev_id; 
+013D2:  MOV.B   1BD2,W0L
+013D4:  MOV.B   W0L,18E0
+....................           crc_buf[1] = MODBUS_RHR_CMD; 
+013D6:  MOV.B   #3,W0L
+013D8:  MOV.B   W0L,18E1
+....................           crc_buf[2] = regs2read*2; 
+013DA:  MOV.B   18DC,W0L
+013DC:  MOV.B   W0L,18E2
+013DE:  SL.B    18E2
+....................            
+....................           unsigned char cnt = 3;      // величина смещения данных при расчете CRC 
+013E0:  MOV.B   #3,W0L
+013E2:  MOV.B   W0L,1BD8
+....................  
+....................           for(unsigned char j = 0; j < regs2read;j++) 
+013E4:  CLR.B   1BD9
+013E6:  MOV.B   1BD9,W0L
+013E8:  CLR.B   1
+013EA:  MOV     18DC,W4
+013EC:  CP      W4,W0
+013EE:  BRA     LEU,142E
+....................           { // заполнение буфера CRC для расчета 
+....................             crc_buf[cnt++] = (unsigned char)(holding_register[addr_buf_1] >> 8); 
+013F0:  MOV.B   1BD8,W0L
+013F2:  INC.B   1BD8
+013F4:  ZE      W0,W0
+013F6:  MOV     #18E0,W4
+013F8:  ADD     W0,W4,W5
+013FA:  MOV     18D8,W0
+013FC:  SL      W0,#1,W0
+013FE:  MOV     #19DC,W4
+01400:  ADD     W0,W4,W0
+01402:  MOV     [W0],W6
+01404:  CLR.B   1
+01406:  MOV.B   D,W0L
+01408:  MOV.B   W0L,W0L
+0140A:  MOV.B   W0L,[W5]
+....................             crc_buf[cnt++] = (unsigned char)(holding_register[addr_buf_1] & 0x00ff); 
+0140C:  MOV.B   1BD8,W0L
+0140E:  INC.B   1BD8
+01410:  ZE      W0,W0
+01412:  MOV     #18E0,W4
+01414:  ADD     W0,W4,W5
+01416:  MOV     18D8,W0
+01418:  SL      W0,#1,W0
+0141A:  MOV     #19DC,W4
+0141C:  ADD     W0,W4,W0
+0141E:  MOV     [W0],W6
+01420:  MOV     W6,W0
+01422:  AND     #FF,W0
+01424:  MOV.B   W0L,[W5]
+....................             ++addr_buf_1;   
+01426:  INC     18D8
+01428:  INC.B   1BD9
+0142A:  GOTO    13E6
+....................           } 
+....................             // расчет CRC   
+....................           CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3); 
+0142E:  MOV     18DC,W5
+01430:  SL      W5,#1,W5
+01432:  ADD     W5,#3,W5
+01434:  MOV     #18E0,W4
+01436:  MOV     W4,1BDE
+01438:  MOV     W5,1BE0
+0143A:  CALL    107A
+0143E:  MOV     W0,18DE
+....................           //-------------------------------------------------------------------- 
+....................           // отправка пакета мастеру  
+....................          TX_EN; 
+01440:  BSET.B  2D1.6
+....................           uart_send_byte((unsigned char)dev_id);   // ID устройства 
+01442:  MOV.B   1BD2,W0L
+01444:  MOV.B   W0L,1BDE
+01446:  CALL    13AE
+....................           uart_send_byte((unsigned char)MODBUS_RHR_CMD);                       // код команды 
+0144A:  MOV.B   #3,W0L
+0144C:  MOV.B   W0L,1BDE
+0144E:  CALL    13AE
+....................           uart_send_byte((unsigned char)regs2read*2);                          // кол-во передаваемых байт  
+01452:  MOV.B   18DC,W0L
+01454:  CLR.B   1
+01456:  SL      W0,#1,W5
+01458:  PUSH    1BDE
+0145A:  MOV.B   W5L,[W15-#2]
+0145C:  POP     1BDE
+0145E:  CALL    13AE
+....................  
+....................           for(unsigned char i = 0; i < regs2read; i++) 
+01462:  CLR.B   1BDA
+01464:  MOV.B   1BDA,W0L
+01466:  CLR.B   1
+01468:  MOV     18DC,W4
+0146A:  CP      W4,W0
+0146C:  BRA     LEU,14AC
+....................           {   // отправка байт данных с инкрементом адреса 
+....................             uart_send_byte((unsigned char)(holding_register[addr_buf_2] >> 8));     // msb 
+0146E:  MOV     18DA,W0
+01470:  SL      W0,#1,W0
+01472:  MOV     #19DC,W4
+01474:  ADD     W0,W4,W0
+01476:  MOV     [W0],W5
+01478:  CLR.B   1
+0147A:  MOV.B   B,W0L
+0147C:  MOV.B   W0L,W0L
+0147E:  MOV.B   W0L,W5L
+01480:  PUSH    1BDE
+01482:  MOV.B   W5L,[W15-#2]
+01484:  POP     1BDE
+01486:  CALL    13AE
+....................             uart_send_byte((unsigned char)(holding_register[addr_buf_2] & 0x00ff)); // lsb 
+0148A:  MOV     18DA,W0
+0148C:  SL      W0,#1,W0
+0148E:  MOV     #19DC,W4
+01490:  ADD     W0,W4,W0
+01492:  MOV     [W0],W5
+01494:  MOV     W5,W0
+01496:  AND     #FF,W0
+01498:  MOV.B   W0L,W5L
+0149A:  PUSH    1BDE
+0149C:  MOV.B   W5L,[W15-#2]
+0149E:  POP     1BDE
+014A0:  CALL    13AE
+....................             ++addr_buf_2; 
+014A4:  INC     18DA
+014A6:  INC.B   1BDA
+014A8:  GOTO    1464
+....................           } 
+....................           // отправка CRC 
+....................           uart_send_byte((unsigned char)(CRC16 >> 8));      // msb 
+014AC:  CLR.B   1
+014AE:  MOV.B   18DF,W0L
+014B0:  MOV.B   W0L,W5L
+014B2:  PUSH    1BDE
+014B4:  MOV.B   W5L,[W15-#2]
+014B6:  POP     1BDE
+014B8:  CALL    13AE
+....................           uart_send_byte((unsigned char)(CRC16 & 0x00ff));  // lsb   
+014BC:  MOV     18DE,W0
+014BE:  AND     #FF,W0
+014C0:  MOV.B   W0L,W5L
+014C2:  PUSH    1BDE
+014C4:  MOV.B   W5L,[W15-#2]
+014C6:  POP     1BDE
+014C8:  CALL    13AE
+....................           TX_DIS; 
+014CC:  BCLR.B  2D1.6
+014CE:  MOV     [--W15],W6
+014D0:  MOV     [--W15],W5
+014D2:  RETURN  
+....................           //-------------------------------------------------------------------- 
+....................    
+....................   } 
+....................   
+....................   /* формирование и отправка ответа на команду чтения Read-only регистров */ 
+....................   void modbus_rir_answer() { 
+*
+0157C:  MOV     W5,[W15++]
+0157E:  MOV     W6,[W15++]
+....................      
+....................     /// ответ на команды чтения input регистров 
+....................      
+....................        addr_buf_1 = modbus_reg_addr;  
+01580:  PUSH    18D6
+01582:  POP     18D8
+....................        addr_buf_2 = addr_buf_1;             // сохр. адрес в двух переменных         
+01584:  PUSH    18D8
+01586:  POP     18DA
+....................           // расчет CRC 
+....................           crc_buf[0] = dev_id; 
+01588:  MOV.B   1BD2,W0L
+0158A:  MOV.B   W0L,18E0
+....................           crc_buf[1] = MODBUS_RIR_CMD; 
+0158C:  MOV.B   #4,W0L
+0158E:  MOV.B   W0L,18E1
+....................           crc_buf[2] = regs2read*2; 
+01590:  MOV.B   18DC,W0L
+01592:  MOV.B   W0L,18E2
+01594:  SL.B    18E2
+....................            
+....................           unsigned char cnt = 3;      // величина смещения данных при расчете CRC 
+01596:  MOV.B   #3,W0L
+01598:  MOV.B   W0L,1BD8
+....................  
+....................           for(unsigned char i = 0; i < regs2read; i++) 
+0159A:  CLR.B   1BD9
+0159C:  MOV.B   1BD9,W0L
+0159E:  CLR.B   1
+015A0:  MOV     18DC,W4
+015A2:  CP      W4,W0
+015A4:  BRA     LEU,15E4
+....................           { // заполнение буфера CRC для расчета 
+....................             crc_buf[cnt++] = (unsigned char)(input_register[addr_buf_1] >> 8); 
+015A6:  MOV.B   1BD8,W0L
+015A8:  INC.B   1BD8
+015AA:  ZE      W0,W0
+015AC:  MOV     #18E0,W4
+015AE:  ADD     W0,W4,W5
+015B0:  MOV     18D8,W0
+015B2:  SL      W0,#1,W0
+015B4:  MOV     #1AD6,W4
+015B6:  ADD     W0,W4,W0
+015B8:  MOV     [W0],W6
+015BA:  CLR.B   1
+015BC:  MOV.B   D,W0L
+015BE:  MOV.B   W0L,W0L
+015C0:  MOV.B   W0L,[W5]
+....................             crc_buf[cnt++] = (unsigned char)(input_register[addr_buf_1] & 0x00ff); 
+015C2:  MOV.B   1BD8,W0L
+015C4:  INC.B   1BD8
+015C6:  ZE      W0,W0
+015C8:  MOV     #18E0,W4
+015CA:  ADD     W0,W4,W5
+015CC:  MOV     18D8,W0
+015CE:  SL      W0,#1,W0
+015D0:  MOV     #1AD6,W4
+015D2:  ADD     W0,W4,W0
+015D4:  MOV     [W0],W6
+015D6:  MOV     W6,W0
+015D8:  AND     #FF,W0
+015DA:  MOV.B   W0L,[W5]
+....................             ++addr_buf_1;   
+015DC:  INC     18D8
+015DE:  INC.B   1BD9
+015E0:  GOTO    159C
+....................           } 
+....................             // расчет CRC   
+....................           CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3); 
+015E4:  MOV     18DC,W5
+015E6:  SL      W5,#1,W5
+015E8:  ADD     W5,#3,W5
+015EA:  MOV     #18E0,W4
+015EC:  MOV     W4,1BDE
+015EE:  MOV     W5,1BE0
+015F0:  CALL    107A
+015F4:  MOV     W0,18DE
+....................           //-------------------------------------------------------------------- 
+....................           // отправка пакета мастеру  
+....................      TX_EN; 
+015F6:  BSET.B  2D1.6
+....................           uart_send_byte((unsigned char)dev_id);   // ID устройства 
+015F8:  MOV.B   1BD2,W0L
+015FA:  MOV.B   W0L,1BDE
+015FC:  CALL    13AE
+....................           uart_send_byte((unsigned char)MODBUS_RIR_CMD);                       // код команды 
+01600:  MOV.B   #4,W0L
+01602:  MOV.B   W0L,1BDE
+01604:  CALL    13AE
+....................           uart_send_byte((unsigned char)regs2read*2);                          // кол-во передаваемых байт  
+01608:  MOV.B   18DC,W0L
+0160A:  CLR.B   1
+0160C:  SL      W0,#1,W5
+0160E:  PUSH    1BDE
+01610:  MOV.B   W5L,[W15-#2]
+01612:  POP     1BDE
+01614:  CALL    13AE
+....................  
+....................           for(unsigned char j = 0; i < regs2read; j++) 
+01618:  CLR.B   1BDA
+0161A:  MOV.B   1BD9,W0L
+0161C:  CLR.B   1
+0161E:  MOV     18DC,W4
+01620:  CP      W4,W0
+01622:  BRA     LEU,1662
+....................           {   // отправка байт данных с инкрементом адреса 
+....................             uart_send_byte((unsigned char)(input_register[addr_buf_2] >> 8));     // msb 
+01624:  MOV     18DA,W0
+01626:  SL      W0,#1,W0
+01628:  MOV     #1AD6,W4
+0162A:  ADD     W0,W4,W0
+0162C:  MOV     [W0],W5
+0162E:  CLR.B   1
+01630:  MOV.B   B,W0L
+01632:  MOV.B   W0L,W0L
+01634:  MOV.B   W0L,W5L
+01636:  PUSH    1BDE
+01638:  MOV.B   W5L,[W15-#2]
+0163A:  POP     1BDE
+0163C:  CALL    13AE
+....................             uart_send_byte((unsigned char)(input_register[addr_buf_2] & 0x00ff)); // lsb 
+01640:  MOV     18DA,W0
+01642:  SL      W0,#1,W0
+01644:  MOV     #1AD6,W4
+01646:  ADD     W0,W4,W0
+01648:  MOV     [W0],W5
+0164A:  MOV     W5,W0
+0164C:  AND     #FF,W0
+0164E:  MOV.B   W0L,W5L
+01650:  PUSH    1BDE
+01652:  MOV.B   W5L,[W15-#2]
+01654:  POP     1BDE
+01656:  CALL    13AE
+....................             ++addr_buf_2; 
+0165A:  INC     18DA
+0165C:  INC.B   1BDA
+0165E:  GOTO    161A
+....................           } 
+....................           // отправка CRC 
+....................           uart_send_byte((unsigned char)(CRC16 >> 8));      // msb 
+01662:  CLR.B   1
+01664:  MOV.B   18DF,W0L
+01666:  MOV.B   W0L,W5L
+01668:  PUSH    1BDE
+0166A:  MOV.B   W5L,[W15-#2]
+0166C:  POP     1BDE
+0166E:  CALL    13AE
+....................           uart_send_byte((unsigned char)(CRC16 & 0x00ff));  // lsb    
+01672:  MOV     18DE,W0
+01674:  AND     #FF,W0
+01676:  MOV.B   W0L,W5L
+01678:  PUSH    1BDE
+0167A:  MOV.B   W5L,[W15-#2]
+0167C:  POP     1BDE
+0167E:  CALL    13AE
+....................      TX_DIS; 
+01682:  BCLR.B  2D1.6
+01684:  MOV     [--W15],W6
+01686:  MOV     [--W15],W5
+01688:  RETURN  
+....................           //-------------------------------------------------------------------- 
+....................    
+....................   } 
+....................  
+....................   /* анализ контрольной суммы полученной посылки */ 
+....................   void modbus_rx_CRC_check(unsigned char modbus_cmd) { 
+*
+010E2:  MOV     W5,[W15++]
+010E4:  CLR     1BDA
+....................   /// заполнение массива CRC для рассчета и сравнения с прочитанным   
+....................    unsigned int CRC16_calc = 0;  // рассчетная контрольная сумма 
+....................     
+....................    modbus_reg_addr = (rx_buf[2] << 8) | rx_buf[3]; // get starting reg addr 
+010E6:  MOV.B   1896,W0L
+010E8:  MOV.B   W0L,B
+010EA:  CLR.B   W5
+010EC:  MOV.B   1897,W0L
+010EE:  CLR.B   1
+010F0:  MOV.B   W0L,18D6
+010F2:  CLR.B   18D7
+010F4:  MOV     W5,W0
+010F6:  IOR     18D6
+....................     
+....................    crc_buf[0] = dev_id; 
+010F8:  MOV.B   1BD2,W0L
+010FA:  MOV.B   W0L,18E0
+....................    crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8); 
+010FC:  CLR.B   1
+010FE:  MOV.B   18D7,W0L
+01100:  MOV.B   W0L,18E2
+....................    crc_buf[3] = (unsigned char)(modbus_reg_addr & 0x00ff);   
+01102:  MOV     18D6,W0
+01104:  AND     #FF,W0
+01106:  MOV.B   W0L,18E3
+....................     
+....................    switch(modbus_cmd) 
+01108:  MOV.B   1BD8,W0L
+0110A:  CLR.B   1
+0110C:  XOR     #6,W0
+0110E:  BRA     Z,111A
+01110:  XOR     #5,W0
+01112:  BRA     Z,1140
+01114:  XOR     #7,W0
+01116:  BRA     Z,1166
+01118:  BRA     118C
+....................    { 
+....................     case MODBUS_WSR_CMD: 
+....................    reg_wr_data   = (rx_buf[4] << 8) | rx_buf[5]; // get data to write into reg 
+0111A:  MOV.B   1898,W0L
+0111C:  MOV.B   W0L,B
+0111E:  CLR.B   W5
+01120:  MOV.B   1899,W0L
+01122:  CLR.B   1
+01124:  MOV.B   W0L,19DA
+01126:  CLR.B   19DB
+01128:  MOV     W5,W0
+0112A:  IOR     19DA
+....................     
+....................    crc_buf[1] = (unsigned char) MODBUS_WSR_CMD; 
+0112C:  MOV.B   #6,W0L
+0112E:  MOV.B   W0L,18E1
+....................    crc_buf[4] = (unsigned char)(reg_wr_data >> 8); 
+01130:  CLR.B   1
+01132:  MOV.B   19DB,W0L
+01134:  MOV.B   W0L,18E4
+....................    crc_buf[5] = (unsigned char)(reg_wr_data & 0x00ff); 
+01136:  MOV     19DA,W0
+01138:  AND     #FF,W0
+0113A:  MOV.B   W0L,18E5
+....................      break; 
+0113C:  GOTO    1190
+....................      //---- 
+....................      case MODBUS_RHR_CMD: 
+....................    regs2read   = (rx_buf[4] << 8) | rx_buf[5]; // get number of regs to read 
+01140:  MOV.B   1898,W0L
+01142:  MOV.B   W0L,B
+01144:  CLR.B   W5
+01146:  MOV.B   1899,W0L
+01148:  CLR.B   1
+0114A:  MOV.B   W0L,18DC
+0114C:  CLR.B   18DD
+0114E:  MOV     W5,W0
+01150:  IOR     18DC
+....................      
+....................    crc_buf[1] = (unsigned char) MODBUS_RHR_CMD; 
+01152:  MOV.B   #3,W0L
+01154:  MOV.B   W0L,18E1
+....................    crc_buf[4] = (unsigned char)(regs2read >> 8); 
+01156:  CLR.B   1
+01158:  MOV.B   18DD,W0L
+0115A:  MOV.B   W0L,18E4
+....................    crc_buf[5] = (unsigned char)(regs2read & 0x00ff); 
+0115C:  MOV     18DC,W0
+0115E:  AND     #FF,W0
+01160:  MOV.B   W0L,18E5
+....................      break; 
+01162:  GOTO    1190
+....................      //---- 
+....................      case MODBUS_RIR_CMD: 
+....................    regs2read   = (rx_buf[4] << 8) | rx_buf[5]; // get number of regs to read 
+01166:  MOV.B   1898,W0L
+01168:  MOV.B   W0L,B
+0116A:  CLR.B   W5
+0116C:  MOV.B   1899,W0L
+0116E:  CLR.B   1
+01170:  MOV.B   W0L,18DC
+01172:  CLR.B   18DD
+01174:  MOV     W5,W0
+01176:  IOR     18DC
+....................      
+....................    crc_buf[1] = (unsigned char) MODBUS_RIR_CMD; 
+01178:  MOV.B   #4,W0L
+0117A:  MOV.B   W0L,18E1
+....................    crc_buf[4] = (unsigned char)(regs2read >> 8); 
+0117C:  CLR.B   1
+0117E:  MOV.B   18DD,W0L
+01180:  MOV.B   W0L,18E4
+....................    crc_buf[5] = (unsigned char)(regs2read & 0x00ff); 
+01182:  MOV     18DC,W0
+01184:  AND     #FF,W0
+01186:  MOV.B   W0L,18E5
+....................      break; 
+01188:  GOTO    1190
+....................      //---- 
+....................      default: modbus_reset(); 
+0118C:  CALL    1058
+....................    } 
+....................     
+....................    CRC16 = (rx_buf[6] << 8) | rx_buf[7]; // get CRC16 from rx msg 
+01190:  MOV.B   189A,W0L
+01192:  MOV.B   W0L,B
+01194:  CLR.B   W5
+01196:  MOV.B   189B,W0L
+01198:  CLR.B   1
+0119A:  MOV.B   W0L,18DE
+0119C:  CLR.B   18DF
+0119E:  MOV     W5,W0
+011A0:  IOR     18DE
+....................    CRC16_calc = modbus_CRC16(crc_buf,6); // calc CRC16   
+011A2:  MOV     #18E0,W4
+011A4:  MOV     W4,1BDE
+011A6:  MOV     #6,W4
+011A8:  MOV     W4,1BE0
+011AA:  CALL    107A
+011AE:  MOV     W0,1BDA
+....................  
+....................    if(CRC16_calc == CRC16)  
+011B0:  MOV     1BDA,W0
+011B2:  CP      18DE
+011B4:  BRA     NZ,11BE
+....................      answer = modbus_cmd; 
+011B6:  MOV.B   1BD8,W0L
+011B8:  MOV.B   W0L,18D5
+011BA:  GOTO    11C2
+....................    else 
+....................      modbus_reset(); 
+011BE:  CALL    1058
+011C2:  MOV     [--W15],W5
+011C4:  RETURN  
+....................   } 
+....................    
+....................   /* анализа команд */ 
+....................   void modbus_rx_sm (void) { 
+....................   /// обработка команд 
+....................       
+....................   if(rx_flag)         // state 1, rx timer overflows 
+011C6:  CP0.B   1BD0
+011C8:  BRA     Z,1220
+....................   { 
+....................    if(rx_buf_ptr == 8)      // state 2, rx buf has 8 bytes ? 
+011CA:  MOV     1892,W4
+011CC:  CP      W4,#8
+011CE:  BRA     NZ,121C
+....................    {    
+....................     if(rx_buf[0] == dev_id)     // state 3, ID check  
+011D0:  MOV.B   1894,W0L
+011D2:  CP.B    1BD2
+011D4:  BRA     NZ,1214
+....................     {// ID OK 
+....................  
+....................    switch(rx_buf[1])   // state 4, rx buf parsing 
+011D6:  MOV.B   1895,W0L
+011D8:  CLR.B   1
+011DA:  XOR     #6,W0
+011DC:  BRA     Z,11E8
+011DE:  XOR     #2,W0
+011E0:  BRA     Z,11F4
+011E2:  XOR     #7,W0
+011E4:  BRA     Z,1200
+011E6:  BRA     120C
+....................    {  
+....................      case MODBUS_WSR_CMD: 
+....................        modbus_rx_CRC_check(MODBUS_WSR_CMD); // write single reg cmd received 
+011E8:  MOV.B   #6,W0L
+011EA:  MOV.B   W0L,1BD8
+011EC:  CALL    10E2
+....................      break; 
+011F0:  GOTO    1210
+....................      //---- 
+....................      case MODBUS_RIR_CMD: 
+....................       modbus_rx_CRC_check(MODBUS_RIR_CMD);  // read input reg cmd received 
+011F4:  MOV.B   #4,W0L
+011F6:  MOV.B   W0L,1BD8
+011F8:  CALL    10E2
+....................      break; 
+011FC:  GOTO    1210
+....................      //---- 
+....................      case MODBUS_RHR_CMD: 
+....................       modbus_rx_CRC_check(MODBUS_RHR_CMD); // read holding reg cmd received 
+01200:  MOV.B   #3,W0L
+01202:  MOV.B   W0L,1BD8
+01204:  CALL    10E2
+....................      break; 
+01208:  GOTO    1210
+....................      //---- 
+....................      default: modbus_reset();      // unexpected cmd, reset 
+0120C:  CALL    1058
+....................    }      
+....................     } // if(my ID)  
+01210:  GOTO    1218
+....................     else modbus_reset(); 
+01214:  CALL    1058
+....................    }  // if(rx_buf_ptr == 8) 
+01218:  GOTO    1220
+....................    else modbus_reset(); 
+0121C:  CALL    1058
+....................    }  // if(rx_flag)  
+01220:  RETURN  
+....................   }//func 
+....................    
+....................   /* парсинг команды и работа с регистрами */ 
+....................   void modbus_poll()  { 
+*
+0168A:  MOV     W5,[W15++]
+....................     /// update modbus regs and vars, send answer to master 
+....................     
+....................     modbus_rx_sm(); // parse rx buffer 
+0168C:  CALL    11C6
+....................  
+....................     // если команда - чтение R/W регистров 
+....................     if(answer == MODBUS_RHR_CMD)  
+01690:  MOV     18D4,W4
+01692:  LSR     W4,#8,W4
+01694:  CP.B    W4L,#3
+01696:  BRA     NZ,16AA
+....................     { 
+....................          modbus_reset();  
+01698:  CALL    1058
+....................          modbus_refresh(MODBUS_RHR_CMD); 
+0169C:  MOV.B   #3,W0L
+0169E:  MOV.B   W0L,1BD8
+016A0:  CALL    1222
+....................          //U1RXIE = 0; 
+....................          //disable_interrupts(INT_RDA); // disable rx interrupt during answer 
+....................          modbus_rhr_answer();   
+016A4:  CALL    13C6
+....................          //unsigned char x; 
+....................          //while(U1_RXDA) x = U1RXREG; 
+....................          //U1RXIE = 1; 
+....................          //enable_interrupts(INT_RDA); // enable rx interrupt after answer 
+....................          answer = 0;     // сброс флага завершения ответа на запрос  
+016A8:  CLR.B   18D5
+....................     } 
+.................... //-------------------------------------------------------------------- 
+....................     // если команда - запись в регистр 
+....................     if(answer == MODBUS_WSR_CMD)  
+016AA:  MOV     18D4,W4
+016AC:  LSR     W4,#8,W4
+016AE:  CP.B    W4L,#6
+016B0:  BRA     NZ,16D0
+....................     { 
+....................          holding_register[modbus_reg_addr] = reg_wr_data;  
+016B2:  MOV     18D6,W0
+016B4:  SL      W0,#1,W0
+016B6:  MOV     #19DC,W4
+016B8:  ADD     W0,W4,W5
+016BA:  MOV     19DA,W4
+016BC:  MOV     W4,[W5+#0]
+....................          modbus_refresh(MODBUS_WSR_CMD); 
+016BE:  MOV.B   #6,W0L
+016C0:  MOV.B   W0L,1BD8
+016C2:  CALL    1222
+....................          //disable_interrupts(INT_RDA); // disable rx interrupt during answer 
+....................          modbus_wsr_answer();  
+016C6:  CALL    14D4
+....................          //enable_interrupts(INT_RDA); // enable rx interrupt after answer 
+....................          answer = 0;     // сброс флага завершения ответа на запрос 
+016CA:  CLR.B   18D5
+....................          modbus_reset(); 
+016CC:  CALL    1058
+....................     }   
+.................... //-------------------------------------------------------------------- 
+....................     // если команда - чтение Read-only регистров 
+....................     if(answer == MODBUS_RIR_CMD)  
+016D0:  MOV     18D4,W4
+016D2:  LSR     W4,#8,W4
+016D4:  CP.B    W4L,#4
+016D6:  BRA     NZ,16EA
+....................     { 
+....................          modbus_refresh(MODBUS_RIR_CMD); 
+016D8:  MOV.B   #4,W0L
+016DA:  MOV.B   W0L,1BD8
+016DC:  CALL    1222
+....................          //disable_interrupts(INT_RDA); // disable rx interrupt during answer 
+....................          modbus_rir_answer();   
+016E0:  CALL    157C
+....................          //enable_interrupts(INT_RDA); // enable rx interrupt after answer 
+....................          answer = 0;     // сброс флага завершения ответа на запрос 
+016E4:  CLR.B   18D5
+....................          modbus_reset(); 
+016E6:  CALL    1058
+....................     } 
+016EA:  MOV     [--W15],W5
+016EC:  RETURN  
+.................... //--------------------------------------------------------------------     
+....................   } 
+....................   
+....................  
+....................  
+....................  
+....................     
+....................   void Rd_Flash(){ 
+*
+003A8:  MOV     W5,[W15++]
+....................   U8 a,b,c; 
+....................   read_program_memory(CK_USER_PAGE,flash_rd_data,8); 
+003AA:  MOV     #5000,W0
+003AC:  MOV     #1,W1
+003AE:  MOV     #81E,W2
+003B0:  MOV     #8,W3
+003B2:  CALL    366
+....................   delay_ms(10); 
+003B6:  MOV     #A,W0
+003B8:  CALL    394
+....................    
+....................    
+....................   a = flash_rd_data[0]; 
+003BC:  MOV.B   81E,W0L
+003BE:  MOV.B   W0L,1BD8
+....................   b = flash_rd_data[1];  
+003C0:  MOV.B   81F,W0L
+003C2:  MOV.B   W0L,1BD9
+....................   c = flash_rd_data[4]; 
+003C4:  MOV.B   822,W0L
+003C6:  MOV.B   W0L,1BDA
+....................    
+....................   if(a > 128) Ma_buf_size = 5; 
+003C8:  MOV     1BD8,W4
+003CA:  MOV     #80,W3
+003CC:  CP.B    W3L,W4L
+003CE:  BRA     C,3D8
+003D0:  MOV.B   #5,W0L
+003D2:  MOV.B   W0L,186A
+003D4:  GOTO    3DC
+....................   else        Ma_buf_size = a; 
+003D8:  MOV.B   1BD8,W0L
+003DA:  MOV.B   W0L,186A
+....................      
+....................   if(b > 7)   ADC_sps_var = 1; 
+003DC:  MOV     1BD8,W4
+003DE:  LSR     W4,#8,W4
+003E0:  CP.B    W4L,#7
+003E2:  BRA     LEU,3EC
+003E4:  MOV.B   #1,W0L
+003E6:  MOV.B   W0L,819
+003E8:  GOTO    3F0
+....................   else        ADC_sps_var = b; 
+003EC:  MOV.B   1BD9,W0L
+003EE:  MOV.B   W0L,819
+....................      
+....................   if(c > 6)   PGA_val = 3; 
+003F0:  MOV     1BDA,W4
+003F2:  CP.B    W4L,#6
+003F4:  BRA     LEU,3FE
+003F6:  MOV.B   #3,W0L
+003F8:  MOV.B   W0L,80C
+003FA:  GOTO    402
+....................   else        PGA_val = c; 
+003FE:  MOV.B   1BDA,W0L
+00400:  MOV.B   W0L,80C
+00402:  MOV     [--W15],W5
+00404:  RETURN  
+.................... } 
+....................  
+....................   void Wr_Flash(){ 
+....................  
+....................   flash_wr_data[0] = Ma_buf_size;  
+....................   flash_wr_data[1] = ADC_sps_var; 
+....................   flash_wr_data[4] = PGA_val; 
+....................   flash_wr_data[5] = 0; 
+....................   write_program_memory(CK_USER_PAGE,flash_wr_data,8); 
+....................   delay_ms(10); 
+....................  
+....................  //if(Rd_Flash(buf_index)==in_wr_data) return 1; else return 0; 
+.................... } 
+....................  
+....................   char Crc8(unsigned char *pcBlock, unsigned int len) 
+.................... { 
+....................  
+....................   //Name  : CRC-8 
+....................   //Poly  : 0x31    x^8 + x^5 + x^4 + 1 
+....................   //Init  : 0xFF 
+....................   //Revert: false 
+....................   //XorOut: 0x00 
+....................   //Check : 0xF7 ("123456789") 
+....................   //MaxLen: 15 байт(127 бит) - обнаружение 
+....................   // одинарных, двойных, тройных и всех нечетных ошибок 
+....................  
+....................     unsigned char crc = 0xFF; 
+....................     unsigned int i; 
+....................   
+....................     while (len--) 
+....................     { 
+....................         crc ^= *pcBlock++; 
+....................   
+....................         for (i = 0; i < 8; i++) 
+....................             crc = crc & 0x80 ? (crc << 1) ^ 0x31 : crc << 1; 
+....................     } 
+....................   
+....................     return crc; 
+.................... } 
+....................  
+....................   void UART1_init(){ 
+....................  
+....................    U1MODE = (1<<15 | // UARTx is enabled 
+....................              1<<13 | // Discontinue operation when device enters Idle mode  
+....................              0<<12 | // IrDA encoder and decoder disabled 
+....................              1<<11 | // 1 - UxRTS in Simplex mode, 0 - flow control mode 
+....................              2<<9  | // UxTX, UxRX, UxCTS and UxRTS pins are enabled and used 
+....................              1<<7  | // 1 = Wake-up enabled 
+....................              0<<6  | // 0 = Loopback mode is disabled 
+....................              0<<5  | // Auto-Baud Enable bit, disabled 
+....................              0<<4  | // Receive Polarity Inversion bit, 0 = UxRX Idle state is '1' 
+....................              0<<3  | // BRGH: High Baud Rate Select bit , 0 = Low speed 
+....................              0<<2  | // 00 = 8-bit data, no parity 
+....................              0      // 0 = One Stop bit 
+....................    ); 
+....................  
+.................... } 
+....................  
+....................   void uart_send_byte (U8 ch) { 
+*
+013AE:  MOV     W5,[W15++]
+....................    
+....................       U1TXREG = ch;  
+013B0:  MOV.B   1BDE,W0L
+013B2:  MOV.B   W0L,224
+013B4:  CLR.B   225
+....................       delay_us(1); 
+013B6:  REPEAT  #12
+013B8:  NOP     
+....................       while(U1_TRMT == 0) { }  
+013BA:  BTSC.B  223.0
+013BC:  BRA     13C2
+013BE:  GOTO    13BA
+013C2:  MOV     [--W15],W5
+013C4:  RETURN  
+....................   } 
+....................  
+....................   void OscSetup(){ 
+....................   //Fcy=Fosc/2 
+....................   //Fin=10M 
+....................   //Fosc=Fin(M/(N1*N2)) = 40M 
+....................   //  
+....................   //U2BRG = 259;// BAUD Rate Setting for 9600 
+....................   //U2MODE = 0b1010101010000000; // brgh = 0 
+....................   U1BRG = 21;// BAUD Rate Setting for 115200 
+*
+00276:  MOV     #15,W4
+00278:  MOV     W4,228
+....................   //U1BRG = 10;  // BAUD Rate Setting for 230400 
+....................   U1MODE = 0b1010101010000000; // brgh = 0 
+0027A:  MOV     #AA80,W4
+0027C:  MOV     W4,220
+....................    
+....................   PLLFBD = 30; // ???. ????. ??????? PLL M = 30 
+0027E:  MOV     #1E,W4
+00280:  MOV     W4,746
+....................    
+....................   PLLPRE4 = 0; // ???. ????. ??????? PLL N1 = 2 
+00282:  BCLR.B  744.4
+....................   PLLPRE3 = 0; 
+00284:  BCLR.B  744.3
+....................   PLLPRE2 = 0; 
+00286:  BCLR.B  744.2
+....................   PLLPRE1 = 0; 
+00288:  BCLR.B  744.1
+....................   PLLPRE0 = 0; 
+0028A:  BCLR.B  744.0
+....................    
+....................   PLLPOST0=0; // ???. ????. ??????? PLL N2 = 2 
+0028C:  BCLR.B  744.6
+....................   PLLPOST1=0; 
+0028E:  BCLR.B  744.7
+00290:  RETURN  
+....................      
+....................    } 
+....................  
+....................   void EnableInt (){ 
+....................  
+....................   enable_interrupts(INT_RDA); // UART Int 
+00292:  BSET.B  95.3
+....................  
+....................   enable_interrupts(INT_TIMER9); 
+00294:  BSET.B  9A.4
+....................    
+....................   ENABLE_INTERRUPTS(INTR_GLOBAL); 
+00296:  BCLR.B  81.7
+00298:  CLR     42
+0029A:  BSET.B  81.7
+0029C:  RETURN  
+.................... } 
+....................  
+....................   void MCU_init(){ 
+....................  
+....................   FWDTEN = 0; // DIS WDT 
+0029E:  BCLR.B  A.7
+....................    
+....................   T9ON = 0; 
+002A0:  BCLR.B  13D.7
+....................   setup_timer9(TMR_INTERNAL | TMR_DIV_BY_1);   //  9 - modbus cmd integrity timer 
+002A2:  CLR     13C
+002A4:  SETM    138
+002A6:  MOV     #8000,W4
+002A8:  MOV     W4,13C
+....................   set_timer9(8400);  // 3x rx byte periods on 115k 
+002AA:  MOV     #20D0,W4
+002AC:  MOV     W4,134
+....................    
+....................   SETUP_SPI2(SPI_MASTER|SPI_SCK_IDLE_LOW|SPI_XMIT_H_TO_L|SPI_MODE_8B|SPI_SAMPLE_AT_END|SPI_SS_DISABLED|SPI_CLK_DIV_128); 
+002AE:  BCLR.B  261.7
+002B0:  BCLR.B  260.6
+002B2:  MOV     #221,W4
+002B4:  MOV     W4,262
+002B6:  BSET.B  261.7
+....................    //f SCLK SPI = 312,5 kHz 
+....................  
+....................  SCK2_TRIS=0; // SPI2 tris 
+002B8:  BCLR.B  2E4.6
+....................  SDI2_TRIS=1; 
+002BA:  BSET.B  2E4.7
+....................  SDO2_TRIS=0; 
+002BC:  BCLR.B  2E5.0
+....................   
+....................  ADC_CS_TRIS=0;      ADC2_CS_TRIS=0; 
+002BE:  BCLR.B  2E5.1
+002C0:  BCLR.B  2D3.2
+....................  ADC_RESET_TRIS=0;   ADC2_RESET_TRIS=0; 
+002C2:  BCLR.B  2D2.3
+002C4:  BCLR.B  2D2.0
+....................  ADC_SYNC_TRIS=0;    ADC2_SYNC_TRIS=0; 
+002C6:  BCLR.B  2D2.2
+002C8:  BCLR.B  2D3.3
+....................  ADC_DRDY_TRIS=1;    ADC2_DRDY_TRIS=1;       // опрос готовнсти данных АЦП 
+002CA:  BSET.B  2D2.1
+002CC:  BSET.B  2D3.1
+....................   
+....................  UART1_RX_TRIS=1; 
+002CE:  BSET.B  2DE.2
+....................  UART1_TX_TRIS=0; 
+002D0:  BCLR.B  2DE.3
+....................   
+....................  TRC14 = 0; // RS-485 TX EN 
+002D2:  BCLR.B  2CD.6
+....................   
+....................  EnableInt(); 
+002D4:  CALL    292
+002D8:  RETURN  
+.................... } 
+....................  
+....................   void Full_dev_reset(){ 
+....................  
+....................   OscSetup(); 
+....................   MCU_init(); 
+....................   reset_fl = 0; 
+....................   //ADC_wakeUp(); 
+....................   //ADC_wakeUp();  
+....................   ADC_init(input_buf_state); 
+....................   ADC_set_PGA(8); 
+....................   ADC_sps_set(0x23); //0x023 - 10 sps, 0x43 - 25 sps, 0x63 - 50 sps 
+....................                      //0x82 - 100 sps, 0x91 - 500 sps 
+....................                      //0xA1 - 1000 sps, 0xC0 - 3750 sps 
+....................   ADC_SelfCal(); 
+....................   meas_stop_fl = 0; // вкл. режим измерений 
+....................   NumAver = 10;      // сброс величины усреднения данных АЦП 
+....................  
+.................... } 
+....................  
+....................   // || чтение двух АЦП 
+....................   void ADC_par_rd_ch(U8 channel) 
+*
+00E98:  MOV     W5,[W15++]
+00E9A:  MOV     W6,[W15++]
+.................... { 
+....................  
+....................  switch (channel){ 
+00E9C:  MOV.B   1BD8,W0L
+00E9E:  CLR.B   1
+00EA0:  XOR     #1,W0
+00EA2:  BRA     Z,EB2
+00EA4:  XOR     #3,W0
+00EA6:  BRA     Z,F30
+00EA8:  XOR     #1,W0
+00EAA:  BRA     Z,F90
+00EAC:  XOR     #7,W0
+00EAE:  BRA     Z,FF0
+00EB0:  BRA     1052
+.................... //---------------- каналы 1 и 5 --------------------------------------//      
+....................  case 1:  
+....................   
+....................  ADC_setCh(1,1); 
+00EB2:  MOV.B   #1,W0L
+00EB4:  MOV.B   W0L,1BDA
+00EB6:  MOV.B   #1,W0L
+00EB8:  MOV.B   W0L,1BDB
+00EBA:  CALL    69A
+....................  ADC_setCh(1,2); 
+00EBE:  MOV.B   #1,W0L
+00EC0:  MOV.B   W0L,1BDA
+00EC2:  MOV.B   #2,W0L
+00EC4:  MOV.B   W0L,1BDB
+00EC6:  CALL    69A
+....................  
+....................  SYNC_ADC(1);  // синхр. измерений АЦП 1 
+00ECA:  MOV.B   #1,W0L
+00ECC:  MOV.B   W0L,1BDA
+00ECE:  CALL    6FE
+....................  delay_us(200);   
+00ED2:  REPEAT  #F9E
+00ED4:  NOP     
+....................  SYNC_ADC(2);  // синхр. измерений АЦП 2 
+00ED6:  MOV.B   #2,W0L
+00ED8:  MOV.B   W0L,1BDA
+00EDA:  CALL    6FE
+....................   
+....................  While(ADC_DRDY) { } // ждем готовности АЦП 1 
+00EDE:  BTSS.B  2D4.1
+00EE0:  BRA     EE6
+00EE2:  GOTO    EDE
+....................  pkt8_ch_1 = ADC_read_aver(1,0); 
+00EE6:  MOV.B   #1,W0L
+00EE8:  MOV.B   W0L,1BDA
+00EEA:  CLR.B   1BDB
+00EEC:  CALL    CF6
+00EF0:  MOV     W0,1870
+00EF2:  MOV     W1,1872
+....................  pkt8_ch_1 = (S32)((float)pkt8_ch_1 * (float)1.0009208471794050526484365616367); 
+00EF4:  MOV     1870,W0
+00EF6:  MOV     1872,W1
+00EF8:  CALL    E4A
+00EFC:  MOV     W0,W5
+00EFE:  MOV     W1,W6
+00F00:  MOV     W5,W0
+00F02:  MOV     W6,W1
+00F04:  MOV     #1E2D,W2
+00F06:  MOV     #3F80,W3
+00F08:  CALL    BF2
+00F0C:  CALL    CB6
+00F10:  MOV     W0,1870
+00F12:  MOV     W1,1872
+....................  
+....................  While(ADC2_DRDY) { } // ждем готовности АЦП 2 
+00F14:  BTSS.B  2D5.1
+00F16:  BRA     F1C
+00F18:  GOTO    F14
+....................  pkt8_ch_5 = ADC_read_aver(2,1); 
+00F1C:  MOV.B   #2,W0L
+00F1E:  MOV.B   W0L,1BDA
+00F20:  MOV.B   #1,W0L
+00F22:  MOV.B   W0L,1BDB
+00F24:  CALL    CF6
+00F28:  MOV     W0,1880
+00F2A:  MOV     W1,1882
+....................  
+....................  break; 
+00F2C:  GOTO    1052
+....................  
+.................... //---------------- каналы 2 и 6 --------------------------------------//   
+....................  case 2:  
+....................   
+....................  ADC_setCh(2,1); 
+00F30:  MOV.B   #2,W0L
+00F32:  MOV.B   W0L,1BDA
+00F34:  MOV.B   #1,W0L
+00F36:  MOV.B   W0L,1BDB
+00F38:  CALL    69A
+....................  ADC_setCh(2,2); 
+00F3C:  MOV.B   #2,W0L
+00F3E:  MOV.B   W0L,1BDA
+00F40:  MOV.B   #2,W0L
+00F42:  MOV.B   W0L,1BDB
+00F44:  CALL    69A
+....................   
+....................  SYNC_ADC(1);    // синхр. измерений АЦП 1 
+00F48:  MOV.B   #1,W0L
+00F4A:  MOV.B   W0L,1BDA
+00F4C:  CALL    6FE
+....................  delay_us(200);   
+00F50:  REPEAT  #F9E
+00F52:  NOP     
+....................  SYNC_ADC(2);    // синхр. измерений АЦП 2 
+00F54:  MOV.B   #2,W0L
+00F56:  MOV.B   W0L,1BDA
+00F58:  CALL    6FE
+....................   
+....................  While(ADC_DRDY) { } // ждем готовности АЦП 1 
+00F5C:  BTSS.B  2D4.1
+00F5E:  BRA     F64
+00F60:  GOTO    F5C
+....................  pkt8_ch_2 = ADC_read_aver(1,2); 
+00F64:  MOV.B   #1,W0L
+00F66:  MOV.B   W0L,1BDA
+00F68:  MOV.B   #2,W0L
+00F6A:  MOV.B   W0L,1BDB
+00F6C:  CALL    CF6
+00F70:  MOV     W0,1874
+00F72:  MOV     W1,1876
+....................  
+....................  While(ADC2_DRDY) { } // ждем готовности АЦП 2 
+00F74:  BTSS.B  2D5.1
+00F76:  BRA     F7C
+00F78:  GOTO    F74
+....................  pkt8_ch_6 = ADC_read_aver(2,3); 
+00F7C:  MOV.B   #2,W0L
+00F7E:  MOV.B   W0L,1BDA
+00F80:  MOV.B   #3,W0L
+00F82:  MOV.B   W0L,1BDB
+00F84:  CALL    CF6
+00F88:  MOV     W0,1884
+00F8A:  MOV     W1,1886
+....................   
+....................  break; 
+00F8C:  GOTO    1052
+....................   
+.................... //---------------- каналы 3 и 7 --------------------------------------//    
+....................  case 3:  
+....................   
+....................  ADC_setCh(3,1); 
+00F90:  MOV.B   #3,W0L
+00F92:  MOV.B   W0L,1BDA
+00F94:  MOV.B   #1,W0L
+00F96:  MOV.B   W0L,1BDB
+00F98:  CALL    69A
+....................  ADC_setCh(3,2); 
+00F9C:  MOV.B   #3,W0L
+00F9E:  MOV.B   W0L,1BDA
+00FA0:  MOV.B   #2,W0L
+00FA2:  MOV.B   W0L,1BDB
+00FA4:  CALL    69A
+....................   
+....................  SYNC_ADC(1);   // синхр. измерений АЦП 1 
+00FA8:  MOV.B   #1,W0L
+00FAA:  MOV.B   W0L,1BDA
+00FAC:  CALL    6FE
+....................  delay_us(200);   
+00FB0:  REPEAT  #F9E
+00FB2:  NOP     
+....................  SYNC_ADC(2);   // синхр. измерений АЦП 2 
+00FB4:  MOV.B   #2,W0L
+00FB6:  MOV.B   W0L,1BDA
+00FB8:  CALL    6FE
+....................   
+....................  While(ADC_DRDY) { }  // ждем готовности АЦП 1 
+00FBC:  BTSS.B  2D4.1
+00FBE:  BRA     FC4
+00FC0:  GOTO    FBC
+....................  pkt8_ch_3 = ADC_read_aver(1,4); 
+00FC4:  MOV.B   #1,W0L
+00FC6:  MOV.B   W0L,1BDA
+00FC8:  MOV.B   #4,W0L
+00FCA:  MOV.B   W0L,1BDB
+00FCC:  CALL    CF6
+00FD0:  MOV     W0,1878
+00FD2:  MOV     W1,187A
+....................   
+....................  While(ADC2_DRDY) { } // ждем готовности АЦП 2 
+00FD4:  BTSS.B  2D5.1
+00FD6:  BRA     FDC
+00FD8:  GOTO    FD4
+....................  pkt8_ch_7 = ADC_read_aver(2,5); 
+00FDC:  MOV.B   #2,W0L
+00FDE:  MOV.B   W0L,1BDA
+00FE0:  MOV.B   #5,W0L
+00FE2:  MOV.B   W0L,1BDB
+00FE4:  CALL    CF6
+00FE8:  MOV     W0,1888
+00FEA:  MOV     W1,188A
+....................   
+....................  break; 
+00FEC:  GOTO    1052
+....................   
+.................... //---------------- каналы 4 и 8 --------------------------------------//    
+....................  case 4:  
+....................   
+....................  ADC_setCh(4,1); 
+00FF0:  MOV.B   #4,W0L
+00FF2:  MOV.B   W0L,1BDA
+00FF4:  MOV.B   #1,W0L
+00FF6:  MOV.B   W0L,1BDB
+00FF8:  CALL    69A
+....................  ADC_setCh(4,2); 
+00FFC:  MOV.B   #4,W0L
+00FFE:  MOV.B   W0L,1BDA
+01000:  MOV.B   #2,W0L
+01002:  MOV.B   W0L,1BDB
+01004:  CALL    69A
+....................   
+....................  SYNC_ADC(1);    // синхр. измерений АЦП 1 
+01008:  MOV.B   #1,W0L
+0100A:  MOV.B   W0L,1BDA
+0100C:  CALL    6FE
+....................  delay_us(200);   
+01010:  REPEAT  #F9E
+01012:  NOP     
+....................  SYNC_ADC(2);    // синхр. измерений АЦП 2 
+01014:  MOV.B   #2,W0L
+01016:  MOV.B   W0L,1BDA
+01018:  CALL    6FE
+....................   
+....................  While(ADC_DRDY) { }  // ждем готовности АЦП 1 
+0101C:  BTSS.B  2D4.1
+0101E:  BRA     1024
+01020:  GOTO    101C
+....................  pkt8_ch_4 = ADC_read_aver(1,6); 
+01024:  MOV.B   #1,W0L
+01026:  MOV.B   W0L,1BDA
+01028:  MOV.B   #6,W0L
+0102A:  MOV.B   W0L,1BDB
+0102C:  CALL    CF6
+01030:  MOV     W0,187C
+01032:  MOV     W1,187E
+....................  
+....................  While(ADC2_DRDY) { } // ждем готовности АЦП 2 
+01034:  BTSS.B  2D5.1
+01036:  BRA     103C
+01038:  GOTO    1034
+....................  pkt8_ch_8 = ADC_read_aver(2,7); 
+0103C:  MOV.B   #2,W0L
+0103E:  MOV.B   W0L,1BDA
+01040:  MOV.B   #7,W0L
+01042:  MOV.B   W0L,1BDB
+01044:  CALL    CF6
+01048:  MOV     W0,188C
+0104A:  MOV     W1,188E
+....................  
+....................  Ma_buf_index++; // инкремент индекса 
+0104C:  INC.B   081D
+....................   
+....................  break; 
+0104E:  GOTO    1052
+....................  
+....................    } // main case 
+01052:  MOV     [--W15],W6
+01054:  MOV     [--W15],W5
+01056:  RETURN  
+.................... } 
+....................  
+....................   void save_to_flash() { 
+....................        
+....................    Sps_Wr = NumAver; 
+....................    Aver_Wr = Ma_buf_size; // сохранение sps значения во флеш 
+....................    PGA = PGA_val; 
+....................    CRC_Wr = CRC8(flash_wr_data,3); 
+....................    Wr_Flash(); 
+....................    }  
+....................  
+....................   #int_timer9 
+....................   void timer9_irq_handler(void) { 
+*
+00200:  PUSH    42
+00202:  PUSH    36
+00204:  PUSH    32
+00206:  MOV     W0,[W15++]
+00208:  MOV     #2,W0
+0020A:  REPEAT  #C
+0020C:  MOV     [W0++],[W15++]
+....................    
+....................   T9ON = 0; 
+0020E:  BCLR.B  13D.7
+....................   timer_state = 0; 
+00210:  CLR.B   1BD1
+....................   rx_flag = 1; 
+00212:  MOV.B   #1,W0L
+00214:  MOV.B   W0L,1BD0
+....................    
+....................   disable_interrupts(INT_TIMER9); 
+00216:  BCLR.B  9A.4
+....................   clear_interrupt(int_timer9); 
+00218:  BCLR.B  8A.4
+....................    
+....................   } 
+....................    
+0021A:  BCLR.B  8A.4
+0021C:  MOV     #1A,W0
+0021E:  REPEAT  #C
+00220:  MOV     [--W15],[W0--]
+00222:  MOV     [--W15],W0
+00224:  POP     32
+00226:  POP     36
+00228:  POP     42
+0022A:  RETFIE  
+....................   #INT_RDA 
+....................   void UART1_RXd_isr(void){ 
+0022C:  PUSH    42
+0022E:  PUSH    36
+00230:  PUSH    32
+00232:  MOV     W0,[W15++]
+00234:  MOV     #2,W0
+00236:  REPEAT  #C
+00238:  MOV     [W0++],[W15++]
+....................  
+....................     rx_buf[rx_buf_ptr++] = (U8)U1RXREG; 
+0023A:  MOV     1892,W0
+0023C:  INC     1892
+0023E:  MOV     W0,W5
+00240:  MOV     #1894,W4
+00242:  ADD     W5,W4,W6
+00244:  MOV     226,W0
+00246:  MOV.B   W0L,[W6+#0]
+....................     clear_interrupt(int_rda);   
+00248:  REPEAT  #3
+0024A:  MOV     226,W0
+0024C:  BCLR.B  85.3
+....................      
+....................     if(timer_state == 0) 
+0024E:  CP0.B   1BD1
+00250:  BRA     NZ,262
+....................     { 
+....................         TMR9 = 0x0000; 
+00252:  CLR     134
+....................         clear_interrupt(int_timer9);   // Clear Timer interrupt flag 
+00254:  BCLR.B  8A.4
+....................         enable_interrupts(int_timer9); 
+00256:  BSET.B  9A.4
+....................         timer_state = 1; 
+00258:  MOV.B   #1,W0L
+0025A:  MOV.B   W0L,1BD1
+....................         T9ON = 1; 
+0025C:  BSET.B  13D.7
+....................     } 
+0025E:  GOTO    264
+....................     else TMR9 = 0x0000; // reset if timer is on, 115200 
+00262:  CLR     134
+00264:  BCLR.B  85.3
+00266:  MOV     #1A,W0
+00268:  REPEAT  #C
+0026A:  MOV     [--W15],[W0--]
+0026C:  MOV     [--W15],W0
+0026E:  POP     32
+00270:  POP     36
+00272:  POP     42
+00274:  RETFIE  
+.................... } 
+....................  
+.................... /*########################################################################### */ 
+....................  
+....................   void main() 
+*
+016EE:  MOV     #2780,W15
+016F0:  MOV     #27FF,W0
+016F2:  MOV     W0,20
+016F4:  NOP     
+016F6:  MOV     #4444,W0
+016F8:  MOV     W0,A8
+016FA:  BSET.B  81.7
+016FC:  BCLR.B  261.7
+016FE:  BCLR.B  2E5.0
+01700:  BSET.B  2E4.7
+01702:  BCLR.B  2E4.6
+01704:  BCLR.B  260.6
+01706:  MOV     #3F,W4
+01708:  MOV     W4,262
+0170A:  BSET.B  261.7
+0170C:  CLR     800
+0170E:  MOV     #8000,W4
+01710:  MOV     W4,220
+01712:  MOV     #400,W4
+01714:  MOV     W4,222
+01716:  BSET.B  220.3
+01718:  MOV     #2A,W4
+0171A:  MOV     W4,228
+0171C:  MOV.B   #4,W0L
+0171E:  MOV.B   W0L,80C
+01720:  CLR.B   80D
+01722:  MOV.B   #1,W0L
+01724:  MOV.B   W0L,80E
+01726:  CLR.B   80F
+01728:  CLR.B   814
+0172A:  CLR.B   815
+0172C:  CLR.B   816
+0172E:  BCLR.B  817.0
+01730:  BCLR.B  817.1
+01732:  MOV.B   #1,W0L
+01734:  MOV.B   W0L,818
+01736:  MOV.B   #2,W0L
+01738:  MOV.B   W0L,819
+0173A:  SETM.B  81A
+0173C:  MOV.B   #FF,W0L
+0173E:  MOV.B   W0L,81B
+01740:  CLR     1866
+01742:  CLR     1868
+01744:  CLR.B   81D
+01746:  MOV.B   #5,W0L
+01748:  MOV.B   W0L,186A
+0174A:  CLR.B   186B
+0174C:  CLR     186E
+0174E:  CLR     1870
+01750:  CLR     1872
+01752:  CLR     1874
+01754:  CLR     1876
+01756:  CLR     1878
+01758:  CLR     187A
+0175A:  CLR     187C
+0175C:  CLR     187E
+0175E:  CLR     1880
+01760:  CLR     1882
+01762:  CLR     1884
+01764:  CLR     1886
+01766:  CLR     1888
+01768:  CLR     188A
+0176A:  CLR     188C
+0176C:  CLR     188E
+0176E:  CLR     1892
+01770:  CLR.B   186D
+01772:  CLR.B   18D5
+01774:  CLR     18D6
+01776:  CLR     18D8
+01778:  CLR     18DA
+0177A:  CLR     18DC
+0177C:  CLR     18DE
+0177E:  CLR     19DA
+01780:  CLR.B   1BD0
+01782:  CLR.B   1BD1
+01784:  MOV.B   #64,W0L
+01786:  MOV.B   W0L,1BD2
+01788:  MOV.B   #F,W0L
+0178A:  MOV.B   W0L,1BD3
+0178C:  MOV.B   #5,W0L
+0178E:  MOV.B   W0L,1BD4
+01790:  SETM    32C
+01792:  SETM    32A
+01794:  MOV     #7600,W4
+01796:  MOV     W4,802
+01798:  MOV     #3254,W4
+0179A:  MOV     W4,804
+0179C:  MOV     #10,W4
+0179E:  MOV     W4,806
+017A0:  CLR     808
+017A2:  CLR.B   80A
+017A4:  CLR     810
+017A6:  CLR     812
+.................... {  
+....................   OscSetup(); 
+017A8:  CALL    276
+....................   MCU_init();  
+017AC:  CALL    29E
+....................  
+....................   for(U8 i = 0; i < 125; i++) holding_register[i] = 0; // ??????? ?????? ?????????? ?????? 
+017B0:  CLR.B   1BD6
+017B2:  MOV     1BD6,W4
+017B4:  MOV     #7D,W3
+017B6:  CP.B    W3L,W4L
+017B8:  BRA     LEU,17D0
+017BA:  MOV.B   1BD6,W0L
+017BC:  CLR.B   1
+017BE:  SL      W0,#1,W0
+017C0:  MOV     #19DC,W4
+017C2:  ADD     W0,W4,W5
+017C4:  CLR.B   [W5]
+017C6:  MOV.B   #0,W0L
+017C8:  MOV.B   W0L,[W5+#1]
+017CA:  INC.B   1BD6
+017CC:  GOTO    17B2
+....................   Clr_bufs(); 
+017D0:  CALL    2DA
+....................    
+....................   //ADC_sps_var = 1;   // сброс значений по умолчанию  
+....................   //NumAver = 1;       // тк произошел сбой контр. суммы 
+....................       
+....................   ADC_RESET = 1; ADC2_RESET = 1; 
+017D4:  BSET.B  2D6.3
+017D6:  BSET.B  2D6.0
+....................   ADC_CS = 1;    ADC2_CS = 1; 
+017D8:  BSET.B  2E9.1
+017DA:  BSET.B  2D7.2
+....................   ADC_SYNC = 1;  ADC2_SYNC = 1;  
+017DC:  BSET.B  2D6.2
+017DE:  BSET.B  2D7.3
+....................  
+....................   While(ADC2_DRDY | ADC2_DRDY) { }   // ждем готовности обоих АЦП перед иниц.   
+017E0:  CLR     W0
+017E2:  BTSC.B  2D5.1
+017E4:  INC     W0,W0
+017E6:  MOV.B   W0L,W6L
+017E8:  CLR     W0
+017EA:  BTSC.B  2D5.1
+017EC:  INC     W0,W0
+017EE:  IOR.B    W6L,  W0L,W0L
+017F0:  CP0.B   W0L
+017F2:  BRA     Z,17F8
+017F4:  GOTO    17E0
+....................   Rd_Flash(); 
+017F8:  CALL    3A8
+....................   ADC_init(input_buf_state);         // Инициализация обоих АЦП  
+017FC:  MOV.B   80E,W0L
+017FE:  MOV.B   W0L,1BD8
+01800:  CALL    574
+....................    
+.................... /*############################################################################*/   
+....................  
+....................   while(true) 
+....................   { 
+....................  
+....................   ADC_par_rd_ch(1); // измрение к 1 и 5 
+01804:  MOV.B   #1,W0L
+01806:  MOV.B   W0L,1BD8
+01808:  CALL    E98
+....................   ADC_par_rd_ch(2); // измрение к 2 и 6 
+0180C:  MOV.B   #2,W0L
+0180E:  MOV.B   W0L,1BD8
+01810:  CALL    E98
+....................   ADC_par_rd_ch(3); // измрение к 3 и 7 
+01814:  MOV.B   #3,W0L
+01816:  MOV.B   W0L,1BD8
+01818:  CALL    E98
+....................   ADC_par_rd_ch(4); // измрение к 4 и 8  
+0181C:  MOV.B   #4,W0L
+0181E:  MOV.B   W0L,1BD8
+01820:  CALL    E98
+....................    
+....................   meas_status = 1;  // уст. флага обновления измерений 
+01824:  MOV     #1,W4
+01826:  MOV     W4,1890
+....................     
+....................   modbus_poll();    // анализ запроса modbus и ответ при необходимости 
+01828:  CALL    168A
+0182C:  GOTO    1804
+....................    
+....................  } // while   
+.................... }  // main 
+.................... /*############################################################################*/ 
+01830:  PWRSAV  #0
+....................  
+....................  
+
+Configuration Fuses:
+   Word  1L: 00CE   WRTB NOBSS NORBS
+          H: 0000  
+   Word  2L: 00CF   NOWRTSS NOSSS NORSS
+          H: 0000  
+   Word  3L: 0007   NOWRT NOPROTECT
+          H: 0000  
+   Word  4L: 0083   PR_PLL IESO
+          H: 0000  
+   Word  5L: 0006   HS NOOSCIO CKSFSM
+          H: 0000  
+   Word  6L: 00DD   WPOSTS14 WPRES128 WINDIS WDT
+          H: 0000  
+   Word  7L: 00E7   PUT128
+          H: 0000  
+   Word  8L: 00C3   ICSP1 NOJTAG NODEBUG
+          H: 0000  

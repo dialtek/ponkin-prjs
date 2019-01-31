@@ -1,5 +1,5 @@
 
-**** 02/22/18 13:33:59 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 12/20/18 12:37:56 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 2ms 0 0.1ms 
+.TRAN  0 12ms 0 0.1ms SKIPBP 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -80,10 +80,6 @@ D_D12         0 N27220 Dbreak
 C_C26         0 N27049  0.1u  TC=0,0 
 R_R15         0 N27049  5MEG TC=0,0 
 R_R16         0 N27341  6MEG TC=0,0 
-E_U1         N32569 0 VALUE {LIMIT(V(0,N32446)*1E6,-15V,+15V)}
-R_R17         N32561 N32446  10k TC=0,0 
-R_R18         N32446 N32569  2.7k TC=0,0 
-R_R20         0 N32569  1k TC=0,0 
 R_R21         N33264 N33228  10k TC=0,0 
 E_U2         N33276 0 VALUE {LIMIT(V(N33228,N33200)*1E6,-15V,+15V)}
 R_R22         N33200 N35514  2.7k TC=0,0 
@@ -98,13 +94,125 @@ R_R26         N34639 N35551  2.7k TC=0,0
 R_R25         N34659 N34639  10k TC=0,0 
 R_R29         N35551 N34655  100R TC=0,0 
 R_R30         N35514 N33276  1R TC=0,0 
-I_I1         N35975 N32561 DC 300uA  
-R_R31         0 N32561  100R TC=0,0 
+I_I3         N40732 N40736 DC 200uA  
+R_R39         0 N40736  100 TC=0,0 
+V_V9         N40732 0 12000
+E_U5         N40634 0 VALUE {LIMIT(V(N40736,N40610)*1E6,-15V,+15V)}
+R_R38         0 N40634  1k TC=0,0 
+R_R37         N40610 N40634  5k TC=0,0 
+R_R40         N40736 N40610  10k TC=0,0 
+V_V10         N41672 0 12000
+R_R41         N41566 N41580  10k TC=0,0 
+R_R44         N41684 N41566  10k TC=0,0 
+E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
+R_R43         0 N41684  100 TC=0,0 
+I_I4         N41672 N41684 DC 3ma  
+R_R42         0 N41580  1k TC=0,0 
+V_V11         0 N45640 1500
+R_R45         0 N45693  1MEG TC=0,0 
+V_V12         N45909 N45640  
++PULSE 0 15 0 100ns 100ns 1ms 5ms
+Z_Z3         N45693 N45909 N45640 IXSH35N140A     
 
 **** RESUMING 1.cir ****
 .END
-
-ERROR(ORPSIM-15141): Less than 2 connections at node N35975.
-
-ERROR(ORPSIM-15142): Node N35975 is floating
 
+**** 12/20/18 12:37:56 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          
+          IS   10.000000E-15 
+          RS     .1          
+         CJO  100.000000E-15 
+
+
+**** 12/20/18 12:37:56 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     IGBT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IXSH35N140A     
+               NIGBT           
+          VT    6.0887       
+         MUN    1.000000E+06 
+         MUP  650            
+         BVF    9.123        
+          KF     .5005       
+         CGS   17.131000E-09 
+        COXD   18.765000E-09 
+         VTD   -5            
+         TAU  168.320000E-09 
+          KP    6.4915       
+        AREA   35.000000E-06 
+         AGD   14.000000E-06 
+          WB  117.000000E-06 
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in transient analysis at Time =  22.51E-06.
+         Time step =  97.61E-21, minimum allowable step size =  1.000E-18
+
+  These supply currents failed to converge:
+
+    I(V_V1)                   =     2.602A  \     2.612A
+    I(V_V3)                   =     7.613A  \     7.634A
+    I(V_V11)                  =   -3.099mA  \   -1.496mA
+
+  These devices failed to converge:
+    D_D9      D_D10     Z_Z3      
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14716)  159.9600 (N14756)    -.9381 (N14840) 2888.4000 (N15043)  160.9600     
+
+(N15446)  281.1100 (N17727)  160.9100 (N18570)  160.9000 (N22336)  164.2200     
+
+(N22376)    -.9927 (N22382)  164.2200 (N22392)  163.8300 (N22414)  241.7500     
+
+(N22514)  163.8300 (N22656)  163.8300 (N22948)   -2.4793 (N22955)-2559.5000     
+
+(N22959)-2559.5000 (N27016) 2869.9000 (N27049)  227.6800 (N27156) 1320.2000     
+
+(N27220)   -1.6498 (N27341) 1777.3000 (N33200)    3.3669 (N33228)    3.3669     
+
+(N33264)   12.0000 (N33276)    3.3669 (N34639)-3.360E-06 (N34655)    3.3600     
+
+(N34659)  -12.0000 (N34739)    0.0000 (N35514)    3.3669 (N35551)    3.2400     
+
+(N40610)     .0200 (N40634)     .0200 (N40732) 12.00E+03 (N40736)     .0200     
+
+(N41566) 297.0E-09 (N41580)    -.2970 (N41672) 12.00E+03 (N41684)     .2970     
+
+(N45640)-1500.0000 (N45693)-1499.9000 (N45909)-1485.0000 
+
+
+**** Interrupt ****

@@ -43,12 +43,12 @@ namespace extract_system
             device_0.CreateControls(_form);
             devices.Add(id, device_0);
 
-            //id = "2";
-            //shift_vert = 24;
+            id = "2";
+            shift_vert = 24;
 
-            //var device_1 = new DevicePBF(id, shift, shift_vert, "C7", SendMessage);
-            //device_1.CreateControls(_form);
-            //devices.Add(id, device_1);
+            var device_1 = new DevicePBF(id, shift, shift_vert, "C6", SendMessage);
+            device_1.CreateControls(_form);
+            devices.Add(id, device_1);
 
             id = "3";
             shift_vert = 44;
@@ -100,9 +100,9 @@ namespace extract_system
             id = "40";              // первый ключ делителя, было 40 для ИО
             shift = 10;
             //shift_vert = 5;
-            List<string> R_list = new List<string>() { "51 R", "1 k", "2 k" };  // список резисторов для коммутации
+            List<string> R_list = new List<string>() { "200 R", "1 k", "2 k" };  // список резисторов для коммутации
 
-            var device_5 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С2", "C7", "C24", R_list); // было С22 для ИО
+            var device_5 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С2", "C6", "C24", R_list); // было С22 для ИО
             device_5.CreateControls(_form);
             devices.Add(id, device_5);
 

@@ -475,43 +475,33 @@ return rch;
     //  чтение R/W регистров
     if(answer == MODBUS_RHR_CMD) 
     {    
-	 MODBUS_TX_LED = 1;
+	 MODBUS_TX_LED = ~MODBUS_TX_LED;  
+	 
          modbus_refresh(MODBUS_RHR_CMD);
          modbus_rhr_answer();  
 	 answer = 0;   // сброс флага завершения ответа на запрос   
 	 modbus_reset(); 
-	 
-	 delay_ms(10);
-	 MODBUS_TX_LED = 0;
     }
 //--------------------------------------------------------------------
     // запись в регистр
     if(answer == MODBUS_WSR_CMD) 
     {
-	 MODBUS_TX_LED = 1;
+	 MODBUS_TX_LED = ~MODBUS_TX_LED; 
 	 
          holding_register[starting_address] = reg_wr_data; 
          modbus_refresh(MODBUS_WSR_CMD);
          modbus_wsr_answer();     
 	 answer = 0;   // сброс флага завершения ответа на запрос   
 	 modbus_reset();
-	 
-	 delay_ms(10);
-	 MODBUS_TX_LED = 0;
     }  
 //--------------------------------------------------------------------
     // чтение Read-only регистров
     if(answer == MODBUS_RIR_CMD) 
     {    
-	 MODBUS_TX_LED = 1;
-	 
          modbus_refresh(MODBUS_RIR_CMD);
          modbus_rir_answer();   
 	 answer = 0;   // сброс флага завершения ответа на запрос   
 	 modbus_reset();
-	 
-	 delay_ms(10);
-	 MODBUS_TX_LED = 0;
     }
  //--------------------------------------------------------------------
   }

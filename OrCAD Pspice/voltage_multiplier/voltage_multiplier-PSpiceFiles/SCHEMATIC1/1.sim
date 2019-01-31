@@ -13,8 +13,8 @@ Notes=
 @#$ENDNOTES
 @End General
 @Analysis: 0 1
-+0 0 0 0 
-+0 "30ms" 
++1 0 0 0 
++0 "20ms" 
 +1 "" 
 +2 "0" 
 +3 "0.1ms" 

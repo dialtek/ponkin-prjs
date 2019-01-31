@@ -84,7 +84,7 @@ void GPIO_init(void)
    TRISFbits.TRISF0 = 0;    // U1TX - RP96
    
    TRISBbits.TRISB12 = 1;   // U2RX,  Hamilton Pump
-   TRISFbits.TRISF12 = 0;   // U2TX, RP108, Hamilton Pump
+   TRISFbits.TRISF12 = 0;   // U2TX, RP108, Hamilton Pumpp
    TRISFbits.TRISF13 = 0;   // U2/RS-485 TX EN
    
    TRISEbits.TRISE8 = 0;    // Modbus TX EN
@@ -99,14 +99,14 @@ void GPIO_init(void)
    RPOR11bits.RP108R = 3;   // RF12 - U2TX, RP108
    RPINR19bits.U2RXR = 44;  // RB12 - U2RX, RPI44
    
-//   // SPI2 peripheral pin select
-//   RPINR22bits.SDI2R = 124; // RPI124
-//   
-//   RPOR12bits.RP126R = 0b001001;  // SCK2 - 001001 RPn tied to SPI2 Clock Output
-//   RPINR22bits.SCK2R = 126;       // SCK2 - IN setup
-//   
-//   RPOR11bits.RP125R = 0x08;      // SDO2 - 001000 RPn tied to SPI2 Slave Output 
-//   
+   // SPI1 peripheral pin select
+   RPINR20bits.SDI1R = 124;       // RPI124
+   
+   RPOR15bits.RP126R = 0b000110;  // SCK1 - 0b000110 RPn tied to SPI1 Clock Output
+   RPINR20bits.SCK1R = 126;       // SCK1 - IN setup
+   
+   RPOR14bits.RP125R = 0b000101;  // SDO1 - 000101 RPn tied to SPI1 SDO 
+   
 //   // SPI3 peripheral pin select
 //   RPINR29bits.SDI3R = 72; // RPI72
 //   
@@ -263,71 +263,71 @@ void _ISR_PSV _U2RXInterrupt( void )
 
 /*=========================================================================== */
 // SPI2 - Analog board CPLD
-#define SPI2_nCS_HIGH LATGbits.LATG15 = 1    // CS set HIGH
-#define SPI2_nCS_LOW  LATGbits.LATG15 = 0    // CS set LOW
+#define SPI1_nCS_HIGH LATGbits.LATG15 = 1    // CS set HIGH
+#define SPI1_nCS_LOW  LATGbits.LATG15 = 0    // CS set LOW
 
-void SPI2_init()
+void SPI1_init()
 {
                 
-        SPI2STATbits.SPIEN = 0;         // Turn off spi module before initialization 
-        IFS2bits.SPI2EIF = 0;            //Clear the Interrupt Flag
-        IFS2bits.SPI2IF = 0;            //Disable the Interrupt
+        SPI1STATbits.SPIEN = 0;         // Turn off spi module before initialization 
+        IFS0bits.SPI1EIF   = 0;         // Clear the Interrupt Flag
+        IFS0bits.SPI1IF = 0;            // Disable the Interrupt
         // SPI2CON1 Register Settings:
-        SPI2CON1bits.DISSCK = 0;        //Internal Serial Clock is Enabled
-        SPI2CON1bits.DISSDO = 0;        //SDOx pin is controlled by the module
-        SPI2CON1bits.MODE16 = 0;        //Communication is byte-wide (8 bits)
-        SPI2CON1bits.SMP = 1;           //Input Data is sampled at the end of data output time
-        SPI2CON1bits.CKE = 0;           // Serial output data changes on transition from active clock state to Idle clock state
-        SPI2CON1bits.CKP = 0;           // Idle state for clock is a low level; active state is a high level
+        SPI1CON1bits.DISSCK = 0;        //Internal Serial Clock is Enabled
+        SPI1CON1bits.DISSDO = 0;        //SDOx pin is controlled by the module
+        SPI1CON1bits.MODE16 = 0;        //Communication is byte-wide (8 bits)
+        SPI1CON1bits.SMP = 1;           //Input Data is sampled at the end of data output time
+        SPI1CON1bits.CKE = 0;           // Serial output data changes on transition from active clock state to Idle clock state
+        SPI1CON1bits.CKP = 0;           // Idle state for clock is a low level; active state is a high level
         
-        // SPI2STAT Register Settings
-        SPI2STATbits.SPISIDL = 0; // Continue module operation in Idle mode
-        SPI2STATbits.SPIBEC = 0; // Buffer Length = 1 Word
-        SPI2STATbits.SPIROV = 0; // No Receive Overflow has occurred
+        // SPI1STAT Register Settings
+        SPI1STATbits.SPISIDL = 0; // Continue module operation in Idle mode
+        SPI1STATbits.SPIBEC = 0; // Buffer Length = 1 Word
+        SPI1STATbits.SPIROV = 0; // No Receive Overflow has occurred
       
-        // SPI3 SCK f = 30M @ 120M Fosc, Fcy 60M     
+        // SPI1 SCK f = 30M @ 120M Fosc, Fcy 60M     
         //SPI3CON1bits.SPRE = 6;          //Secondary prescale 1:1
         //SPI3CON1bits.PPRE = 3;          //Primary prescale 1:1
         
-        // SPI2 SCK f = 7.5M @ 120M Fosc, Fcy 60M     
-        SPI2CON1bits.SPRE = 6;          //Secondary prescale 1:1
-        SPI2CON1bits.PPRE = 2;          //Primary prescale 4:1
+        // SPI1 SCK f = 7.5M @ 120M Fosc, Fcy 60M     
+        SPI1CON1bits.SPRE = 6;          //Secondary prescale 1:1
+        SPI1CON1bits.PPRE = 2;          //Primary prescale 4:1
         
-        // SPI3 SCK f = 3.75M @ 120M Fosc, Fcy 60M     
-        //SPI3CON1bits.SPRE = 4;          //Secondary prescale 4:1
-        //SPI3CON1bits.PPRE = 4;          //Primary prescale 4:1
+        // SPI1 SCK f = 3.75M @ 120M Fosc, Fcy 60M     
+        //SPI1CON1bits.SPRE = 4;          //Secondary prescale 4:1
+        //SPI1CON1bits.PPRE = 4;          //Primary prescale 4:1
         
-        SPI2CON2bits.FRMEN = 0;         //Framed SPIx support is disabled
-        SPI2CON2bits.SPIBEN = 0;        //Enhanced buffer is disabled (Legacy mode)
-        SPI2CON1bits.MSTEN = 1;         //Master Mode Enabled
+        SPI1CON2bits.FRMEN = 0;         //Framed SPIx support is disabled
+        SPI1CON2bits.SPIBEN = 0;        //Enhanced buffer is disabled (Legacy mode)
+        SPI1CON1bits.MSTEN = 1;         //Master Mode Enabled
                                           
-        SPI2STATbits.SPIEN = 1;         //Enable SPI Module
+        SPI1STATbits.SPIEN = 1;         //Enable SPI Module
                                         //Interrupt Controller Settings
         
         // при вкл. модуля на линии SDO мастера появл. лог.1
         
     }
 
-void SPI2_write_byte (unsigned char buf)               
+void SPI1_write_byte (unsigned char buf)               
 {
      unsigned char temp = 0;
 
-     SPI2STATbits.SPIROV = 0;
-     SPI2BUF = buf;
-     while(!SPI2STATbits.SPIRBF);
+     SPI1STATbits.SPIROV = 0;
+     SPI1BUF = buf;
+     while(!SPI1STATbits.SPIRBF);
      
-     temp = SPI2BUF; 
+     temp = SPI1BUF; 
      
      //SPI2STATbits.SPIEN = 0;         //Enable SPI Module
  }
 
-unsigned char SPI2_read_byte(void)
+unsigned char SPI1_read_byte(void)
 {
   unsigned int cnt = 0;
   unsigned char ret_value = 255;
   
-  SPI2STATbits.SPIROV = 0;
-  SPI2BUF = 0x00;                  // initiate bus cycle 
+  SPI1STATbits.SPIROV = 0;
+  SPI1BUF = 0x00;                  // initiate bus cycle 
   while(!SPI2STATbits.SPIRBF)
   {
       cnt++;
@@ -335,10 +335,10 @@ unsigned char SPI2_read_byte(void)
   }
    
    /* Check for Receive buffer full status bit of status register*/
-  if (SPI2STATbits.SPIRBF)
+  if (SPI1STATbits.SPIRBF)
   { 
-      SPI2STATbits.SPIROV = 0;
-      ret_value = SPI2BUF;    /* return byte read */
+      SPI1STATbits.SPIROV = 0;
+      ret_value = SPI1BUF;    /* return byte read */
   }
   
   return ret_value;                  		  /* RBF bit is not set return error*/
@@ -507,9 +507,9 @@ int main(void)
    MOXA_active = 1;
    
    TX_DIS;            // release RS485 bus
-   SPI3_nCS_HIGH;      // release SPI bus
-   SPI2_nCS_HIGH;
-   SPI2_init();       // Analog board CPLD communication
+   SPI3_nCS_HIGH;     // release SPI bus
+   SPI1_nCS_HIGH;
+   SPI1_init();       // Analog board CPLD communication
    SPI3_init();       // serial EEPROM 
    TIMER8_delay_init();
    UART1_init();      // Modbus UART
@@ -522,7 +522,18 @@ int main(void)
    while(1)
    {
      modbus_poll();     // contains ~40 ms delay, 20 - led, 20 - if read 120 reg 
-   }
+     
+     // CPLD SPI check
+     SPI1_nCS_HIGH;
+     SPI1_write_byte(0x81);
+     SPI1_nCS_LOW;
+     
+     // RS-485 check
+     get_syr_pos(1);
+     
+     // one wire TX check
+     LATGbits.LATG1 = ~LATGbits.LATG1;
+     delay_ms(1);
    
- 
+   }
 }

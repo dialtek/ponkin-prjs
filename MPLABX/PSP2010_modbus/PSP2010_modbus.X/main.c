@@ -1,12 +1,11 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "fuses.h"
-#include "p24Hxxxx.h"
-#include "c30_delay.h"
-
+#include <p24HJ128GP506.h>
+#define FCY 40000000UL
+#include <libpic30.h>
+#include <stdio.h>
+#include <stdint.h>
 #define _ISR_PSV __attribute__((__interrupt__, __auto_psv__))
   
-#define FCY 40000000UL
 #define FP 40000000
 #define U1_BAUDRATE 115200
 #define U2_BAUDRATE 2400
@@ -47,34 +46,32 @@ unsigned int rd_status, rd_voltage = 0, rd_current = 0,
 unsigned char id_change = 0; // modbus ID change 
 // funcs prototypes
 void uart2_text_send(char *s);
-void uart_num_send(long data);
 
 #include "dialtek_modbus.h"
 
 void OSC_init()
 {
-    // FCY=FOSC/2, FOSC= FIN*M/(N1*N2) 
-    CLKDIVbits.PLLPRE = 0;      // 0 - divider N1 = 2
-    PLLFBD = 30;                // multiplier M = PLLFBD + 2
-    CLKDIVbits.PLLPOST = 0;     // 0 - divider N2 = 2
-
-    OSCTUN=0;                   // 000000 = Center frequency (7.37 MHz nominal)
-    RCONbits.SWDTEN=0;          // Disable Watch Dog Timer
-
-    while(OSCCONbits.LOCK !=1) {};   // 1 = Indicates that PLL is in lock, or PLL start-up timer is satisfied
+        // FCY=FOSC/2, FOSC= FIN*M/(N1*N2) 
+        CLKDIVbits.PLLPRE = 0;      // 0 - divider N1 = 2
+        PLLFBD = 30;                // multiplier M = PLLFBD + 2
+        CLKDIVbits.PLLPOST = 0;     // 0 - divider N2 = 2
+        
+        OSCTUN=0;                   // 000000 = Center frequency (7.37 MHz nominal)
+        RCONbits.SWDTEN=0;          // Disable Watch Dog Timer
+        
+        while(OSCCONbits.LOCK !=1); // 1 = Indicates that PLL is in lock, or PLL start-up timer is satisfied
                                     // 0 = Indicates that PLL is out of lock, start-up timer is in progress or PLL is disabled
-    //note: FOSC= 10 MHz * 32/(2*2) = 80 MHz, FCY = 80/2
+        //note: FOSC= 10 MHz * 32/(2*2) = 80 MHz, FCY = 80/2
 }   
 /*=========================================================================== */
 // UART 
 void UART1_init()
 {   /// modbus 
     // RX interrupt UART1 settings 
-    IPC2bits.U1RXIP = 4; // Set UART1 RX interrupt priority to 1 
-    IFS0bits.U1RXIF = 0; // Reset UART1 RX interrupt flag
+    //IPC2bits.U1RXIP = 4; // Set UART1 RX interrupt priority to 1 
+    IFS0bits.U1RXIF = 0;   // Reset UART1 RX interrupt flag
     
-    
-    U1BRG = U1BRGVAL;       // Baud Rate setting 
+    U1BRG = U1BRGVAL;      // Baud Rate setting for 115200 uart
     U1MODEbits.UARTEN = 1;  // 1 = UARTx is enabled; all UARTx pins are controlled by UARTx as defined by UEN <1:0>
     U1MODEbits.UEN = 0;     // 0 = UxTX and UxRX pins are enabled and used; UxCTS and UxRTS/BCLK pins controlled by port latches
     U1MODEbits.PDSEL = 0;   // 0 = No Parity, 8-Data bits
@@ -88,15 +85,38 @@ void UART1_init()
     U1STAbits.UTXEN = 1;    // 1 = Transmit enabled, UxTX pin controlled by UARTx
     U1STAbits.URXISEL = 0;  // 0x = Interrupt is set when any unsigned character is received and transferred from the UxRSR to the receive buffer. Receive buffer has one or more unsigned characters.
                          // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
-    IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt
- //Once enabled, the UxTX and UxRX pins are configured as an output and an
- //input, respectively, overriding the TRIS and PORT register bit settings for the corresponding I/O port pins. 
+ 
+    IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt 
 }
+
+// modbus timer
+void Timer9_init(unsigned long baudrate)
+{
+       T9CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
+       IFS3bits.T9IF = 0;           // Clear Timer interrupt flag
+       TMR9 = 0x0000;               // reset if timer is on, 115200
+       T9CONbits.TCS = 0;           // Timer Clock Source Select bit; 0 - Internal clock (FOSC/2)
+       T9CONbits.TGATE = 0;         // Disable Gated Timer mode
+       T9CONbits.TCKPS = 0;      // Prescaler = (00=1, 01=8, 10=64, 11=256) 
+       T8CONbits.T32 = 0;
+       
+       switch(baudrate)
+       {
+           case 9600:   break; // 1 byte - 840 us
+           case 57600:  break; // 1 byte - 140 us
+           case 115200: PR9 = 8400; break; // 1 byte - 70 us, 2800 * 3 = 210 us
+           case 230400: break; // 1 byte - 35 us
+               
+           default: PR9 = 8400; // Load the period value
+       }
+       
+       IEC3bits.T9IE = 1;           // Enable T9 interrupt 
+    }
 
 void UART2_init()
 {   /// RS-232 
     // RX interrupt UART2 settings 
-    IPC7bits.U2RXIP = 3;   // Set UART2 RX interrupt priority to 4
+    //IPC7bits.U2RXIP = 3;   // Set UART2 RX interrupt priority to 4
     IFS1bits.U2RXIF = 0;   // Reset UART2 RX interrupt flag
    
     
@@ -117,23 +137,15 @@ void UART2_init()
  //Once enabled, the UxTX and UxRX pins are configured as an output and an
  //input, respectively, overriding the TRIS and PORT register bit settings for the corresponding I/O port pins. 
 }
-
-unsigned char UART1GetChar ()
-{
-    unsigned char buf;
-    while(IFS0bits.U1RXIF == 0) { }
-    buf = U1RXREG;
-    //IFS0bits.U1RXIF = 0;
-    return buf; 
-}
   
-void uart_send_hex (unsigned char Ch)
+void U1_send_byte (unsigned char Ch)
 { // ??? ??????? ?????? ????????? ? ?????? ? ????. ??????
     
-    while(U1STAbits.TRMT == 0){ }
-    U1TXREG = Ch;
-    __delay_us(100);
-    // waiting for trancsaction to be complete
+        U1TXREG = Ch;
+        //  should wait at least one instruction cycle between 
+        //  writing UxTXREG and reading the TRMT bit
+        __delay_us(1);
+        while(U1STAbits.TRMT == 0); //waiting for trancsaction to be complete
    
 }
 
@@ -148,8 +160,8 @@ void uart2_send_hex (unsigned char Ch)
 
 void uart_CR_LF_send (void){
 	  
-    uart_send_hex(0x0A);
-	uart_send_hex(0x0D);
+    U1_send_byte(0x0A);
+	U1_send_byte(0x0D);
 	
 	}
 
@@ -159,7 +171,7 @@ void uart_num_send(long data){
   if (data<0) 
   {
     data=-data;
-    uart_send_hex('-');
+    U1_send_byte('-');
   }     
   if (data)
   {
@@ -169,14 +181,9 @@ void uart_num_send(long data){
       data/=10;                 
     }                           
     while (count)           
-      uart_send_hex(temp[--count]);          
+      U1_send_byte(temp[--count]);          
   }
-  else uart_send_hex('0');           
-}
-
-void uart_text_send(char *s){
-  while (*s != 0)
-    uart_send_hex(*s++);
+  else U1_send_byte('0');           
 }
 
 void uart2_text_send(char *s){
@@ -261,10 +268,6 @@ void SPI2_send_byte (unsigned char buf)
      SPI2BUF = buf; 
      __delay_us(30);
  }
- 
- 
- 
- 
 
 unsigned char SPI2_read_byte(void)
 {
@@ -280,18 +283,27 @@ unsigned char SPI2_read_byte(void)
   return 255;                  		/* RBF bit is not set return error*/
 }
 
-
-
-
-
-
 /*=========================================================================== */
 // interrupts
 void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX
-{ /// ?????????? ????????? ??? ??????????? 1 ????? ?? UART1
-        
-    modbus_uart_byte(U1RXREG);
-    IFS0bits.U1RXIF = 0;   //Clear  UART1_Rx interrupt   
+{ 
+     RS232_RX_LED = 1;
+     // rx buffer has data, at least one more character can be read
+      while(U1STAbits.URXDA == 0){ }
+    
+      rx_buf[rx_buf_ptr++] = U1RXREG;
+
+      IFS0bits.U1RXIF = 0;    // Clear  UART1_Tx interrupt  
+
+      if(timer_state == 0)
+      {
+            TMR9 = 0x0000;
+            IFS3bits.T9IF = 0;    // Clear Timer interrupt flag
+            timer_state = 1;
+            T9CONbits.TON = 1;
+      }
+      else TMR9 = 0x0000;         // reset if timer is on, 115200
+     
 }
 
 void _ISR_PSV _U2RXInterrupt(void)      //interupt UART 2 RX
@@ -579,46 +591,51 @@ GPIO_init();
 TX_DIS;       // release RS485 line
 SPI_nCS_HIGH; // set SPI nCS line HIGH - EEPROM
 
+Timer9_init(115200);
 UART1_init(); // Modbus UART
-UART2_init(); // RS232 UART
-SPI2_init();  // Serial EEPROM 
-    
+//UART2_init(); // RS232 UART
+//SPI2_init();  // Serial EEPROM 
+
 modbus_init();
 
-PSP405_state_restore(); // restore PS state - V, I, relay state
+//PSP405_state_restore(); // restore PS state - V, I, relay state
 
 unsigned int count = 0;
 
 while(1)
 {   
   
-  modbus_rx_sm();// modbus state machine
-  modbus_poll(); // answer, contains 10 ms delay
+  //modbus_poll(); // answer, contains 10 ms delay
   
-  reset_dev_id(); // id change event check
-  
-  RS232_TX_LED = 0;
   RS232_RX_LED = 0;
-
-  if(data_ready) // if source asnwer is OK
-  { 
+  __delay_ms(1000);
     RS232_RX_LED = 1;
-    RS232_TX_LED = 1; 
-    PSP405_rx_parse(1);
-    data_ready = 0;
-    count = 0;
-  }
-  else          // if source no respond 
-  {   
-    count++;
-    if(count > 50) 
-    {  
-      RS232_TX_LED = 1; 
-      PSP405_rx_parse(0);
-      count = 0;
-      data_ready=0;
-    }
-  }
-   PSP405_get_all();  // send cmd via RS232 to get all src data
+  __delay_ms(1000);
+  
+  //reset_dev_id(); // id change event check
+//  
+//  RS232_TX_LED = 0;
+//  RS232_RX_LED = 0;
+//
+//  if(data_ready) // if source asnwer is OK
+//  { 
+//    RS232_RX_LED = 1;
+//    RS232_TX_LED = 1; 
+//    PSP405_rx_parse(1);
+//    data_ready = 0;
+//    count = 0;
+//  }
+//  else          // if source no respond 
+//  {   
+//    count++;
+//    if(count > 75) 
+//    {  
+//      RS232_TX_LED = 1; 
+//      PSP405_rx_parse(0);
+//      count = 0;
+//      data_ready=0;
+//    }
+//  }
+//   PSP405_get_all();  // send cmd via RS232 to get all src data
   }
 }

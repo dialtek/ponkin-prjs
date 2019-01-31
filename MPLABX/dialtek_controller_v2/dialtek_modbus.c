@@ -73,28 +73,25 @@ unsigned int get_valve_angle (unsigned char);
     
    if(cmd_type == MODBUS_RHR_CMD)
    {
-       
-    if(is_reg(0)) holding_register[0] = get_syr_pos(1);
-    if(is_reg(1)) holding_register[1] = get_syr_vel(1);
-    if(is_reg(2)) holding_register[2] = get_valve_angle(1);       
+     MODBUS_RX_LED = ~MODBUS_RX_LED;  
+    //if(is_reg(0)) holding_register[0] = get_syr_pos(1);
+    //if(is_reg(1)) holding_register[1] = get_syr_vel(1);
+    //if(is_reg(2)) holding_register[2] = get_valve_angle(1);       
 
- 
-    delay_ms(10);
+
     
-    MODBUS_RX_LED = 0;   
+    //MODBUS_RX_LED = 0;   
    }         
    //-------------------------------------------------------------------------//
    /// „тение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
    if(cmd_type == MODBUS_RIR_CMD)
    {   
-       MODBUS_RX_LED = 1;
+       MODBUS_RX_LED = ~MODBUS_RX_LED;  
         
        input_register[0] = (unsigned int)dev_id;       
        input_register[1] = (unsigned int)device_family;
        input_register[2] = (unsigned int)firmware_ver;
-
-       delay_ms(10);
-       MODBUS_RX_LED = 0;
+       
    }         
    //-------------------------------------------------------------------------//
   
@@ -103,6 +100,9 @@ unsigned int get_valve_angle (unsigned char);
       
    if(cmd_type == MODBUS_WSR_CMD) 
    {  // анализ регистра записи 
+       
+      MODBUS_RX_LED = ~MODBUS_RX_LED;  
+       
       switch(starting_address) 
       {  
         case 1: // reg 1

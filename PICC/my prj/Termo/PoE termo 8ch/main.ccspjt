@@ -1,7 +1,7 @@
 [PROJECT]
 Target=main.hex
 Development_Mode=
-Processor_Text=PIC24HJ128GP506A
+Processor_Text=PIC24HJ128GP506
 ToolSuite=CCS
 Processor=0x009F
 CCSVersion=5.049
@@ -25,21 +25,22 @@ AdditionalOptionString=
 5=
 6=
 7=
-t1=21
-t2=1
-t3=1
+t1=788
+t2=29
+t3=29
 t4=1
 Count=4
 [Directories]
-Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\;C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\DriversC:\Program Files (x86)\PICC\Devices\C:\Program Files (x86)\PICC\Devices\
+Include=<default>;\
 Library=
 LinkerScript=
+output=
 [defines]
 enabled=0
 D1=
 V1=
 chip=1
-buildcount=11
+buildcount=12
 [fileformats]
 debug=4
 error=2
@@ -53,6 +54,7 @@ allwarnings=1
 stayupne=2
 stayupoe=0
 forcecoff=0
+expandtree=0
 [Target Data]
 BuildTool=C-COMPILER
 OptionString=+FD
@@ -70,7 +72,7 @@ AdditionalOptionString=
 Fixed=
 
 [ProjectLog]
-Days=5
+Days=6
 D1=22-01-2018
 D1_L=8
 D1_L1=[51886]Project Opened.
@@ -119,6 +121,14 @@ D5_L7=[63227]Stopped Editing.
 D5_L8=[63684]Started Editing.
 D5_L9=[63693]Stopped Editing.
 D5_L10=[63693]Project Closed.
+D6=27-12-2018
+D6_L=4
+D6_L1=[54309]Project Opened.
+D6_L2=[58658]Started Editing.
+D6_L3=[58958]Stopped Editing.
+D6_E=0
+D6_D=0
+D6_L4=[59461]Project Closed.
 [Units]
 Count=1
 1=main (main)
