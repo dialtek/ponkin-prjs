@@ -1,5 +1,5 @@
 
-**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 02/22/19 13:09:23 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -86,13 +86,12 @@ R_R22         N33200 N35514  2.7k TC=0,0
 V_V5         N33264 0 12
 R_R23         0 N33276  1k TC=0,0 
 R_R24         0 N33228  3.9k TC=0,0 
-R_R28         0 N34739  3.9k TC=0,0 
-V_V6         0 N34659 12V
-R_R27         0 N34655  1k TC=0,0 
-E_U3         N34655 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
-R_R26         N34639 N35551  2.7k TC=0,0 
-R_R25         N34659 N34639  10k TC=0,0 
-R_R29         N35551 N34655  100R TC=0,0 
+R_R28         0 N34739  10k TC=0,0 
+V_V6         0 N34659 6V
+R_R27         0 N34665  10k TC=0,0 
+E_U3         N34665 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
+R_R26         N34639 N346250  2.4k TC=0,0 
+R_R25         N34659 N34639  5.1k TC=0,0 
 R_R30         N35514 N33276  1R TC=0,0 
 I_I3         N40732 N40736 DC 200uA  
 R_R39         0 N40736  100 TC=0,0 
@@ -108,16 +107,12 @@ E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
 R_R43         0 N41684  100 TC=0,0 
 I_I4         N41672 N41684 DC 3ma  
 R_R42         0 N41580  1k TC=0,0 
-V_V11         0 N45640 1600
-R_R45         0 N45693  1MEG TC=0,0 
-V_V12         N45909 N45640  
-+PULSE 0 15 0 100ns 100ns 1ms 5ms
-Z_Z4         N45693 N45909 N45640 IXGH10N170     
+R_R45         N346250 N34665  130 TC=0,0 
 
 **** RESUMING 1.cir ****
 .END
 
-**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 02/22/19 13:09:23 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -135,40 +130,11 @@ Z_Z4         N45693 N45909 N45640 IXGH10N170
           RS     .1          
          CJO  100.000000E-15 
 
-
-**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
-
- ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
-
-
- ****     IGBT MODEL PARAMETERS
-
-
-******************************************************************************
-
-
-
-
-               IXGH10N170      
-               NIGBT           
-          VT    4.6879       
-         MUN   10.000000E+03 
-         MUP   50            
-         BVF    3.268        
-          KF     .5005       
-         CGS   12.656000E-09 
-        COXD   23.277000E-09 
-         VTD   -5            
-         TAU  220.000000E-09 
-          KP    2            
-         AGD    4.000000E-06 
-          WB  117.000000E-06 
-
 
 
           JOB CONCLUDED
 
-**** 12/20/18 12:39:49 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 02/22/19 13:09:23 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -180,5 +146,5 @@ Z_Z4         N45693 N45909 N45640 IXGH10N170
 
 
 
-  Total job time (using Solver 1)   =        2.36
+  Total job time (using Solver 1)   =        2.16
 

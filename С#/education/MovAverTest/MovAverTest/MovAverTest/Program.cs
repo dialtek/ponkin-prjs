@@ -13,7 +13,7 @@ namespace MovAverTest
 
             int k = 0;  // индекс массива
             int m = 0;  // переменная усреднения
-            int n = 4;  // размер буфера усреднения
+            int n = 10;  // размер буфера усреднения
 
             double sample = 1;
             double sum = 0;

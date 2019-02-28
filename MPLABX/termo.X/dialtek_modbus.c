@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 3.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 3.1                */
 
 /* README */
 /*
@@ -43,8 +43,9 @@
 
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
   unsigned char dev_id        = 100;                // MODBUS ID устройства   <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 20;                 // версиЯ прошивки текущего устройства
+  unsigned char firmware_ver  = 21;                 // версиЯ прошивки текущего устройства
   unsigned char device_family = 11;                 // код семейства устройств
+  unsigned char modbus_ver    = 31;                 // версия MODBUS
 
 /* PROTOTYPES */
  
@@ -58,38 +59,64 @@
       if(meas_status)  
       {  // цикл измерений завершен, обновление регистров
          // 0. 000 000  0 V - формат, последнее число - сотни нВ
-         holding_register[0] = (unsigned int) (pkt8_ch_1 & 0x0000ffff);          // LSB канала 1
-         holding_register[1] = (unsigned int)((pkt8_ch_1 & 0xffff0000) >> 16);   // MSB канала 1
+         holding_register[0] = (unsigned int) (pkt8_ch[0] & 0x0000ffff);          // LSB канала 1
+         holding_register[1] = (unsigned int)((pkt8_ch[0] & 0xffff0000) >> 16);   // MSB канала 1
          
          
-         holding_register[2] = (unsigned int) (pkt8_ch_2 & 0x0000ffff);          // LSB канала 2
-         holding_register[3] = (unsigned int)((pkt8_ch_2 & 0xffff0000) >> 16);   // LSB канала 2
+         holding_register[2] = (unsigned int) (pkt8_ch[1] & 0x0000ffff);          // LSB канала 2
+         holding_register[3] = (unsigned int)((pkt8_ch[1] & 0xffff0000) >> 16);   // LSB канала 2
          
-         holding_register[4] = (unsigned int) (pkt8_ch_3 & 0x0000ffff);          // LSB канала 3
-         holding_register[5] = (unsigned int)((pkt8_ch_3 & 0xffff0000) >> 16);   // MSB канала 3
+         holding_register[4] = (unsigned int) (pkt8_ch[2] & 0x0000ffff);          // LSB канала 3
+         holding_register[5] = (unsigned int)((pkt8_ch[2] & 0xffff0000) >> 16);   // MSB канала 3
          
-         holding_register[6] = (unsigned int) (pkt8_ch_4 & 0x0000ffff);          // LSB канала 4
-         holding_register[7] = (unsigned int)((pkt8_ch_4 & 0xffff0000) >> 16);   // LSB канала 4
+         holding_register[6] = (unsigned int) (pkt8_ch[3] & 0x0000ffff);          // LSB канала 4
+         holding_register[7] = (unsigned int)((pkt8_ch[3] & 0xffff0000) >> 16);   // LSB канала 4
          
-         holding_register[8] = (unsigned int) (pkt8_ch_5 & 0x0000ffff);          // LSB канала 5
-         holding_register[9] = (unsigned int)((pkt8_ch_5 & 0xffff0000) >> 16);   // MSB канала 5
+         holding_register[8] = (unsigned int) (pkt8_ch[4] & 0x0000ffff);          // LSB канала 5
+         holding_register[9] = (unsigned int)((pkt8_ch[4] & 0xffff0000) >> 16);   // MSB канала 5
          
-         holding_register[10] = (unsigned int) (pkt8_ch_6 & 0x0000ffff);         // LSB канала 6
-         holding_register[11] = (unsigned int)((pkt8_ch_6 & 0xffff0000) >> 16);  // LSB канала 6
+         holding_register[10] = (unsigned int) (pkt8_ch[5] & 0x0000ffff);         // LSB канала 6
+         holding_register[11] = (unsigned int)((pkt8_ch[5] & 0xffff0000) >> 16);  // LSB канала 6
          
-         holding_register[12] = (unsigned int) (pkt8_ch_7 & 0x0000ffff);         // LSB канала 7
-         holding_register[13] = (unsigned int)((pkt8_ch_7 & 0xffff0000) >> 16);  // MSB канала 7
+         holding_register[12] = (unsigned int) (pkt8_ch[6] & 0x0000ffff);         // LSB канала 7
+         holding_register[13] = (unsigned int)((pkt8_ch[6] & 0xffff0000) >> 16);  // MSB канала 7
          
-         holding_register[14] = (unsigned int) (pkt8_ch_8 & 0x0000ffff);         // LSB канала 8
-         holding_register[15] = (unsigned int)((pkt8_ch_8 & 0xffff0000) >> 16);  // LSB канала 8
+         holding_register[14] = (unsigned int) (pkt8_ch[7] & 0x0000ffff);         // LSB канала 8
+         holding_register[15] = (unsigned int)((pkt8_ch[7] & 0xffff0000) >> 16);  // LSB канала 8
          // ===================================================================
+//         // обновление отсчетов
+//         holding_register[24] = (unsigned int) (ADC_counts[0][0] & 0x0000ffff);         // LSB канала 1
+//         holding_register[25] = (unsigned int)((ADC_counts[0][0] & 0xffff0000) >> 16);  // MSB канала 1
+//         
+//         holding_register[26] = (unsigned int) (ADC_counts[0][1] & 0x0000ffff);         // LSB канала 2
+//         holding_register[27] = (unsigned int)((ADC_counts[0][1] & 0xffff0000) >> 16);  // LSB канала 2
+//         
+//         holding_register[28] = (unsigned int) (ADC_counts[0][2] & 0x0000ffff);         // LSB канала 3
+//         holding_register[29] = (unsigned int)((ADC_counts[0][2] & 0xffff0000) >> 16);  // MSB канала 3
+//         
+//         holding_register[30] = (unsigned int) (ADC_counts[0][3] & 0x0000ffff);         // LSB канала 4
+//         holding_register[31] = (unsigned int)((ADC_counts[0][3] & 0xffff0000) >> 16);  // LSB канала 4
+//         
+//         holding_register[32] = (unsigned int) (ADC_counts[1][0] & 0x0000ffff);         // LSB канала 5
+//         holding_register[33] = (unsigned int)((ADC_counts[1][0] & 0xffff0000) >> 16);  // MSB канала 5
+//         
+//         holding_register[34] = (unsigned int) (ADC_counts[1][1] & 0x0000ffff);         // LSB канала 6
+//         holding_register[35] = (unsigned int)((ADC_counts[1][1] & 0xffff0000) >> 16);  // LSB канала 6
+//         
+//         holding_register[36] = (unsigned int) (ADC_counts[1][2] & 0x0000ffff);         // LSB канала 7
+//         holding_register[37] = (unsigned int)((ADC_counts[1][2] & 0xffff0000) >> 16);  // MSB канала 7
+//         
+//         holding_register[38] = (unsigned int) (ADC_counts[1][3] & 0x0000ffff);         // LSB канала 8
+//         holding_register[39] = (unsigned int)((ADC_counts[1][3] & 0xffff0000) >> 16);  // LSB канала 8
          // сброс статус флага новых измерений
          meas_status = 0;
       }
-     
+      
+      holding_register[17] = channel;
       holding_register[18] = PGA_val;
       holding_register[19] = ADC_sps_var;
       holding_register[20] = Ma_buf_size;
+      holding_register[21] = Ma_buf_index;
    }         
    //-------------------------------------------------------------------------//
   /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
@@ -99,11 +126,13 @@
        input_register[0] = (unsigned int)dev_id;       
        input_register[1] = (unsigned int)device_family;
        input_register[2] = (unsigned int)firmware_ver;
+       input_register[3] = (unsigned int)modbus_ver;
    } 
    //-------------------------------------------------------------------------//
    /// TODO - получение новых значений от мастера
    if(cmd_type == MODBUS_WSR_CMD) 
    {  
+       
        switch(modbus_reg_addr) // анализ регистра записи 
        {
            case 18: // reg 18 - range
@@ -118,10 +147,7 @@
            //----
            case 20: // reg 20 - averfge buf size
              if(holding_register[20] >= 1 && holding_register[20] <= 128) 
-             {
-                clr_bufs(); // очистка буфера скользящ. среднего
                 Ma_buf_size = holding_register[20];
-             }
            break;
            //----    
            case 51: // reg 51 - смена ID
@@ -134,6 +160,8 @@
                 holding_register[51] = 0;
              }
            break;
+           
+           default: break;
        }
          ADC_init(input_buf_state); // Инициализация обоих АЦП
          eeprom_wr_regs();   

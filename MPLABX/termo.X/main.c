@@ -38,8 +38,19 @@
 //#define uV 100000 // по умолчанию
 #define mV 1000
 
-// коды каналов мультиплексора
-unsigned char Mx_ch_code[9] = {0, 0x76, 0x54, 0x32, 0x10};
+#define SET_CH      10
+#define GET_CH_DATA 20
+
+//enum ADC_MUX_ch {
+//    
+//    ch1 = 0,
+//    ch2 = 0x76,
+//    ch3 = 0x54,
+//    ch4 = 0x10
+//};
+
+// коды каналов мультиплексора со смещением на один для удобства
+unsigned char Mx_ch_code[5] = {0, 0x76, 0x54, 0x32, 0x10};
 
 unsigned char PGA;
 unsigned char PGA_val = 4; // PGA = 16, +- 312,5 мВ
@@ -65,10 +76,19 @@ unsigned char Ma_buf_cnt = 0;   // счетчик эл. буфера
 unsigned char state;
 unsigned int tmp=0;
 
+
+
 // результаты измерений
 long pkt8_ch_1 = 0, pkt8_ch_2 = 0, pkt8_ch_3 = 0, pkt8_ch_4 = 0, 
      pkt8_ch_5 = 0, pkt8_ch_6 = 0, pkt8_ch_7 = 0, pkt8_ch_8 = 0;
+
+long pkt8_ch[8] = {0,0,0,0,0,0,0,0};
+
+unsigned char channel = 1;
+
 unsigned int meas_status; // статус бит обновления измерений
+
+unsigned char ADC_state = 0; // начальное состояние машины чтения
 
 #include "dialtek_modbus.h" 
 /*=========================================================================== */    
@@ -130,12 +150,12 @@ void UART1_init()
     U1MODEbits.BRGH = 0;    // 1 = BRG generates 4 clocks per bit period (4x baud clock, High-Speed mode)
     U1MODEbits.STSEL = 0;   // 0 = 1-Stop bit
 
-    U1STAbits.UTXISEL0 = 0; // Interrupt when a unsigned character is transferred to the Transmit Shift Register (this implies there isat least one unsigned character open in the transmit buffer
-    U1STAbits.UTXISEL1 = 0;
+//    U1STAbits.UTXISEL0 = 0; // Interrupt when a unsigned character is transferred to the Transmit Shift Register (this implies there isat least one unsigned character open in the transmit buffer
+//    U1STAbits.UTXISEL1 = 0;
     U1STAbits.UTXINV = 0;
     U1STAbits.UTXEN = 1;    // 1 = Transmit enabled, UxTX pin controlled by UARTx
     U1STAbits.URXISEL = 0;  // 0x = Interrupt is set when any unsigned character is received and transferred from the UxRSR to the receive buffer. Receive buffer has one or more unsigned characters.
-                         // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
+                            // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
  
     IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt  
  }
@@ -153,9 +173,9 @@ void U1_send_byte(unsigned char Ch)
  
 void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX MODBUS
     {
-     // rx buffer has data, at least one more character can be read
+      // rx buffer has data, at least one more character can be read
       while(U1STAbits.URXDA == 0){ }
-    
+      
       rx_buf[rx_buf_ptr++] = U1RXREG;
 
       IFS0bits.U1RXIF = 0;    // Clear  UART1_Tx interrupt  
@@ -167,9 +187,7 @@ void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX MODBUS
             timer_state = 1;
             T9CONbits.TON = 1;
       }
-      else TMR9 = 0x0000;         // reset if timer is on, 115200
-     
-              
+      else TMR9 = 0x0000;         // reset if timer is on, 115200       
      }
 
 void Timer9_init(unsigned long baudrate)
@@ -282,10 +300,10 @@ unsigned char SPI2_read_byte(void)
       }
   }
   
-  for (unsigned char a = 0; a < 2; a++)
+  for (unsigned char a = 0; a < 8; a++)
   {
   // заполнение буферов отсчетов нулями
-   for (unsigned char b = 0; b < 8; b++) 
+   for (unsigned char b = 0; b < 128; b++) 
       {
          ADC_counts[a][b] = 0;
       }
@@ -503,31 +521,12 @@ unsigned char SPI2_read_byte(void)
 }
 //---------------------- уст. каналов и чтение АЦП --------------------------//
 
- void ADC_sync(unsigned char command) { /// синхронизация АЦП
+ void ADC_sync(unsigned char state) { /// синхронизация АЦП
   
-   //command 0 - не выбран ни один АЦП
-   //command 1 - выбран АЦП 1
-   //command 2 - выбран АЦП 2
-   
-   switch(command)
-   {
-         case 0:     
-            ADC1_SYNC = 1; 
-            ADC2_SYNC = 1;
-         break;
-         
-         case 1: 
-            ADC1_SYNC = 0; 
-            __delay_us(20);
-            ADC1_SYNC = 1;
-         break;
-         
-         case 2: 
-            ADC2_SYNC = 0; 
-            __delay_us(20);
-            ADC2_SYNC = 1; 
-         break;
-   }
+     
+       ADC1_SYNC = state; 
+       ADC2_SYNC = state;
+
   }
 
  void ADC_select(unsigned char command) { /// выбор АЦП
@@ -544,22 +543,19 @@ unsigned char SPI2_read_byte(void)
    }
   }
 
- void ADC_setCh(unsigned char Ch_Number, unsigned char ADC_number){
+ void ADCx_setCh(unsigned char ADCx, unsigned char CHx)
+ {
 
  // уст. каналоа АЦП
  // 1 канал пользователя - 4 канал АЦП по факту (13(+) и 12(-) ножки) и тд.
  
-  ADC_select(ADC_number); // выбор АЦП
-  __delay_us(2);
+  ADC_select(ADCx); // выбор АЦП
  
   SPI2_write_byte(0x50+MUX);  // уст. канал АЦП   
-  __delay_us(10);
   SPI2_write_byte(0);         
-  __delay_us(10);
-  SPI2_write_byte(Mx_ch_code[Ch_Number]);
+  SPI2_write_byte(Mx_ch_code[CHx]);
   
   ADC_select(0);
-  __delay_us(20);  
 }
 
  long ADC_read(unsigned char ADC_number)
@@ -582,119 +578,72 @@ unsigned char SPI2_read_byte(void)
   
   }
 
- long ADC_read_aver(unsigned char ADC_number,unsigned char ADC_ch)
+ long ADCx_read_aver(unsigned char ADCx, unsigned char CHx)
 {
-  float Vin;        // измеренное напряжение 
-  long _Ch_buf_sum; // переменн. для хранения текущ. усредн. значения
+  float Vin = 0;          // измеренное напряжение 
+  long curr_ADCx_val = 0; // переменн. для хранения текущ. усредн. значения
+  
+  curr_ADCx_val = ADC_read(ADCx);               // сохр. новое изм.
 
- if(Ma_buf_index > Ma_buf_size) Ma_buf_index = 0;     // сброс индекса буфера
- 
- Ch_buf[ADC_ch][Ma_buf_index] = ADC_read(ADC_number); // считываем текщее изм. в буфер
- ADC_counts[ADC_number-1][ADC_ch] = Ch_buf[ADC_ch][Ma_buf_index];    // сохр. отсчетов канала АЦП. приведение N АЦП к индексу
- 
- if(Ma_buf_cnt < Ma_buf_size)
- {
-   
-   Ch_buf_sum = Ch_buf[ADC_ch][Ma_buf_index];  
-   Ma_buf_cnt++;                               // инкремент счетчика эл. массива// инкремент счетчика эл. массива
- }
- else
- {
-    for(unsigned char i = 0; i < Ma_buf_size; i++)                  // суммируем весь буфер
-    {
-     Ch_buf_sum += Ch_buf[ADC_ch][i];   // меняем элемент буфера на новый
-    } 
-      
-   Ch_buf_sum = Ch_buf_sum/Ma_buf_size; // вычисляем среднее когда буфер полон
- }
+  //Ch_buf[CHx][Ma_buf_index+1] = Ch_buf[CHx][Ma_buf_index];  // сдвигаем буфер
+  //Ch_buf[CHx][Ma_buf_index] = ADC_read(ADCx);               // сохр. новое изм.
+  
+  ADC_counts[ADCx-1][CHx] = curr_ADCx_val; // сохр. отсчетов канала АЦП. приведение N АЦП к индексу
 
- _Ch_buf_sum = Ch_buf_sum; // пересохраняем для возврата
- Ch_buf_sum = 0;           // сброс глоб переменной
- 
-  Vin = (float)((_Ch_buf_sum*5.0)/(8388608.0*PGA)); // расчет U
-  return (long)(Vin*uV); // возврат масштабированного U
- //return _Ch_buf_sum;
+//  // если буфер не заполнен - выдаем данные без усреднения
+////  if(Ch_buf[CHx][Ma_buf_size-1] == 0)
+////  {
+////      curr_ADCx_val = Ch_buf[CHx][Ma_buf_index];
+////  }
+//  //else // буфер полон, выдаем усредненное значение
+//  //{  
+//     for(unsigned char i = 0; i < Ma_buf_size; i++)       // суммируем весь буфер
+//         curr_ADCx_val += Ch_buf[CHx][i];                
+//  
+//     curr_ADCx_val = curr_ADCx_val/Ma_buf_size;           // вычисляем среднее когда буфер полон
+// // }
+  
+  Vin = (float)((curr_ADCx_val*5.0)/(8388608.0*PGA)); // расчет U
+  return (long) (Vin*uV); // возврат масштабированного U
 }
 
- void ADC_par_rd_ch(unsigned char channel)
+ void ADC_par_rd_ch()
 {
 // || чтение двух АЦП
- switch (channel){
-//---------------- каналы 1 и 5 --------------------------------------//     
- case 1: 
- 
- ADC_setCh(1,1);
- ADC_setCh(1,2);
-
- ADC_sync(1);  // синхр. измерений АЦП 1
- __delay_us(200);  
- ADC_sync(2);  // синхр. измерений АЦП 2
- 
- while(ADC1_DRDY) { } // ждем готовности АЦП 1
- pkt8_ch_1 = ADC_read_aver(1,0);
-
- while(ADC2_DRDY) { } // ждем готовности АЦП 2
- pkt8_ch_5 = ADC_read_aver(2,1);
-
- break;
-
-//---------------- каналы 2 и 6 --------------------------------------//  
- case 2: 
- 
- ADC_setCh(2,1);
- ADC_setCh(2,2);
- 
- ADC_sync(1);    // синхр. измерений АЦП 1
- __delay_us(200);  
- ADC_sync(2);    // синхр. измерений АЦП 2
- 
- while(ADC1_DRDY) { } // ждем готовности АЦП 1
- pkt8_ch_2 = ADC_read_aver(1,2);
-
- while(ADC2_DRDY) { } // ждем готовности АЦП 2
- pkt8_ch_6 = ADC_read_aver(2,3);
- 
- break;
- 
-//---------------- каналы 3 и 7 --------------------------------------//   
- case 3: 
- 
- ADC_setCh(3,1);
- ADC_setCh(3,2);
- 
- ADC_sync(1);   // синхр. измерений АЦП 1
- __delay_us(200);  
- ADC_sync(2);   // синхр. измерений АЦП 2
- 
- while(ADC1_DRDY) { }  // ждем готовности АЦП 1
- pkt8_ch_3 = ADC_read_aver(1,4);
- 
- while(ADC2_DRDY) { } // ждем готовности АЦП 2
- pkt8_ch_7 = ADC_read_aver(2,5);
- 
- break;
- 
-//---------------- каналы 4 и 8 --------------------------------------//   
- case 4: 
- 
- ADC_setCh(4,1);
- ADC_setCh(4,2);
- 
- ADC_sync(1);    // синхр. измерений АЦП 1
- __delay_us(200);  
- ADC_sync(2);    // синхр. измерений АЦП 2
- 
- while(ADC1_DRDY) { }  // ждем готовности АЦП 1
- pkt8_ch_4 = ADC_read_aver(1,6);
-
- while(ADC2_DRDY) { } // ждем готовности АЦП 2
- pkt8_ch_8 = ADC_read_aver(2,7);
-
- Ma_buf_index++; // инкремент индекса
- 
- break;
-
-   } // main case
+    switch (ADC_state)
+    {
+        case SET_CH:      // уст. канала и строб начала изм.
+            ADCx_setCh(1,channel);
+            ADCx_setCh(2,channel);
+            ADC_sync(0);  // синхр. измерений АЦП
+            __delay_us(20);
+            ADC_sync(1);
+            
+            ADC_state = GET_CH_DATA;    // переход в сост. чтения 
+        break;
+        //----
+        case GET_CH_DATA:
+            if(ADC1_DRDY == 0 && ADC2_DRDY == 0)  // ждем готовности АЦП
+            {   // считываем по готовности
+                pkt8_ch[channel-1] = ADCx_read_aver(1,channel-1); // смещяем индекс назад
+                pkt8_ch[channel+3] = ADCx_read_aver(2,channel+3); // смещаем индекс вперед
+                
+                //Ma_buf_index++;       // инкремент индекса   
+                //if(Ma_buf_index > Ma_buf_size - 1) Ma_buf_index = 0;     // сброс индекса буфера
+                
+                channel++;            // инеремент канала изм. 
+                if(channel > 4) 
+                {
+                    channel = 1;
+                    meas_status = 1;  // уст. флага обновления измерений
+                }        
+                meas_status = 1;      // уст. флага обновления измерений
+                ADC_state = SET_CH;   // уст. состояния смены канала АЦП и форм. строба синхр. изм.
+            }
+        break;
+        //----
+        default:  ADC_state = SET_CH; // уст. состояния смены канала АЦП и форм. строба синхр. изм.
+    } 
 }
 /*=========================================================================== */
 // 25LC128 SPI EEPROM
@@ -781,7 +730,7 @@ void _ISR_PSV _T9Interrupt(void)        //interupt Timer 9
     } 
 
 int main()
-{     
+{    
     OSC_init();
     GPIO_init ();
     TX_DIS;       // release RS485 line !!!
@@ -792,7 +741,6 @@ int main()
 
     modbus_init();
     
-    clr_bufs();
     ADC1_RESET = 1; ADC2_RESET = 1;
     ADC1_CS = 1;    ADC2_CS = 1;
     ADC1_SYNC = 1;  ADC2_SYNC = 1; 
@@ -800,24 +748,29 @@ int main()
     EEPROM_CS = 1;
     __delay_ms(1);
     
+    
     holding_register[51] = 0; // сброс регистра уст. ID
     eeprom_rd_regs();         // восстановление значений регистров из SPI EEPROM
     
     // восстановление ID устройства из памяти   
     dev_id = (unsigned char)holding_register[50];
-    if(dev_id == 0) dev_id = 100;
-      
+    if(dev_id == 0 || dev_id > 254) dev_id = 100;
+    
+    // буфер усреднения
+    Ma_buf_size = (unsigned char)holding_register[20];
+    if(holding_register[20] < 1 || holding_register[20] > 128) 
+       Ma_buf_size = 5;
+    clr_bufs(); // очистка буфера скользящ. среднего
+    
+    ADC_sync(1);  
     ADC_init(input_buf_state);         // Инициализация обоих АЦП 
     STATUS_LED = 1;
-    
+    ADC_state = SET_CH;
+            
  while(1)
  {
-    ADC_par_rd_ch(1); // измрение к 1 и 5
-    ADC_par_rd_ch(2); // измрение к 2 и 6
-    ADC_par_rd_ch(3); // измрение к 3 и 7
-    ADC_par_rd_ch(4); // измрение к 4 и 8 
-  
-    meas_status = 1;  // уст. флага обновления измерений
+    ADC_par_rd_ch(); // измерения
     modbus_poll();    
+
  } 
 }

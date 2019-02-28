@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.1                */
+/*                D I A L T E K    M O D B U S   R T U   v 3.1                */
 
 /* ИНСТРУМЕНТЫ ПОЛЬЗОВАТЕЛЯ */
 
@@ -42,11 +42,12 @@
 #define TX_DIS LATBbits.LATB14=0
 
 /* HARDWARE INFO */
-  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 21;                 // версия прошивки текущего устройства
+  volatile unsigned char dev_id = DEFAULT_DEV_ID;     // MODBUS ID устройства <<<<<<<<<<======== ID
+  unsigned char firmware_ver  = 27;                 // версия прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
-
+  unsigned char modbus_ver    = 31;                 // версия MODBUS
+  
 /* ПРОТОТИПЫ */
 
   // PSP405
@@ -60,10 +61,11 @@ unsigned int PSP405_get_current_lim();
 void PSP405_set_output(unsigned int state);
 void PSP405_set_power_lim(unsigned int power_lim);
 
-//void eeprom_wr_page(unsigned int address);
+void TimerX32_setMs(unsigned long ms);
+void TimerX32_state(unsigned char state);
+
 void eeprom_wr_regs(void);
-//unsigned int eeprom_rd_regs(unsigned int address);
-  
+
 /* USER FUNCS */ 
   
   void modbus_refresh(unsigned char cmd_type) // работа с регистрами
@@ -78,7 +80,8 @@ void eeprom_wr_regs(void);
        holding_register[2] = rd_current;
        holding_register[3] = rd_current_lim;      
        holding_register[4] = rd_status; // the relay status 0:OFF 1:ON
-       holding_register[5] = rd_power_lim;     
+       holding_register[5] = rd_power_lim;    
+       
    }         
    //-------------------------------------------------------------------------//
    /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
@@ -87,6 +90,7 @@ void eeprom_wr_regs(void);
        input_register[0] = (unsigned int)dev_id;       
        input_register[1] = (unsigned int)device_family;
        input_register[2] = (unsigned int)firmware_ver;
+       input_register[3] = (unsigned int)modbus_ver; // версия MODBUS
    }         
    //-------------------------------------------------------------------------//
   
@@ -95,55 +99,69 @@ void eeprom_wr_regs(void);
   
    if(cmd_type == MODBUS_WSR_CMD) 
    {  // анализ регистра записи 
-      switch(addr_buf_1) {  
-          case 4: // reg 4 - set output
-            RS232_TX_LED = 1;
-           PSP405_set_output(holding_register[4]);
-        break;
+     
+      switch(modbus_reg_addr) {  
         //---------
         case 7: // reg 7 - set voltage
            if(holding_register[7] > MAX_VOLTAGE) holding_register[7] = MAX_VOLTAGE;
            RS232_TX_LED = 1;
            PSP405_set_voltage(holding_register[7]);
+           
+           curr_cmd = SRC_CMD;
+           TimerX32_setMs(500);  
+           TimerX32_state(1);
+         
         break;
         //---------
         case 8: // reg 8 - set voltage limit
            if(holding_register[8] > MAX_VOLTAGE/100) holding_register[8] = MAX_VOLTAGE/100;
            RS232_TX_LED = 1;
            PSP405_set_voltage_lim(holding_register[8]);
+           
+           curr_cmd = SRC_CMD;
+           TimerX32_setMs(500);  
+           TimerX32_state(1);
         break;
         //---------
         case 9: // reg 9 - set current
            if(holding_register[9] > MAX_CURRENT) holding_register[9] = MAX_CURRENT;
            RS232_TX_LED = 1;
            PSP405_set_current(holding_register[9]);
+           
+           curr_cmd = SRC_CMD;
+           TimerX32_setMs(500);  
+           TimerX32_state(1);
         break;
         //---------
         case 10: // reg 10 - K1 relay ctrl
            RS232_TX_LED = 1;
            PSP405_set_output(0);
-           for(unsigned int i = 0; i < 2000; i++) 
-             __delay_ms(1);
-           if     (holding_register[10] == 1) 
-           {
-               K1_ON;
-               POL_RELAY_LED = 1;
-           }
-           else if(holding_register[10] == 0) 
-           {
-               K1_OFF;
-               POL_RELAY_LED = 0;
-           }
-           for(unsigned int i = 0; i < 100; i++) 
-             __delay_ms(1);
-           PSP405_set_output(1);
+          
+           curr_cmd = POL_CHANGE_1;
+           TimerX32_setMs(2000);  
+           TimerX32_state(1);
+           
         break;
-        //---------
         //---------
         case 11: // reg 1 - power limit
            if(holding_register[11] > MAX_POWER) holding_register[11] = MAX_POWER;
            RS232_TX_LED = 1;
            PSP405_set_power_lim(holding_register[11]);
+           
+           curr_cmd = SRC_CMD;
+           TimerX32_setMs(500);  
+           TimerX32_state(1);
+           
+        break;
+        //---------
+        case 12: // reg 4 - set output
+            RS232_TX_LED = 1;
+            PSP405_set_output(holding_register[12]);
+            
+            
+            curr_cmd = SRC_CMD;
+            TimerX32_setMs(500);  
+            TimerX32_state(1);        
         break;
        //---------
         case 19: // reg 19 - ID
@@ -156,17 +174,10 @@ void eeprom_wr_regs(void);
             }
             
        break;
-       default: break;  
       }
-      
-       for(unsigned int i = 0; i < 400; i++) 
-         __delay_ms(1); 
-         eeprom_wr_regs(); // save registers state       
          RS232_TX_LED = 0;
-   }
-   
-      
-   
+         eeprom_wr_regs(); // save registers state 
+   } 
   }
 
 /*############################################################################*/  

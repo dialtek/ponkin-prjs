@@ -4,3 +4,10 @@ E:\work\Projects\ponkin\С#\education\MovAverTest\MovAverTest\MovAverTest\bin\De
 E:\work\Projects\ponkin\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.csprojResolveAssemblyReference.cache
 E:\work\Projects\ponkin\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.exe
 E:\work\Projects\ponkin\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.pdb
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\bin\Debug\MovAverTest.exe.config
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\bin\Debug\MovAverTest.exe
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\bin\Debug\MovAverTest.pdb
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.csprojResolveAssemblyReference.cache
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.csproj.CoreCompileInputs.cache
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.exe
+F:\Mega\ponkin-prjs\С#\education\MovAverTest\MovAverTest\MovAverTest\obj\Debug\MovAverTest.pdb

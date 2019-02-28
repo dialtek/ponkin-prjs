@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 3.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 3.1                */
 
 /* ЗАГОЛОВКИ, ПЕРЕМЕННЫЕ И СЛУЖЕБНЫЕ ФУНКЦИИ */
 
@@ -16,14 +16,15 @@
 
 volatile unsigned int rx_buf_ptr = 0; // указатель записи в массив UART
 // буфер для сохр. принятных команд
-unsigned char rx_buf[512];
+volatile unsigned char rx_buf[1024];
+//volatile unsigned char rx_buf[512];
 
 unsigned char modbus_cmd = 0; // 0x03 | 0x06 | 0x04
 
-unsigned char rx_byte;        // байт принятый с ПК
+volatile unsigned char rx_byte;        // байт принятый с ПК
  
-unsigned char answer = 0;     // тип ответа на команду с ПК
-unsigned int modbus_reg_addr = 0;       // адрес регистра для R/W по запросу от modbus мастера
+volatile unsigned char answer = 0;     // тип ответа на команду с ПК
+volatile unsigned int modbus_reg_addr;       // адрес регистра для R/W по запросу от modbus мастера
 unsigned int addr_buf_1 = 0, addr_buf_2 = 0;
 unsigned int regs2read = 0;             // число регистров для чтения по команде modbus rhr
 unsigned int CRC16 = 0;			// полученная контрольная сумма
@@ -33,7 +34,7 @@ unsigned int reg_wr_data = 0;
 unsigned int holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
 unsigned int input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
 
-unsigned char rx_flag = 0, timer_state = 0;
+volatile unsigned char rx_flag = 0, timer_state = 0;
 
 void modbus_int_mode (unsigned char mode);     // упр. прерываниями MODBUS UART     
 void modbus_refresh  (unsigned char cmd_type); // работа с пользовательскими пермеменными
@@ -47,7 +48,7 @@ void Timer9_init(unsigned long);
 /* сброс modbus приемника */
   void modbus_reset()
   { 
-   for(int i = 0; i < 512; i++) 
+   for(int i = 0; i < 1024; i++) 
         rx_buf[i] = 0;
    
    rx_buf_ptr = 0;
@@ -83,7 +84,7 @@ void Timer9_init(unsigned long);
 	}
       }
 
-      if ( reg_addr == (1000 + reg_addr) ) rd_status = 1;
+      //if (reg_addr == (1000 + reg_addr) ) rd_status = 1;
       
       return rd_status;
   }
@@ -243,7 +244,7 @@ void Timer9_init(unsigned long);
   /// заполнение массива CRC для рассчета и сравнения с прочитанным  
    unsigned int CRC16_calc = 0;  // рассчетная контрольная сумма
    
-   modbus_reg_addr = (rx_buf[2] << 8) | rx_buf[3]; // get starting reg addr
+   modbus_reg_addr = (unsigned int)((rx_buf[2] << 8) | rx_buf[3]); // get starting reg addr
    
    crc_buf[0] = (modbus_id == dev_id) ? dev_id : com_dev_id;
    crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8);
@@ -293,13 +294,14 @@ void Timer9_init(unsigned long);
 	  
   if(rx_flag)			// state 1, rx timer overflows
   {
+
    if(rx_buf_ptr == 8)		// state 2, rx buf has 8 bytes ?
    {   
+		   
     modbus_id = rx_buf[0];      // get device ID from master msg
 		   
     if((modbus_id == dev_id) || (modbus_id == com_dev_id))     // state 3, ID check 
     {// ID OK
-
 	switch(rx_buf[1])	// state 4, rx buf parsing
 	{ 
 	  case MODBUS_WSR_CMD:
@@ -311,10 +313,10 @@ void Timer9_init(unsigned long);
 	  break;
 	  //----
 	  case MODBUS_RHR_CMD:
-	   modbus_rx_CRC_check(MODBUS_RHR_CMD); // read holding reg cmd received
+	   modbus_rx_CRC_check(MODBUS_RHR_CMD);  // read holding reg cmd received
 	  break;
-	  //----
-	  default: modbus_reset();		// unexpected cmd, reset
+	  //---- 
+	  default: modbus_reset();		 // unexpected cmd, reset
 	}     
     } // if(my ID or common ID) 
     else modbus_reset();
@@ -333,11 +335,19 @@ void Timer9_init(unsigned long);
     if(answer == MODBUS_RHR_CMD) 
     {
 	 STATUS_LED = 0;
+	 
+	 //IEC0bits.U1RXIE = 0; // Enable UART1 RX interrupt
+	 //__asm__ volatile("disi #0x3FFF"); /* disable interrupts */
+	 modbus_rhr_answer();
+	 //__asm__ volatile("disi #0x0000"); /* enable interrupts */
+	 //IFS0bits.U1RXIF = 0;   // Reset UART1 RX interrupt flag
+
+	 //IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt  
+		 
          modbus_refresh(MODBUS_RHR_CMD);
-         modbus_rhr_answer();  
 	 answer = 0;     // сброс флага завершения ответа на запрос
 	 modbus_reset(); 
-	 __delay_ms(50);
+	 __delay_ms(20);
 	 STATUS_LED = 1;
     }
 //--------------------------------------------------------------------
@@ -345,12 +355,12 @@ void Timer9_init(unsigned long);
     if(answer == MODBUS_WSR_CMD) 
     {
 	 STATUS_LED = 0;
-         holding_register[modbus_reg_addr] = reg_wr_data; 
+         holding_register[modbus_reg_addr] = reg_wr_data;
+	 modbus_wsr_answer(); 
          modbus_refresh(MODBUS_WSR_CMD);
-         modbus_wsr_answer(); 
 	 answer = 0;     // сброс флага завершения ответа на запрос
 	 modbus_reset();
-	 __delay_ms(50);
+	 __delay_ms(20);
 	 STATUS_LED = 1;
     }  
 //--------------------------------------------------------------------
@@ -358,11 +368,11 @@ void Timer9_init(unsigned long);
     if(answer == MODBUS_RIR_CMD) 
     {
 	 STATUS_LED = 0;
+	 modbus_rir_answer();  
          modbus_refresh(MODBUS_RIR_CMD);
-         modbus_rir_answer();  
 	 answer = 0;     // сброс флага завершения ответа на запрос
 	 modbus_reset();
-	 __delay_ms(50);
+	 __delay_ms(20);
 	 STATUS_LED = 1;
     }
 //--------------------------------------------------------------------    

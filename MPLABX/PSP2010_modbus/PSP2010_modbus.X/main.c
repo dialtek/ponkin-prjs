@@ -36,6 +36,12 @@
 
 #define RES_BUT PORTBbits.RB8             // modbus dev id reset btn
 
+#define POL_CHANGE_1     1    // polarity change cmd code 1 step
+#define POL_CHANGE_2     2    // polarity change cmd code 2 step
+#define SET_OUTPUT       3    // output state change cmd code
+#define NO_CMD_RUNNING   4    // no cmd running state
+#define SRC_CMD          5    // all src cmds
+
 unsigned char uart2_rx_buf[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   
 unsigned char rx_msg[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
 unsigned char uart2_rx_ptr = 0;
@@ -43,11 +49,23 @@ unsigned char data_ready = 0;
 unsigned int rd_status, rd_voltage = 0, rd_current = 0, 
              rd_voltage_lim = 0, rd_current_lim = 0, rd_power_lim = 0;
 
-unsigned char id_change = 0; // modbus ID change 
+unsigned char id_change = 0;  // modbus ID change 
+unsigned char curr_cmd  = 0;  // user cmd ID
+
 // funcs prototypes
 void uart2_text_send(char *s);
 
 #include "dialtek_modbus.h"
+
+void enableInterrupts(void)
+{
+    /* Set CPU IPL to 0, enable level 1-7 interrupts */
+    /* No restoring of previous CPU IPL state performed here */
+    SRbits.IPL = 0;
+    /* Interrupt nesting enabled here */
+    INTCON1bits.NSTDIS =0;
+
+}
 
 void OSC_init()
 {
@@ -68,7 +86,7 @@ void OSC_init()
 void UART1_init()
 {   /// modbus 
     // RX interrupt UART1 settings 
-    //IPC2bits.U1RXIP = 4; // Set UART1 RX interrupt priority to 1 
+    IPC2bits.U1RXIP = 7;   // Set UART1 RX interrupt priority to 7
     IFS0bits.U1RXIF = 0;   // Reset UART1 RX interrupt flag
     
     U1BRG = U1BRGVAL;      // Baud Rate setting for 115200 uart
@@ -93,6 +111,7 @@ void UART1_init()
 void Timer9_init(unsigned long baudrate)
 {
        T9CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
+       IPC13bits.T9IP = 6;          // 5th prior
        IFS3bits.T9IF = 0;           // Clear Timer interrupt flag
        TMR9 = 0x0000;               // reset if timer is on, 115200
        T9CONbits.TCS = 0;           // Timer Clock Source Select bit; 0 - Internal clock (FOSC/2)
@@ -113,10 +132,57 @@ void Timer9_init(unsigned long baudrate)
        IEC3bits.T9IE = 1;           // Enable T9 interrupt 
     }
 
+// polarity change timer
+void TimerX32_init(void)
+{
+      // timer tick = 1.6 us
+       IPC2bits.T3IP = 4;           // Set UART1 RX interrupt priority to 2
+       T2CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
+       T3CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
+       
+       IFS0bits.T2IF = 0;           // Clear Timer interrupt flag
+       IFS0bits.T3IF = 0;           // Clear Timer interrupt flag
+       IEC0bits.T3IE = 0;           // DIS T3 interrupt
+       IEC0bits.T2IE = 0;           // DIS T2 interrupt
+       
+       TMR2 = 0x0000;               // reset timer cntr
+       TMR3 = 0x0000;               // reset timer cntr
+       T2CONbits.TCS = 0;           // Timer Clock Source Select bit; 0 - Internal clock (FOSC/2)
+       T2CONbits.TGATE = 0;         // Disable Gated Timer mode
+       T2CONbits.TCKPS = 2;         // Prescaler = (00=1, 01=8, 10=64, 11=256) 
+       T3CONbits.TCKPS = 2;         // Prescaler = (00=1, 01=8, 10=64, 11=256) 
+       T2CONbits.T32 = 1;
+       
+       // 1 ms
+       PR3 = 0;  
+       PR2 = 625;
+    }
+
+void TimerX32_setMs(unsigned long ms)
+{
+    /// 625 000 ticks = 1 sec, 625 ticks = 1 ms
+    
+    unsigned long tick = ms * 625;
+    
+    TMR2 = 0;
+    TMR3 = 0;
+    
+    PR2 = (unsigned int) (tick & 0x0000ffff);     // set lsb
+    PR3 = (unsigned int) (tick >> 16);            // set msb
+}
+
+void TimerX32_state(unsigned char state)
+{
+    T2CONbits.TON = state;           // Timer on/off bit; 0 - Disable Timer
+    T3CONbits.TON = state;           // Timer on/off bit; 0 - Disable Timer
+    IEC0bits.T3IE = state;           // Enable T3 interrupt
+    
+}
+
 void UART2_init()
 {   /// RS-232 
     // RX interrupt UART2 settings 
-    //IPC7bits.U2RXIP = 3;   // Set UART2 RX interrupt priority to 4
+    IPC7bits.U2RXIP = 3;   // Set UART2 RX interrupt priority to 3
     IFS1bits.U2RXIF = 0;   // Reset UART2 RX interrupt flag
    
     
@@ -139,7 +205,7 @@ void UART2_init()
 }
   
 void U1_send_byte (unsigned char Ch)
-{ // ??? ??????? ?????? ????????? ? ?????? ? ????. ??????
+{ //  U1 send byte
     
         U1TXREG = Ch;
         //  should wait at least one instruction cycle between 
@@ -152,10 +218,12 @@ void U1_send_byte (unsigned char Ch)
 void uart2_send_hex (unsigned char Ch)
 { // RS-232 send byte
     
-    while(U2STAbits.TRMT == 0){ }
-    U2TXREG = Ch;
-    __delay_us(50);
-    // waiting for trancsaction to be complete
+    
+        U2TXREG = Ch;
+        //  should wait at least one instruction cycle between 
+        //  writing UxTXREG and reading the TRMT bit
+        __delay_us(1);
+        while(U2STAbits.TRMT == 0); //waiting for trancsaction to be complete
 }
 
 void uart_CR_LF_send (void){
@@ -164,27 +232,6 @@ void uart_CR_LF_send (void){
 	U1_send_byte(0x0D);
 	
 	}
-
-void uart_num_send(long data){
-	  
-  unsigned char temp[10],count=0;
-  if (data<0) 
-  {
-    data=-data;
-    U1_send_byte('-');
-  }     
-  if (data)
-  {
-    while (data)
-    {
-      temp[count++]=data%10+'0';
-      data/=10;                 
-    }                           
-    while (count)           
-      U1_send_byte(temp[--count]);          
-  }
-  else U1_send_byte('0');           
-}
 
 void uart2_text_send(char *s){
   while (*s != 0)
@@ -203,6 +250,8 @@ void GPIO_init()
     TRISBbits.TRISB4 = 0; // LED_TX_232
     TRISBbits.TRISB8 = 1; // reset button
     TRISBbits.TRISB14 = 0;// modbus TX EN
+    
+    TRISB = 0x0000 | 1 << 8;
     //PORT C
     TRISCbits.TRISC1 = 0;  // OUT2
     TRISCbits.TRISC2 = 0;  // SPI nCS
@@ -232,62 +281,73 @@ void GPIO_init()
  // SPI2 - serial EEPROM
 void SPI2_init()
 {
-        // A series of 8/16 clock pulses shift out 8/16 bits of transmit data from Shift Register SPIxSR
-        // to the SDOx pin and simultaneously shift the data at the SDIx pin into SPIxSR.
-        // SPI interrupt
-        // When the ongoing transmit and receive operations are completed, the content of the
-        // SPIx Shift register (SPIxSR) is moved to the SPIx Receive Buffer (SPIxRXB).
-        // c) The SPIx Receive Buffer Full Status (SPIRBF) bit in the SPIx Status and Control
-        // (SPIxSTAT<0>) register is set by the module, indicating that the receive buffer is full.
-        // Once the SPIxBUF register is read by the user code, the hardware clears the SPIRBF
-        // bit.
         SPI2STATbits.SPIEN = 0;         // Turn off spi module before initialization 
-        IFS2bits.SPI2IF = 0;            //Clear the Interrupt Flag
-        IEC2bits.SPI2IE = 0;            //Disable the Interrupt
+        IFS2bits.SPI2EIF   = 0;         // Clear the Interrupt Flag
+        IFS2bits.SPI2IF = 0;            // Disable the Interrupt
         // SPI2CON1 Register Settings:
         SPI2CON1bits.DISSCK = 0;        //Internal Serial Clock is Enabled
         SPI2CON1bits.DISSDO = 0;        //SDOx pin is controlled by the module
         SPI2CON1bits.MODE16 = 0;        //Communication is byte-wide (8 bits)
-        SPI2CON1bits.SMP = 1;           //Input Data is sampled at the middle of data output time
-        SPI2CON1bits.CKE = 1;           //Serial output data changes on transition from
-        SPI2CON1bits.CKP = 0;           //Serial output data changes on transition from
-        SPI2CON1bits.PPRE = 4;          //Primary prescale 1:1
-        SPI2CON1bits.SPRE = 6;          //Secondary prescale 1:1
+        SPI2CON1bits.SMP = 1;           //Input Data is sampled at the end of data output time
+        SPI2CON1bits.CKE = 1;           // Serial output data changes on transition from active clock state to Idle clock state
+        SPI2CON1bits.CKP = 0;           // Idle state for clock is a low level; active state is a high level
+        
+        // SPI2STAT Register Settings
+        SPI2STATbits.SPISIDL = 0; // Continue module operation in Idle mode
+        SPI2STATbits.SPIROV = 0;  // No Receive Overflow has occurred
+
+        // SPI2 SCK f = 1M @ 80M Fosc, Fcy 40M  
+        // Fsck = 833.3 kHz
+        SPI2CON1bits.SPRE = 5;          //Secondary prescale 3:1
+        SPI2CON1bits.PPRE = 1;          //Primary prescale 16:1
+        
+        SPI2CON2bits.FRMEN = 0;         //Framed SPIx support is disabled
         SPI2CON1bits.MSTEN = 1;         //Master Mode Enabled
                                           
         SPI2STATbits.SPIEN = 1;         //Enable SPI Module
                                         //Interrupt Controller Settings
-        //IFS0bits.SPI1IF = 0;            //Clear the Interrupt Flag
-        //IEC0bits.SPI1IE = 1;            //Enable the Interrupt
     }
 
 void SPI2_send_byte (unsigned char buf)               
 {
-     __delay_us(5);
+     unsigned char temp;
+
+     SPI2BUF = buf;
+     
+     while(!SPI2STATbits.SPIRBF);
+     
+     // после записи необходимы вычитать содержание буфера SPI дл€ сброса флага
+     temp = SPI2BUF; 
+     
      SPI2STATbits.SPIROV = 0;
-     SPI2BUF = buf; 
-     __delay_us(30);
  }
 
 unsigned char SPI2_read_byte(void)
 {
-  SPI2STATbits.SPIROV = 0;
+ unsigned char ret_value = 0;
+  
+ unsigned int buf = 0; 
+
+ if(SPI2STATbits.SPIROV) 
+ { 
+    buf = SPI2BUF; 
+    SPI2STATbits.SPIROV = 0; 
+ } 
+
   SPI2BUF = 0x00;                  // initiate bus cycle 
+  
   while(!SPI2STATbits.SPIRBF);
-   /* Check for Receive buffer full status bit of status register*/
-  if (SPI2STATbits.SPIRBF)
-  { 
-      SPI2STATbits.SPIROV = 0;
-      return (SPI2BUF);    /* return byte read */
-  }
-  return 255;                  		/* RBF bit is not set return error*/
+
+  SPI2STATbits.SPIROV = 0;
+  ret_value = SPI2BUF;    /* return byte read */
+
+  return ret_value;                  		  /* RBF bit is not set return error*/
 }
 
 /*=========================================================================== */
 // interrupts
-void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX
+void _ISR_PSV _U1RXInterrupt(void)      // U1 - Modbus
 { 
-     RS232_RX_LED = 1;
      // rx buffer has data, at least one more character can be read
       while(U1STAbits.URXDA == 0){ }
     
@@ -303,12 +363,11 @@ void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX
             T9CONbits.TON = 1;
       }
       else TMR9 = 0x0000;         // reset if timer is on, 115200
-     
 }
 
-void _ISR_PSV _U2RXInterrupt(void)      //interupt UART 2 RX
+void _ISR_PSV _U2RXInterrupt(void)      // U2 - RS2-232 RX int 
 {   /// RS2-232 RX int   
-    
+    RS232_RX_LED = 1;
     uart2_rx_buf[uart2_rx_ptr] = U2RXREG; 
     
     if(uart2_rx_buf[uart2_rx_ptr] == 0x0A)
@@ -323,6 +382,59 @@ void _ISR_PSV _U2RXInterrupt(void)      //interupt UART 2 RX
   
 }
 
+void _ISR_PSV _T3Interrupt(void)        //interupt Timer 3 - async delays
+    {         
+        switch(curr_cmd)
+        {
+            case POL_CHANGE_1:
+                if(holding_register[10] == 1) 
+                {
+                    K1_ON;
+                    POL_RELAY_LED = 1;
+                }
+                else if(holding_register[10] == 0) 
+                {
+                    K1_OFF;
+                    POL_RELAY_LED = 0;
+                }
+                curr_cmd = POL_CHANGE_2;
+                TimerX32_setMs(500);
+            break;
+            //----------
+            case POL_CHANGE_2:
+                PSP405_set_output(holding_register[12]);
+                TimerX32_state(0);
+                curr_cmd = NO_CMD_RUNNING;
+            break;
+            //----------
+            case SRC_CMD:
+                curr_cmd = NO_CMD_RUNNING;
+                TimerX32_state(0);
+            break;   
+        }     
+
+        TMR3 = 0x0000;       // reset if timer is on
+        TMR2 = 0x0000;
+        IFS0bits.T3IF = 0;   // Clear Timer interrupt flag  
+
+    } 
+
+void _ISR_PSV _T9Interrupt(void)        //interupt Timer 9
+    {      
+        T9CONbits.TON = 0;   // stop the timer
+        timer_state = 0;
+        TMR9 = 0x0000;       // reset if timer is on
+        rx_flag = 1;
+        
+//        TX_EN;
+//        for(int i = 0; i < 16; i++)
+//             U1_send_byte(rx_buf[i]);
+//  
+//        TX_DIS;
+
+        IFS3bits.T9IF = 0;   // Clear Timer interrupt flag
+    } 
+
 /*=========================================================================== */ 
 // 25LC128 SPI EEPROM
 
@@ -330,12 +442,15 @@ void eeprom_wr_page(unsigned int address)
 {
   // EEPROM write enable sequence
   SPI_nCS_LOW;
+  __delay_us(1);
   SPI2_send_byte(EEPROM_WREN);
+  __delay_us(1);
   SPI_nCS_HIGH;
   __delay_us(20);
   
   // EEPROM address and data write sequence
   SPI_nCS_LOW;
+  __delay_us(1);
   SPI2_send_byte(EEPROM_WRITE);
   
   SPI2_send_byte((unsigned char)(address >> 8));      // set address ptr msb
@@ -346,8 +461,9 @@ void eeprom_wr_page(unsigned int address)
     SPI2_send_byte((unsigned char)(holding_register[i + address/2] >> 8));            // data msb    
     SPI2_send_byte((unsigned char)(holding_register[i + address/2] & 0x00ff));        // data lsb 
   }
+  __delay_us(1);
   SPI_nCS_HIGH;
-  __delay_ms(8);  // Internal Write Cycle Time Ч 5 ms
+  __delay_ms(10);  // Internal Write Cycle Time Ч 5 ms
 }
 
 void eeprom_wr_regs(void)
@@ -376,15 +492,14 @@ void eeprom_rd_regs(void)
   
   SPI2_send_byte((unsigned char)(address >> 8));      // set address ptr msb
   SPI2_send_byte((unsigned char)(address & 0x00ff));  // set address ptr lsb
-  
-  SPI2_read_byte();       // пустое чтение, костыль !?
 
-  for(unsigned char i = 0; i < max_regs_cnt; i++)
+  for(unsigned char i = 0; i < max_regs_cnt-1; i++)
   { 
+  
     msb = SPI2_read_byte();
     lsb = SPI2_read_byte();
     
-    holding_register[i] = (msb << 8) | lsb;   
+    holding_register[i] = (unsigned int)(((unsigned int)msb << 8) | (unsigned int)lsb);   
   }
   SPI_nCS_HIGH;
 }
@@ -463,6 +578,11 @@ void PSP405_set_output(unsigned int state)
     char *s = (state) ? "KOE" : "KOD"; 
     uart2_text_send(s);       // send get voltage cmd
     uart2_send_hex(0x0D);  
+    
+//    // повторна€ отправка, костыль тк не всегда срабатывает
+//    __delay_ms(20); 
+//    uart2_text_send(s);       // send get voltage cmd
+//    uart2_send_hex(0x0D);    
 }
 
 void PSP405_get_all()
@@ -562,9 +682,10 @@ void PSP405_state_restore(void)
     }
     
     // modbus device id
-    if((holding_register[20] >= 254 ) || (dev_id == 0)) return;
+    if((holding_register[20] >= 254 ) || (dev_id == 0)) 
+        dev_id = DEFAULT_DEV_ID;
     else
-       dev_id = (unsigned char)holding_register[20];
+        dev_id = (unsigned char)holding_register[20];
 }
 /*=========================================================================== */
 
@@ -582,60 +703,73 @@ void reset_dev_id(void)
         }
 }
 
-
 int main(void) 
 {
+unsigned int BaseCnt = 0, ErrCnt = 0;
+
 OSC_init();
 GPIO_init();
 
 TX_DIS;       // release RS485 line
 SPI_nCS_HIGH; // set SPI nCS line HIGH - EEPROM
 
-Timer9_init(115200);
-UART1_init(); // Modbus UART
-//UART2_init(); // RS232 UART
-//SPI2_init();  // Serial EEPROM 
-
 modbus_init();
 
-//PSP405_state_restore(); // restore PS state - V, I, relay state
+SPI2_init();  // Serial EEPROM 
+PSP405_state_restore(); // restore PS state - V, I, relay state
 
-unsigned int count = 0;
+UART1_init(); // Modbus UART
+UART2_init(); // RS232 UART
+
+Timer9_init(115200);
+TimerX32_init();
+
+RS232_TX_LED = 0;
+RS232_RX_LED = 0;
+
+curr_cmd = NO_CMD_RUNNING; // able to read src
+
+enableInterrupts();
 
 while(1)
-{   
-  
-  //modbus_poll(); // answer, contains 10 ms delay
-  
-  RS232_RX_LED = 0;
-  __delay_ms(1000);
-    RS232_RX_LED = 1;
-  __delay_ms(1000);
-  
-  //reset_dev_id(); // id change event check
-//  
-//  RS232_TX_LED = 0;
-//  RS232_RX_LED = 0;
-//
-//  if(data_ready) // if source asnwer is OK
-//  { 
-//    RS232_RX_LED = 1;
-//    RS232_TX_LED = 1; 
-//    PSP405_rx_parse(1);
-//    data_ready = 0;
-//    count = 0;
-//  }
-//  else          // if source no respond 
-//  {   
-//    count++;
-//    if(count > 75) 
-//    {  
-//      RS232_TX_LED = 1; 
-//      PSP405_rx_parse(0);
-//      count = 0;
-//      data_ready=0;
-//    }
-//  }
-//   PSP405_get_all();  // send cmd via RS232 to get all src data
-  }
+{ 
+    
+  modbus_poll();  // answer, contains 10 ms delay
+  reset_dev_id(); // id change event check
+
+  if(curr_cmd == NO_CMD_RUNNING) // reading src if no cmds executed at the moment
+  {    
+    if(data_ready)  // if source asnwer is OK
+    { 
+        RS232_TX_LED = 0; 
+        PSP405_rx_parse(1);
+        data_ready = 0;
+        BaseCnt = 0;
+        ErrCnt = 0;
+        PSP405_get_all();   // send cmd via RS232 to get all src data
+   
+        __delay_ms(30);
+        RS232_TX_LED = 1; 
+        RS232_RX_LED = 0; 
+    }
+    else                  // if source no respond 
+    {   
+        BaseCnt++;
+        __delay_ms(1);
+        if(BaseCnt > 500) 
+        {  
+         RS232_TX_LED = 0; 
+         BaseCnt = 0;
+         ErrCnt++;
+         if(ErrCnt > 3) PSP405_rx_parse(0);
+         data_ready=0;
+         PSP405_get_all();  // send cmd via RS232 to get all src data
+         
+         __delay_ms(30);
+         RS232_TX_LED = 1; 
+         RS232_RX_LED = 0; 
+        }
+    }
+} // NO_CMD_RUNNING
+}
 }

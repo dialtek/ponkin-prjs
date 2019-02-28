@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 2.1               */
+/*                D I A L T E K    M O D B U S   R T U   v 3.1               */
 
 /* ЗАГОЛОВКИ, ПЕРЕМЕННЫЕ И СЛУЖЕБНЫЕ ФУНКЦИИ */
 
@@ -30,8 +30,8 @@ unsigned int CRC16 = 0;			// полученная контрольная сумма
 unsigned char crc_buf[250];             // буфер для хранения байтов для расчета CRC16
 unsigned char modbus_id = 0;		// буфер для хранения ID из запроса мастера
 unsigned int reg_wr_data = 0;
-unsigned int holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
-unsigned int input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
+volatile unsigned int holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
+volatile unsigned int input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
 
 unsigned char rx_flag = 0, timer_state = 0;
 
@@ -289,7 +289,7 @@ void Timer9_init(unsigned long);
   /// обработка команд
 	  
   if(rx_flag)			// state 1, rx timer overflows
-  {
+  {  
    if(rx_buf_ptr == 8)		// state 2, rx buf has 8 bytes ?
    {   
     modbus_id = rx_buf[0];      // get device ID from master msg
@@ -331,12 +331,11 @@ void Timer9_init(unsigned long);
     {    
 	 MODBUS_RX_LED = 1;
 	 MODBUS_TX_LED = 1;
-         modbus_refresh(MODBUS_RHR_CMD);
          modbus_rhr_answer();  
-	 answer = 0;   // сброс флага завершения ответа на запрос   
 	 modbus_reset(); 
-	 
-	 __delay_ms(10);
+	 answer = 0;   // сброс флага завершения ответа на запрос  
+	 modbus_refresh(MODBUS_RHR_CMD);
+
          MODBUS_RX_LED = 0;
 	 MODBUS_TX_LED = 0;
     }
@@ -348,10 +347,10 @@ void Timer9_init(unsigned long);
 	 MODBUS_TX_LED = 1;
 	 
          holding_register[modbus_reg_addr] = reg_wr_data; 
-         modbus_refresh(MODBUS_WSR_CMD);
-         modbus_wsr_answer();     
-	 answer = 0;   // сброс флага завершения ответа на запрос   
+         modbus_wsr_answer();  
 	 modbus_reset();
+	 answer = 0;   // сброс флага завершения ответа на запрос  
+	 modbus_refresh(MODBUS_WSR_CMD);
 
          MODBUS_RX_LED = 0;
 	 MODBUS_TX_LED = 0;
@@ -362,13 +361,12 @@ void Timer9_init(unsigned long);
     {    
 	 MODBUS_RX_LED = 1;
 	 MODBUS_TX_LED = 1;
-	 
-         modbus_refresh(MODBUS_RIR_CMD);
-         modbus_rir_answer();   
-	 answer = 0;   // сброс флага завершения ответа на запрос   
+	
+         modbus_rir_answer();  
 	 modbus_reset();
-	 
-	 __delay_ms(10);
+	 answer = 0;   // сброс флага завершения ответа на запрос 
+	 modbus_refresh(MODBUS_RIR_CMD);  
+ 
          MODBUS_RX_LED = 0;
 	 MODBUS_TX_LED = 0;
     }
