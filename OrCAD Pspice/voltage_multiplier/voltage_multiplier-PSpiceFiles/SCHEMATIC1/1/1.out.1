@@ -1,5 +1,5 @@
 
-**** 02/20/19 14:31:30 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 03/01/19 15:46:10 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -82,22 +82,16 @@ R_R15         0 N27049  5MEG TC=0,0
 R_R16         0 N27341  6MEG TC=0,0 
 R_R21         N33264 N33228  10k TC=0,0 
 E_U2         N33276 0 VALUE {LIMIT(V(N33228,N33200)*1E6,-15V,+15V)}
-R_R22         N33200 N35514  0R TC=0,0 
------------------------------$
-ERROR(ORPSIM-16144): Value may not be 0
-V_V5         N33264 0 6
+R_R22         N33200 N35514  2.7k TC=0,0 
+V_V5         N33264 0 12
 R_R23         0 N33276  1k TC=0,0 
-R_R24         0 N33228  10k TC=0,0 
-R_R28         0 N34739  3.9k TC=0,0 
-V_V6         0 N34659 12V
-R_R27         0 N34655  1k TC=0,0 
-E_U3         N34655 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
-R_R26         N34639 N35551  2.7k TC=0,0 
-R_R25         N34659 N34639  10k TC=0,0 
-R_R29         N35551 N34655  100R TC=0,0 
-R_R30         N35514 N33276  0R TC=0,0 
------------------------------$
-ERROR(ORPSIM-16144): Value may not be 0
+R_R24         0 N33228  3.9k TC=0,0 
+R_R28         0 N34739  10k TC=0,0 
+V_V6         0 N34659 3.2
+E_U3         N34671 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
+R_R26         N34639 N346250  2.4k TC=0,0 
+R_R25         N34659 N34639  5.1k TC=0,0 
+R_R30         N35514 N33276  1R TC=0,0 
 I_I3         N40732 N40736 DC 200uA  
 R_R39         0 N40736  100 TC=0,0 
 V_V9         N40732 0 12000
@@ -112,7 +106,11 @@ E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
 R_R43         0 N41684  100 TC=0,0 
 I_I4         N41672 N41684 DC 3ma  
 R_R42         0 N41580  1k TC=0,0 
+R_R45         N346250 N34671  130 TC=0,0 
+R_R46         N34671 N46544  1k TC=0,0 
 
 **** RESUMING 1.cir ****
 .END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N46544.
 

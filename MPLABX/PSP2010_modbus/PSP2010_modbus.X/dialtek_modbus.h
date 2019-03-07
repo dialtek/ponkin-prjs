@@ -16,7 +16,7 @@
 
 volatile unsigned int rx_buf_ptr = 0; // указатель записи в массив UART
 // буфер для сохр. принятных команд
-unsigned char rx_buf[512];
+unsigned char rx_buf[32];
 
 unsigned char modbus_cmd = 0; // 0x03 | 0x06 | 0x04
 
@@ -64,7 +64,7 @@ void Timer9_init(unsigned long);
 /* сброс modbus приемника */
   void modbus_reset()
   { 
-   for(int i = 0; i < 512; i++) 
+   for(int i = 0; i < 32; i++) 
         rx_buf[i] = 0;
    
    rx_buf_ptr = 0;
@@ -291,12 +291,15 @@ void Timer9_init(unsigned long);
   if(rx_flag)			// state 1, rx timer overflows
   {  
    if(rx_buf_ptr == 8)		// state 2, rx buf has 8 bytes ?
-   {   
+   { 
+    IEC0bits.U1RXIE = 0;	// disable UART1 RX interrupt  
+	   
     modbus_id = rx_buf[0];      // get device ID from master msg
 		   
     if((modbus_id == dev_id) || (modbus_id == com_dev_id))     // state 3, ID check 
     {// ID OK
-
+	  
+	
 	switch(rx_buf[1])	// state 4, rx buf parsing
 	{ 
 	  case MODBUS_WSR_CMD:
@@ -313,8 +316,13 @@ void Timer9_init(unsigned long);
 	  //----
 	  default: modbus_reset();		// unexpected cmd, reset
 	}     
+       
+	
     } // if(my ID or common ID) 
     else modbus_reset();
+    
+    IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt 
+    
    }  // if(rx_buf_ptr == 8)
    else modbus_reset();
    }  // if(rx_flag) 

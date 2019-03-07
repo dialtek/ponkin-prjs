@@ -42,10 +42,10 @@
 #define NO_CMD_RUNNING   4    // no cmd running state
 #define SRC_CMD          5    // all src cmds
 
-unsigned char uart2_rx_buf[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   
-unsigned char rx_msg[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
-unsigned char uart2_rx_ptr = 0;
-unsigned char data_ready = 0;
+volatile unsigned char uart2_rx_buf[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};   
+volatile unsigned char rx_msg[40] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};  
+volatile unsigned char uart2_rx_ptr = 0;
+volatile unsigned char data_ready = 0;
 unsigned int rd_status, rd_voltage = 0, rd_current = 0, 
              rd_voltage_lim = 0, rd_current_lim = 0, rd_power_lim = 0;
 
@@ -184,8 +184,7 @@ void UART2_init()
     // RX interrupt UART2 settings 
     IPC7bits.U2RXIP = 3;   // Set UART2 RX interrupt priority to 3
     IFS1bits.U2RXIF = 0;   // Reset UART2 RX interrupt flag
-   
-    
+
     U2BRG = U2BRGVAL;       // Baud Rate setting for 2400 
     U2MODEbits.UARTEN = 1;  // 1 = UARTx is enabled; all UARTx pins are controlled by UARTx as defined by UEN <1:0>
     U2MODEbits.UEN = 0;     // 0 = UxTX and UxRX pins are enabled and used; UxCTS and UxRTS/BCLK pins controlled by port latches
@@ -736,7 +735,7 @@ while(1)
     
   modbus_poll();  // answer, contains 10 ms delay
   reset_dev_id(); // id change event check
-
+  //PSP405_get_all();   // send cmd via RS232 to get all src data
   if(curr_cmd == NO_CMD_RUNNING) // reading src if no cmds executed at the moment
   {    
     if(data_ready)  // if source asnwer is OK
@@ -747,12 +746,11 @@ while(1)
         BaseCnt = 0;
         ErrCnt = 0;
         PSP405_get_all();   // send cmd via RS232 to get all src data
-   
-        __delay_ms(30);
+
         RS232_TX_LED = 1; 
         RS232_RX_LED = 0; 
     }
-    else                  // if source no respond 
+    else                    // if source no respond 
     {   
         BaseCnt++;
         __delay_ms(1);
@@ -764,8 +762,7 @@ while(1)
          if(ErrCnt > 3) PSP405_rx_parse(0);
          data_ready=0;
          PSP405_get_all();  // send cmd via RS232 to get all src data
-         
-         __delay_ms(30);
+
          RS232_TX_LED = 1; 
          RS232_RX_LED = 0; 
         }

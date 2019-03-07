@@ -43,7 +43,7 @@
 
 /* HARDWARE INFO */
   volatile unsigned char dev_id = DEFAULT_DEV_ID;     // MODBUS ID устройства <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 27;                 // версия прошивки текущего устройства
+  unsigned char firmware_ver  = 29;                 // версия прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
   unsigned char modbus_ver    = 31;                 // версия MODBUS
@@ -157,8 +157,7 @@ void eeprom_wr_regs(void);
         case 12: // reg 4 - set output
             RS232_TX_LED = 1;
             PSP405_set_output(holding_register[12]);
-            
-            
+
             curr_cmd = SRC_CMD;
             TimerX32_setMs(500);  
             TimerX32_state(1);        
