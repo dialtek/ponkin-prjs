@@ -76,8 +76,6 @@ unsigned char Ma_buf_cnt = 0;   // счетчик эл. буфера
 unsigned char state;
 unsigned int tmp=0;
 
-
-
 // результаты измерений
 long pkt8_ch_1 = 0, pkt8_ch_2 = 0, pkt8_ch_3 = 0, pkt8_ch_4 = 0, 
      pkt8_ch_5 = 0, pkt8_ch_6 = 0, pkt8_ch_7 = 0, pkt8_ch_8 = 0;
@@ -411,16 +409,16 @@ unsigned char SPI2_read_byte(void)
                      
    ADC1_CS = 0;
    ADC2_CS = 0;
-   __delay_us(1);
-   
+   __delay_us(5);
    SPI2_write_byte(0xF0);
-   __delay_us(1);
+   SPI2_write_byte(0xF0);
+   __delay_us(5);
    
    ADC1_CS = 1;
    ADC2_CS = 1;
    
    while(ADC1_DRDY | ADC2_DRDY) { }   // ждем готовности обоих АЦП
-    
+   
    /*
    Switch (Sps_buf) {     
     
@@ -588,7 +586,7 @@ unsigned char SPI2_read_byte(void)
   //Ch_buf[CHx][Ma_buf_index+1] = Ch_buf[CHx][Ma_buf_index];  // сдвигаем буфер
   //Ch_buf[CHx][Ma_buf_index] = ADC_read(ADCx);               // сохр. новое изм.
   
-  ADC_counts[ADCx-1][CHx] = curr_ADCx_val; // сохр. отсчетов канала АЦП. приведение N АЦП к индексу
+  //ADC_counts[ADCx-1][CHx] = curr_ADCx_val; // сохр. отсчетов канала АЦП. приведение N АЦП к индексу
 
 //  // если буфер не заполнен - выдаем данные без усреднения
 ////  if(Ch_buf[CHx][Ma_buf_size-1] == 0)
@@ -602,7 +600,7 @@ unsigned char SPI2_read_byte(void)
 //  
 //     curr_ADCx_val = curr_ADCx_val/Ma_buf_size;           // вычисляем среднее когда буфер полон
 // // }
-  
+
   Vin = (float)((curr_ADCx_val*5.0)/(8388608.0*PGA)); // расчет U
   return (long) (Vin*uV); // возврат масштабированного U
 }
@@ -764,13 +762,14 @@ int main()
     
     ADC_sync(1);  
     ADC_init(input_buf_state);         // Инициализация обоих АЦП 
+    ADC_init(input_buf_state);         // Инициализация обоих АЦП 
+    __delay_ms(100);
     STATUS_LED = 1;
     ADC_state = SET_CH;
             
  while(1)
  {
     ADC_par_rd_ch(); // измерения
-    modbus_poll();    
-
+    modbus_poll();   
  } 
 }

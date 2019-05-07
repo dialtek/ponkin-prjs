@@ -1,5 +1,5 @@
 
-**** 03/06/19 16:26:29 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 04/23/19 23:09:27 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 20ms 0 0.1ms SKIPBP 
+.TRAN  0 10ms 0 0.1ms SKIPBP 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -86,33 +86,41 @@ R_R22         N33200 N35514  2.7k TC=0,0
 V_V5         N33264 0 12
 R_R23         0 N33276  1k TC=0,0 
 R_R24         0 N33228  3.9k TC=0,0 
-V_V6         0 N34659 3.2
-R_R27         0 N46544  1MEG TC=0,0 
-E_U3         N34671 0 VALUE {LIMIT(V(0,N34639)*1E6,-15V,+15V)}
-R_R26         N34639 N346250  2.4k TC=0,0 
-R_R25         N34659 N34639  5.1k TC=0,0 
+V_V6         0 N34659 12V
+R_R27         0 N34655  1k TC=0,0 
+E_U3         N34655 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
+R_R26         N34639 N35551  2.7k TC=0,0 
+R_R25         N34659 N34639  10k TC=0,0 
 R_R30         N35514 N33276  1R TC=0,0 
-I_I3         N40732 N40736 DC 200uA  
-R_R39         0 N40736  100 TC=0,0 
-V_V9         N40732 0 12000
-E_U5         N40634 0 VALUE {LIMIT(V(N40736,N40610)*1E6,-15V,+15V)}
-R_R38         0 N40634  1k TC=0,0 
-R_R37         N40610 N40634  5k TC=0,0 
-R_R40         N40736 N40610  10k TC=0,0 
-V_V10         N41672 0 12000
+E_U5         N40634 0 VALUE {LIMIT(V(0,N40610)*1E6,-15V,+15V)}
+R_R38         0 N40634  1MEG TC=0,0 
+R_R37         N40610 N40634  5.6k TC=0,0 
+R_R40         N41866 N40610  3.3k TC=0,0 
 R_R41         N41566 N41580  10k TC=0,0 
 R_R44         N41684 N41566  10k TC=0,0 
 E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
 R_R43         0 N41684  100 TC=0,0 
-I_I4         N41672 N41684 DC 3ma  
+I_I4         0 N41684 DC 3ma  
 R_R42         0 N41580  1k TC=0,0 
-R_R45         N346250 N34671  130 TC=0,0 
-R_R46         N34671 N46544  1k TC=0,0 
+R_R29         N35551 N34655  100R TC=0,0 
+R_R28         0 N34739  3.9k TC=0,0 
+V_V7         0 N50547 12000
+R_R45         N50547 N41866  600k TC=0,0 
+R_R46         0 N41866  1k TC=0,0 
+R_R47         N55596 0  1k TC=0,0 
+V_V8         N55596 0 100V
+X_Q1         N556512 N56273 0 awb2n3904 PARAMS:                                
++             
+V_V10         N56025 0 12V
+R_R48         N55900 N56273  100 TC=0,0 
+R_R49         N556512 N56025  50R TC=0,0 
+V_V11         N55900 0  
++PULSE 0 3.3 1m 0.01ms 0.01ms 1ms 2ms
 
 **** RESUMING 1.cir ****
 .END
 
-**** 03/06/19 16:26:29 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 04/23/19 23:09:27 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -130,11 +138,71 @@ R_R46         N34671 N46544  1k TC=0,0
           RS     .1          
          CJO  100.000000E-15 
 
+
+**** 04/23/19 23:09:27 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_Q1.model4     
+               NPN             
+       LEVEL    1            
+          IS  172.800000E-18 
+          EG    1.206        
+          BF  254.395        
+          NF     .85         
+         VAF   10            
+         IKF     .016374     
+         ISE    9.974460E-15 
+          NE    1.20863      
+          BR     .1          
+          NR     .891964     
+         VAR    7.74046      
+         IKR     .163741     
+         ISC    9.974460E-15 
+          NC    2.84343      
+         ISS    0            
+          RB   28.3394       
+         RBM     .01         
+         IRB     .01         
+          RE    1.339110E-03 
+          RC    2.08353      
+         CJE    4.566140E-12 
+         VJE     .4          
+         MJE     .245712     
+         CJC    3.724850E-12 
+         VJC     .4          
+         MJC     .236002     
+        XCJC     .8          
+         CJS    0            
+         VJS     .75         
+         MJS     .5          
+          FC     .519152     
+          TF  481.412000E-12 
+         XTF     .9628       
+         VTF    9.52193      
+         ITF     .011333     
+          TR    1.303990E-06 
+         XTB    1.20888      
+         XTI    1.34879      
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
 
 
           JOB CONCLUDED
 
-**** 03/06/19 16:26:29 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 04/23/19 23:09:27 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -146,5 +214,5 @@ R_R46         N34671 N46544  1k TC=0,0
 
 
 
-  Total job time (using Solver 1)   =        2.09
+  Total job time (using Solver 1)   =        1.52
 

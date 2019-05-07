@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="62">
+<configurationDescriptor version="65">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/d_delay.h</itemPath>
+      <itemPath>include/d_SPI.h</itemPath>
+      <itemPath>include/dialtek_modbus.h</itemPath>
+      <itemPath>include/dialtek_uart.h</itemPath>
+      <itemPath>include/fuses.h</itemPath>
+      <itemPath>include/main.h</itemPath>
+      <itemPath>include/d_one_wire.h</itemPath>
+      <itemPath>include/d_eeprom.h</itemPath>
+      <itemPath>include/d_heater.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -12,17 +21,33 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="f1" displayName="ImunoModes" projectFiles="true">
+        <itemPath>main_heater.c</itemPath>
+        <itemPath>main_steppers.c</itemPath>
+        <itemPath>main_dosing_sys.c</itemPath>
+        <itemPath>main_io.c</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="lib" projectFiles="true">
+        <itemPath>d_delay.c</itemPath>
+        <itemPath>d_eeprom.c</itemPath>
+        <itemPath>d_heater.c</itemPath>
+        <itemPath>d_one_wire.c</itemPath>
+        <itemPath>d_SPI.c</itemPath>
+        <itemPath>dialtek_modbus.c</itemPath>
+        <itemPath>dialtek_uart.c</itemPath>
+        <itemPath>hamilton_pump.c</itemPath>
+      </logicalFolder>
+      <itemPath>main.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>main.c</itemPath>
-    <itemPath>fuses.h</itemPath>
-    <itemPath>hamilton_pump.h</itemPath>
-    <itemPath>hamilton_pump.c</itemPath>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -36,6 +61,9 @@
         <languageToolchainVersion>1.22</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
+      <packs>
+        <pack name="dsPIC33E-GM-GP-MC-GU-MU_DFP" vendor="Microchip" version="1.0.19"/>
+      </packs>
       <compileType>
         <linkerTool>
           <linkerLibItems>
@@ -45,7 +73,7 @@
         </archiverTool>
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
-          <parseOnProdLoad>false</parseOnProdLoad>
+          <parseOnProdLoad>true</parseOnProdLoad>
           <alternateLoadableFile></alternateLoadableFile>
         </loading>
         <subordinates>
@@ -75,7 +103,7 @@
         <property key="enable-short-double" value="false"/>
         <property key="enable-symbols" value="true"/>
         <property key="enable-unroll-loops" value="false"/>
-        <property key="extra-include-directories" value=""/>
+        <property key="extra-include-directories" value="include"/>
         <property key="isolate-each-function" value="false"/>
         <property key="keep-inline" value="false"/>
         <property key="oXC16gcc-align-arr" value="false"/>
@@ -104,6 +132,25 @@
       <C30-AR>
         <property key="additional-options-chop-files" value="false"/>
       </C30-AR>
+      <C30-AS>
+        <property key="assembler-symbols" value=""/>
+        <property key="expand-macros" value="false"/>
+        <property key="extra-include-directories-for-assembler" value=""/>
+        <property key="extra-include-directories-for-preprocessor" value=""/>
+        <property key="false-conditionals" value="false"/>
+        <property key="keep-locals" value="false"/>
+        <property key="list-assembly" value="false"/>
+        <property key="list-section-info" value="false"/>
+        <property key="list-source" value="false"/>
+        <property key="list-symbols" value="false"/>
+        <property key="oXC16asm-extra-opts" value=""/>
+        <property key="oXC16asm-list-to-file" value="false"/>
+        <property key="omit-debug-dirs" value="false"/>
+        <property key="omit-forms" value="false"/>
+        <property key="preprocessor-macros" value=""/>
+        <property key="relax" value="false"/>
+        <property key="warning-level" value="emit-warnings"/>
+      </C30-AS>
       <C30-LD>
         <property key="additional-options-use-response-files" value="false"/>
         <property key="boot-eeprom" value="no_eeprom"/>

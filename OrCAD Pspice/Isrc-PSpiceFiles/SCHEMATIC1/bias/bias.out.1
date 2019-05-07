@@ -1,5 +1,5 @@
-
-**** 08/08/18 22:59:36 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+**** 03/26/19 12:14:50 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\isrc-pspicefiles\schematic1\bias.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 1ms 0 1us 
+.TRAN  0 10ms 0 0.1ms 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -31,16 +31,22 @@
 
 **** INCLUDING SCHEMATIC1.net ****
 * source ISRC
-X_U2         N01249 N01285 N000972 0 N01368 OPA336/BB
-V_V3         N000972 0 5
-R_R2         0 N01285  1k  
-R_R3         N01368 N01285  1k  
-R_R4         N03460 N01368  50  
+R_R1         0 N01285  1.1k  
+R_R2         N01368 N01285  9.1k  
+R_R4         0 N01368  1k  
 V_V4         N01249 0  
-+PULSE 0 0.1V 0 1us 1us 200us 200us
++PULSE 0 0.1V 0 3us 3us 100us 200us
+E_U3         N01368 0 VALUE {LIMIT(V(N01249,N01285)*1E6,-15V,+15V)}
+V_V6         N08509 0 12
+E_U4         N08658 0 VALUE {LIMIT(V(N08524,N08581)*1E6,-15V,+15V)}
+R_R7         N08518 N08524  0,1R  
+----------------------------$
+ERROR(ORPSIM-16144): Value may not be 0
+R_R8         0 N08518  1R  
+R_R9         N08518 N08509  300R  
+R_R10         0 N08581  1k  
+R_R11         N08581 N08658  5k  
 
 **** RESUMING bias.cir ****
 .END
-
-ERROR(ORPSIM-15141): Less than 2 connections at node N03460.
 

@@ -6,9 +6,9 @@
  */
 #include "hamilton_pump.h"
 /*=========================================================================== */ 
- extern unsigned char uart2_rx_ptr; 
- extern unsigned char answer_ready; 
- extern unsigned int input_register[];
+ //extern unsigned char uart2_rx_ptr; 
+ //extern unsigned char answer_ready; 
+ //extern unsigned int input_register[];
  
 // HAMILTON PUMP   
 unsigned char char2num (unsigned char ch)
@@ -27,26 +27,26 @@ unsigned int chars2number(unsigned char data_size, unsigned char begin_index)
       
       switch(data_size) // 1-9, 10-99, 100 -- 999, 1000+ cases
       {
-          case 1:  
-              converted_num = char2num(input_register[begin_index]);
-          break;
-          //----
-          case 2:  
-              converted_num = char2num(input_register[begin_index])  * 10 +
-                         char2num(input_register[begin_index+1]);
-          break;
-          //----
-          case 3:  
-              converted_num = char2num(input_register[begin_index])  * 100 +
-                         char2num(input_register[begin_index+1])* 10  +
-                         char2num(input_register[begin_index+2]);
-          break;
-          //----
-          case 4:  
-              converted_num = char2num(input_register[begin_index])  * 1000 +
-                         char2num(input_register[begin_index+1])* 100  +
-                         char2num(input_register[begin_index+2])* 10   +
-                         char2num(input_register[begin_index+3]);
+//          case 1:  
+//              converted_num = char2num(input_register[begin_index]);
+//          break;
+//          //----
+//          case 2:  
+//              converted_num = char2num(input_register[begin_index])  * 10 +
+//                         char2num(input_register[begin_index+1]);
+//          break;
+//          //----
+//          case 3:  
+//              converted_num = char2num(input_register[begin_index])  * 100 +
+//                         char2num(input_register[begin_index+1])* 10  +
+//                         char2num(input_register[begin_index+2]);
+//          break;
+//          //----
+//          case 4:  
+//              converted_num = char2num(input_register[begin_index])  * 1000 +
+//                         char2num(input_register[begin_index+1])* 100  +
+//                         char2num(input_register[begin_index+2])* 10   +
+//                         char2num(input_register[begin_index+3]);
           //----
           default: break;
         }
@@ -56,9 +56,9 @@ void answer_refresh(void)
 {
     // clear input registers 10-30 for the new cmd and answer
     
-    uart2_rx_ptr = 0;
-    for(char i = 0; i < 30; i++)
-        input_register[10+i] = 0; // 10+ - send + return bytes
+//    uart2_rx_ptr = 0;
+//    for(char i = 0; i < 30; i++)
+//        input_register[10+i] = 0; // 10+ - send + return bytes
 }
 
 unsigned int search_answer(unsigned char reg_index, unsigned char begin_index, unsigned char end_index)
@@ -67,25 +67,25 @@ unsigned int search_answer(unsigned char reg_index, unsigned char begin_index, u
     
     unsigned char data_size;
     
-    if(input_register[reg_index] == 0x0060) // '`'  
-    {
-      // get begin and and sychro bytes indexes: '`' and {0D}{0A}  
-      // => /0`1400{03}{0D}{0A}
-      for(unsigned char i = begin_index; i <= end_index; i++) // answer is input_register 17 - 26
-      {
-          if(input_register[i] == '`') 
-              begin_index = i;
-          if(input_register[i] == 0x000D && input_register[i+1] == 0x000A ) 
-              end_index = i;
-      }
-      begin_index++; // moving ptr to next byte => '`',  0`1200{03}{0D}{0A}
-      end_index--;   // moving ptr to next byte => end of data, 0`1200{03}{0D}{0A}
-      
-      data_size = end_index - begin_index; // get data char count
-      // convert ans chars to number 
-      sorted_anser = chars2number(data_size, begin_index);        
-    }  
-    else sorted_anser = ERROR_CODE; // no response - error code)
+//    if(input_register[reg_index] == 0x0060) // '`'  
+//    {
+//      // get begin and and sychro bytes indexes: '`' and {0D}{0A}  
+//      // => /0`1400{03}{0D}{0A}
+//      for(unsigned char i = begin_index; i <= end_index; i++) // answer is input_register 17 - 26
+//      {
+//          if(input_register[i] == '`') 
+//              begin_index = i;
+//          if(input_register[i] == 0x000D && input_register[i+1] == 0x000A ) 
+//              end_index = i;
+//      }
+//      begin_index++; // moving ptr to next byte => '`',  0`1200{03}{0D}{0A}
+//      end_index--;   // moving ptr to next byte => end of data, 0`1200{03}{0D}{0A}
+//      
+//      data_size = end_index - begin_index; // get data char count
+//      // convert ans chars to number 
+//      sorted_anser = chars2number(data_size, begin_index);        
+//    }  
+//    else sorted_anser = ERROR_CODE; // no response - error code)
     
     return sorted_anser;
 }
@@ -110,8 +110,8 @@ void init_valve(unsigned char pump_id)
   answer_refresh(); // clear input registers 80-100 for the new cmd and answer
             
   PUMP_TX_EN; 
-  uart2_send_text("/1h20000R"); // init valve  (вентиль)
-  uart2_CR_LF_send();
+//  uart2_send_text("/1h20000R"); // init valve  (вентиль)
+//  uart2_CR_LF_send();
   PUMP_TX_DIS;
   delay_ms(950);
 }
@@ -122,10 +122,10 @@ void init_syringe(unsigned char pump_id)
   answer_refresh(); // clear input registers 80-100 for the new cmd and answer
     
   PUMP_TX_EN; 
-  uart2_send_text("/");
-  uart2_send_byte(num2char(pump_id));
-  uart2_send_text("h10000R"); // init syringe (шприц)
-  uart2_CR_LF_send();
+//  uart2_send_text("/");
+//  uart2_send_byte(num2char(pump_id));
+//  uart2_send_text("h10000R"); // init syringe (шприц)
+//  uart2_CR_LF_send();
   PUMP_TX_DIS;
   delay_ms(950);
 }
@@ -139,10 +139,10 @@ unsigned int get_syr_pos (unsigned char pump_id)
   answer_refresh(); 
   
   PUMP_TX_EN; 
-  uart2_send_text("/");
-  uart2_send_byte(num2char(pump_id));
-  uart2_send_text("?R"); // get syringe position cmd
-  uart2_CR_LF_send();
+//  uart2_send_text("/");
+//  uart2_send_byte(num2char(pump_id));
+//  uart2_send_text("?R"); // get syringe position cmd
+//  uart2_CR_LF_send();
   PUMP_TX_DIS;
   delay_ms(20); // delay to read all answer bytes
   
@@ -168,15 +168,15 @@ void set_syr_pos(unsigned char pump_id, unsigned int pos)
     unsigned int fourth_num = (pos - first_num * 1000 - sec_num*100 - third_num*10);
     
     PUMP_TX_EN;
-    uart2_send_text("/");
-    uart2_send_byte(num2char(pump_id));
-    uart2_send_text("A");
-    uart2_send_byte(num2char(first_num));
-    uart2_send_byte(num2char(sec_num));
-    uart2_send_byte(num2char(third_num));
-    uart2_send_byte(num2char(fourth_num));
-    uart2_send_text("R");
-    uart2_CR_LF_send();
+//    uart2_send_text("/");
+//    uart2_send_byte(num2char(pump_id));
+//    uart2_send_text("A");
+//    uart2_send_byte(num2char(first_num));
+//    uart2_send_byte(num2char(sec_num));
+//    uart2_send_byte(num2char(third_num));
+//    uart2_send_byte(num2char(fourth_num));
+//    uart2_send_text("R");
+//    uart2_CR_LF_send();
     PUMP_TX_DIS;
 }
 
@@ -189,14 +189,14 @@ unsigned int get_syr_vel(unsigned char pump_id)            // get syringe veloci
     answer_refresh(); 
     
     PUMP_TX_EN; 
-    uart2_send_text("/");
-    uart2_send_byte(num2char(pump_id));
-    uart2_send_text("?2R"); // get current velocity cmd
-    uart2_CR_LF_send();
+//    uart2_send_text("/");
+//    uart2_send_byte(num2char(pump_id));
+//    uart2_send_text("?2R"); // get current velocity cmd
+//    uart2_CR_LF_send();
     PUMP_TX_DIS;
-    delay_ms(20); // delay to read all answer bytes
+    delay_ms(20); // delay to read all answer bytes !!!!
     
-    velocity = search_answer(19, 17, 26); 
+    //velocity = search_answer(19, 17, 26); 
     // answer: reg - 19 = '`', numeric value of answer - 17 - 26 regs
 
     return velocity;
@@ -215,13 +215,13 @@ void set_syr_vel(unsigned char pump_id, unsigned int vel)  // set syringe veloci
     unsigned int sec_num    = (vel - first_num * 10);
 
     PUMP_TX_EN;
-    uart2_send_text("/");
-    uart2_send_byte(num2char(pump_id));
-    uart2_send_text("S");
-    uart2_send_byte(num2char(first_num));
-    uart2_send_byte(num2char(sec_num));
-    uart2_send_text("R");
-    uart2_CR_LF_send();
+//    uart2_send_text("/");
+//    uart2_send_byte(num2char(pump_id));
+//    uart2_send_text("S");
+//    uart2_send_byte(num2char(first_num));
+//    uart2_send_byte(num2char(sec_num));
+//    uart2_send_text("R");
+//    uart2_CR_LF_send();
     PUMP_TX_DIS;
 }
 
@@ -234,10 +234,10 @@ unsigned int get_valve_angle (unsigned char pump_id)       // get current valve 
     answer_refresh(); 
     
     PUMP_TX_EN; 
-    uart2_send_text("/");
-    uart2_send_byte(num2char(pump_id));
-    uart2_send_text("?25000R"); // get current velocity cmd
-    uart2_CR_LF_send();
+//    uart2_send_text("/");
+//    uart2_send_byte(num2char(pump_id));
+//    uart2_send_text("?25000R"); // get current velocity cmd
+//    uart2_CR_LF_send();
     PUMP_TX_DIS;
     delay_ms(20); // delay to read all answer bytes
     
@@ -261,14 +261,14 @@ void set_valve_angle(unsigned char pump_id, unsigned int angle, unsigned int dir
     // min = (a < b) ? a : b;
     
     PUMP_TX_EN;
-    uart2_send_text("/");
-    uart2_send_byte(num2char(pump_id));
-    uart2_send_text("h");
-    uart2_send_text((dir == 1) ? "28" : "27"); // 0 - clockwise, 1 - counter clockwise
-    uart2_send_byte(num2char(first_num));
-    uart2_send_byte(num2char(sec_num));
-     uart2_send_byte(num2char(third_num));
-    uart2_send_text("R");
-    uart2_CR_LF_send();
+//    uart2_send_text("/");
+//    uart2_send_byte(num2char(pump_id));
+//    uart2_send_text("h");
+//    uart2_send_text((dir == 1) ? "28" : "27"); // 0 - clockwise, 1 - counter clockwise
+//    uart2_send_byte(num2char(first_num));
+//    uart2_send_byte(num2char(sec_num));
+//     uart2_send_byte(num2char(third_num));
+//    uart2_send_text("R");
+//    uart2_CR_LF_send();
     PUMP_TX_DIS;
 }

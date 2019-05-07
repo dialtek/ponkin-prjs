@@ -131,7 +131,7 @@ namespace PSP_405_control
             VDK_FI_RwTimer.OnSrcRdComplete += new EventHandler(SrcReadTimer_OnVDK_FIdataRd);
 
             VoltageUpDown.DecimalPlaces = 2;
-            VoltageUpDown.Increment = 1M;
+            VoltageUpDown.Increment = 0.01M;
 
             CurrentLimitUpDown.DecimalPlaces = 2;
             CurrentLimitUpDown.Increment = 0.01M;
@@ -142,6 +142,12 @@ namespace PSP_405_control
             DataUpdateTimer.Start();
         }
 
+        private void VDK_FI_OutputBoff_Click(object sender, EventArgs e)
+        {
+            string ID = "1"; // ID источника ВДК-ФИ
+
+            OnSrcOutputCtrl(this, ID + "Выкл."); // команда вкл
+        }
 
         void SrcReadTimer_OnVDK_FIdataRd(object sender, EventArgs e)
         {
@@ -165,12 +171,12 @@ namespace PSP_405_control
 
             string ID = "1"; // ID источника ВДК-ФИ
 
-            if (VDK_FI_OutStatus == "Выкл.") // - знак необычный, внимательнее
-                OnSrcOutputCtrl(this, ID + "Вкл."); // команда вкл. если сейчас выкл.
-            else
-             {
-                 OnSrcOutputCtrl(this, ID + "OFF"); // команда выкл. если сейчас вкл. 
-             } 
+            //if (VDK_FI_OutStatus == "Выкл.") // - знак необычный, внимательнее
+            OnSrcOutputCtrl(this, ID + "Вкл."); // команда вкл
+            //else
+            // {
+            //     OnSrcOutputCtrl(this, ID + "OFF"); // команда выкл. если сейчас вкл. 
+            // } 
                 
         }
 
@@ -188,8 +194,23 @@ namespace PSP_405_control
             //---------------------------------  ВДК-ФИ ------------------------------------------------//
             VDK_FI_voltBox.Text = VDK_FI_voltage;
             VDK_FI_currBox.Text = VDK_FI_current;
-            VDK_FI_OutputB.Text = VDK_FI_OutStatus;
-            VDK_FI_OutputB.BackColor = (VDK_FI_OutStatus == "Вкл.") ? Color.LawnGreen : Color.Silver;
+            //VDK_FI_OutputBoN.Text = VDK_FI_OutStatus;
+
+            if (VDK_FI_OutStatus == "Вкл.")
+            {
+                VDK_FI_OutputBoN.Enabled = false;
+                VDK_FI_OutputBoff.Enabled =true;
+                OutStatusLb.Text = "Ток включен";
+                OutStatusLb.BackColor = Color.LimeGreen;
+            }
+            if (VDK_FI_OutStatus == "Выкл.")
+            {
+                VDK_FI_OutputBoN.Enabled = true;
+                VDK_FI_OutputBoff.Enabled = false;
+                OutStatusLb.Text = "Ток выключен";
+                OutStatusLb.BackColor = Color.LightGray;
+            }
+
 
             if (VDK_FI_voltage == "*") PowErrContainer.Add("ВДК-ФИ", true);
             else PowErrContainer.Add("ВДК-ФИ", false);

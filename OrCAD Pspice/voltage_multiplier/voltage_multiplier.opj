@@ -54,6 +54,21 @@
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (2N3904
+      (FullPartName "2N3904.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\BJN.OLB")
+      (DeviceIndex "0"))
     (VDC
       (FullPartName "VDC.Normal")
       (LibraryName
@@ -93,11 +108,6 @@
       (LibraryName
          "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
       (DeviceIndex "0"))
-    (VSIN
-      (FullPartName "VSIN.Normal")
-      (LibraryName
-         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
-      (DeviceIndex "0"))
     (VSRC
       (FullPartName "VSRC.Normal")
       (LibraryName
@@ -134,7 +144,7 @@
          "SCHEMATIC1")
       (Select "Design Resources"
          "F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier.dsn"
-         "SCHEMATIC1" "PAGE2"))
+         "SCHEMATIC1" "school"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -145,8 +155,8 @@
       (Type "COrSchematicDoc")
       (Frame
         (Placement "44 0 1 -1 -1 -8 -31 305 1966 3 494")
-        (Scroll "34 44")
-        (Zoom "114")
+        (Scroll "-335 0")
+        (Zoom "57")
         (Occurrence "/"))
       (Path
          "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
@@ -155,22 +165,11 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 78 1717 78 547")
-        (Scroll "90 600")
-        (Zoom "200")
+        (Placement "44 2 3 -1 -1 -8 -31 104 1743 104 573")
+        (Scroll "437 496")
+        (Zoom "210")
         (Occurrence "/"))
       (Path
          "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))
-    (Doc
-      (Type "COrSchematicDoc")
-      (Frame
-        (Placement "44 0 1 -1 -1 -8 -31 104 1743 104 573")
-        (Scroll "90 82")
-        (Zoom "200")
-        (Occurrence "/"))
-      (Path
-         "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\VOLTAGE_MULTIPLIER\VOLTAGE_MULTIPLIER.DSN")
-      (Schematic "SCHEMATIC1")
-      (Page "PAGE2"))))
+      (Page "school"))))

@@ -10,13 +10,13 @@
     <Static>
       <Build>
         <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>980</ColumnWidth1>
-        <ColumnWidth2>261</ColumnWidth2>
-        <ColumnWidth3>65</ColumnWidth3>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
       </Build>
       <Workspace>
         <ColumnWidths>
-          <Column0>176</Column0>
+          <Column0>242</Column0>
           <Column1>27</Column1>
           <Column2>27</Column2>
           <Column3>27</Column3>
@@ -24,43 +24,46 @@
       </Workspace>
       <Debug-Log>
         <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>1307</ColumnWidth1>
+        <ColumnWidth1>1861</ColumnWidth1>
       </Debug-Log>
+      <TerminalIO/>
     </Static>
     <Windows>
-      <Wnd3>
+      <Wnd2>
         <Tabs>
           <Tab>
-            <Identity>TabID-9067-20165</Identity>
+            <Identity>TabID-30816-30230</Identity>
             <TabName>Build</TabName>
             <Factory>Build</Factory>
             <Session/>
           </Tab>
           <Tab>
-            <Identity>TabID-27720-20429</Identity>
+            <Identity>TabID-21176-30616</Identity>
             <TabName>Debug Log</TabName>
             <Factory>Debug-Log</Factory>
             <Session/>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd3>
-      <Wnd4>
+      </Wnd2>
+      <Wnd3>
         <Tabs>
           <Tab>
-            <Identity>TabID-19816-20168</Identity>
+            <Identity>TabID-8797-30234</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
               <NodeDict>
                 <ExpandedNode>prj_file</ExpandedNode>
                 <ExpandedNode>prj_file/src</ExpandedNode>
+                <ExpandedNode>prj_file/src/inc</ExpandedNode>
+                <ExpandedNode>prj_file/src/main.c</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd4>
+      </Wnd3>
     </Windows>
     <Editor>
       <Pane>
@@ -72,11 +75,35 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>519</YPos2>
+          <YPos2>151</YPos2>
+          <SelStart2>20832</SelStart2>
+          <SelEnd2>20832</SelEnd2>
+        </Tab>
+        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\inc\dialtek_modbus.h</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>16</YPos2>
           <SelStart2>0</SelStart2>
           <SelEnd2>0</SelEnd2>
         </Tab>
-        <ActiveTab>0</ActiveTab>
+        <Tab>
+          <Factory>TextEditor</Factory>
+          <Filename>$WS_DIR$\inc\dialtek_modbus.c</Filename>
+          <XPos>0</XPos>
+          <YPos>0</YPos>
+          <SelStart>0</SelStart>
+          <SelEnd>0</SelEnd>
+          <XPos2>0</XPos2>
+          <YPos2>73</YPos2>
+          <SelStart2>4912</SelStart2>
+          <SelEnd2>4912</SelEnd2>
+        </Tab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -91,31 +118,34 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-07B2CD98>
+            <Toolbar-07F077B0>
               <key>iaridepm.enu1</key>
-            </Toolbar-07B2CD98>
+            </Toolbar-07F077B0>
           </Sizes>
         </Row0>
+        <Row1>
+          <Sizes/>
+        </Row1>
       </Top>
       <Left>
         <Row0>
           <Sizes>
-            <Wnd4>
+            <Wnd3>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>442</Bottom>
-                <Right>250</Right>
+                <Bottom>754</Bottom>
+                <Right>316</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>200</xscreen>
                 <yscreen>200</yscreen>
-                <sizeHorzCX>146413</sizeHorzCX>
-                <sizeHorzCY>291971</sizeHorzCY>
-                <sizeVertCX>184480</sizeVertCX>
-                <sizeVertCY>648175</sizeVertCY>
+                <sizeHorzCX>104167</sizeHorzCX>
+                <sizeHorzCY>200602</sizeHorzCY>
+                <sizeVertCX>165625</sizeVertCX>
+                <sizeVertCY>758275</sizeVertCY>
               </Rect>
-            </Wnd4>
+            </Wnd3>
           </Sizes>
         </Row0>
       </Left>
@@ -127,22 +157,22 @@
       <Bottom>
         <Row0>
           <Sizes>
-            <Wnd3>
+            <Wnd2>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
                 <Bottom>198</Bottom>
-                <Right>1368</Right>
+                <Right>1922</Right>
                 <x>-2</x>
                 <y>-2</y>
-                <xscreen>1370</xscreen>
+                <xscreen>1924</xscreen>
                 <yscreen>200</yscreen>
-                <sizeHorzCX>1002928</sizeHorzCX>
-                <sizeHorzCY>291971</sizeHorzCY>
-                <sizeVertCX>146413</sizeVertCX>
-                <sizeVertCY>291971</sizeVertCY>
+                <sizeHorzCX>1002083</sizeHorzCX>
+                <sizeHorzCY>200602</sizeHorzCY>
+                <sizeVertCX>104167</sizeVertCX>
+                <sizeVertCY>200602</sizeVertCY>
               </Rect>
-            </Wnd3>
+            </Wnd2>
           </Sizes>
         </Row0>
       </Bottom>

@@ -57,7 +57,7 @@
 
 #define com_dev_id 0            // В широковещательном режиме используется адрес 0
 //#define dev_id 24               // modbus id текущего устройства                        
-U8 dev_id = 21;                                                                         // <<<<<<<<<<=========================== ID
+U8 dev_id = 23;                                                                         // <<<<<<<<<<=========================== ID
 #define firmware_ver    11      // версия прошивки текущего устройства
 #define device_family   3       // код семейства устройств: 1 - PBF modules, 2 - extraction modules, 3 - dc hv modules
 #define max_regs_cnt    125     // макс. кол-во регистров для чтения за 1 раз

@@ -15,7 +15,7 @@
 
 // FGS
 #pragma config GWRP = OFF               // General Code Segment Write Protect (User program memory is not write-protected)
-#pragma config GSS = OFF                // General Segment Code Protection (User program memory is not code-protected)
+#pragma config GSS = ON                 // ! General Segment Code Protection (User program memory is code-protected)
 
 // FOSCSEL
 #pragma config FNOSC = PRIPLL           // Oscillator Mode (Primary Oscillator (XT, HS, EC) w/ PLL)

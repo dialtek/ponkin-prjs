@@ -36,14 +36,14 @@
 
 /* RS485 EN/DIS DEFINE */
 
-#define TX_EN  LATCbits.LATC14 = 1 
-#define TX_DIS LATCbits.LATC14 = 0 
+#define TX_EN  TRISCbits.TRISC14 = 0; LATCbits.LATC14 = 1 
+#define TX_DIS TRISCbits.TRISC14 = 0; LATCbits.LATC14 = 0 
 
 /* HARDWARE INFO */
 
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
   unsigned char dev_id        = 100;                // MODBUS ID устройства   <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 21;                 // версиЯ прошивки текущего устройства
+  unsigned char firmware_ver  = 24;                 // версиЯ прошивки текущего устройства
   unsigned char device_family = 11;                 // код семейства устройств
   unsigned char modbus_ver    = 31;                 // версия MODBUS
 
@@ -138,16 +138,19 @@
            case 18: // reg 18 - range
             if(holding_register[18] >= 0 && holding_register[18] <= 6) 
                 PGA_val = holding_register[18];
+             ADC_init(input_buf_state); // Инициализация обоих АЦП
            break;
            //----
            case 19: // reg 19 - SPS
              if(holding_register[19] >= 0 && holding_register[19] <= 8) 
                 ADC_sps_var = holding_register[19];
+             ADC_init(input_buf_state); // Инициализация обоих АЦП
            break;
            //----
            case 20: // reg 20 - averfge buf size
              if(holding_register[20] >= 1 && holding_register[20] <= 128) 
                 Ma_buf_size = holding_register[20];
+             ADC_init(input_buf_state); // Инициализация обоих АЦП
            break;
            //----    
            case 51: // reg 51 - смена ID
@@ -163,7 +166,6 @@
            
            default: break;
        }
-         ADC_init(input_buf_state); // Инициализация обоих АЦП
          eeprom_wr_regs();   
    } //if(cmd_type == MODBUS_WSR_CMD) 
   }

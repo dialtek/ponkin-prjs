@@ -79,11 +79,11 @@ Program Memory  [Origin = 0x200, Length = 0x15600]
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x2fe           0x47d  (1149)
-.text                        0x4fe              0x10d8          0x1944  (6468)
-.init.delay32               0x15d6                0x1c            0x2a  (42)
-.dinit                      0x15f2                0x1a            0x27  (39)
+.text                        0x4fe              0x10e0          0x1950  (6480)
+.init.delay32               0x15de                0x1c            0x2a  (42)
+.dinit                      0x15fa                0x1a            0x27  (39)
 
-                     Total program memory used (bytes):         0x1e12  (7698) 5%
+                     Total program memory used (bytes):         0x1e1e  (7710) 5%
 
 
 Data Memory  [Origin = 0x800, Length = 0x2000]
@@ -234,71 +234,71 @@ External Symbols in Program Memory (by address):
                   0x000480                  ___floatdisf
                   0x0004a0                  ___floatundisf
                   0x0004fe                  _modbus_refresh
-                  0x0006f0                  _modbus_reset
-                  0x000718                  _modbus_init
-                  0x00074c                  _is_reg
-                  0x00077e                  _modbus_CRC16
-                  0x0007e6                  _modbus_wsr_answer
-                  0x000892                  _modbus_rhr_answer
-                  0x0009ae                  _modbus_rir_answer
-                  0x000aca                  _modbus_rx_CRC_check
-                  0x000bf0                  _modbus_rx_sm
-                  0x000c5a                  _modbus_poll
-                  0x000cd4                  _OSC_init
-                  0x000d00                  _GPIO_init
-                  0x000d2e                  _UART1_init
-                  0x000d60                  _U1_send_byte
-                  0x000d80                  __U1RXInterrupt
-                  0x000dd4                  _Timer9_init
-                  0x000e42                  _SPI2_init
-                  0x000e8a                  _SPI2_write_byte
-                  0x000ea8                  _SPI2_read_byte
-                  0x000ede                  _clr_bufs
-                  0x000f6a                  _RdReg
-                  0x000fa8                  _WrReg
-                  0x000fe8                  _ADC_sps_set
-                  0x001000                  _ADC_set_PGA
-                  0x00109c                  _ADC_SelfCal
-                  0x0010d2                  _ADC_init
-                  0x0011dc                  _ADC_sync
-                  0x00120c                  _ADC_select
-                  0x001236                  _ADCx_setCh
-                  0x00125e                  _ADC_read
-                  0x0012c2                  _ADCx_read_aver
-                  0x001346                  _ADC_par_rd_ch
-                  0x001418                  _eeprom_wr_page
-                  0x001494                  _eeprom_wr_regs
-                  0x0014ba                  _eeprom_rd_regs
-                  0x00151c                  __T9Interrupt
-                  0x001546                  _main
-                  0x0015d6                  ___delay32
+                  0x0006f2                  _modbus_reset
+                  0x00071a                  _modbus_init
+                  0x00074e                  _is_reg
+                  0x000780                  _modbus_CRC16
+                  0x0007e8                  _modbus_wsr_answer
+                  0x000898                  _modbus_rhr_answer
+                  0x0009b8                  _modbus_rir_answer
+                  0x000ad8                  _modbus_rx_CRC_check
+                  0x000bfe                  _modbus_rx_sm
+                  0x000c68                  _modbus_poll
+                  0x000ce2                  _OSC_init
+                  0x000d0e                  _GPIO_init
+                  0x000d3c                  _UART1_init
+                  0x000d6e                  _U1_send_byte
+                  0x000d8e                  __U1RXInterrupt
+                  0x000de2                  _Timer9_init
+                  0x000e50                  _SPI2_init
+                  0x000e98                  _SPI2_write_byte
+                  0x000eb6                  _SPI2_read_byte
+                  0x000eec                  _clr_bufs
+                  0x000f78                  _RdReg
+                  0x000fb6                  _WrReg
+                  0x000ff6                  _ADC_sps_set
+                  0x00100e                  _ADC_set_PGA
+                  0x0010aa                  _ADC_SelfCal
+                  0x0010e4                  _ADC_init
+                  0x0011ee                  _ADC_sync
+                  0x00121e                  _ADC_select
+                  0x001248                  _ADCx_setCh
+                  0x001270                  _ADC_read
+                  0x0012d4                  _ADCx_read_aver
+                  0x00133e                  _ADC_par_rd_ch
+                  0x001410                  _eeprom_wr_page
+                  0x00148c                  _eeprom_wr_regs
+                  0x0014b2                  _eeprom_rd_regs
+                  0x001514                  __T9Interrupt
+                  0x00153e                  _main
+                  0x0015de                  ___delay32
 
 External Symbols in Program Memory (by name):
 
-                  0x00109c                  _ADC_SelfCal
-                  0x0010d2                  _ADC_init
-                  0x001346                  _ADC_par_rd_ch
-                  0x00125e                  _ADC_read
-                  0x00120c                  _ADC_select
-                  0x001000                  _ADC_set_PGA
-                  0x000fe8                  _ADC_sps_set
-                  0x0011dc                  _ADC_sync
-                  0x0012c2                  _ADCx_read_aver
-                  0x001236                  _ADCx_setCh
-                  0x000d00                  _GPIO_init
-                  0x000cd4                  _OSC_init
-                  0x000f6a                  _RdReg
-                  0x000e42                  _SPI2_init
-                  0x000ea8                  _SPI2_read_byte
-                  0x000e8a                  _SPI2_write_byte
-                  0x000dd4                  _Timer9_init
-                  0x000d60                  _U1_send_byte
-                  0x000d2e                  _UART1_init
-                  0x000fa8                  _WrReg
+                  0x0010aa                  _ADC_SelfCal
+                  0x0010e4                  _ADC_init
+                  0x00133e                  _ADC_par_rd_ch
+                  0x001270                  _ADC_read
+                  0x00121e                  _ADC_select
+                  0x00100e                  _ADC_set_PGA
+                  0x000ff6                  _ADC_sps_set
+                  0x0011ee                  _ADC_sync
+                  0x0012d4                  _ADCx_read_aver
+                  0x001248                  _ADCx_setCh
+                  0x000d0e                  _GPIO_init
+                  0x000ce2                  _OSC_init
+                  0x000f78                  _RdReg
+                  0x000e50                  _SPI2_init
+                  0x000eb6                  _SPI2_read_byte
+                  0x000e98                  _SPI2_write_byte
+                  0x000de2                  _Timer9_init
+                  0x000d6e                  _U1_send_byte
+                  0x000d3c                  _UART1_init
+                  0x000fb6                  _WrReg
                   0x0002a2                  __DefaultInterrupt
-                  0x00151c                  __T9Interrupt
-                  0x000d80                  __U1RXInterrupt
-                  0x0015d6                  ___delay32
+                  0x001514                  __T9Interrupt
+                  0x000d8e                  __U1RXInterrupt
+                  0x0015de                  ___delay32
                   0x0002a6                  ___divsf3
                   0x00032a                  ___fixsfsi
                   0x000480                  ___floatdisf
@@ -315,22 +315,22 @@ External Symbols in Program Memory (by name):
                   0x0003e8                  __funpack2
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000ede                  _clr_bufs
-                  0x0014ba                  _eeprom_rd_regs
-                  0x001418                  _eeprom_wr_page
-                  0x001494                  _eeprom_wr_regs
-                  0x00074c                  _is_reg
-                  0x001546                  _main
-                  0x00077e                  _modbus_CRC16
-                  0x000718                  _modbus_init
-                  0x000c5a                  _modbus_poll
+                  0x000eec                  _clr_bufs
+                  0x0014b2                  _eeprom_rd_regs
+                  0x001410                  _eeprom_wr_page
+                  0x00148c                  _eeprom_wr_regs
+                  0x00074e                  _is_reg
+                  0x00153e                  _main
+                  0x000780                  _modbus_CRC16
+                  0x00071a                  _modbus_init
+                  0x000c68                  _modbus_poll
                   0x0004fe                  _modbus_refresh
-                  0x0006f0                  _modbus_reset
-                  0x000892                  _modbus_rhr_answer
-                  0x0009ae                  _modbus_rir_answer
-                  0x000aca                  _modbus_rx_CRC_check
-                  0x000bf0                  _modbus_rx_sm
-                  0x0007e6                  _modbus_wsr_answer
+                  0x0006f2                  _modbus_reset
+                  0x000898                  _modbus_rhr_answer
+                  0x0009b8                  _modbus_rir_answer
+                  0x000ad8                  _modbus_rx_CRC_check
+                  0x000bfe                  _modbus_rx_sm
+                  0x0007e8                  _modbus_wsr_answer
 
 Memory Configuration
 
@@ -480,18 +480,18 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x2f1f
+.debug_info       0x000000       0x2f29
  *(.debug_info)
- .debug_info      0x000000       0x2f1f build/default/production/main.o
+ .debug_info      0x000000       0x2f29 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000        0x2ca
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x2ca build/default/production/main.o
 
-.debug_line       0x000000       0x1539
+.debug_line       0x000000       0x153f
  *(.debug_line)
- .debug_line      0x000000       0x1539 build/default/production/main.o
+ .debug_line      0x000000       0x153f build/default/production/main.o
 
 .debug_frame      0x000000        0x274
  *(.debug_frame)
@@ -541,7 +541,7 @@ __FUID3
                   0x000024          0x4 LONG 0x2a2 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x2a2 DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x2a2 DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0xd80 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0xd8e DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x2a2 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x2a2 DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x2a2 DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -582,7 +582,7 @@ __FUID3
                   0x000076          0x4 LONG 0x2a2 DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000078          0x4 LONG 0x2a2 DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007a          0x4 LONG 0x2a2 DEFINED (__T8Interrupt)?ABSOLUTE (__T8Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00007c          0x4 LONG 0x151c DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00007c          0x4 LONG 0x1514 DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007e          0x4 LONG 0x2a2 DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000080          0x4 LONG 0x2a2 DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000082          0x4 LONG 0x2a2 DEFINED (__Interrupt55)?ABSOLUTE (__Interrupt55):ABSOLUTE (__DefaultInterrupt)
@@ -669,7 +669,7 @@ __FUID3
                   0x000124          0x4 LONG 0x2a2 DEFINED (__AltT3Interrupt)?ABSOLUTE (__AltT3Interrupt):DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000126          0x4 LONG 0x2a2 DEFINED (__AltSPI1ErrInterrupt)?ABSOLUTE (__AltSPI1ErrInterrupt):DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000128          0x4 LONG 0x2a2 DEFINED (__AltSPI1Interrupt)?ABSOLUTE (__AltSPI1Interrupt):DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00012a          0x4 LONG 0xd80 DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00012a          0x4 LONG 0xd8e DEFINED (__AltU1RXInterrupt)?ABSOLUTE (__AltU1RXInterrupt):DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012c          0x4 LONG 0x2a2 DEFINED (__AltU1TXInterrupt)?ABSOLUTE (__AltU1TXInterrupt):DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00012e          0x4 LONG 0x2a2 DEFINED (__AltADC1Interrupt)?ABSOLUTE (__AltADC1Interrupt):DEFINED (__ADC1Interrupt)?ABSOLUTE (__ADC1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000130          0x4 LONG 0x2a2 DEFINED (__AltDMA1Interrupt)?ABSOLUTE (__AltDMA1Interrupt):DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -710,7 +710,7 @@ __FUID3
                   0x000176          0x4 LONG 0x2a2 DEFINED (__AltSI2C2Interrupt)?ABSOLUTE (__AltSI2C2Interrupt):DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000178          0x4 LONG 0x2a2 DEFINED (__AltMI2C2Interrupt)?ABSOLUTE (__AltMI2C2Interrupt):DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00017a          0x4 LONG 0x2a2 DEFINED (__AltT8Interrupt)?ABSOLUTE (__AltT8Interrupt):DEFINED (__T8Interrupt)?ABSOLUTE (__T8Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00017c          0x4 LONG 0x151c DEFINED (__AltT9Interrupt)?ABSOLUTE (__AltT9Interrupt):DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00017c          0x4 LONG 0x1514 DEFINED (__AltT9Interrupt)?ABSOLUTE (__AltT9Interrupt):DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00017e          0x4 LONG 0x2a2 DEFINED (__AltINT3Interrupt)?ABSOLUTE (__AltINT3Interrupt):DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000180          0x4 LONG 0x2a2 DEFINED (__AltINT4Interrupt)?ABSOLUTE (__AltINT4Interrupt):DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000182          0x4 LONG 0x2a2 DEFINED (__AltInterrupt55)?ABSOLUTE (__AltInterrupt55):DEFINED (__Interrupt55)?ABSOLUTE (__Interrupt55):ABSOLUTE (__DefaultInterrupt)
@@ -1810,50 +1810,50 @@ __c30_signature
 .config_RBS       0xf80000          0x2
  .config_RBS      0xf80000          0x2 build/default/production/main.o
 
-.text             0x0004fe       0x10d8
- .text            0x0004fe       0x10d8 build/default/production/main.o
+.text             0x0004fe       0x10e0
+ .text            0x0004fe       0x10e0 build/default/production/main.o
                   0x0004fe                  _modbus_refresh
-                  0x0006f0                  _modbus_reset
-                  0x000718                  _modbus_init
-                  0x00074c                  _is_reg
-                  0x00077e                  _modbus_CRC16
-                  0x0007e6                  _modbus_wsr_answer
-                  0x000892                  _modbus_rhr_answer
-                  0x0009ae                  _modbus_rir_answer
-                  0x000aca                  _modbus_rx_CRC_check
-                  0x000bf0                  _modbus_rx_sm
-                  0x000c5a                  _modbus_poll
-                  0x000cd4                  _OSC_init
-                  0x000d00                  _GPIO_init
-                  0x000d2e                  _UART1_init
-                  0x000d60                  _U1_send_byte
-                  0x000d80                  __U1RXInterrupt
-                  0x000dd4                  _Timer9_init
-                  0x000e42                  _SPI2_init
-                  0x000e8a                  _SPI2_write_byte
-                  0x000ea8                  _SPI2_read_byte
-                  0x000ede                  _clr_bufs
-                  0x000f6a                  _RdReg
-                  0x000fa8                  _WrReg
-                  0x000fe8                  _ADC_sps_set
-                  0x001000                  _ADC_set_PGA
-                  0x00109c                  _ADC_SelfCal
-                  0x0010d2                  _ADC_init
-                  0x0011dc                  _ADC_sync
-                  0x00120c                  _ADC_select
-                  0x001236                  _ADCx_setCh
-                  0x00125e                  _ADC_read
-                  0x0012c2                  _ADCx_read_aver
-                  0x001346                  _ADC_par_rd_ch
-                  0x001418                  _eeprom_wr_page
-                  0x001494                  _eeprom_wr_regs
-                  0x0014ba                  _eeprom_rd_regs
-                  0x00151c                  __T9Interrupt
-                  0x001546                  _main
+                  0x0006f2                  _modbus_reset
+                  0x00071a                  _modbus_init
+                  0x00074e                  _is_reg
+                  0x000780                  _modbus_CRC16
+                  0x0007e8                  _modbus_wsr_answer
+                  0x000898                  _modbus_rhr_answer
+                  0x0009b8                  _modbus_rir_answer
+                  0x000ad8                  _modbus_rx_CRC_check
+                  0x000bfe                  _modbus_rx_sm
+                  0x000c68                  _modbus_poll
+                  0x000ce2                  _OSC_init
+                  0x000d0e                  _GPIO_init
+                  0x000d3c                  _UART1_init
+                  0x000d6e                  _U1_send_byte
+                  0x000d8e                  __U1RXInterrupt
+                  0x000de2                  _Timer9_init
+                  0x000e50                  _SPI2_init
+                  0x000e98                  _SPI2_write_byte
+                  0x000eb6                  _SPI2_read_byte
+                  0x000eec                  _clr_bufs
+                  0x000f78                  _RdReg
+                  0x000fb6                  _WrReg
+                  0x000ff6                  _ADC_sps_set
+                  0x00100e                  _ADC_set_PGA
+                  0x0010aa                  _ADC_SelfCal
+                  0x0010e4                  _ADC_init
+                  0x0011ee                  _ADC_sync
+                  0x00121e                  _ADC_select
+                  0x001248                  _ADCx_setCh
+                  0x001270                  _ADC_read
+                  0x0012d4                  _ADCx_read_aver
+                  0x00133e                  _ADC_par_rd_ch
+                  0x001410                  _eeprom_wr_page
+                  0x00148c                  _eeprom_wr_regs
+                  0x0014b2                  _eeprom_rd_regs
+                  0x001514                  __T9Interrupt
+                  0x00153e                  _main
 
-.init.delay32     0x0015d6         0x1c
- .init.delay32    0x0015d6         0x1c c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
-                  0x0015d6                  ___delay32
+.init.delay32     0x0015de         0x1c
+ .init.delay32    0x0015de         0x1c c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(delay32.eo)
+                  0x0015de                  ___delay32
 
-.dinit            0x0015f2         0x1a
- .dinit           0x0015f2         0x1a data_init
+.dinit            0x0015fa         0x1a
+ .dinit           0x0015fa         0x1a data_init

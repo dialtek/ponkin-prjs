@@ -1,5 +1,5 @@
 
-**** 03/01/19 15:46:10 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 04/23/19 23:00:01 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-1"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\voltage_multiplier\voltage_multiplier-pspicefiles\schematic1\1.sim ] 
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 20ms 0 0.1ms SKIPBP 
+.TRAN  0 10ms 0 0.1ms SKIPBP 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -86,31 +86,39 @@ R_R22         N33200 N35514  2.7k TC=0,0
 V_V5         N33264 0 12
 R_R23         0 N33276  1k TC=0,0 
 R_R24         0 N33228  3.9k TC=0,0 
-R_R28         0 N34739  10k TC=0,0 
-V_V6         0 N34659 3.2
-E_U3         N34671 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
-R_R26         N34639 N346250  2.4k TC=0,0 
-R_R25         N34659 N34639  5.1k TC=0,0 
+V_V6         0 N34659 12V
+R_R27         0 N34655  1k TC=0,0 
+E_U3         N34655 0 VALUE {LIMIT(V(N34739,N34639)*1E6,-15V,+15V)}
+R_R26         N34639 N35551  2.7k TC=0,0 
+R_R25         N34659 N34639  10k TC=0,0 
 R_R30         N35514 N33276  1R TC=0,0 
-I_I3         N40732 N40736 DC 200uA  
-R_R39         0 N40736  100 TC=0,0 
-V_V9         N40732 0 12000
-E_U5         N40634 0 VALUE {LIMIT(V(N40736,N40610)*1E6,-15V,+15V)}
-R_R38         0 N40634  1k TC=0,0 
-R_R37         N40610 N40634  5k TC=0,0 
-R_R40         N40736 N40610  10k TC=0,0 
-V_V10         N41672 0 12000
+E_U5         N40634 0 VALUE {LIMIT(V(0,N40610)*1E6,-15V,+15V)}
+R_R38         0 N40634  1MEG TC=0,0 
+R_R37         N40610 N40634  5.6k TC=0,0 
+R_R40         N41866 N40610  3.3k TC=0,0 
 R_R41         N41566 N41580  10k TC=0,0 
 R_R44         N41684 N41566  10k TC=0,0 
 E_U6         N41580 0 VALUE {LIMIT(V(0,N41566)*1E6,-15V,+15V)}
 R_R43         0 N41684  100 TC=0,0 
-I_I4         N41672 N41684 DC 3ma  
+I_I4         0 N41684 DC 3ma  
 R_R42         0 N41580  1k TC=0,0 
-R_R45         N346250 N34671  130 TC=0,0 
-R_R46         N34671 N46544  1k TC=0,0 
+R_R29         N35551 N34655  100R TC=0,0 
+R_R28         0 N34739  3.9k TC=0,0 
+V_V7         0 N50547 12000
+R_R45         N50547 N41866  600k TC=0,0 
+R_R46         0 N41866  1k TC=0,0 
+R_R47         N55596 0  1k TC=0,0 
+V_V8         N55596 0 100V
+X_Q1         N556512 N56269 0 awb2n3904 PARAMS:                                
++             
+V_V10         N56025 0 12V
+R_R49         N556512 N56025  50R TC=0,0 
+R_R50         0 N56269  10k TC=0,0 
+V_V11         0 0  
++PULSE 0 3.3 0 1us 1us 1ms 1ms
 
 **** RESUMING 1.cir ****
 .END
 
-ERROR(ORPSIM-15141): Less than 2 connections at node N46544.
+ERROR(ORPSIM-15143): Voltage source and/or inductor loop involving V_V11. You may break the loop by adding a series resistance
 

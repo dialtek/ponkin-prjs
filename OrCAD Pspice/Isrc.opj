@@ -50,23 +50,40 @@
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
-    (OPAMP
-      (FullPartName "OPAMP.Normal")
-      (LibraryName
-         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
-      (DeviceIndex "0"))
-    (VPULSE
-      (FullPartName "VPULSE.Normal")
+    (VDC
+      (FullPartName "VDC.Normal")
       (LibraryName
          "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
-      (LibraryName "..\..\LIBRARY\PSPICE\ANALOG.OLB")
+      (LibraryName
+         "C:\ORCAD\ORCAD_10.5\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (OPAMP
+      (FullPartName "OPAMP.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))
     (C
       (FullPartName "C.Normal")
-      (LibraryName "..\..\LIBRARY\PSPICE\ANALOG.OLB")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (2N3904
+      (FullPartName "2N3904.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\BJN.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0"))
     (L
       (FullPartName "L.Normal")
@@ -75,12 +92,9 @@
     (VSTIM
       (FullPartName "VSTIM.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCSTM.OLB")
-      (DeviceIndex "0"))
-    (VDC
-      (FullPartName "VDC.Normal")
-      (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
-  (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\SPB_16.6\tools\capture\library\pspice")
   (MPSSessionName "D_LHEP_DESKTOP")
   (GlobalState
     (FileView
@@ -90,20 +104,40 @@
          "SCHEMATIC1")
       (Path "Outputs")
       (Select "Design Resources" "F:\Mega\ponkin-prjs\OrCAD Pspice\isrc.dsn"
-         "SCHEMATIC1" "PAGE1"))
+         "SCHEMATIC1" "cap mul"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 452"))
+        (Placement "44 2 3 -1 -1 -8 -31 0 200 0 452"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 52 1869 0 699")
-        (Scroll "-50 502")
+        (Placement "44 0 1 -1 -1 -8 -31 218 2035 -26 673")
+        (Scroll "-50 293")
         (Zoom "172")
         (Occurrence "/"))
       (Path "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\ISRC.DSN")
       (Schematic "SCHEMATIC1")
-      (Page "PAGE1"))))
+      (Page "PAGE1"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 219 1573 -2 489")
+        (Scroll "0 139")
+        (Zoom "184")
+        (Occurrence "/"))
+      (Path "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\ISRC.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "cap mul"))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 104 1743 104 573")
+        (Scroll "332 968")
+        (Zoom "400")
+        (Occurrence "/"))
+      (Path "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\ISRC.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE2"))))

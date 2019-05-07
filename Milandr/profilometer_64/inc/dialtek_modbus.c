@@ -86,6 +86,7 @@
         holding_register[70] = (unsigned int)dev_id;       
         holding_register[71] = (unsigned int)device_family;
         holding_register[72] = (unsigned int)firmware_ver;
+        holding_register[73] = 11; // версия прошивки 
          
         if(is_reg(63)) // если были прочитаны все измерения 
          new_meas = 0; // то сбрасываем флаг обновленных измерений
