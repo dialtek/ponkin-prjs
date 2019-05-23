@@ -1,17 +1,19 @@
 // v2.1
 
-#ifndef __MT_12864B_LCD__
-#define __MT_12864B_LCD__
+#ifndef __milkites_display__
+#define __milkites_display__
 
-#define LCD_reset_ON	     MDR_PORTE->RXTX |=   1  
-#define LCD_reset_OFF 	     MDR_PORTE->RXTX &=  ~1
+#include "milkites_spi.h" 
+
+#define LCD_reset_ON	   MDR_PORTE->RXTX |=   1  
+#define LCD_reset_OFF 	 MDR_PORTE->RXTX &=  ~1
 #define LCD_A0_ON 	     MDR_PORTE->RXTX |=   (1<<1)  
 #define LCD_A0_OFF 	     MDR_PORTE->RXTX &=  ~(1<<1)
 #define LCD_CS_ON 	     MDR_PORTF->RXTX |=   (1<<2)  
 #define LCD_CS_OFF 	     MDR_PORTF->RXTX &=  ~(1<<2)
 
 
-uint8_t INIT_LCD_TABLE [21] = {
+	uint8_t INIT_LCD_TABLE [21] = {
 0xAE, //(1)disp OFF
 0xE2, //(14)reset
 0x40, //(2)disp start adr
@@ -37,7 +39,7 @@ uint8_t INIT_LCD_TABLE [21] = {
 
 /*--------------------------------------------------------------------------- */
 //ШРИФТ ПОЛНЫЙ 5х7
-const uint8_t LCD_5x7_font[][5] = 
+		const uint8_t LCD_5x7_font[][5] = 
 {
  //0x20 и далее (0x00-0x60)
  
@@ -194,36 +196,46 @@ const uint8_t LCD_5x7_font[][5] =
 // -- LCD commands
     void LCD_wr_cmd (uint8_t cmd){
 	  
-        LCD_A0_OFF;
-	SPI1_Wr_Data(cmd);
-	LCD_A0_ON;
+    LCD_A0_OFF;
+		SPI1_Wr_Data(cmd);
+		LCD_A0_ON;
 	}
 
     void LCD_init (void) {
-	  
+			
+	MDR_PORTF->OE      = 0xFFFF;          // порт F на выход, модуль SSP1 
+  MDR_PORTF->FUNC = (2 << 6) |					// режим  пинов 1, 2, 3, 4 порта 
+                    (2 << 4) |          // - альтернативный, задействован  SSP1
+                    (2 << 2) |
+                    (2 << 0);
+  MDR_PORTF->ANALOG  = 0xFFFF;          // режим потра - цифровой
+  MDR_PORTF->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт
+
+  MDR32_SSP1_init();			
+						
 	LCD_reset_OFF;
 	delay_us(20);
 	LCD_reset_ON;
-    LCD_A0_OFF;
+  LCD_A0_OFF;
 	
 	for(uint8_t i = 0; i<21;i++) {SPI1_Wr_Data(INIT_LCD_TABLE[i]); delay_us(3);}
 	
 	}
 
-    void LCD_wr_data (uint8_t data) {
+    void LCD_wr_byte (uint8_t data) {
 	  
 	  LCD_A0_ON;
 	  SPI1_Wr_Data(data);
 	  LCD_A0_OFF;
 	}
 
-    void LCD_page_adr_set (uint8_t page) {
+    void LCD_page_set (uint8_t page) {
     LCD_A0_OFF;
-	SPI1_Wr_Data(0xB0 | page);
+	  SPI1_Wr_Data(0xB0 | page);
 
   	}
 
-    void LCD_column_adr_set (uint8_t column) {
+    void LCD_column_set (uint8_t column) {
 
   	uint8_t i = 0;
 	LCD_A0_OFF;
@@ -233,36 +245,38 @@ const uint8_t LCD_5x7_font[][5] =
 
 	}
     
-    void LCD_inverse_ON (void) {
+    void LCD_inverse(uint8_t state) {
     // отменить инвертирование цвета дисплея
 	LCD_A0_OFF;
+	if(state > 1) return;
+  if(state)			
 	SPI1_Wr_Data(0xA7);
-
+	else SPI1_Wr_Data(0xA6);
 	}
   
     void LCD_inverse_OFF (void) {
     // инвертирование цвета дисплея
 	  
 	LCD_A0_OFF;
-	SPI1_Wr_Data(0xA6);
+	
 
 
 	}
 // ------------------------------------ 
     void LCD_set_cursor (uint8_t setPoint){
 	  
-	  LCD_page_adr_set(setPoint);
-	  LCD_column_adr_set(0);
+	  LCD_page_set(setPoint);
+	  LCD_column_set(0);
 	 
    }
 	
     void LCD_clear (void) {
   		
 	for(uint8_t p=0; p<8; p++) {    //Цикл по всем 8-ми страницам индикатора
-		LCD_page_adr_set(p);                 //Установка текущей страницы для левого кристалла индикатора
-		LCD_column_adr_set(0);
+		LCD_page_set(p);                 //Установка текущей страницы для левого кристалла индикатора
+		LCD_column_set(0);
 		for(uint8_t c=0; c<130; c++) {   //Цикл вывода данных в левую половину индикатора
-		  LCD_wr_data(0x00);     		 //Вывод очередного байта в индикатор
+		  LCD_wr_byte(0x00);     		 //Вывод очередного байта в индикатор
 		  
 		}
   
@@ -442,14 +456,14 @@ case '~': char_code = 140; break;
 
 for (uint8_t i=0;i<5;i++)
 { // вывод построчно 	
-  LCD_wr_data(LCD_5x7_font[char_code][i]);
+  LCD_wr_byte(LCD_5x7_font[char_code][i]);
 }
 
 
    }
 
     void LCD_print_uni_logo (void) {
-	// Вывод на дисплей Лого универа и кафедрф
+	// Вывод на дисплей Лого универа и кафедры
 	  	uint8_t logo [8][128] = { 
 
 	0xFF, 0x01, 0xFD, 0xFD, 0xFD, 0xE1, 0xE1, 0xF1, 0x39, 0x1D, 0x0D, 0x05, 0x01, 0x01, 0x01, 0xFD, 0xFD, 0xFD, 0x01, 0x81, 0xC1, 0xE1, 0x71, 0x39, 0xFD, 0xFD, 0xFD, 0x01, 0x09, 0x0D, 0x05, 0x05, 0x05, 0xFD, 0xFD, 0xFD, 0x05, 0x05, 0x05, 0x0D, 0x09, 0x05, 0x85, 0x85, 0x85, 0x85, 0x85, 0x85, 0x85, 0xFD, 0xFD, 0xF9, 0x01, 0x01, 0xF9, 0xFD, 0xFD, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x05, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x01, 0x81, 0xC1, 0xE1, 0xE1, 0xF1, 0xF9, 0xFD, 0xFD, 0xFF, 0xDF, 0xBF, 0x7F, 0x7F, 0xFF, 0x8F, 0x8F, 0xFF, 0x7F, 0x7F, 0xBF, 0xDF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F, 0x3F, 0x9F, 0xDF, 0xDF, 0xDF, 0xDF, 0x3F, 0x3F, 0x7F, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 
@@ -463,15 +477,15 @@ for (uint8_t i=0;i<5;i++)
 };
 	  
   		for(uint8_t p=0; p<8; p++) {
-  			LCD_page_adr_set(p);
-  			LCD_column_adr_set(0);
+  			LCD_page_set(p);
+  			LCD_column_set(0);
 			for(uint8_t i=0; i<128; i++) {
-			  LCD_wr_data(logo[p][i]);
+			  LCD_wr_byte(logo[p][i]);
 			}
 		}
   }
 // -------------------------------------	
-    void LCD_wr_num (int32_t number) {
+    void LCD_print_num (int32_t number) {
   
   unsigned char buf[10], count = 0;
  
@@ -479,7 +493,7 @@ for (uint8_t i=0;i<5;i++)
   {
     number = -number;
     LCD_wr_char('-');
-    LCD_wr_data(0); // space 1px
+    LCD_wr_byte(0); // space 1px
   }     
   //--
   if (number)
@@ -492,19 +506,19 @@ for (uint8_t i=0;i<5;i++)
     while (count)
     { // вывод буфера отдельных чисел на дисплей
       LCD_wr_char(buf[--count]);
-      LCD_wr_data(0); // space 1px
+      LCD_wr_byte(0); // space 1px
     }
   }
   //--
   else LCD_wr_char('0'); // NaN         
 }
 	
-    void LCD_print (unsigned char* full_str){
+    void LCD_print_text (char* full_str){
       
     while (*full_str)
     {
       LCD_wr_char(*full_str++);
-      LCD_wr_data(0); // space 1px
+      LCD_wr_byte(0); // space 1px
     }  
 }
    
@@ -515,19 +529,19 @@ for (uint8_t i=0;i<5;i++)
 	  delay_ms(4000);
 	  LCD_clear();
 	  LCD_set_cursor(0);
-	  LCD_print("       МилКиТЭС");
+	  LCD_print_text("       МилКиТЭС");
 	  LCD_set_cursor(1);
-	  LCD_print("==================");
+	  LCD_print_text("==================");
 	  LCD_set_cursor(2);
-	  LCD_print("      Отладочная   ");
+	  LCD_print_text("      Отладочная   ");
 	  LCD_set_cursor(4);
-	  LCD_print("  плата МК Миландр ");	  
+	  LCD_print_text("  плата МК Миландр ");	  
 	  LCD_set_cursor(6);
-	  LCD_print("      китэс Дубна ");
+	  LCD_print_text("      китэс Дубна ");
 	  //LCD_set_cursor(7);
 	 // LCD_print("      кафедра ПЭ");
 	  delay_ms(5000);
 	  
 		}
-
-#endif
+#endif	
+		

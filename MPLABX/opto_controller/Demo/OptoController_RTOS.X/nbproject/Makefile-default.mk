@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/list.c ../../Source/queue.c ../../Source/tasks.c ../../Source/timers.c dialtek_modbus.c dialtek_one_wire.c dialtek_uart.c main.c
+SOURCEFILES_QUOTED_IF_SPACED=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/list.c ../../Source/queue.c ../../Source/tasks.c ../../Source/timers.c dialtek_modbus.c dialtek_one_wire.c dialtek_uart.c d_SPI.c d_eeprom.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_one_wire.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/main.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/897580706/heap_1.o.d ${OBJECTDIR}/_ext/410575107/port.o.d ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o.d ${OBJECTDIR}/_ext/1787047461/list.o.d ${OBJECTDIR}/_ext/1787047461/queue.o.d ${OBJECTDIR}/_ext/1787047461/tasks.o.d ${OBJECTDIR}/_ext/1787047461/timers.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_one_wire.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/main.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_one_wire.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/897580706/heap_1.o.d ${OBJECTDIR}/_ext/410575107/port.o.d ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o.d ${OBJECTDIR}/_ext/1787047461/list.o.d ${OBJECTDIR}/_ext/1787047461/queue.o.d ${OBJECTDIR}/_ext/1787047461/tasks.o.d ${OBJECTDIR}/_ext/1787047461/timers.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_one_wire.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/d_SPI.o.d ${OBJECTDIR}/d_eeprom.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_one_wire.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/main.o
+OBJECTFILES=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_one_wire.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/list.c ../../Source/queue.c ../../Source/tasks.c ../../Source/timers.c dialtek_modbus.c dialtek_one_wire.c dialtek_uart.c main.c
+SOURCEFILES=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/list.c ../../Source/queue.c ../../Source/tasks.c ../../Source/timers.c dialtek_modbus.c dialtek_one_wire.c dialtek_uart.c d_SPI.c d_eeprom.c main.c
 
 
 CFLAGS=
@@ -89,8 +89,8 @@ ifneq ($(INFORMATION_MESSAGE), )
 endif
 	${MAKE}  -f nbproject/Makefile-default.mk dist/${CND_CONF}/${IMAGE_TYPE}/OptoController_RTOS.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
 
-MP_PROCESSOR_OPTION=24HJ128GP506
-MP_LINKER_FILE_OPTION=,-Tp24HJ128GP506.gld
+MP_PROCESSOR_OPTION=24HJ256GP206
+MP_LINKER_FILE_OPTION=,-Tp24HJ256GP206.gld
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
@@ -183,6 +183,20 @@ ${OBJECTDIR}/dialtek_uart.o: dialtek_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/dialtek_uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/dialtek_uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/dialtek_uart.o.d" -o ${OBJECTDIR}/dialtek_uart.o dialtek_uart.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
+${OBJECTDIR}/d_SPI.o: d_SPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/d_SPI.o.d 
+	@${RM} ${OBJECTDIR}/d_SPI.o.ok ${OBJECTDIR}/d_SPI.o.err 
+	@${RM} ${OBJECTDIR}/d_SPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/d_SPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_SPI.o.d" -o ${OBJECTDIR}/d_SPI.o d_SPI.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
+${OBJECTDIR}/d_eeprom.o: d_eeprom.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/d_eeprom.o.d 
+	@${RM} ${OBJECTDIR}/d_eeprom.o.ok ${OBJECTDIR}/d_eeprom.o.err 
+	@${RM} ${OBJECTDIR}/d_eeprom.o 
+	@${FIXDEPS} "${OBJECTDIR}/d_eeprom.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_eeprom.o.d" -o ${OBJECTDIR}/d_eeprom.o d_eeprom.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
@@ -253,6 +267,20 @@ ${OBJECTDIR}/dialtek_uart.o: dialtek_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/dialtek_uart.o.ok ${OBJECTDIR}/dialtek_uart.o.err 
 	@${RM} ${OBJECTDIR}/dialtek_uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/dialtek_uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/dialtek_uart.o.d" -o ${OBJECTDIR}/dialtek_uart.o dialtek_uart.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
+${OBJECTDIR}/d_SPI.o: d_SPI.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/d_SPI.o.d 
+	@${RM} ${OBJECTDIR}/d_SPI.o.ok ${OBJECTDIR}/d_SPI.o.err 
+	@${RM} ${OBJECTDIR}/d_SPI.o 
+	@${FIXDEPS} "${OBJECTDIR}/d_SPI.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_SPI.o.d" -o ${OBJECTDIR}/d_SPI.o d_SPI.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
+${OBJECTDIR}/d_eeprom.o: d_eeprom.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/d_eeprom.o.d 
+	@${RM} ${OBJECTDIR}/d_eeprom.o.ok ${OBJECTDIR}/d_eeprom.o.err 
+	@${RM} ${OBJECTDIR}/d_eeprom.o 
+	@${FIXDEPS} "${OBJECTDIR}/d_eeprom.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_eeprom.o.d" -o ${OBJECTDIR}/d_eeprom.o d_eeprom.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 

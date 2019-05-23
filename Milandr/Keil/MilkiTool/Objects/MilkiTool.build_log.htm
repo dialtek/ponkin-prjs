@@ -22,23 +22,31 @@ Dialog DLL:      TCM.DLL V1.36.1.0
  
 <h2>Project:</h2>
 I:\Mega drive\ponkin-prjs\Milandr\Keil\MilkiTool\MilkiTool.uvprojx
-Project File Date:  05/02/2019
+Project File Date:  05/03/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'Target 1'
 assembling startup_MDR32F9Qx.s...
 compiling main.c...
-.\inc\milkites_delay.h(65): warning:  #1-D: last line of file ends without a newline
-  #endif
-main.c(86): warning:  #1-D: last line of file ends without a newline
+.\inc\milkites_SPI.h(70): warning:  #1-D: last line of file ends without a newline
+  	
+.\inc\milkites_display.h(547): warning:  #1-D: last line of file ends without a newline
+  		
+main.c(45): warning:  #2532-D: support for trigraphs is disabled
+   |(0 << 11) // ???????? ???????? ?????????? – ?????.(AU??=VDD =3.3?) 
+main.c(88): warning:  #177-D: variable "ch_4_counts"  was declared but never referenced
+  uint32_t ch_4_counts = 0; // ?????????? ???????. ??????????????
+main.c(89): warning:  #177-D: variable "current"  was declared but never referenced
+  float current = 0;
+main.c(243): warning:  #1-D: last line of file ends without a newline
   //============================================END_OF_CODE=======================================================================//
-main.c: 2 warnings, 0 errors
+main.c: 6 warnings, 0 errors
 compiling system_MDR32F9Qx.c...
 compiling MDR32F9Qx_port.c...
 linking...
-Program Size: Code=820 RO-data=224 RW-data=16 ZI-data=1632  
-".\Objects\MilkiTool.axf" - 0 Error(s), 2 Warning(s).
+Program Size: Code=1296 RO-data=224 RW-data=32 ZI-data=1632  
+".\Objects\MilkiTool.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -70,14 +78,14 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:1.5
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
       Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
       Include file:  Config\MDR32F9Qx_config.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
 
    * Component: Keil::Drivers:PORT:1.5
-      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
 Build Time Elapsed:  00:00:00
 </pre>
 </body>

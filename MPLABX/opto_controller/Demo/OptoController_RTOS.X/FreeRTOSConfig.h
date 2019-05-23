@@ -28,7 +28,7 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
-#include <p24HJ128GP506.h>
+#include <p24HJ256GP206.h>
 
 
 /*-----------------------------------------------------------

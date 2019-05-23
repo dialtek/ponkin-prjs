@@ -14,6 +14,7 @@ FreeRTOSConfig.h  \
 ../../Source/include/semphr.h  \
 ../../Source/include/queue.h  \
 ../../Source/include/main.h  \
+../../Source/include/d_eeprom.h  \
 fuses.h  \
 dialtek_modbus.h  \
 dialtek_one_wire.h 

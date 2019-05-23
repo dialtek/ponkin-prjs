@@ -128,8 +128,8 @@ void _ISR_PSV _T9Interrupt(void)        //interupt Timer 9
         
         IFS3bits.T9IF = 0;   // Clear Timer interrupt flag
         
-        if(xHigherPriorityTaskWoken)
-            taskYIELD();
+        //if(xHigherPriorityTaskWoken)
+        //    taskYIELD();
 } 
 
 UBaseType_t UartGetQcnt(void)

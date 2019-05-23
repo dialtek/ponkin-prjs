@@ -6,20 +6,20 @@
 
 static unsigned int rx_buf_ptr = 0; // указатель записи в массив UART
 // буфер для сохр. принятных команд
-static unsigned char rx_buf[32];
+static unsigned char __attribute__((far))  rx_buf[128];
 
 static unsigned char modbus_cmd = 0; // 0x03 | 0x06 | 0x04
 
 static unsigned int addr_buf_1 = 0, addr_buf_2 = 0;
 static unsigned int regs2read = 0;             // число регистров для чтения по команде modbus rhr
 static unsigned int CRC16 = 0;			// полученная контрольная сумма
-static unsigned char crc_buf[125];      // буфер для хранения байтов для расчета CRC16
+unsigned char __attribute__((far)) crc_buf[300];      // буфер для хранения байтов для расчета CRC16
 static unsigned char modbus_id = 0;		// буфер для хранения ID из запроса мастера
 static unsigned int reg_wr_data = 0;
 static unsigned int modbus_reg_addr;       // адрес регистра для R/W по запросу от modbus мастера
 
-volatile unsigned int holding_register[60];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
-volatile unsigned int input_register[60];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
+ unsigned int __attribute__((far)) holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
+ unsigned int __attribute__((far)) input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
  
 /* HARDWARE INFO */
 
@@ -326,16 +326,15 @@ volatile unsigned char rx_cmd_code = 0;        // код поступившей команды
    /// обнуление регистров
    UartInit();
    
-   for(unsigned char i = 0; i < 60; i++) 
-   {
-      holding_register[i] = 0;   // clearing RW resgisters 
-      input_register[i] = 0;     // clearing read-only resgisters 
-   }
-   
    modbus_reset();
    RxSemaphore = xSemaphoreCreateCounting(10, 0);
    
-   }
+   eeprom_rd_regs_H();
+   eeprom_rd_regs_H(); // !? костыль, если читать 1 раз - всегда все рег.= 0xffff
+
+   eeprom_rd_regs_I();
+   
+  }
   
   volatile void holding_reg_write(unsigned int red_addr, unsigned int value)
   {

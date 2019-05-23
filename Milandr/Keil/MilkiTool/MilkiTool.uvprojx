@@ -456,6 +456,16 @@
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
             </File>
+            <File>
+              <FileName>milkites_display.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\milkites_display.h</FilePath>
+            </File>
+            <File>
+              <FileName>milkites_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\inc\milkites_spi.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
