@@ -24,7 +24,7 @@
 // FOSC
 #pragma config POSCMD = HS              // Primary Oscillator Source (HS Oscillator Mode)
 #pragma config OSCIOFNC = ON            // OSC2 Pin Function (OSC2 pin has digital I/O function)
-#pragma config FCKSM = CSDCMD           // Clock Switching and Monitor (Both Clock Switching and Fail-Safe Clock Monitor are disabled)
+#pragma config FCKSM = CSECME           // Clock Switching and Monitor (Both Clock Switching and Fail-Safe Clock Monitor are enabled)
 
 // FWDT
 #pragma config WDTPOST = PS32768        // Watchdog Timer Postscaler (1:32,768)
@@ -36,7 +36,7 @@
 #pragma config FPWRT = PWR128           // POR Timer Value (128ms)
 
 // FICD
-#pragma config ICS = PGD1               // Comm Channel Select (Communicate on PGC2/EMUC2 and PGD2/EMUD2)
+#pragma config ICS = PGD1               // Comm Channel Select (Communicate on PGC3/EMUC3 and PGD3/EMUD3)
 #pragma config JTAGEN = OFF             // JTAG Port Enable (JTAG is Disabled)
 
 // #pragma config statements should precede project file includes.

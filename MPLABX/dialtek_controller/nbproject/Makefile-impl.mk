@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Controller_4U
+PROJECTNAME=dialtek_controller
 
 # Active Configuration
 DEFAULTCONF=default

@@ -37,14 +37,6 @@
     (PSPICE_Regenerate_Netlist_Flag "FALSE"))
   (Folder "Outputs"
     (File ".\engineers practise-pspicefiles\schematic1\schematic1.net"
-      (Type "Report"))
-    (File ".\engineers practise-pspicefiles\schematic1\schematic1.net"
-      (Type "Report"))
-    (File ".\engineers practise-pspicefiles\schematic1\schematic1.net"
-      (Type "Report"))
-    (File ".\engineers practise-pspicefiles\schematic1\schematic1.net"
-      (Type "Report"))
-    (File ".\engineers practise-pspicefiles\schematic1\schematic1.net"
       (Type "Report")))
   (Folder "PSpice Resources"
     (Folder "Model Libraries")
@@ -58,6 +50,16 @@
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
+    (2N3904
+      (FullPartName "2N3904.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\ADVANLS\BJN.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_16.6\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
     (R
       (FullPartName "R.Normal")
       (LibraryName
@@ -86,13 +88,14 @@
     (FileView
       (Path "Design Resources")
       (Path "Design Resources"
-         "F:\MEGA\UNI\ŒÕÀ¿…Õ œ–¿ “» ”Ã\engineers practise.dsn")
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise.dsn")
       (Path "Design Resources"
-         "F:\MEGA\UNI\ŒÕÀ¿…Õ œ–¿ “» ”Ã\engineers practise.dsn" "SCHEMATIC1")
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise.dsn"
+         "SCHEMATIC1")
       (Path "Outputs")
       (Select "Design Resources"
-         "F:\MEGA\UNI\ŒÕÀ¿…Õ œ–¿ “» ”Ã\engineers practise.dsn" "SCHEMATIC1"
-         "PAGE1"))
+         "F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise.dsn"
+         "SCHEMATIC1" "PAGE1"))
     (HierarchyView)
     (Doc
       (Type "COrCapturePMDoc")
@@ -102,10 +105,11 @@
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 2 3 -1 -1 -8 -31 297 1399 0 699")
-        (Scroll "0 704")
-        (Zoom "399")
+        (Placement "44 2 3 -1 -1 -13 -58 98 3348 98 1245")
+        (Scroll "2214 396")
+        (Zoom "450")
         (Occurrence "/"))
-      (Path "F:\MEGA\UNI\ŒÕÀ¿…Õ œ–¿ “» ”Ã\ENGINEERS PRACTISE.DSN")
+      (Path
+         "F:\MEGA\PONKIN-PRJS\ORCAD PSPICE\ONLINE PRACTICE\ENGINEERS PRACTISE.DSN")
       (Schematic "SCHEMATIC1")
       (Page "PAGE1"))))

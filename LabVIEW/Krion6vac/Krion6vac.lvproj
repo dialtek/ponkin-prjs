@@ -14,6 +14,7 @@
 		<Item Name="Load and Save Controls_LV2009.llb" Type="Document" URL="../Load and Save Controls_LV2009.llb"/>
 		<Item Name="main.vi" Type="VI" URL="../main.vi"/>
 		<Item Name="Read_TPG300_sensor (SubVI).vi" Type="VI" URL="../Read_TPG300_sensor (SubVI).vi"/>
+		<Item Name="switch trend on graph (SubVI).vi" Type="VI" URL="../switch trend on graph (SubVI).vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
@@ -77,7 +78,7 @@
 				<Property Name="Bld_previewCacheID" Type="Str">{315D39CD-DF9D-43A8-A614-8144EA641316}</Property>
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
-				<Property Name="Bld_version.build" Type="Int">36</Property>
+				<Property Name="Bld_version.build" Type="Int">55</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Вакуумметрия.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../builds/Вакуумметрия.exe</Property>
@@ -88,7 +89,7 @@
 				<Property Name="Destination[1].path" Type="Path">../builds/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{33B24E25-C056-4EB2-ADDD-5BE83F2B35F1}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E8BB1433-2C5A-479D-B661-B9C30CCB1CA9}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/main.vi</Property>
@@ -99,7 +100,7 @@
 				<Property Name="Source[2].properties[0].type" Type="Str">Run when opened</Property>
 				<Property Name="Source[2].properties[0].value" Type="Bool">false</Property>
 				<Property Name="Source[2].propertiesCount" Type="Int">1</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">TopLevel</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].type" Type="Str">VI</Property>
 				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[3].itemID" Type="Ref">/My Computer/conection led.ctl</Property>

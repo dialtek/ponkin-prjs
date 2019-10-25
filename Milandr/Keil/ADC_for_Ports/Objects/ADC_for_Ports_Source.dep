@@ -1,0 +1,102 @@
+Dependencies for Project 'ADC_for_Ports', Target 'Source': (DO NOT MODIFY !)
+F (.\main.c)(0x5D238921)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_delay.h)(0x5D055BE5)
+I (.\src\h\milkites_display.h)(0x5D04DF02)
+I (.\src\h\milkites_adc.h)(0x5D04D031)
+I (.\src\h\milkites_i2c.h)(0x5CC073E6)
+I (.\src\h\tlv493d.h)(0x5D05FA7D)
+I (.\src\h\pwm_step_motor.h)(0x5D04D428)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h)(0x5C540D10)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5C540C76)
+F (.\src\c\milkites_delay.c)(0x5D04D94C)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\milkites_delay.o --omf_browse .\objects\milkites_delay.crf --depend .\objects\milkites_delay.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_delay.h)(0x5D055BE5)
+F (.\src\c\milkites_display.c)(0x5D0536CC)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\milkites_display.o --omf_browse .\objects\milkites_display.crf --depend .\objects\milkites_display.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_display.h)(0x5D04DF02)
+I (.\src\h\milkites_spi.h)(0x5D052980)
+I (.\src\h\milkites_delay.h)(0x5D055BE5)
+F (.\src\c\milkites_i2c.c)(0x5D055B6F)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\milkites_i2c.o --omf_browse .\objects\milkites_i2c.crf --depend .\objects\milkites_i2c.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_I2C.h)(0x5CC073E6)
+F (.\src\c\milkites_spi.c)(0x5D054313)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\milkites_spi.o --omf_browse .\objects\milkites_spi.crf --depend .\objects\milkites_spi.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_spi.h)(0x5D052980)
+F (.\src\c\milkites_adc.c)(0x5D05FB38)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\milkites_adc.o --omf_browse .\objects\milkites_adc.crf --depend .\objects\milkites_adc.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_adc.h)(0x5D04D031)
+F (.\src\c\tlv493d.c)(0x5D05FA7D)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\tlv493d.o --omf_browse .\objects\tlv493d.crf --depend .\objects\tlv493d.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\milkites_I2C.h)(0x5CC073E6)
+I (.\src\h\milkites_display.h)(0x5D04DF02)
+I (.\src\h\tlv493d.h)(0x5D05FA7D)
+F (.\src\c\pwm_step_motor.c)(0x5D062386)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\src -I .\src\c -I .\src\h -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\pwm_step_motor.o --omf_browse .\objects\pwm_step_motor.crf --depend .\objects\pwm_step_motor.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (.\src\h\pwm_step_motor.h)(0x5D04D428)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h)(0x5C540D10)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_rst_clk.h)(0x5C540C76)
+F (RTE\Device\MDR1986BE91\startup_MDR32F9Qx.s)(0x5B0677DA)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I .\src-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "USE_MDR32F9Q1_Rev1 SETA 1"--list .\listings\startup_mdr32f9qx.lst --xref -o .\objects\startup_mdr32f9qx.o --depend .\objects\startup_mdr32f9qx.d)
+F (RTE\Device\MDR1986BE91\system_MDR32F9Qx.c)(0x5B0677EA)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\system_mdr32f9qx.o --omf_browse .\objects\system_mdr32f9qx.crf --depend .\objects\system_mdr32f9qx.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h)(0x5C540D10)
+F (RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)()
+F (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c)(0x5C540CCC)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\inc -I .\src\h -I .\src\c-I.\RTE\Device\MDR1986BE91-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc-IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -D_RTE_ -DUSE_MDR32F9Q1_Rev1-o .\objects\mdr32f9qx_port.o --omf_browse .\objects\mdr32f9qx_port.crf --depend .\objects\mdr32f9qx_port.d)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h)(0x5B067368)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h)(0x5C540D10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h)(0x5B0677C2)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h)(0x5AF36DC8)
+I (.\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h)(0x5B0677F6)
+I (C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h)(0x5B067348)

@@ -1400,11 +1400,11 @@ namespace extract_system
                 var combobox = (ComboBox)controls["combobox_sector"].WPFControl;
                 if (combobox.SelectedItem != null)
                 {
-                    combobox.SelectedItem = (combobox.SelectedItem.ToString() == "200 R") ? "1 k" : combobox.SelectedItem;
+                    combobox.SelectedItem = (combobox.SelectedItem.ToString() == "51 R") ? "1 k" : combobox.SelectedItem;
                     if(combobox.SelectedItem.ToString() == "1 k")
                         SendMsgDeviceManager(this, new QueueElementW(Convert.ToInt32(Id), 1000, 1));
                 }
-                combobox.Items.Remove("200 R");
+                combobox.Items.Remove("51 R");
             }
             else
             {

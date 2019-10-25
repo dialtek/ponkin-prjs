@@ -1,0 +1,78 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.24.2.0
+Copyright (C) 2017 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: random metal, random, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.24.1
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 5 (build 528)
+Assembler:       Armasm.exe V5.06 update 5 (build 528)
+Linker/Locator:  ArmLink.exe V5.06 update 5 (build 528)
+Library Manager: ArmAr.exe V5.06 update 5 (build 528)
+Hex Converter:   FromElf.exe V5.06 update 5 (build 528)
+CPU DLL:         SARMCM3.DLL V5.24.1
+Dialog DLL:      DCM.DLL V1.16.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.26.0
+Dialog DLL:      TCM.DLL V1.32.0.0
+ 
+<h2>Project:</h2>
+C:\”ÌË‚Â\œÓ„‡ÏÏËÓ‚‡ÌËÂ Ã \libs\PWM_for_ports\PWM_for_ports_PB.uvprojx
+Project File Date:  05/07/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 5 (build 528)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Source'
+assembling startup_MDR32F9Qx.s...
+compiling system_MDR32F9Qx.c...
+compiling MDR32F9Qx_port.c...
+compiling main.c...
+..\ALL_Libs\milkites_spi.h(70): warning:  #1-D: last line of file ends without a newline
+  	
+..\ALL_Libs\milkites_display.h(547): warning:  #1-D: last line of file ends without a newline
+  		
+main.c(77): warning:  #1-D: last line of file ends without a newline
+  //============================================END_OF_CODE=======================================================================//
+main.c: 3 warnings, 0 errors
+linking...
+Program Size: Code=2972 RO-data=1956 RW-data=40 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\PWM_for_ports_PB.axf" - 0 Error(s), 3 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.51.pack
+                Keil.MDR1986BExx.1.51
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+   * Component: PORT Version: 1.5
+   * Component: Startup Version: 1.5
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MDR1986BE91
+  .\RTE\_Source
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Keil::Drivers:PORT:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
+
+   * Component: Keil::Device:Startup:1.5
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Include file:  Config\MDR32F9Qx_config.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

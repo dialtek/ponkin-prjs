@@ -46,7 +46,7 @@ void SPI1_init()
         
     }
 
-static void SPI1_PUT_int (unsigned int buf)               
+void SPI1_PUT_int (unsigned int buf)               
 {
         unsigned int buf1;
         CS2_LOW;
@@ -61,7 +61,7 @@ static void SPI1_PUT_int (unsigned int buf)
         CS2_HIGH;
 }
 
-static unsigned int SPI1_GET_int ()
+unsigned int SPI1_GET_int ()
 {
         unsigned int buf = 0;
        CS2_LOW; 
@@ -82,7 +82,7 @@ static unsigned int SPI1_GET_int ()
         return buf; 
     }
 
-static unsigned int SPI_READ_WORD (unsigned int ADDR)       // ѕроцедура чтени¤ байта по SPI
+unsigned int SPI_READ_WORD (unsigned int ADDR)       // ѕроцедура чтени¤ байта по SPI
 {
           unsigned int spi_buf;   
           

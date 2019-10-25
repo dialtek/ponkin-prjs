@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main_heater.c main_steppers.c main_dosing_sys.c d_delay.c d_eeprom.c d_heater.c d_one_wire.c d_SPI.c dialtek_modbus.c dialtek_uart.c main.c hamilton_pump.c main_io.c
+SOURCEFILES_QUOTED_IF_SPACED=main_heater.c main_steppers.c main_dosing_sys.c main_io.c d_delay.c d_eeprom.c d_heater.c d_one_wire.c d_SPI.c dialtek_modbus.c dialtek_uart.c hamilton_pump.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main_heater.o ${OBJECTDIR}/main_steppers.o ${OBJECTDIR}/main_dosing_sys.o ${OBJECTDIR}/d_delay.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/d_heater.o ${OBJECTDIR}/d_one_wire.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/hamilton_pump.o ${OBJECTDIR}/main_io.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main_heater.o.d ${OBJECTDIR}/main_steppers.o.d ${OBJECTDIR}/main_dosing_sys.o.d ${OBJECTDIR}/d_delay.o.d ${OBJECTDIR}/d_eeprom.o.d ${OBJECTDIR}/d_heater.o.d ${OBJECTDIR}/d_one_wire.o.d ${OBJECTDIR}/d_SPI.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/hamilton_pump.o.d ${OBJECTDIR}/main_io.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main_heater.o ${OBJECTDIR}/main_steppers.o ${OBJECTDIR}/main_dosing_sys.o ${OBJECTDIR}/main_io.o ${OBJECTDIR}/d_delay.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/d_heater.o ${OBJECTDIR}/d_one_wire.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/hamilton_pump.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main_heater.o.d ${OBJECTDIR}/main_steppers.o.d ${OBJECTDIR}/main_dosing_sys.o.d ${OBJECTDIR}/main_io.o.d ${OBJECTDIR}/d_delay.o.d ${OBJECTDIR}/d_eeprom.o.d ${OBJECTDIR}/d_heater.o.d ${OBJECTDIR}/d_one_wire.o.d ${OBJECTDIR}/d_SPI.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/hamilton_pump.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main_heater.o ${OBJECTDIR}/main_steppers.o ${OBJECTDIR}/main_dosing_sys.o ${OBJECTDIR}/d_delay.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/d_heater.o ${OBJECTDIR}/d_one_wire.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/main.o ${OBJECTDIR}/hamilton_pump.o ${OBJECTDIR}/main_io.o
+OBJECTFILES=${OBJECTDIR}/main_heater.o ${OBJECTDIR}/main_steppers.o ${OBJECTDIR}/main_dosing_sys.o ${OBJECTDIR}/main_io.o ${OBJECTDIR}/d_delay.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/d_heater.o ${OBJECTDIR}/d_one_wire.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/hamilton_pump.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=main_heater.c main_steppers.c main_dosing_sys.c d_delay.c d_eeprom.c d_heater.c d_one_wire.c d_SPI.c dialtek_modbus.c dialtek_uart.c main.c hamilton_pump.c main_io.c
+SOURCEFILES=main_heater.c main_steppers.c main_dosing_sys.c main_io.c d_delay.c d_eeprom.c d_heater.c d_one_wire.c d_SPI.c dialtek_modbus.c dialtek_uart.c hamilton_pump.c main.c
 
 
 CFLAGS=
@@ -114,6 +114,13 @@ ${OBJECTDIR}/main_dosing_sys.o: main_dosing_sys.c  nbproject/Makefile-${CND_CONF
 	@${RM} ${OBJECTDIR}/main_dosing_sys.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main_dosing_sys.c  -o ${OBJECTDIR}/main_dosing_sys.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_dosing_sys.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/main_dosing_sys.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/main_io.o: main_io.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main_io.o.d 
+	@${RM} ${OBJECTDIR}/main_io.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main_io.c  -o ${OBJECTDIR}/main_io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_io.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
+	@${FIXDEPS} "${OBJECTDIR}/main_io.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/d_delay.o: d_delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -164,13 +171,6 @@ ${OBJECTDIR}/dialtek_uart.o: dialtek_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dialtek_uart.c  -o ${OBJECTDIR}/dialtek_uart.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/dialtek_uart.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/dialtek_uart.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/hamilton_pump.o: hamilton_pump.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/hamilton_pump.o.d 
@@ -178,12 +178,12 @@ ${OBJECTDIR}/hamilton_pump.o: hamilton_pump.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  hamilton_pump.c  -o ${OBJECTDIR}/hamilton_pump.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hamilton_pump.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/hamilton_pump.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/main_io.o: main_io.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_io.o.d 
-	@${RM} ${OBJECTDIR}/main_io.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main_io.c  -o ${OBJECTDIR}/main_io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_io.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
-	@${FIXDEPS} "${OBJECTDIR}/main_io.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 else
 ${OBJECTDIR}/main_heater.o: main_heater.c  nbproject/Makefile-${CND_CONF}.mk
@@ -206,6 +206,13 @@ ${OBJECTDIR}/main_dosing_sys.o: main_dosing_sys.c  nbproject/Makefile-${CND_CONF
 	@${RM} ${OBJECTDIR}/main_dosing_sys.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  main_dosing_sys.c  -o ${OBJECTDIR}/main_dosing_sys.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_dosing_sys.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/main_dosing_sys.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	
+${OBJECTDIR}/main_io.o: main_io.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main_io.o.d 
+	@${RM} ${OBJECTDIR}/main_io.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main_io.c  -o ${OBJECTDIR}/main_io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_io.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
+	@${FIXDEPS} "${OBJECTDIR}/main_io.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 ${OBJECTDIR}/d_delay.o: d_delay.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
@@ -256,13 +263,6 @@ ${OBJECTDIR}/dialtek_uart.o: dialtek_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  dialtek_uart.c  -o ${OBJECTDIR}/dialtek_uart.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/dialtek_uart.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/dialtek_uart.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
-	
 ${OBJECTDIR}/hamilton_pump.o: hamilton_pump.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/hamilton_pump.o.d 
@@ -270,12 +270,12 @@ ${OBJECTDIR}/hamilton_pump.o: hamilton_pump.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE)  hamilton_pump.c  -o ${OBJECTDIR}/hamilton_pump.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/hamilton_pump.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
 	@${FIXDEPS} "${OBJECTDIR}/hamilton_pump.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
-${OBJECTDIR}/main_io.o: main_io.c  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main_io.o.d 
-	@${RM} ${OBJECTDIR}/main_io.o 
-	${MP_CC} $(MP_EXTRA_CC_PRE)  main_io.c  -o ${OBJECTDIR}/main_io.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main_io.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
-	@${FIXDEPS} "${OBJECTDIR}/main_io.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  main.c  -o ${OBJECTDIR}/main.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MMD -MF "${OBJECTDIR}/main.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -I"include" -msmart-io=1 -Wall -msfr-warn=off   --std=gnu99
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT)  -rsi ${MP_CC_DIR}../ 
 	
 endif
 

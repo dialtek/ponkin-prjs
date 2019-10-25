@@ -201,6 +201,7 @@ void main_stepper(void)
    
    while(1) 
    {
+       SPI1_PUT_int(0x0001);
        modbus_poll();
    }
 }

@@ -1,0 +1,37 @@
+T1A40 11192:118 SEGGER J-Link V6.32i Log File (0000ms, 21844ms total)
+T1A40 11192:118 DLL Compiled: Jul 24 2018 15:19:55 (0000ms, 21844ms total)
+T1A40 11192:118 Logging started @ 2019-06-14 15:21 (0000ms, 21844ms total)
+T1A40 11192:118 JLINK_SetWarnOutHandler(...) (0000ms, 21844ms total)
+T1A40 11192:118 JLINK_OpenEx(...)
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+S/N: 12345678
+Feature(s): RDI,FlashDL,FlashBP,JFlash,GDBFull
+TELNET listener socket opened on port 19021Device "CORTEX-M3" selected.WEBSRV 
+Starting webserver (0014ms, 21858ms total)
+T1A40 11192:118 WEBSRV Webserver running on local port 19080 (0015ms, 21859ms total)
+T1A40 11192:118   returns O.K. (0015ms, 21859ms total)
+T1A40 11192:133 JLINK_GetEmuCaps()  returns 0xB9FF7BBF (0000ms, 21859ms total)
+T1A40 11192:133 JLINK_TIF_GetAvailable(...) (0000ms, 21859ms total)
+T1A40 11192:133 JLINK_SetErrorOutHandler(...) (0000ms, 21859ms total)
+T1A40 11192:133 JLINK_ExecCommand("ProjectFile = "F:\Mega\ponkin-prjs\Milandr\Keil\Step_Mot_TLVD\JLinkSettings.ini"", ...). Device "CORTEX-M3" selected.  returns 0x00 (0010ms, 21869ms total)
+T1A40 11192:147 JLINK_ExecCommand("Device = MDR1986BE91", ...). Device "CORTEX-M3" selected.  returns 0x00 (0003ms, 21872ms total)
+T1A40 11192:150 JLINK_ExecCommand("DisableConnectionTimeout", ...).   returns 0x01 (0000ms, 21872ms total)
+T1A40 11192:150 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 21872ms total)
+T1A40 11192:150 JLINK_GetDLLVersion()  returns 63209 (0000ms, 21872ms total)
+T1A40 11192:150 JLINK_GetFirmwareString(...) (0000ms, 21872ms total)
+T1A40 11192:156 JLINK_GetDLLVersion()  returns 63209 (0000ms, 21872ms total)
+T1A40 11192:156 JLINK_GetCompileDateTime() (0000ms, 21872ms total)
+T1A40 11192:160 JLINK_GetFirmwareString(...) (0000ms, 21872ms total)
+T1A40 11192:161 JLINK_GetHardwareVersion()  returns 0x13880 (0000ms, 21872ms total)
+T1A40 11192:169 JLINK_TIF_Select(JLINKARM_TIF_JTAG)  returns 0x00 (0000ms, 21872ms total)
+T1A40 11192:169 JLINK_SetSpeed(5000) (0001ms, 21873ms total)
+T1A40 11192:170 JLINK_GetIdData(...) >0x2F8 JTAG>Could not measure total IR len. TDO is constant high. >0xC8 JTAG> >0x2F8 JTAG>TotalIRLen = 4, IRPrint = 0x01 >0x30 JTAG> >0x30 JTAG>JTAG chain detection found 1 devices: #0 Id: 0x4BA00477, IRLen: 04, CoreSight JTAG-DPScanning AP map to find all available APs >0x78 JTAG> >0x48 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG>
+ >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG>
+ >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x40 JTAG> >0x48 JTAG> >0x40 JTAG>AP[1]: Stopped AP scan as end of AP map has been reachedAP[0]: AHB-AP (IDR: 0x24770011)Iterating through AP map to find AHB-AP to use >0x78 JTAG>
+  ***** Error: Bad JTAG communication: Write to IR: Expected 0x1, got 0xF (TAP Command : 10) @ Off 0x5. (0192ms, 22065ms total)
+T1A40 11192:170 AP[0]: Skipped. No ROM table (AHB-AP ROM base: 0x00000000)Scanning AP map to find all available APsAP[0]: Stopped AP scan as end of AP map has been reachedIterating through AP map to find AHB-AP to use
+  ***** Error: Could not find core in Coresight setup (0386ms, 22259ms total)
+T1A40 11193:849 JLINK_Close() (0009ms, 22268ms total)
+T1A40 11193:849  (0009ms, 22268ms total)
+T1A40 11193:849 Closed (0009ms, 22268ms total)

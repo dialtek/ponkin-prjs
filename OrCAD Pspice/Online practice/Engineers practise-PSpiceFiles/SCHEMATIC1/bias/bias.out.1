@@ -1,0 +1,46 @@
+
+**** 07/16/19 12:16:15 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\Users\D_LHEP_DESKTOP\AppData\Roaming\SPB_Data\cdssetup\OrCAD_PSpice/16.6.0/PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 15ms 0 0.1ms 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ENGINEERS PRACTISE
+R_R1         N14711 N15106  330R TC=0,0 
+V_V1         N14711 0  
++PULSE 3.3V 0 0 1us 1us 1ms 5ms
+X_VT1         N150402 N15106 0 awb2n3904 PARAMS:                               
++              
+R_R         load N150402 N16639  100R TC=0,0 
+V_V2         N16639 0 12V
+
+**** RESUMING bias.cir ****
+.END
+
+ERROR(ORPSIM-15113): Model N16639 used by R_R is undefined
+

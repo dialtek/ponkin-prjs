@@ -1,0 +1,17 @@
+.\objects\port.o: RTOS\port.c
+.\objects\port.o: .\RTOS\include\FreeRTOS.h
+.\objects\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\port.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\port.o: .\RTOS\include\FreeRTOSConfig.h
+.\objects\port.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc\MDR32Fx.h
+.\objects\port.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+.\objects\port.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmInstr.h
+.\objects\port.o: C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport\core_cmFunc.h
+.\objects\port.o: .\RTE\Device\MDR1986BE91\system_MDR32F9Qx.h
+.\objects\port.o: .\RTOS\include\projdefs.h
+.\objects\port.o: .\RTOS\include\portable.h
+.\objects\port.o: .\RTOS\include\deprecated_definitions.h
+.\objects\port.o: .\RTOS\include\portmacro.h
+.\objects\port.o: .\RTOS\include\mpu_wrappers.h
+.\objects\port.o: .\RTOS\include\task.h
+.\objects\port.o: .\RTOS\include\list.h

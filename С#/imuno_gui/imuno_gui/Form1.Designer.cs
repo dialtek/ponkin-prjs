@@ -145,9 +145,14 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
             this.button6 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label52 = new System.Windows.Forms.Label();
@@ -176,6 +181,11 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -188,16 +198,6 @@
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.label20 = new System.Windows.Forms.Label();
             this.progressBar4 = new System.Windows.Forms.ProgressBar();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -218,13 +218,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -237,10 +237,11 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(2, 2);
+            this.tabControl1.Location = new System.Drawing.Point(4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(976, 411);
+            this.tabControl1.Size = new System.Drawing.Size(1952, 790);
             this.tabControl1.TabIndex = 6;
             // 
             // tabPage1
@@ -270,10 +271,11 @@
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.pictureBox3);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(8, 51);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(968, 378);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage1.Size = new System.Drawing.Size(1936, 731);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = " Перемещение и захват";
             // 
@@ -284,9 +286,11 @@
             this.groupBox5.Controls.Add(this.button8);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox5.ForeColor = System.Drawing.Color.Red;
-            this.groupBox5.Location = new System.Drawing.Point(461, 265);
+            this.groupBox5.Location = new System.Drawing.Point(922, 510);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(160, 90);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox5.Size = new System.Drawing.Size(320, 173);
             this.groupBox5.TabIndex = 29;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ЗАПУСК / ОСТАНОВКА";
@@ -294,9 +298,10 @@
             // button7
             // 
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.Location = new System.Drawing.Point(37, 51);
+            this.button7.Location = new System.Drawing.Point(74, 98);
+            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
+            this.button7.Size = new System.Drawing.Size(150, 44);
             this.button7.TabIndex = 0;
             this.button7.Text = "СТОП";
             this.button7.UseVisualStyleBackColor = true;
@@ -304,9 +309,10 @@
             // button8
             // 
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.Location = new System.Drawing.Point(37, 24);
+            this.button8.Location = new System.Drawing.Point(74, 46);
+            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.Size = new System.Drawing.Size(150, 44);
             this.button8.TabIndex = 0;
             this.button8.Text = "СТАРТ";
             this.button8.UseVisualStyleBackColor = true;
@@ -316,18 +322,20 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(136, 236);
+            this.label4.Location = new System.Drawing.Point(272, 454);
+            this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 16);
+            this.label4.Size = new System.Drawing.Size(350, 30);
             this.label4.TabIndex = 32;
             this.label4.Text = "Статус, текущее положение";
             // 
             // progressBar2
             // 
             this.progressBar2.BackColor = System.Drawing.Color.Olive;
-            this.progressBar2.Location = new System.Drawing.Point(65, 231);
+            this.progressBar2.Location = new System.Drawing.Point(130, 444);
+            this.progressBar2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(325, 28);
+            this.progressBar2.Size = new System.Drawing.Size(650, 54);
             this.progressBar2.TabIndex = 31;
             // 
             // groupBox6
@@ -347,9 +355,11 @@
             this.groupBox6.Controls.Add(this.numericUpDown4);
             this.groupBox6.Controls.Add(this.numericUpDown5);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox6.Location = new System.Drawing.Point(64, 49);
+            this.groupBox6.Location = new System.Drawing.Point(128, 94);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(326, 179);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox6.Size = new System.Drawing.Size(652, 344);
             this.groupBox6.TabIndex = 30;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Настройки модуля перемещения";
@@ -357,9 +367,10 @@
             // button9
             // 
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.Location = new System.Drawing.Point(23, 127);
+            this.button9.Location = new System.Drawing.Point(46, 244);
+            this.button9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.Size = new System.Drawing.Size(150, 44);
             this.button9.TabIndex = 0;
             this.button9.Text = "Авто - \"0\"";
             this.button9.UseVisualStyleBackColor = true;
@@ -369,9 +380,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Checked = true;
             this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton1.Location = new System.Drawing.Point(127, 67);
+            this.radioButton1.Location = new System.Drawing.Point(254, 129);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 17);
+            this.radioButton1.Size = new System.Drawing.Size(93, 30);
             this.radioButton1.TabIndex = 6;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "шаги";
@@ -381,9 +393,10 @@
             // 
             this.checkBox3.AutoSize = true;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(229, 133);
+            this.checkBox3.Location = new System.Drawing.Point(458, 256);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(47, 17);
+            this.checkBox3.Size = new System.Drawing.Size(86, 30);
             this.checkBox3.TabIndex = 5;
             this.checkBox3.Text = "вкл.";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -392,9 +405,10 @@
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox4.Location = new System.Drawing.Point(229, 70);
+            this.checkBox4.Location = new System.Drawing.Point(458, 135);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(47, 17);
+            this.checkBox4.Size = new System.Drawing.Size(86, 30);
             this.checkBox4.TabIndex = 5;
             this.checkBox4.Text = "вкл.";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -403,9 +417,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(126, 25);
+            this.label8.Location = new System.Drawing.Point(252, 48);
+            this.label8.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 13);
+            this.label8.Size = new System.Drawing.Size(158, 26);
             this.label8.TabIndex = 4;
             this.label8.Text = "Перемещение";
             // 
@@ -413,9 +428,10 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton2.Location = new System.Drawing.Point(127, 90);
+            this.radioButton2.Location = new System.Drawing.Point(254, 173);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(41, 17);
+            this.radioButton2.Size = new System.Drawing.Size(75, 30);
             this.radioButton2.TabIndex = 6;
             this.radioButton2.Text = "мм";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -424,9 +440,10 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(239, 25);
+            this.label9.Location = new System.Drawing.Point(478, 48);
+            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.Size = new System.Drawing.Size(120, 26);
             this.label9.TabIndex = 4;
             this.label9.Text = "Ускорение";
             // 
@@ -434,9 +451,10 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(104, 153);
+            this.label10.Location = new System.Drawing.Point(208, 294);
+            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 13);
+            this.label10.Size = new System.Drawing.Size(241, 26);
             this.label10.TabIndex = 4;
             this.label10.Text = "Скорость малого хода";
             // 
@@ -444,36 +462,40 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(38, 24);
+            this.label11.Location = new System.Drawing.Point(76, 46);
+            this.label11.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 13);
+            this.label11.Size = new System.Drawing.Size(108, 26);
             this.label11.TabIndex = 4;
             this.label11.Text = "Скорость";
             // 
             // numericUpDown2
             // 
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown2.Location = new System.Drawing.Point(125, 41);
+            this.numericUpDown2.Location = new System.Drawing.Point(250, 79);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown2.Size = new System.Drawing.Size(150, 32);
             this.numericUpDown2.TabIndex = 1;
             this.numericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numericUpDown3
             // 
             this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown3.Location = new System.Drawing.Point(229, 41);
+            this.numericUpDown3.Location = new System.Drawing.Point(458, 79);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown3.Size = new System.Drawing.Size(150, 32);
             this.numericUpDown3.TabIndex = 1;
             this.numericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // numericUpDown4
             // 
             this.numericUpDown4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown4.Location = new System.Drawing.Point(125, 130);
+            this.numericUpDown4.Location = new System.Drawing.Point(250, 250);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown4.Size = new System.Drawing.Size(150, 32);
             this.numericUpDown4.TabIndex = 1;
             this.numericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown4.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
@@ -481,9 +503,10 @@
             // numericUpDown5
             // 
             this.numericUpDown5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown5.Location = new System.Drawing.Point(23, 40);
+            this.numericUpDown5.Location = new System.Drawing.Point(46, 77);
+            this.numericUpDown5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown5.Size = new System.Drawing.Size(150, 32);
             this.numericUpDown5.TabIndex = 1;
             this.numericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -492,19 +515,21 @@
             this.tabControl2.Controls.Add(this.tabPage9);
             this.tabControl2.Controls.Add(this.tabPage10);
             this.tabControl2.Controls.Add(this.tabPage11);
-            this.tabControl2.Location = new System.Drawing.Point(52, 6);
+            this.tabControl2.Location = new System.Drawing.Point(104, 12);
+            this.tabControl2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(352, 362);
+            this.tabControl2.Size = new System.Drawing.Size(704, 696);
             this.tabControl2.TabIndex = 27;
             // 
             // tabPage9
             // 
             this.tabPage9.Controls.Add(this.groupBox2);
-            this.tabPage9.Location = new System.Drawing.Point(4, 33);
+            this.tabPage9.Location = new System.Drawing.Point(8, 58);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(344, 325);
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage9.Size = new System.Drawing.Size(688, 630);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "Ось X";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -515,9 +540,11 @@
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox2.Location = new System.Drawing.Point(92, 226);
+            this.groupBox2.Location = new System.Drawing.Point(184, 435);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(160, 90);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox2.Size = new System.Drawing.Size(320, 173);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ручное управление";
@@ -525,9 +552,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(37, 52);
+            this.button1.Location = new System.Drawing.Point(74, 100);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(150, 44);
             this.button1.TabIndex = 0;
             this.button1.Text = "Назад";
             this.button1.UseVisualStyleBackColor = true;
@@ -535,28 +563,31 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(37, 25);
+            this.button3.Location = new System.Drawing.Point(74, 48);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(150, 44);
             this.button3.TabIndex = 0;
             this.button3.Text = "Вперед";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // tabPage10
             // 
-            this.tabPage10.Location = new System.Drawing.Point(4, 33);
+            this.tabPage10.Location = new System.Drawing.Point(8, 58);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(344, 325);
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage10.Size = new System.Drawing.Size(688, 630);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "Ось Y";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // tabPage11
             // 
-            this.tabPage11.Location = new System.Drawing.Point(4, 33);
+            this.tabPage11.Location = new System.Drawing.Point(8, 58);
+            this.tabPage11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(344, 325);
+            this.tabPage11.Size = new System.Drawing.Size(688, 630);
             this.tabPage11.TabIndex = 2;
             this.tabPage11.Text = "Ось Z";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -568,9 +599,10 @@
             this.checkBox8.Checked = true;
             this.checkBox8.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox8.Location = new System.Drawing.Point(725, 182);
+            this.checkBox8.Location = new System.Drawing.Point(1450, 350);
+            this.checkBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(84, 17);
+            this.checkBox8.Size = new System.Drawing.Size(162, 30);
             this.checkBox8.TabIndex = 26;
             this.checkBox8.Text = "датчик вкл.";
             this.checkBox8.UseVisualStyleBackColor = false;
@@ -578,9 +610,10 @@
             // button18
             // 
             this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button18.Location = new System.Drawing.Point(723, 340);
+            this.button18.Location = new System.Drawing.Point(1446, 654);
+            this.button18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(84, 23);
+            this.button18.Size = new System.Drawing.Size(168, 44);
             this.button18.TabIndex = 0;
             this.button18.Text = "Освободить";
             this.button18.UseVisualStyleBackColor = true;
@@ -588,9 +621,10 @@
             // button17
             // 
             this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button17.Location = new System.Drawing.Point(723, 313);
+            this.button17.Location = new System.Drawing.Point(1446, 602);
+            this.button17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(84, 23);
+            this.button17.Size = new System.Drawing.Size(168, 44);
             this.button17.TabIndex = 0;
             this.button17.Text = "Свести";
             this.button17.UseVisualStyleBackColor = true;
@@ -598,9 +632,10 @@
             // button16
             // 
             this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button16.Location = new System.Drawing.Point(718, 147);
+            this.button16.Location = new System.Drawing.Point(1436, 283);
+            this.button16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(84, 23);
+            this.button16.Size = new System.Drawing.Size(168, 44);
             this.button16.TabIndex = 0;
             this.button16.Text = "Освободить";
             this.button16.UseVisualStyleBackColor = true;
@@ -608,9 +643,10 @@
             // numericUpDown14
             // 
             this.numericUpDown14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown14.Location = new System.Drawing.Point(700, 281);
+            this.numericUpDown14.Location = new System.Drawing.Point(1400, 540);
+            this.numericUpDown14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown14.Name = "numericUpDown14";
-            this.numericUpDown14.Size = new System.Drawing.Size(51, 20);
+            this.numericUpDown14.Size = new System.Drawing.Size(102, 32);
             this.numericUpDown14.TabIndex = 22;
             this.numericUpDown14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -619,18 +655,20 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Moccasin;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label23.Location = new System.Drawing.Point(693, 264);
+            this.label23.Location = new System.Drawing.Point(1386, 508);
+            this.label23.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(67, 13);
+            this.label23.Size = new System.Drawing.Size(135, 26);
             this.label23.TabIndex = 23;
             this.label23.Text = "Ход полный";
             // 
             // button15
             // 
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button15.Location = new System.Drawing.Point(718, 116);
+            this.button15.Location = new System.Drawing.Point(1436, 223);
+            this.button15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(84, 23);
+            this.button15.Size = new System.Drawing.Size(168, 44);
             this.button15.TabIndex = 0;
             this.button15.Text = "Захват";
             this.button15.UseVisualStyleBackColor = true;
@@ -640,9 +678,10 @@
             this.radioButton8.AutoSize = true;
             this.radioButton8.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton8.Location = new System.Drawing.Point(781, 288);
+            this.radioButton8.Location = new System.Drawing.Point(1562, 554);
+            this.radioButton8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(41, 17);
+            this.radioButton8.Size = new System.Drawing.Size(75, 30);
             this.radioButton8.TabIndex = 8;
             this.radioButton8.Text = "мм";
             this.radioButton8.UseVisualStyleBackColor = false;
@@ -653,9 +692,10 @@
             this.radioButton9.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton9.Checked = true;
             this.radioButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton9.Location = new System.Drawing.Point(781, 69);
+            this.radioButton9.Location = new System.Drawing.Point(1562, 133);
+            this.radioButton9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(50, 17);
+            this.radioButton9.Size = new System.Drawing.Size(93, 30);
             this.radioButton9.TabIndex = 24;
             this.radioButton9.TabStop = true;
             this.radioButton9.Text = "шаги";
@@ -666,9 +706,10 @@
             this.radioButton10.AutoSize = true;
             this.radioButton10.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton10.Location = new System.Drawing.Point(781, 87);
+            this.radioButton10.Location = new System.Drawing.Point(1562, 167);
+            this.radioButton10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(41, 17);
+            this.radioButton10.Size = new System.Drawing.Size(75, 30);
             this.radioButton10.TabIndex = 25;
             this.radioButton10.Text = "мм";
             this.radioButton10.UseVisualStyleBackColor = false;
@@ -679,9 +720,10 @@
             this.radioButton7.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton7.Checked = true;
             this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton7.Location = new System.Drawing.Point(781, 270);
+            this.radioButton7.Location = new System.Drawing.Point(1562, 519);
+            this.radioButton7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(50, 17);
+            this.radioButton7.Size = new System.Drawing.Size(93, 30);
             this.radioButton7.TabIndex = 7;
             this.radioButton7.TabStop = true;
             this.radioButton7.Text = "шаги";
@@ -692,18 +734,20 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.SystemColors.Control;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label21.Location = new System.Drawing.Point(724, 237);
+            this.label21.Location = new System.Drawing.Point(1448, 456);
+            this.label21.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(78, 16);
+            this.label21.Size = new System.Drawing.Size(142, 30);
             this.label21.TabIndex = 21;
             this.label21.Text = "Состояние";
             // 
             // progressBar5
             // 
             this.progressBar5.BackColor = System.Drawing.Color.Olive;
-            this.progressBar5.Location = new System.Drawing.Point(691, 231);
+            this.progressBar5.Location = new System.Drawing.Point(1382, 444);
+            this.progressBar5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar5.Name = "progressBar5";
-            this.progressBar5.Size = new System.Drawing.Size(141, 28);
+            this.progressBar5.Size = new System.Drawing.Size(282, 54);
             this.progressBar5.TabIndex = 20;
             // 
             // label22
@@ -711,18 +755,20 @@
             this.label22.AutoSize = true;
             this.label22.BackColor = System.Drawing.Color.Moccasin;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label22.Location = new System.Drawing.Point(697, 61);
+            this.label22.Location = new System.Drawing.Point(1394, 117);
+            this.label22.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(69, 13);
+            this.label22.Size = new System.Drawing.Size(138, 26);
             this.label22.TabIndex = 4;
             this.label22.Text = "Ход захвата";
             // 
             // numericUpDown13
             // 
             this.numericUpDown13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown13.Location = new System.Drawing.Point(700, 80);
+            this.numericUpDown13.Location = new System.Drawing.Point(1400, 154);
+            this.numericUpDown13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown13.Name = "numericUpDown13";
-            this.numericUpDown13.Size = new System.Drawing.Size(62, 20);
+            this.numericUpDown13.Size = new System.Drawing.Size(124, 32);
             this.numericUpDown13.TabIndex = 1;
             this.numericUpDown13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -731,18 +777,20 @@
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Moccasin;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(691, 12);
+            this.label13.Location = new System.Drawing.Point(1382, 23);
+            this.label13.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(146, 25);
+            this.label13.Size = new System.Drawing.Size(279, 48);
             this.label13.TabIndex = 4;
             this.label13.Text = "Блок захвата";
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Moccasin;
-            this.pictureBox3.Location = new System.Drawing.Point(681, 6);
+            this.pictureBox3.Location = new System.Drawing.Point(1362, 12);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(164, 362);
+            this.pictureBox3.Size = new System.Drawing.Size(328, 696);
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -814,10 +862,11 @@
             this.tabPage2.Controls.Add(this.button19);
             this.tabPage2.Controls.Add(this.numericUpDown15);
             this.tabPage2.Controls.Add(this.pictureBox5);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Location = new System.Drawing.Point(8, 51);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(968, 378);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tabPage2.Size = new System.Drawing.Size(1936, 731);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Дозирование";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -827,9 +876,10 @@
             this.checkBox7.AutoSize = true;
             this.checkBox7.BackColor = System.Drawing.Color.Moccasin;
             this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox7.Location = new System.Drawing.Point(445, 254);
+            this.checkBox7.Location = new System.Drawing.Point(890, 488);
+            this.checkBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(157, 17);
+            this.checkBox7.Size = new System.Drawing.Size(304, 30);
             this.checkBox7.TabIndex = 54;
             this.checkBox7.Text = "настройка синхр. режима";
             this.checkBox7.UseVisualStyleBackColor = false;
@@ -837,9 +887,10 @@
             // button22
             // 
             this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(440, 213);
+            this.button22.Location = new System.Drawing.Point(880, 410);
+            this.button22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(159, 35);
+            this.button22.Size = new System.Drawing.Size(318, 67);
             this.button22.TabIndex = 53;
             this.button22.Text = "Обновить конфигурацию";
             this.button22.UseVisualStyleBackColor = true;
@@ -849,18 +900,20 @@
             this.label31.AutoSize = true;
             this.label31.BackColor = System.Drawing.SystemColors.Control;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(597, 314);
+            this.label31.Location = new System.Drawing.Point(1194, 604);
+            this.label31.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(99, 13);
+            this.label31.Size = new System.Drawing.Size(192, 26);
             this.label31.TabIndex = 52;
             this.label31.Text = "Состояние/статус";
             // 
             // progressBar7
             // 
             this.progressBar7.BackColor = System.Drawing.Color.Olive;
-            this.progressBar7.Location = new System.Drawing.Point(389, 306);
+            this.progressBar7.Location = new System.Drawing.Point(778, 588);
+            this.progressBar7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar7.Name = "progressBar7";
-            this.progressBar7.Size = new System.Drawing.Size(482, 28);
+            this.progressBar7.Size = new System.Drawing.Size(964, 54);
             this.progressBar7.TabIndex = 51;
             // 
             // groupBox10
@@ -870,9 +923,11 @@
             this.groupBox10.Controls.Add(this.radioButton34);
             this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox10.Location = new System.Drawing.Point(442, 94);
+            this.groupBox10.Location = new System.Drawing.Point(884, 181);
+            this.groupBox10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(157, 100);
+            this.groupBox10.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.groupBox10.Size = new System.Drawing.Size(314, 192);
             this.groupBox10.TabIndex = 50;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Режим работы";
@@ -885,9 +940,10 @@
             this.radioButton35.Checked = true;
             this.radioButton35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton35.Location = new System.Drawing.Point(15, 24);
+            this.radioButton35.Location = new System.Drawing.Point(30, 46);
+            this.radioButton35.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton35.Name = "radioButton35";
-            this.radioButton35.Size = new System.Drawing.Size(59, 17);
+            this.radioButton35.Size = new System.Drawing.Size(114, 30);
             this.radioButton35.TabIndex = 45;
             this.radioButton35.Text = "ручной";
             this.radioButton35.UseVisualStyleBackColor = false;
@@ -898,9 +954,10 @@
             this.radioButton34.BackColor = System.Drawing.Color.AntiqueWhite;
             this.radioButton34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton34.Location = new System.Drawing.Point(15, 61);
+            this.radioButton34.Location = new System.Drawing.Point(30, 117);
+            this.radioButton34.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton34.Name = "radioButton34";
-            this.radioButton34.Size = new System.Drawing.Size(134, 17);
+            this.radioButton34.Size = new System.Drawing.Size(260, 30);
             this.radioButton34.TabIndex = 47;
             this.radioButton34.Text = "синхронизированный";
             this.radioButton34.UseVisualStyleBackColor = false;
@@ -911,9 +968,10 @@
             this.label47.BackColor = System.Drawing.Color.Moccasin;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label47.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label47.Location = new System.Drawing.Point(679, 284);
+            this.label47.Location = new System.Drawing.Point(1358, 546);
+            this.label47.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(21, 13);
+            this.label47.Size = new System.Drawing.Size(38, 26);
             this.label47.TabIndex = 49;
             this.label47.Text = "12";
             // 
@@ -923,9 +981,10 @@
             this.label46.BackColor = System.Drawing.Color.Moccasin;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label46.Location = new System.Drawing.Point(679, 265);
+            this.label46.Location = new System.Drawing.Point(1358, 510);
+            this.label46.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(21, 13);
+            this.label46.Size = new System.Drawing.Size(38, 26);
             this.label46.TabIndex = 49;
             this.label46.Text = "11";
             // 
@@ -935,9 +994,10 @@
             this.label44.BackColor = System.Drawing.Color.Moccasin;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label44.Location = new System.Drawing.Point(679, 227);
+            this.label44.Location = new System.Drawing.Point(1358, 437);
+            this.label44.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(14, 13);
+            this.label44.Size = new System.Drawing.Size(25, 26);
             this.label44.TabIndex = 49;
             this.label44.Text = "9";
             // 
@@ -947,9 +1007,10 @@
             this.label43.BackColor = System.Drawing.Color.Moccasin;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label43.Location = new System.Drawing.Point(679, 208);
+            this.label43.Location = new System.Drawing.Point(1358, 400);
+            this.label43.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(14, 13);
+            this.label43.Size = new System.Drawing.Size(25, 26);
             this.label43.TabIndex = 49;
             this.label43.Text = "8";
             // 
@@ -959,9 +1020,10 @@
             this.label41.BackColor = System.Drawing.Color.Moccasin;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label41.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label41.Location = new System.Drawing.Point(679, 170);
+            this.label41.Location = new System.Drawing.Point(1358, 327);
+            this.label41.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(14, 13);
+            this.label41.Size = new System.Drawing.Size(25, 26);
             this.label41.TabIndex = 49;
             this.label41.Text = "6";
             // 
@@ -971,9 +1033,10 @@
             this.label45.BackColor = System.Drawing.Color.Moccasin;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label45.Location = new System.Drawing.Point(679, 246);
+            this.label45.Location = new System.Drawing.Point(1358, 473);
+            this.label45.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(21, 13);
+            this.label45.Size = new System.Drawing.Size(38, 26);
             this.label45.TabIndex = 49;
             this.label45.Text = "10";
             // 
@@ -983,9 +1046,10 @@
             this.label40.BackColor = System.Drawing.Color.Moccasin;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label40.Location = new System.Drawing.Point(679, 151);
+            this.label40.Location = new System.Drawing.Point(1358, 290);
+            this.label40.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(14, 13);
+            this.label40.Size = new System.Drawing.Size(25, 26);
             this.label40.TabIndex = 49;
             this.label40.Text = "5";
             // 
@@ -995,9 +1059,10 @@
             this.label42.BackColor = System.Drawing.Color.Moccasin;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label42.Location = new System.Drawing.Point(679, 189);
+            this.label42.Location = new System.Drawing.Point(1358, 363);
+            this.label42.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(14, 13);
+            this.label42.Size = new System.Drawing.Size(25, 26);
             this.label42.TabIndex = 49;
             this.label42.Text = "7";
             // 
@@ -1007,9 +1072,10 @@
             this.label38.BackColor = System.Drawing.Color.Moccasin;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label38.Location = new System.Drawing.Point(679, 113);
+            this.label38.Location = new System.Drawing.Point(1358, 217);
+            this.label38.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(14, 13);
+            this.label38.Size = new System.Drawing.Size(25, 26);
             this.label38.TabIndex = 49;
             this.label38.Text = "3";
             // 
@@ -1019,9 +1085,10 @@
             this.label39.BackColor = System.Drawing.Color.Moccasin;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label39.Location = new System.Drawing.Point(679, 132);
+            this.label39.Location = new System.Drawing.Point(1358, 254);
+            this.label39.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(14, 13);
+            this.label39.Size = new System.Drawing.Size(25, 26);
             this.label39.TabIndex = 49;
             this.label39.Text = "4";
             // 
@@ -1031,9 +1098,10 @@
             this.label37.BackColor = System.Drawing.Color.Moccasin;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label37.Location = new System.Drawing.Point(679, 94);
+            this.label37.Location = new System.Drawing.Point(1358, 181);
+            this.label37.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(14, 13);
+            this.label37.Size = new System.Drawing.Size(25, 26);
             this.label37.TabIndex = 49;
             this.label37.Text = "2";
             // 
@@ -1043,9 +1111,10 @@
             this.label36.BackColor = System.Drawing.Color.Moccasin;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label36.Location = new System.Drawing.Point(679, 75);
+            this.label36.Location = new System.Drawing.Point(1358, 144);
+            this.label36.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(14, 13);
+            this.label36.Size = new System.Drawing.Size(25, 26);
             this.label36.TabIndex = 49;
             this.label36.Text = "1";
             // 
@@ -1055,9 +1124,10 @@
             this.label34.BackColor = System.Drawing.Color.Moccasin;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label34.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label34.Location = new System.Drawing.Point(821, 55);
+            this.label34.Location = new System.Drawing.Point(1642, 106);
+            this.label34.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(47, 13);
+            this.label34.Size = new System.Drawing.Size(94, 26);
             this.label34.TabIndex = 48;
             this.label34.Text = "Канал 2";
             // 
@@ -1067,9 +1137,10 @@
             this.label35.BackColor = System.Drawing.Color.Moccasin;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label35.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label35.Location = new System.Drawing.Point(663, 55);
+            this.label35.Location = new System.Drawing.Point(1326, 106);
+            this.label35.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 13);
+            this.label35.Size = new System.Drawing.Size(133, 26);
             this.label35.TabIndex = 48;
             this.label35.Text = "№ клапана";
             // 
@@ -1079,9 +1150,10 @@
             this.label29.BackColor = System.Drawing.Color.Moccasin;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label29.Location = new System.Drawing.Point(743, 55);
+            this.label29.Location = new System.Drawing.Point(1486, 106);
+            this.label29.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(47, 13);
+            this.label29.Size = new System.Drawing.Size(94, 26);
             this.label29.TabIndex = 48;
             this.label29.Text = "Канал 1";
             // 
@@ -1093,9 +1165,10 @@
             this.radioButton46.Checked = true;
             this.radioButton46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton46.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton46.Location = new System.Drawing.Point(840, 284);
+            this.radioButton46.Location = new System.Drawing.Point(1680, 546);
+            this.radioButton46.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton46.Name = "radioButton46";
-            this.radioButton46.Size = new System.Drawing.Size(14, 13);
+            this.radioButton46.Size = new System.Drawing.Size(27, 26);
             this.radioButton46.TabIndex = 44;
             this.radioButton46.UseVisualStyleBackColor = false;
             // 
@@ -1106,9 +1179,10 @@
             this.radioButton20.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton20.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton20.Location = new System.Drawing.Point(762, 284);
+            this.radioButton20.Location = new System.Drawing.Point(1524, 546);
+            this.radioButton20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton20.Name = "radioButton20";
-            this.radioButton20.Size = new System.Drawing.Size(14, 13);
+            this.radioButton20.Size = new System.Drawing.Size(27, 26);
             this.radioButton20.TabIndex = 44;
             this.radioButton20.UseVisualStyleBackColor = false;
             // 
@@ -1120,9 +1194,10 @@
             this.radioButton45.Checked = true;
             this.radioButton45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton45.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton45.Location = new System.Drawing.Point(840, 265);
+            this.radioButton45.Location = new System.Drawing.Point(1680, 510);
+            this.radioButton45.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton45.Name = "radioButton45";
-            this.radioButton45.Size = new System.Drawing.Size(14, 13);
+            this.radioButton45.Size = new System.Drawing.Size(27, 26);
             this.radioButton45.TabIndex = 44;
             this.radioButton45.UseVisualStyleBackColor = false;
             // 
@@ -1133,9 +1208,10 @@
             this.radioButton28.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton28.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton28.Location = new System.Drawing.Point(762, 265);
+            this.radioButton28.Location = new System.Drawing.Point(1524, 510);
+            this.radioButton28.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton28.Name = "radioButton28";
-            this.radioButton28.Size = new System.Drawing.Size(14, 13);
+            this.radioButton28.Size = new System.Drawing.Size(27, 26);
             this.radioButton28.TabIndex = 44;
             this.radioButton28.UseVisualStyleBackColor = false;
             // 
@@ -1147,9 +1223,10 @@
             this.radioButton44.Checked = true;
             this.radioButton44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton44.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton44.Location = new System.Drawing.Point(840, 246);
+            this.radioButton44.Location = new System.Drawing.Point(1680, 473);
+            this.radioButton44.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton44.Name = "radioButton44";
-            this.radioButton44.Size = new System.Drawing.Size(14, 13);
+            this.radioButton44.Size = new System.Drawing.Size(27, 26);
             this.radioButton44.TabIndex = 41;
             this.radioButton44.UseVisualStyleBackColor = false;
             // 
@@ -1160,9 +1237,10 @@
             this.radioButton29.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton29.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton29.Location = new System.Drawing.Point(762, 246);
+            this.radioButton29.Location = new System.Drawing.Point(1524, 473);
+            this.radioButton29.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton29.Name = "radioButton29";
-            this.radioButton29.Size = new System.Drawing.Size(14, 13);
+            this.radioButton29.Size = new System.Drawing.Size(27, 26);
             this.radioButton29.TabIndex = 41;
             this.radioButton29.UseVisualStyleBackColor = false;
             // 
@@ -1173,9 +1251,10 @@
             this.radioButton43.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton43.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton43.Location = new System.Drawing.Point(840, 189);
+            this.radioButton43.Location = new System.Drawing.Point(1680, 363);
+            this.radioButton43.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton43.Name = "radioButton43";
-            this.radioButton43.Size = new System.Drawing.Size(14, 13);
+            this.radioButton43.Size = new System.Drawing.Size(27, 26);
             this.radioButton43.TabIndex = 42;
             this.radioButton43.UseVisualStyleBackColor = false;
             // 
@@ -1187,9 +1266,10 @@
             this.radioButton30.Checked = true;
             this.radioButton30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton30.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton30.Location = new System.Drawing.Point(762, 189);
+            this.radioButton30.Location = new System.Drawing.Point(1524, 363);
+            this.radioButton30.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton30.Name = "radioButton30";
-            this.radioButton30.Size = new System.Drawing.Size(14, 13);
+            this.radioButton30.Size = new System.Drawing.Size(27, 26);
             this.radioButton30.TabIndex = 42;
             this.radioButton30.UseVisualStyleBackColor = false;
             // 
@@ -1201,9 +1281,10 @@
             this.radioButton42.Checked = true;
             this.radioButton42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton42.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton42.Location = new System.Drawing.Point(840, 227);
+            this.radioButton42.Location = new System.Drawing.Point(1680, 437);
+            this.radioButton42.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton42.Name = "radioButton42";
-            this.radioButton42.Size = new System.Drawing.Size(14, 13);
+            this.radioButton42.Size = new System.Drawing.Size(27, 26);
             this.radioButton42.TabIndex = 40;
             this.radioButton42.UseVisualStyleBackColor = false;
             // 
@@ -1214,9 +1295,10 @@
             this.radioButton31.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton31.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton31.Location = new System.Drawing.Point(762, 227);
+            this.radioButton31.Location = new System.Drawing.Point(1524, 437);
+            this.radioButton31.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton31.Name = "radioButton31";
-            this.radioButton31.Size = new System.Drawing.Size(14, 13);
+            this.radioButton31.Size = new System.Drawing.Size(27, 26);
             this.radioButton31.TabIndex = 40;
             this.radioButton31.UseVisualStyleBackColor = false;
             // 
@@ -1227,9 +1309,10 @@
             this.radioButton41.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton41.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton41.Location = new System.Drawing.Point(840, 208);
+            this.radioButton41.Location = new System.Drawing.Point(1680, 400);
+            this.radioButton41.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton41.Name = "radioButton41";
-            this.radioButton41.Size = new System.Drawing.Size(14, 13);
+            this.radioButton41.Size = new System.Drawing.Size(27, 26);
             this.radioButton41.TabIndex = 43;
             this.radioButton41.UseVisualStyleBackColor = false;
             // 
@@ -1241,9 +1324,10 @@
             this.radioButton32.Checked = true;
             this.radioButton32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton32.Location = new System.Drawing.Point(762, 208);
+            this.radioButton32.Location = new System.Drawing.Point(1524, 400);
+            this.radioButton32.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton32.Name = "radioButton32";
-            this.radioButton32.Size = new System.Drawing.Size(14, 13);
+            this.radioButton32.Size = new System.Drawing.Size(27, 26);
             this.radioButton32.TabIndex = 43;
             this.radioButton32.UseVisualStyleBackColor = false;
             // 
@@ -1254,9 +1338,10 @@
             this.radioButton40.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton40.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton40.Location = new System.Drawing.Point(840, 132);
+            this.radioButton40.Location = new System.Drawing.Point(1680, 254);
+            this.radioButton40.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton40.Name = "radioButton40";
-            this.radioButton40.Size = new System.Drawing.Size(14, 13);
+            this.radioButton40.Size = new System.Drawing.Size(27, 26);
             this.radioButton40.TabIndex = 35;
             this.radioButton40.UseVisualStyleBackColor = false;
             // 
@@ -1267,9 +1352,10 @@
             this.radioButton39.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton39.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton39.Location = new System.Drawing.Point(840, 170);
+            this.radioButton39.Location = new System.Drawing.Point(1680, 327);
+            this.radioButton39.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton39.Name = "radioButton39";
-            this.radioButton39.Size = new System.Drawing.Size(14, 13);
+            this.radioButton39.Size = new System.Drawing.Size(27, 26);
             this.radioButton39.TabIndex = 31;
             this.radioButton39.UseVisualStyleBackColor = false;
             // 
@@ -1281,9 +1367,10 @@
             this.radioButton22.Checked = true;
             this.radioButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton22.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton22.Location = new System.Drawing.Point(762, 132);
+            this.radioButton22.Location = new System.Drawing.Point(1524, 254);
+            this.radioButton22.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton22.Name = "radioButton22";
-            this.radioButton22.Size = new System.Drawing.Size(14, 13);
+            this.radioButton22.Size = new System.Drawing.Size(27, 26);
             this.radioButton22.TabIndex = 35;
             this.radioButton22.UseVisualStyleBackColor = false;
             // 
@@ -1295,9 +1382,10 @@
             this.radioButton38.Checked = true;
             this.radioButton38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton38.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton38.Location = new System.Drawing.Point(840, 113);
+            this.radioButton38.Location = new System.Drawing.Point(1680, 217);
+            this.radioButton38.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton38.Name = "radioButton38";
-            this.radioButton38.Size = new System.Drawing.Size(14, 13);
+            this.radioButton38.Size = new System.Drawing.Size(27, 26);
             this.radioButton38.TabIndex = 32;
             this.radioButton38.TabStop = true;
             this.radioButton38.UseVisualStyleBackColor = false;
@@ -1310,9 +1398,10 @@
             this.radioButton23.Checked = true;
             this.radioButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton23.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton23.Location = new System.Drawing.Point(762, 170);
+            this.radioButton23.Location = new System.Drawing.Point(1524, 327);
+            this.radioButton23.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton23.Name = "radioButton23";
-            this.radioButton23.Size = new System.Drawing.Size(14, 13);
+            this.radioButton23.Size = new System.Drawing.Size(27, 26);
             this.radioButton23.TabIndex = 31;
             this.radioButton23.UseVisualStyleBackColor = false;
             // 
@@ -1323,9 +1412,10 @@
             this.radioButton37.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton37.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton37.Location = new System.Drawing.Point(840, 151);
+            this.radioButton37.Location = new System.Drawing.Point(1680, 290);
+            this.radioButton37.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton37.Name = "radioButton37";
-            this.radioButton37.Size = new System.Drawing.Size(14, 13);
+            this.radioButton37.Size = new System.Drawing.Size(27, 26);
             this.radioButton37.TabIndex = 36;
             this.radioButton37.UseVisualStyleBackColor = false;
             // 
@@ -1336,9 +1426,10 @@
             this.radioButton24.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton24.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton24.Location = new System.Drawing.Point(762, 113);
+            this.radioButton24.Location = new System.Drawing.Point(1524, 217);
+            this.radioButton24.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton24.Name = "radioButton24";
-            this.radioButton24.Size = new System.Drawing.Size(14, 13);
+            this.radioButton24.Size = new System.Drawing.Size(27, 26);
             this.radioButton24.TabIndex = 32;
             this.radioButton24.UseVisualStyleBackColor = false;
             // 
@@ -1350,9 +1441,10 @@
             this.radioButton36.Checked = true;
             this.radioButton36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton36.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton36.Location = new System.Drawing.Point(840, 94);
+            this.radioButton36.Location = new System.Drawing.Point(1680, 181);
+            this.radioButton36.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton36.Name = "radioButton36";
-            this.radioButton36.Size = new System.Drawing.Size(14, 13);
+            this.radioButton36.Size = new System.Drawing.Size(27, 26);
             this.radioButton36.TabIndex = 37;
             this.radioButton36.UseVisualStyleBackColor = false;
             // 
@@ -1364,9 +1456,10 @@
             this.radioButton25.Checked = true;
             this.radioButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton25.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton25.Location = new System.Drawing.Point(762, 151);
+            this.radioButton25.Location = new System.Drawing.Point(1524, 290);
+            this.radioButton25.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton25.Name = "radioButton25";
-            this.radioButton25.Size = new System.Drawing.Size(14, 13);
+            this.radioButton25.Size = new System.Drawing.Size(27, 26);
             this.radioButton25.TabIndex = 36;
             this.radioButton25.UseVisualStyleBackColor = false;
             // 
@@ -1377,9 +1470,10 @@
             this.radioButton26.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton26.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton26.Location = new System.Drawing.Point(762, 94);
+            this.radioButton26.Location = new System.Drawing.Point(1524, 181);
+            this.radioButton26.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton26.Name = "radioButton26";
-            this.radioButton26.Size = new System.Drawing.Size(14, 13);
+            this.radioButton26.Size = new System.Drawing.Size(27, 26);
             this.radioButton26.TabIndex = 37;
             this.radioButton26.UseVisualStyleBackColor = false;
             // 
@@ -1391,9 +1485,10 @@
             this.radioButton19.Checked = true;
             this.radioButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton19.Location = new System.Drawing.Point(840, 75);
+            this.radioButton19.Location = new System.Drawing.Point(1680, 144);
+            this.radioButton19.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton19.Name = "radioButton19";
-            this.radioButton19.Size = new System.Drawing.Size(14, 13);
+            this.radioButton19.Size = new System.Drawing.Size(27, 26);
             this.radioButton19.TabIndex = 33;
             this.radioButton19.UseVisualStyleBackColor = false;
             // 
@@ -1404,9 +1499,10 @@
             this.radioButton27.BackColor = System.Drawing.Color.Moccasin;
             this.radioButton27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButton27.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.radioButton27.Location = new System.Drawing.Point(762, 75);
+            this.radioButton27.Location = new System.Drawing.Point(1524, 144);
+            this.radioButton27.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton27.Name = "radioButton27";
-            this.radioButton27.Size = new System.Drawing.Size(14, 13);
+            this.radioButton27.Size = new System.Drawing.Size(27, 26);
             this.radioButton27.TabIndex = 33;
             this.radioButton27.UseVisualStyleBackColor = false;
             // 
@@ -1415,18 +1511,20 @@
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Moccasin;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label30.Location = new System.Drawing.Point(384, 47);
+            this.label30.Location = new System.Drawing.Point(768, 90);
+            this.label30.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(248, 25);
+            this.label30.Size = new System.Drawing.Size(478, 48);
             this.label30.TabIndex = 30;
             this.label30.Text = "Управление клапанами";
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Moccasin;
-            this.pictureBox6.Location = new System.Drawing.Point(381, 43);
+            this.pictureBox6.Location = new System.Drawing.Point(762, 83);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(500, 296);
+            this.pictureBox6.Size = new System.Drawing.Size(1000, 569);
             this.pictureBox6.TabIndex = 28;
             this.pictureBox6.TabStop = false;
             // 
@@ -1435,18 +1533,20 @@
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.SystemColors.Control;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label28.Location = new System.Drawing.Point(161, 314);
+            this.label28.Location = new System.Drawing.Point(322, 604);
+            this.label28.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(99, 13);
+            this.label28.Size = new System.Drawing.Size(192, 26);
             this.label28.TabIndex = 23;
             this.label28.Text = "Состояние/статус";
             // 
             // progressBar6
             // 
             this.progressBar6.BackColor = System.Drawing.Color.Olive;
-            this.progressBar6.Location = new System.Drawing.Point(105, 306);
+            this.progressBar6.Location = new System.Drawing.Point(210, 588);
+            this.progressBar6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar6.Name = "progressBar6";
-            this.progressBar6.Size = new System.Drawing.Size(218, 28);
+            this.progressBar6.Size = new System.Drawing.Size(436, 54);
             this.progressBar6.TabIndex = 22;
             // 
             // label27
@@ -1454,9 +1554,10 @@
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.Color.Linen;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label27.Location = new System.Drawing.Point(264, 87);
+            this.label27.Location = new System.Drawing.Point(528, 167);
+            this.label27.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(38, 13);
+            this.label27.Size = new System.Drawing.Size(76, 26);
             this.label27.TabIndex = 12;
             this.label27.Text = "Канал";
             // 
@@ -1465,9 +1566,10 @@
             this.radioButton18.AutoSize = true;
             this.radioButton18.BackColor = System.Drawing.Color.Linen;
             this.radioButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton18.Location = new System.Drawing.Point(269, 231);
+            this.radioButton18.Location = new System.Drawing.Point(538, 444);
+            this.radioButton18.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton18.Name = "radioButton18";
-            this.radioButton18.Size = new System.Drawing.Size(31, 17);
+            this.radioButton18.Size = new System.Drawing.Size(55, 30);
             this.radioButton18.TabIndex = 11;
             this.radioButton18.Text = "8";
             this.radioButton18.UseVisualStyleBackColor = false;
@@ -1477,9 +1579,10 @@
             this.radioButton17.AutoSize = true;
             this.radioButton17.BackColor = System.Drawing.Color.Linen;
             this.radioButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton17.Location = new System.Drawing.Point(269, 213);
+            this.radioButton17.Location = new System.Drawing.Point(538, 410);
+            this.radioButton17.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton17.Name = "radioButton17";
-            this.radioButton17.Size = new System.Drawing.Size(31, 17);
+            this.radioButton17.Size = new System.Drawing.Size(55, 30);
             this.radioButton17.TabIndex = 10;
             this.radioButton17.Text = "7";
             this.radioButton17.UseVisualStyleBackColor = false;
@@ -1489,9 +1592,10 @@
             this.radioButton14.AutoSize = true;
             this.radioButton14.BackColor = System.Drawing.Color.Linen;
             this.radioButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton14.Location = new System.Drawing.Point(269, 159);
+            this.radioButton14.Location = new System.Drawing.Point(538, 306);
+            this.radioButton14.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton14.Name = "radioButton14";
-            this.radioButton14.Size = new System.Drawing.Size(31, 17);
+            this.radioButton14.Size = new System.Drawing.Size(55, 30);
             this.radioButton14.TabIndex = 10;
             this.radioButton14.Text = "4";
             this.radioButton14.UseVisualStyleBackColor = false;
@@ -1501,9 +1605,10 @@
             this.radioButton16.AutoSize = true;
             this.radioButton16.BackColor = System.Drawing.Color.Linen;
             this.radioButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton16.Location = new System.Drawing.Point(269, 195);
+            this.radioButton16.Location = new System.Drawing.Point(538, 375);
+            this.radioButton16.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton16.Name = "radioButton16";
-            this.radioButton16.Size = new System.Drawing.Size(31, 17);
+            this.radioButton16.Size = new System.Drawing.Size(55, 30);
             this.radioButton16.TabIndex = 9;
             this.radioButton16.Text = "6";
             this.radioButton16.UseVisualStyleBackColor = false;
@@ -1513,9 +1618,10 @@
             this.radioButton13.AutoSize = true;
             this.radioButton13.BackColor = System.Drawing.Color.Linen;
             this.radioButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton13.Location = new System.Drawing.Point(269, 141);
+            this.radioButton13.Location = new System.Drawing.Point(538, 271);
+            this.radioButton13.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton13.Name = "radioButton13";
-            this.radioButton13.Size = new System.Drawing.Size(31, 17);
+            this.radioButton13.Size = new System.Drawing.Size(55, 30);
             this.radioButton13.TabIndex = 9;
             this.radioButton13.Text = "3";
             this.radioButton13.UseVisualStyleBackColor = false;
@@ -1525,9 +1631,10 @@
             this.radioButton15.AutoSize = true;
             this.radioButton15.BackColor = System.Drawing.Color.Linen;
             this.radioButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton15.Location = new System.Drawing.Point(269, 177);
+            this.radioButton15.Location = new System.Drawing.Point(538, 340);
+            this.radioButton15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton15.Name = "radioButton15";
-            this.radioButton15.Size = new System.Drawing.Size(31, 17);
+            this.radioButton15.Size = new System.Drawing.Size(55, 30);
             this.radioButton15.TabIndex = 10;
             this.radioButton15.Text = "5";
             this.radioButton15.UseVisualStyleBackColor = false;
@@ -1539,9 +1646,10 @@
             this.radioButton11.BackColor = System.Drawing.Color.Linen;
             this.radioButton11.Checked = true;
             this.radioButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton11.Location = new System.Drawing.Point(269, 123);
+            this.radioButton11.Location = new System.Drawing.Point(538, 237);
+            this.radioButton11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton11.Name = "radioButton11";
-            this.radioButton11.Size = new System.Drawing.Size(31, 17);
+            this.radioButton11.Size = new System.Drawing.Size(55, 30);
             this.radioButton11.TabIndex = 10;
             this.radioButton11.Text = "2";
             this.radioButton11.UseVisualStyleBackColor = false;
@@ -1551,9 +1659,10 @@
             this.radioButton12.AutoSize = true;
             this.radioButton12.BackColor = System.Drawing.Color.Linen;
             this.radioButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.radioButton12.Location = new System.Drawing.Point(269, 105);
+            this.radioButton12.Location = new System.Drawing.Point(538, 202);
+            this.radioButton12.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.radioButton12.Name = "radioButton12";
-            this.radioButton12.Size = new System.Drawing.Size(31, 17);
+            this.radioButton12.Size = new System.Drawing.Size(55, 30);
             this.radioButton12.TabIndex = 9;
             this.radioButton12.Text = "1";
             this.radioButton12.UseVisualStyleBackColor = false;
@@ -1563,9 +1672,10 @@
             this.label26.AutoSize = true;
             this.label26.BackColor = System.Drawing.Color.Linen;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(196, 105);
+            this.label26.Location = new System.Drawing.Point(392, 202);
+            this.label26.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(27, 13);
+            this.label26.Size = new System.Drawing.Size(52, 26);
             this.label26.TabIndex = 8;
             this.label26.Text = "мкл";
             // 
@@ -1574,9 +1684,10 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Linen;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label24.Location = new System.Drawing.Point(123, 87);
+            this.label24.Location = new System.Drawing.Point(246, 167);
+            this.label24.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
+            this.label24.Size = new System.Drawing.Size(136, 26);
             this.label24.TabIndex = 5;
             this.label24.Text = "Ход поршня";
             // 
@@ -1585,18 +1696,20 @@
             this.label25.AutoSize = true;
             this.label25.BackColor = System.Drawing.Color.Linen;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label25.Location = new System.Drawing.Point(102, 47);
+            this.label25.Location = new System.Drawing.Point(204, 90);
+            this.label25.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(223, 25);
+            this.label25.Size = new System.Drawing.Size(429, 48);
             this.label25.TabIndex = 6;
             this.label25.Text = "Управление насосом";
             // 
             // button20
             // 
             this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(118, 197);
+            this.button20.Location = new System.Drawing.Point(236, 379);
+            this.button20.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(75, 23);
+            this.button20.Size = new System.Drawing.Size(150, 44);
             this.button20.TabIndex = 2;
             this.button20.Text = "Выпуск";
             this.button20.UseVisualStyleBackColor = true;
@@ -1604,9 +1717,10 @@
             // button21
             // 
             this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(450, 295);
+            this.button21.Location = new System.Drawing.Point(900, 567);
+            this.button21.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
+            this.button21.Size = new System.Drawing.Size(150, 44);
             this.button21.TabIndex = 2;
             this.button21.Text = "Впуск";
             this.button21.UseVisualStyleBackColor = true;
@@ -1614,9 +1728,10 @@
             // button19
             // 
             this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button19.Location = new System.Drawing.Point(118, 161);
+            this.button19.Location = new System.Drawing.Point(236, 310);
+            this.button19.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(75, 23);
+            this.button19.Size = new System.Drawing.Size(150, 44);
             this.button19.TabIndex = 2;
             this.button19.Text = "Впуск";
             this.button19.UseVisualStyleBackColor = true;
@@ -1624,9 +1739,10 @@
             // numericUpDown15
             // 
             this.numericUpDown15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown15.Location = new System.Drawing.Point(118, 103);
+            this.numericUpDown15.Location = new System.Drawing.Point(236, 198);
+            this.numericUpDown15.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown15.Name = "numericUpDown15";
-            this.numericUpDown15.Size = new System.Drawing.Size(75, 20);
+            this.numericUpDown15.Size = new System.Drawing.Size(150, 32);
             this.numericUpDown15.TabIndex = 3;
             this.numericUpDown15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown15.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
@@ -1634,26 +1750,29 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Linen;
-            this.pictureBox5.Location = new System.Drawing.Point(96, 43);
+            this.pictureBox5.Location = new System.Drawing.Point(192, 83);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(235, 296);
+            this.pictureBox5.Size = new System.Drawing.Size(470, 569);
             this.pictureBox5.TabIndex = 7;
             this.pictureBox5.TabStop = false;
             // 
             // tabPage3
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(8, 51);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(968, 378);
+            this.tabPage3.Size = new System.Drawing.Size(1936, 731);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Промывка";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Location = new System.Drawing.Point(8, 51);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(968, 378);
+            this.tabPage4.Size = new System.Drawing.Size(1936, 731);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Вибростек";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1709,20 +1828,62 @@
             this.tabPage5.Controls.Add(this.pictureBox1);
             this.tabPage5.Controls.Add(this.pictureBox2);
             this.tabPage5.Controls.Add(this.pictureBox4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Location = new System.Drawing.Point(8, 51);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(968, 378);
+            this.tabPage5.Size = new System.Drawing.Size(1936, 731);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Термостек";
             this.tabPage5.UseVisualStyleBackColor = true;
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown8.Location = new System.Drawing.Point(294, 340);
+            this.numericUpDown8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(100, 41);
+            this.numericUpDown8.TabIndex = 72;
+            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown8.Value = new decimal(new int[] {
+            38,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown7.Location = new System.Drawing.Point(182, 340);
+            this.numericUpDown7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(100, 41);
+            this.numericUpDown7.TabIndex = 72;
+            this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown7.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown6.Location = new System.Drawing.Point(70, 340);
+            this.numericUpDown6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(100, 41);
+            this.numericUpDown6.TabIndex = 72;
+            this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(76, 75);
+            this.numericUpDown1.Location = new System.Drawing.Point(152, 144);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(85, 24);
+            this.numericUpDown1.Size = new System.Drawing.Size(170, 41);
             this.numericUpDown1.TabIndex = 72;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown1.Value = new decimal(new int[] {
@@ -1734,27 +1895,52 @@
             // progressBar3
             // 
             this.progressBar3.BackColor = System.Drawing.Color.Olive;
-            this.progressBar3.Location = new System.Drawing.Point(22, 335);
+            this.progressBar3.Location = new System.Drawing.Point(44, 644);
+            this.progressBar3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(191, 28);
+            this.progressBar3.Size = new System.Drawing.Size(382, 54);
             this.progressBar3.TabIndex = 25;
             // 
             // button6
             // 
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.Location = new System.Drawing.Point(129, 306);
+            this.button6.Location = new System.Drawing.Point(258, 588);
+            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(84, 23);
+            this.button6.Size = new System.Drawing.Size(168, 44);
             this.button6.TabIndex = 69;
             this.button6.Text = "Стоп";
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button11.Location = new System.Drawing.Point(152, 429);
+            this.button11.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(168, 44);
+            this.button11.TabIndex = 70;
+            this.button11.Text = "Установить";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button10.Location = new System.Drawing.Point(152, 429);
+            this.button10.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(168, 44);
+            this.button10.TabIndex = 70;
+            this.button10.Text = "Старт";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(22, 306);
+            this.button5.Location = new System.Drawing.Point(44, 588);
+            this.button5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 23);
+            this.button5.Size = new System.Drawing.Size(168, 44);
             this.button5.TabIndex = 70;
             this.button5.Text = "Старт";
             this.button5.UseVisualStyleBackColor = true;
@@ -1762,9 +1948,10 @@
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(76, 107);
+            this.button4.Location = new System.Drawing.Point(152, 206);
+            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(84, 23);
+            this.button4.Size = new System.Drawing.Size(168, 44);
             this.button4.TabIndex = 71;
             this.button4.Text = "Установить";
             this.button4.UseVisualStyleBackColor = true;
@@ -1774,18 +1961,20 @@
             this.label52.AutoSize = true;
             this.label52.BackColor = System.Drawing.Color.Linen;
             this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label52.Location = new System.Drawing.Point(79, 10);
+            this.label52.Location = new System.Drawing.Point(158, 19);
+            this.label52.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(82, 25);
+            this.label52.Size = new System.Drawing.Size(157, 48);
             this.label52.TabIndex = 66;
             this.label52.Text = "Нагрев";
             // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(334, 306);
+            this.button2.Location = new System.Drawing.Point(668, 588);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 23);
+            this.button2.Size = new System.Drawing.Size(168, 44);
             this.button2.TabIndex = 64;
             this.button2.Text = "Настройка";
             this.button2.UseVisualStyleBackColor = true;
@@ -1794,9 +1983,10 @@
             // 
             this.textBox8.Enabled = false;
             this.textBox8.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox8.Location = new System.Drawing.Point(434, 264);
+            this.textBox8.Location = new System.Drawing.Point(868, 508);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(64, 26);
+            this.textBox8.Size = new System.Drawing.Size(124, 44);
             this.textBox8.TabIndex = 63;
             this.textBox8.Text = "-";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1805,9 +1995,10 @@
             // 
             this.textBox7.Enabled = false;
             this.textBox7.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox7.Location = new System.Drawing.Point(434, 236);
+            this.textBox7.Location = new System.Drawing.Point(868, 454);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(64, 26);
+            this.textBox7.Size = new System.Drawing.Size(124, 44);
             this.textBox7.TabIndex = 63;
             this.textBox7.Text = "-";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1816,9 +2007,10 @@
             // 
             this.textBox6.Enabled = false;
             this.textBox6.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox6.Location = new System.Drawing.Point(434, 207);
+            this.textBox6.Location = new System.Drawing.Point(868, 398);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(64, 26);
+            this.textBox6.Size = new System.Drawing.Size(124, 44);
             this.textBox6.TabIndex = 63;
             this.textBox6.Text = "-";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1827,45 +2019,50 @@
             // 
             this.textBox5.Enabled = false;
             this.textBox5.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox5.Location = new System.Drawing.Point(434, 179);
+            this.textBox5.Location = new System.Drawing.Point(868, 344);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(64, 26);
+            this.textBox5.Size = new System.Drawing.Size(124, 44);
             this.textBox5.TabIndex = 63;
             this.textBox5.Text = "-";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(434, 150);
+            this.textBox4.Location = new System.Drawing.Point(868, 288);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(64, 26);
+            this.textBox4.Size = new System.Drawing.Size(124, 44);
             this.textBox4.TabIndex = 63;
             this.textBox4.Text = "37.8";
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(434, 122);
+            this.textBox3.Location = new System.Drawing.Point(868, 235);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(64, 26);
+            this.textBox3.Size = new System.Drawing.Size(124, 44);
             this.textBox3.TabIndex = 63;
             this.textBox3.Text = "36.1";
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(434, 93);
+            this.textBox2.Location = new System.Drawing.Point(868, 179);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(64, 26);
+            this.textBox2.Size = new System.Drawing.Size(124, 44);
             this.textBox2.TabIndex = 63;
             this.textBox2.Text = "37.5";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(434, 65);
+            this.textBox1.Location = new System.Drawing.Point(868, 125);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 26);
+            this.textBox1.Size = new System.Drawing.Size(124, 44);
             this.textBox1.TabIndex = 63;
             this.textBox1.Text = "37.8";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1876,9 +2073,10 @@
             this.label6.BackColor = System.Drawing.Color.Linen;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(271, 272);
+            this.label6.Location = new System.Drawing.Point(542, 523);
+            this.label6.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 16);
+            this.label6.Size = new System.Drawing.Size(27, 30);
             this.label6.TabIndex = 54;
             this.label6.Text = "8";
             // 
@@ -1888,9 +2086,10 @@
             this.label7.BackColor = System.Drawing.Color.Linen;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(271, 215);
+            this.label7.Location = new System.Drawing.Point(542, 413);
+            this.label7.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 16);
+            this.label7.Size = new System.Drawing.Size(27, 30);
             this.label7.TabIndex = 55;
             this.label7.Text = "6";
             // 
@@ -1900,9 +2099,10 @@
             this.label14.BackColor = System.Drawing.Color.Linen;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label14.Location = new System.Drawing.Point(271, 187);
+            this.label14.Location = new System.Drawing.Point(542, 360);
+            this.label14.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(15, 16);
+            this.label14.Size = new System.Drawing.Size(27, 30);
             this.label14.TabIndex = 57;
             this.label14.Text = "5";
             // 
@@ -1912,9 +2112,10 @@
             this.label15.BackColor = System.Drawing.Color.Linen;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label15.Location = new System.Drawing.Point(271, 244);
+            this.label15.Location = new System.Drawing.Point(542, 469);
+            this.label15.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 16);
+            this.label15.Size = new System.Drawing.Size(27, 30);
             this.label15.TabIndex = 58;
             this.label15.Text = "7";
             // 
@@ -1924,9 +2125,10 @@
             this.label16.BackColor = System.Drawing.Color.Linen;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label16.Location = new System.Drawing.Point(271, 130);
+            this.label16.Location = new System.Drawing.Point(542, 250);
+            this.label16.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(15, 16);
+            this.label16.Size = new System.Drawing.Size(27, 30);
             this.label16.TabIndex = 59;
             this.label16.Text = "3";
             // 
@@ -1936,9 +2138,10 @@
             this.label17.BackColor = System.Drawing.Color.Linen;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label17.Location = new System.Drawing.Point(271, 158);
+            this.label17.Location = new System.Drawing.Point(542, 304);
+            this.label17.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(15, 16);
+            this.label17.Size = new System.Drawing.Size(27, 30);
             this.label17.TabIndex = 60;
             this.label17.Text = "4";
             // 
@@ -1948,9 +2151,10 @@
             this.label18.BackColor = System.Drawing.Color.Linen;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label18.Location = new System.Drawing.Point(271, 101);
+            this.label18.Location = new System.Drawing.Point(542, 194);
+            this.label18.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(15, 16);
+            this.label18.Size = new System.Drawing.Size(27, 30);
             this.label18.TabIndex = 61;
             this.label18.Text = "2";
             // 
@@ -1960,9 +2164,10 @@
             this.label19.BackColor = System.Drawing.Color.Linen;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label19.Location = new System.Drawing.Point(271, 73);
+            this.label19.Location = new System.Drawing.Point(542, 140);
+            this.label19.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(15, 16);
+            this.label19.Size = new System.Drawing.Size(27, 30);
             this.label19.TabIndex = 62;
             this.label19.Text = "1";
             // 
@@ -1972,9 +2177,10 @@
             this.label50.BackColor = System.Drawing.Color.Linen;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label50.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label50.Location = new System.Drawing.Point(354, 272);
+            this.label50.Location = new System.Drawing.Point(708, 523);
+            this.label50.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(11, 13);
+            this.label50.Size = new System.Drawing.Size(20, 26);
             this.label50.TabIndex = 50;
             this.label50.Text = "-";
             // 
@@ -1984,9 +2190,10 @@
             this.label49.BackColor = System.Drawing.Color.Linen;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label49.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label49.Location = new System.Drawing.Point(354, 244);
+            this.label49.Location = new System.Drawing.Point(708, 469);
+            this.label49.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(11, 13);
+            this.label49.Size = new System.Drawing.Size(20, 26);
             this.label49.TabIndex = 50;
             this.label49.Text = "-";
             // 
@@ -1996,9 +2203,10 @@
             this.label12.BackColor = System.Drawing.Color.Linen;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(346, 157);
+            this.label12.Location = new System.Drawing.Point(692, 302);
+            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(26, 13);
+            this.label12.Size = new System.Drawing.Size(45, 26);
             this.label12.TabIndex = 50;
             this.label12.Text = "Т 4";
             // 
@@ -2008,9 +2216,10 @@
             this.label48.BackColor = System.Drawing.Color.Linen;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label48.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label48.Location = new System.Drawing.Point(354, 215);
+            this.label48.Location = new System.Drawing.Point(708, 413);
+            this.label48.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(11, 13);
+            this.label48.Size = new System.Drawing.Size(20, 26);
             this.label48.TabIndex = 50;
             this.label48.Text = "-";
             // 
@@ -2020,9 +2229,10 @@
             this.label5.BackColor = System.Drawing.Color.Linen;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(346, 129);
+            this.label5.Location = new System.Drawing.Point(692, 248);
+            this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 13);
+            this.label5.Size = new System.Drawing.Size(45, 26);
             this.label5.TabIndex = 50;
             this.label5.Text = "Т 3";
             // 
@@ -2032,9 +2242,10 @@
             this.label33.BackColor = System.Drawing.Color.Linen;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label33.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label33.Location = new System.Drawing.Point(354, 187);
+            this.label33.Location = new System.Drawing.Point(708, 360);
+            this.label33.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(11, 13);
+            this.label33.Size = new System.Drawing.Size(20, 26);
             this.label33.TabIndex = 50;
             this.label33.Text = "-";
             // 
@@ -2044,9 +2255,10 @@
             this.label3.BackColor = System.Drawing.Color.Linen;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(346, 100);
+            this.label3.Location = new System.Drawing.Point(692, 192);
+            this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(45, 26);
             this.label3.TabIndex = 50;
             this.label3.Text = "Т 2";
             // 
@@ -2056,11 +2268,77 @@
             this.label2.BackColor = System.Drawing.Color.Linen;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(346, 72);
+            this.label2.Location = new System.Drawing.Point(692, 138);
+            this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
+            this.label2.Size = new System.Drawing.Size(45, 26);
             this.label2.TabIndex = 50;
             this.label2.Text = "Т 1";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.BackColor = System.Drawing.Color.Linen;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label55.ForeColor = System.Drawing.Color.OliveDrab;
+            this.label55.Location = new System.Drawing.Point(72, 517);
+            this.label55.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(326, 36);
+            this.label55.TabIndex = 50;
+            this.label55.Text = "0 ч.  05 мин.  30 сек.";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.BackColor = System.Drawing.Color.Linen;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label58.Location = new System.Drawing.Point(308, 392);
+            this.label58.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(60, 30);
+            this.label58.TabIndex = 50;
+            this.label58.Text = "сек.";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.Color.Linen;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label57.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label57.Location = new System.Drawing.Point(192, 392);
+            this.label57.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(68, 30);
+            this.label57.TabIndex = 50;
+            this.label57.Text = "мин.";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.BackColor = System.Drawing.Color.Linen;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label56.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label56.Location = new System.Drawing.Point(78, 392);
+            this.label56.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(73, 30);
+            this.label56.TabIndex = 50;
+            this.label56.Text = "часы";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.BackColor = System.Drawing.Color.Linen;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label54.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label54.Location = new System.Drawing.Point(128, 296);
+            this.label54.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(192, 30);
+            this.label54.TabIndex = 50;
+            this.label54.Text = "Время нагрева";
             // 
             // label53
             // 
@@ -2068,9 +2346,10 @@
             this.label53.BackColor = System.Drawing.Color.Linen;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label53.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label53.Location = new System.Drawing.Point(74, 51);
+            this.label53.Location = new System.Drawing.Point(148, 98);
+            this.label53.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(93, 16);
+            this.label53.Size = new System.Drawing.Size(173, 30);
             this.label53.TabIndex = 50;
             this.label53.Text = "T нагрева, °С";
             // 
@@ -2080,18 +2359,20 @@
             this.label32.BackColor = System.Drawing.Color.Linen;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label32.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label32.Location = new System.Drawing.Point(271, 49);
+            this.label32.Location = new System.Drawing.Point(542, 94);
+            this.label32.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(22, 16);
+            this.label32.Size = new System.Drawing.Size(39, 30);
             this.label32.TabIndex = 50;
             this.label32.Text = "№";
             // 
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.Olive;
-            this.progressBar1.Location = new System.Drawing.Point(259, 335);
+            this.progressBar1.Location = new System.Drawing.Point(518, 644);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(250, 28);
+            this.progressBar1.Size = new System.Drawing.Size(500, 54);
             this.progressBar1.TabIndex = 25;
             // 
             // label51
@@ -2099,9 +2380,10 @@
             this.label51.AutoSize = true;
             this.label51.BackColor = System.Drawing.Color.Linen;
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label51.Location = new System.Drawing.Point(633, 175);
+            this.label51.Location = new System.Drawing.Point(1266, 337);
+            this.label51.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(230, 25);
+            this.label51.Size = new System.Drawing.Size(446, 48);
             this.label51.TabIndex = 23;
             this.label51.Text = "Область с графиками";
             this.label51.Click += new System.EventHandler(this.label51_Click);
@@ -2111,53 +2393,59 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Linen;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(269, 10);
+            this.label1.Location = new System.Drawing.Point(538, 19);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 25);
+            this.label1.Size = new System.Drawing.Size(452, 48);
             this.label1.TabIndex = 23;
             this.label1.Text = "Датчики температуры";
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Linen;
-            this.pictureBox1.Location = new System.Drawing.Point(250, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(500, 13);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 362);
+            this.pictureBox1.Size = new System.Drawing.Size(534, 696);
             this.pictureBox1.TabIndex = 24;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Linen;
-            this.pictureBox2.Location = new System.Drawing.Point(549, 7);
+            this.pictureBox2.Location = new System.Drawing.Point(1098, 13);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(401, 362);
+            this.pictureBox2.Size = new System.Drawing.Size(802, 696);
             this.pictureBox2.TabIndex = 65;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Linen;
-            this.pictureBox4.Location = new System.Drawing.Point(17, 7);
+            this.pictureBox4.Location = new System.Drawing.Point(34, 13);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(201, 362);
+            this.pictureBox4.Size = new System.Drawing.Size(402, 696);
             this.pictureBox4.TabIndex = 67;
             this.pictureBox4.TabStop = false;
             // 
             // tabPage7
             // 
-            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Location = new System.Drawing.Point(8, 51);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(968, 378);
+            this.tabPage7.Size = new System.Drawing.Size(1936, 731);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Связь с модулями";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tabPage8
             // 
-            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Location = new System.Drawing.Point(8, 51);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(968, 378);
+            this.tabPage8.Size = new System.Drawing.Size(1936, 731);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Общие настройки";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -2167,146 +2455,32 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.SystemColors.Control;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(331, 421);
+            this.label20.Location = new System.Drawing.Point(662, 810);
+            this.label20.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(363, 16);
+            this.label20.Size = new System.Drawing.Size(668, 30);
             this.label20.TabIndex = 13;
             this.label20.Text = "Оперативная информация, текущее состояние стенда";
             // 
             // progressBar4
             // 
             this.progressBar4.BackColor = System.Drawing.Color.Olive;
-            this.progressBar4.Location = new System.Drawing.Point(3, 415);
+            this.progressBar4.Location = new System.Drawing.Point(6, 798);
+            this.progressBar4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.progressBar4.Name = "progressBar4";
-            this.progressBar4.Size = new System.Drawing.Size(971, 28);
+            this.progressBar4.Size = new System.Drawing.Size(1942, 54);
             this.progressBar4.TabIndex = 12;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.BackColor = System.Drawing.Color.Linen;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label54.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label54.Location = new System.Drawing.Point(64, 154);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(106, 16);
-            this.label54.TabIndex = 50;
-            this.label54.Text = "Время нагрева";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.BackColor = System.Drawing.Color.Linen;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label55.ForeColor = System.Drawing.Color.OliveDrab;
-            this.label55.Location = new System.Drawing.Point(36, 269);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(169, 18);
-            this.label55.TabIndex = 50;
-            this.label55.Text = "0 ч.  05 мин.  30 сек.";
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown6.Location = new System.Drawing.Point(35, 177);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(50, 24);
-            this.numericUpDown6.TabIndex = 72;
-            this.numericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // numericUpDown7
-            // 
-            this.numericUpDown7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown7.Location = new System.Drawing.Point(91, 177);
-            this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(50, 24);
-            this.numericUpDown7.TabIndex = 72;
-            this.numericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown7.Value = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            // 
-            // numericUpDown8
-            // 
-            this.numericUpDown8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown8.Location = new System.Drawing.Point(147, 177);
-            this.numericUpDown8.Name = "numericUpDown8";
-            this.numericUpDown8.Size = new System.Drawing.Size(50, 24);
-            this.numericUpDown8.TabIndex = 72;
-            this.numericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown8.Value = new decimal(new int[] {
-            38,
-            0,
-            0,
-            0});
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.BackColor = System.Drawing.Color.Linen;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label56.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label56.Location = new System.Drawing.Point(39, 204);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 16);
-            this.label56.TabIndex = 50;
-            this.label56.Text = "часы";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.Color.Linen;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label57.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label57.Location = new System.Drawing.Point(96, 204);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(36, 16);
-            this.label57.TabIndex = 50;
-            this.label57.Text = "мин.";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.BackColor = System.Drawing.Color.Linen;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label58.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label58.Location = new System.Drawing.Point(154, 204);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(33, 16);
-            this.label58.TabIndex = 50;
-            this.label58.Text = "сек.";
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.Location = new System.Drawing.Point(76, 223);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(84, 23);
-            this.button10.TabIndex = 70;
-            this.button10.Text = "Старт";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button11.Location = new System.Drawing.Point(76, 223);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(84, 23);
-            this.button11.TabIndex = 70;
-            this.button11.Text = "Установить";
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 446);
+            this.ClientSize = new System.Drawing.Size(1958, 858);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.progressBar4);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Form1";
             this.Text = "ПО аппарата пробоподготовки";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -2335,13 +2509,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

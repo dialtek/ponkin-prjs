@@ -52,11 +52,11 @@ void Timer9_init(unsigned long);
   void modbus_init (void) {
    /// обнуление регистров
     
-   for(unsigned char i = 0; i < 125; i++) 
-   {
-      holding_register[i] = 0;   // clearing RW resgisters 
-      input_register[i] = 0;     // clearing read-only resgisters 
-   }
+//   for(unsigned char i = 0; i < 125; i++) 
+//   {
+//      holding_register[i] = 0;   // clearing RW resgisters 
+//      input_register[i] = 0;     // clearing read-only resgisters 
+//   }
    
    modbus_reset();
    }

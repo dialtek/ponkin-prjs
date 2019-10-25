@@ -38,21 +38,9 @@ typedef struct FirmwareInfo_t {
     
 } FirmwareInfo;
 
-FirmwareInfo FirmInfo;                   // device info struct instance
-
-void GPIO_init(void);
-void OSC_init(void);
-void SystemInit(void);
-void SendTmeasCmd(void);
-void ConfigReset(void);
-unsigned int UpdateIDregs(unsigned char);
-void RestoreCfg(void);
-	
 void task_GetSensorID(void *pvParameters);
 void task_ModbusSM(void *pvParameters);
 void task_GetTemp(void *pvParameters);
-
-volatile SemaphoreHandle_t NewSensSemph; // new sensor adding semph
 
 #ifdef	__cplusplus
 }

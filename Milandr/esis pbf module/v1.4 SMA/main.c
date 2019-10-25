@@ -15,8 +15,11 @@
 #include "mdr_delay.h"
 
 // упр. вкл. высокого напряжения
-#define HV_SUPPLY_ON  	MDR_PORTC->RXTX |=  1<<2   
-#define HV_SUPPLY_OFF   MDR_PORTC->RXTX &= ~(1<<2)
+//#define HV_SUPPLY_ON  	MDR_PORTC->RXTX |=  1<<2    // для версии с SMA
+//#define HV_SUPPLY_OFF   MDR_PORTC->RXTX &= ~(1<<2)
+
+#define HV_SUPPLY_ON  	MDR_PORTC->RXTX |=  1               // для версии платы 1.3 LEMO
+#define HV_SUPPLY_OFF   MDR_PORTC->RXTX &= ~1
 
 #define HV_SWITCH_ON MDR_PORTE->RXTX & 1<<6 // анализ состояния тумблера высокого
 

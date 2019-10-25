@@ -107,6 +107,8 @@ namespace extract_system
             var device_9 = new DevicePBF(id, shift, shift_vert, "C27", SendMessage);
             device_9.CreateControls(_form);
             devices.Add(id, device_9);
+
+
             // ion cooling devices..////////////////////////////////////////////////////////////////////////////
             //id = "24";          // БФВН модулятора ИО
             //shift = 44;

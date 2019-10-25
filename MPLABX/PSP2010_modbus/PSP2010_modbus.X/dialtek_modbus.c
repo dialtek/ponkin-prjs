@@ -38,12 +38,12 @@
 
 /* RS485 EN/DIS DEFINE */
 
-#define TX_EN  LATBbits.LATB14=1
-#define TX_DIS LATBbits.LATB14=0
+#define TX_EN  TRISBbits.TRISB14 = 0; LATBbits.LATB14=1; // modbus TX EN 
+#define TX_DIS TRISBbits.TRISB14 = 0; LATBbits.LATB14=0; // modbus TX EN
 
 /* HARDWARE INFO */
-  volatile unsigned char dev_id = DEFAULT_DEV_ID;     // MODBUS ID устройства <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 29;                 // версия прошивки текущего устройства
+  volatile unsigned char dev_id = DEFAULT_DEV_ID;   // MODBUS ID устройства <<<<<<<<<<======== ID
+  unsigned char firmware_ver  = 30;                 // версия прошивки текущего устройства
   unsigned char device_family = 5;                  // код семейства устройств
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
   unsigned char modbus_ver    = 31;                 // версия MODBUS
@@ -81,6 +81,9 @@ void eeprom_wr_regs(void);
        holding_register[3] = rd_current_lim;      
        holding_register[4] = rd_status; // the relay status 0:OFF 1:ON
        holding_register[5] = rd_power_lim;    
+       holding_register[15] = curr_cmd;
+       holding_register[16] = ErrCnt;
+      
        
    }         
    //-------------------------------------------------------------------------//

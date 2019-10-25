@@ -24,6 +24,7 @@ Command:
   build/default/production/main_heater.o \
   build/default/production/main_steppers.o \
   build/default/production/main_dosing_sys.o \
+  build/default/production/main_io.o \
   build/default/production/d_delay.o \
   build/default/production/d_eeprom.o \
   build/default/production/d_heater.o \
@@ -31,9 +32,8 @@ Command:
   build/default/production/d_SPI.o \
   build/default/production/dialtek_modbus.o \
   build/default/production/dialtek_uart.o \
-  build/default/production/main.o \
   build/default/production/hamilton_pump.o \
-  build/default/production/main_io.o \
+  build/default/production/main.o \
   --local-stack \
   --defsym=__MPLAB_BUILD=1 \
   -Tp33EP256MU810.gld.00 \
@@ -75,10 +75,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x114           0x19e  (414)
 .const                       0x314                0x10            0x18  (24)
-.text                        0x324              0x1fc6          0x2fa9  (12201)
-.dinit                      0x22ea                0x48            0x6c  (108)
+.text                        0x324              0x1fca          0x2faf  (12207)
+.dinit                      0x22ee                0x48            0x6c  (108)
 
-                     Total program memory used (bytes):         0x31cb  (12747) 4%
+                     Total program memory used (bytes):         0x31d1  (12753) 4%
 
 
 Auxflash Memory  [Origin = 0x7fc000, Length = 0x3ffa]
@@ -192,48 +192,51 @@ External Symbols in Program Memory (by address):
                   0x00135e                  _ds18b20_i_rd_t
                   0x001450                  _get_sensor_ID
                   0x00148c                  _SPI1_init
+                  0x0014d6                  _SPI1_PUT_int
+                  0x001508                  _SPI1_GET_int
+                  0x00153e                  _SPI_READ_WORD
                   0x00155a                  _CPLD_SPI_WR
                   0x0015bc                  _CPLD_SPI_RD
                   0x00163a                  _SPI3_init
                   0x00167a                  _SPI3_write_byte
                   0x001694                  _SPI3_read_byte
                   0x0018cc                  _main_stepper
-                  0x0018e2                  _eeprom_wr_page
-                  0x00196e                  _eeprom_wr_regs
-                  0x0019a8                  _eeprom_clear_page
-                  0x0019f6                  _eeprom_clear
-                  0x001a2a                  _eeprom_rd_regs_H
-                  0x001a84                  _eeprom_rd_regs_I
-                  0x001ade                  _char2num
-                  0x001aec                  _num2char
-                  0x001afa                  _chars2number
-                  0x001b0a                  _answer_refresh
-                  0x001b10                  _search_answer
-                  0x001b24                  _init_protocol
-                  0x001b44                  _init_valve
-                  0x001b56                  _init_syringe
-                  0x001b68                  _get_syr_pos
-                  0x001b8a                  _set_syr_pos
-                  0x001bfc                  _get_syr_vel
-                  0x001c12                  _set_syr_vel
-                  0x001c44                  _get_valve_angle
-                  0x001c66                  _set_valve_angle
-                  0x001e52                  _main_heater
-                  0x001e6c                  _Timer9_init
-                  0x001eac                  _Uart1Init
-                  0x001ef2                  _Uart2Init
-                  0x001f32                  _uart2_send_byte
-                  0x001f4c                  _uart2_send_text
-                  0x001f68                  _uart2_CR_LF_send
-                  0x001f76                  _UartSendByte
-                  0x001f90                  __U1RXInterrupt
-                  0x001fdc                  __U2RXInterrupt
-                  0x001ff2                  __T9Interrupt
-                  0x0021c0                  _main
-                  0x0021ce                  _TIMER8_delay_init
-                  0x0021e6                  _delay_us
-                  0x00221c                  _delay_ms
-                  0x0022cc                  _main_dosing_sys
+                  0x0018e6                  _eeprom_wr_page
+                  0x001972                  _eeprom_wr_regs
+                  0x0019ac                  _eeprom_clear_page
+                  0x0019fa                  _eeprom_clear
+                  0x001a2e                  _eeprom_rd_regs_H
+                  0x001a88                  _eeprom_rd_regs_I
+                  0x001ae2                  _char2num
+                  0x001af0                  _num2char
+                  0x001afe                  _chars2number
+                  0x001b0e                  _answer_refresh
+                  0x001b14                  _search_answer
+                  0x001b28                  _init_protocol
+                  0x001b48                  _init_valve
+                  0x001b5a                  _init_syringe
+                  0x001b6c                  _get_syr_pos
+                  0x001b8e                  _set_syr_pos
+                  0x001c00                  _get_syr_vel
+                  0x001c16                  _set_syr_vel
+                  0x001c48                  _get_valve_angle
+                  0x001c6a                  _set_valve_angle
+                  0x001e56                  _main_heater
+                  0x001e70                  _Timer9_init
+                  0x001eb0                  _Uart1Init
+                  0x001ef6                  _Uart2Init
+                  0x001f36                  _uart2_send_byte
+                  0x001f50                  _uart2_send_text
+                  0x001f6c                  _uart2_CR_LF_send
+                  0x001f7a                  _UartSendByte
+                  0x001f94                  __U1RXInterrupt
+                  0x001fe0                  __U2RXInterrupt
+                  0x001ff6                  __T9Interrupt
+                  0x0021c4                  _main
+                  0x0021d2                  _TIMER8_delay_init
+                  0x0021ea                  _delay_us
+                  0x002220                  _delay_ms
+                  0x0022d0                  _main_dosing_sys
 
 External Symbols in Program Memory (by name):
 
@@ -257,60 +260,63 @@ External Symbols in Program Memory (by name):
                   0x0011a4                  _OneWire_send_bit
                   0x0012ae                  _OneWire_skip
                   0x001120                  _OneWire_tx_state
+                  0x001508                  _SPI1_GET_int
+                  0x0014d6                  _SPI1_PUT_int
                   0x00148c                  _SPI1_init
                   0x00163a                  _SPI3_init
                   0x001694                  _SPI3_read_byte
                   0x00167a                  _SPI3_write_byte
-                  0x0021ce                  _TIMER8_delay_init
+                  0x00153e                  _SPI_READ_WORD
+                  0x0021d2                  _TIMER8_delay_init
                   0x000d52                  _Timer32_init
-                  0x001e6c                  _Timer9_init
-                  0x001eac                  _Uart1Init
-                  0x001ef2                  _Uart2Init
-                  0x001f76                  _UartSendByte
+                  0x001e70                  _Timer9_init
+                  0x001eb0                  _Uart1Init
+                  0x001ef6                  _Uart2Init
+                  0x001f7a                  _UartSendByte
                   0x000f06                  _UpdateIDregs
                   0x0002d2                  __DefaultInterrupt
                   0x000d88                  __T3Interrupt
-                  0x001ff2                  __T9Interrupt
-                  0x001f90                  __U1RXInterrupt
-                  0x001fdc                  __U2RXInterrupt
+                  0x001ff6                  __T9Interrupt
+                  0x001f94                  __U1RXInterrupt
+                  0x001fe0                  __U2RXInterrupt
                   0x0002d6                  ___divsi3
                   0x0002f4                  ___udivsi3
                   0x000238                  __data_init
                   0x000238                  __data_init_extended
                   0x00022c                  __psv_init
                   0x000200                  __resetPRI
-                  0x001b0a                  _answer_refresh
-                  0x001ade                  _char2num
-                  0x001afa                  _chars2number
+                  0x001b0e                  _answer_refresh
+                  0x001ae2                  _char2num
+                  0x001afe                  _chars2number
                   0x000320                  _com_dev_id
                   0x001266                  _crc8
-                  0x00221c                  _delay_ms
-                  0x0021e6                  _delay_us
+                  0x002220                  _delay_ms
+                  0x0021ea                  _delay_us
                   0x000322                  _device_family
                   0x00135e                  _ds18b20_i_rd_t
-                  0x0019f6                  _eeprom_clear
-                  0x0019a8                  _eeprom_clear_page
-                  0x001a2a                  _eeprom_rd_regs_H
-                  0x001a84                  _eeprom_rd_regs_I
-                  0x0018e2                  _eeprom_wr_page
-                  0x00196e                  _eeprom_wr_regs
+                  0x0019fa                  _eeprom_clear
+                  0x0019ac                  _eeprom_clear_page
+                  0x001a2e                  _eeprom_rd_regs_H
+                  0x001a88                  _eeprom_rd_regs_I
+                  0x0018e6                  _eeprom_wr_page
+                  0x001972                  _eeprom_wr_regs
                   0x000321                  _firmware_ver
                   0x001450                  _get_sensor_ID
-                  0x001b68                  _get_syr_pos
-                  0x001bfc                  _get_syr_vel
-                  0x001c44                  _get_valve_angle
+                  0x001b6c                  _get_syr_pos
+                  0x001c00                  _get_syr_vel
+                  0x001c48                  _get_valve_angle
                   0x0008d0                  _get_wr_reg_addr
                   0x00088a                  _holding_reg_read
                   0x000874                  _holding_reg_write
-                  0x001b24                  _init_protocol
-                  0x001b56                  _init_syringe
-                  0x001b44                  _init_valve
+                  0x001b28                  _init_protocol
+                  0x001b5a                  _init_syringe
+                  0x001b48                  _init_valve
                   0x0008a2                  _input_reg_read
                   0x0008ba                  _input_reg_write
                   0x000792                  _is_reg
-                  0x0021c0                  _main
-                  0x0022cc                  _main_dosing_sys
-                  0x001e52                  _main_heater
+                  0x0021c4                  _main
+                  0x0022d0                  _main_dosing_sys
+                  0x001e56                  _main_heater
                   0x000d3c                  _main_io
                   0x0018cc                  _main_stepper
                   0x0007c0                  _modbus_get_poll
@@ -320,15 +326,15 @@ External Symbols in Program Memory (by name):
                   0x000554                  _modbus_rir_answer
                   0x000323                  _modbus_ver
                   0x00038c                  _modbus_wsr_answer
-                  0x001aec                  _num2char
+                  0x001af0                  _num2char
                   0x0012ea                  _onewire_read_rom
-                  0x001b10                  _search_answer
-                  0x001b8a                  _set_syr_pos
-                  0x001c12                  _set_syr_vel
-                  0x001c66                  _set_valve_angle
-                  0x001f68                  _uart2_CR_LF_send
-                  0x001f32                  _uart2_send_byte
-                  0x001f4c                  _uart2_send_text
+                  0x001b14                  _search_answer
+                  0x001b8e                  _set_syr_pos
+                  0x001c16                  _set_syr_vel
+                  0x001c6a                  _set_valve_angle
+                  0x001f6c                  _uart2_CR_LF_send
+                  0x001f36                  _uart2_send_byte
+                  0x001f50                  _uart2_send_text
 
 Memory Configuration
 
@@ -353,6 +359,7 @@ Linker script and memory map
 LOAD build/default/production/main_heater.o
 LOAD build/default/production/main_steppers.o
 LOAD build/default/production/main_dosing_sys.o
+LOAD build/default/production/main_io.o
 LOAD build/default/production/d_delay.o
 LOAD build/default/production/d_eeprom.o
 LOAD build/default/production/d_heater.o
@@ -360,9 +367,8 @@ LOAD build/default/production/d_one_wire.o
 LOAD build/default/production/d_SPI.o
 LOAD build/default/production/dialtek_modbus.o
 LOAD build/default/production/dialtek_uart.o
-LOAD build/default/production/main.o
 LOAD build/default/production/hamilton_pump.o
-LOAD build/default/production/main_io.o
+LOAD build/default/production/main.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib/dsPIC33E\libp33EP256MU810-elf.a
                     0xf80004                  __FGS = 0xf80004
@@ -441,86 +447,86 @@ __FUID0
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x9556
+.debug_info       0x000000       0x9559
  *(.debug_info)
  .debug_info      0x000000        0x598 build/default/production/main_heater.o
  .debug_info      0x000598        0x3d6 build/default/production/main_steppers.o
  .debug_info      0x00096e        0x362 build/default/production/main_dosing_sys.o
- .debug_info      0x000cd0        0x5e8 build/default/production/d_delay.o
- .debug_info      0x0012b8        0x458 build/default/production/d_eeprom.o
- .debug_info      0x001710        0xe0c build/default/production/d_heater.o
- .debug_info      0x00251c        0x6f9 build/default/production/d_one_wire.o
- .debug_info      0x002c15       0x114a build/default/production/d_SPI.o
- .debug_info      0x003d5f        0x7ed build/default/production/dialtek_modbus.o
- .debug_info      0x00454c       0x1bac build/default/production/dialtek_uart.o
- .debug_info      0x0060f8       0x25bd build/default/production/main.o
- .debug_info      0x0086b5        0x657 build/default/production/hamilton_pump.o
- .debug_info      0x008d0c        0x84a build/default/production/main_io.o
+ .debug_info      0x000cd0        0x84a build/default/production/main_io.o
+ .debug_info      0x00151a        0x5e8 build/default/production/d_delay.o
+ .debug_info      0x001b02        0x458 build/default/production/d_eeprom.o
+ .debug_info      0x001f5a        0xe0c build/default/production/d_heater.o
+ .debug_info      0x002d66        0x6f9 build/default/production/d_one_wire.o
+ .debug_info      0x00345f       0x114d build/default/production/d_SPI.o
+ .debug_info      0x0045ac        0x7ed build/default/production/dialtek_modbus.o
+ .debug_info      0x004d99       0x1bac build/default/production/dialtek_uart.o
+ .debug_info      0x006945        0x657 build/default/production/hamilton_pump.o
+ .debug_info      0x006f9c       0x25bd build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x109a
+.debug_abbrev     0x000000       0x106e
  *(.debug_abbrev)
  .debug_abbrev    0x000000        0x134 build/default/production/main_heater.o
  .debug_abbrev    0x000134        0x116 build/default/production/main_steppers.o
  .debug_abbrev    0x00024a        0x111 build/default/production/main_dosing_sys.o
- .debug_abbrev    0x00035b         0xf6 build/default/production/d_delay.o
- .debug_abbrev    0x000451         0xb5 build/default/production/d_eeprom.o
- .debug_abbrev    0x000506        0x1ec build/default/production/d_heater.o
- .debug_abbrev    0x0006f2        0x131 build/default/production/d_one_wire.o
- .debug_abbrev    0x000823        0x163 build/default/production/d_SPI.o
- .debug_abbrev    0x000986        0x1fb build/default/production/dialtek_modbus.o
- .debug_abbrev    0x000b81        0x141 build/default/production/dialtek_uart.o
- .debug_abbrev    0x000cc2        0x15a build/default/production/main.o
- .debug_abbrev    0x000e1c        0x12e build/default/production/hamilton_pump.o
- .debug_abbrev    0x000f4a        0x150 build/default/production/main_io.o
+ .debug_abbrev    0x00035b        0x150 build/default/production/main_io.o
+ .debug_abbrev    0x0004ab         0xf6 build/default/production/d_delay.o
+ .debug_abbrev    0x0005a1         0xb5 build/default/production/d_eeprom.o
+ .debug_abbrev    0x000656        0x1ec build/default/production/d_heater.o
+ .debug_abbrev    0x000842        0x131 build/default/production/d_one_wire.o
+ .debug_abbrev    0x000973        0x137 build/default/production/d_SPI.o
+ .debug_abbrev    0x000aaa        0x1fb build/default/production/dialtek_modbus.o
+ .debug_abbrev    0x000ca5        0x141 build/default/production/dialtek_uart.o
+ .debug_abbrev    0x000de6        0x12e build/default/production/hamilton_pump.o
+ .debug_abbrev    0x000f14        0x15a build/default/production/main.o
 
-.debug_line       0x000000       0x32e8
+.debug_line       0x000000       0x32f0
  *(.debug_line)
  .debug_line      0x000000        0x36d build/default/production/main_heater.o
- .debug_line      0x00036d        0x3cf build/default/production/main_steppers.o
- .debug_line      0x00073c        0x1d7 build/default/production/main_dosing_sys.o
- .debug_line      0x000913        0x17f build/default/production/d_delay.o
- .debug_line      0x000a92        0x376 build/default/production/d_eeprom.o
- .debug_line      0x000e08        0x565 build/default/production/d_heater.o
- .debug_line      0x00136d        0x533 build/default/production/d_one_wire.o
- .debug_line      0x0018a0        0x4d9 build/default/production/d_SPI.o
- .debug_line      0x001d79        0x686 build/default/production/dialtek_modbus.o
- .debug_line      0x0023ff        0x3aa build/default/production/dialtek_uart.o
- .debug_line      0x0027a9        0x3f8 build/default/production/main.o
- .debug_line      0x002ba1        0x3fc build/default/production/hamilton_pump.o
- .debug_line      0x002f9d        0x34b build/default/production/main_io.o
+ .debug_line      0x00036d        0x3d7 build/default/production/main_steppers.o
+ .debug_line      0x000744        0x1d7 build/default/production/main_dosing_sys.o
+ .debug_line      0x00091b        0x34b build/default/production/main_io.o
+ .debug_line      0x000c66        0x17f build/default/production/d_delay.o
+ .debug_line      0x000de5        0x376 build/default/production/d_eeprom.o
+ .debug_line      0x00115b        0x565 build/default/production/d_heater.o
+ .debug_line      0x0016c0        0x533 build/default/production/d_one_wire.o
+ .debug_line      0x001bf3        0x4d9 build/default/production/d_SPI.o
+ .debug_line      0x0020cc        0x686 build/default/production/dialtek_modbus.o
+ .debug_line      0x002752        0x3aa build/default/production/dialtek_uart.o
+ .debug_line      0x002afc        0x3fc build/default/production/hamilton_pump.o
+ .debug_line      0x002ef8        0x3f8 build/default/production/main.o
 
 .debug_frame      0x000000        0x714
  *(.debug_frame)
  .debug_frame     0x000000         0x44 build/default/production/main_heater.o
  .debug_frame     0x000044         0x44 build/default/production/main_steppers.o
  .debug_frame     0x000088         0x34 build/default/production/main_dosing_sys.o
- .debug_frame     0x0000bc         0x44 build/default/production/d_delay.o
- .debug_frame     0x000100         0x74 build/default/production/d_eeprom.o
- .debug_frame     0x000174         0xc4 build/default/production/d_heater.o
- .debug_frame     0x000238         0xf4 build/default/production/d_one_wire.o
- .debug_frame     0x00032c         0xa4 build/default/production/d_SPI.o
- .debug_frame     0x0003d0         0xf4 build/default/production/dialtek_modbus.o
- .debug_frame     0x0004c4         0xb4 build/default/production/dialtek_uart.o
- .debug_frame     0x000578         0x54 build/default/production/main.o
+ .debug_frame     0x0000bc         0x54 build/default/production/main_io.o
+ .debug_frame     0x000110         0x44 build/default/production/d_delay.o
+ .debug_frame     0x000154         0x74 build/default/production/d_eeprom.o
+ .debug_frame     0x0001c8         0xc4 build/default/production/d_heater.o
+ .debug_frame     0x00028c         0xf4 build/default/production/d_one_wire.o
+ .debug_frame     0x000380         0xa4 build/default/production/d_SPI.o
+ .debug_frame     0x000424         0xf4 build/default/production/dialtek_modbus.o
+ .debug_frame     0x000518         0xb4 build/default/production/dialtek_uart.o
  .debug_frame     0x0005cc         0xf4 build/default/production/hamilton_pump.o
- .debug_frame     0x0006c0         0x54 build/default/production/main_io.o
+ .debug_frame     0x0006c0         0x54 build/default/production/main.o
 
 .debug_str        0x000000        0x471
  *(.debug_str)
  .debug_str       0x000000         0x29 build/default/production/main_heater.o
  .debug_str       0x000029         0x2b build/default/production/main_steppers.o
  .debug_str       0x000054         0x29 build/default/production/main_dosing_sys.o
- .debug_str       0x00007d         0x1c build/default/production/d_delay.o
- .debug_str       0x000099         0x26 build/default/production/d_eeprom.o
- .debug_str       0x0000bf         0x6e build/default/production/d_heater.o
- .debug_str       0x00012d         0x1b build/default/production/d_one_wire.o
- .debug_str       0x000148         0x8a build/default/production/d_SPI.o
- .debug_str       0x0001d2         0x3d build/default/production/dialtek_modbus.o
- .debug_str       0x00020f         0xcb build/default/production/dialtek_uart.o
- .debug_str       0x0002da         0xfc build/default/production/main.o
- .debug_str       0x0003d6         0x4c build/default/production/hamilton_pump.o
- .debug_str       0x000422         0x4f build/default/production/main_io.o
+ .debug_str       0x00007d         0x4f build/default/production/main_io.o
+ .debug_str       0x0000cc         0x1c build/default/production/d_delay.o
+ .debug_str       0x0000e8         0x26 build/default/production/d_eeprom.o
+ .debug_str       0x00010e         0x6e build/default/production/d_heater.o
+ .debug_str       0x00017c         0x1b build/default/production/d_one_wire.o
+ .debug_str       0x000197         0x8a build/default/production/d_SPI.o
+ .debug_str       0x000221         0x3d build/default/production/dialtek_modbus.o
+ .debug_str       0x00025e         0xcb build/default/production/dialtek_uart.o
+ .debug_str       0x000329         0x4c build/default/production/hamilton_pump.o
+ .debug_str       0x000375         0xfc build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -529,7 +535,7 @@ __FUID0
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0x766
+                  0x000000        0x79a
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x22 build/default/production/main_heater.o
@@ -538,25 +544,25 @@ __FUID0
  .debug_pubnames
                   0x000054         0x26 build/default/production/main_dosing_sys.o
  .debug_pubnames
-                  0x00007a         0x42 build/default/production/d_delay.o
+                  0x00007a         0x1e build/default/production/main_io.o
  .debug_pubnames
-                  0x0000bc         0x89 build/default/production/d_eeprom.o
+                  0x000098         0x42 build/default/production/d_delay.o
  .debug_pubnames
-                  0x000145        0x104 build/default/production/d_heater.o
+                  0x0000da         0x89 build/default/production/d_eeprom.o
  .debug_pubnames
-                  0x000249        0x120 build/default/production/d_one_wire.o
+                  0x000163        0x104 build/default/production/d_heater.o
  .debug_pubnames
-                  0x000369         0x75 build/default/production/d_SPI.o
+                  0x000267        0x120 build/default/production/d_one_wire.o
  .debug_pubnames
-                  0x0003de        0x161 build/default/production/dialtek_modbus.o
+                  0x000387         0xa9 build/default/production/d_SPI.o
  .debug_pubnames
-                  0x00053f         0xd3 build/default/production/dialtek_uart.o
+                  0x000430        0x161 build/default/production/dialtek_modbus.o
  .debug_pubnames
-                  0x000612         0x3a build/default/production/main.o
+                  0x000591         0xd3 build/default/production/dialtek_uart.o
  .debug_pubnames
-                  0x00064c         0xfc build/default/production/hamilton_pump.o
+                  0x000664         0xfc build/default/production/hamilton_pump.o
  .debug_pubnames
-                  0x000748         0x1e build/default/production/main_io.o
+                  0x000760         0x3a build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -570,25 +576,25 @@ __FUID0
  .debug_aranges
                   0x000030         0x18 build/default/production/main_dosing_sys.o
  .debug_aranges
-                  0x000048         0x18 build/default/production/d_delay.o
+                  0x000048         0x18 build/default/production/main_io.o
  .debug_aranges
-                  0x000060         0x18 build/default/production/d_eeprom.o
+                  0x000060         0x18 build/default/production/d_delay.o
  .debug_aranges
-                  0x000078         0x18 build/default/production/d_heater.o
+                  0x000078         0x18 build/default/production/d_eeprom.o
  .debug_aranges
-                  0x000090         0x18 build/default/production/d_one_wire.o
+                  0x000090         0x18 build/default/production/d_heater.o
  .debug_aranges
-                  0x0000a8         0x18 build/default/production/d_SPI.o
+                  0x0000a8         0x18 build/default/production/d_one_wire.o
  .debug_aranges
-                  0x0000c0         0x18 build/default/production/dialtek_modbus.o
+                  0x0000c0         0x18 build/default/production/d_SPI.o
  .debug_aranges
-                  0x0000d8         0x18 build/default/production/dialtek_uart.o
+                  0x0000d8         0x18 build/default/production/dialtek_modbus.o
  .debug_aranges
-                  0x0000f0         0x18 build/default/production/main.o
+                  0x0000f0         0x18 build/default/production/dialtek_uart.o
  .debug_aranges
                   0x000108         0x18 build/default/production/hamilton_pump.o
  .debug_aranges
-                  0x000120         0x18 build/default/production/main_io.o
+                  0x000120         0x18 build/default/production/main.o
 
 .ivt              0x000004        0x130
                   0x000004          0x4 LONG 0x2d2 DEFINED (__OscillatorFail)?ABSOLUTE (__OscillatorFail):ABSOLUTE (__DefaultInterrupt)
@@ -610,7 +616,7 @@ __FUID0
                   0x000024          0x4 LONG 0xd88 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x2d2 DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x2d2 DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x1f90 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0x1f94 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x2d2 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x2d2 DEFINED (__AD1Interrupt)?ABSOLUTE (__AD1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x2d2 DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -629,7 +635,7 @@ __FUID0
                   0x00004a          0x4 LONG 0x2d2 DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x2d2 DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x2d2 DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0x1fdc DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0x1fe0 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000052          0x4 LONG 0x2d2 DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000054          0x4 LONG 0x2d2 DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000056          0x4 LONG 0x2d2 DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -651,7 +657,7 @@ __FUID0
                   0x000076          0x4 LONG 0x2d2 DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000078          0x4 LONG 0x2d2 DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007a          0x4 LONG 0x2d2 DEFINED (__T8Interrupt)?ABSOLUTE (__T8Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00007c          0x4 LONG 0x1ff2 DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00007c          0x4 LONG 0x1ff6 DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007e          0x4 LONG 0x2d2 DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000080          0x4 LONG 0x2d2 DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000082          0x4 LONG 0x2d2 DEFINED (__C2RxRdyInterrupt)?ABSOLUTE (__C2RxRdyInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -3441,25 +3447,25 @@ LOAD data_init
  .debug_pubtypes
                   0x000287         0x6f build/default/production/main_dosing_sys.o
  .debug_pubtypes
-                  0x0002f6         0x6b build/default/production/d_delay.o
+                  0x0002f6         0xe7 build/default/production/main_io.o
  .debug_pubtypes
-                  0x000361         0x2f build/default/production/d_eeprom.o
+                  0x0003dd         0x6b build/default/production/d_delay.o
  .debug_pubtypes
-                  0x000390         0xdb build/default/production/d_heater.o
+                  0x000448         0x2f build/default/production/d_eeprom.o
  .debug_pubtypes
-                  0x00046b         0x4e build/default/production/d_one_wire.o
+                  0x000477         0xdb build/default/production/d_heater.o
  .debug_pubtypes
-                  0x0004b9        0x164 build/default/production/d_SPI.o
+                  0x000552         0x4e build/default/production/d_one_wire.o
  .debug_pubtypes
-                  0x00061d         0x2f build/default/production/dialtek_modbus.o
+                  0x0005a0        0x164 build/default/production/d_SPI.o
  .debug_pubtypes
-                  0x00064c        0x1d7 build/default/production/dialtek_uart.o
+                  0x000704         0x2f build/default/production/dialtek_modbus.o
  .debug_pubtypes
-                  0x000823        0x32b build/default/production/main.o
+                  0x000733        0x1d7 build/default/production/dialtek_uart.o
  .debug_pubtypes
-                  0x000b4e         0x2f build/default/production/hamilton_pump.o
+                  0x00090a         0x2f build/default/production/hamilton_pump.o
  .debug_pubtypes
-                  0x000b7d         0xe7 build/default/production/main_io.o
+                  0x000939        0x32b build/default/production/main.o
 
 __c30_signature
                   0x000c64         0x66
@@ -3470,25 +3476,25 @@ __c30_signature
  __c30_signature
                   0x000c70          0x6 build/default/production/main_dosing_sys.o
  __c30_signature
-                  0x000c76          0x6 build/default/production/d_delay.o
+                  0x000c76          0x6 build/default/production/main_io.o
  __c30_signature
-                  0x000c7c          0x6 build/default/production/d_eeprom.o
+                  0x000c7c          0x6 build/default/production/d_delay.o
  __c30_signature
-                  0x000c82          0x6 build/default/production/d_heater.o
+                  0x000c82          0x6 build/default/production/d_eeprom.o
  __c30_signature
-                  0x000c88          0x6 build/default/production/d_one_wire.o
+                  0x000c88          0x6 build/default/production/d_heater.o
  __c30_signature
-                  0x000c8e          0x6 build/default/production/d_SPI.o
+                  0x000c8e          0x6 build/default/production/d_one_wire.o
  __c30_signature
-                  0x000c94          0x6 build/default/production/dialtek_modbus.o
+                  0x000c94          0x6 build/default/production/d_SPI.o
  __c30_signature
-                  0x000c9a          0x6 build/default/production/dialtek_uart.o
+                  0x000c9a          0x6 build/default/production/dialtek_modbus.o
  __c30_signature
-                  0x000ca0          0x6 build/default/production/main.o
+                  0x000ca0          0x6 build/default/production/dialtek_uart.o
  __c30_signature
                   0x000ca6          0x6 build/default/production/hamilton_pump.o
  __c30_signature
-                  0x000cac          0x6 build/default/production/main_io.o
+                  0x000cac          0x6 build/default/production/main.o
  __c30_signature
                   0x000cb2          0x6 c:/program files (x86)/microchip/xc16/v1.22/bin/bin/../../lib\libpic30-elf.a(crt0_extendedep.o)
  __c30_signature
@@ -3560,7 +3566,7 @@ __c30_signature
                     0x8322                  _device_family
                     0x8323                  _modbus_ver
 
-.text             0x000324       0x1fc6
+.text             0x000324       0x1fca
  .text            0x000324        0x5b6 build/default/production/dialtek_modbus.o
                   0x00038c                  _modbus_wsr_answer
                   0x000438                  _modbus_rhr_answer
@@ -3605,56 +3611,59 @@ __c30_signature
                   0x001450                  _get_sensor_ID
  .text            0x00148c        0x242 build/default/production/d_SPI.o
                   0x00148c                  _SPI1_init
+                  0x0014d6                  _SPI1_PUT_int
+                  0x001508                  _SPI1_GET_int
+                  0x00153e                  _SPI_READ_WORD
                   0x00155a                  _CPLD_SPI_WR
                   0x0015bc                  _CPLD_SPI_RD
                   0x00163a                  _SPI3_init
                   0x00167a                  _SPI3_write_byte
                   0x001694                  _SPI3_read_byte
- .text            0x0016ce        0x214 build/default/production/main_steppers.o
+ .text            0x0016ce        0x218 build/default/production/main_steppers.o
                   0x0018cc                  _main_stepper
- .text            0x0018e2        0x1fc build/default/production/d_eeprom.o
-                  0x0018e2                  _eeprom_wr_page
-                  0x00196e                  _eeprom_wr_regs
-                  0x0019a8                  _eeprom_clear_page
-                  0x0019f6                  _eeprom_clear
-                  0x001a2a                  _eeprom_rd_regs_H
-                  0x001a84                  _eeprom_rd_regs_I
- .text            0x001ade        0x1d8 build/default/production/hamilton_pump.o
-                  0x001ade                  _char2num
-                  0x001aec                  _num2char
-                  0x001afa                  _chars2number
-                  0x001b0a                  _answer_refresh
-                  0x001b10                  _search_answer
-                  0x001b24                  _init_protocol
-                  0x001b44                  _init_valve
-                  0x001b56                  _init_syringe
-                  0x001b68                  _get_syr_pos
-                  0x001b8a                  _set_syr_pos
-                  0x001bfc                  _get_syr_vel
-                  0x001c12                  _set_syr_vel
-                  0x001c44                  _get_valve_angle
-                  0x001c66                  _set_valve_angle
- .text            0x001cb6        0x1b6 build/default/production/main_heater.o
-                  0x001e52                  _main_heater
- .text            0x001e6c        0x1b2 build/default/production/dialtek_uart.o
-                  0x001e6c                  _Timer9_init
-                  0x001eac                  _Uart1Init
-                  0x001ef2                  _Uart2Init
-                  0x001f32                  _uart2_send_byte
-                  0x001f4c                  _uart2_send_text
-                  0x001f68                  _uart2_CR_LF_send
-                  0x001f76                  _UartSendByte
-                  0x001f90                  __U1RXInterrupt
-                  0x001fdc                  __U2RXInterrupt
-                  0x001ff2                  __T9Interrupt
- .text            0x00201e        0x1b0 build/default/production/main.o
-                  0x0021c0                  _main
- .text            0x0021ce         0x9a build/default/production/d_delay.o
-                  0x0021ce                  _TIMER8_delay_init
-                  0x0021e6                  _delay_us
-                  0x00221c                  _delay_ms
- .text            0x002268         0x82 build/default/production/main_dosing_sys.o
-                  0x0022cc                  _main_dosing_sys
+ .text            0x0018e6        0x1fc build/default/production/d_eeprom.o
+                  0x0018e6                  _eeprom_wr_page
+                  0x001972                  _eeprom_wr_regs
+                  0x0019ac                  _eeprom_clear_page
+                  0x0019fa                  _eeprom_clear
+                  0x001a2e                  _eeprom_rd_regs_H
+                  0x001a88                  _eeprom_rd_regs_I
+ .text            0x001ae2        0x1d8 build/default/production/hamilton_pump.o
+                  0x001ae2                  _char2num
+                  0x001af0                  _num2char
+                  0x001afe                  _chars2number
+                  0x001b0e                  _answer_refresh
+                  0x001b14                  _search_answer
+                  0x001b28                  _init_protocol
+                  0x001b48                  _init_valve
+                  0x001b5a                  _init_syringe
+                  0x001b6c                  _get_syr_pos
+                  0x001b8e                  _set_syr_pos
+                  0x001c00                  _get_syr_vel
+                  0x001c16                  _set_syr_vel
+                  0x001c48                  _get_valve_angle
+                  0x001c6a                  _set_valve_angle
+ .text            0x001cba        0x1b6 build/default/production/main_heater.o
+                  0x001e56                  _main_heater
+ .text            0x001e70        0x1b2 build/default/production/dialtek_uart.o
+                  0x001e70                  _Timer9_init
+                  0x001eb0                  _Uart1Init
+                  0x001ef6                  _Uart2Init
+                  0x001f36                  _uart2_send_byte
+                  0x001f50                  _uart2_send_text
+                  0x001f6c                  _uart2_CR_LF_send
+                  0x001f7a                  _UartSendByte
+                  0x001f94                  __U1RXInterrupt
+                  0x001fe0                  __U2RXInterrupt
+                  0x001ff6                  __T9Interrupt
+ .text            0x002022        0x1b0 build/default/production/main.o
+                  0x0021c4                  _main
+ .text            0x0021d2         0x9a build/default/production/d_delay.o
+                  0x0021d2                  _TIMER8_delay_init
+                  0x0021ea                  _delay_us
+                  0x002220                  _delay_ms
+ .text            0x00226c         0x82 build/default/production/main_dosing_sys.o
+                  0x0022d0                  _main_dosing_sys
 
-.dinit            0x0022ea         0x48
- .dinit           0x0022ea         0x48 data_init
+.dinit            0x0022ee         0x48
+ .dinit           0x0022ee         0x48 data_init

@@ -17,4 +17,5 @@ FreeRTOSConfig.h  \
 ../../Source/include/d_eeprom.h  \
 fuses.h  \
 dialtek_modbus.h  \
-dialtek_one_wire.h 
+dialtek_one_wire.h  \
+opto_controller.h 

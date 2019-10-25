@@ -1,0 +1,128 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.26.2.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 2, 3, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.26.2.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.26.2.0
+Dialog DLL:      DCM.DLL V1.17.2.0
+Target DLL:      Segger\JL2CM3.dll V2.99.31.0
+Dialog DLL:      TCM.DLL V1.36.1.0
+ 
+<h2>Project:</h2>
+F:\Mega\ponkin-prjs\Milandr\Keil\ADC_for_Ports\ADC_for_Ports.uvprojx
+Project File Date:  06/16/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Source'
+compiling milkites_delay.c...
+.\src\h\milkites_delay.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif	/* __MILKITES_DELAY_H__ */
+src\c\milkites_delay.c: 1 warning, 0 errors
+compiling milkites_display.c...
+.\src\h\milkites_display.h(229): warning:  #1-D: last line of file ends without a newline
+  		
+.\src\h\milkites_spi.h(15): warning:  #1-D: last line of file ends without a newline
+  	
+.\src\h\milkites_delay.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif	/* __MILKITES_DELAY_H__ */
+src\c\milkites_display.c: 3 warnings, 0 errors
+compiling main.c...
+.\src\h\milkites_delay.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif	/* __MILKITES_DELAY_H__ */
+.\src\h\milkites_display.h(229): warning:  #1-D: last line of file ends without a newline
+  		
+.\src\h\milkites_i2c.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\src\h\tlv493d.h(13): warning:  #1295-D: Deprecated declaration TLV493D_reset - give arg types
+    void TLV493D_reset();
+.\src\h\pwm_step_motor.h(10): warning:  #1295-D: Deprecated declaration PORTB_Init - give arg types
+   void PORTB_Init();
+main.c(174): warning:  #1-D: last line of file ends without a newline
+  } 
+main.c: 6 warnings, 0 errors
+compiling milkites_adc.c...
+src\c\milkites_adc.c(57): warning:  #1-D: last line of file ends without a newline
+  }
+src\c\milkites_adc.c: 1 warning, 0 errors
+compiling milkites_i2c.c...
+.\src\h\milkites_I2C.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+src\c\milkites_i2c.c(63): warning:  #550-D: variable "I2C"  was set but never used
+    MDR_I2C_TypeDef *I2C;
+src\c\milkites_i2c.c(83): warning:  #1-D: last line of file ends without a newline
+   } // I2C_Stop
+src\c\milkites_i2c.c: 3 warnings, 0 errors
+compiling milkites_spi.c...
+.\src\h\milkites_spi.h(15): warning:  #1-D: last line of file ends without a newline
+  	
+src\c\milkites_spi.c: 1 warning, 0 errors
+assembling startup_MDR32F9Qx.s...
+compiling pwm_step_motor.c...
+.\src\h\pwm_step_motor.h(10): warning:  #1295-D: Deprecated declaration PORTB_Init - give arg types
+   void PORTB_Init();
+src\c\pwm_step_motor.c: 1 warning, 0 errors
+compiling tlv493d.c...
+.\src\h\milkites_I2C.h(20): warning:  #1-D: last line of file ends without a newline
+  #endif
+.\src\h\milkites_display.h(229): warning:  #1-D: last line of file ends without a newline
+  		
+.\src\h\tlv493d.h(13): warning:  #1295-D: Deprecated declaration TLV493D_reset - give arg types
+    void TLV493D_reset();
+src\c\tlv493d.c(220): warning:  #1-D: last line of file ends without a newline
+  	}
+src\c\tlv493d.c(102): warning:  #550-D: variable "frame_ctr"  was set but never used
+      uint8_t bz2 = 0, bx2by2 = 0, frame_ctr = 0;
+src\c\tlv493d.c: 5 warnings, 0 errors
+compiling system_MDR32F9Qx.c...
+compiling MDR32F9Qx_port.c...
+linking...
+Program Size: Code=8236 RO-data=1956 RW-data=32 ZI-data=1632  
+FromELF: creating hex file...
+".\Objects\ADC_for_Ports.axf" - 0 Error(s), 21 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.MDR1986BExx.1.51.pack
+                Keil.MDR1986BExx.1.51
+                Milandr MDR1986BExx Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.5
+   * Component: PORT Version: 1.5
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\MDR1986BE91
+  .\RTE\_Source
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\inc
+  C:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: Keil::Device:Startup:1.5
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Config\MDR32F9Qx_config.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+
+   * Component: Keil::Drivers:PORT:1.5
+      Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+      Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

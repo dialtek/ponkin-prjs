@@ -1353,8 +1353,8 @@ namespace extract_system
                             (ThreadStart)delegate ()
                             {
                                 textbox_1.Text = FormatOutput(msg.Value[3]);
-                            //textbox_2.Text = FormatOutput(msg.Value[5]);
-                            textbox_3.Text = FormatOutput(msg.Value[4]);
+                                textbox_2.Text = FormatOutput(msg.Value[4]);
+                                textbox_3.Text = FormatOutput(msg.Value[5]);
 
                             // в случае открытия программы, данные загружаются из блока
                             if (combobox.SelectedIndex < 0)
