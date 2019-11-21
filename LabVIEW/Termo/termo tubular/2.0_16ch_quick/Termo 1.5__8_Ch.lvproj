@@ -10,7 +10,6 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="T.ico" Type="Document" URL="../../../my lib/T.ico"/>
 		<Item Name="Termo_1.5__.vi" Type="VI" URL="../Termo_1.5__.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -84,8 +83,8 @@
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
-				<Property Name="Destination[0].destName" Type="Str">Термометрия КРИОН-2.exe</Property>
-				<Property Name="Destination[0].path" Type="Path">../EXE/Термометрия КРИОН-2.exe</Property>
+				<Property Name="Destination[0].destName" Type="Str">Термометрия КРИОН-T БЫСТРАЯ.exe</Property>
+				<Property Name="Destination[0].path" Type="Path">../EXE/Термометрия КРИОН-T БЫСТРАЯ.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="Destination[0].preserveHierarchy" Type="Bool">true</Property>
 				<Property Name="Destination[0].type" Type="Str">App</Property>
@@ -93,23 +92,19 @@
 				<Property Name="Destination[1].path" Type="Path">../EXE/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/T.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A399DCCE-8C4A-4200-9123-F64CF78BAFA0}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{E4B5A1A0-CC28-49A1-9AB8-59D81C3F93F8}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Termo_1.5__.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[2].itemID" Type="Ref">/My Computer/T.ico</Property>
-				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="SourceCount" Type="Int">2</Property>
 				<Property Name="TgtF_companyName" Type="Str">LHEP JINR</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">8 cnannel PoE thermometry system test software</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Dubna 2015 </Property>
 				<Property Name="TgtF_productName" Type="Str">Термометрия</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{28DE9AEE-6A5F-48DE-B356-11710526EAEC}</Property>
-				<Property Name="TgtF_targetfileName" Type="Str">Термометрия КРИОН-2.exe</Property>
+				<Property Name="TgtF_targetfileName" Type="Str">Термометрия КРИОН-T БЫСТРАЯ.exe</Property>
 			</Item>
 			<Item Name="Installer" Type="Installer">
 				<Property Name="Destination[0].name" Type="Str">Termo 1.5__8_Ch</Property>

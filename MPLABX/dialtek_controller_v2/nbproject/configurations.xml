@@ -13,6 +13,7 @@
       <itemPath>include/d_one_wire.h</itemPath>
       <itemPath>include/d_eeprom.h</itemPath>
       <itemPath>include/d_heater.h</itemPath>
+      <itemPath>include/hamilton_pump.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"

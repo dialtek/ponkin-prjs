@@ -7,12 +7,18 @@ extern volatile unsigned int rx_buf_ptr;
 extern volatile unsigned char rx_buf[128];
 extern volatile char rx_flag;
 /*=========================================================================== */
+
+unsigned char uart2_rx_buf[128] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};    
+unsigned char uart2_rx_ptr = 0;
+unsigned char answer_ready = 0;  // received data ready bit
+unsigned char rx_msg[10] = {0,0,0,0,0,0,0,0,0,0}; 
+
 void Timer9_init(unsigned long baudrate)
 {
        IPC13bits.T9IP = 6;
        T9CONbits.TON = 0;           // Timer on/off bit; 0 - Disable Timer
        IFS3bits.T9IF = 0;           // Clear Timer interrupt flag
-       TMR9 = 0x0000;               // reset if timer is on, 460800
+       TMR9 = 0x0000;               // reset if timer is on
        T9CONbits.TCS = 0;           // Timer Clock Source Select bit; 0 - Internal clock (FOSC/2)
        T9CONbits.TGATE = 0;         // Disable Gated Timer mode
        T9CONbits.TCKPS = 0;         // Prescaler = (00=1, 01=8, 10=64, 11=256) 
@@ -23,9 +29,10 @@ void Timer9_init(unsigned long baudrate)
        switch(baudrate)
        {
 
-           case 460800: PR9 = 4000; break; // 1 byte - 18 us (1125 ticks), 4000 = 64 us;
+           case 460800: PR9 = 4000;  break; // 1 byte - 18 us (1125 ticks), 4000  = 64 us;
+           case 115200: PR9 = 20000; break; // 1 byte - 72 us (4500 ticks), 20000 = 320 us;
                
-           default: PR9 = 4000; // Load the period value
+           default: PR9 = 20000; // Load the period value
        }
        
        IEC3bits.T9IE = 1;           // Enable T9 interrupt 
@@ -36,15 +43,17 @@ void Uart1Init(void)
 {
     // RX interrupt UART1 settings 
     
-    // speed = 460800  
-    
     // RX interrupt UART1 settings 
     IPC2bits.U1RXIP = 6; // Set UART1 RX interrupt priority to 1 
     IFS0bits.U1RXIF = 0; // Reset UART1 RX interrupt flag
-    IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt
-    
-    U1BRG = 0x20;           // Baud Rate setting for 460k uart
+    IEC0bits.U1RXIE = 1; // Enable UART1 RX interrup
+    // create UART RX bytes queue
     U1MODEbits.UARTEN = 1;  // 1 = UARTx is enabled; all UARTx pins are controlled by UARTx as defined by UEN <1:0>
+    
+    //U1BRG = 0x20;           // Baud Rate setting for 460k uart
+    
+    U1BRG = 0x81;           // Baud Rate setting for 115200 uart
+     
     U1MODEbits.UEN = 0;     // 0 = UxTX and UxRX pins are enabled and used; UxCTS and UxRTS/BCLK pins controlled by port latches
     U1MODEbits.PDSEL = 0;   // 0 = No Parity, 8-Data bits
     U1MODEbits.ABAUD = 0;   // 0 = Baud rate measurement disabled or completed
@@ -56,10 +65,11 @@ void Uart1Init(void)
     U1STAbits.UTXINV = 0;
     U1STAbits.UTXEN = 1;    // 1 = Transmit enabled, UxTX pin controlled by UARTx
     U1STAbits.URXISEL = 0;  // 0x = Interrupt is set when any unsigned character is received and transferred from the UxRSR to the receive buffer. Receive buffer has one or more unsigned characters.
-                         // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
+                            // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
 
-    // create UART RX bytes queue
-    Timer9_init(460800UL);
+    
+    //Timer9_init(460800);
+    Timer9_init(115200);
  }
 
 // UART 2 - Hamilton PUMP
@@ -68,10 +78,8 @@ void Uart2Init(void)
     // speed = 9600  
     
     // RX interrupt UART2 settings 
-    IPC7bits.U2RXIP = 5; // Set UART2 RX interrupt priority
+    IPC7bits.U2RXIP = 1; // Set UART2 RX interrupt priority
     IFS1bits.U2RXIF = 0; // Reset UART2 RX interrupt flag
-    //IFS1bits.U2TXIF = 0; // Reset UART2 TX interrupt flag
-    //IEC1bits.U2TXIE = 1; // Enable UART2 TX interrupt
     IEC1bits.U2RXIE = 1; // Enable UART2 RX interrupt
     
     U2BRG = 390;            // Baud Rate setting for 9600 uart
@@ -87,7 +95,7 @@ void Uart2Init(void)
     U2STAbits.UTXINV = 0;
     U2STAbits.UTXEN = 1;    // 1 = Transmit enabled, UxTX pin controlled by UARTx
     U2STAbits.URXISEL = 0;  // 0x = Interrupt is set when any unsigned character is received and transferred from the UxRSR to the receive buffer. Receive buffer has one or more unsigned characters.
-                         // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
+                            // The URXISEL<1:0> (UxSTA<7:6>) control bits determine when the UART receiver generates an interrupt.
 }
 
 void uart2_send_byte (unsigned char byte)
@@ -143,7 +151,13 @@ void _ISR_PSV _U1RXInterrupt(void)      //interupt UART 1 RX MODBUS
 
 void _ISR_PSV _U2RXInterrupt(void)      //interupt UART 2 RX PUMP
 {
-      IFS1bits.U2RXIF = 0;              // Clear  UART2 Rx interrupt  
+        // UART2 byte receive interrupt, Hamilton pump 
+    
+    uart2_rx_buf[uart2_rx_ptr] = U2RXREG;
+    //input_register[10+uart2_rx_ptr] = uart2_rx_buf[uart2_rx_ptr];
+
+    uart2_rx_ptr++;
+    IFS1bits.U2RXIF = 0;              // Clear  UART2 Rx interrupt  
 }
 
 void _ISR_PSV _T9Interrupt(void)        //interupt Timer 9

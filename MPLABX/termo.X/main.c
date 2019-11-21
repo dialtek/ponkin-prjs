@@ -7,6 +7,8 @@
 #include <stdint.h>
 #define _ISR_PSV __attribute__((__interrupt__, __auto_psv__))
 
+// !!!!! 07.11.19 использовать только p24HJ128GP506, с p24HJ128GP506A возникают проблемы с SPI EEPROM
+
 #define FP 40000000
 #define BAUDRATE 115200
 #define U1BRGVAL ((FP/BAUDRATE)/16)-1

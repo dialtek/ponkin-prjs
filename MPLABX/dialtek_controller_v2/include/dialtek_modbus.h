@@ -1,4 +1,4 @@
-/*                D I A L T E K    M O D B U S   R T U   v 5.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 5.1                */
 #ifndef DIALTEK_MODBUS_H
 #define	DIALTEK_MODBUS_H
 
@@ -19,33 +19,33 @@ extern "C"
 #define MODBUS_RIR_CMD       (unsigned char)0x04     // read input registers cmd id
 #define MODBUS_WSR_CMD       (unsigned char)0x06     // write single register cmd id
 	
-  /* расчет контрольной суммы */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
   static unsigned int modbus_CRC16(unsigned char buf[], unsigned int len); 
 
-  /* формирование и отправка ответа на команду записи одного регистра */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_wsr_answer(void); 
 
-  /* формирование и отправка ответа на команду чтения RW регистров */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ RW пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_rhr_answer(void); 
 
-  /* формирование и отправка ответа на команду чтения Read-only регистров */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Read-only пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_rir_answer(void);
   
-  /* анализ контрольной суммы полученной посылки */
-  static unsigned char modbus_rx_CRC_check(unsigned char modbus_cmd);
+  /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+  unsigned char modbus_rx_CRC_check(unsigned char modbus_cmd);
   
   //static void modbus_refresh(unsigned char cmd_type);
    
-  /* был ли прочитан регистр */
+  /* пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile unsigned char is_reg (unsigned int reg_addr);
 
-  /* парсинг команды и работа с регистрами */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile unsigned char modbus_get_poll(void); 
  
-  /* сброс modbus приемника */
+  /* пїЅпїЅпїЅпїЅпїЅ modbus пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   void modbus_reset(void);
 
-  /* очистка массивов регистров */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   void modbus_init (void);
   
   volatile void holding_reg_write(unsigned int red_addr, unsigned int value);
@@ -56,8 +56,14 @@ extern "C"
 
   volatile void input_reg_write(unsigned int red_addr, unsigned int value);
    
-  /* получение адреса записываемого регистра */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile unsigned int get_wr_reg_addr(void);
+  
+  volatile unsigned int get_wr_reg_val(void);
+  
+  volatile unsigned char get_modbus_id(void);
+  
+  volatile void set_modbus_id(unsigned char newID);
    
   
 #ifdef	__cplusplus

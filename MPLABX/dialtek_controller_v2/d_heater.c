@@ -185,8 +185,8 @@ void OWstateMachine(void)
                     GetSensorsTemp();    // read all existing sensors, 5 sensors = 80 ms
                     ReadState = SEND_MEAS_CMD; // read cycle complete, goto state 1
                 }
-                else 
-                   ReadState = IDLE;     // Tconv in progress, wait in IDLE
+                else                                                               // онунфе - кхьмхи йнд
+                   ReadState = IDLE;     // Tconv in progress, wait in IDLE        // онунфе - кхьмхи йнд 
                 break;
             //====
             default: break;

@@ -1,4 +1,5 @@
-// 1-wire для варианта схемы с диодом шоттки
+// 1-wire для варианта схемы с ТРАНЗИСТОРОМ
+// 15.11.19 изменены тайминги
 #include "xc.h"
 #include "d_delay.h"
 #include "d_one_wire.h"
@@ -20,10 +21,11 @@ unsigned char buf[8];
  unsigned int OneWire_rx_state() {
 	  
   // Читает значение уровня на шине 1-wire
-  unsigned int state = 0;
-  state = One_wire_RX_pin;
-  return state;
- 
+  if(One_wire_RX_pin == 0)
+    return 1;
+  
+  if(One_wire_RX_pin == 1)
+    return 0;
 }
 
  unsigned char OneWire_reset() {
@@ -32,23 +34,23 @@ unsigned char buf[8];
   // Если импульс присутствия получен, дожидается его завершения и возвращает 1, иначе возвращает 0 
  unsigned char retVal = 0;	
  
-  OneWire_tx_state(0);
-  delay_us(500); // Пауза 480..960 мкс
   OneWire_tx_state(1);
+  delay_us(550); // Пауза 480..960 мкс
+  OneWire_tx_state(0);
   
   delay_us(50); // Время необходимое подтягивающему резистору, чтобы вернуть высокий уровень на шине
   // Ждём не менее 60 мс до появления импульса присутствия;
   
   for (unsigned char c = 100; c; c--) 
   {
-    if (!OneWire_rx_state()) 
+    if (OneWire_rx_state() == 1) 
     {
 	    delay_us(40);
         retVal = 1;
     }
   }
-  OneWire_tx_state(1);
-  delay_us(50);
+
+  delay_us(10);
   
   return retVal;
 }
@@ -58,16 +60,16 @@ unsigned char buf[8];
   // Отправляет один бит
   // bit отправляемое значение, 0 - ноль, любое другое значение - единица
 	  
-  OneWire_tx_state(0);
+  OneWire_tx_state(1);
   if (b) {
-    delay_us(8); // Низкий импульс, от 1 до 15 мкс (с учётом времени восстановления уровня)
-    OneWire_tx_state(1);
+    delay_us(15); // Низкий импульс, от 1 до 15 мкс (с учётом времени восстановления уровня)
+    OneWire_tx_state(0);
     delay_us(70); // Ожидание до завершения таймслота (не менее 60 мкс)
   } 
   else {
     delay_us(70); // Низкий уровень на весь таймслот (не менее 60 мкс, не более 120 мкс)
-    OneWire_tx_state(1);
-    delay_us(10); // Время восстановления высокого уровеня на шине + 1 мс (минимум)
+    OneWire_tx_state(0);
+    delay_us(30); // Время восстановления высокого уровеня на шине + 1 мс (минимум)
   }
 
 }
@@ -79,14 +81,14 @@ unsigned char buf[8];
 	  
   unsigned char retVal = 0;
   // 1 - линия в 0
-  OneWire_tx_state(0);
-  delay_us(10); // Длительность низкого уровня, минимум 1 мкс
   OneWire_tx_state(1);
-  delay_us(5); // Пауза до момента сэмплирования, всего не более 15 мкс
+  delay_us(10); // Длительность низкого уровня, минимум 1 мкс
+  OneWire_tx_state(0);
+  delay_us(13);  // Пауза до момента сэмплирования, всего не более 15 мкс
   
-  if(OneWire_rx_state()) retVal = 1;
+  if(OneWire_rx_state() == 0) retVal = 1;
  
-  delay_us(80); // Ожидание до следующего тайм-слота, минимум 60 мкс с начала низкого уровня
+  delay_us(70); // Ожидание до следующего тайм-слота, минимум 60 мкс с начала низкого уровня
   
   return retVal;
 }
@@ -155,7 +157,7 @@ unsigned char buf[8];
   if (OneWire_reset()){
       OneWire_send(Skip_ROM);             // Обращение ко всем датчикам на шине 
       OneWire_send(Convert_T); 		  //  запуск измерения Т 
-      OneWire_tx_state(1);
+      OneWire_tx_state(0);
       //delay_ms(750); delay done in timer
 
 
@@ -196,13 +198,17 @@ for (unsigned char i = 4; i < 8; i++)
 
  unsigned char OneWire_match_ID(unsigned char *sens_ID) {
   
-  if (!OneWire_reset())
+  if (OneWire_reset() == 0)
     return 0;
-  OneWire_send(Match_ROM);
-  for (unsigned char p = 0; p < 8; p++) {
-    OneWire_send(sens_ID[p]);
-  }
+  else
+  {
+    OneWire_send(Match_ROM);
+    for (unsigned char p = 0; p < 8; p++) 
+    {
+     OneWire_send(sens_ID[p]);
+    }
   return 1;
+  }
 }
 		
  long ds18b20_i_rd_t () {

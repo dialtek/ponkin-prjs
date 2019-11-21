@@ -34,7 +34,7 @@
         <platform>3</platform>
       </toolsSet>
       <packs>
-        <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.0.5"/>
+        <pack name="dsPIC33F-GP-MC_DFP" vendor="Microchip" version="1.0.6"/>
       </packs>
       <compileType>
         <linkerTool>

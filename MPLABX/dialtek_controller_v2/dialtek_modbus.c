@@ -1,39 +1,39 @@
-/*                D I A L T E K    M O D B U S   R T U   v 5.0                */
+/*                D I A L T E K    M O D B U S   R T U   v 5.1                */
 #include "xc.h"
 #include "dialtek_modbus.h"
 #include "dialtek_uart.h"
 
-volatile unsigned int rx_buf_ptr = 0; // указатель записи в массив UART
-// буфер для сохр. принятных команд
+volatile unsigned int rx_buf_ptr = 0; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ UART
+// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 volatile unsigned char rx_buf[128];
 
 static unsigned int addr_buf_1 = 0, addr_buf_2 = 0;
-static unsigned int regs2read = 0;             // число регистров для чтения по команде modbus rhr
-static unsigned int CRC16 = 0;			// полученная контрольная сумма
-static unsigned char crc_buf[300];      // буфер для хранения байтов для расчета CRC16
-static unsigned char modbus_id = 0;		// буфер для хранения ID из запроса мастера
+static unsigned int regs2read = 0;             // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ modbus rhr
+static unsigned int CRC16 = 0;			// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+static unsigned char crc_buf[300];      // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC16
+static unsigned char modbus_id = 0;		// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ID пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 static unsigned int reg_wr_data = 0;
-static unsigned int modbus_reg_addr;    // адрес регистра для R/W по запросу от modbus мастера
+static unsigned int modbus_reg_addr;    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ R/W пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ modbus пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 static unsigned char answer = 0;
 
-static unsigned int holding_register[125];  // буфер для хранения R/W переменных чтения, макс. число регистров - 124
-static unsigned int input_register[125];    // буфер для хранения Read-only переменных чтения, макс. число регистров - 124
+static unsigned int holding_register[125];  // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ R/W пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 124
+       unsigned int input_register[125];    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Read-only пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ - 124
  
 /* HARDWARE INFO */
 
-const char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
-static unsigned char dev_id = 200;             // MODBUS ID устройства   <<<<<<<<<<======== ID
-const char firmware_ver  = 10;                 // версиЯ прошивки текущего устройства
-const char device_family = 0;                  // код семейства устройств
-const char modbus_ver    = 41;                 // версия MODBUS
+static unsigned char com_dev_id = 247;                // MODBUS ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+static unsigned char dev_id = 201;             // MODBUS ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ   <<<<<<<<<<======== ID
+const char firmware_ver  = 10;                 // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+const char device_family = 0;                  // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+const char modbus_ver    = 41;                 // пїЅпїЅпїЅпїЅпїЅпїЅ MODBUS
 
 unsigned char rx_flag = 0;
 
-  /* расчет контрольной суммы */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
   static unsigned int modbus_CRC16(unsigned char buf[], unsigned int len)
   {
-  /// расчет crc16
+  /// пїЅпїЅпїЅпїЅпїЅпїЅ crc16
     
   unsigned int crc = 0xFFFF;
   //U8 crc_lsb, crc_msb;
@@ -60,12 +60,12 @@ unsigned char rx_flag = 0;
    return crc;
 }
   
-  /* формирование и отправка ответа на команду записи одного регистра */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_wsr_answer() 
   { 
-    /// ответ на команды записи в регистр
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     
-    // расчет CRC
+    // пїЅпїЅпїЅпїЅпїЅпїЅ CRC
     crc_buf[0] = (modbus_id == dev_id) ? dev_id : com_dev_id;
     crc_buf[1] = (unsigned char) MODBUS_WSR_CMD;
     crc_buf[2] = (unsigned char)(modbus_reg_addr >> 8);
@@ -75,57 +75,57 @@ unsigned char rx_flag = 0;
     CRC16 = modbus_CRC16(crc_buf, 6);
 
     //--------------------------------------------------------------------
-    // отправка пакета мастеру
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     TX_EN;
-    UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id); // ID устройства
-    UartSendByte((unsigned char)MODBUS_WSR_CMD);                     // код команды
-    UartSendByte((unsigned char)(modbus_reg_addr >> 8));             // ст. байт адреса регистра
-    UartSendByte((unsigned char)(modbus_reg_addr & 0x00ff));         // мл. байт адреса регистра
+    UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id); // ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    UartSendByte((unsigned char)MODBUS_WSR_CMD);                     // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    UartSendByte((unsigned char)(modbus_reg_addr >> 8));             // пїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    UartSendByte((unsigned char)(modbus_reg_addr & 0x00ff));         // пїЅпїЅ. пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     UartSendByte((unsigned char)(reg_wr_data >> 8));
     UartSendByte((unsigned char)(reg_wr_data & 0x00ff));
-     // отправка CRC
+     // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC
     UartSendByte((unsigned char)(CRC16 >> 8));      // msb
     UartSendByte((unsigned char)(CRC16 & 0x00ff));  // lsb 
     TX_DIS;
     //--------------------------------------------------------------------
   }
   
-  /* формирование и отправка ответа на команду чтения RW регистров */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ RW пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_rhr_answer()
   {
     
-    /// ответ на команды чтения регистров
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
           addr_buf_1 = modbus_reg_addr; 
-  	      addr_buf_2 = addr_buf_1;             // сохр. адрес в двух переменных	  
-          // расчет CRC
+  	      addr_buf_2 = addr_buf_1;             // пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ	  
+          // пїЅпїЅпїЅпїЅпїЅпїЅ CRC
           crc_buf[0] = (modbus_id == dev_id) ? dev_id : com_dev_id;
           crc_buf[1] = MODBUS_RHR_CMD;
           crc_buf[2] = regs2read*2;
           
-          unsigned char cnt = 3;      // величина смещения данных при расчете CRC
+          unsigned char cnt = 3;      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC
 
           for(unsigned char j = 0; j < regs2read;j++)
-          { // заполнение буфера CRC для расчета
+          { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ CRC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             crc_buf[cnt++] = (unsigned char)(holding_register[addr_buf_1] >> 8);
             crc_buf[cnt++] = (unsigned char)(holding_register[addr_buf_1] & 0x00ff);
             ++addr_buf_1;  
           }
-            // расчет CRC  
+            // пїЅпїЅпїЅпїЅпїЅпїЅ CRC  
           CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3);
           //--------------------------------------------------------------------
-          // отправка пакета мастеру 
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 	      TX_EN;
-          UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id);   // ID устройства
-          UartSendByte((unsigned char)MODBUS_RHR_CMD);                       // код команды
-          UartSendByte((unsigned char)regs2read*2);                          // кол-во передаваемых байт 
+          UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id);   // ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+          UartSendByte((unsigned char)MODBUS_RHR_CMD);                       // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+          UartSendByte((unsigned char)regs2read*2);                          // пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 
 
           for(unsigned char i = 0; i < regs2read; i++)
-          {   // отправка байт данных с инкрементом адреса
+          {   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             UartSendByte((unsigned char)(holding_register[addr_buf_2] >> 8));     // msb
             UartSendByte((unsigned char)(holding_register[addr_buf_2] & 0x00ff)); // lsb
             ++addr_buf_2;
           }
-          // отправка CRC
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC
           UartSendByte((unsigned char)(CRC16 >> 8));      // msb
           UartSendByte((unsigned char)(CRC16 & 0x00ff));  // lsb  
 	      TX_DIS;
@@ -133,43 +133,43 @@ unsigned char rx_flag = 0;
   
   }
  
-  /* формирование и отправка ответа на команду чтения Read-only регистров */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Read-only пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile void modbus_rir_answer()
   {
     
-    /// ответ на команды чтения input регистров
+    /// пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ input пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     
           addr_buf_1 = modbus_reg_addr; 
-          addr_buf_2 = addr_buf_1;             // сохр. адрес в двух переменных		  
-          // расчет CRC
+          addr_buf_2 = addr_buf_1;             // пїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ		  
+          // пїЅпїЅпїЅпїЅпїЅпїЅ CRC
           crc_buf[0] = (modbus_id == dev_id) ? dev_id : com_dev_id;
           crc_buf[1] = MODBUS_RIR_CMD;
           crc_buf[2] = regs2read*2;
           
-          unsigned char cnt = 3;      // величина смещения данных при расчете CRC
+          unsigned char cnt = 3;      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC
 
           for(unsigned char i = 0; i < regs2read; i++)
-          { // заполнение буфера CRC для расчета
+          { // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ CRC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             crc_buf[cnt++] = (unsigned char)(input_register[addr_buf_1] >> 8);
             crc_buf[cnt++] = (unsigned char)(input_register[addr_buf_1] & 0x00ff);
             ++addr_buf_1;  
           }
-            // расчет CRC  
+            // пїЅпїЅпїЅпїЅпїЅпїЅ CRC  
           CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3);
           //--------------------------------------------------------------------
-          // отправка пакета мастеру 
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
           TX_EN;
-          UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id);   // ID устройства
-          UartSendByte((unsigned char)MODBUS_RIR_CMD);                       // код команды
-          UartSendByte((unsigned char)regs2read*2);                          // кол-во передаваемых байт 
+          UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id);   // ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+          UartSendByte((unsigned char)MODBUS_RIR_CMD);                       // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+          UartSendByte((unsigned char)regs2read*2);                          // пїЅпїЅпїЅ-пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ 
 
           for(unsigned char i = 0; i < regs2read; i++)
-          {   // отправка байт данных с инкрементом адреса
+          {   // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             UartSendByte((unsigned char)(input_register[addr_buf_2] >> 8));     // msb
             UartSendByte((unsigned char)(input_register[addr_buf_2] & 0x00ff)); // lsb
             ++addr_buf_2;
           }
-          // отправка CRC
+          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC
           UartSendByte((unsigned char)(CRC16 >> 8));      // msb
           UartSendByte((unsigned char)(CRC16 & 0x00ff));  // lsb   
           TX_DIS;
@@ -177,11 +177,11 @@ unsigned char rx_flag = 0;
   
   }
 
-  /* анализ контрольной суммы полученной посылки */
-  static unsigned char modbus_rx_CRC_check(unsigned char modbus_cmd)
+  /* пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+  unsigned char modbus_rx_CRC_check(unsigned char modbus_cmd)
   {
-  /// заполнение массива CRC для рассчета и сравнения с прочитанным  
-   unsigned int CRC16_calc = 0;  // рассчетная контрольная сумма
+  /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ CRC пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ  
+   unsigned int CRC16_calc = 0;  // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
    unsigned char ans = 0;
    
    modbus_reg_addr = (unsigned int)((rx_buf[2] << 8) | rx_buf[3]); // get starting reg addr
@@ -228,10 +228,10 @@ unsigned char rx_flag = 0;
    return ans;
   }
     
-  /* был ли прочитан регистр */
+  /* пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile unsigned char is_reg (unsigned int reg_addr)
   {  
-   /// проверка чтения конкретного регистра
+   /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
    unsigned int t; 
    unsigned char rd_status = 0;
 
@@ -249,11 +249,11 @@ unsigned char rx_flag = 0;
       return rd_status;
   }
   
-  /* парсинг команды и работа с регистрами */
-  unsigned char modbus_get_poll(void)  
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
+  volatile unsigned char modbus_get_poll(void)  
   {
     /// update modbus regs and vars, send answer to master
-   
+    unsigned char rx_cmd_code = 0;        // код поступившей командыrx_cmd_code = 0;
     // state 1 and 2, transmit end, rx buf has > 7 bytes ?
     if((rx_flag == 1 && rx_buf_ptr > 7)) 
     { 
@@ -264,47 +264,45 @@ unsigned char rx_flag = 0;
     
       switch(rx_buf[1])
       {   
-        case MODBUS_RHR_CMD:                // если команда - чтение R/W регистров
-            if(modbus_rx_CRC_check(MODBUS_RHR_CMD) == MODBUS_RHR_CMD);
+        case MODBUS_RHR_CMD:                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ R/W пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            if(modbus_rx_CRC_check(MODBUS_RHR_CMD) == MODBUS_RHR_CMD)
             {
-                modbus_reset();
-                return MODBUS_RHR_CMD;
+                rx_cmd_code = MODBUS_RHR_CMD;
             }
         break;
 ////-------------------------------------------------------------------
-        case MODBUS_WSR_CMD:                // если команда - чтение Read-only регистров
-            if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD);
+        case MODBUS_WSR_CMD:                // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅпїЅ Read-only пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD)
             {
-                holding_register[modbus_reg_addr] = reg_wr_data;
-                modbus_reset();
-                return MODBUS_WSR_CMD;
+                rx_cmd_code = MODBUS_WSR_CMD;
             }
         break;
 ////-------------------------------------------------------------------
         case MODBUS_RIR_CMD: 
-            if(modbus_rx_CRC_check(MODBUS_RIR_CMD) == MODBUS_RIR_CMD);
+            if(modbus_rx_CRC_check(MODBUS_RIR_CMD) == MODBUS_RIR_CMD)
             {
-                modbus_reset();
-                return MODBUS_RIR_CMD;
+                rx_cmd_code = MODBUS_RIR_CMD;
             }
         break;
-        
-        default: break;  
      } // switch(rx_buf[1])
+      
+      modbus_reset();
+      
     }  // if dev_id
     else 
     {
-         modbus_reset();
-         return 0;
+        modbus_reset();
     }
    }   //  if(rx_buf_ptr > 7)
-    else return 0;
+   
+   return rx_cmd_code;
     
   }
  
-  /* сброс modbus приемника */
+  /* пїЅпїЅпїЅпїЅпїЅ modbus пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   void modbus_reset(void)
-  { 
+  {
+
      for(int i = 0; i < 128; i++) 
       rx_buf[i] = 0;
    
@@ -312,10 +310,10 @@ unsigned char rx_flag = 0;
      rx_flag = 0;
   }
   
-  /* инициализация */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   void modbus_init (void) 
   {
-   /// обнуление регистров
+   /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
    Uart1Init();
    
 //   for(unsigned char i = 0; i < 125; i++) 
@@ -347,18 +345,18 @@ unsigned char rx_flag = 0;
       input_register[reg_addr] = value;
   }
  
-  /* получение адреса записываемого регистра */
+  /* пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
   volatile unsigned int get_wr_reg_addr(void)
   {
       return modbus_reg_addr;
   }
 /* 
 
-  unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
-  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID устройства   <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 21;                 // версия прошивки текущего устройства
-  unsigned char device_family = 200;                // код семейства устройств
-  unsigned char modbus_ver    = 31;                 // версия MODBUS
+  unsigned char com_dev_id    = 247;                // MODBUS ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+  unsigned char dev_id        = DEFAULT_DEV_ID;     // MODBUS ID пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ   <<<<<<<<<<======== ID
+  unsigned char firmware_ver  = 21;                 // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+  unsigned char device_family = 200;                // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+  unsigned char modbus_ver    = 31;                 // пїЅпїЅпїЅпїЅпїЅпїЅ MODBUS
   
 
 unsigned int get_syr_pos (unsigned char);
@@ -368,22 +366,22 @@ unsigned int get_valve_angle (unsigned char);
 
 
   void modbus_int_mode (unsigned char mode)  
-  {      // управление прерыванием UART RX
+  {      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ UART RX
   
-    if(mode == 1) // разрешение прерываний RX UART MODBUS
+    if(mode == 1) // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ RX UART MODBUS
     {
       IEC0bits.U1RXIE = 1; // en UART1 RX interrupt   
     }
-    else         // запрет прерываний RX UART MODBUS
+    else         // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ RX UART MODBUS
     {
       IEC0bits.U1RXIE = 0; // dis UART1 RX interrupt   
     }
   }
   
-  void modbus_refresh(unsigned char cmd_type) // работа с регистрами
+  void modbus_refresh(unsigned char cmd_type) // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
   {     
     
-   /// Чтение R/W регистров, TODO - обновление переменных перед отправкой мастеру    
+   /// пїЅпїЅпїЅпїЅпїЅпїЅ R/W пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, TODO - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ    
     
    if(cmd_type == MODBUS_RHR_CMD)
    {
@@ -397,7 +395,7 @@ unsigned int get_valve_angle (unsigned char);
     //MODBUS_RX_LED = 0;   
    }         
    //-------------------------------------------------------------------------//
-   /// Чтение Read-only регистров, TODO - обновление переменных перед отправкой мастеру   
+   /// пїЅпїЅпїЅпїЅпїЅпїЅ Read-only пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, TODO - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ   
    if(cmd_type == MODBUS_RIR_CMD)
    {   
        MODBUS_RX_LED = ~MODBUS_RX_LED;  
@@ -409,11 +407,11 @@ unsigned int get_valve_angle (unsigned char);
    }         
    //-------------------------------------------------------------------------//
   
-   /// ЗАПИСЬ, TODO - получение новых значений от мастера
-   //  starting_address = адрес регистра, в который идет запись (1000 = 0, 1001 = 1 и тд)
+   /// пїЅпїЅпїЅпїЅпїЅпїЅ, TODO - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+   //  starting_address = пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (1000 = 0, 1001 = 1 пїЅ пїЅпїЅ)
       
    if(cmd_type == MODBUS_WSR_CMD) 
-   {  // анализ регистра записи 
+   {  // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ 
        
       MODBUS_RX_LED = ~MODBUS_RX_LED;  
        
@@ -454,6 +452,23 @@ unsigned int get_valve_angle (unsigned char);
    
   }
 */  
+    
+  volatile unsigned int get_wr_reg_val(void)
+  {
+      return reg_wr_data;
+  }
+  
+  volatile unsigned char get_modbus_id(void)
+  {
+      unsigned char current_ID = dev_id;
+      return current_ID;
+  }
 
+  volatile void set_modbus_id(unsigned char newID)
+  {
+      dev_id = newID;
+      modbus_reset();
+  }
+  
  // Modbus
 /*=========================================================================== */

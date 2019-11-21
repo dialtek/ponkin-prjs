@@ -46,7 +46,7 @@ void SPI1_init()
         
     }
 
-void SPI1_PUT_int (unsigned int buf)               
+static void SPI1_PUT_int (unsigned int buf)               
 {
         unsigned int buf1;
         CS2_LOW;
@@ -61,7 +61,7 @@ void SPI1_PUT_int (unsigned int buf)
         CS2_HIGH;
 }
 
-unsigned int SPI1_GET_int ()
+static unsigned int SPI1_GET_int ()
 {
         unsigned int buf = 0;
        CS2_LOW; 
@@ -82,7 +82,7 @@ unsigned int SPI1_GET_int ()
         return buf; 
     }
 
-unsigned int SPI_READ_WORD (unsigned int ADDR)       // ѕроцедура чтени¤ байта по SPI
+static unsigned int SPI_READ_WORD (unsigned int ADDR)       // ѕроцедура чтени¤ байта по SPI
 {
           unsigned int spi_buf;   
           
@@ -93,7 +93,7 @@ unsigned int SPI_READ_WORD (unsigned int ADDR)       // ѕроцедура чтени¤ байта п
           return spi_buf;
     }
 
-volatile void CPLD_SPI_WR (unsigned int hold_reg_data, unsigned int  hold_reg_addr) 		// функци§ отправки по SPI Ю† >>> ЊОїЧ  
+volatile void CPLD_SPI_WR (unsigned int  hold_reg_addr, unsigned int hold_reg_data) 		// функци§ отправки по SPI Ю† >>> ЊОїЧ  
 { // прогон§етс§ 2 раза в цикле по counter
 
             unsigned int SPI_frame = 0x0000;                      // создали переменную кадра SPI
@@ -114,7 +114,8 @@ volatile void CPLD_SPI_WR (unsigned int hold_reg_data, unsigned int  hold_reg_ad
                                                                             // формирование значени¤ адреса
                                                                             // установка переменной адреса в нужную позицию <<8			
                   SPI_frame = (((hold_reg_addr*2-1)+i) << 8) + SPI_frame;   // склеиваем адрес и данные
-                  SPI1_PUT_int (SPI_frame);              
+                  SPI1_PUT_int (SPI_frame);  
+                
                 }   
         }
 

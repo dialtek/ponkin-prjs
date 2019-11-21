@@ -6,6 +6,7 @@
 #include "d_SPI.h"
 
 //////////////////////////////////////////////////////////////////////////////// 
+
 // device firmvare selector
 
 #define DEV_MODE_HEATER     0            // ImunoFirmware.ImunoHeater
@@ -47,7 +48,6 @@ static void OSC_init(void)               // oscillator init
     while (OSCCONbits.OSWEN != 0);
     
     // Fosc = 120M, Fcy = 60M
-
 }
 
 static void GPIO_init(void)              // MCU IO init
@@ -180,8 +180,8 @@ static void System_Init(void)            // MCU systems init
    ImunoFirmware.Heater = 10;
    ImunoFirmware.LineMv = 11;
    ImunoFirmware.DosingSys = 12;
-   ImunoFirmware.IO  = 14;
-   ImunoFirmware.Vibro  = 15;
+   ImunoFirmware.IO  = 13;
+   ImunoFirmware.Vibro  = 14;
 }
 
 /*=========================================================================== */ 

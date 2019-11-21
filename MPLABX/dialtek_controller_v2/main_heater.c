@@ -15,6 +15,7 @@ extern FirmwareInfo FirmInfo;
 extern xHeater heater;           // heater struct instance
 extern Tsensor sensor;           // sensor struct instance
 
+unsigned int OutControl = 0xAAAA;
 /*================================ LOCAL ==================================== */
 // local static variables
  
@@ -33,9 +34,9 @@ static void modbus_poll(void)
 //////////////////////////// ЧТЕНИЕ HOLDING //////////////////////////             
            // заполнение Модбас регистров переменными пользователя
            // holding_reg_write(register_address,U16 data)
-             
-           OWstateMachine();    // async read all the sensors
            
+           OWstateMachine();    // async read all the sensors
+             
            MODBUS_LED = ON; 
            modbus_rhr_answer(); // ответ на запрос 
            delay_ms(1);
@@ -48,7 +49,7 @@ static void modbus_poll(void)
           
           // заполнение переменных пользователя данными из Модбас регистров 
           // holding_reg_read(register_address,U16 data pointer)
-                      
+         
            MODBUS_LED = ON;  
            wr_reg_addr = get_wr_reg_addr();
            // get the new value
@@ -94,6 +95,18 @@ static void modbus_poll(void)
                    if(RegisterValue == 1)
                     ConfigReset();  
                break;
+               case 36: // OUTPUT PINS Channels 0...5
+                
+                   holding_reg_read(36,&OutControl);
+                   CPLD_SPI_WR(36,OutControl); 
+               break;
+               //====
+               case 40: // OUTPUT PINS Channels 0...5
+                
+                   OneWire_reset();
+               break;
+               
+               OneWire_reset();
                //==== 
                default: break;
            }
@@ -167,6 +180,7 @@ void main_heater(void)
    Timer32_init();     // OW timing timer
    OWrestoreCfg();     // restore OW cfg
    
+   set_modbus_id(201); // MODBUS ID !!!
    modbus_init();      // init modbus SM
 
    while(1)

@@ -24,11 +24,11 @@ extern "C"
 
 void SPI1_init(void);
 
-void SPI1_PUT_int (unsigned int buf);
+static void SPI1_PUT_int (unsigned int buf);
 
- unsigned int SPI1_GET_int(void);
+static unsigned int SPI1_GET_int(void);
 
-unsigned int SPI_READ_WORD (unsigned int ADDR);      // ѕроцедура чтени¤ байта по SPI
+static unsigned int SPI_READ_WORD (unsigned int ADDR);      // ѕроцедура чтени¤ байта по SPI
 
 volatile void CPLD_SPI_WR (unsigned int hold_reg_data, unsigned int  hold_reg_addr); 		// функци§ отправки по SPI Ю† >>> ЊОїЧ  
  
