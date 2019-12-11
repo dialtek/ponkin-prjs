@@ -91,10 +91,10 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x2d6           0x441  (1089)
 .const                       0x4d6                0x3c            0x5a  (90)
-.text                        0x512              0x2752          0x3afb  (15099)
-.dinit                      0x2c64                0x5a            0x87  (135)
+.text                        0x512              0x2748          0x3aec  (15084)
+.dinit                      0x2c5a                0x5a            0x87  (135)
 
-                     Total program memory used (bytes):         0x401d  (16413) 6%
+                     Total program memory used (bytes):         0x400e  (16398) 6%
 
 
 Auxflash Memory  [Origin = 0x7fc000, Length = 0x3ffa]
@@ -267,41 +267,41 @@ External Symbols in Program Memory (by address):
                   0x001b8a                  _OneWire_match_ID
                   0x001bc2                  _ds18b20_i_rd_t
                   0x001cb4                  _get_sensor_ID
-                  0x001f58                  _main_dosing_sys
-                  0x00220a                  _main_stepper
-                  0x002220                  _SPI1_init
-                  0x0022ee                  _CPLD_SPI_WR
-                  0x002350                  _CPLD_SPI_RD
-                  0x0023ce                  _SPI3_init
-                  0x00240e                  _SPI3_write_byte
-                  0x002428                  _SPI3_read_byte
-                  0x002462                  _eeprom_wr_page
-                  0x0024ee                  _eeprom_wr_regs
-                  0x002528                  _eeprom_clear_page
-                  0x002576                  _eeprom_clear
-                  0x0025aa                  _eeprom_rd_regs_H
-                  0x002604                  _eeprom_rd_regs_I
-                  0x00265e                  _Timer9_init
-                  0x0026ae                  _Uart1Init
-                  0x0026f4                  _Uart2Init
-                  0x002734                  _uart2_send_byte
-                  0x00274e                  _uart2_send_text
-                  0x00276a                  _uart2_CR_LF_send
-                  0x002778                  _UartSendByte
-                  0x002792                  __U1RXInterrupt
-                  0x0027de                  __U2RXInterrupt
-                  0x002816                  __T9Interrupt
-                  0x0029fc                  _main_heater
-                  0x002bbc                  _main
-                  0x002bca                  _TIMER8_delay_init
-                  0x002be2                  _delay_us
-                  0x002c18                  _delay_ms
+                  0x001f50                  _main_dosing_sys
+                  0x002202                  _main_stepper
+                  0x002218                  _SPI1_init
+                  0x0022e6                  _CPLD_SPI_WR
+                  0x002348                  _CPLD_SPI_RD
+                  0x0023c6                  _SPI3_init
+                  0x002406                  _SPI3_write_byte
+                  0x002420                  _SPI3_read_byte
+                  0x00245a                  _eeprom_wr_page
+                  0x0024e6                  _eeprom_wr_regs
+                  0x002520                  _eeprom_clear_page
+                  0x00256e                  _eeprom_clear
+                  0x0025a2                  _eeprom_rd_regs_H
+                  0x0025fc                  _eeprom_rd_regs_I
+                  0x002656                  _Timer9_init
+                  0x0026a6                  _Uart1Init
+                  0x0026ec                  _Uart2Init
+                  0x00272c                  _uart2_send_byte
+                  0x002746                  _uart2_send_text
+                  0x002762                  _uart2_CR_LF_send
+                  0x002770                  _UartSendByte
+                  0x00278a                  __U1RXInterrupt
+                  0x0027d6                  __U2RXInterrupt
+                  0x00280e                  __T9Interrupt
+                  0x0029f2                  _main_heater
+                  0x002bb2                  _main
+                  0x002bc0                  _TIMER8_delay_init
+                  0x002bd8                  _delay_us
+                  0x002c0e                  _delay_ms
 
 External Symbols in Program Memory (by name):
 
                   0x001686                  _AddNewSensor
-                  0x002350                  _CPLD_SPI_RD
-                  0x0022ee                  _CPLD_SPI_WR
+                  0x002348                  _CPLD_SPI_RD
+                  0x0022e6                  _CPLD_SPI_WR
                   0x0016ec                  _ConfigReset
                   0x001974                  _GetSensorsQty
                   0x0017b6                  _GetSensorsTemp
@@ -319,26 +319,26 @@ External Symbols in Program Memory (by name):
                   0x001a08                  _OneWire_send_bit
                   0x001b12                  _OneWire_skip
                   0x00197e                  _OneWire_tx_state
-                  0x002220                  _SPI1_init
-                  0x0023ce                  _SPI3_init
-                  0x002428                  _SPI3_read_byte
-                  0x00240e                  _SPI3_write_byte
-                  0x002bca                  _TIMER8_delay_init
+                  0x002218                  _SPI1_init
+                  0x0023c6                  _SPI3_init
+                  0x002420                  _SPI3_read_byte
+                  0x002406                  _SPI3_write_byte
+                  0x002bc0                  _TIMER8_delay_init
                   0x0015b0                  _Timer32_init
-                  0x00265e                  _Timer9_init
+                  0x002656                  _Timer9_init
                   0x000580                  _TmOutTimer_init
                   0x00052e                  _TmOutTimer_set
                   0x000512                  _TmOutTimer_state
-                  0x0026ae                  _Uart1Init
-                  0x0026f4                  _Uart2Init
-                  0x002778                  _UartSendByte
+                  0x0026a6                  _Uart1Init
+                  0x0026ec                  _Uart2Init
+                  0x002770                  _UartSendByte
                   0x001764                  _UpdateIDregs
                   0x0002d2                  __DefaultInterrupt
                   0x0015e6                  __T3Interrupt
                   0x0005b6                  __T5Interrupt
-                  0x002816                  __T9Interrupt
-                  0x002792                  __U1RXInterrupt
-                  0x0027de                  __U2RXInterrupt
+                  0x00280e                  __T9Interrupt
+                  0x00278a                  __U1RXInterrupt
+                  0x0027d6                  __U2RXInterrupt
                   0x0002d6                  ___divsf3
                   0x00035a                  ___divsi3
                   0x000378                  ___fixunssfsi
@@ -360,16 +360,16 @@ External Symbols in Program Memory (by name):
                   0x0005fa                  _chars2number
                   0x000746                  _check_cmd_answer
                   0x001aca                  _crc8
-                  0x002c18                  _delay_ms
-                  0x002be2                  _delay_us
+                  0x002c0e                  _delay_ms
+                  0x002bd8                  _delay_us
                   0x00050f                  _device_family
                   0x001bc2                  _ds18b20_i_rd_t
-                  0x002576                  _eeprom_clear
-                  0x002528                  _eeprom_clear_page
-                  0x0025aa                  _eeprom_rd_regs_H
-                  0x002604                  _eeprom_rd_regs_I
-                  0x002462                  _eeprom_wr_page
-                  0x0024ee                  _eeprom_wr_regs
+                  0x00256e                  _eeprom_clear
+                  0x002520                  _eeprom_clear_page
+                  0x0025a2                  _eeprom_rd_regs_H
+                  0x0025fc                  _eeprom_rd_regs_I
+                  0x00245a                  _eeprom_wr_page
+                  0x0024e6                  _eeprom_wr_regs
                   0x00050e                  _firmware_ver
                   0x00111a                  _get_modbus_id
                   0x001cb4                  _get_sensor_ID
@@ -386,11 +386,11 @@ External Symbols in Program Memory (by name):
                   0x0010d8                  _input_reg_read
                   0x0010f0                  _input_reg_write
                   0x000fba                  _is_reg
-                  0x002bbc                  _main
-                  0x001f58                  _main_dosing_sys
-                  0x0029fc                  _main_heater
+                  0x002bb2                  _main
+                  0x001f50                  _main_dosing_sys
+                  0x0029f2                  _main_heater
                   0x00159a                  _main_io
-                  0x00220a                  _main_stepper
+                  0x002202                  _main_stepper
                   0x000fe8                  _modbus_get_poll
                   0x0010a0                  _modbus_init
                   0x001078                  _modbus_reset
@@ -409,9 +409,9 @@ External Symbols in Program Memory (by name):
                   0x0008de                  _set_syr_pos
                   0x0009e8                  _set_syr_vel
                   0x000a9a                  _set_valve_angle
-                  0x00276a                  _uart2_CR_LF_send
-                  0x002734                  _uart2_send_byte
-                  0x00274e                  _uart2_send_text
+                  0x002762                  _uart2_CR_LF_send
+                  0x00272c                  _uart2_send_byte
+                  0x002746                  _uart2_send_text
 
 Memory Configuration
 
@@ -584,21 +584,21 @@ __FUID0
  .debug_abbrev    0x000e77        0x1d2 build/default/production/hamilton_pump.o
  .debug_abbrev    0x001049        0x15a build/default/production/main.o
 
-.debug_line       0x000000       0x3b3c
+.debug_line       0x000000       0x3b32
  *(.debug_line)
  .debug_line      0x000000        0x39d build/default/production/main_heater.o
  .debug_line      0x00039d        0x422 build/default/production/main_steppers.o
- .debug_line      0x0007bf        0x488 build/default/production/main_dosing_sys.o
- .debug_line      0x000c47        0x34b build/default/production/main_io.o
- .debug_line      0x000f92        0x17f build/default/production/d_delay.o
- .debug_line      0x001111        0x376 build/default/production/d_eeprom.o
- .debug_line      0x001487        0x565 build/default/production/d_heater.o
- .debug_line      0x0019ec        0x533 build/default/production/d_one_wire.o
- .debug_line      0x001f1f        0x4d9 build/default/production/d_SPI.o
- .debug_line      0x0023f8        0x71f build/default/production/dialtek_modbus.o
- .debug_line      0x002b17        0x3c2 build/default/production/dialtek_uart.o
- .debug_line      0x002ed9        0x86b build/default/production/hamilton_pump.o
- .debug_line      0x003744        0x3f8 build/default/production/main.o
+ .debug_line      0x0007bf        0x47e build/default/production/main_dosing_sys.o
+ .debug_line      0x000c3d        0x34b build/default/production/main_io.o
+ .debug_line      0x000f88        0x17f build/default/production/d_delay.o
+ .debug_line      0x001107        0x376 build/default/production/d_eeprom.o
+ .debug_line      0x00147d        0x565 build/default/production/d_heater.o
+ .debug_line      0x0019e2        0x533 build/default/production/d_one_wire.o
+ .debug_line      0x001f15        0x4d9 build/default/production/d_SPI.o
+ .debug_line      0x0023ee        0x71f build/default/production/dialtek_modbus.o
+ .debug_line      0x002b0d        0x3c2 build/default/production/dialtek_uart.o
+ .debug_line      0x002ecf        0x86b build/default/production/hamilton_pump.o
+ .debug_line      0x00373a        0x3f8 build/default/production/main.o
 
 .debug_frame      0x000000        0x7d4
  *(.debug_frame)
@@ -720,7 +720,7 @@ __FUID0
                   0x000024          0x4 LONG 0x15e6 DEFINED (__T3Interrupt)?ABSOLUTE (__T3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000026          0x4 LONG 0x2d2 DEFINED (__SPI1ErrInterrupt)?ABSOLUTE (__SPI1ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000028          0x4 LONG 0x2d2 DEFINED (__SPI1Interrupt)?ABSOLUTE (__SPI1Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00002a          0x4 LONG 0x2792 DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00002a          0x4 LONG 0x278a DEFINED (__U1RXInterrupt)?ABSOLUTE (__U1RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002c          0x4 LONG 0x2d2 DEFINED (__U1TXInterrupt)?ABSOLUTE (__U1TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00002e          0x4 LONG 0x2d2 DEFINED (__AD1Interrupt)?ABSOLUTE (__AD1Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000030          0x4 LONG 0x2d2 DEFINED (__DMA1Interrupt)?ABSOLUTE (__DMA1Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -739,7 +739,7 @@ __FUID0
                   0x00004a          0x4 LONG 0x2d2 DEFINED (__T4Interrupt)?ABSOLUTE (__T4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004c          0x4 LONG 0x5b6 DEFINED (__T5Interrupt)?ABSOLUTE (__T5Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00004e          0x4 LONG 0x2d2 DEFINED (__INT2Interrupt)?ABSOLUTE (__INT2Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x000050          0x4 LONG 0x27de DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x000050          0x4 LONG 0x27d6 DEFINED (__U2RXInterrupt)?ABSOLUTE (__U2RXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000052          0x4 LONG 0x2d2 DEFINED (__U2TXInterrupt)?ABSOLUTE (__U2TXInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000054          0x4 LONG 0x2d2 DEFINED (__SPI2ErrInterrupt)?ABSOLUTE (__SPI2ErrInterrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000056          0x4 LONG 0x2d2 DEFINED (__SPI2Interrupt)?ABSOLUTE (__SPI2Interrupt):ABSOLUTE (__DefaultInterrupt)
@@ -761,7 +761,7 @@ __FUID0
                   0x000076          0x4 LONG 0x2d2 DEFINED (__SI2C2Interrupt)?ABSOLUTE (__SI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000078          0x4 LONG 0x2d2 DEFINED (__MI2C2Interrupt)?ABSOLUTE (__MI2C2Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007a          0x4 LONG 0x2d2 DEFINED (__T8Interrupt)?ABSOLUTE (__T8Interrupt):ABSOLUTE (__DefaultInterrupt)
-                  0x00007c          0x4 LONG 0x2816 DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
+                  0x00007c          0x4 LONG 0x280e DEFINED (__T9Interrupt)?ABSOLUTE (__T9Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x00007e          0x4 LONG 0x2d2 DEFINED (__INT3Interrupt)?ABSOLUTE (__INT3Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000080          0x4 LONG 0x2d2 DEFINED (__INT4Interrupt)?ABSOLUTE (__INT4Interrupt):ABSOLUTE (__DefaultInterrupt)
                   0x000082          0x4 LONG 0x2d2 DEFINED (__C2RxRdyInterrupt)?ABSOLUTE (__C2RxRdyInterrupt):ABSOLUTE (__DefaultInterrupt)
@@ -3701,7 +3701,7 @@ __c30_signature
                     0x850f                  _device_family
                     0x8510                  _modbus_ver
 
-.text             0x000512       0x2752
+.text             0x000512       0x2748
  .text            0x000512        0x63a build/default/production/hamilton_pump.o
                   0x000512                  _TmOutTimer_state
                   0x00052e                  _TmOutTimer_set
@@ -3771,43 +3771,43 @@ __c30_signature
                   0x001b8a                  _OneWire_match_ID
                   0x001bc2                  _ds18b20_i_rd_t
                   0x001cb4                  _get_sensor_ID
- .text            0x001cf0        0x2b8 build/default/production/main_dosing_sys.o
-                  0x001f58                  _main_dosing_sys
- .text            0x001fa8        0x278 build/default/production/main_steppers.o
-                  0x00220a                  _main_stepper
- .text            0x002220        0x242 build/default/production/d_SPI.o
-                  0x002220                  _SPI1_init
-                  0x0022ee                  _CPLD_SPI_WR
-                  0x002350                  _CPLD_SPI_RD
-                  0x0023ce                  _SPI3_init
-                  0x00240e                  _SPI3_write_byte
-                  0x002428                  _SPI3_read_byte
- .text            0x002462        0x1fc build/default/production/d_eeprom.o
-                  0x002462                  _eeprom_wr_page
-                  0x0024ee                  _eeprom_wr_regs
-                  0x002528                  _eeprom_clear_page
-                  0x002576                  _eeprom_clear
-                  0x0025aa                  _eeprom_rd_regs_H
-                  0x002604                  _eeprom_rd_regs_I
- .text            0x00265e        0x1e4 build/default/production/dialtek_uart.o
-                  0x00265e                  _Timer9_init
-                  0x0026ae                  _Uart1Init
-                  0x0026f4                  _Uart2Init
-                  0x002734                  _uart2_send_byte
-                  0x00274e                  _uart2_send_text
-                  0x00276a                  _uart2_CR_LF_send
-                  0x002778                  _UartSendByte
-                  0x002792                  __U1RXInterrupt
-                  0x0027de                  __U2RXInterrupt
-                  0x002816                  __T9Interrupt
- .text            0x002842        0x1d8 build/default/production/main_heater.o
-                  0x0029fc                  _main_heater
- .text            0x002a1a        0x1b0 build/default/production/main.o
-                  0x002bbc                  _main
- .text            0x002bca         0x9a build/default/production/d_delay.o
-                  0x002bca                  _TIMER8_delay_init
-                  0x002be2                  _delay_us
-                  0x002c18                  _delay_ms
+ .text            0x001cf0        0x2b0 build/default/production/main_dosing_sys.o
+                  0x001f50                  _main_dosing_sys
+ .text            0x001fa0        0x278 build/default/production/main_steppers.o
+                  0x002202                  _main_stepper
+ .text            0x002218        0x242 build/default/production/d_SPI.o
+                  0x002218                  _SPI1_init
+                  0x0022e6                  _CPLD_SPI_WR
+                  0x002348                  _CPLD_SPI_RD
+                  0x0023c6                  _SPI3_init
+                  0x002406                  _SPI3_write_byte
+                  0x002420                  _SPI3_read_byte
+ .text            0x00245a        0x1fc build/default/production/d_eeprom.o
+                  0x00245a                  _eeprom_wr_page
+                  0x0024e6                  _eeprom_wr_regs
+                  0x002520                  _eeprom_clear_page
+                  0x00256e                  _eeprom_clear
+                  0x0025a2                  _eeprom_rd_regs_H
+                  0x0025fc                  _eeprom_rd_regs_I
+ .text            0x002656        0x1e4 build/default/production/dialtek_uart.o
+                  0x002656                  _Timer9_init
+                  0x0026a6                  _Uart1Init
+                  0x0026ec                  _Uart2Init
+                  0x00272c                  _uart2_send_byte
+                  0x002746                  _uart2_send_text
+                  0x002762                  _uart2_CR_LF_send
+                  0x002770                  _UartSendByte
+                  0x00278a                  __U1RXInterrupt
+                  0x0027d6                  __U2RXInterrupt
+                  0x00280e                  __T9Interrupt
+ .text            0x00283a        0x1d6 build/default/production/main_heater.o
+                  0x0029f2                  _main_heater
+ .text            0x002a10        0x1b0 build/default/production/main.o
+                  0x002bb2                  _main
+ .text            0x002bc0         0x9a build/default/production/d_delay.o
+                  0x002bc0                  _TIMER8_delay_init
+                  0x002bd8                  _delay_us
+                  0x002c0e                  _delay_ms
 
-.dinit            0x002c64         0x5a
- .dinit           0x002c64         0x5a data_init
+.dinit            0x002c5a         0x5a
+ .dinit           0x002c5a         0x5a data_init

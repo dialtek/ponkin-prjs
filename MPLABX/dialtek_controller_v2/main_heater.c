@@ -51,9 +51,9 @@ static void modbus_poll(void)
           // holding_reg_read(register_address,U16 data pointer)
          
            MODBUS_LED = ON;  
-           wr_reg_addr = get_wr_reg_addr();
-           // get the new value
-           holding_reg_read(wr_reg_addr,&RegisterValue);    
+            
+           wr_reg_addr = get_wr_reg_addr();  // get the addr
+           RegisterValue = get_wr_reg_val(); // get the new value    
     
            switch(wr_reg_addr)
            {
@@ -102,7 +102,6 @@ static void modbus_poll(void)
                break;
                //====
                case 40: // OUTPUT PINS Channels 0...5
-                
                    OneWire_reset();
                break;
                
@@ -171,7 +170,7 @@ static void Heater(void)
 
 void main_heater(void)
 {
-   FirmInfo.ver = 10;               // device firmware version
+   FirmInfo.ver = 11;               // device firmware version
    FirmInfo.developer = PONKIN;     // device firmware developer
    
    eeprom_rd_regs_H(); // reading sets from SPI EEPROM

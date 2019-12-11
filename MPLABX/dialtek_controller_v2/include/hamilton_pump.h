@@ -15,12 +15,12 @@
 #define ERROR_CODE 65535  // value on reading error
 #define default_id (unsigned char)1
 
-#define CMD_get_syr_pos     (unsigned int)200
-#define CMD_get_syr_vel     (unsigned int)201
-#define CMD_get_valve_angle (unsigned int)202
-#define CMD_set_syr_pos     (unsigned int)203
-#define CMD_set_syr_vel     (unsigned int)204
-#define CMD_set_valve_angle (unsigned int)205
+#define CMD_get_syr_pos     (unsigned int)140
+#define CMD_get_syr_vel     (unsigned int)141
+#define CMD_get_valve_angle (unsigned int)142
+#define CMD_set_syr_pos     (unsigned int)143
+#define CMD_set_syr_vel     (unsigned int)144
+#define CMD_set_valve_angle (unsigned int)145
 
 // cmds struct
 //typedef struct PSD4cmd_t

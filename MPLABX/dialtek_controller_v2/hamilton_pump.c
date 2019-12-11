@@ -391,5 +391,5 @@ unsigned int set_valve_angle(unsigned char pump_id, unsigned int angle, unsigned
     delay_ms(20); // delay to read all answer bytes
     
                                  //  cmd               answer  
-    return check_cmd_answer(11); // /1h28180R{0D}{0A}  /0@{03}{0D}{0A}
+    return check_cmd_answer(10); // /1h28180R{0D}{0A}  /0@{03}{0D}{0A}
 }

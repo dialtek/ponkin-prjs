@@ -9,9 +9,9 @@
 
 // device firmvare selector
 
-#define DEV_MODE_HEATER     0            // ImunoFirmware.ImunoHeater
+#define DEV_MODE_HEATER     1            // ImunoFirmware.ImunoHeater
 #define DEV_MODE_LINE_MV    0            // ImunoFirmware.ImunoLineMv
-#define DEV_MODE_DOSING_SYS 1            // ImunoFirmware.DosingSys
+#define DEV_MODE_DOSING_SYS 0            // ImunoFirmware.DosingSys
 #define DEV_MODE_IO         0            // ImunoFirmware.IO
 
 //////////////////////////////////////////////////////////////////////////////// 

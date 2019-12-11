@@ -314,9 +314,9 @@
         </option>
         <option>
           <name>CCIncludePath2</name>
-          <state>E:\work\Projects\ponkin\Milandr\esis divider key\CMSIS</state>
-          <state>E:\work\Projects\ponkin\Milandr\esis divider key\Startup</state>
-          <state>E:\work\Projects\ponkin\Milandr\esis divider key\inc</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis divider key\startup</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis divider key\inc</state>
+          <state>F:\Mega\ponkin-prjs\Milandr\esis divider key\CMSIS</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>

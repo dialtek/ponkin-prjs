@@ -1,5 +1,5 @@
 [DebugChecksum]
-Checksum=1287796462
+Checksum=2103942999
 [Stack]
 FillEnabled=0
 OverflowWarningsEnabled=1
@@ -17,21 +17,6 @@ StopOnThrow=_ 0
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=1
-Graph=0
-Symbiont=0
-Exclusions=
 [MemoryMap]
 Enabled=0
 Base=0
@@ -39,6 +24,8 @@ UseAuto=0
 TypeViolation=1
 UnspecRange=1
 ActionState=1
+[CodeCoverage]
+Enabled=_ 0
 [InterruptLog]
 LogEnabled=0
 GraphEnabled=0
@@ -64,9 +51,26 @@ Manual=0
 Ddf=1
 TypeViol=0
 Stop=1
+[DriverProfiling]
+Enabled=0
+Mode=1
+Graph=0
+Symbiont=0
+Exclusions=
 [Trace1]
 Enabled=0
 ShowSource=1
+[CallStackLog]
+Enabled=0
+[CallStackStripe]
+ShowTiming=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Aliases]
 Count=0
 SuppressDialog=0

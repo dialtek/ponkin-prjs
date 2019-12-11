@@ -88,16 +88,17 @@ static void PSD4_state_machine(void)
 
                 if(PSD4answer != ERROR_CODE)
                     PSD4cmdWrStatus = 1;
-
-                PSD4_rd_state = CHECK;
             }
+            
+            PSD4_rd_state = CHECK;
+            
         break;
         //====
         case CHECK:
             
             switch(PSD4cmd2send)
             {
-                case CMD_set_syr_pos:
+                 case CMD_set_syr_pos:
                   PSD4cmdWrStatus = set_syr_pos(default_id,PSD4cmdVal);
                   PSD4cmd2send = 0;
                  break;
@@ -107,7 +108,7 @@ static void PSD4_state_machine(void)
                   PSD4cmd2send = 0;
                  break;
                  //===
-                 case CMD_get_valve_angle:
+                 case CMD_set_valve_angle:
                   PSD4cmdWrStatus = set_valve_angle(default_id, PSD4cmdVal, PSD4angleDir);
                   PSD4cmd2send = 0;
                  break;
@@ -199,6 +200,7 @@ static void modbus_poll(void)
                case 11: // valve angle move en 
                    PSD4cmd2send = CMD_set_valve_angle;
                    PSD4cmdVal = RegisterValue; 
+                   //set_valve_angle(default_id, PSD4cmdVal, PSD4angleDir);
                break;
                //==== 
                case 13: // PSD4 init_protocol
@@ -223,7 +225,7 @@ static void modbus_poll(void)
                     PSD4cmdWrStatus = init_syringe(1); 
                     //holding_reg_write(15,0); // clear the reg
                    }
-               break;     
+               break;
                
                //==== 
                default: break;
@@ -256,7 +258,7 @@ static void modbus_poll(void)
 
 void main_dosing_sys(void)
 {
-   FirmInfo.ver = 11;             // device firmware version
+   FirmInfo.ver = 12;             // device firmware version
    FirmInfo.developer = PONKIN;   // device firmware developer
    //PSD4_struct_init(PSD4cmd);
 
