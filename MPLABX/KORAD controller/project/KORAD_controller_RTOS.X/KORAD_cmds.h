@@ -12,8 +12,7 @@ extern "C"
 	
 #define	   ERROR_CODE     65535U	// value on reading error
 #define    MAX_VOLTAGE	  1000U		
-#define	   SrcReadPeriod  (TickType_t)50
-	
+
 // src variables
 typedef struct KORAD_params_t
 { 

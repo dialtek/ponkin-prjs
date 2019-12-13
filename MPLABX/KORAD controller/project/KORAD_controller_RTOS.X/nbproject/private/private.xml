@@ -7,11 +7,7 @@
             <file>file:/C:/E/Dev/FreeRTOS/WorkingCopy/FreeRTOS/Demo/PIC24_MPLAB/main.c</file>
         </group>
         <group>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/IP704%20controller/project/IP704_controller_RTOS.X/main.c</file>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/IP704%20controller/project/IP704_controller_RTOS.X/IP702_controller.c</file>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/IP704%20controller/project/IP704_controller_RTOS.X/IP702_cmds.c</file>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/IP704%20controller/project/IP704_controller_RTOS.X/IP702_controller.h</file>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/IP704%20controller/project/IP704_controller_RTOS.X/dialtek_modbus.h</file>
+            <file>file:/F:/Mega/ponkin-prjs/MPLABX/KORAD%20controller/project/KORAD_controller_RTOS.X/main.c</file>
         </group>
     </open-files>
 </project-private>

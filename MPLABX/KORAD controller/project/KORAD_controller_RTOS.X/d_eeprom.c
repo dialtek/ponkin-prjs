@@ -8,6 +8,23 @@
 
 // 125 holding/input register write
 
+//static unsigned char EEPROM_CRC_buf[260];
+
+unsigned int EEPROM_CRC16(unsigned char *pcBlock, unsigned int len)
+{
+    unsigned int crc = 0xFFFF;
+    unsigned char i;
+
+    while (len--)
+    {
+        crc ^= *pcBlock++ << 8;
+
+        for (i = 0; i < 8; i++)
+            crc = crc & 0x8000 ? (crc << 1) ^ 0x1021 : crc << 1;
+    }
+    return crc;
+}
+
 void eeprom_wr_page(unsigned char reg_type, unsigned int address)
 {
   unsigned int RegVal = 0;  
@@ -61,6 +78,121 @@ void eeprom_wr_regs(unsigned char reg_type)
   EEPROM_addr += 64;
   eeprom_wr_page(reg_type,EEPROM_addr);  // EEPROM memory page 4 - 96...124 regs     
   
+}
+
+void eeprom_wr_CRC(unsigned int CRC)
+{
+  // EEPROM write enable sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_WREN);
+  CS2_HIGH;
+  
+  // EEPROM address and data write sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_WRITE);
+  
+  SPI2_write_byte((unsigned char)(CRC_ADDR >> 8));      // set address ptr msb
+  SPI2_write_byte((unsigned char)(CRC_ADDR & 0x00ff));  // set address ptr lsb
+  
+  SPI2_write_byte((unsigned char)(CRC >> 8));     // data msb    
+  SPI2_write_byte((unsigned char)(CRC & 0x00ff)); // data lsb 
+
+  CS2_HIGH;
+  
+  vTaskDelay(10);  // Internal Write Cycle Time ~ 5 ms
+}
+
+unsigned int eeprom_src_save(unsigned char *ArrPtr, unsigned int len)
+{
+    
+  unsigned int CRC = EEPROM_CRC16(ArrPtr, len); 
+  
+  vTaskSuspendAll(); 
+  // EEPROM write enable sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_WREN);
+  CS2_HIGH;
+  
+  // EEPROM address and data write sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_WRITE);
+  
+  SPI2_write_byte((unsigned char)(START_ADDR >> 8));      // set address ptr msb
+  SPI2_write_byte((unsigned char)(START_ADDR & 0x00ff));  // set address ptr lsb
+  
+  for(unsigned char i = 0; i < len; i++)
+    SPI2_write_byte(*ArrPtr++);     // save all data  
+  
+  SPI2_write_byte((unsigned char)(CRC >> 8));     // CRC msb    
+  SPI2_write_byte((unsigned char)(CRC & 0x00ff)); // CRC lsb 
+
+  CS2_HIGH;
+  xTaskResumeAll(); 
+  
+  vTaskDelay(10);  // Internal Write Cycle Time ~ 5 ms
+  
+  return CRC;
+}
+
+unsigned int eeprom_src_restore(unsigned char *Arr, unsigned int len)
+{
+  unsigned char ArrIndex = (unsigned char)len + 2; // data + 2 bytes CRC  
+  unsigned char RdArr[ArrIndex], RdBuf = 0;  
+  unsigned int CRC_rd = 0, CRC_calc = 0;
+  
+  vTaskSuspendAll();
+  // EEPROM read sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_READ);
+  
+  SPI2_write_byte((unsigned char)(START_ADDR >> 8));      // set address ptr msb
+  SPI2_write_byte((unsigned char)(START_ADDR & 0x00ff));  // set address ptr lsb
+
+  // fill the array by the data from memory
+  for(unsigned char i = 0; i < ArrIndex; i++)
+  {
+    RdBuf = SPI2_read_byte();
+    RdArr[i] = RdBuf;
+  }
+
+  CS2_HIGH;
+  xTaskResumeAll(); 
+  // reading done
+  
+  // calc CRC
+  CRC_rd = EEPROM_CRC16(&RdArr, len);
+  // restore CRC
+  CRC_calc = (unsigned int)(RdArr[ArrIndex-2]) << 8 | (unsigned int)RdArr[ArrIndex-1];   
+          
+  if( CRC_rd == CRC_calc) // check CRC
+  {
+    // CRC OK, fill the user array 
+    for(unsigned char i = 0; i < len; i++)
+        *Arr++ = RdArr[i];
+    
+    return 1;
+  }
+  else return 0; // CRC error
+  
+}
+
+unsigned eeprom_rd_CRC(void)
+{
+  unsigned char lsb = 0, msb = 0;
+  unsigned int CRC_rd = 0;
+  // EEPROM read sequence
+  CS2_LOW;
+  SPI2_write_byte(EEPROM_READ);
+  
+  SPI2_write_byte((unsigned char)(CRC_ADDR >> 8));      // set address ptr msb
+  SPI2_write_byte((unsigned char)(CRC_ADDR & 0x00ff));  // set address ptr lsb
+
+  msb = SPI2_read_byte();
+  lsb = SPI2_read_byte();
+    
+  CRC_rd = (unsigned int)((msb << 8) | lsb);   
+  
+  CS2_HIGH;
 }
 
 void eeprom_clear_page(unsigned int address)

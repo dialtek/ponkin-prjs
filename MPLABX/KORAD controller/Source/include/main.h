@@ -9,6 +9,7 @@ extern "C"
 #define ON  1
 #define OFF 0
 	
+	
 // Dialtek developers code	
 #define PONKIN    2U
 #define SHIRIKOV  3U
@@ -26,6 +27,9 @@ typedef struct KORAD_state_t
     unsigned int ovp_ocp_mode;
     unsigned int cvcc_mode;
     unsigned int rd_process;
+    
+    unsigned int pol_relay_1;
+    unsigned int pol_relay_2;
   
 } KORAD_state; 	
 

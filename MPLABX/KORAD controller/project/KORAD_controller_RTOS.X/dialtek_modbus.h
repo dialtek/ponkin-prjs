@@ -1,3 +1,5 @@
+// v5.3 RTOS 12.12.19
+
 #ifndef DIALTEK_MODBUS_H
 #define	DIALTEK_MODBUS_H
 

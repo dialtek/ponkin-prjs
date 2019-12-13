@@ -1,3 +1,5 @@
+// v5.3 RTOS 12.12.19
+
 #include "FreeRTOS.h"
 #include "queue.h"
 #include "semphr.h"
@@ -290,6 +292,7 @@ const char modbus_ver    = 41;                 // версия MODBUS
             if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD)
             {
                 rx_cmd_code = MODBUS_WSR_CMD;
+                holding_reg_write(modbus_reg_addr, reg_wr_data);
             }
         break;
 ////-------------------------------------------------------------------
@@ -323,16 +326,10 @@ const char modbus_ver    = 41;                 // версия MODBUS
   /* инициализация */
   void modbus_init (void) 
   {
-   /// обнуление регистров
    UartInit();
    
    modbus_reset();
    RxSemaphore = xSemaphoreCreateCounting(10, 0);
-       eeprom_clear();
-   eeprom_rd_regs_H();
-   eeprom_rd_regs_H(); // !? костыль, если читать 1 раз - всегда все рег.= 0xffff
-   
-   eeprom_rd_regs_I();
   }
   
   volatile void holding_reg_write(unsigned int red_addr, unsigned int value)

@@ -14,9 +14,9 @@ FreeRTOSConfig.h  \
 ../../Source/include/semphr.h  \
 ../../Source/include/queue.h  \
 ../../Source/include/main.h  \
-../../Source/include/d_eeprom.h  \
 fuses.h  \
-dialtek_modbus.h  \
 KORAD_controller.h  \
+../../Source/include/d_eeprom.h  \
+dialtek_modbus.h  \
 KORAD_cmds.h  \
 dialtek_uart.h 
