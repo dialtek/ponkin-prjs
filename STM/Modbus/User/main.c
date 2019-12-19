@@ -5,31 +5,40 @@
 unsigned int wr_reg_addr = 0;
 unsigned int RegisterValue = 0;
 
-/* 
-UART пины: 
-PA2 - TX
-PA3 - RX
+unsigned int LVDBxCHxV[LVDBxChNum];
 
-SPI pins
-PA4 - CS
-PA5 - SCK
-PA6 - MISO
-PA7 - MOSI
+void LVDBxReadOut(void)
+{
+		 // LVDB1 readout
+	 LVDBxChxMeasV(1,&LVDBxCHxV);
+	 for(uint16_t i = 0; i < LVDBxChNum; i++)
+		input_reg_write(i, LVDBxCHxV[i]);
+ 
+	 input_reg_write(56,0xffff); // delimeter
+ 
+	 // LVDB2 readout
+	 LVDBxChxMeasV(2,&LVDBxCHxV);
+	 for(uint16_t i = 0; i < LVDBxChNum; i++)
+		input_reg_write(i+57, LVDBxCHxV[i]);
 
-PE7		CS2
-PE8 	CS3
-PE9 	CS4
-PE10 	CS5
-PE11	CS6
-PE12	CS7
+}
 
-PE13 	Modbus TX EN
-PE14 	Modbus RX EN
-
-PE15		n_Turn_ON_2
-*/
-
+unsigned char ReadModbusID (void)
+{
+	// pins pulled UP
 	
+	unsigned char ID = (unsigned char) ((GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_11) << 3) |				
+																			(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_10) << 2) |
+																			(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_9)  << 1) |
+																			(GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_8)));
+
+	ID = ~ID;			// invert number		
+	ID &= 0x000f; // clear msb nibble 
+	
+	return ID;
+}
+	
+
 
 void modbus_poll(void)
 {
@@ -39,21 +48,11 @@ void modbus_poll(void)
 //////////////////////////// ЧТЕНИЕ HOLDING ////////////////////////// 
          case MODBUS_RHR_CMD:
              
-           //Master_485_LED = ON;
-          
-           holding_reg_write(0,ADCxChxMeasV(ADC_1,Ch1));
-				   holding_reg_write(1,ADCxChxMeasV(ADC_1,Ch2));
-				   holding_reg_write(2,ADCxChxMeasV(ADC_2,Ch3));
-				   holding_reg_write(3,ADCxChxMeasV(ADC_2,Ch4));
-				   holding_reg_write(4,ADCxChxMeasV(ADC_3,Ch5));
-				   holding_reg_write(5,ADCxChxMeasV(ADC_3,Ch6));
-				   holding_reg_write(6,ADCxChxMeasV(ADC_1,Ch7));
-				   holding_reg_write(7,ADCxChxMeasV(ADC_1,Ch8));
-						 
-           modbus_rhr_answer(); // modbus rhr cmd answer
-				   //modbus_reset();
+           MODBUS_LED_ON;
 
-           //Master_485_LED = OFF; // LED toggle
+           modbus_rhr_answer(); // modbus rhr cmd answer
+
+           MODBUS_LED_OFF; // LED toggle
            
          break;
 //////////////////////////// ЗАПИСЬ HOLDING ////////////////////////// 
@@ -70,9 +69,9 @@ void modbus_poll(void)
                case 10: 
 
                     if(RegisterValue == 1)
-											nTurnOn2_HIGH;
+											nTurnOn_1_1_LOW;
 										else 
-											nTurnOn2_LOW;
+											nTurnOn_1_1_HIGH;
                break;
 							 //=====                     
                case 15: 
@@ -86,8 +85,12 @@ void modbus_poll(void)
           break;
 //////////////////////////// ЧТЕНИЕ INPUT ////////////////////////////
           case MODBUS_RIR_CMD:  // чтение input регистров
-           
-           input_reg_write(0,1234);
+          
+					MODBUS_LED_ON;					
+					
+					LVDBxReadOut();
+					
+					MODBUS_LED_OFF; // LED toggle
          
            modbus_rir_answer(); // ответ на запрос
           break;
@@ -95,17 +98,25 @@ void modbus_poll(void)
        } // switch
 }
 
-int main(){ 
-
+int main()
+{ 
+  unsigned char ModbusID = 0;
+	
   InitClock();
 	GPIO_Config();
-
-	modbus_init();
-	RX_EN;
 	
+	ModbusID = ReadModbusID();
+	if(DEV_ID_MODE)
+		set_modbus_id(ModbusID);
+	else
+		set_modbus_id(++ModbusID);
+	
+	modbus_init();
+
 	LVDB_init();
 	//TIM_Config();
 	__enable_irq();
+	
 	
 while(1)
 {	

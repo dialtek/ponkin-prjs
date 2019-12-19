@@ -7,9 +7,13 @@
 #include "stm32f4xx_tim.h"							// ”правление таймером
 #include "misc.h"												// ”правление NVIC - контроль прерываний
 
-#define LED_PORT GPIOD
-#define LED_GREEN (1<<12)
-#define LED_RED (1<<14)
+#define MODBUS_LED_ON   GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_SET)
+#define MODBUS_LED_OFF  GPIO_WriteBit(GPIOA, GPIO_Pin_0, Bit_RESET)
+
+#define DEV_ID_MODE     GPIO_ReadInputDataBit(GPIOB,GPIO_Pin_7) 
+
+#define ON  1
+#define OFF 0
 
 // ѕараметры частоты
 #define cPLLM 4 

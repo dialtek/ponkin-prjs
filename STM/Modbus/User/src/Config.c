@@ -59,8 +59,13 @@ void InitClock(void){
 
 	RCC->CR &= ~RCC_CR_HSION; // page 224, HSI clock 16 MHz Off 
 	
-		  // Тактирование модуля SPI1 и порта А
+	// Тактирование модуля SPI1, SPI2, PORTА
   RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
+	
+	RCC->APB1RSTR |=  RCC_APB1RSTR_SPI2RST;
+  RCC->APB1RSTR &= ~RCC_APB1RSTR_SPI2RST;
+ 
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
   RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
 
 }
@@ -72,42 +77,44 @@ void GPIO_Config(void){
 	
 	GPIO_InitTypeDef GPIO_InitStructure;
 	
-	//Светодиоды
-	GPIO_InitTypeDef gpioConf;														// Объявление структуры
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE); // Включаем тактирование порта D
-	//Инициализация входа, подключенного к светодиоду
-	//Задаем номер вывода
-	gpioConf.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_12|GPIO_Pin_14; 											
-	gpioConf.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
-	gpioConf.GPIO_Speed = GPIO_Speed_50MHz;							// Cкорость
-	gpioConf.GPIO_OType = GPIO_OType_PP;									// Подтяжка резистора
-	gpioConf.GPIO_PuPd = GPIO_PuPd_NOPULL;							  // 
-	GPIO_Init(GPIOD,&gpioConf); 													// Вызов функции инициализации
+	// PORTB
+	//===================================================
+  GPIO_InitTypeDef gpioBConf;														
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE); // Включаем тактирование порта B
+	// Настраиваем ноги SPI2 для работы в режиме альтернативной функции
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource13, GPIO_AF_SPI2);
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource14, GPIO_AF_SPI2);
+  GPIO_PinAFConfig(GPIOB, GPIO_PinSource15, GPIO_AF_SPI2);
 	
-	// Regulator ctrl 
-//	GPIO_InitTypeDef gpioCConf;														
-//	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE); // Включаем тактирование порта 
+  GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_AF;
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;
+  GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_NOPULL;
+  GPIO_InitStructure.GPIO_Pin   = GPIO_Pin_13 | GPIO_Pin_14 | GPIO_Pin_15;
+  GPIO_Init(GPIOB, &GPIO_InitStructure);
+  // TX EN
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0;																			
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
+	GPIO_Init(GPIOB,&GPIO_InitStructure); 													// Вызов функции инициализации
+	// ID
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7 | GPIO_Pin_8 | GPIO_Pin_9 | GPIO_Pin_10 | GPIO_Pin_11;																	
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN; 									// Режим работы
+	GPIO_Init(GPIOB,&GPIO_InitStructure); 													// Вызов функции инициализации
+	//===================================================
 
-//	gpioCConf.GPIO_Pin = GPIO_Pin_8; 											
-//	gpioCConf.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
-//	gpioCConf.GPIO_Speed = GPIO_Speed_50MHz;							  // Cкорость
-//	gpioCConf.GPIO_OType = GPIO_OType_PP;									// Подтяжка резистора
-//	gpioCConf.GPIO_PuPd = GPIO_PuPd_NOPULL;							  // 
-//	GPIO_Init(GPIOC, &gpioCConf); 													// Вызов функции инициализации
+	// SPI1 7 ADC CS 
+	GPIO_InitTypeDef gpioCConf;														
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE); // Включаем тактирование порта C
+	gpioCConf.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2 |GPIO_Pin_3 |GPIO_Pin_4 |GPIO_Pin_5 |GPIO_Pin_6|GPIO_Pin_7|        // SPI1 CSn
+											 GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;	 // ToN 1.n
+	gpioCConf.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
+	gpioCConf.GPIO_Speed = GPIO_Speed_50MHz;							// Cкорость
+	gpioCConf.GPIO_OType = GPIO_OType_PP;									// Подтяжка резистора
+	gpioCConf.GPIO_PuPd = GPIO_PuPd_NOPULL;							  // 
+	GPIO_Init(GPIOC,&gpioCConf); 													// Вызов функции инициализации
 	
-	
-	//6 ADC CS 
-	GPIO_InitTypeDef gpioEConf;														
-	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE); // Включаем тактирование порта E
-
-	gpioEConf.GPIO_Pin = GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9|GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15; 											
-	gpioEConf.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
-	gpioEConf.GPIO_Speed = GPIO_Speed_50MHz;							  // Cкорость
-	gpioEConf.GPIO_OType = GPIO_OType_PP;									// Подтяжка резистора
-	gpioEConf.GPIO_PuPd = GPIO_PuPd_NOPULL;							  // 
-	GPIO_Init(GPIOE,&gpioEConf); 													// Вызов функции инициализации
-	
-			// Настраиваем ноги SPI1 для работы в режиме альтернативной функции
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE); // Включаем тактирование порта A
+	// Настраиваем ноги SPI1 для работы в режиме альтернативной функции
   GPIO_PinAFConfig(GPIOA, GPIO_PinSource7, GPIO_AF_SPI1);
   GPIO_PinAFConfig(GPIOA, GPIO_PinSource5, GPIO_AF_SPI1);
   GPIO_PinAFConfig(GPIOA, GPIO_PinSource6, GPIO_AF_SPI1);
@@ -119,12 +126,25 @@ void GPIO_Config(void){
   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_7 | GPIO_Pin_6 | GPIO_Pin_5;
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
-	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4; 											
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0; 											
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_OUT; 									// Режим работы
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;							  // Cкорость
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;									// резистора Подтяжка 
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_NOPULL;							  // 
 	GPIO_Init(GPIOA,&GPIO_InitStructure); 													// Вызов функции инициализации
+	
+	// PORTD
+	//===================================================
+	// SPI2 7 ADC nCS and 9 x nTurnONs 
+	GPIO_InitTypeDef gpioDConf;														
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOD, ENABLE); // Включаем тактирование порта D
+	gpioDConf.GPIO_Pin = GPIO_Pin_0|GPIO_Pin_1|GPIO_Pin_2 |GPIO_Pin_3 |GPIO_Pin_4 |GPIO_Pin_5 |GPIO_Pin_6|       												// SPI 2 CSn
+											 GPIO_Pin_7|GPIO_Pin_8|GPIO_Pin_9 |GPIO_Pin_10|GPIO_Pin_11|GPIO_Pin_12|GPIO_Pin_13|GPIO_Pin_14|GPIO_Pin_15;	    // ToN 2.n
+	gpioDConf.GPIO_Mode  = GPIO_Mode_OUT; 								// Режим работы
+	gpioDConf.GPIO_Speed = GPIO_Speed_50MHz;							// Cкорость
+	gpioDConf.GPIO_OType = GPIO_OType_PP;									
+	gpioDConf.GPIO_PuPd  = GPIO_PuPd_NOPULL;							// Подтяжка резистора
+	GPIO_Init(GPIOD,&gpioDConf); 													// Вызов функции инициализации
 }
 
 //-----------------------------------------------

@@ -9,8 +9,6 @@ extern volatile char rx_flag;
 //Настройка USART
 //-----------------------------------------------
 void Uart2Init(void){	
-	
-//	// Включаем прерывания
    
 	RCC->APB2ENR |= RCC_AHB1LPENR_GPIOALPEN;// GPIOA Clock ON. Alter function clock ON
 	

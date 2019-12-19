@@ -26,13 +26,13 @@ AdditionalOptionString=
 6=
 7=
 t1=1
-t2=141
-t3=125
-t4=313
+t2=1
+t3=1
+t4=1
 Count=4
 t5=199
 [Directories]
-Include=<default>;\
+Include=<default>;F:\
 Library=
 LinkerScript=
 output=
@@ -41,7 +41,7 @@ enabled=0
 D1=
 V1=
 chip=1
-buildcount=54
+buildcount=55
 [fileformats]
 debug=4
 error=2
@@ -73,7 +73,7 @@ AdditionalOptionString=
 Fixed=
 
 [ProjectLog]
-Days=9
+Days=10
 D1=22-01-2018
 D1_L=8
 D1_L1=[51886]Project Opened.
@@ -180,6 +180,11 @@ D9_L23=[85198]Stopped Editing.
 D9_E=81
 D9_D=0
 D9_L24=[86234]Project Closed.
+D10=16-12-2019
+D10_L=2
+D10_L1=[39962]Project Opened.
+D10_L2=[41940]Project Closed.
 [Units]
 Count=1
-1=main (main)
+1=main
+Link=0

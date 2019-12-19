@@ -9,7 +9,6 @@
 #define SetChMode (uint8_t)0
 #define ReadMode 	(uint8_t)1
 
-
-void Spi1Init(uint8_t mode, uint8_t f);
+void SPIxInit(SPI_TypeDef* SPIx, uint8_t mode, uint8_t f);
 
 #endif

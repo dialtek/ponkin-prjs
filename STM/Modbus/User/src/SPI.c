@@ -1,6 +1,6 @@
 #include "SPI.h"
 
-void Spi1Init(uint8_t mode, uint8_t f)
+void SPIxInit(SPI_TypeDef* SPIx, uint8_t mode, uint8_t f)
 {
 	// mode = 0 - 8 bit  => cmd byte
 	// mode = 1 - 16 bit => data word
@@ -24,7 +24,7 @@ void Spi1Init(uint8_t mode, uint8_t f)
 		default: SPI_freq = SPI_BaudRatePrescaler_128;
 	}
 	
-	SPI_Cmd(SPI1, DISABLE);
+	SPI_Cmd(SPIx, DISABLE);
 		
 	if(mode == 0)
 	{
@@ -38,7 +38,7 @@ void Spi1Init(uint8_t mode, uint8_t f)
 	}	
 
 	// Поскольку сигнал NSS контролируется программно, установим его в единицу(МК - мастер)
-  SPI_NSSInternalSoftwareConfig(SPI1, SPI_NSSInternalSoft_Set);
+  SPI_NSSInternalSoftwareConfig(SPIx, SPI_NSSInternalSoft_Set);
 	
   //Заполняем структуру с параметрами SPI модуля
   SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex; 	// полный дуплекс
@@ -62,8 +62,8 @@ void Spi1Init(uint8_t mode, uint8_t f)
 																																			
   SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB; 									// Первым отправляется старший бит
   SPI_InitStructure.SPI_Mode = SPI_Mode_Master; 											// Режим - мастер
-  SPI_Init(SPI1, &SPI_InitStructure); 																// Настраиваем SPI1
+  SPI_Init(SPIx, &SPI_InitStructure); 																// Настраиваем SPI1
 
-  SPI_Cmd(SPI1, ENABLE); 																							// Включаем модуль SPI1
+  SPI_Cmd(SPIx, ENABLE); 																							// Включаем модуль SPI1
   
 }

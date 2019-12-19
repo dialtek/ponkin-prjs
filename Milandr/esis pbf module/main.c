@@ -64,7 +64,7 @@
 #define modbus_wsr_cmd  0x06    // write single register cmd id
 
 #define com_dev_id 0            // В широковещательном режиме используется адрес 0
-#define dev_id 8               // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
+#define dev_id 7               // modbus id текущего устройства                        <<<<<<<<<<=========================== ID
 #define firmware_ver 13         // версия прошивки текущего устройства
 #define device_family 1         // код семейства устройств: 1 - PBF modules, 2 - extraction modules, 3 - dc hv modules
 #define max_regs_cnt   125      // макс. кол-во регистров для чтения за 1 раз

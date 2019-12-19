@@ -10,34 +10,80 @@ extern "C"
 #include "Config.h"
 #include "SPI.h"
 	
+#define LVDBxChNum 56
+	
+	
 //================================ ADC CSs =============================//
-#define CS1_PORT GPIOA
-#define CSn_PORT GPIOE
+// LVDB 1
+	
+#define SPI1_CSn_PORT GPIOC
 
-#define CS1_LOW  GPIO_WriteBit(GPIOA, GPIO_Pin_4, Bit_RESET)
-#define CS1_HIGH GPIO_WriteBit(GPIOA, GPIO_Pin_4, Bit_SET)
+#define L1_CS1_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_0, Bit_RESET)
+#define L1_CS1_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_0, Bit_SET)
 
-#define CS2_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_7, Bit_RESET)
-#define CS2_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_7, Bit_SET)
+#define L1_CS2_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_1, Bit_RESET)
+#define L1_CS2_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_1, Bit_SET)
 
-#define CS3_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_8, Bit_RESET)
-#define CS3_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_8, Bit_SET)
+#define L1_CS3_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_2, Bit_RESET)
+#define L1_CS3_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_2, Bit_SET)
 
-#define CS4_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_9, Bit_RESET)
-#define CS4_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_9, Bit_SET)
+#define L1_CS4_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_3, Bit_RESET)
+#define L1_CS4_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_3, Bit_SET)
 
-#define CS5_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_10, Bit_RESET)
-#define CS5_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_10, Bit_SET)
+#define L1_CS5_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_4, Bit_RESET)
+#define L1_CS5_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_4, Bit_SET)
 
-#define CS6_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_11, Bit_RESET)
-#define CS6_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_11, Bit_SET)
+#define L1_CS6_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_5, Bit_RESET)
+#define L1_CS6_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_5, Bit_SET)
 
-#define CS7_LOW  GPIO_WriteBit(CSn_PORT, GPIO_Pin_12, Bit_RESET)
-#define CS7_HIGH GPIO_WriteBit(CSn_PORT, GPIO_Pin_12, Bit_SET)
+#define L1_CS7_LOW  GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_6, Bit_RESET)
+#define L1_CS7_HIGH GPIO_WriteBit(SPI1_CSn_PORT, GPIO_Pin_6, Bit_SET)
+
+//----
+
+#define SPI2_CSn_PORT GPIOD
+
+#define L2_CS1_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_0, Bit_RESET)
+#define L2_CS1_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_0, Bit_SET)
+
+#define L2_CS2_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_1, Bit_RESET)
+#define L2_CS2_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_1, Bit_SET)
+
+#define L2_CS3_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_2, Bit_RESET)
+#define L2_CS3_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_2, Bit_SET)
+
+#define L2_CS4_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_3, Bit_RESET)
+#define L2_CS4_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_3, Bit_SET)
+
+#define L2_CS5_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_4, Bit_RESET)
+#define L2_CS5_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_4, Bit_SET)
+
+#define L2_CS6_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_5, Bit_RESET)
+#define L2_CS6_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_5, Bit_SET)
+
+#define L2_CS7_LOW  GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_6, Bit_RESET)
+#define L2_CS7_HIGH GPIO_WriteBit(SPI2_CSn_PORT, GPIO_Pin_6, Bit_SET)
+
 //========================== Voltage regulators ENs ======================//
 
-#define nTurnOn2_LOW   GPIO_WriteBit(GPIOE, GPIO_Pin_15, Bit_RESET)
-#define nTurnOn2_HIGH  GPIO_WriteBit(GPIOE, GPIO_Pin_15, Bit_SET)
+#define nTurnOn_1_1_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_7, Bit_RESET)
+#define nTurnOn_1_1_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_7, Bit_SET)
+#define nTurnOn_1_2_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_8, Bit_RESET)
+#define nTurnOn_1_2_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_8, Bit_SET)
+#define nTurnOn_1_3_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_9, Bit_RESET)
+#define nTurnOn_1_3_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_9, Bit_SET)
+#define nTurnOn_1_4_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_10, Bit_RESET)
+#define nTurnOn_1_4_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_10, Bit_SET)
+#define nTurnOn_1_5_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_11, Bit_RESET)
+#define nTurnOn_1_5_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_11, Bit_SET)
+#define nTurnOn_1_6_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_12, Bit_RESET)
+#define nTurnOn_1_6_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_12, Bit_SET)
+#define nTurnOn_1_7_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_RESET)
+#define nTurnOn_1_7_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_13, Bit_SET)
+#define nTurnOn_1_8_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_14, Bit_RESET)
+#define nTurnOn_1_8_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_14, Bit_SET)
+#define nTurnOn_1_9_LOW   GPIO_WriteBit(GPIOC, GPIO_Pin_15, Bit_RESET)
+#define nTurnOn_1_9_HIGH  GPIO_WriteBit(GPIOC, GPIO_Pin_15, Bit_SET)
 
 //======================= ADCx and meas channel select ===================//
 
@@ -50,14 +96,14 @@ extern "C"
 #define ADC_6				(uint8_t)5
 #define ADC_7				(uint8_t)6
 
-#define Ch1					(uint8_t)0
-#define Ch2					(uint8_t)1
-#define Ch3					(uint8_t)2
-#define Ch4					(uint8_t)3
-#define Ch5					(uint8_t)4
-#define Ch6					(uint8_t)5
-#define Ch7					(uint8_t)6
-#define Ch8					(uint8_t)7
+#define Ch0					(uint8_t)0
+#define Ch1					(uint8_t)1
+#define Ch2					(uint8_t)2
+#define Ch3					(uint8_t)3
+#define Ch4					(uint8_t)4
+#define Ch5					(uint8_t)5
+#define Ch6					(uint8_t)6
+#define Ch7					(uint8_t)7
 
 #define aEN					(uint8_t)1
 #define aDIS				(uint8_t)0
@@ -67,13 +113,13 @@ extern "C"
 //============================= func prototypes =========================//
 void LVDB_init(void);
 
-void ADCxEnDis(uint8_t ADCx, uint8_t state);
+void ADCxEnDis(SPI_TypeDef* SPIx, uint8_t ADCx, uint8_t state);
 
-void ADCsetCh(uint8_t ch);
+void ADCxSetCh(SPI_TypeDef* SPIx, uint8_t ch);
 
-uint16_t ADCxRdCHx(uint8_t ADCx, uint8_t ch);
+uint16_t ADCxRdCHx(SPI_TypeDef* SPIx, uint8_t ADCx, uint8_t ch);
 
-uint16_t ADCxChxMeasV(uint8_t ADCx, uint8_t ch);
+unsigned int ADCxChxMeasV(SPI_TypeDef* SPIx, uint8_t ADCx, uint8_t ch);
 
 void ADCxSetRdFreq(uint16_t f);
 	

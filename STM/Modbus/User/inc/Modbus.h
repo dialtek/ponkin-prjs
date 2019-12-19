@@ -12,10 +12,8 @@ extern "C"
 //============================== TRANSMITTER ENABLE ============================
 
 /* RS485 EN/DIS DEFINE */
-#define TX_EN  GPIO_WriteBit(GPIOE, GPIO_Pin_13, Bit_SET)		// TX_EN active LOW
-#define TX_DIS GPIO_WriteBit(GPIOE, GPIO_Pin_13, Bit_RESET)
-#define RX_EN  GPIO_WriteBit(GPIOE, GPIO_Pin_14, Bit_RESET)	// RX_N active HIGH
-#define RX_DIS GPIO_WriteBit(GPIOE, GPIO_Pin_14, Bit_SET)
+#define TX_EN  GPIO_WriteBit(GPIOB, GPIO_Pin_0, Bit_SET)		// TX_EN active LOW
+#define TX_DIS GPIO_WriteBit(GPIOB, GPIO_Pin_0, Bit_RESET)
 	
 //================================ STATE MACHINE ===============================
 

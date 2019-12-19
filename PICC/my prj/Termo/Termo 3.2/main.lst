@@ -1,4 +1,4 @@
-CCS PCD C Compiler, Version 5.049, 5967               02-янв-19 23:14
+CCS PCD C Compiler, Version 5.049, 5967               16-дек-19 11:07
 
                Filename:   F:\Mega\ponkin-prjs\PICC\my prj\Termo\Termo 3.2\main.lst
 
@@ -3423,11 +3423,11 @@ CCS PCD C Compiler, Version 5.049, 5967               02-янв-19 23:14
 ....................   void UART1_init(){ 
 ....................  
 ....................    U1MODE = (1<<15 | // UARTx is enabled 
-....................              1<<13 | // Discontinue operation when device enters Idle mode  
+....................              0<<13 | // continue operation when device enters Idle mode  
 ....................              0<<12 | // IrDA encoder and decoder disabled 
 ....................              1<<11 | // 1 - UxRTS in Simplex mode, 0 - flow control mode 
 ....................              2<<9  | // UxTX, UxRX, UxCTS and UxRTS pins are enabled and used 
-....................              1<<7  | // 1 = Wake-up enabled 
+....................              0<<7  | // 0 = Wake-up dis 
 ....................              0<<6  | // 0 = Loopback mode is disabled 
 ....................              0<<5  | // Auto-Baud Enable bit, disabled 
 ....................              0<<4  | // Receive Polarity Inversion bit, 0 = UxRX Idle state is '1' 

@@ -292,14 +292,14 @@ Project Directory:
     F:\Mega\ponkin-prjs\PICC\my prj\Termo\Termo 3.2\
 
 Project Files:
-    main.c                                                  [02-ÿםג-19 23:14  CRC=E406F0B4]
+    main.c                                                  [02-ÿםג-19 23:57  CRC=41F11FAE]
     main.h                                                  [02-ÿםג-19 22:14  CRC=7114EDE7]
     C:\Program Files (x86)\PICC\Devices\24HJ128GP506.h      [08-סום-15 15:17  CRC=7713C743]
     ADS1256.h                                               [15-ÿםג-18 16:20  CRC=394CA984]
     dialtek_modbus.h                                        [02-ÿםג-19 23:14  CRC=290B5A77]
     dialtek_modbus.c                                        [28-הוך-18 12:15  CRC=EEB2BE24]
 
-Source signature=0BED2621
+Source signature=69D7551B
 Program memory checksum=0000
 Program memory CRC=0000
 Hex file CRC=78DB

@@ -20,7 +20,7 @@ static unsigned int input_register[125];    // буфер для хранения Read-only пере
 /* HARDWARE INFO */
 
 const char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
-static unsigned char dev_id = 200;             // MODBUS ID устройства   <<<<<<<<<<======== ID
+static unsigned char dev_id = 100;             // MODBUS ID устройства   <<<<<<<<<<======== ID
 const char firmware_ver  = 10;                 // версиЯ прошивки текущего устройства
 const char device_family = 0;                  // код семейства устройств
 const char modbus_ver    = 41;                 // версия MODBUS
@@ -73,7 +73,6 @@ unsigned char rx_flag = 0;
 
     //--------------------------------------------------------------------
     // отправка пакета мастеру
-    RX_DIS;
 	  TX_EN;
     UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id); // ID устройства
     UartSendByte((unsigned char)MODBUS_WSR_CMD);                     // код команды
@@ -85,7 +84,6 @@ unsigned char rx_flag = 0;
     UartSendByte((unsigned char)(CRC16 >> 8));      // msb
     UartSendByte((unsigned char)(CRC16 & 0x00ff));  // lsb 
     TX_DIS;
-		RX_EN;
     //--------------------------------------------------------------------
   }
   
@@ -113,7 +111,6 @@ unsigned char rx_flag = 0;
           CRC16 = modbus_CRC16(crc_buf,(regs2read*2)+3);
           //--------------------------------------------------------------------
           // отправка пакета мастеру 
-					RX_DIS;
 					TX_EN;
           UartSendByte((modbus_id == dev_id) ? dev_id : com_dev_id);   // ID устройства
           UartSendByte((unsigned char)MODBUS_RHR_CMD);                       // код команды
@@ -129,7 +126,6 @@ unsigned char rx_flag = 0;
           UartSendByte((unsigned char)(CRC16 >> 8));      // msb
           UartSendByte((unsigned char)(CRC16 & 0x00ff));  // lsb  
 					TX_DIS;
-					RX_EN;
           //--------------------------------------------------------------------
   
   }
