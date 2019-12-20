@@ -26,7 +26,7 @@ Project File Date:  12/19/2019
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
-Rebuild target 'Source'
+Build target 'Source'
 compiling UART.c...
 User\src\UART.c(69): warning:  #1-D: last line of file ends without a newline
   }
@@ -45,62 +45,10 @@ compiling main.c...
 User\main.c(66): warning:  #223-D: function "LVDBxChxMeasV" declared implicitly
   	 LVDBxChxMeasV(LVDB_1, &LVDBxCHxV);
 User\main.c: 6 warnings, 0 errors
-compiling modbus.c...
-.\User\inc\Modbus.h(42): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned char is_reg (unsigned int reg_addr);
-.\User\inc\Modbus.h(62): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned int get_wr_reg_addr(void);
-.\User\inc\Modbus.h(64): warning:  #815-D: type qualifier on return type is meaningless
-  	volatile unsigned int get_wr_reg_val(void);
-.\User\inc\Modbus.h(66): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned char get_modbus_id(void);
-User\src\modbus.c(229): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned char is_reg (unsigned int reg_addr)
-User\src\modbus.c(271): warning:  #111-D: statement is unreachable
-          break;
-User\src\modbus.c(280): warning:  #111-D: statement is unreachable
-          break;
-User\src\modbus.c(288): warning:  #111-D: statement is unreachable
-          break;
-User\src\modbus.c(301): warning:  #940-D: missing return statement at end of non-void function "modbus_get_poll" 
-    }
-User\src\modbus.c(349): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned int get_wr_reg_addr(void)
-User\src\modbus.c(356): warning:  #815-D: type qualifier on return type is meaningless
-  	volatile unsigned int get_wr_reg_val(void)
-User\src\modbus.c(361): warning:  #815-D: type qualifier on return type is meaningless
-    volatile unsigned char get_modbus_id(void)
-User\src\modbus.c(374): warning:  #1-D: last line of file ends without a newline
-  /*=========================================================================== */
-User\src\modbus.c(15): warning:  #177-D: variable "answer"  was declared but never referenced
-  static unsigned char answer = 0;
-User\src\modbus.c: 14 warnings, 0 errors
-compiling Config.c...
-User\src\Config.c(109): warning:  #177-D: variable "gpioBConf"  was declared but never referenced
-    GPIO_InitTypeDef gpioBConf;														
-User\src\Config.c: 1 warning, 0 errors
-compiling SPI.c...
-User\src\SPI.c(69): warning:  #1-D: last line of file ends without a newline
-  }
-User\src\SPI.c: 1 warning, 0 errors
-compiling misc.c...
-compiling LVDB_ADC.c...
-.\User\inc\LVDB_ADC.h(207): warning:  #1-D: last line of file ends without a newline
-  #endif	/* LVDB_ADC_H */
-User\src\LVDB_ADC.c(148): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  	return (unsigned int)(((float)ADCxRdCHx(SPIx, ADCx, ch) * ADC_lsb) * 1000.0);
-User\src\LVDB_ADC.c: 2 warnings, 0 errors
-compiling stm32f4xx_gpio.c...
-compiling stm32f4xx_spi.c...
-compiling stm32f4xx_rcc.c...
-compiling stm32f4xx_usart.c...
-assembling startup_stm32f407xx.s...
-compiling stm32f4xx_tim.c...
-compiling system_stm32f4xx.c...
 linking...
 Program Size: Code=7312 RO-data=424 RW-data=52 ZI-data=3284  
 FromELF: creating hex file...
-".\Objects\LVDB_controlled.axf" - 0 Error(s), 25 Warning(s).
+".\Objects\LVDB_controlled.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -126,12 +74,12 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.3.0
 
    * Component: Keil::Device:Startup:2.6.3
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:05
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

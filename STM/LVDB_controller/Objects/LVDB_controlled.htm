@@ -3,11 +3,11 @@
 <title>Static Call Graph - [.\Objects\LVDB_controlled.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\LVDB_controlled.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Dec 19 17:33:12 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Dec 20 13:12:01 2019
 <BR><P>
-<H3>Maximum Stack Usage =        160 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        168 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
-__rt_entry_main &rArr; main &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
+__rt_entry_main &rArr; main &rArr; modbus_poll &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
 <P>
 <H3>
 Functions with no stack information
@@ -243,8 +243,8 @@ Global Symbols
 <P><STRONG><a name="[ce]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[6c]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
-<LI>Call Chain = __rt_entry_main &rArr; main &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
+<BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
+<LI>Call Chain = __rt_entry_main &rArr; main &rArr; modbus_poll &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
@@ -748,7 +748,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxChxMeasV
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;input_reg_write
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+<BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_poll
 </UL>
 
 <P><STRONG><a name="[8f]"></a>LVDBxSupplyLogic</STRONG> (Thumb, 550 bytes, Stack size 16 bytes, main.o(i.LVDBxSupplyLogic))
@@ -901,14 +901,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxReadOut
 </UL>
 
-<P><STRONG><a name="[6d]"></a>main</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = main &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
+<P><STRONG><a name="[6d]"></a>main</STRONG> (Thumb, 60 bytes, Stack size 0 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = main &rArr; modbus_poll &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDB_init
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_poll
 <LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadModbusID
-<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxReadOut
 <LI><a href="#[9c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;set_modbus_id
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_init
 <LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;InitClock
@@ -935,11 +934,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[9e]"></a>modbus_poll</STRONG> (Thumb, 158 bytes, Stack size 8 bytes, main.o(i.modbus_poll))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = modbus_poll &rArr; modbus_get_poll &rArr; modbus_rx_CRC_check &rArr; modbus_CRC16
+<P><STRONG><a name="[9e]"></a>modbus_poll</STRONG> (Thumb, 162 bytes, Stack size 8 bytes, main.o(i.modbus_poll))
+<BR><BR>[Stack]<UL><LI>Max Depth = 168<LI>Call Chain = modbus_poll &rArr; LVDBxReadOut &rArr; LVDBxChxMeasV &rArr; ADCxChxMeasV &rArr; ADCxRdCHx &rArr; SPIxInit &rArr; SPI_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADCxSetRdFreq
 <LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxSupplyLogic
+<LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxReadOut
 <LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LVDBxGetState
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;modbus_wsr_answer

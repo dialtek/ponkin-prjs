@@ -72,7 +72,6 @@ Section Cross References
     main.o(i.main) refers to modbus.o(i.set_modbus_id) for set_modbus_id
     main.o(i.main) refers to modbus.o(i.modbus_init) for modbus_init
     main.o(i.main) refers to lvdb_adc.o(i.LVDB_init) for LVDB_init
-    main.o(i.main) refers to main.o(i.LVDBxReadOut) for LVDBxReadOut
     main.o(i.main) refers to main.o(i.modbus_poll) for modbus_poll
     main.o(i.modbus_poll) refers to modbus.o(i.modbus_get_poll) for modbus_get_poll
     main.o(i.modbus_poll) refers to stm32f4xx_gpio.o(i.GPIO_WriteBit) for GPIO_WriteBit
@@ -83,6 +82,7 @@ Section Cross References
     main.o(i.modbus_poll) refers to modbus.o(i.get_wr_reg_val) for get_wr_reg_val
     main.o(i.modbus_poll) refers to main.o(i.LVDBxSupplyLogic) for LVDBxSupplyLogic
     main.o(i.modbus_poll) refers to lvdb_adc.o(i.ADCxSetRdFreq) for ADCxSetRdFreq
+    main.o(i.modbus_poll) refers to main.o(i.LVDBxReadOut) for LVDBxReadOut
     main.o(i.modbus_poll) refers to modbus.o(i.modbus_rir_answer) for modbus_rir_answer
     main.o(i.modbus_poll) refers to main.o(.data) for RegisterAddr
     spi.o(i.SPIxInit) refers to stm32f4xx_spi.o(i.SPI_Cmd) for SPI_Cmd
@@ -706,11 +706,11 @@ Image Symbol Table
     i.holding_reg_write                      0x08001428   Section        0  modbus.o(i.holding_reg_write)
     i.input_reg_write                        0x08001434   Section        0  modbus.o(i.input_reg_write)
     i.main                                   0x08001440   Section        0  main.o(i.main)
-    i.modbus_CRC16                           0x08001484   Section        0  modbus.o(i.modbus_CRC16)
-    modbus_CRC16                             0x08001485   Thumb Code    70  modbus.o(i.modbus_CRC16)
-    i.modbus_get_poll                        0x080014cc   Section        0  modbus.o(i.modbus_get_poll)
-    i.modbus_init                            0x0800156c   Section        0  modbus.o(i.modbus_init)
-    i.modbus_poll                            0x08001578   Section        0  main.o(i.modbus_poll)
+    i.modbus_CRC16                           0x08001480   Section        0  modbus.o(i.modbus_CRC16)
+    modbus_CRC16                             0x08001481   Thumb Code    70  modbus.o(i.modbus_CRC16)
+    i.modbus_get_poll                        0x080014c8   Section        0  modbus.o(i.modbus_get_poll)
+    i.modbus_init                            0x08001568   Section        0  modbus.o(i.modbus_init)
+    i.modbus_poll                            0x08001574   Section        0  main.o(i.modbus_poll)
     i.modbus_reset                           0x08001624   Section        0  modbus.o(i.modbus_reset)
     i.modbus_rhr_answer                      0x0800164c   Section        0  modbus.o(i.modbus_rhr_answer)
     i.modbus_rir_answer                      0x08001798   Section        0  modbus.o(i.modbus_rir_answer)
@@ -988,10 +988,10 @@ Image Symbol Table
     get_wr_reg_val                           0x0800141d   Thumb Code     6  modbus.o(i.get_wr_reg_val)
     holding_reg_write                        0x08001429   Thumb Code     8  modbus.o(i.holding_reg_write)
     input_reg_write                          0x08001435   Thumb Code     8  modbus.o(i.input_reg_write)
-    main                                     0x08001441   Thumb Code    64  main.o(i.main)
-    modbus_get_poll                          0x080014cd   Thumb Code   132  modbus.o(i.modbus_get_poll)
-    modbus_init                              0x0800156d   Thumb Code    12  modbus.o(i.modbus_init)
-    modbus_poll                              0x08001579   Thumb Code   158  main.o(i.modbus_poll)
+    main                                     0x08001441   Thumb Code    60  main.o(i.main)
+    modbus_get_poll                          0x080014c9   Thumb Code   132  modbus.o(i.modbus_get_poll)
+    modbus_init                              0x08001569   Thumb Code    12  modbus.o(i.modbus_init)
+    modbus_poll                              0x08001575   Thumb Code   162  main.o(i.modbus_poll)
     modbus_reset                             0x08001625   Thumb Code    28  modbus.o(i.modbus_reset)
     modbus_rhr_answer                        0x0800164d   Thumb Code   292  modbus.o(i.modbus_rhr_answer)
     modbus_rir_answer                        0x08001799   Thumb Code   292  modbus.o(i.modbus_rir_answer)
@@ -1137,12 +1137,12 @@ Memory Map of the image
     0x0800141c   0x0800141c   0x0000000c   Code   RO          208    i.get_wr_reg_val    modbus.o
     0x08001428   0x08001428   0x0000000c   Code   RO          210    i.holding_reg_write  modbus.o
     0x08001434   0x08001434   0x0000000c   Code   RO          212    i.input_reg_write   modbus.o
-    0x08001440   0x08001440   0x00000044   Code   RO          340    i.main              main.o
-    0x08001484   0x08001484   0x00000046   Code   RO          214    i.modbus_CRC16      modbus.o
-    0x080014ca   0x080014ca   0x00000002   PAD
-    0x080014cc   0x080014cc   0x000000a0   Code   RO          215    i.modbus_get_poll   modbus.o
-    0x0800156c   0x0800156c   0x0000000c   Code   RO          216    i.modbus_init       modbus.o
-    0x08001578   0x08001578   0x000000ac   Code   RO          341    i.modbus_poll       main.o
+    0x08001440   0x08001440   0x00000040   Code   RO          340    i.main              main.o
+    0x08001480   0x08001480   0x00000046   Code   RO          214    i.modbus_CRC16      modbus.o
+    0x080014c6   0x080014c6   0x00000002   PAD
+    0x080014c8   0x080014c8   0x000000a0   Code   RO          215    i.modbus_get_poll   modbus.o
+    0x08001568   0x08001568   0x0000000c   Code   RO          216    i.modbus_init       modbus.o
+    0x08001574   0x08001574   0x000000b0   Code   RO          341    i.modbus_poll       main.o
     0x08001624   0x08001624   0x00000028   Code   RO          217    i.modbus_reset      modbus.o
     0x0800164c   0x0800164c   0x0000014c   Code   RO          218    i.modbus_rhr_answer  modbus.o
     0x08001798   0x08001798   0x0000014c   Code   RO          219    i.modbus_rir_answer  modbus.o

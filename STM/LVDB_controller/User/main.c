@@ -32,31 +32,31 @@ void LVDBxGetState(void)
 }
 void LVDBxSupplyLogic(unsigned int RegAddr, unsigned int RegVal)
 {
-		switch(RegAddr)
-		 {     
-			   // LVDB1 TurnOn control
-				 case 20:	(RegVal == 1) ? nTurnOn_1_1_LOW : nTurnOn_1_1_HIGH;	break;                  
-				 case 21:	(RegVal == 1) ? nTurnOn_1_2_LOW : nTurnOn_1_2_HIGH;	break;
-				 case 22:	(RegVal == 1) ? nTurnOn_1_3_LOW : nTurnOn_1_3_HIGH;	break;
-				 case 23:	(RegVal == 1) ? nTurnOn_1_4_LOW : nTurnOn_1_4_HIGH;	break;
-				 case 24:	(RegVal == 1) ? nTurnOn_1_5_LOW : nTurnOn_1_5_HIGH;	break;
-				 case 25:	(RegVal == 1) ? nTurnOn_1_6_LOW : nTurnOn_1_6_HIGH;	break;
-				 case 26:	(RegVal == 1) ? nTurnOn_1_7_LOW : nTurnOn_1_7_HIGH;	break;
-				 case 27:	(RegVal == 1) ? nTurnOn_1_8_LOW : nTurnOn_1_8_HIGH;	break;
-				 case 28:	(RegVal == 1) ? nTurnOn_1_9_LOW : nTurnOn_1_9_HIGH;	break;
-			 	 // LVDB2 TurnOn control 
-				 case 29:	(RegVal == 1) ? nTurnOn_2_1_LOW : nTurnOn_2_1_HIGH;	break;                  
-				 case 30:	(RegVal == 1) ? nTurnOn_2_2_LOW : nTurnOn_2_2_HIGH;	break;
-				 case 31:	(RegVal == 1) ? nTurnOn_2_3_LOW : nTurnOn_2_3_HIGH;	break;
-				 case 32:	(RegVal == 1) ? nTurnOn_2_4_LOW : nTurnOn_2_4_HIGH;	break;
-				 case 33:	(RegVal == 1) ? nTurnOn_2_5_LOW : nTurnOn_2_5_HIGH;	break;
-				 case 34:	(RegVal == 1) ? nTurnOn_2_6_LOW : nTurnOn_2_6_HIGH;	break;
-				 case 35:	(RegVal == 1) ? nTurnOn_2_7_LOW : nTurnOn_2_7_HIGH;	break;
-				 case 36:	(RegVal == 1) ? nTurnOn_2_8_LOW : nTurnOn_2_8_HIGH;	break;
-				 case 37:	(RegVal == 1) ? nTurnOn_2_9_LOW : nTurnOn_2_9_HIGH;	break;
-				 //=====
-				 default: break;
-		 } 
+	switch(RegAddr)
+	 {     
+			 // LVDB1 TurnOn control
+			 case 20:	(RegVal == 1) ? nTurnOn_1_1_LOW : nTurnOn_1_1_HIGH;	break;                  
+			 case 21:	(RegVal == 1) ? nTurnOn_1_2_LOW : nTurnOn_1_2_HIGH;	break;
+			 case 22:	(RegVal == 1) ? nTurnOn_1_3_LOW : nTurnOn_1_3_HIGH;	break;
+			 case 23:	(RegVal == 1) ? nTurnOn_1_4_LOW : nTurnOn_1_4_HIGH;	break;
+			 case 24:	(RegVal == 1) ? nTurnOn_1_5_LOW : nTurnOn_1_5_HIGH;	break;
+			 case 25:	(RegVal == 1) ? nTurnOn_1_6_LOW : nTurnOn_1_6_HIGH;	break;
+			 case 26:	(RegVal == 1) ? nTurnOn_1_7_LOW : nTurnOn_1_7_HIGH;	break;
+			 case 27:	(RegVal == 1) ? nTurnOn_1_8_LOW : nTurnOn_1_8_HIGH;	break;
+			 case 28:	(RegVal == 1) ? nTurnOn_1_9_LOW : nTurnOn_1_9_HIGH;	break;
+			 // LVDB2 TurnOn control 
+			 case 29:	(RegVal == 1) ? nTurnOn_2_1_LOW : nTurnOn_2_1_HIGH;	break;                  
+			 case 30:	(RegVal == 1) ? nTurnOn_2_2_LOW : nTurnOn_2_2_HIGH;	break;
+			 case 31:	(RegVal == 1) ? nTurnOn_2_3_LOW : nTurnOn_2_3_HIGH;	break;
+			 case 32:	(RegVal == 1) ? nTurnOn_2_4_LOW : nTurnOn_2_4_HIGH;	break;
+			 case 33:	(RegVal == 1) ? nTurnOn_2_5_LOW : nTurnOn_2_5_HIGH;	break;
+			 case 34:	(RegVal == 1) ? nTurnOn_2_6_LOW : nTurnOn_2_6_HIGH;	break;
+			 case 35:	(RegVal == 1) ? nTurnOn_2_7_LOW : nTurnOn_2_7_HIGH;	break;
+			 case 36:	(RegVal == 1) ? nTurnOn_2_8_LOW : nTurnOn_2_8_HIGH;	break;
+			 case 37:	(RegVal == 1) ? nTurnOn_2_9_LOW : nTurnOn_2_9_HIGH;	break;
+			 //=====
+			 default: break;
+	 } 
 }
 	
 
@@ -123,7 +123,7 @@ void modbus_poll(void)
 				 
 				 		switch(RegisterAddr)
 						{ 
-							case 30: 
+							case 38: 
 								ADCxSetRdFreq(RegisterValue);
 							break;
 							//=====
@@ -165,8 +165,7 @@ int main()
 	LVDB_init();
 	//TIM_Config();
 	__enable_irq();
-	
-	
+
 while(1)
 {	
   modbus_poll();

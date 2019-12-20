@@ -27,11 +27,11 @@ void Uart2Init(void){
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource3, GPIO_AF_USART2);
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_USART2);
 	
-	//------------настройка UART 26.25M@115200
-	RCC->APB1ENR	|= RCC_APB1ENR_USART2EN;													//USART2 Clock ON
-	USART2->BRR = 0xE4;																					  	//Bodrate for 115200
-	USART2->CR1  |= USART_CR1_UE | USART_CR1_TE | USART_CR1_RE; 		//USART2 ON, TX ON, RX ON
-	NVIC_SetPriority(USART2_IRQn, 0); 															//Прерывание от UART, приоритет 0, самый высокий
+	//------------настройка UART 26.25M@230400
+	RCC->APB1ENR	|= RCC_APB1ENR_USART2EN;													// USART2 Clock ON
+	USART2->BRR = 0x72;  																			      // baudrate 230400, 0xE4 for 115200
+	USART2->CR1  |= USART_CR1_UE | USART_CR1_TE | USART_CR1_RE; 		// USART2 ON, TX ON, RX ON
+	NVIC_SetPriority(USART2_IRQn, 0); 															// Прерывание от UART, приоритет 0, самый высокий
 	
 			//Разрешение прерываний по приему данных
 	USART_ITConfig(USART2, USART_IT_RXNE, ENABLE); 
