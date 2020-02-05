@@ -1,5 +1,5 @@
 
-**** 07/17/19 10:54:40 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 01/03/20 19:44:45 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
 
@@ -38,11 +38,19 @@ X_VT1         N150402 N15106 0 awb2n3904 PARAMS:
 +              
 R_R2         N150402 N16639  100R TC=0,0 
 V_V2         N16639 0 12V
+R_R3         N18082 N178960  100R TC=0,0 
+R_R4         0 N18482  10k TC=0,0 
+V_V3         N18082 0  
++SIN 0 3.3 500HZ 0 0 0
+V_V4         N181380 0 12V
+R_R5         0 N18482  100K TC=0,0 
+X_Q1         N181380 N178960 N18482 awbmmbt3904 PARAMS:                        
++                     
 
 **** RESUMING bias.cir ****
 .END
 
-**** 07/17/19 10:54:40 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 01/03/20 19:44:45 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
 
@@ -55,54 +63,54 @@ V_V2         N16639 0 12V
 
 
 
-               X_VT1.model4    
-               NPN             
-       LEVEL    1            
-          IS  172.800000E-18 
-          EG    1.206        
-          BF  254.395        
-          NF     .85         
-         VAF   10            
-         IKF     .016374     
-         ISE    9.974460E-15 
-          NE    1.20863      
-          BR     .1          
-          NR     .891964     
-         VAR    7.74046      
-         IKR     .163741     
-         ISC    9.974460E-15 
-          NC    2.84343      
-         ISS    0            
-          RB   28.3394       
-         RBM     .01         
-         IRB     .01         
-          RE    1.339110E-03 
-          RC    2.08353      
-         CJE    4.566140E-12 
-         VJE     .4          
-         MJE     .245712     
-         CJC    3.724850E-12 
-         VJC     .4          
-         MJC     .236002     
-        XCJC     .8          
-         CJS    0            
-         VJS     .75         
-         MJS     .5          
-          FC     .519152     
-          TF  481.412000E-12 
-         XTF     .9628       
-         VTF    9.52193      
-         ITF     .011333     
-          TR    1.303990E-06 
-         XTB    1.20888      
-         XTI    1.34879      
-          KF    0            
-          AF    1            
-          CN    2.42         
-           D     .87         
+               X_VT1.model4    X_Q1.model4     
+               NPN             NPN             
+       LEVEL    1               1            
+          IS  172.800000E-18   10.000000E-15 
+          EG    1.206                        
+          BF  254.395         360            
+          NF     .85            1            
+         VAF   10              62.5          
+         IKF     .016374         .05         
+         ISE    9.974460E-15  250.000000E-15 
+          NE    1.20863         1.55         
+          BR     .1              .4842       
+          NR     .891964         .9657       
+         VAR    7.74046        28.3          
+         IKR     .163741         .08         
+         ISC    9.974460E-15                 
+          NC    2.84343                      
+         ISS    0               0            
+          RB   28.3394          1.14         
+         RBM     .01            1.14         
+         IRB     .01                         
+          RE    1.339110E-03     .745        
+          RC    2.08353         1.2          
+         CJE    4.566140E-12    4.541300E-12 
+         VJE     .4              .1037       
+         MJE     .245712         .1514       
+         CJC    3.724850E-12    3.664800E-12 
+         VJC     .4              .4339       
+         MJC     .236002         .2218       
+        XCJC     .8             1            
+         CJS    0               0            
+         VJS     .75             .7          
+         MJS     .5              .5          
+          FC     .519152                     
+          TF  481.412000E-12  392.100000E-12 
+         XTF     .9628          1            
+         VTF    9.52193       500            
+         ITF     .011333         .2          
+          TR    1.303990E-06  670.000000E-09 
+         XTB    1.20888         1.5815       
+         XTI    1.34879                      
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
 
 
-**** 07/17/19 10:54:40 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 01/03/20 19:44:45 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
 
@@ -117,7 +125,11 @@ V_V2         N16639 0 12V
  NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
 
 
-(N14711)    0.0000 (N15106) 39.60E-09 (N16639)   12.0000 (N150402)   12.0000    
+(N14711)    0.0000 (N15106) 39.60E-09 (N16639)   12.0000 (N18082)    0.0000     
+
+(N18482) 130.1E-09 (N150402)   12.0000                   (N178960) 2.480E-09    
+
+(N181380)   12.0000                   
 
 
 
@@ -127,14 +139,16 @@ V_V2         N16639 0 12V
 
     V_V1         1.200E-10
     V_V2        -1.464E-10
+    V_V3         2.480E-11
+    V_V4        -3.912E-11
 
-    TOTAL POWER DISSIPATION   1.76E-09  WATTS
+    TOTAL POWER DISSIPATION   2.23E-09  WATTS
 
 
 
           JOB CONCLUDED
 
-**** 07/17/19 10:54:40 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+**** 01/03/20 19:44:45 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
 
@@ -146,5 +160,5 @@ V_V2         N16639 0 12V
 
 
 
-  Total job time (using Solver 1)   =         .03
+  Total job time (using Solver 1)   =         .06
 

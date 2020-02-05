@@ -557,9 +557,9 @@ Image Symbol Table
     SystemInit                               0x08000491   Thumb Code    54  system_mdr32f9qx.o(i.SystemInit)
     delay_init                               0x080004d1   Thumb Code    18  milkites_delay.o(i.delay_init)
     delay_ms                                 0x080004e3   Thumb Code    40  milkites_delay.o(i.delay_ms)
-    main                                     0x0800050d   Thumb Code   128  main.o(i.main)
-    Region$$Table$$Base                      0x0800059c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080005bc   Number         0  anon$$obj.o(Region$$Table)
+    main                                     0x0800050d   Thumb Code   132  main.o(i.main)
+    Region$$Table$$Base                      0x080005a0   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080005c0   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x2000001c   Data           4  system_mdr32f9qx.o(.data)
     __libspace_start                         0x20000020   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x20000080   Data           0  libspace.o(.bss)
@@ -572,9 +572,9 @@ Memory Map of the image
 
   Image Entry point : 0x0800015d
 
-  Load Region LR_1 (Base: 0x08000000, Size: 0x000005dc, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x08000000, Size: 0x000005e0, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000005bc, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000005c0, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -654,19 +654,19 @@ Memory Map of the image
     0x080004d0   0x080004d0   0x00000012   Code   RO          118    i.delay_init        milkites_delay.o
     0x080004e2   0x080004e2   0x00000028   Code   RO          119    i.delay_ms          milkites_delay.o
     0x0800050a   0x0800050a   0x00000002   PAD
-    0x0800050c   0x0800050c   0x00000090   Code   RO            4    i.main              main.o
-    0x0800059c   0x0800059c   0x00000020   Data   RO          806    Region$$Table       anon$$obj.o
+    0x0800050c   0x0800050c   0x00000094   Code   RO            4    i.main              main.o
+    0x080005a0   0x080005a0   0x00000020   Data   RO          806    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080005bc, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x080005c0, Size: 0x00000020, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x080005bc   0x0000001c   Data   RW          170    .data               milkites_display.o
-    0x2000001c   0x080005d8   0x00000004   Data   RW          308    .data               system_mdr32f9qx.o
+    0x20000000   0x080005c0   0x0000001c   Data   RW          170    .data               milkites_display.o
+    0x2000001c   0x080005dc   0x00000004   Data   RW          308    .data               system_mdr32f9qx.o
 
 
-    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x080005dc, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x20000020, Load base: 0x080005e0, Size: 0x00000660, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -682,7 +682,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       144         16          0          0          0       6011   main.o
+       148         16          0          0          0       6043   main.o
        124         20          0          0          0       1816   milkites_adc.o
         94          0          0          0          0       1471   milkites_delay.o
        266         26          0         28          0       2877   milkites_display.o
@@ -691,7 +691,7 @@ Image component sizes
        208         24          0          4          0       1399   system_mdr32f9qx.o
 
     ----------------------------------------------------------------------
-       964        134        224         32       1536      15267   Object Totals
+       968        134        224         32       1536      15299   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          0          0          0   (incl. Padding)
 
@@ -740,15 +740,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1244        150        224         32       1632      14963   Grand Totals
-      1244        150        224         32       1632      14963   ELF Image Totals
-      1244        150        224         32          0          0   ROM Totals
+      1248        150        224         32       1632      14995   Grand Totals
+      1248        150        224         32       1632      14995   ELF Image Totals
+      1248        150        224         32          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1468 (   1.43kB)
+    Total RO  Size (Code + RO Data)                 1472 (   1.44kB)
     Total RW  Size (RW Data + ZI Data)              1664 (   1.63kB)
-    Total ROM Size (Code + RO Data + RW Data)       1500 (   1.46kB)
+    Total ROM Size (Code + RO Data + RW Data)       1504 (   1.47kB)
 
 ==============================================================================
 

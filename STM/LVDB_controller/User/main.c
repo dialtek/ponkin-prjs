@@ -4,6 +4,8 @@
 
 unsigned int RegisterAddr  = 0;
 unsigned int RegisterValue = 0;
+unsigned int FirmVer = 0;
+unsigned int SPIsclk_Fp = 4;
 
 unsigned int LVDBxCHxV[LVDBxChNum];
 
@@ -101,12 +103,14 @@ void modbus_poll(void)
 //////////////////////////// ◊“≈Õ»≈ HOLDING ////////////////////////// 
          case MODBUS_RHR_CMD:
              
-            MODBUS_LED_ON;
+            MODBUS_LED_ON;										// LED toggle
 				 
-						LVDBxGetState();
+						LVDBxGetState();									// LVDBx read
+					  holding_reg_write(38,SPIsclk_Fp); // SPI sclk parameter
+					  holding_reg_write(39,FirmVer); 		// dev firm version
 				 
-            modbus_rhr_answer(); // modbus rhr cmd answer
-            MODBUS_LED_OFF; 	   // LED toggle
+            modbus_rhr_answer(); 							// modbus rhr cmd answer
+            MODBUS_LED_OFF; 	  						  // LED toggle
            
          break;
 //////////////////////////// «¿œ»—‹ HOLDING ////////////////////////// 
@@ -124,7 +128,8 @@ void modbus_poll(void)
 				 		switch(RegisterAddr)
 						{ 
 							case 38: 
-								ADCxSetRdFreq(RegisterValue);
+								SPIsclk_Fp = RegisterValue;
+								ADCxSetRdFreq(SPIsclk_Fp);
 							break;
 							//=====
 							default: break;
@@ -150,6 +155,7 @@ void modbus_poll(void)
 int main()
 { 
   unsigned char ModbusID = 0;
+	FirmVer = 11;								// dev firmvare version
 	
   InitClock();
 	GPIO_Config();
@@ -158,12 +164,11 @@ int main()
 	if(DEV_ID_MODE)
 		set_modbus_id(ModbusID);
 	else
-		set_modbus_id(++ModbusID);
+		set_modbus_id(ModbusID*10);
 	
 	modbus_init();
 
 	LVDB_init();
-	//TIM_Config();
 	__enable_irq();
 
 while(1)

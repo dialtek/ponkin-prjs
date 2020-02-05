@@ -1,4 +1,4 @@
-Microchip Technology Inc, vv3_31 (A) 
+Microchip Technology Inc, vv3_31 (A) |
 
 Tool Name:
   c:\program files (x86)\microchip\mplab c30\bin\bin\..\bin/pic30-elf-ld.exe
@@ -32,10 +32,10 @@ Command:
   build/default/production/dialtek_uart.o \
   build/default/production/d_SPI.o \
   build/default/production/d_eeprom.o \
-  build/default/production/main.o \
   build/default/production/KORAD_cmds.o \
   build/default/production/KORAD_controller.o \
   build/default/production/KORAD_uart.o \
+  build/default/production/main.o \
   --defsym=__MPLAB_BUILD=1 \
   --stack=16 \
   -Map=dist/default/production/KORAD_controller_RTOS.X.production.map \
@@ -67,173 +67,174 @@ section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x1d0           0x2b8  (696)
 .const                       0x3d0                0x94            0xde  (222)
-.text.task_ModbusSM          0x464               0x212           0x31b  (795)
-.text.modbus_rx_CRC_check     0x676               0x114           0x19e  (414)
-.text.xQueueSemaphoreTake     0x78a               0x112           0x19b  (411)
-.text.xTaskGenericNotifyFromISR     0x89c               0x108           0x18c  (396)
-.text.modbus_rhr_answer      0x9a4               0x108           0x18c  (396)
-.text.modbus_rir_answer      0xaac               0x108           0x18c  (396)
-.text.xTaskGenericNotify     0xbb4                0xec           0x162  (354)
-.text.xTaskNotifyWait        0xca0                0xe4           0x156  (342)
-.text.xQueueGenericSend      0xd84                0xe4           0x156  (342)
-.text.vTaskPrioritySet       0xe68                0xde           0x14d  (333)
-.text.xTaskIncrementTick     0xf46                0xdc           0x14a  (330)
-.text.xQueuePeek            0x1022                0xdc           0x14a  (330)
-.text.eeprom_src_restore    0x10fe                0xd8           0x144  (324)
-.text.xQueueReceive         0x11d6                0xd6           0x141  (321)
-.text.prvInitialiseNewTask    0x12ac                0xd0           0x138  (312)
-.text.RestoreCfg            0x137c                0xc8           0x12c  (300)
-.text.prvCopyDataToQueue    0x1444                0xb4           0x10e  (270)
-.text.xTaskResumeAll        0x14f8                0xa8            0xfc  (252)
-.text.xTaskPriorityInherit    0x15a0                0x9c            0xea  (234)
-.text.modbus_wsr_answer     0x163c                0x9c            0xea  (234)
-.text.vTaskPriorityDisinheritAfterTimeout    0x16d8                0x98            0xe4  (228)
-.text.modbus_get_poll       0x1770                0x98            0xe4  (228)
-.text.KORAD_SetVoltage      0x1808                0x8e            0xd5  (213)
-.text.pxPortInitialiseStack    0x1896                0x8c            0xd2  (210)
-.text.vTaskNotifyGiveFromISR    0x1922                0x8a            0xcf  (207)
-.text.task_KORAD            0x19ac                0x8a            0xcf  (207)
-.text.vTaskSwitchContext    0x1a36                0x88            0xcc  (204)
-.text.Timer9_init           0x1abe                0x88            0xcc  (204)
-.text.xQueueGenericReset    0x1b46                0x84            0xc6  (198)
-.text.KORAD_SetCurrent      0x1bca                0x84            0xc6  (198)
-.text.prvAddNewTaskToReadyList    0x1c4e                0x7c            0xba  (186)
-.text.KORAD_GetVoltage      0x1cca                0x7a            0xb7  (183)
-.text.KORAD_GetVSets        0x1d44                0x7a            0xb7  (183)
-.text.vTaskSuspend          0x1dbe                0x76            0xb1  (177)
-.text.xTaskPriorityDisinherit    0x1e34                0x76            0xb1  (177)
-.text.main                  0x1eaa                0x74            0xae  (174)
-.text.KORAD_GetCurrent      0x1f1e                0x74            0xae  (174)
-.text.KORAD_GetISets        0x1f92                0x74            0xae  (174)
-.text.KORAD_GetStatus       0x2006                0x74            0xae  (174)
-.text.modbus_CRC16          0x207a                0x72            0xab  (171)
-.text.xQueueGenericSendFromISR    0x20ec                0x6e            0xa5  (165)
-.text.xTaskRemoveFromEventList    0x215a                0x6c            0xa2  (162)
-.text.ulTaskNotifyTake      0x21c6                0x6c            0xa2  (162)
-.text.xQueueReceiveFromISR    0x2232                0x6c            0xa2  (162)
-.text.xTaskCheckForTimeOut    0x229e                0x6a            0x9f  (159)
-.text.xTaskCreate           0x2308                0x68            0x9c  (156)
-.text.xTaskResumeFromISR    0x2370                0x68            0x9c  (156)
-.text.xQueueGiveFromISR     0x23d8                0x68            0x9c  (156)
-.text.eeprom_wr_page        0x2440                0x68            0x9c  (156)
-.text.prvUnlockQueue        0x24a8                0x66            0x99  (153)
-.text.vListInsert           0x250e                0x60            0x90  (144)
-.text.EEPROM_CRC16          0x256e                0x60            0x90  (144)
-.text.eeprom_src_save       0x25ce                0x5c            0x8a  (138)
-.dinit                      0x262a                0x5c            0x8a  (138)
-.text.pvPortMalloc          0x2686                0x5a            0x87  (135)
-.text.vTaskResume           0x26e0                0x5a            0x87  (135)
-.text.prvAddCurrentTaskToDelayedList    0x273a                0x5a            0x87  (135)
-.text.vTaskRemoveFromUnorderedEventList    0x2794                0x54            0x7e  (126)
-.text.UartInit              0x27e8                0x52            0x7b  (123)
-.text                       0x283a                0x50            0x78  (120)
-.text.eeprom_rd_regs_H      0x288a                0x4c            0x72  (114)
-.text.eeprom_rd_regs_I      0x28d6                0x4c            0x72  (114)
-.text.uxListRemove          0x2922                0x48            0x6c  (108)
-.text.Uart2Init             0x296a                0x48            0x6c  (108)
-.text.xQueueGenericCreate    0x29b2                0x44            0x66  (102)
-.text.vTaskStartScheduler    0x29f6                0x40            0x60  (96)
-.text.prvCopyDataFromQueue    0x2a36                0x40            0x60  (96)
-.text.vListInsertEnd        0x2a76                0x3c            0x5a  (90)
-.text.xTaskNotifyStateClear    0x2ab2                0x3a            0x57  (87)
-.text.SPI2_init             0x2aec                0x3a            0x57  (87)
-.text.eeprom_wr_regs        0x2b26                0x3a            0x57  (87)
-.text.prvInitialiseTaskLists    0x2b60                0x38            0x54  (84)
-.text.xQueuePeekFromISR     0x2b98                0x38            0x54  (84)
-.text.eeprom_rd_CRC         0x2bd0                0x38            0x54  (84)
-.text.eeprom_clear_page     0x2c08                0x38            0x54  (84)
-.text.SaveCfg               0x2c40                0x38            0x54  (84)
-.text.prvInitialiseNewQueue    0x2c78                0x36            0x51  (81)
-.text.ClearStructs          0x2cae                0x36            0x51  (81)
-.text.GPIO_init             0x2ce4                0x36            0x51  (81)
-.text.prvTaskIsTaskSuspended    0x2d1a                0x32            0x4b  (75)
-.text.vListInitialise       0x2d4c                0x32            0x4b  (75)
-.text.SPI2_read_byte        0x2d7e                0x32            0x4b  (75)
-.text.is_reg                0x2db0                0x30            0x48  (72)
-.text.xPortStartScheduler    0x2de0                0x2e            0x45  (69)
-.text.vApplicationSetupTickTimerInterrupt    0x2e0e                0x2e            0x45  (69)
-.text.eeprom_wr_CRC         0x2e3c                0x2e            0x45  (69)
-.text.eeprom_clear          0x2e6a                0x2c            0x42  (66)
-.text.vTaskDelay            0x2e96                0x28            0x3c  (60)
-.text.prvInitialiseMutex    0x2ebe                0x28            0x3c  (60)
-.text.UartSendByte          0x2ee6                0x28            0x3c  (60)
-.text.KORAD_SetState        0x2f0e                0x28            0x3c  (60)
-.text.OSC_init              0x2f36                0x28            0x3c  (60)
-.text.Uart2SendByte         0x2f5e                0x28            0x3c  (60)
-.text.vTaskPlaceOnUnorderedEventList    0x2f86                0x24            0x36  (54)
-.text.prvIsQueueFull        0x2faa                0x24            0x36  (54)
-.text.xQueueIsQueueFullFromISR    0x2fce                0x24            0x36  (54)
-.text.vPortEnterCritical    0x2ff2                0x22            0x33  (51)
-.text.vPortExitCritical     0x3014                0x22            0x33  (51)
-.text.vTaskEndScheduler     0x3036                0x22            0x33  (51)
-.text.prvResetNextTaskUnblockTime    0x3058                0x22            0x33  (51)
-.text.UartGetChar           0x307a                0x22            0x33  (51)
-.text.Uart2GetChar          0x309c                0x22            0x33  (51)
-.text.pcTaskGetName         0x30be                0x20            0x30  (48)
-.text.xQueueCreateMutex     0x30de                0x20            0x30  (48)
-.text.xQueueCreateCountingSemaphore    0x30fe                0x20            0x30  (48)
-.text.prvGetDisinheritPriorityAfterTimeout    0x311e                0x20            0x30  (48)
-.text.prvIsQueueEmpty       0x313e                0x20            0x30  (48)
-.text.xQueueIsQueueEmptyFromISR    0x315e                0x20            0x30  (48)
-.text.uxQueueSpacesAvailable    0x317e                0x1e            0x2d  (45)
-.text.vApplicationStackOverflowHook    0x319c                0x1e            0x2d  (45)
-.text.SPI2_write_byte       0x31ba                0x1c            0x2a  (42)
-.text.Uart2SendText         0x31d6                0x1a            0x27  (39)
-.text.vTaskPlaceOnEventList    0x31f0                0x18            0x24  (36)
-.text.vTaskSetTimeOutState    0x3208                0x18            0x24  (36)
-.text.uxTaskResetEventItemValue    0x3220                0x18            0x24  (36)
-.text.holding_reg_read      0x3238                0x18            0x24  (36)
-.text.input_reg_read        0x3250                0x18            0x24  (36)
-.text.prvIdleTask           0x3268                0x16            0x21  (33)
-.text.pvTaskIncrementMutexHeldCount    0x327e                0x16            0x21  (33)
-.text.holding_reg_write     0x3294                0x16            0x21  (33)
-.text.input_reg_write       0x32aa                0x16            0x21  (33)
-.text.ModbusIDreset         0x32c0                0x16            0x21  (33)
-.text.vTaskInternalSetTimeOutState    0x32d6                0x14            0x1e  (30)
-.text.uxQueueMessagesWaiting    0x32ea                0x14            0x1e  (30)
-.text.uxQueueMessagesWaitingFromISR    0x32fe                0x14            0x1e  (30)
-.text.modbus_init           0x3312                0x12            0x1b  (27)
-.text.set_modbus_id         0x3324                0x12            0x1b  (27)
-.text.xTaskGetTickCount     0x3336                0x10            0x18  (24)
-.text.xTaskGetTickCountFromISR    0x3346                0x10            0x18  (24)
-.text.vQueueDelete          0x3356                0x10            0x18  (24)
-.text.char2num              0x3366                0x10            0x18  (24)
-.text.vListInitialiseItem    0x3376                 0xe            0x15  (21)
-.text.num2char              0x3384                 0xe            0x15  (21)
-.text.SystemInit            0x3392                 0xe            0x15  (21)
-.text.xPortGetFreeHeapSize    0x33a0                 0xc            0x12  (18)
-.text.vTaskSuspendAll       0x33ac                 0xc            0x12  (18)
-.text.xTaskGetCurrentTaskHandle    0x33b8                 0xc            0x12  (18)
-.text.modbus_reset          0x33c4                 0xc            0x12  (18)
-.text.get_modbus_id         0x33d0                 0xc            0x12  (18)
-.text.UartResetQueue        0x33dc                 0xc            0x12  (18)
-.text.Uart2ResetQueue       0x33e8                 0xc            0x12  (18)
-.text.vPortInitialiseBlocks    0x33f4                 0xa             0xf  (15)
-.text.vTaskMissedYield      0x33fe                 0xa             0xf  (15)
-.text.UartGetQcnt           0x3408                 0xa             0xf  (15)
-.text.Uart2GetQcnt          0x3412                 0xa             0xf  (15)
-.text.vPortFree             0x341c                 0x8             0xc  (12)
-.text.uxTaskGetNumberOfTasks    0x3424                 0x8             0xc  (12)
-.text.get_wr_reg_addr       0x342c                 0x8             0xc  (12)
-.text.get_wr_reg_val        0x3434                 0x8             0xc  (12)
-.text.vPortEndScheduler     0x343c                 0x6             0x9  (9)
-.text.prvCheckTasksWaitingTermination    0x3442                 0x6             0x9  (9)
-.text.vApplicationIdleHook    0x3448                 0x6             0x9  (9)
+.text.task_ModbusSM          0x464               0x242           0x363  (867)
+.text.modbus_rx_CRC_check     0x6a6               0x114           0x19e  (414)
+.text.xQueueSemaphoreTake     0x7ba               0x112           0x19b  (411)
+.text.xTaskGenericNotifyFromISR     0x8cc               0x108           0x18c  (396)
+.text.modbus_rhr_answer      0x9d4               0x108           0x18c  (396)
+.text.modbus_rir_answer      0xadc               0x108           0x18c  (396)
+.text.xTaskGenericNotify     0xbe4                0xec           0x162  (354)
+.text.xTaskNotifyWait        0xcd0                0xe4           0x156  (342)
+.text.xQueueGenericSend      0xdb4                0xe4           0x156  (342)
+.text.vTaskPrioritySet       0xe98                0xde           0x14d  (333)
+.text.xTaskIncrementTick     0xf76                0xdc           0x14a  (330)
+.text.xQueuePeek            0x1052                0xdc           0x14a  (330)
+.text.eeprom_src_restore    0x112e                0xd8           0x144  (324)
+.text.xQueueReceive         0x1206                0xd6           0x141  (321)
+.text.prvInitialiseNewTask    0x12dc                0xd0           0x138  (312)
+.text.RestoreCfg            0x13ac                0xce           0x135  (309)
+.text.prvCopyDataToQueue    0x147a                0xb4           0x10e  (270)
+.text.task_KORAD            0x152e                0xae           0x105  (261)
+.text.xTaskResumeAll        0x15dc                0xa8            0xfc  (252)
+.text.xTaskPriorityInherit    0x1684                0x9c            0xea  (234)
+.text.modbus_wsr_answer     0x1720                0x9c            0xea  (234)
+.text.vTaskPriorityDisinheritAfterTimeout    0x17bc                0x98            0xe4  (228)
+.text.modbus_get_poll       0x1854                0x98            0xe4  (228)
+.text.KORAD_SetVoltage      0x18ec                0x8e            0xd5  (213)
+.text.pxPortInitialiseStack    0x197a                0x8c            0xd2  (210)
+.text.vTaskNotifyGiveFromISR    0x1a06                0x8a            0xcf  (207)
+.text.vTaskSwitchContext    0x1a90                0x88            0xcc  (204)
+.text.Timer9_init           0x1b18                0x88            0xcc  (204)
+.text.xQueueGenericReset    0x1ba0                0x84            0xc6  (198)
+.text.KORAD_SetCurrent      0x1c24                0x84            0xc6  (198)
+.text.prvAddNewTaskToReadyList    0x1ca8                0x7c            0xba  (186)
+.text.KORAD_GetVoltage      0x1d24                0x7a            0xb7  (183)
+.text.KORAD_GetVSets        0x1d9e                0x7a            0xb7  (183)
+.text.vTaskSuspend          0x1e18                0x76            0xb1  (177)
+.text.xTaskPriorityDisinherit    0x1e8e                0x76            0xb1  (177)
+.text.main                  0x1f04                0x76            0xb1  (177)
+.text.KORAD_GetCurrent      0x1f7a                0x74            0xae  (174)
+.text.KORAD_GetISets        0x1fee                0x74            0xae  (174)
+.text.KORAD_GetStatus       0x2062                0x74            0xae  (174)
+.text.modbus_CRC16          0x20d6                0x72            0xab  (171)
+.text.eTaskGetState         0x2148                0x70            0xa8  (168)
+.text.xQueueGenericSendFromISR    0x21b8                0x6e            0xa5  (165)
+.text.xTaskRemoveFromEventList    0x2226                0x6c            0xa2  (162)
+.text.ulTaskNotifyTake      0x2292                0x6c            0xa2  (162)
+.text.xQueueReceiveFromISR    0x22fe                0x6c            0xa2  (162)
+.text.xTaskCheckForTimeOut    0x236a                0x6a            0x9f  (159)
+.text.xTaskCreate           0x23d4                0x68            0x9c  (156)
+.text.xTaskResumeFromISR    0x243c                0x68            0x9c  (156)
+.text.xQueueGiveFromISR     0x24a4                0x68            0x9c  (156)
+.text.eeprom_wr_page        0x250c                0x68            0x9c  (156)
+.text.prvUnlockQueue        0x2574                0x66            0x99  (153)
+.text.vListInsert           0x25da                0x60            0x90  (144)
+.text.EEPROM_CRC16          0x263a                0x60            0x90  (144)
+.text.eeprom_src_save       0x269a                0x5c            0x8a  (138)
+.dinit                      0x26f6                0x5c            0x8a  (138)
+.text.pvPortMalloc          0x2752                0x5a            0x87  (135)
+.text.vTaskResume           0x27ac                0x5a            0x87  (135)
+.text.prvAddCurrentTaskToDelayedList    0x2806                0x5a            0x87  (135)
+.text.vTaskRemoveFromUnorderedEventList    0x2860                0x54            0x7e  (126)
+.text.UartInit              0x28b4                0x52            0x7b  (123)
+.text                       0x2906                0x50            0x78  (120)
+.text.eeprom_rd_regs_H      0x2956                0x4c            0x72  (114)
+.text.eeprom_rd_regs_I      0x29a2                0x4c            0x72  (114)
+.text.uxListRemove          0x29ee                0x48            0x6c  (108)
+.text.Uart2Init             0x2a36                0x48            0x6c  (108)
+.text.xQueueGenericCreate    0x2a7e                0x44            0x66  (102)
+.text.vTaskStartScheduler    0x2ac2                0x40            0x60  (96)
+.text.prvCopyDataFromQueue    0x2b02                0x40            0x60  (96)
+.text.vListInsertEnd        0x2b42                0x3c            0x5a  (90)
+.text.xTaskNotifyStateClear    0x2b7e                0x3a            0x57  (87)
+.text.SPI2_init             0x2bb8                0x3a            0x57  (87)
+.text.eeprom_wr_regs        0x2bf2                0x3a            0x57  (87)
+.text.prvInitialiseTaskLists    0x2c2c                0x38            0x54  (84)
+.text.xQueuePeekFromISR     0x2c64                0x38            0x54  (84)
+.text.eeprom_rd_CRC         0x2c9c                0x38            0x54  (84)
+.text.eeprom_clear_page     0x2cd4                0x38            0x54  (84)
+.text.SaveCfg               0x2d0c                0x38            0x54  (84)
+.text.prvInitialiseNewQueue    0x2d44                0x36            0x51  (81)
+.text.GPIO_init             0x2d7a                0x36            0x51  (81)
+.text.ClearStructs          0x2db0                0x36            0x51  (81)
+.text.prvTaskIsTaskSuspended    0x2de6                0x32            0x4b  (75)
+.text.vListInitialise       0x2e18                0x32            0x4b  (75)
+.text.SPI2_read_byte        0x2e4a                0x32            0x4b  (75)
+.text.is_reg                0x2e7c                0x30            0x48  (72)
+.text.xPortStartScheduler    0x2eac                0x2e            0x45  (69)
+.text.vApplicationSetupTickTimerInterrupt    0x2eda                0x2e            0x45  (69)
+.text.eeprom_wr_CRC         0x2f08                0x2e            0x45  (69)
+.text.eeprom_clear          0x2f36                0x2c            0x42  (66)
+.text.vTaskDelay            0x2f62                0x28            0x3c  (60)
+.text.prvInitialiseMutex    0x2f8a                0x28            0x3c  (60)
+.text.UartSendByte          0x2fb2                0x28            0x3c  (60)
+.text.KORAD_SetState        0x2fda                0x28            0x3c  (60)
+.text.OSC_init              0x3002                0x28            0x3c  (60)
+.text.Uart2SendByte         0x302a                0x28            0x3c  (60)
+.text.vTaskPlaceOnUnorderedEventList    0x3052                0x24            0x36  (54)
+.text.prvIsQueueFull        0x3076                0x24            0x36  (54)
+.text.xQueueIsQueueFullFromISR    0x309a                0x24            0x36  (54)
+.text.vPortEnterCritical    0x30be                0x22            0x33  (51)
+.text.vPortExitCritical     0x30e0                0x22            0x33  (51)
+.text.vTaskEndScheduler     0x3102                0x22            0x33  (51)
+.text.prvResetNextTaskUnblockTime    0x3124                0x22            0x33  (51)
+.text.UartGetChar           0x3146                0x22            0x33  (51)
+.text.Uart2GetChar          0x3168                0x22            0x33  (51)
+.text.pcTaskGetName         0x318a                0x20            0x30  (48)
+.text.xQueueCreateMutex     0x31aa                0x20            0x30  (48)
+.text.xQueueCreateCountingSemaphore    0x31ca                0x20            0x30  (48)
+.text.prvGetDisinheritPriorityAfterTimeout    0x31ea                0x20            0x30  (48)
+.text.prvIsQueueEmpty       0x320a                0x20            0x30  (48)
+.text.xQueueIsQueueEmptyFromISR    0x322a                0x20            0x30  (48)
+.text.uxQueueSpacesAvailable    0x324a                0x1e            0x2d  (45)
+.text.vApplicationStackOverflowHook    0x3268                0x1e            0x2d  (45)
+.text.SPI2_write_byte       0x3286                0x1c            0x2a  (42)
+.text.Uart2SendText         0x32a2                0x1a            0x27  (39)
+.text.vTaskPlaceOnEventList    0x32bc                0x18            0x24  (36)
+.text.vTaskSetTimeOutState    0x32d4                0x18            0x24  (36)
+.text.uxTaskResetEventItemValue    0x32ec                0x18            0x24  (36)
+.text.holding_reg_read      0x3304                0x18            0x24  (36)
+.text.input_reg_read        0x331c                0x18            0x24  (36)
+.text.prvIdleTask           0x3334                0x16            0x21  (33)
+.text.pvTaskIncrementMutexHeldCount    0x334a                0x16            0x21  (33)
+.text.holding_reg_write     0x3360                0x16            0x21  (33)
+.text.input_reg_write       0x3376                0x16            0x21  (33)
+.text.ModbusIDreset         0x338c                0x16            0x21  (33)
+.text.vTaskInternalSetTimeOutState    0x33a2                0x14            0x1e  (30)
+.text.uxQueueMessagesWaiting    0x33b6                0x14            0x1e  (30)
+.text.uxQueueMessagesWaitingFromISR    0x33ca                0x14            0x1e  (30)
+.text.modbus_init           0x33de                0x12            0x1b  (27)
+.text.set_modbus_id         0x33f0                0x12            0x1b  (27)
+.text.xTaskGetTickCount     0x3402                0x10            0x18  (24)
+.text.xTaskGetTickCountFromISR    0x3412                0x10            0x18  (24)
+.text.vQueueDelete          0x3422                0x10            0x18  (24)
+.text.char2num              0x3432                0x10            0x18  (24)
+.text.vListInitialiseItem    0x3442                 0xe            0x15  (21)
+.text.num2char              0x3450                 0xe            0x15  (21)
+.text.SystemInit            0x345e                 0xe            0x15  (21)
+.text.xPortGetFreeHeapSize    0x346c                 0xc            0x12  (18)
+.text.vTaskSuspendAll       0x3478                 0xc            0x12  (18)
+.text.xTaskGetCurrentTaskHandle    0x3484                 0xc            0x12  (18)
+.text.modbus_reset          0x3490                 0xc            0x12  (18)
+.text.get_modbus_id         0x349c                 0xc            0x12  (18)
+.text.UartResetQueue        0x34a8                 0xc            0x12  (18)
+.text.Uart2ResetQueue       0x34b4                 0xc            0x12  (18)
+.text.vPortInitialiseBlocks    0x34c0                 0xa             0xf  (15)
+.text.vTaskMissedYield      0x34ca                 0xa             0xf  (15)
+.text.UartGetQcnt           0x34d4                 0xa             0xf  (15)
+.text.Uart2GetQcnt          0x34de                 0xa             0xf  (15)
+.text.vPortFree             0x34e8                 0x8             0xc  (12)
+.text.uxTaskGetNumberOfTasks    0x34f0                 0x8             0xc  (12)
+.text.get_wr_reg_addr       0x34f8                 0x8             0xc  (12)
+.text.get_wr_reg_val        0x3500                 0x8             0xc  (12)
+.text.vPortEndScheduler     0x3508                 0x6             0x9  (9)
+.text.prvCheckTasksWaitingTermination    0x350e                 0x6             0x9  (9)
+.text.vApplicationIdleHook    0x3514                 0x6             0x9  (9)
 
-                     Total program memory used (bytes):         0x4b75  (19317) 7%
+                     Total program memory used (bytes):         0x4ca7  (19623) 7%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
 
 section                    address      alignment gaps    total length  (dec)
 -------                    -------      --------------    -------------------
-.nbss                        0x800                   0          0x14bc  (5308)
-.ndata                      0x1cbc                   0            0x12  (18)
-.nbss                       0x1cce                   0            0x12  (18)
-.ndata                      0x1ce0                   0             0x6  (6)
-.bss                        0x1ce6                   0           0x3a0  (928)
+.nbss                        0x800                   0          0x14be  (5310)
+.ndata                      0x1cbe                   0            0x12  (18)
+.nbss                       0x1cd0                   0            0x12  (18)
+.ndata                      0x1ce2                   0             0x6  (6)
+.bss                        0x1ce8                   0           0x3a0  (928)
 
-                        Total data memory used (bytes):         0x1886  (6278) 38%
+                        Total data memory used (bytes):         0x1888  (6280) 38%
 
 
 Dynamic Memory Usage
@@ -241,9 +242,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                       0x2086                              0x277a  (10106)
+stack                       0x2088                              0x2778  (10104)
 
-                        Maximum dynamic memory (bytes):         0x277a  (10106)
+                        Maximum dynamic memory (bytes):         0x2778  (10104)
 
 
 External Symbols in Data Memory (by address):
@@ -263,31 +264,33 @@ External Symbols in Data Memory (by address):
                     0x1c9e                  _KORAD_Ans_q
                     0x1ca0                  _Modbus_Status_q
                     0x1ca2                  _ModbusTaskHandle
-                    0x1cbc                  _rx_buf_ptr
-                    0x1cbe                  _modbus_cmd
-                    0x1cc0                  _addr_buf_1
-                    0x1cc2                  _addr_buf_2
-                    0x1cc4                  _regs2read
-                    0x1cc6                  _CRC16
-                    0x1cc8                  _modbus_id
-                    0x1cca                  _reg_wr_data
-                    0x1ccc                  _dev_id
-                    0x1cda                  _KORADrxBytes
-                    0x1cdc                  _modbus_reg_addr
-                    0x1cde                  _RxSemaphore
-                    0x1ce0                  _uxCriticalNesting
-                    0x1ce2                  _pxCurrentTCB
-                    0x1ce4                  _timer_state
-                    0x1ce6                  _rx_buf
-                    0x1d66                  _crc_buf
-                    0x1e92                  _holding_register
-                    0x1f8c                  _input_register
+                    0x1ca4                  _KORADTaskHandle
+                    0x1cbe                  _rx_buf_ptr
+                    0x1cc0                  _modbus_cmd
+                    0x1cc2                  _addr_buf_1
+                    0x1cc4                  _addr_buf_2
+                    0x1cc6                  _regs2read
+                    0x1cc8                  _CRC16
+                    0x1cca                  _modbus_id
+                    0x1ccc                  _reg_wr_data
+                    0x1cce                  _dev_id
+                    0x1cdc                  _KORADrxBytes
+                    0x1cde                  _modbus_reg_addr
+                    0x1ce0                  _RxSemaphore
+                    0x1ce2                  _uxCriticalNesting
+                    0x1ce4                  _pxCurrentTCB
+                    0x1ce6                  _timer_state
+                    0x1ce8                  _rx_buf
+                    0x1d68                  _crc_buf
+                    0x1e94                  _holding_register
+                    0x1f8e                  _input_register
 
 External Symbols in Data Memory (by name):
 
-                    0x1cc6                  _CRC16
+                    0x1cc8                  _CRC16
                     0x1c6f                  _EEPR_buf
                     0x1c90                  _FirmInfo
+                    0x1ca4                  _KORADTaskHandle
                     0x1c9e                  _KORAD_Ans_q
                     0x1c94                  _KORAD_RdParams_q
                     0x1c96                  _KORAD_RdStatus_q
@@ -295,30 +298,30 @@ External Symbols in Data Memory (by name):
                     0x1c9c                  _KORAD_SetState_q
                     0x1c98                  _KORAD_SetV_q
                     0x1c88                  _KORAD_m
-                    0x1cda                  _KORADrxBytes
+                    0x1cdc                  _KORADrxBytes
                     0x1ca2                  _ModbusTaskHandle
                     0x1ca0                  _Modbus_Status_q
                     0x1c6e                  _NewID
-                    0x1cde                  _RxSemaphore
-                    0x1cc0                  _addr_buf_1
-                    0x1cc2                  _addr_buf_2
-                    0x1d66                  _crc_buf
-                    0x1ccc                  _dev_id
-                    0x1e92                  _holding_register
-                    0x1f8c                  _input_register
-                    0x1cbe                  _modbus_cmd
-                    0x1cc8                  _modbus_id
-                    0x1cdc                  _modbus_reg_addr
+                    0x1ce0                  _RxSemaphore
+                    0x1cc2                  _addr_buf_1
+                    0x1cc4                  _addr_buf_2
+                    0x1d68                  _crc_buf
+                    0x1cce                  _dev_id
+                    0x1e94                  _holding_register
+                    0x1f8e                  _input_register
+                    0x1cc0                  _modbus_cmd
+                    0x1cca                  _modbus_id
+                    0x1cde                  _modbus_reg_addr
                     0x1c78                  _pol_relay_1
                     0x1c7a                  _pol_relay_2
-                    0x1ce2                  _pxCurrentTCB
-                    0x1cca                  _reg_wr_data
-                    0x1cc4                  _regs2read
-                    0x1ce6                  _rx_buf
-                    0x1cbc                  _rx_buf_ptr
+                    0x1ce4                  _pxCurrentTCB
+                    0x1ccc                  _reg_wr_data
+                    0x1cc6                  _regs2read
+                    0x1ce8                  _rx_buf
+                    0x1cbe                  _rx_buf_ptr
                     0x1c7c                  _state_m
-                    0x1ce4                  _timer_state
-                    0x1ce0                  _uxCriticalNesting
+                    0x1ce6                  _timer_state
+                    0x1ce2                  _uxCriticalNesting
 
 External Symbols in Program Memory (by address):
 
@@ -339,139 +342,140 @@ External Symbols in Program Memory (by address):
                   0x000462                  _device_family
                   0x000463                  _modbus_ver
                   0x000464                  _task_ModbusSM
-                  0x000676                  _modbus_rx_CRC_check
-                  0x00078a                  _xQueueSemaphoreTake
-                  0x00089c                  _xTaskGenericNotifyFromISR
-                  0x0009a4                  _modbus_rhr_answer
-                  0x000aac                  _modbus_rir_answer
-                  0x000bb4                  _xTaskGenericNotify
-                  0x000ca0                  _xTaskNotifyWait
-                  0x000d84                  _xQueueGenericSend
-                  0x000e68                  _vTaskPrioritySet
-                  0x000f46                  _xTaskIncrementTick
-                  0x001022                  _xQueuePeek
-                  0x0010fe                  _eeprom_src_restore
-                  0x0011d6                  _xQueueReceive
-                  0x00137c                  _RestoreCfg
-                  0x0014f8                  _xTaskResumeAll
-                  0x0015a0                  _xTaskPriorityInherit
-                  0x00163c                  _modbus_wsr_answer
-                  0x0016d8                  _vTaskPriorityDisinheritAfterTimeout
-                  0x001770                  _modbus_get_poll
-                  0x001808                  _KORAD_SetVoltage
-                  0x001896                  _pxPortInitialiseStack
-                  0x001922                  _vTaskNotifyGiveFromISR
-                  0x0019ac                  _task_KORAD
-                  0x001a36                  _vTaskSwitchContext
-                  0x001abe                  _Timer9_init
-                  0x001b46                  _xQueueGenericReset
-                  0x001bca                  _KORAD_SetCurrent
-                  0x001cca                  _KORAD_GetVoltage
-                  0x001d44                  _KORAD_GetVSets
-                  0x001dbe                  _vTaskSuspend
-                  0x001e34                  _xTaskPriorityDisinherit
-                  0x001eaa                  _main
-                  0x001f1e                  _KORAD_GetCurrent
-                  0x001f92                  _KORAD_GetISets
-                  0x002006                  _KORAD_GetStatus
-                  0x0020ec                  _xQueueGenericSendFromISR
-                  0x00215a                  _xTaskRemoveFromEventList
-                  0x0021c6                  _ulTaskNotifyTake
-                  0x002232                  _xQueueReceiveFromISR
-                  0x00229e                  _xTaskCheckForTimeOut
-                  0x002308                  _xTaskCreate
-                  0x002370                  _xTaskResumeFromISR
-                  0x0023d8                  _xQueueGiveFromISR
-                  0x002440                  _eeprom_wr_page
-                  0x00250e                  _vListInsert
-                  0x00256e                  _EEPROM_CRC16
-                  0x0025ce                  _eeprom_src_save
-                  0x002686                  _pvPortMalloc
-                  0x0026e0                  _vTaskResume
-                  0x002794                  _vTaskRemoveFromUnorderedEventList
-                  0x0027e8                  _UartInit
-                  0x00283a                  _vPortYield
-                  0x00288a                  _eeprom_rd_regs_H
-                  0x0028d6                  _eeprom_rd_regs_I
-                  0x002922                  _uxListRemove
-                  0x00296a                  _Uart2Init
-                  0x0029b2                  _xQueueGenericCreate
-                  0x0029f6                  _vTaskStartScheduler
-                  0x002a76                  _vListInsertEnd
-                  0x002ab2                  _xTaskNotifyStateClear
-                  0x002aec                  _SPI2_init
-                  0x002b26                  _eeprom_wr_regs
-                  0x002b98                  _xQueuePeekFromISR
-                  0x002bd0                  _eeprom_rd_CRC
-                  0x002c08                  _eeprom_clear_page
-                  0x002c40                  _SaveCfg
-                  0x002cae                  _ClearStructs
-                  0x002ce4                  _GPIO_init
-                  0x002d4c                  _vListInitialise
-                  0x002d7e                  _SPI2_read_byte
-                  0x002db0                  _is_reg
-                  0x002de0                  _xPortStartScheduler
-                  0x002e3c                  _eeprom_wr_CRC
-                  0x002e6a                  _eeprom_clear
-                  0x002e96                  _vTaskDelay
-                  0x002ee6                  _UartSendByte
-                  0x002f0e                  _KORAD_SetState
-                  0x002f36                  _OSC_init
-                  0x002f5e                  _Uart2SendByte
-                  0x002f86                  _vTaskPlaceOnUnorderedEventList
-                  0x002fce                  _xQueueIsQueueFullFromISR
-                  0x002ff2                  _vPortEnterCritical
-                  0x003014                  _vPortExitCritical
-                  0x003036                  _vTaskEndScheduler
-                  0x00307a                  _UartGetChar
-                  0x00309c                  _Uart2GetChar
-                  0x0030be                  _pcTaskGetName
-                  0x0030de                  _xQueueCreateMutex
-                  0x0030fe                  _xQueueCreateCountingSemaphore
-                  0x00315e                  _xQueueIsQueueEmptyFromISR
-                  0x00317e                  _uxQueueSpacesAvailable
-                  0x00319c                  _vApplicationStackOverflowHook
-                  0x0031ba                  _SPI2_write_byte
-                  0x0031d6                  _Uart2SendText
-                  0x0031f0                  _vTaskPlaceOnEventList
-                  0x003208                  _vTaskSetTimeOutState
-                  0x003220                  _uxTaskResetEventItemValue
-                  0x003238                  _holding_reg_read
-                  0x003250                  _input_reg_read
-                  0x003268                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
-                  0x00327e                  _pvTaskIncrementMutexHeldCount
-                  0x003294                  _holding_reg_write
-                  0x0032aa                  _input_reg_write
-                  0x0032c0                  _ModbusIDreset
-                  0x0032d6                  _vTaskInternalSetTimeOutState
-                  0x0032ea                  _uxQueueMessagesWaiting
-                  0x0032fe                  _uxQueueMessagesWaitingFromISR
-                  0x003312                  _modbus_init
-                  0x003324                  _set_modbus_id
-                  0x003336                  _xTaskGetTickCount
-                  0x003346                  _xTaskGetTickCountFromISR
-                  0x003356                  _vQueueDelete
-                  0x003366                  _char2num
-                  0x003376                  _vListInitialiseItem
-                  0x003384                  _num2char
-                  0x003392                  _SystemInit
-                  0x0033a0                  _xPortGetFreeHeapSize
-                  0x0033ac                  _vTaskSuspendAll
-                  0x0033b8                  _xTaskGetCurrentTaskHandle
-                  0x0033c4                  _modbus_reset
-                  0x0033d0                  _get_modbus_id
-                  0x0033dc                  _UartResetQueue
-                  0x0033e8                  _Uart2ResetQueue
-                  0x0033f4                  _vPortInitialiseBlocks
-                  0x0033fe                  _vTaskMissedYield
-                  0x003408                  _UartGetQcnt
-                  0x003412                  _Uart2GetQcnt
-                  0x00341c                  _vPortFree
-                  0x003424                  _uxTaskGetNumberOfTasks
-                  0x00342c                  _get_wr_reg_addr
-                  0x003434                  _get_wr_reg_val
-                  0x00343c                  _vPortEndScheduler
-                  0x003448                  _vApplicationIdleHook
+                  0x0006a6                  _modbus_rx_CRC_check
+                  0x0007ba                  _xQueueSemaphoreTake
+                  0x0008cc                  _xTaskGenericNotifyFromISR
+                  0x0009d4                  _modbus_rhr_answer
+                  0x000adc                  _modbus_rir_answer
+                  0x000be4                  _xTaskGenericNotify
+                  0x000cd0                  _xTaskNotifyWait
+                  0x000db4                  _xQueueGenericSend
+                  0x000e98                  _vTaskPrioritySet
+                  0x000f76                  _xTaskIncrementTick
+                  0x001052                  _xQueuePeek
+                  0x00112e                  _eeprom_src_restore
+                  0x001206                  _xQueueReceive
+                  0x0013ac                  _RestoreCfg
+                  0x00152e                  _task_KORAD
+                  0x0015dc                  _xTaskResumeAll
+                  0x001684                  _xTaskPriorityInherit
+                  0x001720                  _modbus_wsr_answer
+                  0x0017bc                  _vTaskPriorityDisinheritAfterTimeout
+                  0x001854                  _modbus_get_poll
+                  0x0018ec                  _KORAD_SetVoltage
+                  0x00197a                  _pxPortInitialiseStack
+                  0x001a06                  _vTaskNotifyGiveFromISR
+                  0x001a90                  _vTaskSwitchContext
+                  0x001b18                  _Timer9_init
+                  0x001ba0                  _xQueueGenericReset
+                  0x001c24                  _KORAD_SetCurrent
+                  0x001d24                  _KORAD_GetVoltage
+                  0x001d9e                  _KORAD_GetVSets
+                  0x001e18                  _vTaskSuspend
+                  0x001e8e                  _xTaskPriorityDisinherit
+                  0x001f04                  _main
+                  0x001f7a                  _KORAD_GetCurrent
+                  0x001fee                  _KORAD_GetISets
+                  0x002062                  _KORAD_GetStatus
+                  0x002148                  _eTaskGetState
+                  0x0021b8                  _xQueueGenericSendFromISR
+                  0x002226                  _xTaskRemoveFromEventList
+                  0x002292                  _ulTaskNotifyTake
+                  0x0022fe                  _xQueueReceiveFromISR
+                  0x00236a                  _xTaskCheckForTimeOut
+                  0x0023d4                  _xTaskCreate
+                  0x00243c                  _xTaskResumeFromISR
+                  0x0024a4                  _xQueueGiveFromISR
+                  0x00250c                  _eeprom_wr_page
+                  0x0025da                  _vListInsert
+                  0x00263a                  _EEPROM_CRC16
+                  0x00269a                  _eeprom_src_save
+                  0x002752                  _pvPortMalloc
+                  0x0027ac                  _vTaskResume
+                  0x002860                  _vTaskRemoveFromUnorderedEventList
+                  0x0028b4                  _UartInit
+                  0x002906                  _vPortYield
+                  0x002956                  _eeprom_rd_regs_H
+                  0x0029a2                  _eeprom_rd_regs_I
+                  0x0029ee                  _uxListRemove
+                  0x002a36                  _Uart2Init
+                  0x002a7e                  _xQueueGenericCreate
+                  0x002ac2                  _vTaskStartScheduler
+                  0x002b42                  _vListInsertEnd
+                  0x002b7e                  _xTaskNotifyStateClear
+                  0x002bb8                  _SPI2_init
+                  0x002bf2                  _eeprom_wr_regs
+                  0x002c64                  _xQueuePeekFromISR
+                  0x002c9c                  _eeprom_rd_CRC
+                  0x002cd4                  _eeprom_clear_page
+                  0x002d0c                  _SaveCfg
+                  0x002d7a                  _GPIO_init
+                  0x002db0                  _ClearStructs
+                  0x002e18                  _vListInitialise
+                  0x002e4a                  _SPI2_read_byte
+                  0x002e7c                  _is_reg
+                  0x002eac                  _xPortStartScheduler
+                  0x002f08                  _eeprom_wr_CRC
+                  0x002f36                  _eeprom_clear
+                  0x002f62                  _vTaskDelay
+                  0x002fb2                  _UartSendByte
+                  0x002fda                  _KORAD_SetState
+                  0x003002                  _OSC_init
+                  0x00302a                  _Uart2SendByte
+                  0x003052                  _vTaskPlaceOnUnorderedEventList
+                  0x00309a                  _xQueueIsQueueFullFromISR
+                  0x0030be                  _vPortEnterCritical
+                  0x0030e0                  _vPortExitCritical
+                  0x003102                  _vTaskEndScheduler
+                  0x003146                  _UartGetChar
+                  0x003168                  _Uart2GetChar
+                  0x00318a                  _pcTaskGetName
+                  0x0031aa                  _xQueueCreateMutex
+                  0x0031ca                  _xQueueCreateCountingSemaphore
+                  0x00322a                  _xQueueIsQueueEmptyFromISR
+                  0x00324a                  _uxQueueSpacesAvailable
+                  0x003268                  _vApplicationStackOverflowHook
+                  0x003286                  _SPI2_write_byte
+                  0x0032a2                  _Uart2SendText
+                  0x0032bc                  _vTaskPlaceOnEventList
+                  0x0032d4                  _vTaskSetTimeOutState
+                  0x0032ec                  _uxTaskResetEventItemValue
+                  0x003304                  _holding_reg_read
+                  0x00331c                  _input_reg_read
+                  0x003334                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x00334a                  _pvTaskIncrementMutexHeldCount
+                  0x003360                  _holding_reg_write
+                  0x003376                  _input_reg_write
+                  0x00338c                  _ModbusIDreset
+                  0x0033a2                  _vTaskInternalSetTimeOutState
+                  0x0033b6                  _uxQueueMessagesWaiting
+                  0x0033ca                  _uxQueueMessagesWaitingFromISR
+                  0x0033de                  _modbus_init
+                  0x0033f0                  _set_modbus_id
+                  0x003402                  _xTaskGetTickCount
+                  0x003412                  _xTaskGetTickCountFromISR
+                  0x003422                  _vQueueDelete
+                  0x003432                  _char2num
+                  0x003442                  _vListInitialiseItem
+                  0x003450                  _num2char
+                  0x00345e                  _SystemInit
+                  0x00346c                  _xPortGetFreeHeapSize
+                  0x003478                  _vTaskSuspendAll
+                  0x003484                  _xTaskGetCurrentTaskHandle
+                  0x003490                  _modbus_reset
+                  0x00349c                  _get_modbus_id
+                  0x0034a8                  _UartResetQueue
+                  0x0034b4                  _Uart2ResetQueue
+                  0x0034c0                  _vPortInitialiseBlocks
+                  0x0034ca                  _vTaskMissedYield
+                  0x0034d4                  _UartGetQcnt
+                  0x0034de                  _Uart2GetQcnt
+                  0x0034e8                  _vPortFree
+                  0x0034f0                  _uxTaskGetNumberOfTasks
+                  0x0034f8                  _get_wr_reg_addr
+                  0x003500                  _get_wr_reg_val
+                  0x003508                  _vPortEndScheduler
+                  0x003514                  _vApplicationIdleHook
                   0xf80000                  _FBS
                   0xf80002                  _FSS
                   0xf80004                  _FGS
@@ -483,8 +487,8 @@ External Symbols in Program Memory (by address):
 
 External Symbols in Program Memory (by name):
 
-                  0x002cae                  _ClearStructs
-                  0x00256e                  _EEPROM_CRC16
+                  0x002db0                  _ClearStructs
+                  0x00263a                  _EEPROM_CRC16
                   0xf80000                  _FBS
                   0xf80004                  _FGS
                   0xf8000e                  _FICD
@@ -493,35 +497,35 @@ External Symbols in Program Memory (by name):
                   0xf8000c                  _FPOR
                   0xf80002                  _FSS
                   0xf8000a                  _FWDT
-                  0x002ce4                  _GPIO_init
-                  0x001f1e                  _KORAD_GetCurrent
-                  0x001f92                  _KORAD_GetISets
-                  0x002006                  _KORAD_GetStatus
-                  0x001d44                  _KORAD_GetVSets
-                  0x001cca                  _KORAD_GetVoltage
-                  0x001bca                  _KORAD_SetCurrent
-                  0x002f0e                  _KORAD_SetState
-                  0x001808                  _KORAD_SetVoltage
-                  0x0032c0                  _ModbusIDreset
-                  0x002f36                  _OSC_init
-                  0x00137c                  _RestoreCfg
-                  0x002aec                  _SPI2_init
-                  0x002d7e                  _SPI2_read_byte
-                  0x0031ba                  _SPI2_write_byte
-                  0x002c40                  _SaveCfg
-                  0x003392                  _SystemInit
-                  0x001abe                  _Timer9_init
-                  0x00309c                  _Uart2GetChar
-                  0x003412                  _Uart2GetQcnt
-                  0x00296a                  _Uart2Init
-                  0x0033e8                  _Uart2ResetQueue
-                  0x002f5e                  _Uart2SendByte
-                  0x0031d6                  _Uart2SendText
-                  0x00307a                  _UartGetChar
-                  0x003408                  _UartGetQcnt
-                  0x0027e8                  _UartInit
-                  0x0033dc                  _UartResetQueue
-                  0x002ee6                  _UartSendByte
+                  0x002d7a                  _GPIO_init
+                  0x001f7a                  _KORAD_GetCurrent
+                  0x001fee                  _KORAD_GetISets
+                  0x002062                  _KORAD_GetStatus
+                  0x001d9e                  _KORAD_GetVSets
+                  0x001d24                  _KORAD_GetVoltage
+                  0x001c24                  _KORAD_SetCurrent
+                  0x002fda                  _KORAD_SetState
+                  0x0018ec                  _KORAD_SetVoltage
+                  0x00338c                  _ModbusIDreset
+                  0x003002                  _OSC_init
+                  0x0013ac                  _RestoreCfg
+                  0x002bb8                  _SPI2_init
+                  0x002e4a                  _SPI2_read_byte
+                  0x003286                  _SPI2_write_byte
+                  0x002d0c                  _SaveCfg
+                  0x00345e                  _SystemInit
+                  0x001b18                  _Timer9_init
+                  0x003168                  _Uart2GetChar
+                  0x0034de                  _Uart2GetQcnt
+                  0x002a36                  _Uart2Init
+                  0x0034b4                  _Uart2ResetQueue
+                  0x00302a                  _Uart2SendByte
+                  0x0032a2                  _Uart2SendText
+                  0x003146                  _UartGetChar
+                  0x0034d4                  _UartGetQcnt
+                  0x0028b4                  _UartInit
+                  0x0034a8                  _UartResetQueue
+                  0x002fb2                  _UartSendByte
                   0x00037c                  __DefaultInterrupt
                   0x00029c                  __T1Interrupt
                   0x000316                  __T9Interrupt
@@ -531,116 +535,117 @@ External Symbols in Program Memory (by name):
                   0x000232                  __data_init_standard
                   0x000222                  __psv_init
                   0x000200                  __resetPRI
-                  0x003366                  _char2num
+                  0x003432                  _char2num
                   0x000460                  _com_dev_id
                   0x000462                  _device_family
-                  0x002e6a                  _eeprom_clear
-                  0x002c08                  _eeprom_clear_page
-                  0x002bd0                  _eeprom_rd_CRC
-                  0x00288a                  _eeprom_rd_regs_H
-                  0x0028d6                  _eeprom_rd_regs_I
-                  0x0010fe                  _eeprom_src_restore
-                  0x0025ce                  _eeprom_src_save
-                  0x002e3c                  _eeprom_wr_CRC
-                  0x002440                  _eeprom_wr_page
-                  0x002b26                  _eeprom_wr_regs
+                  0x002148                  _eTaskGetState
+                  0x002f36                  _eeprom_clear
+                  0x002cd4                  _eeprom_clear_page
+                  0x002c9c                  _eeprom_rd_CRC
+                  0x002956                  _eeprom_rd_regs_H
+                  0x0029a2                  _eeprom_rd_regs_I
+                  0x00112e                  _eeprom_src_restore
+                  0x00269a                  _eeprom_src_save
+                  0x002f08                  _eeprom_wr_CRC
+                  0x00250c                  _eeprom_wr_page
+                  0x002bf2                  _eeprom_wr_regs
                   0x000461                  _firmware_ver
-                  0x0033d0                  _get_modbus_id
-                  0x00342c                  _get_wr_reg_addr
-                  0x003434                  _get_wr_reg_val
-                  0x003238                  _holding_reg_read
-                  0x003294                  _holding_reg_write
-                  0x003250                  _input_reg_read
-                  0x0032aa                  _input_reg_write
-                  0x002db0                  _is_reg
-                  0x001eaa                  _main
+                  0x00349c                  _get_modbus_id
+                  0x0034f8                  _get_wr_reg_addr
+                  0x003500                  _get_wr_reg_val
+                  0x003304                  _holding_reg_read
+                  0x003360                  _holding_reg_write
+                  0x00331c                  _input_reg_read
+                  0x003376                  _input_reg_write
+                  0x002e7c                  _is_reg
+                  0x001f04                  _main
                   0x000380                  _memcmp
                   0x0003b4                  _memcpy
                   0x0003c2                  _memset
-                  0x001770                  _modbus_get_poll
-                  0x003312                  _modbus_init
-                  0x0033c4                  _modbus_reset
-                  0x0009a4                  _modbus_rhr_answer
-                  0x000aac                  _modbus_rir_answer
-                  0x000676                  _modbus_rx_CRC_check
+                  0x001854                  _modbus_get_poll
+                  0x0033de                  _modbus_init
+                  0x003490                  _modbus_reset
+                  0x0009d4                  _modbus_rhr_answer
+                  0x000adc                  _modbus_rir_answer
+                  0x0006a6                  _modbus_rx_CRC_check
                   0x000463                  _modbus_ver
-                  0x00163c                  _modbus_wsr_answer
-                  0x003384                  _num2char
-                  0x0030be                  _pcTaskGetName
-                  0x002686                  _pvPortMalloc
-                  0x00327e                  _pvTaskIncrementMutexHeldCount
-                  0x001896                  _pxPortInitialiseStack
-                  0x003324                  _set_modbus_id
-                  0x0019ac                  _task_KORAD
+                  0x001720                  _modbus_wsr_answer
+                  0x003450                  _num2char
+                  0x00318a                  _pcTaskGetName
+                  0x002752                  _pvPortMalloc
+                  0x00334a                  _pvTaskIncrementMutexHeldCount
+                  0x00197a                  _pxPortInitialiseStack
+                  0x0033f0                  _set_modbus_id
+                  0x00152e                  _task_KORAD
                   0x000464                  _task_ModbusSM
-                  0x0021c6                  _ulTaskNotifyTake
-                  0x002922                  _uxListRemove
-                  0x0032ea                  _uxQueueMessagesWaiting
-                  0x0032fe                  _uxQueueMessagesWaitingFromISR
-                  0x00317e                  _uxQueueSpacesAvailable
-                  0x003424                  _uxTaskGetNumberOfTasks
-                  0x003220                  _uxTaskResetEventItemValue
-                  0x003448                  _vApplicationIdleHook
-                  0x00319c                  _vApplicationStackOverflowHook
-                  0x002d4c                  _vListInitialise
-                  0x003376                  _vListInitialiseItem
-                  0x00250e                  _vListInsert
-                  0x002a76                  _vListInsertEnd
-                  0x00343c                  _vPortEndScheduler
-                  0x002ff2                  _vPortEnterCritical
-                  0x003014                  _vPortExitCritical
-                  0x00341c                  _vPortFree
-                  0x0033f4                  _vPortInitialiseBlocks
-                  0x00283a                  _vPortYield
-                  0x003356                  _vQueueDelete
-                  0x002e96                  _vTaskDelay
-                  0x003036                  _vTaskEndScheduler
-                  0x0032d6                  _vTaskInternalSetTimeOutState
-                  0x0033fe                  _vTaskMissedYield
-                  0x001922                  _vTaskNotifyGiveFromISR
-                  0x0031f0                  _vTaskPlaceOnEventList
-                  0x002f86                  _vTaskPlaceOnUnorderedEventList
-                  0x0016d8                  _vTaskPriorityDisinheritAfterTimeout
-                  0x000e68                  _vTaskPrioritySet
-                  0x002794                  _vTaskRemoveFromUnorderedEventList
-                  0x0026e0                  _vTaskResume
-                  0x003208                  _vTaskSetTimeOutState
-                  0x0029f6                  _vTaskStartScheduler
-                  0x001dbe                  _vTaskSuspend
-                  0x0033ac                  _vTaskSuspendAll
-                  0x001a36                  _vTaskSwitchContext
-                  0x0033a0                  _xPortGetFreeHeapSize
-                  0x002de0                  _xPortStartScheduler
-                  0x0030fe                  _xQueueCreateCountingSemaphore
-                  0x0030de                  _xQueueCreateMutex
-                  0x0029b2                  _xQueueGenericCreate
-                  0x001b46                  _xQueueGenericReset
-                  0x000d84                  _xQueueGenericSend
-                  0x0020ec                  _xQueueGenericSendFromISR
-                  0x0023d8                  _xQueueGiveFromISR
-                  0x00315e                  _xQueueIsQueueEmptyFromISR
-                  0x002fce                  _xQueueIsQueueFullFromISR
-                  0x001022                  _xQueuePeek
-                  0x002b98                  _xQueuePeekFromISR
-                  0x0011d6                  _xQueueReceive
-                  0x002232                  _xQueueReceiveFromISR
-                  0x00078a                  _xQueueSemaphoreTake
-                  0x00229e                  _xTaskCheckForTimeOut
-                  0x002308                  _xTaskCreate
-                  0x000bb4                  _xTaskGenericNotify
-                  0x00089c                  _xTaskGenericNotifyFromISR
-                  0x0033b8                  _xTaskGetCurrentTaskHandle
-                  0x003336                  _xTaskGetTickCount
-                  0x003346                  _xTaskGetTickCountFromISR
-                  0x000f46                  _xTaskIncrementTick
-                  0x002ab2                  _xTaskNotifyStateClear
-                  0x000ca0                  _xTaskNotifyWait
-                  0x001e34                  _xTaskPriorityDisinherit
-                  0x0015a0                  _xTaskPriorityInherit
-                  0x00215a                  _xTaskRemoveFromEventList
-                  0x0014f8                  _xTaskResumeAll
-                  0x002370                  _xTaskResumeFromISR
-                  0x003268                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x002292                  _ulTaskNotifyTake
+                  0x0029ee                  _uxListRemove
+                  0x0033b6                  _uxQueueMessagesWaiting
+                  0x0033ca                  _uxQueueMessagesWaitingFromISR
+                  0x00324a                  _uxQueueSpacesAvailable
+                  0x0034f0                  _uxTaskGetNumberOfTasks
+                  0x0032ec                  _uxTaskResetEventItemValue
+                  0x003514                  _vApplicationIdleHook
+                  0x003268                  _vApplicationStackOverflowHook
+                  0x002e18                  _vListInitialise
+                  0x003442                  _vListInitialiseItem
+                  0x0025da                  _vListInsert
+                  0x002b42                  _vListInsertEnd
+                  0x003508                  _vPortEndScheduler
+                  0x0030be                  _vPortEnterCritical
+                  0x0030e0                  _vPortExitCritical
+                  0x0034e8                  _vPortFree
+                  0x0034c0                  _vPortInitialiseBlocks
+                  0x002906                  _vPortYield
+                  0x003422                  _vQueueDelete
+                  0x002f62                  _vTaskDelay
+                  0x003102                  _vTaskEndScheduler
+                  0x0033a2                  _vTaskInternalSetTimeOutState
+                  0x0034ca                  _vTaskMissedYield
+                  0x001a06                  _vTaskNotifyGiveFromISR
+                  0x0032bc                  _vTaskPlaceOnEventList
+                  0x003052                  _vTaskPlaceOnUnorderedEventList
+                  0x0017bc                  _vTaskPriorityDisinheritAfterTimeout
+                  0x000e98                  _vTaskPrioritySet
+                  0x002860                  _vTaskRemoveFromUnorderedEventList
+                  0x0027ac                  _vTaskResume
+                  0x0032d4                  _vTaskSetTimeOutState
+                  0x002ac2                  _vTaskStartScheduler
+                  0x001e18                  _vTaskSuspend
+                  0x003478                  _vTaskSuspendAll
+                  0x001a90                  _vTaskSwitchContext
+                  0x00346c                  _xPortGetFreeHeapSize
+                  0x002eac                  _xPortStartScheduler
+                  0x0031ca                  _xQueueCreateCountingSemaphore
+                  0x0031aa                  _xQueueCreateMutex
+                  0x002a7e                  _xQueueGenericCreate
+                  0x001ba0                  _xQueueGenericReset
+                  0x000db4                  _xQueueGenericSend
+                  0x0021b8                  _xQueueGenericSendFromISR
+                  0x0024a4                  _xQueueGiveFromISR
+                  0x00322a                  _xQueueIsQueueEmptyFromISR
+                  0x00309a                  _xQueueIsQueueFullFromISR
+                  0x001052                  _xQueuePeek
+                  0x002c64                  _xQueuePeekFromISR
+                  0x001206                  _xQueueReceive
+                  0x0022fe                  _xQueueReceiveFromISR
+                  0x0007ba                  _xQueueSemaphoreTake
+                  0x00236a                  _xTaskCheckForTimeOut
+                  0x0023d4                  _xTaskCreate
+                  0x000be4                  _xTaskGenericNotify
+                  0x0008cc                  _xTaskGenericNotifyFromISR
+                  0x003484                  _xTaskGetCurrentTaskHandle
+                  0x003402                  _xTaskGetTickCount
+                  0x003412                  _xTaskGetTickCountFromISR
+                  0x000f76                  _xTaskIncrementTick
+                  0x002b7e                  _xTaskNotifyStateClear
+                  0x000cd0                  _xTaskNotifyWait
+                  0x001e8e                  _xTaskPriorityDisinherit
+                  0x001684                  _xTaskPriorityInherit
+                  0x002226                  _xTaskRemoveFromEventList
+                  0x0015dc                  _xTaskResumeAll
+                  0x00243c                  _xTaskResumeFromISR
+                  0x003334                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
 
 Memory Configuration
 
@@ -678,10 +683,10 @@ LOAD build/default/production/dialtek_modbus.o
 LOAD build/default/production/dialtek_uart.o
 LOAD build/default/production/d_SPI.o
 LOAD build/default/production/d_eeprom.o
-LOAD build/default/production/main.o
 LOAD build/default/production/KORAD_cmds.o
 LOAD build/default/production/KORAD_controller.o
 LOAD build/default/production/KORAD_uart.o
+LOAD build/default/production/main.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib/PIC24H\libp24HJ256GP206-elf.a
                     0xf80000                  __FBS = 0xf80000
@@ -791,26 +796,26 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x9864
+.debug_info       0x000000       0x99b5
  *(.debug_info)
  .debug_info      0x000000        0x2c3 build/default/production/_ext/897580706/heap_1.o
  .debug_info      0x0002c3        0xb23 build/default/production/_ext/410575107/port.o
  .debug_info      0x000de6         0xd1 build/default/production/_ext/410575107/portasm_PIC24.o
- .debug_info      0x000eb7       0x1b73 build/default/production/_ext/1787047461/tasks.o
- .debug_info      0x002a2a        0x16b build/default/production/_ext/1787047461/timers.o
- .debug_info      0x002b95        0x468 build/default/production/_ext/1787047461/list.o
- .debug_info      0x002ffd       0x1234 build/default/production/_ext/1787047461/queue.o
- .debug_info      0x004231        0xb43 build/default/production/dialtek_modbus.o
- .debug_info      0x004d74       0x115e build/default/production/dialtek_uart.o
- .debug_info      0x005ed2        0x63e build/default/production/d_SPI.o
- .debug_info      0x006510        0x648 build/default/production/d_eeprom.o
- .debug_info      0x006b58        0xf6b build/default/production/main.o
- .debug_info      0x007ac3        0x5f1 build/default/production/KORAD_cmds.o
- .debug_info      0x0080b4        0xbd1 build/default/production/KORAD_controller.o
- .debug_info      0x008c85        0xbdf build/default/production/KORAD_uart.o
+ .debug_info      0x000eb7       0x1c75 build/default/production/_ext/1787047461/tasks.o
+ .debug_info      0x002b2c        0x16b build/default/production/_ext/1787047461/timers.o
+ .debug_info      0x002c97        0x468 build/default/production/_ext/1787047461/list.o
+ .debug_info      0x0030ff       0x1234 build/default/production/_ext/1787047461/queue.o
+ .debug_info      0x004333        0xb43 build/default/production/dialtek_modbus.o
+ .debug_info      0x004e76       0x115e build/default/production/dialtek_uart.o
+ .debug_info      0x005fd4        0x63e build/default/production/d_SPI.o
+ .debug_info      0x006612        0x648 build/default/production/d_eeprom.o
+ .debug_info      0x006c5a        0x5f1 build/default/production/KORAD_cmds.o
+ .debug_info      0x00724b        0xbd1 build/default/production/KORAD_controller.o
+ .debug_info      0x007e1c        0xbdf build/default/production/KORAD_uart.o
+ .debug_info      0x0089fb        0xfba build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x12fd
+.debug_abbrev     0x000000       0x130c
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xd3 build/default/production/_ext/897580706/heap_1.o
  .debug_abbrev    0x0000d3        0x1e4 build/default/production/_ext/410575107/port.o
@@ -823,61 +828,61 @@ __FUID3
  .debug_abbrev    0x0009aa        0x17c build/default/production/dialtek_uart.o
  .debug_abbrev    0x000b26        0x142 build/default/production/d_SPI.o
  .debug_abbrev    0x000c68        0x141 build/default/production/d_eeprom.o
- .debug_abbrev    0x000da9        0x215 build/default/production/main.o
- .debug_abbrev    0x000fbe         0xf7 build/default/production/KORAD_cmds.o
- .debug_abbrev    0x0010b5         0xb2 build/default/production/KORAD_controller.o
- .debug_abbrev    0x001167        0x196 build/default/production/KORAD_uart.o
+ .debug_abbrev    0x000da9         0xf7 build/default/production/KORAD_cmds.o
+ .debug_abbrev    0x000ea0         0xb2 build/default/production/KORAD_controller.o
+ .debug_abbrev    0x000f52        0x196 build/default/production/KORAD_uart.o
+ .debug_abbrev    0x0010e8        0x224 build/default/production/main.o
 
-.debug_line       0x000000       0x5091
+.debug_line       0x000000       0x51a9
  *(.debug_line)
  .debug_line      0x000000        0x244 build/default/production/_ext/897580706/heap_1.o
  .debug_line      0x000244        0x330 build/default/production/_ext/410575107/port.o
  .debug_line      0x000574         0x8a build/default/production/_ext/410575107/portasm_PIC24.o
- .debug_line      0x0005fe       0x1227 build/default/production/_ext/1787047461/tasks.o
- .debug_line      0x001825        0x187 build/default/production/_ext/1787047461/timers.o
- .debug_line      0x0019ac        0x2ba build/default/production/_ext/1787047461/list.o
- .debug_line      0x001c66        0xd8b build/default/production/_ext/1787047461/queue.o
- .debug_line      0x0029f1        0x761 build/default/production/dialtek_modbus.o
- .debug_line      0x003152        0x3df build/default/production/dialtek_uart.o
- .debug_line      0x003531        0x27d build/default/production/d_SPI.o
- .debug_line      0x0037ae        0x668 build/default/production/d_eeprom.o
- .debug_line      0x003e16        0x6f2 build/default/production/main.o
- .debug_line      0x004508        0x58f build/default/production/KORAD_cmds.o
- .debug_line      0x004a97        0x2cd build/default/production/KORAD_controller.o
- .debug_line      0x004d64        0x32d build/default/production/KORAD_uart.o
+ .debug_line      0x0005fe       0x12cf build/default/production/_ext/1787047461/tasks.o
+ .debug_line      0x0018cd        0x187 build/default/production/_ext/1787047461/timers.o
+ .debug_line      0x001a54        0x2ba build/default/production/_ext/1787047461/list.o
+ .debug_line      0x001d0e        0xd8b build/default/production/_ext/1787047461/queue.o
+ .debug_line      0x002a99        0x761 build/default/production/dialtek_modbus.o
+ .debug_line      0x0031fa        0x3df build/default/production/dialtek_uart.o
+ .debug_line      0x0035d9        0x27d build/default/production/d_SPI.o
+ .debug_line      0x003856        0x668 build/default/production/d_eeprom.o
+ .debug_line      0x003ebe        0x58f build/default/production/KORAD_cmds.o
+ .debug_line      0x00444d        0x2cd build/default/production/KORAD_controller.o
+ .debug_line      0x00471a        0x32d build/default/production/KORAD_uart.o
+ .debug_line      0x004a47        0x762 build/default/production/main.o
 
-.debug_frame      0x000000        0xaef
+.debug_frame      0x000000        0xaff
  *(.debug_frame)
  .debug_frame     0x000000         0x57 build/default/production/_ext/897580706/heap_1.o
  .debug_frame     0x000057         0x87 build/default/production/_ext/410575107/port.o
- .debug_frame     0x0000de        0x2fb build/default/production/_ext/1787047461/tasks.o
- .debug_frame     0x0003d9         0x67 build/default/production/_ext/1787047461/list.o
- .debug_frame     0x000440        0x1b7 build/default/production/_ext/1787047461/queue.o
- .debug_frame     0x0005f7        0x127 build/default/production/dialtek_modbus.o
- .debug_frame     0x00071e         0x97 build/default/production/dialtek_uart.o
- .debug_frame     0x0007b5         0x47 build/default/production/d_SPI.o
- .debug_frame     0x0007fc         0xc7 build/default/production/d_eeprom.o
- .debug_frame     0x0008c3         0xa7 build/default/production/main.o
- .debug_frame     0x00096a         0xb7 build/default/production/KORAD_cmds.o
- .debug_frame     0x000a21         0x47 build/default/production/KORAD_controller.o
- .debug_frame     0x000a68         0x87 build/default/production/KORAD_uart.o
+ .debug_frame     0x0000de        0x30b build/default/production/_ext/1787047461/tasks.o
+ .debug_frame     0x0003e9         0x67 build/default/production/_ext/1787047461/list.o
+ .debug_frame     0x000450        0x1b7 build/default/production/_ext/1787047461/queue.o
+ .debug_frame     0x000607        0x127 build/default/production/dialtek_modbus.o
+ .debug_frame     0x00072e         0x97 build/default/production/dialtek_uart.o
+ .debug_frame     0x0007c5         0x47 build/default/production/d_SPI.o
+ .debug_frame     0x00080c         0xc7 build/default/production/d_eeprom.o
+ .debug_frame     0x0008d3         0xb7 build/default/production/KORAD_cmds.o
+ .debug_frame     0x00098a         0x47 build/default/production/KORAD_controller.o
+ .debug_frame     0x0009d1         0x87 build/default/production/KORAD_uart.o
+ .debug_frame     0x000a58         0xa7 build/default/production/main.o
 
-.debug_str        0x000000        0x422
+.debug_str        0x000000        0x428
  *(.debug_str)
  .debug_str       0x000000          0xd build/default/production/_ext/897580706/heap_1.o
  .debug_str       0x00000d         0x17 build/default/production/_ext/410575107/port.o
- .debug_str       0x000024        0x187 build/default/production/_ext/1787047461/tasks.o
- .debug_str       0x0001ab          0xd build/default/production/_ext/1787047461/timers.o
- .debug_str       0x0001b8         0x38 build/default/production/_ext/1787047461/list.o
- .debug_str       0x0001f0        0x140 build/default/production/_ext/1787047461/queue.o
- .debug_str       0x000330         0x36 build/default/production/dialtek_modbus.o
- .debug_str       0x000366          0xd build/default/production/dialtek_uart.o
- .debug_str       0x000373          0xd build/default/production/d_SPI.o
- .debug_str       0x000380         0x2a build/default/production/d_eeprom.o
- .debug_str       0x0003aa         0x32 build/default/production/main.o
- .debug_str       0x0003dc         0x2c build/default/production/KORAD_cmds.o
- .debug_str       0x000408          0xd build/default/production/KORAD_controller.o
- .debug_str       0x000415          0xd build/default/production/KORAD_uart.o
+ .debug_str       0x000024        0x18d build/default/production/_ext/1787047461/tasks.o
+ .debug_str       0x0001b1          0xd build/default/production/_ext/1787047461/timers.o
+ .debug_str       0x0001be         0x38 build/default/production/_ext/1787047461/list.o
+ .debug_str       0x0001f6        0x140 build/default/production/_ext/1787047461/queue.o
+ .debug_str       0x000336         0x36 build/default/production/dialtek_modbus.o
+ .debug_str       0x00036c          0xd build/default/production/dialtek_uart.o
+ .debug_str       0x000379          0xd build/default/production/d_SPI.o
+ .debug_str       0x000386         0x2a build/default/production/d_eeprom.o
+ .debug_str       0x0003b0         0x2c build/default/production/KORAD_cmds.o
+ .debug_str       0x0003dc          0xd build/default/production/KORAD_controller.o
+ .debug_str       0x0003e9          0xd build/default/production/KORAD_uart.o
+ .debug_str       0x0003f6         0x32 build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -886,34 +891,34 @@ __FUID3
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000        0xefd
+                  0x000000        0xf23
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x64 build/default/production/_ext/897580706/heap_1.o
  .debug_pubnames
                   0x000064         0xd6 build/default/production/_ext/410575107/port.o
  .debug_pubnames
-                  0x00013a        0x3a8 build/default/production/_ext/1787047461/tasks.o
+                  0x00013a        0x3ba build/default/production/_ext/1787047461/tasks.o
  .debug_pubnames
-                  0x0004e2         0x72 build/default/production/_ext/1787047461/list.o
+                  0x0004f4         0x72 build/default/production/_ext/1787047461/list.o
  .debug_pubnames
-                  0x000554        0x1ce build/default/production/_ext/1787047461/queue.o
+                  0x000566        0x1ce build/default/production/_ext/1787047461/queue.o
  .debug_pubnames
-                  0x000722        0x26a build/default/production/dialtek_modbus.o
+                  0x000734        0x26a build/default/production/dialtek_modbus.o
  .debug_pubnames
-                  0x00098c         0xa7 build/default/production/dialtek_uart.o
+                  0x00099e         0xa7 build/default/production/dialtek_uart.o
  .debug_pubnames
-                  0x000a33         0x47 build/default/production/d_SPI.o
+                  0x000a45         0x47 build/default/production/d_SPI.o
  .debug_pubnames
-                  0x000a7a         0xe9 build/default/production/d_eeprom.o
+                  0x000a8c         0xe9 build/default/production/d_eeprom.o
  .debug_pubnames
-                  0x000b63        0x1f3 build/default/production/main.o
+                  0x000b75         0xcd build/default/production/KORAD_cmds.o
  .debug_pubnames
-                  0x000d56         0xcd build/default/production/KORAD_cmds.o
+                  0x000c42         0x3c build/default/production/KORAD_controller.o
  .debug_pubnames
-                  0x000e23         0x3c build/default/production/KORAD_controller.o
+                  0x000c7e         0x9e build/default/production/KORAD_uart.o
  .debug_pubnames
-                  0x000e5f         0x9e build/default/production/KORAD_uart.o
+                  0x000d1c        0x207 build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -941,13 +946,13 @@ __FUID3
  .debug_aranges
                   0x000118         0x20 build/default/production/d_eeprom.o
  .debug_aranges
-                  0x000138         0x20 build/default/production/main.o
+                  0x000138         0x20 build/default/production/KORAD_cmds.o
  .debug_aranges
-                  0x000158         0x20 build/default/production/KORAD_cmds.o
+                  0x000158         0x20 build/default/production/KORAD_controller.o
  .debug_aranges
-                  0x000178         0x20 build/default/production/KORAD_controller.o
+                  0x000178         0x20 build/default/production/KORAD_uart.o
  .debug_aranges
-                  0x000198         0x20 build/default/production/KORAD_uart.o
+                  0x000198         0x20 build/default/production/main.o
 
 .ivt              0x000004         0xfc
                   0x000004          0x4 LONG 0x37c DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1942,13 +1947,13 @@ __c30_signature
  __c30_signature
                   0x0001ee          0x6 build/default/production/d_eeprom.o
  __c30_signature
-                  0x0001f4          0x6 build/default/production/main.o
+                  0x0001f4          0x6 build/default/production/KORAD_cmds.o
  __c30_signature
-                  0x0001fa          0x6 build/default/production/KORAD_cmds.o
+                  0x0001fa          0x6 build/default/production/KORAD_controller.o
  __c30_signature
-                  0x000200          0x6 build/default/production/KORAD_controller.o
+                  0x000200          0x6 build/default/production/KORAD_uart.o
  __c30_signature
-                  0x000206          0x6 build/default/production/KORAD_uart.o
+                  0x000206          0x6 build/default/production/main.o
  __c30_signature
                   0x00020c          0x6 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
@@ -1960,10 +1965,10 @@ __c30_signature
  __c30_signature
                   0x000224          0x6 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libc-elf.a(memset.XXeo)
 
-.nbss               0x0800       0x14bc
+.nbss               0x0800       0x14be
  .nbss              0x0800       0x1404 build/default/production/_ext/897580706/heap_1.o
  .nbss              0x1c04         0x6a build/default/production/_ext/1787047461/tasks.o
- .nbss              0x1c6e         0x36 build/default/production/main.o
+ .nbss              0x1c6e         0x38 build/default/production/main.o
                     0x1c6e                  _NewID
                     0x1c6f                  _EEPR_buf
                     0x1c78                  _pol_relay_1
@@ -1979,88 +1984,89 @@ __c30_signature
                     0x1c9e                  _KORAD_Ans_q
                     0x1ca0                  _Modbus_Status_q
                     0x1ca2                  _ModbusTaskHandle
- .nbss              0x1ca4         0x18 build/default/production/KORAD_cmds.o
+                    0x1ca4                  _KORADTaskHandle
+ .nbss              0x1ca6         0x18 build/default/production/KORAD_cmds.o
 
-.ndata              0x1cbc         0x12
- .ndata             0x1cbc         0x12 build/default/production/dialtek_modbus.o
-                    0x1cbc                  _rx_buf_ptr
-                    0x1cbe                  _modbus_cmd
-                    0x1cc0                  _addr_buf_1
-                    0x1cc2                  _addr_buf_2
-                    0x1cc4                  _regs2read
-                    0x1cc6                  _CRC16
-                    0x1cc8                  _modbus_id
-                    0x1cca                  _reg_wr_data
-                    0x1ccc                  _dev_id
+.ndata              0x1cbe         0x12
+ .ndata             0x1cbe         0x12 build/default/production/dialtek_modbus.o
+                    0x1cbe                  _rx_buf_ptr
+                    0x1cc0                  _modbus_cmd
+                    0x1cc2                  _addr_buf_1
+                    0x1cc4                  _addr_buf_2
+                    0x1cc6                  _regs2read
+                    0x1cc8                  _CRC16
+                    0x1cca                  _modbus_id
+                    0x1ccc                  _reg_wr_data
+                    0x1cce                  _dev_id
 
-.nbss               0x1cce         0x12
- .nbss              0x1cce          0x8 build/default/production/dialtek_uart.o
- .nbss              0x1cd6          0x6 build/default/production/KORAD_uart.o
-                    0x1cda                  _KORADrxBytes
- .nbss              0x1cdc          0x4 build/default/production/dialtek_modbus.o
-                    0x1cdc                  _modbus_reg_addr
-                    0x1cde                  _RxSemaphore
+.nbss               0x1cd0         0x12
+ .nbss              0x1cd0          0x8 build/default/production/dialtek_uart.o
+ .nbss              0x1cd8          0x6 build/default/production/KORAD_uart.o
+                    0x1cdc                  _KORADrxBytes
+ .nbss              0x1cde          0x4 build/default/production/dialtek_modbus.o
+                    0x1cde                  _modbus_reg_addr
+                    0x1ce0                  _RxSemaphore
 
-.ndata              0x1ce0          0x6
- .ndata             0x1ce0          0x2 build/default/production/_ext/410575107/port.o
-                    0x1ce0                  _uxCriticalNesting
- .ndata             0x1ce2          0x2 build/default/production/_ext/1787047461/tasks.o
-                    0x1ce2                  _pxCurrentTCB
- .ndata             0x1ce4          0x2 build/default/production/dialtek_uart.o
-                    0x1ce4                  _timer_state
+.ndata              0x1ce2          0x6
+ .ndata             0x1ce2          0x2 build/default/production/_ext/410575107/port.o
+                    0x1ce2                  _uxCriticalNesting
+ .ndata             0x1ce4          0x2 build/default/production/_ext/1787047461/tasks.o
+                    0x1ce4                  _pxCurrentTCB
+ .ndata             0x1ce6          0x2 build/default/production/dialtek_uart.o
+                    0x1ce6                  _timer_state
 
-.bss                0x1ce6        0x3a0
- .bss               0x1ce6        0x3a0 build/default/production/dialtek_modbus.o
-                    0x1ce6                  _rx_buf
-                    0x1d66                  _crc_buf
-                    0x1e92                  _holding_register
-                    0x1f8c                  _input_register
+.bss                0x1ce8        0x3a0
+ .bss               0x1ce8        0x3a0 build/default/production/dialtek_modbus.o
+                    0x1ce8                  _rx_buf
+                    0x1d68                  _crc_buf
+                    0x1e94                  _holding_register
+                    0x1f8e                  _input_register
 
-_033d3b605df3ad4a
+_03434b605e21be6c
                   0xf80000          0x2
- _033d3b605df3ad4a
+ _03434b605e21be6c
                   0xf80000          0x2 build/default/production/main.o
                   0xf80000                  _FBS
 
-_033d3bd05df3ad4a
+_03434bd05e21be6c
                   0xf80002          0x2
- _033d3bd05df3ad4a
+ _03434bd05e21be6c
                   0xf80002          0x2 build/default/production/main.o
                   0xf80002                  _FSS
 
-_033d3c405df3ad4a
+_03434c405e21be6c
                   0xf80004          0x2
- _033d3c405df3ad4a
+ _03434c405e21be6c
                   0xf80004          0x2 build/default/production/main.o
                   0xf80004                  _FGS
 
-_033d3cb05df3ad4a
+_03434cb05e21be6c
                   0xf80006          0x2
- _033d3cb05df3ad4a
+ _03434cb05e21be6c
                   0xf80006          0x2 build/default/production/main.o
                   0xf80006                  _FOSCSEL
 
-_033d3d205df3ad4a
+_03434d205e21be6c
                   0xf80008          0x2
- _033d3d205df3ad4a
+ _03434d205e21be6c
                   0xf80008          0x2 build/default/production/main.o
                   0xf80008                  _FOSC
 
-_033d3d905df3ad4a
+_03434d905e21be6c
                   0xf8000a          0x2
- _033d3d905df3ad4a
+ _03434d905e21be6c
                   0xf8000a          0x2 build/default/production/main.o
                   0xf8000a                  _FWDT
 
-_033d3e005df3ad4a
+_03434e005e21be6c
                   0xf8000c          0x2
- _033d3e005df3ad4a
+ _03434e005e21be6c
                   0xf8000c          0x2 build/default/production/main.o
                   0xf8000c                  _FPOR
 
-_033d3e705df3ad4a
+_03434e705e21be6c
                   0xf8000e          0x2
- _033d3e705df3ad4a
+ _03434e705e21be6c
                   0xf8000e          0x2 build/default/production/main.o
                   0xf8000e                  _FICD
 
@@ -2076,882 +2082,888 @@ _033d3e705df3ad4a
                     0x8463                  _modbus_ver
 
 .text.task_ModbusSM
-                  0x000464        0x212
+                  0x000464        0x242
  .text.task_ModbusSM
-                  0x000464        0x212 build/default/production/main.o
+                  0x000464        0x242 build/default/production/main.o
                   0x000464                  _task_ModbusSM
 
 .text.modbus_rx_CRC_check
-                  0x000676        0x114
+                  0x0006a6        0x114
  .text.modbus_rx_CRC_check
-                  0x000676        0x114 build/default/production/dialtek_modbus.o
-                  0x000676                  _modbus_rx_CRC_check
+                  0x0006a6        0x114 build/default/production/dialtek_modbus.o
+                  0x0006a6                  _modbus_rx_CRC_check
 
 .text.xQueueSemaphoreTake
-                  0x00078a        0x112
+                  0x0007ba        0x112
  .text.xQueueSemaphoreTake
-                  0x00078a        0x112 build/default/production/_ext/1787047461/queue.o
-                  0x00078a                  _xQueueSemaphoreTake
+                  0x0007ba        0x112 build/default/production/_ext/1787047461/queue.o
+                  0x0007ba                  _xQueueSemaphoreTake
 
 .text.xTaskGenericNotifyFromISR
-                  0x00089c        0x108
+                  0x0008cc        0x108
  .text.xTaskGenericNotifyFromISR
-                  0x00089c        0x108 build/default/production/_ext/1787047461/tasks.o
-                  0x00089c                  _xTaskGenericNotifyFromISR
+                  0x0008cc        0x108 build/default/production/_ext/1787047461/tasks.o
+                  0x0008cc                  _xTaskGenericNotifyFromISR
 
 .text.modbus_rhr_answer
-                  0x0009a4        0x108
+                  0x0009d4        0x108
  .text.modbus_rhr_answer
-                  0x0009a4        0x108 build/default/production/dialtek_modbus.o
-                  0x0009a4                  _modbus_rhr_answer
+                  0x0009d4        0x108 build/default/production/dialtek_modbus.o
+                  0x0009d4                  _modbus_rhr_answer
 
 .text.modbus_rir_answer
-                  0x000aac        0x108
+                  0x000adc        0x108
  .text.modbus_rir_answer
-                  0x000aac        0x108 build/default/production/dialtek_modbus.o
-                  0x000aac                  _modbus_rir_answer
+                  0x000adc        0x108 build/default/production/dialtek_modbus.o
+                  0x000adc                  _modbus_rir_answer
 
 .text.xTaskGenericNotify
-                  0x000bb4         0xec
+                  0x000be4         0xec
  .text.xTaskGenericNotify
-                  0x000bb4         0xec build/default/production/_ext/1787047461/tasks.o
-                  0x000bb4                  _xTaskGenericNotify
+                  0x000be4         0xec build/default/production/_ext/1787047461/tasks.o
+                  0x000be4                  _xTaskGenericNotify
 
 .text.xTaskNotifyWait
-                  0x000ca0         0xe4
+                  0x000cd0         0xe4
  .text.xTaskNotifyWait
-                  0x000ca0         0xe4 build/default/production/_ext/1787047461/tasks.o
-                  0x000ca0                  _xTaskNotifyWait
+                  0x000cd0         0xe4 build/default/production/_ext/1787047461/tasks.o
+                  0x000cd0                  _xTaskNotifyWait
 
 .text.xQueueGenericSend
-                  0x000d84         0xe4
+                  0x000db4         0xe4
  .text.xQueueGenericSend
-                  0x000d84         0xe4 build/default/production/_ext/1787047461/queue.o
-                  0x000d84                  _xQueueGenericSend
+                  0x000db4         0xe4 build/default/production/_ext/1787047461/queue.o
+                  0x000db4                  _xQueueGenericSend
 
 .text.vTaskPrioritySet
-                  0x000e68         0xde
+                  0x000e98         0xde
  .text.vTaskPrioritySet
-                  0x000e68         0xde build/default/production/_ext/1787047461/tasks.o
-                  0x000e68                  _vTaskPrioritySet
+                  0x000e98         0xde build/default/production/_ext/1787047461/tasks.o
+                  0x000e98                  _vTaskPrioritySet
 
 .text.xTaskIncrementTick
-                  0x000f46         0xdc
+                  0x000f76         0xdc
  .text.xTaskIncrementTick
-                  0x000f46         0xdc build/default/production/_ext/1787047461/tasks.o
-                  0x000f46                  _xTaskIncrementTick
+                  0x000f76         0xdc build/default/production/_ext/1787047461/tasks.o
+                  0x000f76                  _xTaskIncrementTick
 
 .text.xQueuePeek
-                  0x001022         0xdc
+                  0x001052         0xdc
  .text.xQueuePeek
-                  0x001022         0xdc build/default/production/_ext/1787047461/queue.o
-                  0x001022                  _xQueuePeek
+                  0x001052         0xdc build/default/production/_ext/1787047461/queue.o
+                  0x001052                  _xQueuePeek
 
 .text.eeprom_src_restore
-                  0x0010fe         0xd8
+                  0x00112e         0xd8
  .text.eeprom_src_restore
-                  0x0010fe         0xd8 build/default/production/d_eeprom.o
-                  0x0010fe                  _eeprom_src_restore
+                  0x00112e         0xd8 build/default/production/d_eeprom.o
+                  0x00112e                  _eeprom_src_restore
 
 .text.xQueueReceive
-                  0x0011d6         0xd6
+                  0x001206         0xd6
  .text.xQueueReceive
-                  0x0011d6         0xd6 build/default/production/_ext/1787047461/queue.o
-                  0x0011d6                  _xQueueReceive
+                  0x001206         0xd6 build/default/production/_ext/1787047461/queue.o
+                  0x001206                  _xQueueReceive
 
 .text.prvInitialiseNewTask
-                  0x0012ac         0xd0
+                  0x0012dc         0xd0
  .text.prvInitialiseNewTask
-                  0x0012ac         0xd0 build/default/production/_ext/1787047461/tasks.o
+                  0x0012dc         0xd0 build/default/production/_ext/1787047461/tasks.o
 
 .text.RestoreCfg
-                  0x00137c         0xc8
+                  0x0013ac         0xce
  .text.RestoreCfg
-                  0x00137c         0xc8 build/default/production/main.o
-                  0x00137c                  _RestoreCfg
+                  0x0013ac         0xce build/default/production/main.o
+                  0x0013ac                  _RestoreCfg
 
 .text.prvCopyDataToQueue
-                  0x001444         0xb4
+                  0x00147a         0xb4
  .text.prvCopyDataToQueue
-                  0x001444         0xb4 build/default/production/_ext/1787047461/queue.o
-
-.text.xTaskResumeAll
-                  0x0014f8         0xa8
- .text.xTaskResumeAll
-                  0x0014f8         0xa8 build/default/production/_ext/1787047461/tasks.o
-                  0x0014f8                  _xTaskResumeAll
-
-.text.xTaskPriorityInherit
-                  0x0015a0         0x9c
- .text.xTaskPriorityInherit
-                  0x0015a0         0x9c build/default/production/_ext/1787047461/tasks.o
-                  0x0015a0                  _xTaskPriorityInherit
-
-.text.modbus_wsr_answer
-                  0x00163c         0x9c
- .text.modbus_wsr_answer
-                  0x00163c         0x9c build/default/production/dialtek_modbus.o
-                  0x00163c                  _modbus_wsr_answer
-
-.text.vTaskPriorityDisinheritAfterTimeout
-                  0x0016d8         0x98
- .text.vTaskPriorityDisinheritAfterTimeout
-                  0x0016d8         0x98 build/default/production/_ext/1787047461/tasks.o
-                  0x0016d8                  _vTaskPriorityDisinheritAfterTimeout
-
-.text.modbus_get_poll
-                  0x001770         0x98
- .text.modbus_get_poll
-                  0x001770         0x98 build/default/production/dialtek_modbus.o
-                  0x001770                  _modbus_get_poll
-
-.text.KORAD_SetVoltage
-                  0x001808         0x8e
- .text.KORAD_SetVoltage
-                  0x001808         0x8e build/default/production/KORAD_cmds.o
-                  0x001808                  _KORAD_SetVoltage
-
-.text.pxPortInitialiseStack
-                  0x001896         0x8c
- .text.pxPortInitialiseStack
-                  0x001896         0x8c build/default/production/_ext/410575107/port.o
-                  0x001896                  _pxPortInitialiseStack
-
-.text.vTaskNotifyGiveFromISR
-                  0x001922         0x8a
- .text.vTaskNotifyGiveFromISR
-                  0x001922         0x8a build/default/production/_ext/1787047461/tasks.o
-                  0x001922                  _vTaskNotifyGiveFromISR
+                  0x00147a         0xb4 build/default/production/_ext/1787047461/queue.o
 
 .text.task_KORAD
-                  0x0019ac         0x8a
+                  0x00152e         0xae
  .text.task_KORAD
-                  0x0019ac         0x8a build/default/production/main.o
-                  0x0019ac                  _task_KORAD
+                  0x00152e         0xae build/default/production/main.o
+                  0x00152e                  _task_KORAD
+
+.text.xTaskResumeAll
+                  0x0015dc         0xa8
+ .text.xTaskResumeAll
+                  0x0015dc         0xa8 build/default/production/_ext/1787047461/tasks.o
+                  0x0015dc                  _xTaskResumeAll
+
+.text.xTaskPriorityInherit
+                  0x001684         0x9c
+ .text.xTaskPriorityInherit
+                  0x001684         0x9c build/default/production/_ext/1787047461/tasks.o
+                  0x001684                  _xTaskPriorityInherit
+
+.text.modbus_wsr_answer
+                  0x001720         0x9c
+ .text.modbus_wsr_answer
+                  0x001720         0x9c build/default/production/dialtek_modbus.o
+                  0x001720                  _modbus_wsr_answer
+
+.text.vTaskPriorityDisinheritAfterTimeout
+                  0x0017bc         0x98
+ .text.vTaskPriorityDisinheritAfterTimeout
+                  0x0017bc         0x98 build/default/production/_ext/1787047461/tasks.o
+                  0x0017bc                  _vTaskPriorityDisinheritAfterTimeout
+
+.text.modbus_get_poll
+                  0x001854         0x98
+ .text.modbus_get_poll
+                  0x001854         0x98 build/default/production/dialtek_modbus.o
+                  0x001854                  _modbus_get_poll
+
+.text.KORAD_SetVoltage
+                  0x0018ec         0x8e
+ .text.KORAD_SetVoltage
+                  0x0018ec         0x8e build/default/production/KORAD_cmds.o
+                  0x0018ec                  _KORAD_SetVoltage
+
+.text.pxPortInitialiseStack
+                  0x00197a         0x8c
+ .text.pxPortInitialiseStack
+                  0x00197a         0x8c build/default/production/_ext/410575107/port.o
+                  0x00197a                  _pxPortInitialiseStack
+
+.text.vTaskNotifyGiveFromISR
+                  0x001a06         0x8a
+ .text.vTaskNotifyGiveFromISR
+                  0x001a06         0x8a build/default/production/_ext/1787047461/tasks.o
+                  0x001a06                  _vTaskNotifyGiveFromISR
 
 .text.vTaskSwitchContext
-                  0x001a36         0x88
+                  0x001a90         0x88
  .text.vTaskSwitchContext
-                  0x001a36         0x88 build/default/production/_ext/1787047461/tasks.o
-                  0x001a36                  _vTaskSwitchContext
+                  0x001a90         0x88 build/default/production/_ext/1787047461/tasks.o
+                  0x001a90                  _vTaskSwitchContext
 
 .text.Timer9_init
-                  0x001abe         0x88
+                  0x001b18         0x88
  .text.Timer9_init
-                  0x001abe         0x88 build/default/production/dialtek_uart.o
-                  0x001abe                  _Timer9_init
+                  0x001b18         0x88 build/default/production/dialtek_uart.o
+                  0x001b18                  _Timer9_init
 
 .text.xQueueGenericReset
-                  0x001b46         0x84
+                  0x001ba0         0x84
  .text.xQueueGenericReset
-                  0x001b46         0x84 build/default/production/_ext/1787047461/queue.o
-                  0x001b46                  _xQueueGenericReset
+                  0x001ba0         0x84 build/default/production/_ext/1787047461/queue.o
+                  0x001ba0                  _xQueueGenericReset
 
 .text.KORAD_SetCurrent
-                  0x001bca         0x84
+                  0x001c24         0x84
  .text.KORAD_SetCurrent
-                  0x001bca         0x84 build/default/production/KORAD_cmds.o
-                  0x001bca                  _KORAD_SetCurrent
+                  0x001c24         0x84 build/default/production/KORAD_cmds.o
+                  0x001c24                  _KORAD_SetCurrent
 
 .text.prvAddNewTaskToReadyList
-                  0x001c4e         0x7c
+                  0x001ca8         0x7c
  .text.prvAddNewTaskToReadyList
-                  0x001c4e         0x7c build/default/production/_ext/1787047461/tasks.o
+                  0x001ca8         0x7c build/default/production/_ext/1787047461/tasks.o
 
 .text.KORAD_GetVoltage
-                  0x001cca         0x7a
+                  0x001d24         0x7a
  .text.KORAD_GetVoltage
-                  0x001cca         0x7a build/default/production/KORAD_cmds.o
-                  0x001cca                  _KORAD_GetVoltage
+                  0x001d24         0x7a build/default/production/KORAD_cmds.o
+                  0x001d24                  _KORAD_GetVoltage
 
 .text.KORAD_GetVSets
-                  0x001d44         0x7a
+                  0x001d9e         0x7a
  .text.KORAD_GetVSets
-                  0x001d44         0x7a build/default/production/KORAD_cmds.o
-                  0x001d44                  _KORAD_GetVSets
+                  0x001d9e         0x7a build/default/production/KORAD_cmds.o
+                  0x001d9e                  _KORAD_GetVSets
 
 .text.vTaskSuspend
-                  0x001dbe         0x76
+                  0x001e18         0x76
  .text.vTaskSuspend
-                  0x001dbe         0x76 build/default/production/_ext/1787047461/tasks.o
-                  0x001dbe                  _vTaskSuspend
+                  0x001e18         0x76 build/default/production/_ext/1787047461/tasks.o
+                  0x001e18                  _vTaskSuspend
 
 .text.xTaskPriorityDisinherit
-                  0x001e34         0x76
+                  0x001e8e         0x76
  .text.xTaskPriorityDisinherit
-                  0x001e34         0x76 build/default/production/_ext/1787047461/tasks.o
-                  0x001e34                  _xTaskPriorityDisinherit
+                  0x001e8e         0x76 build/default/production/_ext/1787047461/tasks.o
+                  0x001e8e                  _xTaskPriorityDisinherit
 
-.text.main        0x001eaa         0x74
- .text.main       0x001eaa         0x74 build/default/production/main.o
-                  0x001eaa                  _main
+.text.main        0x001f04         0x76
+ .text.main       0x001f04         0x76 build/default/production/main.o
+                  0x001f04                  _main
 
 .text.KORAD_GetCurrent
-                  0x001f1e         0x74
+                  0x001f7a         0x74
  .text.KORAD_GetCurrent
-                  0x001f1e         0x74 build/default/production/KORAD_cmds.o
-                  0x001f1e                  _KORAD_GetCurrent
+                  0x001f7a         0x74 build/default/production/KORAD_cmds.o
+                  0x001f7a                  _KORAD_GetCurrent
 
 .text.KORAD_GetISets
-                  0x001f92         0x74
+                  0x001fee         0x74
  .text.KORAD_GetISets
-                  0x001f92         0x74 build/default/production/KORAD_cmds.o
-                  0x001f92                  _KORAD_GetISets
+                  0x001fee         0x74 build/default/production/KORAD_cmds.o
+                  0x001fee                  _KORAD_GetISets
 
 .text.KORAD_GetStatus
-                  0x002006         0x74
+                  0x002062         0x74
  .text.KORAD_GetStatus
-                  0x002006         0x74 build/default/production/KORAD_cmds.o
-                  0x002006                  _KORAD_GetStatus
+                  0x002062         0x74 build/default/production/KORAD_cmds.o
+                  0x002062                  _KORAD_GetStatus
 
 .text.modbus_CRC16
-                  0x00207a         0x72
+                  0x0020d6         0x72
  .text.modbus_CRC16
-                  0x00207a         0x72 build/default/production/dialtek_modbus.o
+                  0x0020d6         0x72 build/default/production/dialtek_modbus.o
+
+.text.eTaskGetState
+                  0x002148         0x70
+ .text.eTaskGetState
+                  0x002148         0x70 build/default/production/_ext/1787047461/tasks.o
+                  0x002148                  _eTaskGetState
 
 .text.xQueueGenericSendFromISR
-                  0x0020ec         0x6e
+                  0x0021b8         0x6e
  .text.xQueueGenericSendFromISR
-                  0x0020ec         0x6e build/default/production/_ext/1787047461/queue.o
-                  0x0020ec                  _xQueueGenericSendFromISR
+                  0x0021b8         0x6e build/default/production/_ext/1787047461/queue.o
+                  0x0021b8                  _xQueueGenericSendFromISR
 
 .text.xTaskRemoveFromEventList
-                  0x00215a         0x6c
+                  0x002226         0x6c
  .text.xTaskRemoveFromEventList
-                  0x00215a         0x6c build/default/production/_ext/1787047461/tasks.o
-                  0x00215a                  _xTaskRemoveFromEventList
+                  0x002226         0x6c build/default/production/_ext/1787047461/tasks.o
+                  0x002226                  _xTaskRemoveFromEventList
 
 .text.ulTaskNotifyTake
-                  0x0021c6         0x6c
+                  0x002292         0x6c
  .text.ulTaskNotifyTake
-                  0x0021c6         0x6c build/default/production/_ext/1787047461/tasks.o
-                  0x0021c6                  _ulTaskNotifyTake
+                  0x002292         0x6c build/default/production/_ext/1787047461/tasks.o
+                  0x002292                  _ulTaskNotifyTake
 
 .text.xQueueReceiveFromISR
-                  0x002232         0x6c
+                  0x0022fe         0x6c
  .text.xQueueReceiveFromISR
-                  0x002232         0x6c build/default/production/_ext/1787047461/queue.o
-                  0x002232                  _xQueueReceiveFromISR
+                  0x0022fe         0x6c build/default/production/_ext/1787047461/queue.o
+                  0x0022fe                  _xQueueReceiveFromISR
 
 .text.xTaskCheckForTimeOut
-                  0x00229e         0x6a
+                  0x00236a         0x6a
  .text.xTaskCheckForTimeOut
-                  0x00229e         0x6a build/default/production/_ext/1787047461/tasks.o
-                  0x00229e                  _xTaskCheckForTimeOut
+                  0x00236a         0x6a build/default/production/_ext/1787047461/tasks.o
+                  0x00236a                  _xTaskCheckForTimeOut
 
 .text.xTaskCreate
-                  0x002308         0x68
+                  0x0023d4         0x68
  .text.xTaskCreate
-                  0x002308         0x68 build/default/production/_ext/1787047461/tasks.o
-                  0x002308                  _xTaskCreate
+                  0x0023d4         0x68 build/default/production/_ext/1787047461/tasks.o
+                  0x0023d4                  _xTaskCreate
 
 .text.xTaskResumeFromISR
-                  0x002370         0x68
+                  0x00243c         0x68
  .text.xTaskResumeFromISR
-                  0x002370         0x68 build/default/production/_ext/1787047461/tasks.o
-                  0x002370                  _xTaskResumeFromISR
+                  0x00243c         0x68 build/default/production/_ext/1787047461/tasks.o
+                  0x00243c                  _xTaskResumeFromISR
 
 .text.xQueueGiveFromISR
-                  0x0023d8         0x68
+                  0x0024a4         0x68
  .text.xQueueGiveFromISR
-                  0x0023d8         0x68 build/default/production/_ext/1787047461/queue.o
-                  0x0023d8                  _xQueueGiveFromISR
+                  0x0024a4         0x68 build/default/production/_ext/1787047461/queue.o
+                  0x0024a4                  _xQueueGiveFromISR
 
 .text.eeprom_wr_page
-                  0x002440         0x68
+                  0x00250c         0x68
  .text.eeprom_wr_page
-                  0x002440         0x68 build/default/production/d_eeprom.o
-                  0x002440                  _eeprom_wr_page
+                  0x00250c         0x68 build/default/production/d_eeprom.o
+                  0x00250c                  _eeprom_wr_page
 
 .text.prvUnlockQueue
-                  0x0024a8         0x66
+                  0x002574         0x66
  .text.prvUnlockQueue
-                  0x0024a8         0x66 build/default/production/_ext/1787047461/queue.o
+                  0x002574         0x66 build/default/production/_ext/1787047461/queue.o
 
 .text.vListInsert
-                  0x00250e         0x60
+                  0x0025da         0x60
  .text.vListInsert
-                  0x00250e         0x60 build/default/production/_ext/1787047461/list.o
-                  0x00250e                  _vListInsert
+                  0x0025da         0x60 build/default/production/_ext/1787047461/list.o
+                  0x0025da                  _vListInsert
 
 .text.EEPROM_CRC16
-                  0x00256e         0x60
+                  0x00263a         0x60
  .text.EEPROM_CRC16
-                  0x00256e         0x60 build/default/production/d_eeprom.o
-                  0x00256e                  _EEPROM_CRC16
+                  0x00263a         0x60 build/default/production/d_eeprom.o
+                  0x00263a                  _EEPROM_CRC16
 
 .text.eeprom_src_save
-                  0x0025ce         0x5c
+                  0x00269a         0x5c
  .text.eeprom_src_save
-                  0x0025ce         0x5c build/default/production/d_eeprom.o
-                  0x0025ce                  _eeprom_src_save
+                  0x00269a         0x5c build/default/production/d_eeprom.o
+                  0x00269a                  _eeprom_src_save
 
-.dinit            0x00262a         0x5c
- .dinit           0x00262a         0x5c data_init
+.dinit            0x0026f6         0x5c
+ .dinit           0x0026f6         0x5c data_init
 
 .text.pvPortMalloc
-                  0x002686         0x5a
+                  0x002752         0x5a
  .text.pvPortMalloc
-                  0x002686         0x5a build/default/production/_ext/897580706/heap_1.o
-                  0x002686                  _pvPortMalloc
+                  0x002752         0x5a build/default/production/_ext/897580706/heap_1.o
+                  0x002752                  _pvPortMalloc
 
 .text.vTaskResume
-                  0x0026e0         0x5a
+                  0x0027ac         0x5a
  .text.vTaskResume
-                  0x0026e0         0x5a build/default/production/_ext/1787047461/tasks.o
-                  0x0026e0                  _vTaskResume
+                  0x0027ac         0x5a build/default/production/_ext/1787047461/tasks.o
+                  0x0027ac                  _vTaskResume
 
 .text.prvAddCurrentTaskToDelayedList
-                  0x00273a         0x5a
+                  0x002806         0x5a
  .text.prvAddCurrentTaskToDelayedList
-                  0x00273a         0x5a build/default/production/_ext/1787047461/tasks.o
+                  0x002806         0x5a build/default/production/_ext/1787047461/tasks.o
 
 .text.vTaskRemoveFromUnorderedEventList
-                  0x002794         0x54
+                  0x002860         0x54
  .text.vTaskRemoveFromUnorderedEventList
-                  0x002794         0x54 build/default/production/_ext/1787047461/tasks.o
-                  0x002794                  _vTaskRemoveFromUnorderedEventList
+                  0x002860         0x54 build/default/production/_ext/1787047461/tasks.o
+                  0x002860                  _vTaskRemoveFromUnorderedEventList
 
-.text.UartInit    0x0027e8         0x52
+.text.UartInit    0x0028b4         0x52
  .text.UartInit
-                  0x0027e8         0x52 build/default/production/dialtek_uart.o
-                  0x0027e8                  _UartInit
+                  0x0028b4         0x52 build/default/production/dialtek_uart.o
+                  0x0028b4                  _UartInit
 
-.text             0x00283a         0x50
- .text            0x00283a         0x50 build/default/production/_ext/410575107/portasm_PIC24.o
-                  0x00283a                  _vPortYield
+.text             0x002906         0x50
+ .text            0x002906         0x50 build/default/production/_ext/410575107/portasm_PIC24.o
+                  0x002906                  _vPortYield
 
 .text.eeprom_rd_regs_H
-                  0x00288a         0x4c
+                  0x002956         0x4c
  .text.eeprom_rd_regs_H
-                  0x00288a         0x4c build/default/production/d_eeprom.o
-                  0x00288a                  _eeprom_rd_regs_H
+                  0x002956         0x4c build/default/production/d_eeprom.o
+                  0x002956                  _eeprom_rd_regs_H
 
 .text.eeprom_rd_regs_I
-                  0x0028d6         0x4c
+                  0x0029a2         0x4c
  .text.eeprom_rd_regs_I
-                  0x0028d6         0x4c build/default/production/d_eeprom.o
-                  0x0028d6                  _eeprom_rd_regs_I
+                  0x0029a2         0x4c build/default/production/d_eeprom.o
+                  0x0029a2                  _eeprom_rd_regs_I
 
 .text.uxListRemove
-                  0x002922         0x48
+                  0x0029ee         0x48
  .text.uxListRemove
-                  0x002922         0x48 build/default/production/_ext/1787047461/list.o
-                  0x002922                  _uxListRemove
+                  0x0029ee         0x48 build/default/production/_ext/1787047461/list.o
+                  0x0029ee                  _uxListRemove
 
 .text.Uart2Init
-                  0x00296a         0x48
+                  0x002a36         0x48
  .text.Uart2Init
-                  0x00296a         0x48 build/default/production/KORAD_uart.o
-                  0x00296a                  _Uart2Init
+                  0x002a36         0x48 build/default/production/KORAD_uart.o
+                  0x002a36                  _Uart2Init
 
 .text.xQueueGenericCreate
-                  0x0029b2         0x44
+                  0x002a7e         0x44
  .text.xQueueGenericCreate
-                  0x0029b2         0x44 build/default/production/_ext/1787047461/queue.o
-                  0x0029b2                  _xQueueGenericCreate
+                  0x002a7e         0x44 build/default/production/_ext/1787047461/queue.o
+                  0x002a7e                  _xQueueGenericCreate
 
 .text.vTaskStartScheduler
-                  0x0029f6         0x40
+                  0x002ac2         0x40
  .text.vTaskStartScheduler
-                  0x0029f6         0x40 build/default/production/_ext/1787047461/tasks.o
-                  0x0029f6                  _vTaskStartScheduler
+                  0x002ac2         0x40 build/default/production/_ext/1787047461/tasks.o
+                  0x002ac2                  _vTaskStartScheduler
 
 .text.prvCopyDataFromQueue
-                  0x002a36         0x40
+                  0x002b02         0x40
  .text.prvCopyDataFromQueue
-                  0x002a36         0x40 build/default/production/_ext/1787047461/queue.o
+                  0x002b02         0x40 build/default/production/_ext/1787047461/queue.o
 
 .text.vListInsertEnd
-                  0x002a76         0x3c
+                  0x002b42         0x3c
  .text.vListInsertEnd
-                  0x002a76         0x3c build/default/production/_ext/1787047461/list.o
-                  0x002a76                  _vListInsertEnd
+                  0x002b42         0x3c build/default/production/_ext/1787047461/list.o
+                  0x002b42                  _vListInsertEnd
 
 .text.xTaskNotifyStateClear
-                  0x002ab2         0x3a
+                  0x002b7e         0x3a
  .text.xTaskNotifyStateClear
-                  0x002ab2         0x3a build/default/production/_ext/1787047461/tasks.o
-                  0x002ab2                  _xTaskNotifyStateClear
+                  0x002b7e         0x3a build/default/production/_ext/1787047461/tasks.o
+                  0x002b7e                  _xTaskNotifyStateClear
 
 .text.SPI2_init
-                  0x002aec         0x3a
+                  0x002bb8         0x3a
  .text.SPI2_init
-                  0x002aec         0x3a build/default/production/d_SPI.o
-                  0x002aec                  _SPI2_init
+                  0x002bb8         0x3a build/default/production/d_SPI.o
+                  0x002bb8                  _SPI2_init
 
 .text.eeprom_wr_regs
-                  0x002b26         0x3a
+                  0x002bf2         0x3a
  .text.eeprom_wr_regs
-                  0x002b26         0x3a build/default/production/d_eeprom.o
-                  0x002b26                  _eeprom_wr_regs
+                  0x002bf2         0x3a build/default/production/d_eeprom.o
+                  0x002bf2                  _eeprom_wr_regs
 
 .text.prvInitialiseTaskLists
-                  0x002b60         0x38
+                  0x002c2c         0x38
  .text.prvInitialiseTaskLists
-                  0x002b60         0x38 build/default/production/_ext/1787047461/tasks.o
+                  0x002c2c         0x38 build/default/production/_ext/1787047461/tasks.o
 
 .text.xQueuePeekFromISR
-                  0x002b98         0x38
+                  0x002c64         0x38
  .text.xQueuePeekFromISR
-                  0x002b98         0x38 build/default/production/_ext/1787047461/queue.o
-                  0x002b98                  _xQueuePeekFromISR
+                  0x002c64         0x38 build/default/production/_ext/1787047461/queue.o
+                  0x002c64                  _xQueuePeekFromISR
 
 .text.eeprom_rd_CRC
-                  0x002bd0         0x38
+                  0x002c9c         0x38
  .text.eeprom_rd_CRC
-                  0x002bd0         0x38 build/default/production/d_eeprom.o
-                  0x002bd0                  _eeprom_rd_CRC
+                  0x002c9c         0x38 build/default/production/d_eeprom.o
+                  0x002c9c                  _eeprom_rd_CRC
 
 .text.eeprom_clear_page
-                  0x002c08         0x38
+                  0x002cd4         0x38
  .text.eeprom_clear_page
-                  0x002c08         0x38 build/default/production/d_eeprom.o
-                  0x002c08                  _eeprom_clear_page
+                  0x002cd4         0x38 build/default/production/d_eeprom.o
+                  0x002cd4                  _eeprom_clear_page
 
-.text.SaveCfg     0x002c40         0x38
- .text.SaveCfg    0x002c40         0x38 build/default/production/main.o
-                  0x002c40                  _SaveCfg
+.text.SaveCfg     0x002d0c         0x38
+ .text.SaveCfg    0x002d0c         0x38 build/default/production/main.o
+                  0x002d0c                  _SaveCfg
 
 .text.prvInitialiseNewQueue
-                  0x002c78         0x36
+                  0x002d44         0x36
  .text.prvInitialiseNewQueue
-                  0x002c78         0x36 build/default/production/_ext/1787047461/queue.o
-
-.text.ClearStructs
-                  0x002cae         0x36
- .text.ClearStructs
-                  0x002cae         0x36 build/default/production/main.o
-                  0x002cae                  _ClearStructs
+                  0x002d44         0x36 build/default/production/_ext/1787047461/queue.o
 
 .text.GPIO_init
-                  0x002ce4         0x36
+                  0x002d7a         0x36
  .text.GPIO_init
-                  0x002ce4         0x36 build/default/production/KORAD_controller.o
-                  0x002ce4                  _GPIO_init
+                  0x002d7a         0x36 build/default/production/KORAD_controller.o
+                  0x002d7a                  _GPIO_init
+
+.text.ClearStructs
+                  0x002db0         0x36
+ .text.ClearStructs
+                  0x002db0         0x36 build/default/production/main.o
+                  0x002db0                  _ClearStructs
 
 .text.prvTaskIsTaskSuspended
-                  0x002d1a         0x32
+                  0x002de6         0x32
  .text.prvTaskIsTaskSuspended
-                  0x002d1a         0x32 build/default/production/_ext/1787047461/tasks.o
+                  0x002de6         0x32 build/default/production/_ext/1787047461/tasks.o
 
 .text.vListInitialise
-                  0x002d4c         0x32
+                  0x002e18         0x32
  .text.vListInitialise
-                  0x002d4c         0x32 build/default/production/_ext/1787047461/list.o
-                  0x002d4c                  _vListInitialise
+                  0x002e18         0x32 build/default/production/_ext/1787047461/list.o
+                  0x002e18                  _vListInitialise
 
 .text.SPI2_read_byte
-                  0x002d7e         0x32
+                  0x002e4a         0x32
  .text.SPI2_read_byte
-                  0x002d7e         0x32 build/default/production/d_SPI.o
-                  0x002d7e                  _SPI2_read_byte
+                  0x002e4a         0x32 build/default/production/d_SPI.o
+                  0x002e4a                  _SPI2_read_byte
 
-.text.is_reg      0x002db0         0x30
- .text.is_reg     0x002db0         0x30 build/default/production/dialtek_modbus.o
-                  0x002db0                  _is_reg
+.text.is_reg      0x002e7c         0x30
+ .text.is_reg     0x002e7c         0x30 build/default/production/dialtek_modbus.o
+                  0x002e7c                  _is_reg
 
 .text.xPortStartScheduler
-                  0x002de0         0x2e
+                  0x002eac         0x2e
  .text.xPortStartScheduler
-                  0x002de0         0x2e build/default/production/_ext/410575107/port.o
-                  0x002de0                  _xPortStartScheduler
+                  0x002eac         0x2e build/default/production/_ext/410575107/port.o
+                  0x002eac                  _xPortStartScheduler
 
 .text.vApplicationSetupTickTimerInterrupt
-                  0x002e0e         0x2e
+                  0x002eda         0x2e
  .text.vApplicationSetupTickTimerInterrupt
-                  0x002e0e         0x2e build/default/production/_ext/410575107/port.o
-                  0x002e0e                  _vApplicationSetupTickTimerInterrupt
+                  0x002eda         0x2e build/default/production/_ext/410575107/port.o
+                  0x002eda                  _vApplicationSetupTickTimerInterrupt
 
 .text.eeprom_wr_CRC
-                  0x002e3c         0x2e
+                  0x002f08         0x2e
  .text.eeprom_wr_CRC
-                  0x002e3c         0x2e build/default/production/d_eeprom.o
-                  0x002e3c                  _eeprom_wr_CRC
+                  0x002f08         0x2e build/default/production/d_eeprom.o
+                  0x002f08                  _eeprom_wr_CRC
 
 .text.eeprom_clear
-                  0x002e6a         0x2c
+                  0x002f36         0x2c
  .text.eeprom_clear
-                  0x002e6a         0x2c build/default/production/d_eeprom.o
-                  0x002e6a                  _eeprom_clear
+                  0x002f36         0x2c build/default/production/d_eeprom.o
+                  0x002f36                  _eeprom_clear
 
 .text.vTaskDelay
-                  0x002e96         0x28
+                  0x002f62         0x28
  .text.vTaskDelay
-                  0x002e96         0x28 build/default/production/_ext/1787047461/tasks.o
-                  0x002e96                  _vTaskDelay
+                  0x002f62         0x28 build/default/production/_ext/1787047461/tasks.o
+                  0x002f62                  _vTaskDelay
 
 .text.prvInitialiseMutex
-                  0x002ebe         0x28
+                  0x002f8a         0x28
  .text.prvInitialiseMutex
-                  0x002ebe         0x28 build/default/production/_ext/1787047461/queue.o
+                  0x002f8a         0x28 build/default/production/_ext/1787047461/queue.o
 
 .text.UartSendByte
-                  0x002ee6         0x28
+                  0x002fb2         0x28
  .text.UartSendByte
-                  0x002ee6         0x28 build/default/production/dialtek_uart.o
-                  0x002ee6                  _UartSendByte
+                  0x002fb2         0x28 build/default/production/dialtek_uart.o
+                  0x002fb2                  _UartSendByte
 
 .text.KORAD_SetState
-                  0x002f0e         0x28
+                  0x002fda         0x28
  .text.KORAD_SetState
-                  0x002f0e         0x28 build/default/production/KORAD_cmds.o
-                  0x002f0e                  _KORAD_SetState
+                  0x002fda         0x28 build/default/production/KORAD_cmds.o
+                  0x002fda                  _KORAD_SetState
 
-.text.OSC_init    0x002f36         0x28
+.text.OSC_init    0x003002         0x28
  .text.OSC_init
-                  0x002f36         0x28 build/default/production/KORAD_controller.o
-                  0x002f36                  _OSC_init
+                  0x003002         0x28 build/default/production/KORAD_controller.o
+                  0x003002                  _OSC_init
 
 .text.Uart2SendByte
-                  0x002f5e         0x28
+                  0x00302a         0x28
  .text.Uart2SendByte
-                  0x002f5e         0x28 build/default/production/KORAD_uart.o
-                  0x002f5e                  _Uart2SendByte
+                  0x00302a         0x28 build/default/production/KORAD_uart.o
+                  0x00302a                  _Uart2SendByte
 
 .text.vTaskPlaceOnUnorderedEventList
-                  0x002f86         0x24
+                  0x003052         0x24
  .text.vTaskPlaceOnUnorderedEventList
-                  0x002f86         0x24 build/default/production/_ext/1787047461/tasks.o
-                  0x002f86                  _vTaskPlaceOnUnorderedEventList
+                  0x003052         0x24 build/default/production/_ext/1787047461/tasks.o
+                  0x003052                  _vTaskPlaceOnUnorderedEventList
 
 .text.prvIsQueueFull
-                  0x002faa         0x24
+                  0x003076         0x24
  .text.prvIsQueueFull
-                  0x002faa         0x24 build/default/production/_ext/1787047461/queue.o
+                  0x003076         0x24 build/default/production/_ext/1787047461/queue.o
 
 .text.xQueueIsQueueFullFromISR
-                  0x002fce         0x24
+                  0x00309a         0x24
  .text.xQueueIsQueueFullFromISR
-                  0x002fce         0x24 build/default/production/_ext/1787047461/queue.o
-                  0x002fce                  _xQueueIsQueueFullFromISR
+                  0x00309a         0x24 build/default/production/_ext/1787047461/queue.o
+                  0x00309a                  _xQueueIsQueueFullFromISR
 
 .text.vPortEnterCritical
-                  0x002ff2         0x22
+                  0x0030be         0x22
  .text.vPortEnterCritical
-                  0x002ff2         0x22 build/default/production/_ext/410575107/port.o
-                  0x002ff2                  _vPortEnterCritical
+                  0x0030be         0x22 build/default/production/_ext/410575107/port.o
+                  0x0030be                  _vPortEnterCritical
 
 .text.vPortExitCritical
-                  0x003014         0x22
+                  0x0030e0         0x22
  .text.vPortExitCritical
-                  0x003014         0x22 build/default/production/_ext/410575107/port.o
-                  0x003014                  _vPortExitCritical
+                  0x0030e0         0x22 build/default/production/_ext/410575107/port.o
+                  0x0030e0                  _vPortExitCritical
 
 .text.vTaskEndScheduler
-                  0x003036         0x22
+                  0x003102         0x22
  .text.vTaskEndScheduler
-                  0x003036         0x22 build/default/production/_ext/1787047461/tasks.o
-                  0x003036                  _vTaskEndScheduler
+                  0x003102         0x22 build/default/production/_ext/1787047461/tasks.o
+                  0x003102                  _vTaskEndScheduler
 
 .text.prvResetNextTaskUnblockTime
-                  0x003058         0x22
+                  0x003124         0x22
  .text.prvResetNextTaskUnblockTime
-                  0x003058         0x22 build/default/production/_ext/1787047461/tasks.o
+                  0x003124         0x22 build/default/production/_ext/1787047461/tasks.o
 
 .text.UartGetChar
-                  0x00307a         0x22
+                  0x003146         0x22
  .text.UartGetChar
-                  0x00307a         0x22 build/default/production/dialtek_uart.o
-                  0x00307a                  _UartGetChar
+                  0x003146         0x22 build/default/production/dialtek_uart.o
+                  0x003146                  _UartGetChar
 
 .text.Uart2GetChar
-                  0x00309c         0x22
+                  0x003168         0x22
  .text.Uart2GetChar
-                  0x00309c         0x22 build/default/production/KORAD_uart.o
-                  0x00309c                  _Uart2GetChar
+                  0x003168         0x22 build/default/production/KORAD_uart.o
+                  0x003168                  _Uart2GetChar
 
 .text.pcTaskGetName
-                  0x0030be         0x20
+                  0x00318a         0x20
  .text.pcTaskGetName
-                  0x0030be         0x20 build/default/production/_ext/1787047461/tasks.o
-                  0x0030be                  _pcTaskGetName
+                  0x00318a         0x20 build/default/production/_ext/1787047461/tasks.o
+                  0x00318a                  _pcTaskGetName
 
 .text.xQueueCreateMutex
-                  0x0030de         0x20
+                  0x0031aa         0x20
  .text.xQueueCreateMutex
-                  0x0030de         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x0030de                  _xQueueCreateMutex
+                  0x0031aa         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x0031aa                  _xQueueCreateMutex
 
 .text.xQueueCreateCountingSemaphore
-                  0x0030fe         0x20
+                  0x0031ca         0x20
  .text.xQueueCreateCountingSemaphore
-                  0x0030fe         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x0030fe                  _xQueueCreateCountingSemaphore
+                  0x0031ca         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x0031ca                  _xQueueCreateCountingSemaphore
 
 .text.prvGetDisinheritPriorityAfterTimeout
-                  0x00311e         0x20
+                  0x0031ea         0x20
  .text.prvGetDisinheritPriorityAfterTimeout
-                  0x00311e         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x0031ea         0x20 build/default/production/_ext/1787047461/queue.o
 
 .text.prvIsQueueEmpty
-                  0x00313e         0x20
+                  0x00320a         0x20
  .text.prvIsQueueEmpty
-                  0x00313e         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x00320a         0x20 build/default/production/_ext/1787047461/queue.o
 
 .text.xQueueIsQueueEmptyFromISR
-                  0x00315e         0x20
+                  0x00322a         0x20
  .text.xQueueIsQueueEmptyFromISR
-                  0x00315e         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x00315e                  _xQueueIsQueueEmptyFromISR
+                  0x00322a         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x00322a                  _xQueueIsQueueEmptyFromISR
 
 .text.uxQueueSpacesAvailable
-                  0x00317e         0x1e
+                  0x00324a         0x1e
  .text.uxQueueSpacesAvailable
-                  0x00317e         0x1e build/default/production/_ext/1787047461/queue.o
-                  0x00317e                  _uxQueueSpacesAvailable
+                  0x00324a         0x1e build/default/production/_ext/1787047461/queue.o
+                  0x00324a                  _uxQueueSpacesAvailable
 
 .text.vApplicationStackOverflowHook
-                  0x00319c         0x1e
+                  0x003268         0x1e
  .text.vApplicationStackOverflowHook
-                  0x00319c         0x1e build/default/production/main.o
-                  0x00319c                  _vApplicationStackOverflowHook
+                  0x003268         0x1e build/default/production/main.o
+                  0x003268                  _vApplicationStackOverflowHook
 
 .text.SPI2_write_byte
-                  0x0031ba         0x1c
+                  0x003286         0x1c
  .text.SPI2_write_byte
-                  0x0031ba         0x1c build/default/production/d_SPI.o
-                  0x0031ba                  _SPI2_write_byte
+                  0x003286         0x1c build/default/production/d_SPI.o
+                  0x003286                  _SPI2_write_byte
 
 .text.Uart2SendText
-                  0x0031d6         0x1a
+                  0x0032a2         0x1a
  .text.Uart2SendText
-                  0x0031d6         0x1a build/default/production/KORAD_uart.o
-                  0x0031d6                  _Uart2SendText
+                  0x0032a2         0x1a build/default/production/KORAD_uart.o
+                  0x0032a2                  _Uart2SendText
 
 .text.vTaskPlaceOnEventList
-                  0x0031f0         0x18
+                  0x0032bc         0x18
  .text.vTaskPlaceOnEventList
-                  0x0031f0         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x0031f0                  _vTaskPlaceOnEventList
+                  0x0032bc         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x0032bc                  _vTaskPlaceOnEventList
 
 .text.vTaskSetTimeOutState
-                  0x003208         0x18
+                  0x0032d4         0x18
  .text.vTaskSetTimeOutState
-                  0x003208         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x003208                  _vTaskSetTimeOutState
+                  0x0032d4         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x0032d4                  _vTaskSetTimeOutState
 
 .text.uxTaskResetEventItemValue
-                  0x003220         0x18
+                  0x0032ec         0x18
  .text.uxTaskResetEventItemValue
-                  0x003220         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x003220                  _uxTaskResetEventItemValue
+                  0x0032ec         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x0032ec                  _uxTaskResetEventItemValue
 
 .text.holding_reg_read
-                  0x003238         0x18
+                  0x003304         0x18
  .text.holding_reg_read
-                  0x003238         0x18 build/default/production/dialtek_modbus.o
-                  0x003238                  _holding_reg_read
+                  0x003304         0x18 build/default/production/dialtek_modbus.o
+                  0x003304                  _holding_reg_read
 
 .text.input_reg_read
-                  0x003250         0x18
+                  0x00331c         0x18
  .text.input_reg_read
-                  0x003250         0x18 build/default/production/dialtek_modbus.o
-                  0x003250                  _input_reg_read
+                  0x00331c         0x18 build/default/production/dialtek_modbus.o
+                  0x00331c                  _input_reg_read
 
 .text.prvIdleTask
-                  0x003268         0x16
+                  0x003334         0x16
  .text.prvIdleTask
-                  0x003268         0x16 build/default/production/_ext/1787047461/tasks.o
-                  0x003268                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x003334         0x16 build/default/production/_ext/1787047461/tasks.o
+                  0x003334                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
 
 .text.pvTaskIncrementMutexHeldCount
-                  0x00327e         0x16
+                  0x00334a         0x16
  .text.pvTaskIncrementMutexHeldCount
-                  0x00327e         0x16 build/default/production/_ext/1787047461/tasks.o
-                  0x00327e                  _pvTaskIncrementMutexHeldCount
+                  0x00334a         0x16 build/default/production/_ext/1787047461/tasks.o
+                  0x00334a                  _pvTaskIncrementMutexHeldCount
 
 .text.holding_reg_write
-                  0x003294         0x16
+                  0x003360         0x16
  .text.holding_reg_write
-                  0x003294         0x16 build/default/production/dialtek_modbus.o
-                  0x003294                  _holding_reg_write
+                  0x003360         0x16 build/default/production/dialtek_modbus.o
+                  0x003360                  _holding_reg_write
 
 .text.input_reg_write
-                  0x0032aa         0x16
+                  0x003376         0x16
  .text.input_reg_write
-                  0x0032aa         0x16 build/default/production/dialtek_modbus.o
-                  0x0032aa                  _input_reg_write
+                  0x003376         0x16 build/default/production/dialtek_modbus.o
+                  0x003376                  _input_reg_write
 
 .text.ModbusIDreset
-                  0x0032c0         0x16
+                  0x00338c         0x16
  .text.ModbusIDreset
-                  0x0032c0         0x16 build/default/production/main.o
-                  0x0032c0                  _ModbusIDreset
+                  0x00338c         0x16 build/default/production/main.o
+                  0x00338c                  _ModbusIDreset
 
 .text.vTaskInternalSetTimeOutState
-                  0x0032d6         0x14
+                  0x0033a2         0x14
  .text.vTaskInternalSetTimeOutState
-                  0x0032d6         0x14 build/default/production/_ext/1787047461/tasks.o
-                  0x0032d6                  _vTaskInternalSetTimeOutState
+                  0x0033a2         0x14 build/default/production/_ext/1787047461/tasks.o
+                  0x0033a2                  _vTaskInternalSetTimeOutState
 
 .text.uxQueueMessagesWaiting
-                  0x0032ea         0x14
+                  0x0033b6         0x14
  .text.uxQueueMessagesWaiting
-                  0x0032ea         0x14 build/default/production/_ext/1787047461/queue.o
-                  0x0032ea                  _uxQueueMessagesWaiting
+                  0x0033b6         0x14 build/default/production/_ext/1787047461/queue.o
+                  0x0033b6                  _uxQueueMessagesWaiting
 
 .text.uxQueueMessagesWaitingFromISR
-                  0x0032fe         0x14
+                  0x0033ca         0x14
  .text.uxQueueMessagesWaitingFromISR
-                  0x0032fe         0x14 build/default/production/_ext/1787047461/queue.o
-                  0x0032fe                  _uxQueueMessagesWaitingFromISR
+                  0x0033ca         0x14 build/default/production/_ext/1787047461/queue.o
+                  0x0033ca                  _uxQueueMessagesWaitingFromISR
 
 .text.modbus_init
-                  0x003312         0x12
+                  0x0033de         0x12
  .text.modbus_init
-                  0x003312         0x12 build/default/production/dialtek_modbus.o
-                  0x003312                  _modbus_init
+                  0x0033de         0x12 build/default/production/dialtek_modbus.o
+                  0x0033de                  _modbus_init
 
 .text.set_modbus_id
-                  0x003324         0x12
+                  0x0033f0         0x12
  .text.set_modbus_id
-                  0x003324         0x12 build/default/production/dialtek_modbus.o
-                  0x003324                  _set_modbus_id
+                  0x0033f0         0x12 build/default/production/dialtek_modbus.o
+                  0x0033f0                  _set_modbus_id
 
 .text.xTaskGetTickCount
-                  0x003336         0x10
+                  0x003402         0x10
  .text.xTaskGetTickCount
-                  0x003336         0x10 build/default/production/_ext/1787047461/tasks.o
-                  0x003336                  _xTaskGetTickCount
+                  0x003402         0x10 build/default/production/_ext/1787047461/tasks.o
+                  0x003402                  _xTaskGetTickCount
 
 .text.xTaskGetTickCountFromISR
-                  0x003346         0x10
+                  0x003412         0x10
  .text.xTaskGetTickCountFromISR
-                  0x003346         0x10 build/default/production/_ext/1787047461/tasks.o
-                  0x003346                  _xTaskGetTickCountFromISR
+                  0x003412         0x10 build/default/production/_ext/1787047461/tasks.o
+                  0x003412                  _xTaskGetTickCountFromISR
 
 .text.vQueueDelete
-                  0x003356         0x10
+                  0x003422         0x10
  .text.vQueueDelete
-                  0x003356         0x10 build/default/production/_ext/1787047461/queue.o
-                  0x003356                  _vQueueDelete
+                  0x003422         0x10 build/default/production/_ext/1787047461/queue.o
+                  0x003422                  _vQueueDelete
 
-.text.char2num    0x003366         0x10
+.text.char2num    0x003432         0x10
  .text.char2num
-                  0x003366         0x10 build/default/production/KORAD_cmds.o
-                  0x003366                  _char2num
+                  0x003432         0x10 build/default/production/KORAD_cmds.o
+                  0x003432                  _char2num
 
 .text.vListInitialiseItem
-                  0x003376          0xe
+                  0x003442          0xe
  .text.vListInitialiseItem
-                  0x003376          0xe build/default/production/_ext/1787047461/list.o
-                  0x003376                  _vListInitialiseItem
+                  0x003442          0xe build/default/production/_ext/1787047461/list.o
+                  0x003442                  _vListInitialiseItem
 
-.text.num2char    0x003384          0xe
+.text.num2char    0x003450          0xe
  .text.num2char
-                  0x003384          0xe build/default/production/KORAD_cmds.o
-                  0x003384                  _num2char
+                  0x003450          0xe build/default/production/KORAD_cmds.o
+                  0x003450                  _num2char
 
 .text.SystemInit
-                  0x003392          0xe
+                  0x00345e          0xe
  .text.SystemInit
-                  0x003392          0xe build/default/production/KORAD_controller.o
-                  0x003392                  _SystemInit
+                  0x00345e          0xe build/default/production/KORAD_controller.o
+                  0x00345e                  _SystemInit
 
 .text.xPortGetFreeHeapSize
-                  0x0033a0          0xc
+                  0x00346c          0xc
  .text.xPortGetFreeHeapSize
-                  0x0033a0          0xc build/default/production/_ext/897580706/heap_1.o
-                  0x0033a0                  _xPortGetFreeHeapSize
+                  0x00346c          0xc build/default/production/_ext/897580706/heap_1.o
+                  0x00346c                  _xPortGetFreeHeapSize
 
 .text.vTaskSuspendAll
-                  0x0033ac          0xc
+                  0x003478          0xc
  .text.vTaskSuspendAll
-                  0x0033ac          0xc build/default/production/_ext/1787047461/tasks.o
-                  0x0033ac                  _vTaskSuspendAll
+                  0x003478          0xc build/default/production/_ext/1787047461/tasks.o
+                  0x003478                  _vTaskSuspendAll
 
 .text.xTaskGetCurrentTaskHandle
-                  0x0033b8          0xc
+                  0x003484          0xc
  .text.xTaskGetCurrentTaskHandle
-                  0x0033b8          0xc build/default/production/_ext/1787047461/tasks.o
-                  0x0033b8                  _xTaskGetCurrentTaskHandle
+                  0x003484          0xc build/default/production/_ext/1787047461/tasks.o
+                  0x003484                  _xTaskGetCurrentTaskHandle
 
 .text.modbus_reset
-                  0x0033c4          0xc
+                  0x003490          0xc
  .text.modbus_reset
-                  0x0033c4          0xc build/default/production/dialtek_modbus.o
-                  0x0033c4                  _modbus_reset
+                  0x003490          0xc build/default/production/dialtek_modbus.o
+                  0x003490                  _modbus_reset
 
 .text.get_modbus_id
-                  0x0033d0          0xc
+                  0x00349c          0xc
  .text.get_modbus_id
-                  0x0033d0          0xc build/default/production/dialtek_modbus.o
-                  0x0033d0                  _get_modbus_id
+                  0x00349c          0xc build/default/production/dialtek_modbus.o
+                  0x00349c                  _get_modbus_id
 
 .text.UartResetQueue
-                  0x0033dc          0xc
+                  0x0034a8          0xc
  .text.UartResetQueue
-                  0x0033dc          0xc build/default/production/dialtek_uart.o
-                  0x0033dc                  _UartResetQueue
+                  0x0034a8          0xc build/default/production/dialtek_uart.o
+                  0x0034a8                  _UartResetQueue
 
 .text.Uart2ResetQueue
-                  0x0033e8          0xc
+                  0x0034b4          0xc
  .text.Uart2ResetQueue
-                  0x0033e8          0xc build/default/production/KORAD_uart.o
-                  0x0033e8                  _Uart2ResetQueue
+                  0x0034b4          0xc build/default/production/KORAD_uart.o
+                  0x0034b4                  _Uart2ResetQueue
 
 .text.vPortInitialiseBlocks
-                  0x0033f4          0xa
+                  0x0034c0          0xa
  .text.vPortInitialiseBlocks
-                  0x0033f4          0xa build/default/production/_ext/897580706/heap_1.o
-                  0x0033f4                  _vPortInitialiseBlocks
+                  0x0034c0          0xa build/default/production/_ext/897580706/heap_1.o
+                  0x0034c0                  _vPortInitialiseBlocks
 
 .text.vTaskMissedYield
-                  0x0033fe          0xa
+                  0x0034ca          0xa
  .text.vTaskMissedYield
-                  0x0033fe          0xa build/default/production/_ext/1787047461/tasks.o
-                  0x0033fe                  _vTaskMissedYield
+                  0x0034ca          0xa build/default/production/_ext/1787047461/tasks.o
+                  0x0034ca                  _vTaskMissedYield
 
 .text.UartGetQcnt
-                  0x003408          0xa
+                  0x0034d4          0xa
  .text.UartGetQcnt
-                  0x003408          0xa build/default/production/dialtek_uart.o
-                  0x003408                  _UartGetQcnt
+                  0x0034d4          0xa build/default/production/dialtek_uart.o
+                  0x0034d4                  _UartGetQcnt
 
 .text.Uart2GetQcnt
-                  0x003412          0xa
+                  0x0034de          0xa
  .text.Uart2GetQcnt
-                  0x003412          0xa build/default/production/KORAD_uart.o
-                  0x003412                  _Uart2GetQcnt
+                  0x0034de          0xa build/default/production/KORAD_uart.o
+                  0x0034de                  _Uart2GetQcnt
 
 .text.vPortFree
-                  0x00341c          0x8
+                  0x0034e8          0x8
  .text.vPortFree
-                  0x00341c          0x8 build/default/production/_ext/897580706/heap_1.o
-                  0x00341c                  _vPortFree
+                  0x0034e8          0x8 build/default/production/_ext/897580706/heap_1.o
+                  0x0034e8                  _vPortFree
 
 .text.uxTaskGetNumberOfTasks
-                  0x003424          0x8
+                  0x0034f0          0x8
  .text.uxTaskGetNumberOfTasks
-                  0x003424          0x8 build/default/production/_ext/1787047461/tasks.o
-                  0x003424                  _uxTaskGetNumberOfTasks
+                  0x0034f0          0x8 build/default/production/_ext/1787047461/tasks.o
+                  0x0034f0                  _uxTaskGetNumberOfTasks
 
 .text.get_wr_reg_addr
-                  0x00342c          0x8
+                  0x0034f8          0x8
  .text.get_wr_reg_addr
-                  0x00342c          0x8 build/default/production/dialtek_modbus.o
-                  0x00342c                  _get_wr_reg_addr
+                  0x0034f8          0x8 build/default/production/dialtek_modbus.o
+                  0x0034f8                  _get_wr_reg_addr
 
 .text.get_wr_reg_val
-                  0x003434          0x8
+                  0x003500          0x8
  .text.get_wr_reg_val
-                  0x003434          0x8 build/default/production/dialtek_modbus.o
-                  0x003434                  _get_wr_reg_val
+                  0x003500          0x8 build/default/production/dialtek_modbus.o
+                  0x003500                  _get_wr_reg_val
 
 .text.vPortEndScheduler
-                  0x00343c          0x6
+                  0x003508          0x6
  .text.vPortEndScheduler
-                  0x00343c          0x6 build/default/production/_ext/410575107/port.o
-                  0x00343c                  _vPortEndScheduler
+                  0x003508          0x6 build/default/production/_ext/410575107/port.o
+                  0x003508                  _vPortEndScheduler
 
 .text.prvCheckTasksWaitingTermination
-                  0x003442          0x6
+                  0x00350e          0x6
  .text.prvCheckTasksWaitingTermination
-                  0x003442          0x6 build/default/production/_ext/1787047461/tasks.o
+                  0x00350e          0x6 build/default/production/_ext/1787047461/tasks.o
 
 .text.vApplicationIdleHook
-                  0x003448          0x6
+                  0x003514          0x6
  .text.vApplicationIdleHook
-                  0x003448          0x6 build/default/production/main.o
-                  0x003448                  _vApplicationIdleHook
+                  0x003514          0x6 build/default/production/main.o
+                  0x003514                  _vApplicationIdleHook

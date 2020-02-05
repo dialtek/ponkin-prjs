@@ -13,7 +13,8 @@ void Uart2Init(void); 																									 	// Setting: USART
 void UartSendByte(unsigned char TxByte);																	// USART: 	отправка 1 бит
 unsigned char UartXreadByte(USART_TypeDef* USARTx);											 	// USART: 	чтение 1 бит
 void USART2_IRQHandler(void);
-
+void init_timer_TIM2(void);
+void TIM2_IRQHandler(void);
 
 #endif
 

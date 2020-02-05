@@ -1,6 +1,6 @@
 Dependencies for Project 'LVDB_controller', Target 'Source': (DO NOT MODIFY !)
-F (.\User\src\Config.c)(0x5DFC9B25)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\config.o --omf_browse .\objects\config.crf --depend .\objects\config.d)
-I (.\User\inc\Config.h)(0x5DFA2FC1)
+F (.\User\src\Config.c)(0x5E32EE65)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\config.o --omf_browse .\objects\config.crf --depend .\objects\config.d)
+I (.\User\inc\Config.h)(0x5E33CCAB)
 I (.\CMSIS\stm32f4xx.h)(0x5DB3E3BB)
 I (.\CMSIS\core_cm4.h)(0x581CAA2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
@@ -35,8 +35,8 @@ I (.\SPL\stm32f4xx_can.h)(0x5821D432)
 I (.\SPL\stm32f4xx_dac.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_dcmi.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_fsmc.h)(0x581CAA5C)
-F (.\User\src\UART.c)(0x5DFC9E70)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
-I (.\User\inc\UART.h)(0x5DAEED4E)
+F (.\User\src\UART.c)(0x5E33DAD6)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (.\User\inc\UART.h)(0x5E32EE65)
 I (.\CMSIS\stm32f4xx.h)(0x5DB3E3BB)
 I (.\CMSIS\core_cm4.h)(0x581CAA2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
@@ -71,10 +71,10 @@ I (.\SPL\stm32f4xx_can.h)(0x5821D432)
 I (.\SPL\stm32f4xx_dac.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_dcmi.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_fsmc.h)(0x581CAA5C)
-I (.\User\inc\Config.h)(0x5DFA2FC1)
-F (.\User\src\modbus.c)(0x5DF6279A)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\modbus.o --omf_browse .\objects\modbus.crf --depend .\objects\modbus.d)
+I (.\User\inc\Config.h)(0x5E33CCAB)
+F (.\User\src\modbus.c)(0x5E33DB17)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\modbus.o --omf_browse .\objects\modbus.crf --depend .\objects\modbus.d)
 I (.\User\inc\Modbus.h)(0x5DF5F33D)
-I (.\User\inc\Config.h)(0x5DFA2FC1)
+I (.\User\inc\Config.h)(0x5E33CCAB)
 I (.\CMSIS\stm32f4xx.h)(0x5DB3E3BB)
 I (.\CMSIS\core_cm4.h)(0x581CAA2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
@@ -109,9 +109,9 @@ I (.\SPL\stm32f4xx_can.h)(0x5821D432)
 I (.\SPL\stm32f4xx_dac.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_dcmi.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_fsmc.h)(0x581CAA5C)
-I (.\User\inc\UART.h)(0x5DAEED4E)
-F (.\User\main.c)(0x5DFC9E6E)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
-I (.\User\inc\Config.h)(0x5DFA2FC1)
+I (.\User\inc\UART.h)(0x5E32EE65)
+F (.\User\main.c)(0x5E33F8BD)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\User\inc\Config.h)(0x5E33CCAB)
 I (.\CMSIS\stm32f4xx.h)(0x5DB3E3BB)
 I (.\CMSIS\core_cm4.h)(0x581CAA2E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
@@ -147,7 +147,7 @@ I (.\SPL\stm32f4xx_dac.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_dcmi.h)(0x581CAA5C)
 I (.\SPL\stm32f4xx_fsmc.h)(0x581CAA5C)
 I (.\User\inc\Modbus.h)(0x5DF5F33D)
-I (.\User\inc\UART.h)(0x5DAEED4E)
+I (.\User\inc\UART.h)(0x5E32EE65)
 I (.\User\inc\LVDB_ADC.h)(0x5DFB7A4E)
 I (.\User\inc\SPI.h)(0x5DF9E284)
 F (.\User\src\SPI.c)(0x5DF9E283)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\spi.o --omf_browse .\objects\spi.crf --depend .\objects\spi.d)
@@ -189,7 +189,7 @@ I (.\SPL\stm32f4xx_fsmc.h)(0x581CAA5C)
 F (.\User\src\LVDB_ADC.c)(0x5DFB6D18)(--c99 -c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\User -I .\SPL -I .\SPL -I .\User\inc -I .\User\src-I.\RTE\_Source-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F407xx -DUSE_STDPERIPH_DRIVER -DSTM32F4XX-o .\objects\lvdb_adc.o --omf_browse .\objects\lvdb_adc.crf --depend .\objects\lvdb_adc.d)
 I (.\User\inc\LVDB_ADC.h)(0x5DFB7A4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599F218E)
-I (.\User\inc\Config.h)(0x5DFA2FC1)
+I (.\User\inc\Config.h)(0x5E33CCAB)
 I (.\CMSIS\stm32f4xx.h)(0x5DB3E3BB)
 I (.\CMSIS\core_cm4.h)(0x581CAA2E)
 I (.\CMSIS\core_cmInstr.h)(0x581CAA2E)

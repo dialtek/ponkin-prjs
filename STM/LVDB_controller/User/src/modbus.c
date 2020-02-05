@@ -252,49 +252,49 @@ unsigned char rx_flag = 0;
     /// update modbus regs and vars, send answer to master
    
     // state 1 and 2, transmit end, rx buf has > 7 bytes ?
-    //if((rx_flag == 1 && rx_buf_ptr > 7)) 
-		if(rx_buf_ptr > 7)
-    { 
-        modbus_id = rx_buf[0];      // get device ID from master msg
-		   
-     if((modbus_id == dev_id) || (modbus_id == com_dev_id))
-     {
-      
-      switch(rx_buf[1])
-      {   
-        case MODBUS_RHR_CMD:                // если команда - чтение R/W регистров
-            if(modbus_rx_CRC_check(MODBUS_RHR_CMD) == MODBUS_RHR_CMD);
-            {
-                modbus_reset();
-                return MODBUS_RHR_CMD;
-            }
-        break;
-////-------------------------------------------------------------------
-        case MODBUS_WSR_CMD:                // если команда - чтение Read-only регистров
-            if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD);
-            {
-                holding_register[modbus_reg_addr] = reg_wr_data;
-                modbus_reset();
-                return MODBUS_WSR_CMD;
-            }
-        break;
-////-------------------------------------------------------------------
-        case MODBUS_RIR_CMD: 
-            if(modbus_rx_CRC_check(MODBUS_RIR_CMD) == MODBUS_RIR_CMD);
-            {
-                modbus_reset();
-                return MODBUS_RIR_CMD;
-            }
-        break;
-        
-        default: break;  
-     } // switch(rx_buf[1])
-    }  // if dev_id
-    else 
-    {
-         modbus_reset();
-         return 0;
-    }
+    if((rx_flag == 1 && rx_buf_ptr > 7)) 
+			//if(rx_buf_ptr > 7)
+			{ 
+					modbus_id = rx_buf[0];      // get device ID from master msg
+				 
+			 if((modbus_id == dev_id) || (modbus_id == com_dev_id))
+			 {
+				
+				switch(rx_buf[1])
+				{   
+					case MODBUS_RHR_CMD:                // если команда - чтение R/W регистров
+							if(modbus_rx_CRC_check(MODBUS_RHR_CMD) == MODBUS_RHR_CMD);
+							{
+									modbus_reset();
+									return MODBUS_RHR_CMD;
+							}
+					break;
+	////-------------------------------------------------------------------
+					case MODBUS_WSR_CMD:                // если команда - чтение Read-only регистров
+							if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD);
+							{
+									holding_register[modbus_reg_addr] = reg_wr_data;
+									modbus_reset();
+									return MODBUS_WSR_CMD;
+							}
+					break;
+	////-------------------------------------------------------------------
+					case MODBUS_RIR_CMD: 
+							if(modbus_rx_CRC_check(MODBUS_RIR_CMD) == MODBUS_RIR_CMD);
+							{
+									modbus_reset();
+									return MODBUS_RIR_CMD;
+							}
+					break;
+					
+					default: break;  
+			 } // switch(rx_buf[1])
+			}  // if dev_id
+			else 
+			{
+					 modbus_reset();
+					 return 0;
+			}
    }   //  if(rx_buf_ptr > 7)
     else return 0;
     

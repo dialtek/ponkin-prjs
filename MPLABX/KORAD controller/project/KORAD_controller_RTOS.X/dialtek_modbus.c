@@ -27,7 +27,7 @@ unsigned int __attribute__((far)) input_register[125];    // буфер для хранения 
 
 const unsigned char com_dev_id    = 247;       // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
 unsigned char dev_id     = default_devID;      // MODBUS ID устройства   <<<<<<<<<<======== ID
-const char firmware_ver  = 10;                 // версиЯ прошивки текущего устройства
+const char firmware_ver  = 11;                 // версиЯ прошивки текущего устройства
 const char device_family = 0;                  // код семейства устройств
 const char modbus_ver    = 41;                 // версия MODBUS
 

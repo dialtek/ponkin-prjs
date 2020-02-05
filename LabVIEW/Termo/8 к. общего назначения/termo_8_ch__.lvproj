@@ -23,6 +23,7 @@
 		<Item Name="RWC_Actions.ctl" Type="VI" URL="../Load and Save Controls_LV2009.llb/RWC_Actions.ctl"/>
 		<Item Name="String_to_num (SubVI).vi" Type="VI" URL="../String_to_num (SubVI).vi"/>
 		<Item Name="T.ico" Type="Document" URL="../EXE/T.ico"/>
+		<Item Name="Volts_to_temperature_(SubVI).vi" Type="VI" URL="../Volts_to_temperature_(SubVI).vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
@@ -87,7 +88,6 @@
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
 			<Item Name="Ch_data_title_pattern (SubVI).vi" Type="VI" URL="../Ch_data_title_pattern (SubVI).vi"/>
-			<Item Name="Volts_to_temperature_PT__(SubVI).vi" Type="VI" URL="../Volts_to_temperature_PT__(SubVI).vi"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
 			<Item Name="Installer" Type="Installer">

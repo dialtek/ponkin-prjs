@@ -320,7 +320,7 @@ ARM Macro Assembler    Page 5
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_mdr32f9qx.d -o.\objects\startup_mdr32f9qx.o -I.\
-RTE\Device\MDR1986BE91 -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\
+RTE\Device\MDR1986BE91 -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.6.0\
 CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\Keil\MDR1986BExx\1.51\Config -IC:\Keil
 _v5\ARM\PACK\Keil\MDR1986BExx\1.51\Libraries\CMSIS\CM3\CoreSupport -IC:\Keil_v5
 

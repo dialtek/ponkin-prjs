@@ -1,5 +1,5 @@
-
-**** 07/16/19 12:16:15 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
+
+**** 01/03/20 19:39:57 ***** PSpice 16.6.0 (October 2012) ***** ID# 0 ********
 
  ** Profile: "SCHEMATIC1-bias"  [ F:\Mega\ponkin-prjs\OrCAD Pspice\Online practice\engineers practise-pspicefiles\schematic1\bias.sim
 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 15ms 0 0.1ms 
+.TRAN  0 50ms 0 0.1ms 
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -33,14 +33,22 @@
 * source ENGINEERS PRACTISE
 R_R1         N14711 N15106  330R TC=0,0 
 V_V1         N14711 0  
-+PULSE 3.3V 0 0 1us 1us 1ms 5ms
++PULSE 0V 3.3V 1ms 1us 1us 500us 2ms
 X_VT1         N150402 N15106 0 awb2n3904 PARAMS:                               
 +              
-R_R         load N150402 N16639  100R TC=0,0 
+R_R2         N150402 N16639  100R TC=0,0 
 V_V2         N16639 0 12V
+X_VT2         N178562 N178561 N18346 awb2n3904 PARAMS:                         
++                    
+R_R3         N18082 N178561  330R TC=0,0 
+R_R4         0 N18346  4.7k TC=0,0 
+V_V3         N18082 0  
++SIN 0 2V 1k 0 0 0
+V_V4         N178562 0 5V
+R_R5         N18470 N18346  4.7k TC=0,0 
 
 **** RESUMING bias.cir ****
 .END
 
-ERROR(ORPSIM-15113): Model N16639 used by R_R is undefined
+ERROR(ORPSIM-15141): Less than 2 connections at node N18470.
 

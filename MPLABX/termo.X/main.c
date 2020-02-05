@@ -9,6 +9,7 @@
 
 // !!!!! 07.11.19 использовать только p24HJ128GP506, с p24HJ128GP506A возникают проблемы с SPI EEPROM
 
+
 #define FP 40000000
 #define BAUDRATE 115200
 #define U1BRGVAL ((FP/BAUDRATE)/16)-1
@@ -67,9 +68,9 @@ unsigned char NumAver = 1;       // размер усреднения
 unsigned char ADC_sps_var = 2;   // переменная усреднения данных АЦП - 10sps default
 
 //Ma - Moving Average
-long Ch_buf[8][128];      // буфер скользящего среднего  unsigned long ADC_counts[2][8];    // буфер отсчетов АЦП
-long ADC_counts[2][8];    // буфер отсчетов АЦП
-long Ch_buf_sum;          // сумма буфера скользящего среднего
+signed long Ch_buf[8][128];      // буфер скользящего среднего  unsigned signed long ADC_counts[2][8];    // буфер отсчетов АЦП
+signed long ADC_counts[2][8];    // буфер отсчетов АЦП
+signed long Ch_buf_sum;          // сумма буфера скользящего среднего
 
 unsigned char Ma_buf_index = 0; // индекс элемента скользящ. средн.
 unsigned char Ma_buf_size = 5;  // РАЗМЕР БУФЕРА
@@ -79,10 +80,10 @@ unsigned char state;
 unsigned int tmp=0;
 
 // результаты измерений
-long pkt8_ch_1 = 0, pkt8_ch_2 = 0, pkt8_ch_3 = 0, pkt8_ch_4 = 0, 
-     pkt8_ch_5 = 0, pkt8_ch_6 = 0, pkt8_ch_7 = 0, pkt8_ch_8 = 0;
+signed long pkt8_ch_1 = 0, pkt8_ch_2 = 0, pkt8_ch_3 = 0, pkt8_ch_4 = 0, 
+            pkt8_ch_5 = 0, pkt8_ch_6 = 0, pkt8_ch_7 = 0, pkt8_ch_8 = 0;
 
-long pkt8_ch[8] = {0,0,0,0,0,0,0,0};
+signed long pkt8_ch[8] = {0,0,0,0,0,0,0,0};
 
 unsigned char channel = 1;
 
@@ -345,7 +346,6 @@ unsigned char SPI2_read_byte(void)
 }
 
 // настройка и инициализация АЦП
-
  void ADC_sps_set(unsigned char SPS){
                                                           
    Sps_buf = SPS;
@@ -558,53 +558,37 @@ unsigned char SPI2_read_byte(void)
   ADC_select(0);
 }
 
- long ADC_read(unsigned char ADC_number)
+ signed long ADC_read(unsigned char ADC_number)
   {
-   long ADC_RByte_Sum; // суммарные отсчеты АЦП - 24 бита
+  signed long ADC_RByte_Sum; // суммарные отсчеты АЦП - 24 бита
   ADC_select(ADC_number); // выбор АЦП
   
   SPI2_write_byte(0x01);        // команда чтения Rdata
   __delay_us(20);
-  long ADC_Rbyte1 = (long) SPI2_read_byte();   // чтение
-  long ADC_Rbyte2 = (long) SPI2_read_byte();
-  long ADC_Rbyte3 = (long) SPI2_read_byte();
+  signed long ADC_Rbyte1 = SPI2_read_byte();   // чтение
+  signed long ADC_Rbyte2 = SPI2_read_byte();
+  signed long ADC_Rbyte3 = SPI2_read_byte();
   
   ADC_select(0); // сброс выбора АЦП
   
-  // склеивание трех байт отсчетов АЦП
-  ADC_RByte_Sum = (ADC_Rbyte1<<16) | (ADC_Rbyte2<<8) | ADC_Rbyte3;
-  
+  // склеивание трех байт отсчетов АЦП, тут должно быть уже отрицательное число
+  ADC_RByte_Sum = (ADC_Rbyte1<<24) | (ADC_Rbyte2<<16) | ADC_Rbyte3<<8;
+  ADC_RByte_Sum /=256;
+
   return ADC_RByte_Sum;
   
   }
 
- long ADCx_read_aver(unsigned char ADCx, unsigned char CHx)
+ signed long ADCx_read_aver(unsigned char ADCx, unsigned char CHx)
 {
   float Vin = 0;          // измеренное напряжение 
-  long curr_ADCx_val = 0; // переменн. для хранения текущ. усредн. значения
+  signed long curr_ADCx_val = 0; // переменн. для хранения текущ. усредн. значения
   
   curr_ADCx_val = ADC_read(ADCx);               // сохр. новое изм.
 
-  //Ch_buf[CHx][Ma_buf_index+1] = Ch_buf[CHx][Ma_buf_index];  // сдвигаем буфер
-  //Ch_buf[CHx][Ma_buf_index] = ADC_read(ADCx);               // сохр. новое изм.
-  
-  //ADC_counts[ADCx-1][CHx] = curr_ADCx_val; // сохр. отсчетов канала АЦП. приведение N АЦП к индексу
-
-//  // если буфер не заполнен - выдаем данные без усреднения
-////  if(Ch_buf[CHx][Ma_buf_size-1] == 0)
-////  {
-////      curr_ADCx_val = Ch_buf[CHx][Ma_buf_index];
-////  }
-//  //else // буфер полон, выдаем усредненное значение
-//  //{  
-//     for(unsigned char i = 0; i < Ma_buf_size; i++)       // суммируем весь буфер
-//         curr_ADCx_val += Ch_buf[CHx][i];                
-//  
-//     curr_ADCx_val = curr_ADCx_val/Ma_buf_size;           // вычисляем среднее когда буфер полон
-// // }
-
   Vin = (float)((curr_ADCx_val*5.0)/(8388608.0*PGA)); // расчет U
-  return (long) (Vin*uV); // возврат масштабированного U
+  return (signed long) (Vin*uV); // возврат масштабированного U
+ 
 }
 
  void ADC_par_rd_ch()
@@ -768,7 +752,7 @@ int main()
     __delay_ms(100);
     STATUS_LED = 1;
     ADC_state = SET_CH;
-            
+    
  while(1)
  {
     ADC_par_rd_ch(); // измерения

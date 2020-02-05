@@ -19,6 +19,7 @@ volatile QueueHandle_t KORAD_Ans_q;
 volatile QueueHandle_t Modbus_Status_q; 
 
 TaskHandle_t ModbusTaskHandle;
+TaskHandle_t KORADTaskHandle;
 
 /*============================= USER FUNCS ================================== */
 // USER FUNCS
@@ -54,6 +55,9 @@ unsigned int RestoreCfg(void)
     //EEPR_buf[6] = (unsigned char)(state_m.pol_relay_2);
     //EEPR_buf[7] = (unsigned char)get_modbus_id();
     
+    // TO DO - разобраться с багом
+    eeprom_src_restore(&EEPR_buf,Data2saveLen); // !! чтение памяти - 2 раза 
+    
     if(eeprom_src_restore(&EEPR_buf,Data2saveLen))
     {
        KORAD_m.set_v = (unsigned int)EEPR_buf[0] << 8 | (unsigned int)EEPR_buf[1];
@@ -65,9 +69,8 @@ unsigned int RestoreCfg(void)
        
        xQueueSend(KORAD_SetV_q,(void*)&KORAD_m.set_v,(TickType_t)0);
        xQueueSend(KORAD_SetI_q,(void*)&KORAD_m.set_i,(TickType_t)0);
-        
        xQueueSend(KORAD_SetState_q,(void*)&state_m.out_state,(TickType_t)0);
-        
+       
        POL_relay_1 = pol_relay_1;
        POL_relay_2 = pol_relay_2;
        Relay_1_LED = pol_relay_1;
@@ -110,6 +113,8 @@ void task_ModbusSM(void *pvParameters)
     holding_reg_write(17,RestoreCfg());
     // if CRC OK, setting variables and writing saved settings into target    
 
+    holding_reg_write(15,1); // remote control enabled
+     
 	while(1)
     {   
      // если запрос был в переменной modbus_request сохранен его код 
@@ -121,11 +126,11 @@ void task_ModbusSM(void *pvParameters)
            Modbus_LED = ON;
            // get measured voltage if queue is not empty 
            if(uxQueueMessagesWaiting(KORAD_RdParams_q) > 0)
-              xQueueReceive(KORAD_RdParams_q, &KORAD_m, (TickType_t)0);
+              xQueuePeek(KORAD_RdParams_q, &KORAD_m, (TickType_t)0);
          
            // get KORAD status if queue is not empty 
            if(uxQueueMessagesWaiting(KORAD_RdStatus_q) > 0)
-              xQueueReceive(KORAD_RdStatus_q, &state_m, (TickType_t)0);
+              xQueuePeek(KORAD_RdStatus_q, &state_m, (TickType_t)0);
 
            // cmd write status -> cleared after readout
            holding_reg_write(0,state_m.rd_process);
@@ -141,6 +146,7 @@ void task_ModbusSM(void *pvParameters)
            holding_reg_write(7,state_m.ovp_ocp_mode); 
            holding_reg_write(8,pol_relay_1);
            holding_reg_write(9,pol_relay_2);
+           holding_reg_write(16,(unsigned int)eTaskGetState(KORADTaskHandle));  // hand control enable
            
            vTaskDelay(10);         // LED delay
            modbus_rhr_answer();    // modbus rhr cmd answer
@@ -181,7 +187,10 @@ void task_ModbusSM(void *pvParameters)
                //=====  
                case 12: // set output state
                    if(RegisterValue == ON || RegisterValue == OFF)
+                   {
                     xQueueSend(KORAD_SetState_q,(void*) &RegisterValue,(TickType_t)0);
+                    state_m.out_state = RegisterValue;
+                   }
                break; 
                //=====  
                case 13: // polarity relay 1
@@ -200,6 +209,13 @@ void task_ModbusSM(void *pvParameters)
                     Relay_2_LED = RegisterValue;
                     pol_relay_2 = RegisterValue;
                    }
+               break; 
+               //=====  
+               case 15: // KORAD read EN/DIS - hand control enable
+                   if(RegisterValue == OFF)
+                    vTaskSuspend(KORADTaskHandle);
+                   if(RegisterValue == ON)
+                    vTaskResume(KORADTaskHandle);
                break; 
                //=====
                case 19: // reg 19 - ID set
@@ -252,8 +268,8 @@ void task_ModbusSM(void *pvParameters)
 
 void task_KORAD(void *pvParameters)
 {
-    KORAD_params KORADp;
-    KORAD_state *src_state;
+    KORAD_params KORADp, KORADtemp;
+    KORAD_state *src_state,src_stateTEMP;
     unsigned int V2set = 0, I2set = 0;
     unsigned int State2set = 0;
 
@@ -285,15 +301,25 @@ void task_KORAD(void *pvParameters)
         KORADp.set_v  = KORAD_GetVSets();
         KORADp.meas_i = KORAD_GetCurrent();
         KORADp.set_i  = KORAD_GetISets();
-        xQueueSend(KORAD_RdParams_q,(void*) &KORADp, (TickType_t)0);   
         
-        // read KORAD status
+        // clear prev measured data if queue is not empty 
+        if(uxQueueMessagesWaiting(KORAD_RdParams_q) > 0)
+          xQueueReceive(KORAD_RdParams_q, &KORADtemp, (TickType_t)0);
+        // send the new measured data
+        xQueueSend(KORAD_RdParams_q,(void*) &KORADp, (TickType_t)0);
+        
+        // read src status
         src_state = KORAD_GetStatus();
-        xQueueSend(KORAD_RdStatus_q, src_state, (TickType_t)0); 
+        
+        // clear prev status if queue is not empty 
+        if(uxQueueMessagesWaiting(KORAD_RdStatus_q) > 0)
+          xQueueReceive(KORAD_RdStatus_q, &src_stateTEMP, (TickType_t)0);
+        // send the new status
+        xQueueSend(KORAD_RdStatus_q, src_state, (TickType_t)0);
         
         // toggle LED if KORAD answer is valid
         if(KORADp.meas_v != ERROR_CODE)
-        {
+        {   
             RS232_LED = ON;
             vTaskDelay(5);
             RS232_LED = OFF;
@@ -308,24 +334,25 @@ int main( void )
 {
     SystemInit();
 
-    FirmInfo.ver = 10;                // device firmware version
+    FirmInfo.ver = 11;                // device firmware version
     FirmInfo.developer = PONKIN;      // device firmware developer
     
     ClearStructs();
             
     // init Queues  
-    KORAD_RdStatus_q  = xQueueCreate(4, sizeof(KORAD_state));
-    KORAD_RdParams_q  = xQueueCreate(4, sizeof(KORAD_params));
-    KORAD_SetV_q      = xQueueCreate(4, sizeof(unsigned int));
-    KORAD_SetI_q      = xQueueCreate(4, sizeof(unsigned int));
-    KORAD_SetState_q  = xQueueCreate(4, sizeof(unsigned int));
-    KORAD_Ans_q       = xQueueCreate(4, sizeof(unsigned int));
+    KORAD_RdStatus_q  = xQueueCreate(10, sizeof(KORAD_state));
+    KORAD_RdParams_q  = xQueueCreate(10, sizeof(KORAD_params));
+    KORAD_SetV_q      = xQueueCreate(10, sizeof(unsigned int));
+    KORAD_SetI_q      = xQueueCreate(10, sizeof(unsigned int));
+    KORAD_SetState_q  = xQueueCreate(10, sizeof(unsigned int));
+    KORAD_Ans_q       = xQueueCreate(10, sizeof(unsigned int));
 
     // create USER tasks 
     ModbusTaskHandle = NULL;
+    KORADTaskHandle  = NULL;
     
-    xTaskCreate(task_ModbusSM,"ModbusSM", configMINIMAL_STACK_SIZE*2,NULL,1,ModbusTaskHandle);
-    xTaskCreate(task_KORAD,"task_KORAD_SM", configMINIMAL_STACK_SIZE,NULL,1,NULL);
+    xTaskCreate(task_ModbusSM,"ModbusSM", configMINIMAL_STACK_SIZE*2,NULL,1,&ModbusTaskHandle);
+    xTaskCreate(task_KORAD,"task_KORAD_SM", configMINIMAL_STACK_SIZE,NULL,1,&KORADTaskHandle);
     
 	vTaskStartScheduler(); // start the RTOS scheduler 
 }

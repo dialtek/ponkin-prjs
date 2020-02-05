@@ -43,6 +43,10 @@ void U1_send_byte (unsigned char ch);          // функция чтения 1 байта UART
 void UART_init();
 void Timer9_init(unsigned long);
 
+
+signed long x  = 0; 
+   
+   
 #include "dialtek_modbus.c"
   
 /* сброс modbus приемника */
@@ -335,14 +339,8 @@ void Timer9_init(unsigned long);
     if(answer == MODBUS_RHR_CMD) 
     {
 	 STATUS_LED = 0;
-	 
-	 //IEC0bits.U1RXIE = 0; // Enable UART1 RX interrupt
-	 //__asm__ volatile("disi #0x3FFF"); /* disable interrupts */
+    
 	 modbus_rhr_answer();
-	 //__asm__ volatile("disi #0x0000"); /* enable interrupts */
-	 //IFS0bits.U1RXIF = 0;   // Reset UART1 RX interrupt flag
-
-	 //IEC0bits.U1RXIE = 1; // Enable UART1 RX interrupt  
 		 
          modbus_refresh(MODBUS_RHR_CMD);
 	 answer = 0;     // сброс флага завершения ответа на запрос

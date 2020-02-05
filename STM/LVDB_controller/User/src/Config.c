@@ -47,8 +47,8 @@ void InitClock(void){
   while (!(RCC->CR & RCC_CR_PLLRDY)); //wait for PLL ready 
     
   RCC->CFGR |= RCC_CFGR_HPRE_DIV8; 		//page 151 Max freq AHB 180 MHz, current 26.25M
-  RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;   // 16 	13.125 MHz SPI
-  RCC->CFGR |= RCC_CFGR_PPRE1_DIV1; 	//page 151 Max freq APB1 45 MHz, current 26.25M -> UART2 TIM2
+  RCC->CFGR |= RCC_CFGR_PPRE2_DIV2;   // 16 	13.125 MHz SPI1
+  RCC->CFGR |= RCC_CFGR_PPRE1_DIV2; 	//page 151 Max freq APB1 45 MHz, current 13.125M -> UART2 TIM2 SPI2 SPI3
 
   //page 228, PLL selected as system clock
 	/* Выбираем PLL как источник системной частоты */
@@ -60,13 +60,16 @@ void InitClock(void){
 	RCC->CR &= ~RCC_CR_HSION; // page 224, HSI clock 16 MHz Off 
 	
 	// Тактирование модуля SPI1, SPI2, PORTА
-  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1, ENABLE);
+  RCC_APB2PeriphClockCmd(RCC_APB2Periph_SPI1,  ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2,  ENABLE);
+	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2,  ENABLE);
+	//RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;   								//разрешить подачу тактовых импульсов на TIM2 
+	//T2 sclk = 13.125M
 	
-	RCC->APB1RSTR |=  RCC_APB1RSTR_SPI2RST;
-  RCC->APB1RSTR &= ~RCC_APB1RSTR_SPI2RST;
- 
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_SPI2, ENABLE);
-  RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
+	//RCC->APB1RSTR |=  RCC_APB1RSTR_SPI2RST;
+  //RCC->APB1RSTR &= ~RCC_APB1RSTR_SPI2RST;   ??
+	
 }
 
 //-----------------------------------------------
@@ -164,47 +167,7 @@ void GPIO_Config(void){
 	GPIO_Init(GPIOE,&gpioEConf); 													// Вызов функции инициализации
 }
 
-//-----------------------------------------------
-//Настройка таймера на 1000 тиков в секунду
-//-----------------------------------------------
-void TIM_Config(void){
-	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;   								//разрешить подачу тактовых импульсов на TIM2 
-	TIM2->CNT = 0;																				//счетный регистр
-	//TIM2->CR1 |= TIM_CR1_ARPE;														//разрешить обновлять ARR
-	TIM2->PSC     = 0;             												//настроить делитель для формирования us
-	TIM2->ARR 		= 26; 
-  //TIM2->DIER    = TIM_DIER_UIE;        	 								//разрешить событие от таймера
-  //разрешить перезагрузку 
-  TIM2->CR1     = TIM_CR1_ARPE;
-  //запретить прерывания от таймера              
-  NVIC_DisableIRQ (TIM2_IRQn);	
-}
 
-/*-----------------------------------------------------------------------------*/
-/*---------------------------Программные Функции-------------------------------*/
-/*-----------------------------------------------------------------------------*/
 
-//-----------------------------------------------
-//Миллисекундная задержка
-//-----------------------------------------------
-void delay_us(uint32_t value)
-{
-  for(uint32_t i = 0; i < value; i++)
-	{
-		TIM2->CNT = 0;													// счетный регистр
-		TIM2->CR1 = TIM_CR1_CEN | TIM_CR1_OPM;	    				  // запустить таймер
-		while((TIM2->SR & TIM_SR_CC1IF)==0){} 		// дождаться конца задержки
-    TIM2->SR &= ~TIM_SR_CC1IF;	    				  // сбросить флаг
-		TIM2->CR1 = TIM_CR1_UDIS;	    				  // выкл таймер
-	}
-}
 
-void delay_ms(uint16_t value)
-{
-  TIM2->ARR = value;                 		  // загрузить значение задержки
-  TIM2->CNT = 0;													// счетный регистр
-  TIM2->CR1 = TIM_CR1_CEN;	    				  // запустить таймер
-	while((TIM2->SR & TIM_SR_UIF)==0){} 		// дождаться конца задержки
-  TIM2->SR &= ~TIM_SR_UIF;	    				  // сбросить флаг
-}
 

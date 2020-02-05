@@ -23,10 +23,6 @@
 
 void InitClock(void);																									// Setting: макс. частота
 void GPIO_Config(void);																								// Setting: IO pins
-void TIM_Config(void);																								// Setting: таймер
-void delay_us(uint32_t value);
-void delay_ms(uint16_t value);																				// TIM: 		миллисекундная задержка
-
 
 #endif 
 

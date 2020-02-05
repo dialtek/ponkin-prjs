@@ -43,7 +43,7 @@
 
   unsigned char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
   unsigned char dev_id        = 100;                // MODBUS ID устройства   <<<<<<<<<<======== ID
-  unsigned char firmware_ver  = 24;                 // версиЯ прошивки текущего устройства
+  unsigned char firmware_ver  = 25;                 // версиЯ прошивки текущего устройства
   unsigned char device_family = 11;                 // код семейства устройств
   unsigned char modbus_ver    = 31;                 // версия MODBUS
 

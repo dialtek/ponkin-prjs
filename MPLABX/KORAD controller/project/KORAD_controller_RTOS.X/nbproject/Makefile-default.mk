@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/tasks.c ../../Source/timers.c ../../Source/list.c ../../Source/queue.c dialtek_modbus.c dialtek_uart.c d_SPI.c d_eeprom.c main.c KORAD_cmds.c KORAD_controller.c KORAD_uart.c
+SOURCEFILES_QUOTED_IF_SPACED=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/tasks.c ../../Source/timers.c ../../Source/list.c ../../Source/queue.c dialtek_modbus.c dialtek_uart.c d_SPI.c d_eeprom.c KORAD_cmds.c KORAD_controller.c KORAD_uart.c main.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/main.o ${OBJECTDIR}/KORAD_cmds.o ${OBJECTDIR}/KORAD_controller.o ${OBJECTDIR}/KORAD_uart.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/897580706/heap_1.o.d ${OBJECTDIR}/_ext/410575107/port.o.d ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o.d ${OBJECTDIR}/_ext/1787047461/tasks.o.d ${OBJECTDIR}/_ext/1787047461/timers.o.d ${OBJECTDIR}/_ext/1787047461/list.o.d ${OBJECTDIR}/_ext/1787047461/queue.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/d_SPI.o.d ${OBJECTDIR}/d_eeprom.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/KORAD_cmds.o.d ${OBJECTDIR}/KORAD_controller.o.d ${OBJECTDIR}/KORAD_uart.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/KORAD_cmds.o ${OBJECTDIR}/KORAD_controller.o ${OBJECTDIR}/KORAD_uart.o ${OBJECTDIR}/main.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/_ext/897580706/heap_1.o.d ${OBJECTDIR}/_ext/410575107/port.o.d ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o.d ${OBJECTDIR}/_ext/1787047461/tasks.o.d ${OBJECTDIR}/_ext/1787047461/timers.o.d ${OBJECTDIR}/_ext/1787047461/list.o.d ${OBJECTDIR}/_ext/1787047461/queue.o.d ${OBJECTDIR}/dialtek_modbus.o.d ${OBJECTDIR}/dialtek_uart.o.d ${OBJECTDIR}/d_SPI.o.d ${OBJECTDIR}/d_eeprom.o.d ${OBJECTDIR}/KORAD_cmds.o.d ${OBJECTDIR}/KORAD_controller.o.d ${OBJECTDIR}/KORAD_uart.o.d ${OBJECTDIR}/main.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/main.o ${OBJECTDIR}/KORAD_cmds.o ${OBJECTDIR}/KORAD_controller.o ${OBJECTDIR}/KORAD_uart.o
+OBJECTFILES=${OBJECTDIR}/_ext/897580706/heap_1.o ${OBJECTDIR}/_ext/410575107/port.o ${OBJECTDIR}/_ext/410575107/portasm_PIC24.o ${OBJECTDIR}/_ext/1787047461/tasks.o ${OBJECTDIR}/_ext/1787047461/timers.o ${OBJECTDIR}/_ext/1787047461/list.o ${OBJECTDIR}/_ext/1787047461/queue.o ${OBJECTDIR}/dialtek_modbus.o ${OBJECTDIR}/dialtek_uart.o ${OBJECTDIR}/d_SPI.o ${OBJECTDIR}/d_eeprom.o ${OBJECTDIR}/KORAD_cmds.o ${OBJECTDIR}/KORAD_controller.o ${OBJECTDIR}/KORAD_uart.o ${OBJECTDIR}/main.o
 
 # Source Files
-SOURCEFILES=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/tasks.c ../../Source/timers.c ../../Source/list.c ../../Source/queue.c dialtek_modbus.c dialtek_uart.c d_SPI.c d_eeprom.c main.c KORAD_cmds.c KORAD_controller.c KORAD_uart.c
+SOURCEFILES=../../Source/portable/MemMang/heap_1.c ../../Source/portable/MPLAB/PIC24_dsPIC/port.c ../../Source/portable/MPLAB/PIC24_dsPIC/portasm_PIC24.S ../../Source/tasks.c ../../Source/timers.c ../../Source/list.c ../../Source/queue.c dialtek_modbus.c dialtek_uart.c d_SPI.c d_eeprom.c KORAD_cmds.c KORAD_controller.c KORAD_uart.c main.c
 
 
 CFLAGS=
@@ -190,13 +190,6 @@ ${OBJECTDIR}/d_eeprom.o: d_eeprom.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/d_eeprom.o 
 	@${FIXDEPS} "${OBJECTDIR}/d_eeprom.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_eeprom.o.d" -o ${OBJECTDIR}/d_eeprom.o d_eeprom.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
-	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
-	
 ${OBJECTDIR}/KORAD_cmds.o: KORAD_cmds.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/KORAD_cmds.o.d 
@@ -217,6 +210,13 @@ ${OBJECTDIR}/KORAD_uart.o: KORAD_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/KORAD_uart.o.ok ${OBJECTDIR}/KORAD_uart.o.err 
 	@${RM} ${OBJECTDIR}/KORAD_uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/KORAD_uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/KORAD_uart.o.d" -o ${OBJECTDIR}/KORAD_uart.o KORAD_uart.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE) -g -D__DEBUG -D__MPLAB_DEBUGGER_ICD3=1 -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
 else
 ${OBJECTDIR}/_ext/897580706/heap_1.o: ../../Source/portable/MemMang/heap_1.c  nbproject/Makefile-${CND_CONF}.mk
@@ -289,13 +289,6 @@ ${OBJECTDIR}/d_eeprom.o: d_eeprom.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/d_eeprom.o 
 	@${FIXDEPS} "${OBJECTDIR}/d_eeprom.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/d_eeprom.o.d" -o ${OBJECTDIR}/d_eeprom.o d_eeprom.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
-${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/main.o.d 
-	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
-	@${RM} ${OBJECTDIR}/main.o 
-	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
-	
 ${OBJECTDIR}/KORAD_cmds.o: KORAD_cmds.c  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/KORAD_cmds.o.d 
@@ -316,6 +309,13 @@ ${OBJECTDIR}/KORAD_uart.o: KORAD_uart.c  nbproject/Makefile-${CND_CONF}.mk
 	@${RM} ${OBJECTDIR}/KORAD_uart.o.ok ${OBJECTDIR}/KORAD_uart.o.err 
 	@${RM} ${OBJECTDIR}/KORAD_uart.o 
 	@${FIXDEPS} "${OBJECTDIR}/KORAD_uart.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/KORAD_uart.o.d" -o ${OBJECTDIR}/KORAD_uart.o KORAD_uart.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
+	
+${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/main.o.d 
+	@${RM} ${OBJECTDIR}/main.o.ok ${OBJECTDIR}/main.o.err 
+	@${RM} ${OBJECTDIR}/main.o 
+	@${FIXDEPS} "${OBJECTDIR}/main.o.d" $(SILENT) -rsi ${MP_CC_DIR}../ -c ${MP_CC} $(MP_EXTRA_CC_PRE)  -g -omf=elf -x c -c -mcpu=$(MP_PROCESSOR_OPTION) -ffunction-sections -Wall -MMD -MF "${OBJECTDIR}/main.o.d" -o ${OBJECTDIR}/main.o main.c     -I ../../Source/include -I ../../Source/portable/MPLAB/PIC24_dsPIC -I ../Common/include -I . -Wextra --std=gnu99 
 	
 endif
 
