@@ -17,34 +17,8 @@ StopOnThrow=_ 0
 ShowArgs=0
 [Disassembly]
 MixedMode=1
-[MemoryMap]
-Enabled=0
-Base=0
-UseAuto=0
-TypeViolation=1
-UnspecRange=1
-ActionState=1
 [CodeCoverage]
 Enabled=_ 0
-[InterruptLog]
-LogEnabled=0
-GraphEnabled=0
-ShowTimeLog=1
-SumEnabled=0
-ShowTimeSum=1
-SumSortOrder=0
-[DataLog]
-LogEnabled=0
-GraphEnabled=0
-ShowTimeLog=1
-SumEnabled=0
-ShowTimeSum=1
-[Disassemble mode]
-mode=0
-[Breakpoints2]
-Count=0
-[Interrupts]
-Enabled=0
 [MemConfig]
 Base=1
 Manual=0
@@ -57,9 +31,6 @@ Mode=1
 Graph=0
 Symbiont=0
 Exclusions=
-[Trace1]
-Enabled=0
-ShowSource=1
 [CallStackLog]
 Enabled=0
 [CallStackStripe]
@@ -71,9 +42,38 @@ Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
-[Aliases]
-Count=0
-SuppressDialog=0
 [Simulator]
 Freq=10000000
 MultiCoreRunAll=1
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[DataLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+[Disassemble mode]
+mode=0
+[Breakpoints2]
+Count=0
+[Interrupts]
+Enabled=0
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[Aliases]
+Count=0
+SuppressDialog=0
+[Trace1]
+Enabled=0
+ShowSource=1

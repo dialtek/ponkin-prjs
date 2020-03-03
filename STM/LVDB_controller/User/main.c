@@ -164,7 +164,7 @@ int main()
 	if(DEV_ID_MODE)
 		set_modbus_id(ModbusID);
 	else
-		set_modbus_id(ModbusID*10);
+		set_modbus_id(ModbusID+100);
 	
 	modbus_init();
 

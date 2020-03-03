@@ -1,0 +1,30 @@
+build/PIC32MZ2048_SK/production/_ext/1472/main_full.o:  \
+../main_full.c  \
+ ../../../Source/include/FreeRTOS.h  \
+../FreeRTOSConfig.h  \
+ ../../../Source/include/projdefs.h  \
+../../../Source/include/portable.h  \
+ ../../../Source/include/deprecated_definitions.h  \
+ ../../../Source/portable/MPLAB/PIC32MZ/portmacro.h  \
+ ../../../Source/include/mpu_wrappers.h  \
+../../../Source/include/task.h  \
+ ../../../Source/include/list.h  \
+../../../Source/include/queue.h  \
+ ../../../Source/include/task.h  \
+../../../Source/include/semphr.h  \
+ ../../../Source/include/queue.h  \
+../../../Source/include/timers.h  \
+ ../../Common/include/partest.h  \
+../../Common/include/blocktim.h  \
+ ../../Common/include/flash_timer.h  \
+../../Common/include/semtest.h  \
+ ../../Common/include/GenQTest.h  \
+../../Common/include/QPeek.h  \
+ ../../Common/include/IntQueue.h  \
+../../Common/include/countsem.h  \
+ ../../Common/include/dynamic.h  \
+../../Common/include/QueueOverwrite.h  \
+ ../../Common/include/QueueSet.h  \
+../../Common/include/recmutex.h  \
+ ../../Common/include/EventGroupsDemo.h  \
+../flop_mz.h 

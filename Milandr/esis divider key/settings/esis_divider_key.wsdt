@@ -8,12 +8,6 @@
   </ConfigDictionary>
   <Desktop>
     <Static>
-      <Build>
-        <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>1395</ColumnWidth1>
-        <ColumnWidth2>372</ColumnWidth2>
-        <ColumnWidth3>93</ColumnWidth3>
-      </Build>
       <Workspace>
         <ColumnWidths>
           <Column0>124</Column0>
@@ -22,60 +16,46 @@
           <Column3>27</Column3>
         </ColumnWidths>
       </Workspace>
-      <Debug-Log>
+      <Build>
         <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>1861</ColumnWidth1>
-      </Debug-Log>
-      <TerminalIO/>
+        <ColumnWidth1>1395</ColumnWidth1>
+        <ColumnWidth2>372</ColumnWidth2>
+        <ColumnWidth3>93</ColumnWidth3>
+      </Build>
     </Static>
     <Windows>
-      <Wnd1>
+      <Wnd0>
         <Tabs>
           <Tab>
-            <Identity>TabID-7466-22231</Identity>
-            <TabName>Build</TabName>
-            <Factory>Build</Factory>
-            <Session/>
-          </Tab>
-          <Tab>
-            <Identity>TabID-4329-22290</Identity>
-            <TabName>Debug Log</TabName>
-            <Factory>Debug-Log</Factory>
-            <Session/>
-          </Tab>
-        </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd1>
-      <Wnd2>
-        <Tabs>
-          <Tab>
-            <Identity>TabID-18215-22234</Identity>
+            <Identity>TabID-18678-5590</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
               <NodeDict>
                 <ExpandedNode>esis_div_key</ExpandedNode>
-                <ExpandedNode>esis_div_key/inc</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
         </Tabs>
         <SelectedTab>0</SelectedTab>
-      </Wnd2>
+      </Wnd0>
+      <Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-7993-5995</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        <SelectedTab>0</SelectedTab>
+      </Wnd1>
     </Windows>
     <Editor>
       <Pane>
         <Tab>
           <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\main.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>39</YPos2>
-          <SelStart2>2976</SelStart2>
-          <SelEnd2>2976</SelEnd2>
+          <Filename>C:\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\arm\doc\infocenter\index.ENU.html</Filename>
         </Tab>
         <ActiveTab>0</ActiveTab>
       </Pane>
@@ -92,26 +72,16 @@
       <Top>
         <Row0>
           <Sizes>
-            <Toolbar-047AE5F8>
+            <Toolbar-04f466c8>
               <key>iaridepm.enu1</key>
-            </Toolbar-047AE5F8>
+            </Toolbar-04f466c8>
           </Sizes>
         </Row0>
-        <Row1>
-          <Sizes/>
-        </Row1>
-        <Row2>
-          <Sizes>
-            <Toolbar-13A1F2F0>
-              <key>debuggergui.enu1</key>
-            </Toolbar-13A1F2F0>
-          </Sizes>
-        </Row2>
       </Top>
       <Left>
         <Row0>
           <Sizes>
-            <Wnd2>
+            <Wnd0>
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
@@ -126,7 +96,7 @@
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>758275</sizeVertCY>
               </Rect>
-            </Wnd2>
+            </Wnd0>
           </Sizes>
         </Row0>
       </Left>

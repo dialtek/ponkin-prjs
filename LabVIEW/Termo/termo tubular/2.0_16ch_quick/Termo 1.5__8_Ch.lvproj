@@ -10,6 +10,7 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Ch_data_pattern_16_save (SubVI).vi" Type="VI" URL="../Ch_data_pattern_16_save (SubVI).vi"/>
 		<Item Name="Termo_1.5__.vi" Type="VI" URL="../Termo_1.5__.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
@@ -59,7 +60,6 @@
 				<Item Name="Trim Whitespace.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Trim Whitespace.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="Ch_data_pattern_8_save (SubVI).vi" Type="VI" URL="../Ch_data_pattern_8_save (SubVI).vi"/>
 			<Item Name="Ch_data_title_pattern (SubVI).vi" Type="VI" URL="../Ch_data_title_pattern (SubVI).vi"/>
 			<Item Name="CheckScreenShot (SubVI).vi" Type="VI" URL="../CheckScreenShot (SubVI).vi"/>
 			<Item Name="String_match (SubVI).vi" Type="VI" URL="../String_match (SubVI).vi"/>
@@ -92,13 +92,17 @@
 				<Property Name="Destination[1].path" Type="Path">../EXE/data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{E4B5A1A0-CC28-49A1-9AB8-59D81C3F93F8}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{44657DC0-51CC-446F-8742-812CDFC814CD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Termo_1.5__.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="SourceCount" Type="Int">2</Property>
+				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[2].itemID" Type="Ref">/My Computer/Ch_data_pattern_16_save (SubVI).vi</Property>
+				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[2].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">3</Property>
 				<Property Name="TgtF_companyName" Type="Str">LHEP JINR</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">8 cnannel PoE thermometry system test software</Property>
 				<Property Name="TgtF_legalCopyright" Type="Str">Dubna 2015 </Property>

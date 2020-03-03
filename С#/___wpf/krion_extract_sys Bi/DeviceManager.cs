@@ -53,7 +53,7 @@ namespace extract_system
             id = "6";
             shift_vert = 44;
 
-            var device_2 = new DevicePBF(id, shift, shift_vert, "C23", SendMessage);
+            var device_2 = new DevicePBF(id, shift, shift_vert, "C22", SendMessage);
             device_2.CreateControls(_form);
             devices.Add(id, device_2);
 
@@ -85,7 +85,7 @@ namespace extract_system
             shift_vert = -80;
             List<string> R_list = new List<string>() { "200 R", "1 k", "2 k" };  // список резисторов для коммутации
 
-            var device_5 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С2", "Cx", "C22", R_list); // было С22 для ИО
+            var device_5 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С2", "Cx", "Cy", R_list); // было С22 для ИО
             device_5.CreateControls(_form);
             devices.Add(id, device_5);
 
@@ -94,7 +94,7 @@ namespace extract_system
             shift_vert = 0;
             R_list = new List<string>() { "-", "-", "-" };  // список резисторов для коммутации
 
-            var device_12 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С7", "C23", "C27", R_list);
+            var device_12 = new DeviceDividerKey(id, shift, shift_vert, SendMessage, "С7", "C22", "C27", R_list); // c22 изм. 03.03.20
             device_12.CreateControls(_form);
             devices.Add(id, device_12);
 

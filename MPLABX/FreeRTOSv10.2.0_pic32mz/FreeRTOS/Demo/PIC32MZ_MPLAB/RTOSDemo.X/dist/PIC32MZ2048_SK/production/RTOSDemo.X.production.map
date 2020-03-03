@@ -1,0 +1,3084 @@
+
+Optional file libmchp_peripheral_32MZ2048ECG144.a not found
+Archive member included because of file (symbol)
+
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+                              build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o (__floatunsisf)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+                              build/PIC32MZ2048_SK/production/_ext/332309698/port.o (memcmp)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+                              build/PIC32MZ2048_SK/production/_ext/449926602/queue.o (memcpy)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+                              build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o (memset)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_bootstrap_exception_handler)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_on_reset)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_on_bootstrap)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_nmi_handler)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (__pic32_init_cache)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (__pic32_tlb_init_ebi_sqi)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_general_exception_context)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_cache_err_exception_context)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o (_simple_tlb_refill_exception_context)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o (_DefaultInterrupt)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o) (_cache_err_exception_handler)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o) (_simple_tlb_refill_exception_handler)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+                              build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o (fpdiv)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+                              build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o (fpmul)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+                              build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o (fpsub)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+                              build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o (fpcmp)
+c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+                              c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o) (sitofp)
+
+Allocating common symbols
+Common symbol       size              file
+
+xHighPriorityNormallyEmptyTask2
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+xHighPriorityNormallyEmptyTask1
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+xQueueSetSendingTask
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+xHighPriorityTask   0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+xSuspendedTestQueue
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+xHighPriorityNormallyFullTask1
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+xHighPriorityNormallyFullTask2
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+xHighestPriorityTask
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+xMediumPriorityTask
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+xQueueSetReceivingTask
+                    0x4               build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+
+Microchip PIC32 Memory-Usage Report
+
+kseg0 Program-Memory Usage
+section                    address  length [bytes]      (dec)  Description
+-------                 ----------  -------------------------  -----------
+.simple_tlb_refill_excp 0x9d000000           0x10          16   
+.text.general_exception 0x9d000010           0xdc         220   
+.rodata                 0x9d0000ec            0x8           8  Read-only const 
+.text._on_reset         0x9d0000f4            0x8           8   
+.cache_err_excpt        0x9d000100           0x10          16   
+.rodata                 0x9d000110           0x64         100  Read-only const 
+.rodata                 0x9d000174            0x8           8  Read-only const 
+.app_excpt              0x9d000180           0x10          16  General-Exception 
+.text.sitofp            0x9d000190           0x60          96   
+.rodata                 0x9d0001f0           0x10          16  Read-only const 
+.vectors                0x9d000200          0x4dc        1244   
+.text                   0x9d0006dc         0xf6bc       63164  App's exec code 
+.dinit                  0x9d00fd98          0x4f0        1264   
+.text                   0x9d010288         0x16d8        5848  App's exec code 
+.text.fpsubadd          0x9d011960          0x278         632   
+.text                   0x9d011bd8          0x274         628  App's exec code 
+.text.fp32div           0x9d011e4c          0x230         560   
+.text                   0x9d01207c          0x620        1568  App's exec code 
+.text.fp32mul           0x9d01269c          0x1bc         444   
+.text                   0x9d012858          0x754        1876  App's exec code 
+.text._cache_err_except 0x9d012fac           0xd8         216   
+.text.simple_tlb_refill 0x9d013084           0xd8         216   
+.text                   0x9d01315c           0xd0         208  App's exec code 
+.tlb.__pic32_tlb_init_e 0x9d01322c           0xbc         188   
+.text                   0x9d0132e8           0xa8         168  App's exec code 
+.text.fpcmp             0x9d013390           0x9c         156   
+.text                   0x9d01342c           0x98         152  App's exec code 
+.text.main_entry        0x9d0134c4           0x4c          76   
+.text                   0x9d013510           0x4c          76  App's exec code 
+.rodata                 0x9d01355c           0x90         144  Read-only const 
+.text._bootstrap_except 0x9d0135ec           0x48          72   
+.text._cache_err_except 0x9d013634           0x48          72   
+.text._simple_tlb_refil 0x9d01367c           0x48          72   
+.text                   0x9d0136c4           0x44          68  App's exec code 
+.rodata                 0x9d013708          0x2bc         700  Read-only const 
+.text                   0x9d0139c4           0x18          24  App's exec code 
+.text._on_bootstrap     0x9d0139dc            0x8           8   
+      Total kseg0_program_mem used  :     0x139dc       80348  3.8% of 0x200000
+
+kseg0 Boot-Memory Usage
+section                    address  length [bytes]      (dec)  Description
+-------                 ----------  -------------------------  -----------
+         Total kseg0_boot_mem used  :           0           0  
+
+kseg1 Boot-Memory Usage
+section                    address  length [bytes]      (dec)  Description
+-------                 ----------  -------------------------  -----------
+.reset                  0xbfc00000          0x1f8         504  Reset handler 
+.bev_excpt              0xbfc00380           0x10          16  BEV-Exception 
+         Total kseg1_boot_mem used  :       0x208         520  45.1% of 0x480
+        --------------------------------------------------------------------------
+         Total Program Memory used  :     0x13be4       80868  3.9% of 0x200480
+        --------------------------------------------------------------------------
+
+
+kseg0 Data-Memory Usage
+section                    address  length [bytes]      (dec)  Description
+-------                 ----------  -------------------------  -----------
+.sdata                  0x80000000           0x3c          60  Small init data 
+.sbss                   0x8000003c          0x23c         572  Small uninit data 
+.bss                    0x80000278         0xf39c       62364  Uninitialized data 
+         Total kseg0_data_mem used  :      0xf614       62996  12.0% of 0x80000
+        --------------------------------------------------------------------------
+            Total Data Memory used  :      0xf614       62996  12.0% of 0x80000
+        --------------------------------------------------------------------------
+
+
+Dynamic Data-Memory Reservation
+section                    address  length [bytes]      (dec)  Description
+-------                 ----------  -------------------------  -----------
+heap                    0x8000f618              0           0  Reserved for heap 
+stack                   0x8000f630        0x709c0      461248  Reserved for stack 
+
+        --------------------------------------------------------------------------
+
+Discarded input sections
+
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+ .reginfo       0x00000000       0x18 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+ .discard       0x00000000        0x4 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\pic32_software_reset.o
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\processor.o
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+kseg0_program_mem 0x9d000000         0x00200000         xr
+kseg0_boot_mem   0x9fc004b0         0x00000000
+kseg1_boot_mem   0xbfc00000         0x00000480
+kseg1_boot_mem_4B0 0xbfc004b0         0x0000fa50
+config_BFC0FF40  0xbfc0ff40         0x00000004
+config_BFC0FF44  0xbfc0ff44         0x00000004
+config_BFC0FF48  0xbfc0ff48         0x00000004
+config_BFC0FF4C  0xbfc0ff4c         0x00000004
+config_BFC0FF50  0xbfc0ff50         0x00000004
+config_BFC0FF54  0xbfc0ff54         0x00000004
+config_BFC0FF58  0xbfc0ff58         0x00000004
+config_BFC0FF5C  0xbfc0ff5c         0x00000004
+config_BFC0FF60  0xbfc0ff60         0x00000004
+config_BFC0FF64  0xbfc0ff64         0x00000004
+config_BFC0FF68  0xbfc0ff68         0x00000004
+config_BFC0FF6C  0xbfc0ff6c         0x00000004
+config_BFC0FF70  0xbfc0ff70         0x00000004
+config_BFC0FF74  0xbfc0ff74         0x00000004
+config_BFC0FF78  0xbfc0ff78         0x00000004
+config_BFC0FF7C  0xbfc0ff7c         0x00000004
+config_BFC0FFC0  0xbfc0ffc0         0x00000004
+config_BFC0FFC4  0xbfc0ffc4         0x00000004
+config_BFC0FFC8  0xbfc0ffc8         0x00000004
+config_BFC0FFCC  0xbfc0ffcc         0x00000004
+config_BFC0FFD0  0xbfc0ffd0         0x00000004
+config_BFC0FFD4  0xbfc0ffd4         0x00000004
+config_BFC0FFD8  0xbfc0ffd8         0x00000004
+config_BFC0FFDC  0xbfc0ffdc         0x00000004
+config_BFC0FFE0  0xbfc0ffe0         0x00000004
+config_BFC0FFE4  0xbfc0ffe4         0x00000004
+config_BFC0FFE8  0xbfc0ffe8         0x00000004
+config_BFC0FFEC  0xbfc0ffec         0x00000004
+config_BFC0FFF0  0xbfc0fff0         0x00000004
+config_BFC0FFF4  0xbfc0fff4         0x00000004
+config_BFC0FFF8  0xbfc0fff8         0x00000004
+config_BFC0FFFC  0xbfc0fffc         0x00000004
+lowerbootaliaslastpage 0xbfc10000         0x00004000
+upperbootalias   0xbfc20000         0x00014000
+boot1            0xbfc40000         0x0000ff00
+config_BFC4FF40  0xbfc4ff40         0x00000004
+config_BFC4FF44  0xbfc4ff44         0x00000004
+config_BFC4FF48  0xbfc4ff48         0x00000004
+config_BFC4FF4C  0xbfc4ff4c         0x00000004
+config_BFC4FF50  0xbfc4ff50         0x00000004
+config_BFC4FF54  0xbfc4ff54         0x00000004
+config_BFC4FF58  0xbfc4ff58         0x00000004
+config_BFC4FF5C  0xbfc4ff5c         0x00000004
+config_BFC4FF60  0xbfc4ff60         0x00000004
+config_BFC4FF64  0xbfc4ff64         0x00000004
+config_BFC4FF68  0xbfc4ff68         0x00000004
+config_BFC4FF6C  0xbfc4ff6c         0x00000004
+config_BFC4FF70  0xbfc4ff70         0x00000004
+config_BFC4FF74  0xbfc4ff74         0x00000004
+config_BFC4FF78  0xbfc4ff78         0x00000004
+config_BFC4FF7C  0xbfc4ff7c         0x00000004
+config_BFC4FFC0  0xbfc4ffc0         0x00000004
+config_BFC4FFC4  0xbfc4ffc4         0x00000004
+config_BFC4FFC8  0xbfc4ffc8         0x00000004
+config_BFC4FFCC  0xbfc4ffcc         0x00000004
+config_BFC4FFD0  0xbfc4ffd0         0x00000004
+config_BFC4FFD4  0xbfc4ffd4         0x00000004
+config_BFC4FFD8  0xbfc4ffd8         0x00000004
+config_BFC4FFDC  0xbfc4ffdc         0x00000004
+config_BFC4FFE0  0xbfc4ffe0         0x00000004
+config_BFC4FFE4  0xbfc4ffe4         0x00000004
+config_BFC4FFE8  0xbfc4ffe8         0x00000004
+config_BFC4FFEC  0xbfc4ffec         0x00000004
+config_BFC4FFF0  0xbfc4fff0         0x00000004
+config_BFC4FFF4  0xbfc4fff4         0x00000004
+config_BFC4FFF8  0xbfc4fff8         0x00000004
+config_BFC4FFFC  0xbfc4fffc         0x00000004
+boot1lastpage    0xbfc50000         0x00004000
+config_BFC54000  0xbfc54000         0x00000004
+config_BFC54004  0xbfc54004         0x00000004
+config_BFC54008  0xbfc54008         0x00000004
+config_BFC5400C  0xbfc5400c         0x00000004
+config_BFC54010  0xbfc54010         0x00000004
+config_BFC54020  0xbfc54020         0x00000004
+config_BFC54024  0xbfc54024         0x00000004
+boot2            0xbfc60000         0x0000ff00
+config_BFC6FF40  0xbfc6ff40         0x00000004
+config_BFC6FF44  0xbfc6ff44         0x00000004
+config_BFC6FF48  0xbfc6ff48         0x00000004
+config_BFC6FF4C  0xbfc6ff4c         0x00000004
+config_BFC6FF50  0xbfc6ff50         0x00000004
+config_BFC6FF54  0xbfc6ff54         0x00000004
+config_BFC6FF58  0xbfc6ff58         0x00000004
+config_BFC6FF5C  0xbfc6ff5c         0x00000004
+config_BFC6FF60  0xbfc6ff60         0x00000004
+config_BFC6FF64  0xbfc6ff64         0x00000004
+config_BFC6FF68  0xbfc6ff68         0x00000004
+config_BFC6FF6C  0xbfc6ff6c         0x00000004
+config_BFC6FF70  0xbfc6ff70         0x00000004
+config_BFC6FF74  0xbfc6ff74         0x00000004
+config_BFC6FF78  0xbfc6ff78         0x00000004
+config_BFC6FF7C  0xbfc6ff7c         0x00000004
+config_BFC6FFC0  0xbfc6ffc0         0x00000004
+config_BFC6FFC4  0xbfc6ffc4         0x00000004
+config_BFC6FFC8  0xbfc6ffc8         0x00000004
+config_BFC6FFCC  0xbfc6ffcc         0x00000004
+config_BFC6FFD0  0xbfc6ffd0         0x00000004
+config_BFC6FFD4  0xbfc6ffd4         0x00000004
+config_BFC6FFD8  0xbfc6ffd8         0x00000004
+config_BFC6FFDC  0xbfc6ffdc         0x00000004
+config_BFC6FFE0  0xbfc6ffe0         0x00000004
+config_BFC6FFE4  0xbfc6ffe4         0x00000004
+config_BFC6FFE8  0xbfc6ffe8         0x00000004
+config_BFC6FFEC  0xbfc6ffec         0x00000004
+config_BFC6FFF0  0xbfc6fff0         0x00000004
+config_BFC6FFF4  0xbfc6fff4         0x00000004
+config_BFC6FFF8  0xbfc6fff8         0x00000004
+config_BFC6FFFC  0xbfc6fffc         0x00000004
+boot2lastpage    0xbfc70000         0x00004000
+kseg0_data_mem   0x80000000         0x00080000         w !x
+sfrs             0xbf800000         0x00100000
+configsfrs_BFC0FF40 0xbfc0ff40         0x00000040
+configsfrs_BFC0FFC0 0xbfc0ffc0         0x00000040
+configsfrs_BFC4FF40 0xbfc4ff40         0x00000040
+configsfrs_BFC4FFC0 0xbfc4ffc0         0x00000040
+configsfrs_BFC54000 0xbfc54000         0x00000014
+configsfrs_BFC54020 0xbfc54020         0x00000008
+configsfrs_BFC6FF40 0xbfc6ff40         0x00000040
+configsfrs_BFC6FFC0 0xbfc6ffc0         0x00000040
+kseg2_ebi_data_mem 0xc0000000         0x04000000
+kseg2_sqi_data_mem 0xd0000000         0x04000000
+kseg3_ebi_data_mem 0xe0000000         0x04000000
+kseg3_sqi_data_mem 0xf0000000         0x04000000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+LOAD build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+LOAD build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+LOAD build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+LOAD build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+LOAD build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+LOAD build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+LOAD build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/main.o
+LOAD build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+LOAD build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+                0x00000001                __MPLAB_BUILD = 0x1
+                0x00000000                _min_heap_size = 0x0
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\pic32_software_reset.o
+                0x00000400                PROVIDE (_min_stack_size, 0x400)
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\processor.o
+START GROUP
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libmchp_peripheral.a
+END GROUP
+START GROUP
+LOAD libmchp_peripheral_32MZ2048ECG144.a
+END GROUP
+START GROUP
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+END GROUP
+                0x00000001                PROVIDE (_vector_spacing, 0x1)
+                0x9d000000                PROVIDE (_ebase_address, 0x9d000000)
+                0xbfc00000                _RESET_ADDR = 0xbfc00000
+                0xbfc00380                _BEV_EXCPT_ADDR = 0xbfc00380
+                0xbfc00480                _DBG_EXCPT_ADDR = 0xbfc00480
+                0x9d000000                _SIMPLE_TLB_REFILL_EXCPT_ADDR = (_ebase_address + 0x0)
+                0x9d000100                _CACHE_ERR_EXCPT_ADDR = (_ebase_address + 0x100)
+                0x9d000180                _GEN_EXCPT_ADDR = (_ebase_address + 0x180)
+
+.config_BFC0FF40
+ *(.config_BFC0FF40)
+
+.config_BFC0FF44
+ *(.config_BFC0FF44)
+
+.config_BFC0FF48
+ *(.config_BFC0FF48)
+
+.config_BFC0FF4C
+ *(.config_BFC0FF4C)
+
+.config_BFC0FF50
+ *(.config_BFC0FF50)
+
+.config_BFC0FF54
+ *(.config_BFC0FF54)
+
+.config_BFC0FF58
+ *(.config_BFC0FF58)
+
+.config_BFC0FF5C
+ *(.config_BFC0FF5C)
+
+.config_BFC0FF60
+ *(.config_BFC0FF60)
+
+.config_BFC0FF64
+ *(.config_BFC0FF64)
+
+.config_BFC0FF68
+ *(.config_BFC0FF68)
+
+.config_BFC0FF6C
+ *(.config_BFC0FF6C)
+
+.config_BFC0FF70
+ *(.config_BFC0FF70)
+
+.config_BFC0FF74
+ *(.config_BFC0FF74)
+
+.config_BFC0FF78
+ *(.config_BFC0FF78)
+
+.config_BFC0FF7C
+ *(.config_BFC0FF7C)
+
+.config_BFC0FFC0
+                0xbfc0ffc0        0x4
+ *(.config_BFC0FFC0)
+ .config_BFC0FFC0
+                0xbfc0ffc0        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.config_BFC0FFC4
+                0xbfc0ffc4        0x4
+ *(.config_BFC0FFC4)
+ .config_BFC0FFC4
+                0xbfc0ffc4        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.config_BFC0FFC8
+                0xbfc0ffc8        0x4
+ *(.config_BFC0FFC8)
+ .config_BFC0FFC8
+                0xbfc0ffc8        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.config_BFC0FFCC
+                0xbfc0ffcc        0x4
+ *(.config_BFC0FFCC)
+ .config_BFC0FFCC
+                0xbfc0ffcc        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.config_BFC0FFD0
+ *(.config_BFC0FFD0)
+
+.config_BFC0FFD4
+ *(.config_BFC0FFD4)
+
+.config_BFC0FFD8
+ *(.config_BFC0FFD8)
+
+.config_BFC0FFDC
+                0xbfc0ffdc        0x4
+ *(.config_BFC0FFDC)
+ .config_BFC0FFDC
+                0xbfc0ffdc        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.config_BFC0FFE0
+ *(.config_BFC0FFE0)
+
+.config_BFC0FFE4
+ *(.config_BFC0FFE4)
+
+.config_BFC0FFE8
+ *(.config_BFC0FFE8)
+
+.config_BFC0FFEC
+ *(.config_BFC0FFEC)
+
+.config_BFC0FFF0
+ *(.config_BFC0FFF0)
+
+.config_BFC0FFF4
+ *(.config_BFC0FFF4)
+
+.config_BFC0FFF8
+ *(.config_BFC0FFF8)
+
+.config_BFC0FFFC
+ *(.config_BFC0FFFC)
+
+.config_BFC4FF40
+ *(.config_BFC4FF40)
+
+.config_BFC4FF44
+ *(.config_BFC4FF44)
+
+.config_BFC4FF48
+ *(.config_BFC4FF48)
+
+.config_BFC4FF4C
+ *(.config_BFC4FF4C)
+
+.config_BFC4FF50
+ *(.config_BFC4FF50)
+
+.config_BFC4FF54
+ *(.config_BFC4FF54)
+
+.config_BFC4FF58
+ *(.config_BFC4FF58)
+
+.config_BFC4FF5C
+ *(.config_BFC4FF5C)
+
+.config_BFC4FF60
+ *(.config_BFC4FF60)
+
+.config_BFC4FF64
+ *(.config_BFC4FF64)
+
+.config_BFC4FF68
+ *(.config_BFC4FF68)
+
+.config_BFC4FF6C
+ *(.config_BFC4FF6C)
+
+.config_BFC4FF70
+ *(.config_BFC4FF70)
+
+.config_BFC4FF74
+ *(.config_BFC4FF74)
+
+.config_BFC4FF78
+ *(.config_BFC4FF78)
+
+.config_BFC4FF7C
+ *(.config_BFC4FF7C)
+
+.config_BFC4FFC0
+ *(.config_BFC4FFC0)
+
+.config_BFC4FFC4
+ *(.config_BFC4FFC4)
+
+.config_BFC4FFC8
+ *(.config_BFC4FFC8)
+
+.config_BFC4FFCC
+ *(.config_BFC4FFCC)
+
+.config_BFC4FFD0
+ *(.config_BFC4FFD0)
+
+.config_BFC4FFD4
+ *(.config_BFC4FFD4)
+
+.config_BFC4FFD8
+ *(.config_BFC4FFD8)
+
+.config_BFC4FFDC
+ *(.config_BFC4FFDC)
+
+.config_BFC4FFE0
+ *(.config_BFC4FFE0)
+
+.config_BFC4FFE4
+ *(.config_BFC4FFE4)
+
+.config_BFC4FFE8
+ *(.config_BFC4FFE8)
+
+.config_BFC4FFEC
+ *(.config_BFC4FFEC)
+
+.config_BFC4FFF0
+ *(.config_BFC4FFF0)
+
+.config_BFC4FFF4
+ *(.config_BFC4FFF4)
+
+.config_BFC4FFF8
+ *(.config_BFC4FFF8)
+
+.config_BFC4FFFC
+ *(.config_BFC4FFFC)
+
+.config_BFC54000
+ *(.config_BFC54000)
+
+.config_BFC54004
+ *(.config_BFC54004)
+
+.config_BFC54008
+ *(.config_BFC54008)
+
+.config_BFC5400C
+ *(.config_BFC5400C)
+
+.config_BFC54010
+ *(.config_BFC54010)
+
+.config_BFC54020
+ *(.config_BFC54020)
+
+.config_BFC54024
+ *(.config_BFC54024)
+
+.config_BFC6FF40
+ *(.config_BFC6FF40)
+
+.config_BFC6FF44
+ *(.config_BFC6FF44)
+
+.config_BFC6FF48
+ *(.config_BFC6FF48)
+
+.config_BFC6FF4C
+ *(.config_BFC6FF4C)
+
+.config_BFC6FF50
+ *(.config_BFC6FF50)
+
+.config_BFC6FF54
+ *(.config_BFC6FF54)
+
+.config_BFC6FF58
+ *(.config_BFC6FF58)
+
+.config_BFC6FF5C
+ *(.config_BFC6FF5C)
+
+.config_BFC6FF60
+ *(.config_BFC6FF60)
+
+.config_BFC6FF64
+ *(.config_BFC6FF64)
+
+.config_BFC6FF68
+ *(.config_BFC6FF68)
+
+.config_BFC6FF6C
+ *(.config_BFC6FF6C)
+
+.config_BFC6FF70
+ *(.config_BFC6FF70)
+
+.config_BFC6FF74
+ *(.config_BFC6FF74)
+
+.config_BFC6FF78
+ *(.config_BFC6FF78)
+
+.config_BFC6FF7C
+ *(.config_BFC6FF7C)
+
+.config_BFC6FFC0
+ *(.config_BFC6FFC0)
+
+.config_BFC6FFC4
+ *(.config_BFC6FFC4)
+
+.config_BFC6FFC8
+ *(.config_BFC6FFC8)
+
+.config_BFC6FFCC
+ *(.config_BFC6FFCC)
+
+.config_BFC6FFD0
+ *(.config_BFC6FFD0)
+
+.config_BFC6FFD4
+ *(.config_BFC6FFD4)
+
+.config_BFC6FFD8
+ *(.config_BFC6FFD8)
+
+.config_BFC6FFDC
+ *(.config_BFC6FFDC)
+
+.config_BFC6FFE0
+ *(.config_BFC6FFE0)
+
+.config_BFC6FFE4
+ *(.config_BFC6FFE4)
+
+.config_BFC6FFE8
+ *(.config_BFC6FFE8)
+
+.config_BFC6FFEC
+ *(.config_BFC6FFEC)
+
+.config_BFC6FFF0
+ *(.config_BFC6FFF0)
+
+.config_BFC6FFF4
+ *(.config_BFC6FFF4)
+
+.config_BFC6FFF8
+ *(.config_BFC6FFF8)
+
+.config_BFC6FFFC
+ *(.config_BFC6FFFC)
+
+.reset          0xbfc00000      0x1f8
+ *(.reset)
+ .reset         0xbfc00000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+                0xbfc00000                _reset
+ *(.reset.startup)
+ .reset.startup
+                0xbfc00018      0x1e0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.bev_excpt      0xbfc00380       0x10
+ *(.bev_handler)
+ .bev_handler   0xbfc00380       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.cache_init     0xbfc004b0      0x1c0
+ *(.cache_init)
+ *(.cache_init.*)
+ .cache_init.cache
+                0xbfc004b0       0xc0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+ .cache_init.pic32_size_cache
+                0xbfc00570       0x3c c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+                0xbfc00570                __pic32_size_cache
+ .cache_init.pic32_init_cache
+                0xbfc005ac       0xc4 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+                0xbfc005ac                __pic32_init_cache
+
+.simple_tlb_refill_excpt
+                0x9d000000       0x10
+ *(.simple_tlb_refill_vector)
+ .simple_tlb_refill_vector
+                0x9d000000       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.cache_err_excpt
+                0x9d000100       0x10
+ *(.cache_err_vector)
+ .cache_err_vector
+                0x9d000100       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.app_excpt      0x9d000180       0x10
+ *(.gen_handler)
+ .gen_handler   0x9d000180       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.vectors        0x9d000200      0x4dc
+                0x000006a4                __vector_offset_0 = DEFINED (__vector_dispatch_0)?(. - _ebase_address):__vector_offset_default
+ *(.vector_0)
+                0x00000200                __vector_offset_1 = DEFINED (__vector_dispatch_1)?(. - _ebase_address):__vector_offset_default
+ *(.vector_1)
+ .vector_1      0x9d000200      0x258 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+                0x9d000200                __vector_dispatch_1
+                0x9d000200                vPortYieldISR
+                0x000006a4                __vector_offset_2 = DEFINED (__vector_dispatch_2)?(. - _ebase_address):__vector_offset_default
+ *(.vector_2)
+                0x000006a4                __vector_offset_3 = DEFINED (__vector_dispatch_3)?(. - _ebase_address):__vector_offset_default
+ *(.vector_3)
+                0x00000458                __vector_offset_4 = DEFINED (__vector_dispatch_4)?(. - _ebase_address):__vector_offset_default
+ *(.vector_4)
+ .vector_4      0x9d000458      0x22c build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+                0x9d000458                __vector_dispatch_4
+                0x9d000458                vPortTickInterruptHandler
+                0x000006a4                __vector_offset_5 = DEFINED (__vector_dispatch_5)?(. - _ebase_address):__vector_offset_default
+ *(.vector_5)
+                0x000006a4                __vector_offset_6 = DEFINED (__vector_dispatch_6)?(. - _ebase_address):__vector_offset_default
+ *(.vector_6)
+                0x000006a4                __vector_offset_7 = DEFINED (__vector_dispatch_7)?(. - _ebase_address):__vector_offset_default
+ *(.vector_7)
+                0x000006a4                __vector_offset_8 = DEFINED (__vector_dispatch_8)?(. - _ebase_address):__vector_offset_default
+ *(.vector_8)
+                0x00000684                __vector_offset_9 = DEFINED (__vector_dispatch_9)?(. - _ebase_address):__vector_offset_default
+ *(.vector_9)
+ .vector_9      0x9d000684        0x8 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+                0x9d000684                __vector_dispatch_9
+                0x000006a4                __vector_offset_10 = DEFINED (__vector_dispatch_10)?(. - _ebase_address):__vector_offset_default
+ *(.vector_10)
+                0x000006a4                __vector_offset_11 = DEFINED (__vector_dispatch_11)?(. - _ebase_address):__vector_offset_default
+ *(.vector_11)
+                0x000006a4                __vector_offset_12 = DEFINED (__vector_dispatch_12)?(. - _ebase_address):__vector_offset_default
+ *(.vector_12)
+                0x000006a4                __vector_offset_13 = DEFINED (__vector_dispatch_13)?(. - _ebase_address):__vector_offset_default
+ *(.vector_13)
+                0x0000068c                __vector_offset_14 = DEFINED (__vector_dispatch_14)?(. - _ebase_address):__vector_offset_default
+ *(.vector_14)
+ .vector_14     0x9d00068c        0x8 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+                0x9d00068c                __vector_dispatch_14
+                0x000006a4                __vector_offset_15 = DEFINED (__vector_dispatch_15)?(. - _ebase_address):__vector_offset_default
+ *(.vector_15)
+                0x000006a4                __vector_offset_16 = DEFINED (__vector_dispatch_16)?(. - _ebase_address):__vector_offset_default
+ *(.vector_16)
+                0x000006a4                __vector_offset_17 = DEFINED (__vector_dispatch_17)?(. - _ebase_address):__vector_offset_default
+ *(.vector_17)
+                0x000006a4                __vector_offset_18 = DEFINED (__vector_dispatch_18)?(. - _ebase_address):__vector_offset_default
+ *(.vector_18)
+                0x00000694                __vector_offset_19 = DEFINED (__vector_dispatch_19)?(. - _ebase_address):__vector_offset_default
+ *(.vector_19)
+ .vector_19     0x9d000694        0x8 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+                0x9d000694                __vector_dispatch_19
+                0x000006a4                __vector_offset_20 = DEFINED (__vector_dispatch_20)?(. - _ebase_address):__vector_offset_default
+ *(.vector_20)
+                0x000006a4                __vector_offset_21 = DEFINED (__vector_dispatch_21)?(. - _ebase_address):__vector_offset_default
+ *(.vector_21)
+                0x000006a4                __vector_offset_22 = DEFINED (__vector_dispatch_22)?(. - _ebase_address):__vector_offset_default
+ *(.vector_22)
+                0x000006a4                __vector_offset_23 = DEFINED (__vector_dispatch_23)?(. - _ebase_address):__vector_offset_default
+ *(.vector_23)
+                0x0000069c                __vector_offset_24 = DEFINED (__vector_dispatch_24)?(. - _ebase_address):__vector_offset_default
+ *(.vector_24)
+ .vector_24     0x9d00069c        0x8 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+                0x9d00069c                __vector_dispatch_24
+                0x000006a4                __vector_offset_25 = DEFINED (__vector_dispatch_25)?(. - _ebase_address):__vector_offset_default
+ *(.vector_25)
+                0x000006a4                __vector_offset_26 = DEFINED (__vector_dispatch_26)?(. - _ebase_address):__vector_offset_default
+ *(.vector_26)
+                0x000006a4                __vector_offset_27 = DEFINED (__vector_dispatch_27)?(. - _ebase_address):__vector_offset_default
+ *(.vector_27)
+                0x000006a4                __vector_offset_28 = DEFINED (__vector_dispatch_28)?(. - _ebase_address):__vector_offset_default
+ *(.vector_28)
+                0x000006a4                __vector_offset_29 = DEFINED (__vector_dispatch_29)?(. - _ebase_address):__vector_offset_default
+ *(.vector_29)
+                0x000006a4                __vector_offset_30 = DEFINED (__vector_dispatch_30)?(. - _ebase_address):__vector_offset_default
+ *(.vector_30)
+                0x000006a4                __vector_offset_31 = DEFINED (__vector_dispatch_31)?(. - _ebase_address):__vector_offset_default
+ *(.vector_31)
+                0x000006a4                __vector_offset_32 = DEFINED (__vector_dispatch_32)?(. - _ebase_address):__vector_offset_default
+ *(.vector_32)
+                0x000006a4                __vector_offset_33 = DEFINED (__vector_dispatch_33)?(. - _ebase_address):__vector_offset_default
+ *(.vector_33)
+                0x000006a4                __vector_offset_34 = DEFINED (__vector_dispatch_34)?(. - _ebase_address):__vector_offset_default
+ *(.vector_34)
+                0x000006a4                __vector_offset_35 = DEFINED (__vector_dispatch_35)?(. - _ebase_address):__vector_offset_default
+ *(.vector_35)
+                0x000006a4                __vector_offset_36 = DEFINED (__vector_dispatch_36)?(. - _ebase_address):__vector_offset_default
+ *(.vector_36)
+                0x000006a4                __vector_offset_37 = DEFINED (__vector_dispatch_37)?(. - _ebase_address):__vector_offset_default
+ *(.vector_37)
+                0x000006a4                __vector_offset_38 = DEFINED (__vector_dispatch_38)?(. - _ebase_address):__vector_offset_default
+ *(.vector_38)
+                0x000006a4                __vector_offset_39 = DEFINED (__vector_dispatch_39)?(. - _ebase_address):__vector_offset_default
+ *(.vector_39)
+                0x000006a4                __vector_offset_40 = DEFINED (__vector_dispatch_40)?(. - _ebase_address):__vector_offset_default
+ *(.vector_40)
+                0x000006a4                __vector_offset_41 = DEFINED (__vector_dispatch_41)?(. - _ebase_address):__vector_offset_default
+ *(.vector_41)
+                0x000006a4                __vector_offset_42 = DEFINED (__vector_dispatch_42)?(. - _ebase_address):__vector_offset_default
+ *(.vector_42)
+                0x000006a4                __vector_offset_43 = DEFINED (__vector_dispatch_43)?(. - _ebase_address):__vector_offset_default
+ *(.vector_43)
+                0x000006a4                __vector_offset_44 = DEFINED (__vector_dispatch_44)?(. - _ebase_address):__vector_offset_default
+ *(.vector_44)
+                0x000006a4                __vector_offset_45 = DEFINED (__vector_dispatch_45)?(. - _ebase_address):__vector_offset_default
+ *(.vector_45)
+                0x000006a4                __vector_offset_46 = DEFINED (__vector_dispatch_46)?(. - _ebase_address):__vector_offset_default
+ *(.vector_46)
+                0x000006a4                __vector_offset_47 = DEFINED (__vector_dispatch_47)?(. - _ebase_address):__vector_offset_default
+ *(.vector_47)
+                0x000006a4                __vector_offset_48 = DEFINED (__vector_dispatch_48)?(. - _ebase_address):__vector_offset_default
+ *(.vector_48)
+                0x000006a4                __vector_offset_49 = DEFINED (__vector_dispatch_49)?(. - _ebase_address):__vector_offset_default
+ *(.vector_49)
+                0x000006a4                __vector_offset_50 = DEFINED (__vector_dispatch_50)?(. - _ebase_address):__vector_offset_default
+ *(.vector_50)
+                0x000006a4                __vector_offset_51 = DEFINED (__vector_dispatch_51)?(. - _ebase_address):__vector_offset_default
+ *(.vector_51)
+                0x000006a4                __vector_offset_52 = DEFINED (__vector_dispatch_52)?(. - _ebase_address):__vector_offset_default
+ *(.vector_52)
+                0x000006a4                __vector_offset_53 = DEFINED (__vector_dispatch_53)?(. - _ebase_address):__vector_offset_default
+ *(.vector_53)
+                0x000006a4                __vector_offset_54 = DEFINED (__vector_dispatch_54)?(. - _ebase_address):__vector_offset_default
+ *(.vector_54)
+                0x000006a4                __vector_offset_55 = DEFINED (__vector_dispatch_55)?(. - _ebase_address):__vector_offset_default
+ *(.vector_55)
+                0x000006a4                __vector_offset_56 = DEFINED (__vector_dispatch_56)?(. - _ebase_address):__vector_offset_default
+ *(.vector_56)
+                0x000006a4                __vector_offset_57 = DEFINED (__vector_dispatch_57)?(. - _ebase_address):__vector_offset_default
+ *(.vector_57)
+                0x000006a4                __vector_offset_58 = DEFINED (__vector_dispatch_58)?(. - _ebase_address):__vector_offset_default
+ *(.vector_58)
+                0x000006a4                __vector_offset_59 = DEFINED (__vector_dispatch_59)?(. - _ebase_address):__vector_offset_default
+ *(.vector_59)
+                0x000006a4                __vector_offset_60 = DEFINED (__vector_dispatch_60)?(. - _ebase_address):__vector_offset_default
+ *(.vector_60)
+                0x000006a4                __vector_offset_61 = DEFINED (__vector_dispatch_61)?(. - _ebase_address):__vector_offset_default
+ *(.vector_61)
+                0x000006a4                __vector_offset_62 = DEFINED (__vector_dispatch_62)?(. - _ebase_address):__vector_offset_default
+ *(.vector_62)
+                0x000006a4                __vector_offset_63 = DEFINED (__vector_dispatch_63)?(. - _ebase_address):__vector_offset_default
+ *(.vector_63)
+                0x000006a4                __vector_offset_64 = DEFINED (__vector_dispatch_64)?(. - _ebase_address):__vector_offset_default
+ *(.vector_64)
+                0x000006a4                __vector_offset_65 = DEFINED (__vector_dispatch_65)?(. - _ebase_address):__vector_offset_default
+ *(.vector_65)
+                0x000006a4                __vector_offset_66 = DEFINED (__vector_dispatch_66)?(. - _ebase_address):__vector_offset_default
+ *(.vector_66)
+                0x000006a4                __vector_offset_67 = DEFINED (__vector_dispatch_67)?(. - _ebase_address):__vector_offset_default
+ *(.vector_67)
+                0x000006a4                __vector_offset_68 = DEFINED (__vector_dispatch_68)?(. - _ebase_address):__vector_offset_default
+ *(.vector_68)
+                0x000006a4                __vector_offset_69 = DEFINED (__vector_dispatch_69)?(. - _ebase_address):__vector_offset_default
+ *(.vector_69)
+                0x000006a4                __vector_offset_70 = DEFINED (__vector_dispatch_70)?(. - _ebase_address):__vector_offset_default
+ *(.vector_70)
+                0x000006a4                __vector_offset_71 = DEFINED (__vector_dispatch_71)?(. - _ebase_address):__vector_offset_default
+ *(.vector_71)
+                0x000006a4                __vector_offset_72 = DEFINED (__vector_dispatch_72)?(. - _ebase_address):__vector_offset_default
+ *(.vector_72)
+                0x000006a4                __vector_offset_73 = DEFINED (__vector_dispatch_73)?(. - _ebase_address):__vector_offset_default
+ *(.vector_73)
+                0x000006a4                __vector_offset_74 = DEFINED (__vector_dispatch_74)?(. - _ebase_address):__vector_offset_default
+ *(.vector_74)
+                0x000006a4                __vector_offset_75 = DEFINED (__vector_dispatch_75)?(. - _ebase_address):__vector_offset_default
+ *(.vector_75)
+                0x000006a4                __vector_offset_76 = DEFINED (__vector_dispatch_76)?(. - _ebase_address):__vector_offset_default
+ *(.vector_76)
+                0x000006a4                __vector_offset_77 = DEFINED (__vector_dispatch_77)?(. - _ebase_address):__vector_offset_default
+ *(.vector_77)
+                0x000006a4                __vector_offset_78 = DEFINED (__vector_dispatch_78)?(. - _ebase_address):__vector_offset_default
+ *(.vector_78)
+                0x000006a4                __vector_offset_79 = DEFINED (__vector_dispatch_79)?(. - _ebase_address):__vector_offset_default
+ *(.vector_79)
+                0x000006a4                __vector_offset_80 = DEFINED (__vector_dispatch_80)?(. - _ebase_address):__vector_offset_default
+ *(.vector_80)
+                0x000006a4                __vector_offset_81 = DEFINED (__vector_dispatch_81)?(. - _ebase_address):__vector_offset_default
+ *(.vector_81)
+                0x000006a4                __vector_offset_82 = DEFINED (__vector_dispatch_82)?(. - _ebase_address):__vector_offset_default
+ *(.vector_82)
+                0x000006a4                __vector_offset_83 = DEFINED (__vector_dispatch_83)?(. - _ebase_address):__vector_offset_default
+ *(.vector_83)
+                0x000006a4                __vector_offset_84 = DEFINED (__vector_dispatch_84)?(. - _ebase_address):__vector_offset_default
+ *(.vector_84)
+                0x000006a4                __vector_offset_85 = DEFINED (__vector_dispatch_85)?(. - _ebase_address):__vector_offset_default
+ *(.vector_85)
+                0x000006a4                __vector_offset_86 = DEFINED (__vector_dispatch_86)?(. - _ebase_address):__vector_offset_default
+ *(.vector_86)
+                0x000006a4                __vector_offset_87 = DEFINED (__vector_dispatch_87)?(. - _ebase_address):__vector_offset_default
+ *(.vector_87)
+                0x000006a4                __vector_offset_88 = DEFINED (__vector_dispatch_88)?(. - _ebase_address):__vector_offset_default
+ *(.vector_88)
+                0x000006a4                __vector_offset_89 = DEFINED (__vector_dispatch_89)?(. - _ebase_address):__vector_offset_default
+ *(.vector_89)
+                0x000006a4                __vector_offset_90 = DEFINED (__vector_dispatch_90)?(. - _ebase_address):__vector_offset_default
+ *(.vector_90)
+                0x000006a4                __vector_offset_91 = DEFINED (__vector_dispatch_91)?(. - _ebase_address):__vector_offset_default
+ *(.vector_91)
+                0x000006a4                __vector_offset_92 = DEFINED (__vector_dispatch_92)?(. - _ebase_address):__vector_offset_default
+ *(.vector_92)
+                0x000006a4                __vector_offset_93 = DEFINED (__vector_dispatch_93)?(. - _ebase_address):__vector_offset_default
+ *(.vector_93)
+                0x000006a4                __vector_offset_94 = DEFINED (__vector_dispatch_94)?(. - _ebase_address):__vector_offset_default
+ *(.vector_94)
+                0x000006a4                __vector_offset_95 = DEFINED (__vector_dispatch_95)?(. - _ebase_address):__vector_offset_default
+ *(.vector_95)
+                0x000006a4                __vector_offset_96 = DEFINED (__vector_dispatch_96)?(. - _ebase_address):__vector_offset_default
+ *(.vector_96)
+                0x000006a4                __vector_offset_97 = DEFINED (__vector_dispatch_97)?(. - _ebase_address):__vector_offset_default
+ *(.vector_97)
+                0x000006a4                __vector_offset_98 = DEFINED (__vector_dispatch_98)?(. - _ebase_address):__vector_offset_default
+ *(.vector_98)
+                0x000006a4                __vector_offset_99 = DEFINED (__vector_dispatch_99)?(. - _ebase_address):__vector_offset_default
+ *(.vector_99)
+                0x000006a4                __vector_offset_100 = DEFINED (__vector_dispatch_100)?(. - _ebase_address):__vector_offset_default
+ *(.vector_100)
+                0x000006a4                __vector_offset_101 = DEFINED (__vector_dispatch_101)?(. - _ebase_address):__vector_offset_default
+ *(.vector_101)
+                0x000006a4                __vector_offset_102 = DEFINED (__vector_dispatch_102)?(. - _ebase_address):__vector_offset_default
+ *(.vector_102)
+                0x000006a4                __vector_offset_103 = DEFINED (__vector_dispatch_103)?(. - _ebase_address):__vector_offset_default
+ *(.vector_103)
+                0x000006a4                __vector_offset_104 = DEFINED (__vector_dispatch_104)?(. - _ebase_address):__vector_offset_default
+ *(.vector_104)
+                0x000006a4                __vector_offset_105 = DEFINED (__vector_dispatch_105)?(. - _ebase_address):__vector_offset_default
+ *(.vector_105)
+                0x000006a4                __vector_offset_106 = DEFINED (__vector_dispatch_106)?(. - _ebase_address):__vector_offset_default
+ *(.vector_106)
+                0x000006a4                __vector_offset_107 = DEFINED (__vector_dispatch_107)?(. - _ebase_address):__vector_offset_default
+ *(.vector_107)
+                0x000006a4                __vector_offset_108 = DEFINED (__vector_dispatch_108)?(. - _ebase_address):__vector_offset_default
+ *(.vector_108)
+                0x000006a4                __vector_offset_109 = DEFINED (__vector_dispatch_109)?(. - _ebase_address):__vector_offset_default
+ *(.vector_109)
+                0x000006a4                __vector_offset_110 = DEFINED (__vector_dispatch_110)?(. - _ebase_address):__vector_offset_default
+ *(.vector_110)
+                0x000006a4                __vector_offset_111 = DEFINED (__vector_dispatch_111)?(. - _ebase_address):__vector_offset_default
+ *(.vector_111)
+                0x000006a4                __vector_offset_112 = DEFINED (__vector_dispatch_112)?(. - _ebase_address):__vector_offset_default
+ *(.vector_112)
+                0x000006a4                __vector_offset_113 = DEFINED (__vector_dispatch_113)?(. - _ebase_address):__vector_offset_default
+ *(.vector_113)
+                0x000006a4                __vector_offset_114 = DEFINED (__vector_dispatch_114)?(. - _ebase_address):__vector_offset_default
+ *(.vector_114)
+                0x000006a4                __vector_offset_115 = DEFINED (__vector_dispatch_115)?(. - _ebase_address):__vector_offset_default
+ *(.vector_115)
+                0x000006a4                __vector_offset_116 = DEFINED (__vector_dispatch_116)?(. - _ebase_address):__vector_offset_default
+ *(.vector_116)
+                0x000006a4                __vector_offset_117 = DEFINED (__vector_dispatch_117)?(. - _ebase_address):__vector_offset_default
+ *(.vector_117)
+                0x000006a4                __vector_offset_118 = DEFINED (__vector_dispatch_118)?(. - _ebase_address):__vector_offset_default
+ *(.vector_118)
+                0x000006a4                __vector_offset_119 = DEFINED (__vector_dispatch_119)?(. - _ebase_address):__vector_offset_default
+ *(.vector_119)
+                0x000006a4                __vector_offset_120 = DEFINED (__vector_dispatch_120)?(. - _ebase_address):__vector_offset_default
+ *(.vector_120)
+                0x000006a4                __vector_offset_121 = DEFINED (__vector_dispatch_121)?(. - _ebase_address):__vector_offset_default
+ *(.vector_121)
+                0x000006a4                __vector_offset_122 = DEFINED (__vector_dispatch_122)?(. - _ebase_address):__vector_offset_default
+ *(.vector_122)
+                0x000006a4                __vector_offset_123 = DEFINED (__vector_dispatch_123)?(. - _ebase_address):__vector_offset_default
+ *(.vector_123)
+                0x000006a4                __vector_offset_124 = DEFINED (__vector_dispatch_124)?(. - _ebase_address):__vector_offset_default
+ *(.vector_124)
+                0x000006a4                __vector_offset_125 = DEFINED (__vector_dispatch_125)?(. - _ebase_address):__vector_offset_default
+ *(.vector_125)
+                0x000006a4                __vector_offset_126 = DEFINED (__vector_dispatch_126)?(. - _ebase_address):__vector_offset_default
+ *(.vector_126)
+                0x000006a4                __vector_offset_127 = DEFINED (__vector_dispatch_127)?(. - _ebase_address):__vector_offset_default
+ *(.vector_127)
+                0x000006a4                __vector_offset_128 = DEFINED (__vector_dispatch_128)?(. - _ebase_address):__vector_offset_default
+ *(.vector_128)
+                0x000006a4                __vector_offset_129 = DEFINED (__vector_dispatch_129)?(. - _ebase_address):__vector_offset_default
+ *(.vector_129)
+                0x000006a4                __vector_offset_130 = DEFINED (__vector_dispatch_130)?(. - _ebase_address):__vector_offset_default
+ *(.vector_130)
+                0x000006a4                __vector_offset_131 = DEFINED (__vector_dispatch_131)?(. - _ebase_address):__vector_offset_default
+ *(.vector_131)
+                0x000006a4                __vector_offset_132 = DEFINED (__vector_dispatch_132)?(. - _ebase_address):__vector_offset_default
+ *(.vector_132)
+                0x000006a4                __vector_offset_133 = DEFINED (__vector_dispatch_133)?(. - _ebase_address):__vector_offset_default
+ *(.vector_133)
+                0x000006a4                __vector_offset_134 = DEFINED (__vector_dispatch_134)?(. - _ebase_address):__vector_offset_default
+ *(.vector_134)
+                0x000006a4                __vector_offset_135 = DEFINED (__vector_dispatch_135)?(. - _ebase_address):__vector_offset_default
+ *(.vector_135)
+                0x000006a4                __vector_offset_136 = DEFINED (__vector_dispatch_136)?(. - _ebase_address):__vector_offset_default
+ *(.vector_136)
+                0x000006a4                __vector_offset_137 = DEFINED (__vector_dispatch_137)?(. - _ebase_address):__vector_offset_default
+ *(.vector_137)
+                0x000006a4                __vector_offset_138 = DEFINED (__vector_dispatch_138)?(. - _ebase_address):__vector_offset_default
+ *(.vector_138)
+                0x000006a4                __vector_offset_139 = DEFINED (__vector_dispatch_139)?(. - _ebase_address):__vector_offset_default
+ *(.vector_139)
+                0x000006a4                __vector_offset_140 = DEFINED (__vector_dispatch_140)?(. - _ebase_address):__vector_offset_default
+ *(.vector_140)
+                0x000006a4                __vector_offset_141 = DEFINED (__vector_dispatch_141)?(. - _ebase_address):__vector_offset_default
+ *(.vector_141)
+                0x000006a4                __vector_offset_142 = DEFINED (__vector_dispatch_142)?(. - _ebase_address):__vector_offset_default
+ *(.vector_142)
+                0x000006a4                __vector_offset_143 = DEFINED (__vector_dispatch_143)?(. - _ebase_address):__vector_offset_default
+ *(.vector_143)
+                0x000006a4                __vector_offset_144 = DEFINED (__vector_dispatch_144)?(. - _ebase_address):__vector_offset_default
+ *(.vector_144)
+                0x000006a4                __vector_offset_145 = DEFINED (__vector_dispatch_145)?(. - _ebase_address):__vector_offset_default
+ *(.vector_145)
+                0x000006a4                __vector_offset_146 = DEFINED (__vector_dispatch_146)?(. - _ebase_address):__vector_offset_default
+ *(.vector_146)
+                0x000006a4                __vector_offset_147 = DEFINED (__vector_dispatch_147)?(. - _ebase_address):__vector_offset_default
+ *(.vector_147)
+                0x000006a4                __vector_offset_148 = DEFINED (__vector_dispatch_148)?(. - _ebase_address):__vector_offset_default
+ *(.vector_148)
+                0x000006a4                __vector_offset_149 = DEFINED (__vector_dispatch_149)?(. - _ebase_address):__vector_offset_default
+ *(.vector_149)
+                0x000006a4                __vector_offset_150 = DEFINED (__vector_dispatch_150)?(. - _ebase_address):__vector_offset_default
+ *(.vector_150)
+                0x000006a4                __vector_offset_151 = DEFINED (__vector_dispatch_151)?(. - _ebase_address):__vector_offset_default
+ *(.vector_151)
+                0x000006a4                __vector_offset_152 = DEFINED (__vector_dispatch_152)?(. - _ebase_address):__vector_offset_default
+ *(.vector_152)
+                0x000006a4                __vector_offset_153 = DEFINED (__vector_dispatch_153)?(. - _ebase_address):__vector_offset_default
+ *(.vector_153)
+                0x000006a4                __vector_offset_154 = DEFINED (__vector_dispatch_154)?(. - _ebase_address):__vector_offset_default
+ *(.vector_154)
+                0x000006a4                __vector_offset_155 = DEFINED (__vector_dispatch_155)?(. - _ebase_address):__vector_offset_default
+ *(.vector_155)
+                0x000006a4                __vector_offset_156 = DEFINED (__vector_dispatch_156)?(. - _ebase_address):__vector_offset_default
+ *(.vector_156)
+                0x000006a4                __vector_offset_157 = DEFINED (__vector_dispatch_157)?(. - _ebase_address):__vector_offset_default
+ *(.vector_157)
+                0x000006a4                __vector_offset_158 = DEFINED (__vector_dispatch_158)?(. - _ebase_address):__vector_offset_default
+ *(.vector_158)
+                0x000006a4                __vector_offset_159 = DEFINED (__vector_dispatch_159)?(. - _ebase_address):__vector_offset_default
+ *(.vector_159)
+                0x000006a4                __vector_offset_160 = DEFINED (__vector_dispatch_160)?(. - _ebase_address):__vector_offset_default
+ *(.vector_160)
+                0x000006a4                __vector_offset_161 = DEFINED (__vector_dispatch_161)?(. - _ebase_address):__vector_offset_default
+ *(.vector_161)
+                0x000006a4                __vector_offset_162 = DEFINED (__vector_dispatch_162)?(. - _ebase_address):__vector_offset_default
+ *(.vector_162)
+                0x000006a4                __vector_offset_163 = DEFINED (__vector_dispatch_163)?(. - _ebase_address):__vector_offset_default
+ *(.vector_163)
+                0x000006a4                __vector_offset_164 = DEFINED (__vector_dispatch_164)?(. - _ebase_address):__vector_offset_default
+ *(.vector_164)
+                0x000006a4                __vector_offset_165 = DEFINED (__vector_dispatch_165)?(. - _ebase_address):__vector_offset_default
+ *(.vector_165)
+                0x000006a4                __vector_offset_166 = DEFINED (__vector_dispatch_166)?(. - _ebase_address):__vector_offset_default
+ *(.vector_166)
+                0x000006a4                __vector_offset_167 = DEFINED (__vector_dispatch_167)?(. - _ebase_address):__vector_offset_default
+ *(.vector_167)
+                0x000006a4                __vector_offset_168 = DEFINED (__vector_dispatch_168)?(. - _ebase_address):__vector_offset_default
+ *(.vector_168)
+                0x000006a4                __vector_offset_169 = DEFINED (__vector_dispatch_169)?(. - _ebase_address):__vector_offset_default
+ *(.vector_169)
+                0x000006a4                __vector_offset_170 = DEFINED (__vector_dispatch_170)?(. - _ebase_address):__vector_offset_default
+ *(.vector_170)
+                0x000006a4                __vector_offset_171 = DEFINED (__vector_dispatch_171)?(. - _ebase_address):__vector_offset_default
+ *(.vector_171)
+                0x000006a4                __vector_offset_172 = DEFINED (__vector_dispatch_172)?(. - _ebase_address):__vector_offset_default
+ *(.vector_172)
+                0x000006a4                __vector_offset_173 = DEFINED (__vector_dispatch_173)?(. - _ebase_address):__vector_offset_default
+ *(.vector_173)
+                0x000006a4                __vector_offset_174 = DEFINED (__vector_dispatch_174)?(. - _ebase_address):__vector_offset_default
+ *(.vector_174)
+                0x000006a4                __vector_offset_175 = DEFINED (__vector_dispatch_175)?(. - _ebase_address):__vector_offset_default
+ *(.vector_175)
+                0x000006a4                __vector_offset_176 = DEFINED (__vector_dispatch_176)?(. - _ebase_address):__vector_offset_default
+ *(.vector_176)
+                0x000006a4                __vector_offset_177 = DEFINED (__vector_dispatch_177)?(. - _ebase_address):__vector_offset_default
+ *(.vector_177)
+                0x000006a4                __vector_offset_178 = DEFINED (__vector_dispatch_178)?(. - _ebase_address):__vector_offset_default
+ *(.vector_178)
+                0x000006a4                __vector_offset_179 = DEFINED (__vector_dispatch_179)?(. - _ebase_address):__vector_offset_default
+ *(.vector_179)
+                0x000006a4                __vector_offset_180 = DEFINED (__vector_dispatch_180)?(. - _ebase_address):__vector_offset_default
+ *(.vector_180)
+                0x000006a4                __vector_offset_181 = DEFINED (__vector_dispatch_181)?(. - _ebase_address):__vector_offset_default
+ *(.vector_181)
+                0x000006a4                __vector_offset_182 = DEFINED (__vector_dispatch_182)?(. - _ebase_address):__vector_offset_default
+ *(.vector_182)
+                0x000006a4                __vector_offset_183 = DEFINED (__vector_dispatch_183)?(. - _ebase_address):__vector_offset_default
+ *(.vector_183)
+                0x000006a4                __vector_offset_184 = DEFINED (__vector_dispatch_184)?(. - _ebase_address):__vector_offset_default
+ *(.vector_184)
+                0x000006a4                __vector_offset_185 = DEFINED (__vector_dispatch_185)?(. - _ebase_address):__vector_offset_default
+ *(.vector_185)
+                0x000006a4                __vector_offset_186 = DEFINED (__vector_dispatch_186)?(. - _ebase_address):__vector_offset_default
+ *(.vector_186)
+                0x000006a4                __vector_offset_187 = DEFINED (__vector_dispatch_187)?(. - _ebase_address):__vector_offset_default
+ *(.vector_187)
+                0x000006a4                __vector_offset_188 = DEFINED (__vector_dispatch_188)?(. - _ebase_address):__vector_offset_default
+ *(.vector_188)
+                0x000006a4                __vector_offset_189 = DEFINED (__vector_dispatch_189)?(. - _ebase_address):__vector_offset_default
+ *(.vector_189)
+                0x000006a4                __vector_offset_190 = DEFINED (__vector_dispatch_190)?(. - _ebase_address):__vector_offset_default
+ *(.vector_190)
+                0x000006a4                __vector_offset_191 = DEFINED (__vector_dispatch_191)?(. - _ebase_address):__vector_offset_default
+ *(.vector_191)
+                0x000006a4                __vector_offset_192 = DEFINED (__vector_dispatch_192)?(. - _ebase_address):__vector_offset_default
+ *(.vector_192)
+                0x000006a4                __vector_offset_193 = DEFINED (__vector_dispatch_193)?(. - _ebase_address):__vector_offset_default
+ *(.vector_193)
+                0x000006a4                __vector_offset_194 = DEFINED (__vector_dispatch_194)?(. - _ebase_address):__vector_offset_default
+ *(.vector_194)
+                0x000006a4                __vector_offset_195 = DEFINED (__vector_dispatch_195)?(. - _ebase_address):__vector_offset_default
+ *(.vector_195)
+                0x000006a4                __vector_offset_196 = DEFINED (__vector_dispatch_196)?(. - _ebase_address):__vector_offset_default
+ *(.vector_196)
+                0x000006a4                __vector_offset_197 = DEFINED (__vector_dispatch_197)?(. - _ebase_address):__vector_offset_default
+ *(.vector_197)
+                0x000006a4                __vector_offset_198 = DEFINED (__vector_dispatch_198)?(. - _ebase_address):__vector_offset_default
+ *(.vector_198)
+                0x000006a4                __vector_offset_199 = DEFINED (__vector_dispatch_199)?(. - _ebase_address):__vector_offset_default
+ *(.vector_199)
+                0x000006a4                __vector_offset_200 = DEFINED (__vector_dispatch_200)?(. - _ebase_address):__vector_offset_default
+ *(.vector_200)
+                0x000006a4                __vector_offset_201 = DEFINED (__vector_dispatch_201)?(. - _ebase_address):__vector_offset_default
+ *(.vector_201)
+                0x000006a4                __vector_offset_202 = DEFINED (__vector_dispatch_202)?(. - _ebase_address):__vector_offset_default
+ *(.vector_202)
+                0x000006a4                __vector_offset_203 = DEFINED (__vector_dispatch_203)?(. - _ebase_address):__vector_offset_default
+ *(.vector_203)
+                0x000006a4                __vector_offset_204 = DEFINED (__vector_dispatch_204)?(. - _ebase_address):__vector_offset_default
+ *(.vector_204)
+                0x000006a4                __vector_offset_205 = DEFINED (__vector_dispatch_205)?(. - _ebase_address):__vector_offset_default
+ *(.vector_205)
+                0x000006a4                __vector_offset_206 = DEFINED (__vector_dispatch_206)?(. - _ebase_address):__vector_offset_default
+ *(.vector_206)
+                0x000006a4                __vector_offset_207 = DEFINED (__vector_dispatch_207)?(. - _ebase_address):__vector_offset_default
+ *(.vector_207)
+                0x000006a4                __vector_offset_208 = DEFINED (__vector_dispatch_208)?(. - _ebase_address):__vector_offset_default
+ *(.vector_208)
+                0x000006a4                __vector_offset_209 = DEFINED (__vector_dispatch_209)?(. - _ebase_address):__vector_offset_default
+ *(.vector_209)
+                0x000006a4                __vector_offset_210 = DEFINED (__vector_dispatch_210)?(. - _ebase_address):__vector_offset_default
+ *(.vector_210)
+                0x000006a4                __vector_offset_211 = DEFINED (__vector_dispatch_211)?(. - _ebase_address):__vector_offset_default
+ *(.vector_211)
+                0x000006a4                __vector_offset_212 = DEFINED (__vector_dispatch_212)?(. - _ebase_address):__vector_offset_default
+ *(.vector_212)
+                0x000006a4                __vector_offset_213 = DEFINED (__vector_dispatch_213)?(. - _ebase_address):__vector_offset_default
+ *(.vector_213)
+                0x000006a4                __vector_offset_214 = DEFINED (__vector_dispatch_214)?(. - _ebase_address):__vector_offset_default
+ *(.vector_214)
+                0x000006a4                __vector_offset_215 = DEFINED (__vector_dispatch_215)?(. - _ebase_address):__vector_offset_default
+ *(.vector_215)
+                0x000006a4                __vector_offset_216 = DEFINED (__vector_dispatch_216)?(. - _ebase_address):__vector_offset_default
+ *(.vector_216)
+                0x000006a4                __vector_offset_217 = DEFINED (__vector_dispatch_217)?(. - _ebase_address):__vector_offset_default
+ *(.vector_217)
+                0x000006a4                __vector_offset_218 = DEFINED (__vector_dispatch_218)?(. - _ebase_address):__vector_offset_default
+ *(.vector_218)
+                0x000006a4                __vector_offset_219 = DEFINED (__vector_dispatch_219)?(. - _ebase_address):__vector_offset_default
+ *(.vector_219)
+                0x000006a4                __vector_offset_220 = DEFINED (__vector_dispatch_220)?(. - _ebase_address):__vector_offset_default
+ *(.vector_220)
+                0x000006a4                __vector_offset_221 = DEFINED (__vector_dispatch_221)?(. - _ebase_address):__vector_offset_default
+ *(.vector_221)
+                0x000006a4                __vector_offset_222 = DEFINED (__vector_dispatch_222)?(. - _ebase_address):__vector_offset_default
+ *(.vector_222)
+                0x000006a4                __vector_offset_223 = DEFINED (__vector_dispatch_223)?(. - _ebase_address):__vector_offset_default
+ *(.vector_223)
+                0x000006a4                __vector_offset_224 = DEFINED (__vector_dispatch_224)?(. - _ebase_address):__vector_offset_default
+ *(.vector_224)
+                0x000006a4                __vector_offset_225 = DEFINED (__vector_dispatch_225)?(. - _ebase_address):__vector_offset_default
+ *(.vector_225)
+                0x000006a4                __vector_offset_226 = DEFINED (__vector_dispatch_226)?(. - _ebase_address):__vector_offset_default
+ *(.vector_226)
+                0x000006a4                __vector_offset_227 = DEFINED (__vector_dispatch_227)?(. - _ebase_address):__vector_offset_default
+ *(.vector_227)
+                0x000006a4                __vector_offset_228 = DEFINED (__vector_dispatch_228)?(. - _ebase_address):__vector_offset_default
+ *(.vector_228)
+                0x000006a4                __vector_offset_229 = DEFINED (__vector_dispatch_229)?(. - _ebase_address):__vector_offset_default
+ *(.vector_229)
+                0x000006a4                __vector_offset_230 = DEFINED (__vector_dispatch_230)?(. - _ebase_address):__vector_offset_default
+ *(.vector_230)
+                0x000006a4                __vector_offset_231 = DEFINED (__vector_dispatch_231)?(. - _ebase_address):__vector_offset_default
+ *(.vector_231)
+                0x000006a4                __vector_offset_232 = DEFINED (__vector_dispatch_232)?(. - _ebase_address):__vector_offset_default
+ *(.vector_232)
+                0x000006a4                __vector_offset_233 = DEFINED (__vector_dispatch_233)?(. - _ebase_address):__vector_offset_default
+ *(.vector_233)
+                0x000006a4                __vector_offset_234 = DEFINED (__vector_dispatch_234)?(. - _ebase_address):__vector_offset_default
+ *(.vector_234)
+                0x000006a4                __vector_offset_235 = DEFINED (__vector_dispatch_235)?(. - _ebase_address):__vector_offset_default
+ *(.vector_235)
+                0x000006a4                __vector_offset_236 = DEFINED (__vector_dispatch_236)?(. - _ebase_address):__vector_offset_default
+ *(.vector_236)
+                0x000006a4                __vector_offset_237 = DEFINED (__vector_dispatch_237)?(. - _ebase_address):__vector_offset_default
+ *(.vector_237)
+                0x000006a4                __vector_offset_238 = DEFINED (__vector_dispatch_238)?(. - _ebase_address):__vector_offset_default
+ *(.vector_238)
+                0x000006a4                __vector_offset_239 = DEFINED (__vector_dispatch_239)?(. - _ebase_address):__vector_offset_default
+ *(.vector_239)
+                0x000006a4                __vector_offset_240 = DEFINED (__vector_dispatch_240)?(. - _ebase_address):__vector_offset_default
+ *(.vector_240)
+                0x000006a4                __vector_offset_241 = DEFINED (__vector_dispatch_241)?(. - _ebase_address):__vector_offset_default
+ *(.vector_241)
+                0x000006a4                __vector_offset_242 = DEFINED (__vector_dispatch_242)?(. - _ebase_address):__vector_offset_default
+ *(.vector_242)
+                0x000006a4                __vector_offset_243 = DEFINED (__vector_dispatch_243)?(. - _ebase_address):__vector_offset_default
+ *(.vector_243)
+                0x000006a4                __vector_offset_244 = DEFINED (__vector_dispatch_244)?(. - _ebase_address):__vector_offset_default
+ *(.vector_244)
+                0x000006a4                __vector_offset_245 = DEFINED (__vector_dispatch_245)?(. - _ebase_address):__vector_offset_default
+ *(.vector_245)
+                0x000006a4                __vector_offset_246 = DEFINED (__vector_dispatch_246)?(. - _ebase_address):__vector_offset_default
+ *(.vector_246)
+                0x000006a4                __vector_offset_247 = DEFINED (__vector_dispatch_247)?(. - _ebase_address):__vector_offset_default
+ *(.vector_247)
+                0x000006a4                __vector_offset_248 = DEFINED (__vector_dispatch_248)?(. - _ebase_address):__vector_offset_default
+ *(.vector_248)
+                0x000006a4                __vector_offset_249 = DEFINED (__vector_dispatch_249)?(. - _ebase_address):__vector_offset_default
+ *(.vector_249)
+                0x000006a4                __vector_offset_250 = DEFINED (__vector_dispatch_250)?(. - _ebase_address):__vector_offset_default
+ *(.vector_250)
+                0x000006a4                __vector_offset_251 = DEFINED (__vector_dispatch_251)?(. - _ebase_address):__vector_offset_default
+ *(.vector_251)
+                0x000006a4                __vector_offset_252 = DEFINED (__vector_dispatch_252)?(. - _ebase_address):__vector_offset_default
+ *(.vector_252)
+                0x000006a4                __vector_offset_253 = DEFINED (__vector_dispatch_253)?(. - _ebase_address):__vector_offset_default
+ *(.vector_253)
+                0x000006a4                __vector_offset_254 = DEFINED (__vector_dispatch_254)?(. - _ebase_address):__vector_offset_default
+ *(.vector_254)
+                0x000006a4                __vector_offset_255 = DEFINED (__vector_dispatch_255)?(. - _ebase_address):__vector_offset_default
+ *(.vector_255)
+                0x000006a4                __vector_offset_default = (. - _ebase_address)
+ *(.vector_default)
+ .vector_default
+                0x9d0006a4       0x38 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+                0x9d0006a4                _DefaultInterrupt
+
+.startup
+ *(.startup)
+
+.text           0x9d0006dc        0x0
+ *(.stub .gnu.linkonce.t.*)
+ *(.text.*personality*)
+ *(.mips16.fn.*)
+ *(.mips16.call.*)
+ *(.gnu.warning)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.init           0x9d0006dc        0x0
+ *crti.o(.init)
+ *crtbegin.o(.init)
+ *(EXCLUDE_FILE(*crtn.o *crtend?.o *crtend.o) .init)
+ *crtend.o(.init)
+ *crtn.o(.init)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.fini           0x9d0006dc        0x0
+ *(.fini)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.preinit_array  0x9d0006dc        0x0
+                0x9d0006dc                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array)
+                0x9d0006dc                PROVIDE (__preinit_array_end, .)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.init_array     0x9d0006dc        0x0
+                0x9d0006dc                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array)
+                0x9d0006dc                PROVIDE (__init_array_end, .)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.fini_array     0x9d0006dc        0x0
+                0x9d0006dc                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array)
+                0x9d0006dc                PROVIDE (__fini_array_end, .)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.ctors          0x9d0006dc        0x0
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.dtors          0x9d0006dc        0x0
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.rodata         0x9d0006dc        0x0
+ *(.gnu.linkonce.r.*)
+ *(.rodata1)
+                0x9d0006dc                . = ALIGN (0x4)
+
+.sdata2         0x9fc004b0        0x0
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x9fc004b0                . = ALIGN (0x4)
+
+.sbss2          0x9fc004b0        0x0
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+                0x9fc004b0                . = ALIGN (0x4)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+                0x9fc004b0                . = ALIGN (0x4)
+
+.eh_frame
+ *(.eh_frame)
+                0x9fc004b0                . = ALIGN (0x4)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x9fc004b0                . = ALIGN (0x4)
+
+.dbg_data       0x80000000        0x0
+                0x80000000                . = (. + DEFINED (_DEBUGGER)?0x200:0x0)
+                0x80000000                . = (. + DEFINED (_DEBUGGER)?0x80:0x0)
+
+.jcr            0x80000000        0x0
+ *(.jcr)
+                0x80000000                . = ALIGN (0x4)
+
+.eh_frame
+ *(.eh_frame)
+                0x80000000                . = ALIGN (0x4)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+                0x80000000                . = ALIGN (0x4)
+
+.persist        0x80000000        0x0
+                0x80000000                _persist_begin = .
+ *(.persist .persist.*)
+ *(.pbss .pbss.*)
+                0x80000000                . = ALIGN (0x4)
+                0x80000000                _persist_end = .
+
+.data           0x80000000        0x0
+ *(.gnu.linkonce.d.*)
+ *(.data1)
+                0x80000000                . = ALIGN (0x4)
+                0x80000000                . = .
+                0x80007ff0                _gp = (ALIGN (0x10) + 0x7ff0)
+
+.got            0x80000000        0x0
+ *(.got.plt)
+ *(.got)
+                0x80000000                . = ALIGN (0x4)
+
+.sdata          0x80000000       0x3c
+                0x80000000                _sdata_begin = .
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x80000000        0x4 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .sdata         0x80000004        0x4 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .sdata         0x80000008        0xc build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .sdata         0x80000014        0x4 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+                0x80000014                uxInterruptNesting
+ .sdata         0x80000018       0x24 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+                0x80000018                __pic32_icache_size
+                0x8000001c                __pic32_icache_linesize
+                0x80000020                __pic32_icache_ways
+                0x80000024                __pic32_dcache_size
+                0x80000028                __pic32_dcache_linesize
+                0x8000002c                __pic32_dcache_ways
+                0x80000030                __pic32_scache_size
+                0x80000034                __pic32_scache_linesize
+                0x80000038                __pic32_scache_ways
+                0x8000003c                . = ALIGN (0x4)
+                0x8000003c                _sdata_end = .
+
+.lit8
+ *(.lit8)
+
+.lit4
+ *(.lit4)
+                0x8000003c                . = ALIGN (0x4)
+                0x8000003c                _data_end = .
+                0x8000003c                _bss_begin = .
+
+.sbss           0x8000003c      0x23c
+                0x8000003c                _sbss_begin = .
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x8000003c       0x24 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .sbss          0x80000060        0xc build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .sbss          0x8000006c       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .sbss          0x8000008c       0x14 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .sbss          0x800000a0       0x40 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .sbss          0x800000e0        0xc build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .sbss          0x800000ec       0x2c build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .sbss          0x80000118        0xc build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .sbss          0x80000124       0x28 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .sbss          0x8000014c       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .sbss          0x8000017c       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .sbss          0x800001ac       0x3c build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+                0x800001ac                pxCurrentTCB
+ .sbss          0x800001e8       0x14 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .sbss          0x800001fc        0x4 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+                0x800001fc                uxSavedTaskStackPointer
+ .sbss          0x80000200       0x18 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .sbss          0x80000218        0xc build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .sbss          0x80000224        0x4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .sbss          0x80000228       0x18 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+                0x80000228                ulRegTest1Cycles
+                0x8000022c                ulRegTest2Cycles
+ .sbss          0x80000240        0xc build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+                0x80000240                ulHighFrequencyTimerInterrupts
+ .sbss          0x8000024c        0x4 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ *(.scommon)
+ .scommon       0x80000250        0xc build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+                0x80000250                xHighPriorityTask
+                0x80000254                xHighestPriorityTask
+                0x80000258                xMediumPriorityTask
+ .scommon       0x8000025c       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+                0x8000025c                xHighPriorityNormallyEmptyTask2
+                0x80000260                xHighPriorityNormallyEmptyTask1
+                0x80000264                xHighPriorityNormallyFullTask1
+                0x80000268                xHighPriorityNormallyFullTask2
+ .scommon       0x8000026c        0x8 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+                0x8000026c                xQueueSetSendingTask
+                0x80000270                xQueueSetReceivingTask
+ .scommon       0x80000274        0x4 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+                0x80000274                xSuspendedTestQueue
+                0x80000278                _sbss_end = .
+                0x80000278                . = ALIGN (0x4)
+
+.bss            0x80000278        0x0
+ *(.dynbss)
+ *(COMMON)
+                0x80000278                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x80000278                . = ALIGN (0x4)
+                0x80000278                _end = .
+                0x80000278                _bss_end = .
+                0x00080000                _bmxdudba_address = 0x80000
+                0x00080000                _bmxdupba_address = 0x80000
+
+/DISCARD/
+ *(.pdr)
+ *(.rel.dyn)
+ *(.note.GNU-stack)
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+ *(.discard)
+
+.gptab.sdata
+ *(.gptab.data)
+ *(.gptab.sdata)
+
+.gptab.sbss
+ *(.gptab.bss)
+ *(.gptab.sbss)
+
+.mdebug.abi32   0x80000278        0x0
+ *(.mdebug.abi32)
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .mdebug.abi32  0x80000278        0x0 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .mdebug.abi32  0x80000278        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.mdebug.abiN32
+ *(.mdebug.abiN32)
+
+.mdebug.abi64
+ *(.mdebug.abi64)
+
+.mdebug.abiO64
+ *(.mdebug.abiO64)
+
+.mdebug.eabi32
+ *(.mdebug.eabi32)
+
+.mdebug.eabi64
+ *(.mdebug.eabi64)
+
+.gcc_compiled_long32
+ *(.gcc_compiled_long32)
+
+.gcc_compiled_long64
+ *(.gcc_compiled_long64)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x6c
+ *(.comment)
+ .comment       0x00000000       0x3c build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+                                 0x3d (size before relaxing)
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .comment       0x00000000       0x3d build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .comment       0x0000003c       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+                                 0x19 (size before relaxing)
+ .comment       0x00000054       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+                                 0x19 (size before relaxing)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .comment       0x00000000       0x3d c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x510
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_aranges
+                0x00000020       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_aranges
+                0x00000040       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_aranges
+                0x00000060       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_aranges
+                0x00000080       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_aranges
+                0x000000a0       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_aranges
+                0x000000c0       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_aranges
+                0x000000e0       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_aranges
+                0x00000100       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_aranges
+                0x00000120       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_aranges
+                0x00000140       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_aranges
+                0x00000160       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_aranges
+                0x00000180       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_aranges
+                0x000001a0       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_aranges
+                0x000001c0       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_aranges
+                0x000001e0       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_aranges
+                0x00000200       0x20 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_aranges
+                0x00000220       0x30 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .debug_aranges
+                0x00000250       0x20 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_aranges
+                0x00000270       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_aranges
+                0x00000290       0x20 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_aranges
+                0x000002b0       0x20 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_aranges
+                0x000002d0       0x20 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_aranges
+                0x000002f0       0x20 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_aranges
+                0x00000310       0x20 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_aranges
+                0x00000330       0x20 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+ .debug_aranges
+                0x00000350       0x20 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_aranges
+                0x00000370       0x20 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+ .debug_aranges
+                0x00000390       0x20 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_aranges
+                0x000003b0       0x20 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+ .debug_aranges
+                0x000003d0       0x20 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_aranges
+                0x000003f0       0x20 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+ .debug_aranges
+                0x00000410       0x20 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_aranges
+                0x00000430       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_aranges
+                0x00000450       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_aranges
+                0x00000470       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_aranges
+                0x00000490       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_aranges
+                0x000004b0       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_aranges
+                0x000004d0       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_aranges
+                0x000004f0       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_pubnames
+                0x00000000     0x1586
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x54 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_pubnames
+                0x00000054       0x95 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_pubnames
+                0x000000e9       0x53 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_pubnames
+                0x0000013c       0x2b build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_pubnames
+                0x00000167       0x4e build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_pubnames
+                0x000001b5      0x10f build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_pubnames
+                0x000002c4       0x78 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_pubnames
+                0x0000033c       0xa3 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_pubnames
+                0x000003df       0x5e build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_pubnames
+                0x0000043d       0x72 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_pubnames
+                0x000004af       0x58 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_pubnames
+                0x00000507       0x73 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_pubnames
+                0x0000057a      0x2a1 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_pubnames
+                0x0000081b      0x49d build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_pubnames
+                0x00000cb8       0x72 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_pubnames
+                0x00000d2a      0x150 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_pubnames
+                0x00000e7a      0x130 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_pubnames
+                0x00000faa       0x88 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_pubnames
+                0x00001032       0xf8 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_pubnames
+                0x0000112a       0xc1 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_pubnames
+                0x000011eb       0x52 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_pubnames
+                0x0000123d       0x22 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_pubnames
+                0x0000125f       0x5c build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_pubnames
+                0x000012bb       0x4a build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_pubnames
+                0x00001305       0x66 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_pubnames
+                0x0000136b       0x61 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_pubnames
+                0x000013cc       0x45 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_pubnames
+                0x00001411       0x44 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_pubnames
+                0x00001455       0x24 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_pubnames
+                0x00001479       0x33 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_pubnames
+                0x000014ac       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_pubnames
+                0x000014cc       0x24 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_pubnames
+                0x000014f0       0x28 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_pubnames
+                0x00001518       0x33 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_pubnames
+                0x0000154b       0x3b c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_info     0x00000000     0xf6b5
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x00000000      0x64b build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_info    0x0000064b      0x493 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_info    0x00000ade      0x550 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_info    0x0000102e      0x278 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_info    0x000012a6      0x4e3 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_info    0x00001789      0xac4 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_info    0x0000224d      0x420 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_info    0x0000266d      0x951 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_info    0x00002fbe      0x46d build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_info    0x0000342b      0x622 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_info    0x00003a4d      0x541 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_info    0x00003f8e      0x795 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_info    0x00004723     0x1772 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_info    0x00005e95     0x210f build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_info    0x00007fa4      0x450 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_info    0x000083f4     0x1038 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_info    0x0000942c      0xeb2 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_info    0x0000a2de       0x99 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .debug_info    0x0000a377      0x545 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_info    0x0000a8bc      0x92d build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_info    0x0000b1e9      0x4d5 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_info    0x0000b6be      0x2ac build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_info    0x0000b96a      0x32d build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_info    0x0000bc97      0x383 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_info    0x0000c01a      0x463 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_info    0x0000c47d       0x82 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+ .debug_info    0x0000c4ff      0xde9 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_info    0x0000d2e8       0x82 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+ .debug_info    0x0000d36a      0xb39 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_info    0x0000dea3       0x7e build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+ .debug_info    0x0000df21      0xbe0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_info    0x0000eb01       0x85 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+ .debug_info    0x0000eb86      0x4fe build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_info    0x0000f084      0x125 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_info    0x0000f1a9       0xe2 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_info    0x0000f28b       0xbc c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_info    0x0000f347       0xc4 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_info    0x0000f40b       0xd6 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_info    0x0000f4e1       0xe2 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_info    0x0000f5c3       0xf2 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_abbrev   0x00000000     0x2151
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x125 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_abbrev  0x00000125      0x122 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_abbrev  0x00000247      0x105 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_abbrev  0x0000034c       0x86 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_abbrev  0x000003d2      0x10d build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_abbrev  0x000004df      0x15c build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_abbrev  0x0000063b       0xbe build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_abbrev  0x000006f9      0x17b build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_abbrev  0x00000874      0x10a build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_abbrev  0x0000097e      0x127 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_abbrev  0x00000aa5       0xf6 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_abbrev  0x00000b9b      0x14b build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_abbrev  0x00000ce6      0x195 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_abbrev  0x00000e7b      0x1e5 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_abbrev  0x00001060       0xe1 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_abbrev  0x00001141      0x1ac build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_abbrev  0x000012ed      0x210 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_abbrev  0x000014fd       0x12 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .debug_abbrev  0x0000150f      0x13a build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_abbrev  0x00001649      0x152 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_abbrev  0x0000179b      0x101 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_abbrev  0x0000189c       0x81 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_abbrev  0x0000191d       0xa5 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_abbrev  0x000019c2       0xb5 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_abbrev  0x00001a77      0x12e build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_abbrev  0x00001ba5       0x14 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+ .debug_abbrev  0x00001bb9       0xdf build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_abbrev  0x00001c98       0x14 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+ .debug_abbrev  0x00001cac       0xf2 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_abbrev  0x00001d9e       0x14 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+ .debug_abbrev  0x00001db2      0x12f build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_abbrev  0x00001ee1       0x14 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+ .debug_abbrev  0x00001ef5      0x11f build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_abbrev  0x00002014       0x5f c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_abbrev  0x00002073       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_abbrev  0x00002098       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_abbrev  0x000020bd       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_abbrev  0x000020e2       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_abbrev  0x00002107       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_abbrev  0x0000212c       0x25 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_line     0x00000000     0x467d
+ *(.debug_line)
+ .debug_line    0x00000000      0x2b1 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_line    0x000002b1      0x1f6 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_line    0x000004a7      0x243 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_line    0x000006ea      0x173 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_line    0x0000085d      0x1dd build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_line    0x00000a3a      0x2b8 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_line    0x00000cf2      0x1c8 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_line    0x00000eba      0x2d3 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_line    0x0000118d      0x1ce build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_line    0x0000135b      0x1f7 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_line    0x00001552      0x1fb build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_line    0x0000174d      0x31f build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_line    0x00001a6c      0x553 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_line    0x00001fbf      0x6b2 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_line    0x00002671      0x182 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_line    0x000027f3      0x310 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_line    0x00002b03      0x1cd build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_line    0x00002cd0      0x156 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .debug_line    0x00002e26      0x1b0 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_line    0x00002fd6      0x258 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_line    0x0000322e      0x194 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_line    0x000033c2       0xe1 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_line    0x000034a3      0x19c build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_line    0x0000363f       0xe1 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_line    0x00003720      0x1d8 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_line    0x000038f8      0x150 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+ .debug_line    0x00003a48      0x142 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_line    0x00003b8a       0xd2 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+ .debug_line    0x00003c5c      0x130 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_line    0x00003d8c       0xa0 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+ .debug_line    0x00003e2c      0x1e6 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_line    0x00004012       0xa7 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+ .debug_line    0x000040b9      0x1c7 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_line    0x00004280       0x8e c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_line    0x0000430e       0x97 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_line    0x000043a5       0x84 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_line    0x00004429       0x88 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_line    0x000044b1       0x96 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_line    0x00004547       0x97 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_line    0x000045de       0x9f c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_frame    0x00000000     0x1f80
+ *(.debug_frame)
+ .debug_frame   0x00000000       0xf0 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_frame   0x000000f0       0xb8 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_frame   0x000001a8       0x9c build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_frame   0x00000244       0x48 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_frame   0x0000028c       0x64 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_frame   0x000002f0      0x160 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_frame   0x00000450       0x80 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_frame   0x000004d0      0x198 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_frame   0x00000668       0x9c build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_frame   0x00000704       0xd4 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_frame   0x000007d8       0x9c build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_frame   0x00000874      0x128 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_frame   0x0000099c      0x3ec build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_frame   0x00000d88      0x630 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_frame   0x000013b8       0x9c build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_frame   0x00001454      0x294 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_frame   0x000016e8       0xf0 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_frame   0x000017d8       0xd4 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_frame   0x000018ac      0x128 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_frame   0x000019d4       0xf0 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_frame   0x00001ac4       0x64 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_frame   0x00001b28       0x80 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_frame   0x00001ba8       0x48 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_frame   0x00001bf0       0x9c build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_frame   0x00001c8c       0x64 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_frame   0x00001cf0       0x48 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_frame   0x00001d38       0x80 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_frame   0x00001db8       0xc8 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_frame   0x00001e80       0x28 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_frame   0x00001ea8       0x28 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_frame   0x00001ed0       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_frame   0x00001ef0       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_frame   0x00001f10       0x20 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_frame   0x00001f30       0x28 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_frame   0x00001f58       0x28 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_str      0x00000000      0xa4c
+ *(.debug_str)
+ .debug_str     0x00000000       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_str     0x00000020       0x57 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_str     0x00000077       0x2c build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_str     0x000000a3        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_str     0x000000a3       0x1d build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_str     0x000000c0      0x109 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_str     0x000001c9        0xe build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_str     0x000001d7       0x70 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_str     0x00000247       0x1a build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_str     0x00000261       0x2c build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_str     0x0000028d        0xd build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_str     0x0000029a       0x34 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_str     0x000002ce      0x16b build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_str     0x00000439      0x1bc build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_str     0x000005f5       0x2b build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_str     0x00000620      0x123 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_str     0x00000743       0x7d build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_str     0x000007c0        0x0 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_str     0x000007c0       0xe6 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_str     0x000008a6        0x9 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_str     0x000008af        0x9 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_str     0x000008b8        0xd build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_str     0x000008c5       0x34 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_str     0x000008f9       0x55 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_str     0x0000094e       0x38 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_str     0x00000986       0x57 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_str     0x000009dd       0x25 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_str     0x00000a02       0x4a build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_str     0x00000a4c        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.debug_loc      0x00000000       0x68
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x68 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+                0x00000000     0x121c
+ *(.debug_pubtypes)
+ .debug_pubtypes
+                0x00000000       0x96 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .debug_pubtypes
+                0x00000096       0x80 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .debug_pubtypes
+                0x00000116       0x80 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .debug_pubtypes
+                0x00000196       0x61 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .debug_pubtypes
+                0x000001f7       0xc8 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .debug_pubtypes
+                0x000002bf       0x80 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .debug_pubtypes
+                0x0000033f       0x71 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .debug_pubtypes
+                0x000003b0       0xd3 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .debug_pubtypes
+                0x00000483       0xa0 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .debug_pubtypes
+                0x00000523       0x8f build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .debug_pubtypes
+                0x000005b2       0x96 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .debug_pubtypes
+                0x00000648       0x87 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .debug_pubtypes
+                0x000006cf      0x1b5 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .debug_pubtypes
+                0x00000884      0x195 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .debug_pubtypes
+                0x00000a19       0x9a build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .debug_pubtypes
+                0x00000ab3      0x1d8 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .debug_pubtypes
+                0x00000c8b       0xc5 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .debug_pubtypes
+                0x00000d50       0x4c build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .debug_pubtypes
+                0x00000d9c       0xf5 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .debug_pubtypes
+                0x00000e91       0x32 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .debug_pubtypes
+                0x00000ec3       0x12 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .debug_pubtypes
+                0x00000ed5       0x81 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .debug_pubtypes
+                0x00000f56       0x4b build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .debug_pubtypes
+                0x00000fa1       0x61 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .debug_pubtypes
+                0x00001002       0x89 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .debug_pubtypes
+                0x0000108b       0x67 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .debug_pubtypes
+                0x000010f2       0xca build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .debug_pubtypes
+                0x000011bc       0x2c build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .debug_pubtypes
+                0x000011e8       0x34 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+
+.debug_ranges   0x00000000       0x88
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x28 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+ .debug_ranges  0x00000028       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .debug_ranges  0x00000038       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .debug_ranges  0x00000048       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .debug_ranges  0x00000058       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .debug_ranges  0x00000068       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .debug_ranges  0x00000078       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.gnu.attributes
+                0x00000000       0x10
+ *(.gnu.attributes)
+ .gnu.attributes
+                0x00000000       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .gnu.attributes
+                0x00000010       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .gnu.attributes
+                0x00000020       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+ .gnu.attributes
+                0x00000030       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+ .gnu.attributes
+                0x00000040       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .gnu.attributes
+                0x00000050       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .gnu.attributes
+                0x00000060       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .gnu.attributes
+                0x00000070       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .gnu.attributes
+                0x00000080       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .gnu.attributes
+                0x00000090       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .gnu.attributes
+                0x000000a0       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .gnu.attributes
+                0x000000b0       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .gnu.attributes
+                0x000000c0       0x10 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+ .gnu.attributes
+                0x000000d0       0x10 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .gnu.attributes
+                0x000000e0       0x10 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+ .gnu.attributes
+                0x000000f0       0x10 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .gnu.attributes
+                0x00000100       0x10 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+ .gnu.attributes
+                0x00000110       0x10 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .gnu.attributes
+                0x00000120       0x10 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .gnu.attributes
+                0x00000130       0x10 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+ .gnu.attributes
+                0x00000140       0x10 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+ .gnu.attributes
+                0x00000150       0x10 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .gnu.attributes
+                0x00000160       0x10 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+ .gnu.attributes
+                0x00000170       0x10 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .gnu.attributes
+                0x00000180       0x10 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+ .gnu.attributes
+                0x00000190       0x10 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+ .gnu.attributes
+                0x000001a0       0x10 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+ .gnu.attributes
+                0x000001b0       0x10 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .gnu.attributes
+                0x000001c0       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+ .gnu.attributes
+                0x000001d0       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+ .gnu.attributes
+                0x000001e0       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+ .gnu.attributes
+                0x000001f0       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+ .gnu.attributes
+                0x00000200       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+ .gnu.attributes
+                0x00000210       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+ .gnu.attributes
+                0x00000220       0x10 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+                0x9d000000                PROVIDE (__pic32_init_cache_program_base_addr, 0x9d000000)
+                0x80000000                PROVIDE (__pic32_init_cache_data_base_addr, 0x80000000)
+                0xd0000000                PROVIDE (__pic32_init_sqi_kseg2_virtual_base_addr, 0xd0000000)
+                0x30000000                PROVIDE (__pic32_init_sqi_kseg2_physical_base_addr, 0x30000000)
+                0x0000001f                PROVIDE (__pic32_init_sqi_kseg2_entrylo0_bitset, 0x1f)
+                0xd0000000                __pic32_tlb_0_entryhi = __pic32_init_sqi_kseg2_virtual_base_addr
+                0x00c0001f                __pic32_tlb_0_entrylo0 = ((__pic32_init_sqi_kseg2_physical_base_addr >> 0x6) | __pic32_init_sqi_kseg2_entrylo0_bitset)
+                0x00c4001f                __pic32_tlb_0_entrylo1 = (__pic32_tlb_0_entrylo0 | ((__pic32_init_sqi_kseg2_physical_base_addr + 0x1000000) >> 0x6))
+                0xd2000000                __pic32_tlb_1_entryhi = (__pic32_init_sqi_kseg2_virtual_base_addr + 0x2000000)
+                0x00c8001f                __pic32_tlb_1_entrylo0 = (((__pic32_init_sqi_kseg2_physical_base_addr + 0x2000000) >> 0x6) | __pic32_init_sqi_kseg2_entrylo0_bitset)
+                0x00cc001f                __pic32_tlb_1_entrylo1 = (__pic32_tlb_1_entrylo0 | 0x40000)
+                0xf0000000                PROVIDE (__pic32_init_sqi_kseg3_virtual_base_addr, 0xf0000000)
+                0x30000000                PROVIDE (__pic32_init_sqi_kseg3_physical_base_addr, 0x30000000)
+                0x00000017                PROVIDE (__pic32_init_sqi_kseg3_entrylo0_bitset, 0x17)
+                0xf0000000                __pic32_tlb_2_entryhi = __pic32_init_sqi_kseg3_virtual_base_addr
+                0x00c00017                __pic32_tlb_2_entrylo0 = ((__pic32_init_sqi_kseg3_physical_base_addr >> 0x6) | __pic32_init_sqi_kseg3_entrylo0_bitset)
+                0x00c40017                __pic32_tlb_2_entrylo1 = (__pic32_tlb_2_entrylo0 | ((__pic32_init_sqi_kseg3_physical_base_addr + 0x1000000) >> 0x6))
+                0xf2000000                __pic32_tlb_3_entryhi = (__pic32_init_sqi_kseg3_virtual_base_addr + 0x2000000)
+                0x00c80017                __pic32_tlb_3_entrylo0 = (((__pic32_init_sqi_kseg3_physical_base_addr + 0x2000000) >> 0x6) | __pic32_init_sqi_kseg3_entrylo0_bitset)
+                0x00cc0017                __pic32_tlb_3_entrylo1 = (__pic32_tlb_3_entrylo0 | 0x40000)
+                0xc0000000                PROVIDE (__pic32_init_ebi_kseg2_virtual_base_addr, 0xc0000000)
+                0x20000000                PROVIDE (__pic32_init_ebi_kseg2_physical_base_addr, 0x20000000)
+                0x0000001f                PROVIDE (__pic32_init_ebi_kseg2_entrylo0_bitset, 0x1f)
+                0xc0000000                __pic32_tlb_4_entryhi = __pic32_init_ebi_kseg2_virtual_base_addr
+                0x0080001f                __pic32_tlb_4_entrylo0 = ((__pic32_init_ebi_kseg2_physical_base_addr >> 0x6) | __pic32_init_ebi_kseg2_entrylo0_bitset)
+                0x0084001f                __pic32_tlb_4_entrylo1 = (__pic32_tlb_4_entrylo0 | ((__pic32_init_ebi_kseg2_physical_base_addr + 0x1000000) >> 0x6))
+                0xc2000000                __pic32_tlb_5_entryhi = (__pic32_init_ebi_kseg2_virtual_base_addr + 0x2000000)
+                0x0088001f                __pic32_tlb_5_entrylo0 = (((__pic32_init_ebi_kseg2_physical_base_addr + 0x2000000) >> 0x6) | __pic32_init_ebi_kseg2_entrylo0_bitset)
+                0x008c001f                __pic32_tlb_5_entrylo1 = (__pic32_tlb_5_entrylo0 | 0x40000)
+                0xe0000000                PROVIDE (__pic32_init_ebi_kseg3_virtual_base_addr, 0xe0000000)
+                0x20000000                PROVIDE (__pic32_init_ebi_kseg3_physical_base_addr, 0x20000000)
+                0x00000017                PROVIDE (__pic32_init_ebi_kseg3_entrylo0_bitset, 0x17)
+                0xe0000000                __pic32_tlb_6_entryhi = __pic32_init_ebi_kseg3_virtual_base_addr
+                0x00800017                __pic32_tlb_6_entrylo0 = ((__pic32_init_ebi_kseg3_physical_base_addr >> 0x6) | __pic32_init_ebi_kseg3_entrylo0_bitset)
+                0x00840017                __pic32_tlb_6_entrylo1 = (__pic32_tlb_6_entrylo0 | ((__pic32_init_ebi_kseg3_physical_base_addr + 0x1000000) >> 0x6))
+                0xe2000000                __pic32_tlb_7_entryhi = (__pic32_init_ebi_kseg3_virtual_base_addr + 0x2000000)
+                0x00880017                __pic32_tlb_7_entrylo0 = (((__pic32_init_ebi_kseg3_physical_base_addr + 0x2000000) >> 0x6) | __pic32_init_ebi_kseg3_entrylo0_bitset)
+                0x008c0017                __pic32_tlb_7_entrylo1 = (__pic32_tlb_7_entrylo0 | 0x40000)
+
+.tlb_init_values
+                0xbfc00670       0x60
+                0xbfc00670                . = ALIGN (0x4)
+                0xbfc00670                __pic32_tlb_init_values_begin = ABSOLUTE (.)
+                0xbfc00670        0x4 LONG 0xd0000000 __pic32_tlb_0_entryhi
+                0xbfc00674        0x4 LONG 0xc0001f __pic32_tlb_0_entrylo0
+                0xbfc00678        0x4 LONG 0xc4001f __pic32_tlb_0_entrylo1
+                0xbfc0067c        0x4 LONG 0xd2000000 __pic32_tlb_1_entryhi
+                0xbfc00680        0x4 LONG 0xc8001f __pic32_tlb_1_entrylo0
+                0xbfc00684        0x4 LONG 0xcc001f __pic32_tlb_1_entrylo1
+                0xbfc00688        0x4 LONG 0xf0000000 __pic32_tlb_2_entryhi
+                0xbfc0068c        0x4 LONG 0xc00017 __pic32_tlb_2_entrylo0
+                0xbfc00690        0x4 LONG 0xc40017 __pic32_tlb_2_entrylo1
+                0xbfc00694        0x4 LONG 0xf2000000 __pic32_tlb_3_entryhi
+                0xbfc00698        0x4 LONG 0xc80017 __pic32_tlb_3_entrylo0
+                0xbfc0069c        0x4 LONG 0xcc0017 __pic32_tlb_3_entrylo1
+                0xbfc006a0        0x4 LONG 0xc0000000 __pic32_tlb_4_entryhi
+                0xbfc006a4        0x4 LONG 0x80001f __pic32_tlb_4_entrylo0
+                0xbfc006a8        0x4 LONG 0x84001f __pic32_tlb_4_entrylo1
+                0xbfc006ac        0x4 LONG 0xc2000000 __pic32_tlb_5_entryhi
+                0xbfc006b0        0x4 LONG 0x88001f __pic32_tlb_5_entrylo0
+                0xbfc006b4        0x4 LONG 0x8c001f __pic32_tlb_5_entrylo1
+                0xbfc006b8        0x4 LONG 0xe0000000 __pic32_tlb_6_entryhi
+                0xbfc006bc        0x4 LONG 0x800017 __pic32_tlb_6_entrylo0
+                0xbfc006c0        0x4 LONG 0x840017 __pic32_tlb_6_entrylo1
+                0xbfc006c4        0x4 LONG 0xe2000000 __pic32_tlb_7_entryhi
+                0xbfc006c8        0x4 LONG 0x880017 __pic32_tlb_7_entrylo0
+                0xbfc006cc        0x4 LONG 0x8c0017 __pic32_tlb_7_entrylo1
+                0xbfc006d0                __pic32_tlb_init_values_end = ABSOLUTE (.)
+                0x00000008                __pic32_tlb_init_values_count = 0x8
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a
+START GROUP
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libdebug.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libe.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libdspr2.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libc.a
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a
+END GROUP
+LOAD c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a
+OUTPUT(dist/PIC32MZ2048_SK/production/RTOSDemo.X.production.elf elf32-tradlittlemips)
+LOAD stack
+LOAD data_init
+
+.reginfo        0x00000000       0x18
+ .reginfo       0x00000000       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.stack          0x8000f630      0x400
+ .stack         0x8000f630      0x400 stack
+
+.__vector_offset_BF81062C_data
+                0xbf81062c       0xc0
+ .__vector_offset_BF81062C_data
+                0xbf81062c       0xc0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.__vector_offset_BF810540_data
+                0xbf810540       0xb4
+ .__vector_offset_BF810540_data
+                0xbf810540       0xb4 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.__vector_offset_BF8106F4_data
+                0xbf8106f4       0xa8
+ .__vector_offset_BF8106F4_data
+                0xbf8106f4       0xa8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.__vector_offset_BF8107A4_data
+                0xbf8107a4       0x98
+ .__vector_offset_BF8107A4_data
+                0xbf8107a4       0x98 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.__vector_offset_BF8105F8_data
+                0xbf8105f8       0x30
+ .__vector_offset_BF8105F8_data
+                0xbf8105f8       0x30 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.bss            0x80000278     0xf39c
+ .bss           0x80000278     0xea60 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .bss           0x8000ecd8      0x640 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+                0x8000ecd8                xISRStack
+ .bss           0x8000f318      0x190 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .bss           0x8000f4a8       0xc8 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .bss           0x8000f570       0x40 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+ .bss           0x8000f5b0       0x28 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .bss           0x8000f5d8       0x24 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .bss           0x8000f5fc       0x18 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+
+.bss%z1         0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+
+.data%z2        0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+
+.bss%z3         0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+
+.data%z4        0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+
+.bss%z5         0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+
+.data%z6        0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+
+.bss%z7         0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+
+.data%z8        0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+
+.bss%z9         0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+
+.data%z10       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+
+.bss%z11        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.data%z12       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.bss%z13        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+
+.data%z14       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+
+.bss%z15        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+
+.data%z16       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+
+.bss%z17        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+
+.data%z18       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+
+.bss%z19        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+
+.data%z20       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+
+.bss%z21        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+
+.data%z22       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+
+.bss%z23        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+
+.data%z24       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+
+.bss%z25        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+
+.data%z26       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+
+.bss%z27        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+
+.data%z28       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+
+.bss%z29        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+
+.data%z30       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+
+.bss%z31        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+
+.data%z32       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+
+.bss%z33        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+
+.data%z34       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+
+.bss%z35        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+
+.data%z36       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+
+.bss%z37        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+
+.data%z38       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+
+.bss%z39        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+
+.data%z40       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+
+.bss%z41        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+
+.data%z42       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+
+.bss%z43        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.data%z44       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.bss%z45        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\processor.o
+
+.data%z46       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\processor.o
+
+.bss%z47        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\pic32_software_reset.o
+
+.data%z48       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\pic32_software_reset.o
+
+.bss%z49        0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+
+.data%z50       0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+
+.data%z51       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+
+.bss%z52        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+
+.data%z53       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+
+.bss%z54        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+
+.data%z55       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+
+.bss%z56        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+
+.data%z57       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+
+.bss%z58        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+
+.data%z59       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+
+.bss%z60        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+
+.data%z61       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+
+.bss%z62        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+
+.data%z63       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+
+.bss%z64        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+
+.data%z65       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+
+.bss%z66        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+
+.data%z67       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+
+.bss%z68        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+
+.data%z69       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+
+.bss%z70        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.data%z71       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+
+.bss%z72        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+
+.data%z73       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+
+.bss%z74        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+
+.data%z75       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+
+.bss%z76        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+
+.data%z77       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+
+.data%z78       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+
+.bss%z79        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+
+.data%z80       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+
+.data%z81       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+
+.data%z82       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+
+.bss%z83        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+
+.data%z84       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+
+.data%z85       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+
+.bss%z86        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+
+.data%z87       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+
+.bss%z88        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+
+.data%z89       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+
+.bss%z90        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+
+.data%z91       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+
+.bss%z92        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+
+.data%z93       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+
+.data%z94       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+
+.data%z95       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+
+.bss%z96        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+
+.data%z97       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+
+.data%z98       0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+
+.bss%z99        0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+
+.data%z100      0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+
+.bss%z101       0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+
+.data%z102      0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+
+.bss%z103       0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+
+.data%z104      0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+
+.bss%z105       0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+
+.data%z106      0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+
+.bss%z107       0x00000000        0x0
+ .bss           0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+
+.data%z108      0x00000000        0x0
+ .data          0x00000000        0x0 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+
+.bss%z109       0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+
+.data%z110      0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+
+.bss%z111       0x00000000        0x0
+ .bss           0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+.data%z112      0x00000000        0x0
+ .data          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+
+._debug_exception
+                0xbfc00480       0x2c
+ ._debug_exception
+                0xbfc00480       0x2c c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+                0xbfc00480                __DbgExecReturn
+
+.text           0x9d0006dc     0xf6bc
+ .text          0x9d0006dc     0x3770 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+                0x9d0006dc                xTaskCreate
+                0x9d000b5c                vTaskDelete
+                0x9d000d0c                vTaskDelayUntil
+                0x9d000eb8                vTaskDelay
+                0x9d000f64                eTaskGetState
+                0x9d0010d8                uxTaskPriorityGet
+                0x9d001144                uxTaskPriorityGetFromISR
+                0x9d0011b8                vTaskPrioritySet
+                0x9d00141c                vTaskSuspend
+                0x9d001694                vTaskResume
+                0x9d0017cc                xTaskResumeFromISR
+                0x9d001910                vTaskStartScheduler
+                0x9d001a28                vTaskEndScheduler
+                0x9d001aa8                vTaskSuspendAll
+                0x9d001ad4                xTaskResumeAll
+                0x9d001cb8                xTaskGetTickCount
+                0x9d001ce4                xTaskGetTickCountFromISR
+                0x9d001d14                uxTaskGetNumberOfTasks
+                0x9d001d38                pcTaskGetName
+                0x9d001dac                xTaskIncrementTick
+                0x9d00200c                vTaskSwitchContext
+                0x9d0021a4                vTaskPlaceOnEventList
+                0x9d00221c                vTaskPlaceOnUnorderedEventList
+                0x9d0022cc                vTaskPlaceOnEventListRestricted
+                0x9d00235c                xTaskRemoveFromEventList
+                0x9d0024a0                vTaskRemoveFromUnorderedEventList
+                0x9d0025c8                vTaskSetTimeOutState
+                0x9d00263c                vTaskInternalSetTimeOutState
+                0x9d002678                xTaskCheckForTimeOut
+                0x9d0027cc                vTaskMissedYield
+                0x9d002a40                uxTaskGetStackHighWaterMark
+                0x9d002b54                xTaskGetCurrentTaskHandle
+                0x9d002b80                xTaskGetSchedulerState
+                0x9d002be0                xTaskPriorityInherit
+                0x9d002db4                xTaskPriorityDisinherit
+                0x9d002f6c                vTaskPriorityDisinheritAfterTimeout
+                0x9d003180                vTaskEnterCritical
+                0x9d003244                vTaskExitCritical
+                0x9d0032c8                uxTaskResetEventItemValue
+                0x9d003310                pvTaskIncrementMutexHeldCount
+                0x9d003350                ulTaskNotifyTake
+                0x9d003448                xTaskNotifyWait
+                0x9d003584                xTaskGenericNotify
+                0x9d003810                xTaskGenericNotifyFromISR
+                0x9d003ad4                vTaskNotifyGiveFromISR
+                0x9d003c78                xTaskNotifyStateClear
+ .text          0x9d003e4c     0x26dc build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+                0x9d003e4c                xQueueGenericReset
+                0x9d003fc4                xQueueGenericCreate
+                0x9d0041a4                xQueueCreateMutex
+                0x9d00420c                xQueueGiveMutexRecursive
+                0x9d0042d4                xQueueTakeMutexRecursive
+                0x9d0043a8                xQueueCreateCountingSemaphore
+                0x9d004454                xQueueGenericSend
+                0x9d004874                xQueueGenericSendFromISR
+                0x9d004aa4                xQueueGiveFromISR
+                0x9d004c98                xQueueReceive
+                0x9d004fc0                xQueueSemaphoreTake
+                0x9d005374                xQueuePeek
+                0x9d0056a4                xQueueReceiveFromISR
+                0x9d005830                xQueuePeekFromISR
+                0x9d00595c                uxQueueMessagesWaiting
+                0x9d0059c8                uxQueueSpacesAvailable
+                0x9d005a48                uxQueueMessagesWaitingFromISR
+                0x9d005aac                vQueueDelete
+                0x9d005fb4                xQueueIsQueueEmptyFromISR
+                0x9d00609c                xQueueIsQueueFullFromISR
+                0x9d006120                vQueueWaitForMessageRestricted
+                0x9d0061e4                xQueueCreateSet
+                0x9d00622c                xQueueAddToSet
+                0x9d0062bc                xQueueRemoveFromSet
+                0x9d006354                xQueueSelectFromSet
+                0x9d0063a4                xQueueSelectFromSetFromISR
+ .text          0x9d006528     0x1370 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+                0x9d006528                vStartEventGroupTasks
+                0x9d007694                vPeriodicEventGroupsProcessing
+                0x9d007818                xAreEventGroupTasksStillRunning
+ .text          0x9d007898     0x122c build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+                0x9d007898                vStartInterruptQueueTasks
+                0x9d0083b0                xFirstTimerHandler
+                0x9d008648                xSecondTimerHandler
+                0x9d008a08                xAreIntQueueTasksStillRunning
+ .text          0x9d008ac4     0x1184 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+                0x9d008ac4                xTimerCreateTimerTask
+                0x9d008b5c                xTimerCreate
+                0x9d008cb8                xTimerGenericCommand
+                0x9d008de0                xTimerGetTimerDaemonTaskHandle
+                0x9d008e2c                xTimerGetPeriod
+                0x9d008e88                vTimerSetReloadMode
+                0x9d008f38                xTimerGetExpiryTime
+                0x9d008f9c                pcTimerGetName
+                0x9d0099b0                xTimerIsTimerActive
+                0x9d009a40                pvTimerGetTimerID
+                0x9d009ab4                vTimerSetTimerID
+                0x9d009b28                xTimerPendFunctionCallFromISR
+                0x9d009ba8                xTimerPendFunctionCall
+ .text          0x9d009c48      0xd78 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+                0x9d009c48                vStartQueueSetTasks
+                0x9d009cf0                xAreQueueSetTasksStillRunning
+                0x9d00a100                vQueueSetAccessQueueSetFromISR
+ .text          0x9d00a9c0      0xcd4 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+                0x9d00a9c0                vStartGenericQueueTasks
+                0x9d00b62c                xAreGenericQueueTasksStillRunning
+ .text          0x9d00b694      0xa80 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+                0x9d00b694                xEventGroupCreate
+                0x9d00b6f8                xEventGroupSync
+                0x9d00b968                xEventGroupWaitBits
+                0x9d00bc38                xEventGroupClearBits
+                0x9d00bcf4                xEventGroupGetBitsFromISR
+                0x9d00bd50                xEventGroupSetBits
+                0x9d00bf50                vEventGroupDelete
+                0x9d00c008                vEventGroupSetBitsCallback
+                0x9d00c04c                vEventGroupClearBitsCallback
+ .text          0x9d00c114      0x91c build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+                0x9d00c114                vCreateBlockTimeTasks
+                0x9d00c9b8                xAreBlockTimeTestTasksStillRunning
+ .text          0x9d00ca30      0x900 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+                0x9d00ca30                vStartMathTasks
+                0x9d00d270                xAreMathsTaskStillRunning
+ .text          0x9d00d330      0x6f0 build/PIC32MZ2048_SK/production/_ext/1472/RegisterTestTasks.o
+                0x9d00d338                vRegTest1
+                0x9d00d6ac                vRegTest2
+ .text          0x9d00da20      0x69c build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+                0x9d00da20                pvPortMalloc
+                0x9d00dcb4                vPortFree
+                0x9d00ddd8                xPortGetFreeHeapSize
+                0x9d00ddfc                xPortGetMinimumEverFreeHeapSize
+                0x9d00de20                vPortInitialiseBlocks
+ .text          0x9d00e0bc      0x66c build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+                0x9d00e0bc                vStartQueuePeekTasks
+                0x9d00e6e0                xAreQueuePeekTasksStillRunning
+ .text          0x9d00e728      0x628 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+                0x9d00e728                vStartDynamicPriorityTasks
+                0x9d00ecbc                xAreDynamicPriorityTasksStillRunning
+ .text          0x9d00ed50      0x5dc build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+                0x9d00ed50                vStartRecursiveMutexTasks
+                0x9d00f26c                xAreRecursiveMutexTasksStillRunning
+ .text          0x9d00f32c      0x578 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+                0x9d00f32c                main_full
+ .text          0x9d00f8a4      0x4f4 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+                0x9d00f8a4                vStartCountingSemaphoreTasks
+                0x9d00fcf4                xAreCountingSemaphoreTasksStillRunning
+
+.dinit          0x9d00fd98      0x4f0
+ .dinit         0x9d00fd98      0x4f0 data_init
+
+.text           0x9d010288     0x16d8
+ .text          0x9d010288      0x4d8 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+                0x9d010288                vStartSemaphoreTasks
+                0x9d0106a8                xAreSemaphoreTasksStillRunning
+ .text          0x9d010760      0x45c build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+                0x9d010760                pxPortInitialiseStack
+                0x9d010900                vApplicationSetupTickTimerInterrupt
+                0x9d01099c                vPortEndScheduler
+                0x9d0109e8                xPortStartScheduler
+                0x9d010a8c                vPortIncrementTick
+                0x9d010b38                uxPortSetInterruptMaskFromISR
+                0x9d010b8c                vPortClearInterruptMaskFromISR
+ .text          0x9d010bbc      0x458 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer_isr.o
+                0x9d010bbc                vT3InterruptWrapper
+                0x9d010de8                vT4InterruptWrapper
+ .text          0x9d011014      0x3f0 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+                0x9d011014                vStartQueueOverwriteTask
+                0x9d011228                xIsQueueOverwriteTaskStillRunning
+                0x9d01128c                vQueueOverwritePeriodicISRDemo
+ .text          0x9d011404      0x2b8 build/PIC32MZ2048_SK/production/_ext/449926602/list.o
+                0x9d011404                vListInitialise
+                0x9d011478                vListInitialiseItem
+                0x9d0114a4                vListInsertEnd
+                0x9d011530                vListInsert
+                0x9d01161c                uxListRemove
+ .text          0x9d0116bc      0x2a4 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+                0x9d0116bc                main_blinky
+
+.text.fpsubadd  0x9d011960      0x278
+ .text.fpsubadd
+                0x9d011960      0x278 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+                0x9d011960                __subsf3
+                0x9d011960                fpsub
+                0x9d011968                __addsf3
+                0x9d011968                fpadd
+
+.text           0x9d011bd8      0x274
+ .text          0x9d011bd8      0x274 build/PIC32MZ2048_SK/production/_ext/1472/main.o
+                0x9d011bd8                main
+                0x9d011ca0                vApplicationMallocFailedHook
+                0x9d011d00                vApplicationIdleHook
+                0x9d011d20                vApplicationStackOverflowHook
+                0x9d011d88                vApplicationTickHook
+                0x9d011da8                vAssertCalled
+                0x9d011e00                _general_exception_handler
+
+.text.fp32div   0x9d011e4c      0x230
+ .text.fp32div  0x9d011e4c      0x230 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+                0x9d011e4c                fpdiv
+                0x9d011e4c                __divsf3
+
+.text           0x9d01207c      0x620
+ .text          0x9d01207c      0x22c build/PIC32MZ2048_SK/production/_ext/1472/timertest_isr.o
+                0x9d01207c                vT2InterruptWrapper
+ .text          0x9d0122a8      0x22c build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask_isr.o
+                0x9d0122a8                vT5InterruptWrapper
+ .text          0x9d0124d4      0x1c8 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+                0x9d0124d4                vStartISRTriggeredTask
+                0x9d012528                vT5InterruptHandler
+
+.text.fp32mul   0x9d01269c      0x1bc
+ .text.fp32mul  0x9d01269c      0x1bc c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+                0x9d01269c                __mulsf3
+                0x9d01269c                fpmul
+
+.text           0x9d012858      0x754
+ .text          0x9d012858      0x1b8 build/PIC32MZ2048_SK/production/_ext/1472/IntQueueTimer.o
+                0x9d012858                vInitialiseTimerForIntQueueTest
+                0x9d012948                vT3InterruptHandler
+                0x9d0129ac                vT4InterruptHandler
+ .text          0x9d012a10      0x168 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcpy.o)
+                0x9d012a10                memcpy
+ .text          0x9d012b78      0x128 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+                0x9d012b78                vStartLEDFlashTimers
+ .text          0x9d012ca0      0x114 build/PIC32MZ2048_SK/production/_ext/1472/timertest.o
+                0x9d012ca0                vSetupTimerTest
+                0x9d012d60                vT2InterruptHandler
+ .text          0x9d012db4      0x104 build/PIC32MZ2048_SK/production/_ext/332309698/port_asm.o
+                0x9d012db4                vPortStartFirstTask
+ .text          0x9d012eb8       0xf4 build/PIC32MZ2048_SK/production/_ext/809743516/ParTest.o
+                0x9d012eb8                vParTestInitialise
+                0x9d012ee8                vParTestSetLED
+                0x9d012f5c                vParTestToggleLED
+
+.text.general_exception
+                0x9d000010       0xdc
+ .text.general_exception
+                0x9d000010       0xdc c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+                0x9d000010                _general_exception_context
+
+.text._cache_err_exception_context
+                0x9d012fac       0xd8
+ .text._cache_err_exception_context
+                0x9d012fac       0xd8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+                0x9d012fac                _cache_err_exception_context
+
+.text.simple_tlb_refill_context
+                0x9d013084       0xd8
+ .text.simple_tlb_refill_context
+                0x9d013084       0xd8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+                0x9d013084                _simple_tlb_refill_exception_context
+
+.text           0x9d01315c       0xd0
+ .text          0x9d01315c       0xd0 build/PIC32MZ2048_SK/production/_ext/1472/ConfigPerformance.o
+                0x9d01315c                vHardwareConfigurePerformance
+                0x9d0131e4                vHardwareUseMultiVectoredInterrupts
+
+.tlb.__pic32_tlb_init_ebi_sqi
+                0x9d01322c       0xbc
+ .tlb.__pic32_tlb_init_ebi_sqi
+                0x9d01322c       0xbc c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+                0x9d01322c                __pic32_tlb_init_ebi_sqi
+
+.text           0x9d0132e8       0xa8
+ .text          0x9d0132e8       0xa8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memset.o)
+                0x9d0132e8                memset
+
+.text.fpcmp     0x9d013390       0x9c
+ .text.fpcmp    0x9d013390       0x9c c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+                0x9d013390                __eqsf2
+                0x9d013390                __lesf2
+                0x9d013390                __gtsf2
+                0x9d013390                __nesf2
+                0x9d013390                fpcmp
+                0x9d013390                __gesf2
+                0x9d013390                __ltsf2
+
+.text           0x9d01342c       0x98
+ .text          0x9d01342c       0x98 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(memcmp.o)
+                0x9d01342c                memcmp
+
+.rodata         0x9d000110       0x64
+ .rodata        0x9d000110       0x64 build/PIC32MZ2048_SK/production/_ext/1472/flop_mz.o
+
+.text.sitofp    0x9d000190       0x60
+ .text.sitofp   0x9d000190       0x60 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+                0x9d000190                sitofp
+                0x9d000190                litofp
+                0x9d000190                __floatsisf
+
+.text.main_entry
+                0x9d0134c4       0x4c
+ .text.main_entry
+                0x9d0134c4       0x4c c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
+                0x9d0134f0                __crt0_exit
+
+.text           0x9d013510       0x4c
+ .text          0x9d013510       0x4c c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2\libgcc.a(floatunsisf.o)
+                0x9d013510                __floatunsisf
+
+.rodata         0x9d01355c       0x90
+ .rodata        0x9d01355c       0x48 build/PIC32MZ2048_SK/production/_ext/1163846883/dynamic.o
+ .rodata        0x9d0135a4       0x48 build/PIC32MZ2048_SK/production/_ext/332309698/port.o
+                0x9d0135b8                xISRStackTop
+
+.text._bootstrap_exception_handler
+                0x9d0135ec       0x48
+ .text._bootstrap_exception_handler
+                0x9d0135ec       0x48 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+                0x9d0135ec                _bootstrap_exception_handler
+
+.text._cache_err_exception_handler
+                0x9d013634       0x48
+ .text._cache_err_exception_handler
+                0x9d013634       0x48 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+                0x9d013634                _cache_err_exception_handler
+
+.text._simple_tlb_refill_exception_handler
+                0x9d01367c       0x48
+ .text._simple_tlb_refill_exception_handler
+                0x9d01367c       0x48 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+                0x9d01367c                _simple_tlb_refill_exception_handler
+
+.text           0x9d0136c4       0x44
+ .text          0x9d0136c4       0x44 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\pic32_software_reset.o
+                0x9d0136c4                __pic32_software_reset
+
+.rodata         0x9d013708      0x2bc
+ .rodata        0x9d013708       0x40 build/PIC32MZ2048_SK/production/_ext/1163846883/GenQTest.o
+ .rodata        0x9d013748       0x40 build/PIC32MZ2048_SK/production/_ext/1163846883/EventGroupsDemo.o
+ .rodata        0x9d013788       0x38 build/PIC32MZ2048_SK/production/_ext/1163846883/recmutex.o
+ .rodata        0x9d0137c0       0x34 build/PIC32MZ2048_SK/production/_ext/1472/main_full.o
+ .rodata        0x9d0137f4       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/IntQueue.o
+ .rodata        0x9d013824       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueOverwrite.o
+ .rodata        0x9d013854       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/QueueSet.o
+ .rodata        0x9d013884       0x30 build/PIC32MZ2048_SK/production/_ext/1163846883/countsem.o
+ .rodata        0x9d0138b4       0x30 build/PIC32MZ2048_SK/production/_ext/1884096877/heap_4.o
+ .rodata        0x9d0138e4       0x24 build/PIC32MZ2048_SK/production/_ext/449926602/timers.o
+ .rodata        0x9d013908       0x24 build/PIC32MZ2048_SK/production/_ext/1472/main_blinky.o
+ .rodata        0x9d01392c       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/QPeek.o
+ .rodata        0x9d01394c       0x20 build/PIC32MZ2048_SK/production/_ext/1163846883/semtest.o
+ .rodata        0x9d01396c       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/tasks.o
+ .rodata        0x9d01398c       0x20 build/PIC32MZ2048_SK/production/_ext/449926602/event_groups.o
+ .rodata        0x9d0139ac       0x18 build/PIC32MZ2048_SK/production/_ext/449926602/queue.o
+
+.text           0x9d0139c4       0x18
+ .text          0x9d0139c4       0x18 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-nmi-handler.o)
+                0x9d0139c4                _nmi_handler
+
+.rodata         0x9d0001f0       0x10
+ .rodata        0x9d0001f0       0x10 build/PIC32MZ2048_SK/production/_ext/1163846883/blocktim.o
+
+.rodata         0x9d000174        0x8
+ .rodata        0x9d000174        0x8 build/PIC32MZ2048_SK/production/_ext/1163846883/flash_timer.o
+
+.rodata         0x9d0000ec        0x8
+ .rodata        0x9d0000ec        0x8 build/PIC32MZ2048_SK/production/_ext/1472/ISRTriggeredTask.o
+
+.text._on_reset
+                0x9d0000f4        0x8
+ .text._on_reset
+                0x9d0000f4        0x8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+                0x9d0000f4                _on_reset
+
+.text._on_bootstrap
+                0x9d0139dc        0x8
+ .text._on_bootstrap
+                0x9d0139dc        0x8 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+                0x9d0139dc                _on_bootstrap
+
+.text%z113      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(sitofp.o)
+
+.text%z114      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fpcmp.o)
+
+.text%z115      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32subadd.o)
+
+.text%z116      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32mul.o)
+
+.text%z117      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libm.a(fp32div.o)
+
+.text%z118      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-simple-tlb-refill-exception-handler.o)
+
+.text%z119      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-cache-err-exception-handler.o)
+
+.text%z120      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(defaultinterrupt.o)
+
+.text%z121      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(simple-tlb-refill-exception.o)
+
+.text%z122      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(cache-err-exception.o)
+
+.text%z123      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(general-exception.o)
+
+.text%z124      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_tlb_ebi_sqi.o)
+
+.text%z125      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(pic32_init_cache.o)
+
+.text%z126      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-bootstrap.o)
+
+.text%z127      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-on-reset.o)
+
+.text%z128      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\libpic32.a(default-bootstrap-exception-handler.o)
+
+.text%z129      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\vector_offset_init.o
+
+.text%z130      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\processor.o
+
+.text%z131      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144\default_isr_vectors.o
+
+.text%z132      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib\debug-exception-return.o
+
+.text%z133      0x00000000        0x0
+ .text          0x00000000        0x0 c:/program files (x86)/microchip/xc32/v1.33/bin/bin/../../lib/gcc/pic32mx/4.5.2/../../../../pic32mx/lib/./proc/32MZ2048ECG144/crt0_mips32r2.o
