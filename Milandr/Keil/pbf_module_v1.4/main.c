@@ -546,13 +546,17 @@ int main()
 	// interrupts
 	NVIC_EnableIRQ(Timer2_IRQn); // Разрешение прерывания для T2
 	NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
+	
+	NVIC_SetPriority(UART1_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY>>4);
+	NVIC_SetPriority(Timer2_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY>>3);
+	
 	__enable_irq();	      	     // Enable Interrupts global
 	
 	HV_SUPPLY_ON;								 // HV supply EN
 
 	// tasks
 	xTaskCreate(task_ModbusSM,"ModbusSM",  configMINIMAL_STACK_SIZE*2,NULL,2,NULL);
-	//xTaskCreate(task_OvercurrentSM,"OvercurrentSM",configMINIMAL_STACK_SIZE,NULL,1,NULL);
+	xTaskCreate(task_OvercurrentSM,"OvercurrentSM",configMINIMAL_STACK_SIZE,NULL,1,NULL);
 	
 	MDR_TIMER2->CNTRL |= 1;			 // V set PID-regulator timer start
 	

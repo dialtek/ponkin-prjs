@@ -1,15 +1,14 @@
 //===================================================================================================================================//
 #include <xc.h>
 #include "fuses.h"
+                                          // PIC32MZ2048EFH144-I/PH
+#define LED_TRIS      TRISKbits.TRISK4    // macro for direction register bit of the LED pin
+#define LED           LATKbits.LATK4      // macro for output register bit of the LED pin
 
-#define LED_TRIS      TRISHbits.TRISH2    // macro for direction register bit of the LED pin
-#define LED_LAT       LATHbits.LATH2      // macro for output register bit of the LED pin
-#define LED_TRIS15    TRISHbits.TRISH15   // macro for direction register bit of the LED pin
-#define LED_LAT15     LATHbits.LATH15     // macro for output register bit of the LED pin
 #define _ISR_PSV __attribute__((__interrupt__, __auto_psv__))
-#define FPB 100000000
+#define FPB 100000000 // 100 M
 #define Desired_Baud_Rate 115200
-#define U1BRG1 ((FPB/Desired_Baud_Rate)/4) - 1 // = 650.042
+#define U2BRG1 ((FPB/Desired_Baud_Rate)/4) - 1 // = 650.042
 int var = 0;
 //==================================================================================================================================//
 T8_delay_tmr_init()
@@ -28,7 +27,7 @@ T8_delay_tmr_init()
    // T8CONbits.ON = 1;
 }
 //===================================================================================================================================//
-static void PIC32MZ_CPU_Init(void)
+void PIC32MZ_CPU_Init(void)
 {
     /* Unlock */
     SYSKEY = 0x00000000;
@@ -36,7 +35,7 @@ static void PIC32MZ_CPU_Init(void)
     SYSKEY = 0x556699AA;
 
     /* PBCLK8: EBI */
-    while (PB8DIVbits.PBDIVRDY == 0); //
+    while (PB8DIVbits.PBDIVRDY == 0); // 0000001 = PBCLKx is SYSCLK divided by 2 !!!
     PB8DIVbits.PBDIV = 1;
     PB8DIVbits.ON = 1;
 
@@ -52,7 +51,7 @@ static void PIC32MZ_CPU_Init(void)
 
     /* PBCLK4: Ports */
     while (PB4DIVbits.PBDIVRDY == 0);
-    PB4DIVbits.PBDIV = 9;
+    PB4DIVbits.PBDIV = 1;
     PB4DIVbits.ON = 1;
 
     /* PBCLK3: ADC, Comparator, Timers, Output Compare, Input Capture */
@@ -67,17 +66,14 @@ static void PIC32MZ_CPU_Init(void)
 
     /* PBCLK1: Always ON */
     while (PB1DIVbits.PBDIVRDY == 0);
-    PB1DIVbits.PBDIV = 9;
+    PB1DIVbits.PBDIV = 1;
 
     /* Configue Reference Clock Outputs */
     REFO1CON = 0;
     REFO2CON = 0;
     REFO3CON = 0;
     REFO4CON = 0;
-
-    RPA14Rbits.RPA14R = 0x5;    /* RPA14 is used by SDO1 */
-    SDI1Rbits.SDI1R = 0x2;      /* SDI1 is set to RPF4 */
-
+ 
     /* Lock */
     SYSKEY = 0x33333333;
 
@@ -112,33 +108,38 @@ void delay_ms(unsigned long ms)
     delay_us(ms * 1000UL);
 }
 //==================================================================================================================================//
-void UART1_init()
+void UART2_init()
 {
-    IPC28bits.U1RXIP = 7;
-    IFS3bits.U1RXIF = 0;                // Reset UART RX interrupt flag
-    IFS3bits.U1TXIF = 0;
-    IEC3bits.U1RXIE = 1;                // Enable UART1 RX interrupt
+    //IPC36bits.U2RXIP = 7;
+    IFS4bits.U2RXIF = 0;                // Reset UART RX interrupt flag
     
-    CFGCONbits.IOLOCK = 0; 
-    U1RXRbits.U1RXR = 0b0010; 
-    RPF5Rbits.RPF5R = 0b0001; 
+    IFS4bits.U2TXIF = 0;
+    IEC4bits.U2RXIE = 0;                // Enable UART2 RX interrupt
+    
+    CFGCONbits.IOLOCK = 0;   
+    // rpd4 rpd5 - diagnostic uart
+    TRISDbits.TRISD4 = 1;
+    RPD5Rbits.RPD5R = 0x2;      /* U2 TX is set to RPD5 */
+    
+    TRISDbits.TRISD5 = 0;
+    U2RXRbits.U2RXR = 0x4;      /* U2 RX is set to RPD4 */
     CFGCONbits.IOLOCK = 1;
     
-    U1BRG = U1BRG1;
-    U1MODEbits.UARTEN = 1;                                      
-    U1MODEbits.UEN = 0;                                         // U1TX and U1RX are enabled and used
-    U1MODEbits.PDSEL = 0;                                       // No parity, 8 bit data;
-    U1MODEbits.ABAUD = 0;                                       // Baud rate measurment disabled or completed;
-    U1MODEbits.BRGH = 1;                                        // High-speed mode - 4x baud clock enabled;
-    U1MODEbits.STSEL = 0;                                       // 1 stop bit
-    U1MODEbits.ON = 1;
+    U2BRG = U2BRG1;
+    U2MODEbits.UARTEN = 1;                                      
+    U2MODEbits.UEN = 0;                                         // U2TX and U2RX are enabled and used
+    U2MODEbits.PDSEL = 0;                                       // No parity, 8 bit data;
+    U2MODEbits.ABAUD = 0;                                       // Baud rate measurment disabled or completed;
+    U2MODEbits.BRGH = 1;                                        // High-speed mode - 4x baud clock enabled;
+    U2MODEbits.STSEL = 0;                                       // 1 stop bit
+    U2MODEbits.ON = 1;
     
-    U1STAbits.URXISEL0 = 0;
-    U1STAbits.URXISEL1 = 0;
-    U1STAbits.UTXINV  = 0;
-    U1STAbits.UTXEN = 1;
-    U1STAbits.URXEN = 1;
-    U1STAbits.URXISEL = 0;
+    U2STAbits.URXISEL0 = 0;
+    U2STAbits.URXISEL1 = 0;
+    U2STAbits.UTXINV  = 0;
+    U2STAbits.UTXEN = 1;
+    U2STAbits.URXEN = 1;
+    U2STAbits.URXISEL = 0;
 }
 //===================================================================================================================================//
 void __attribute__((vector(_UART1_RX_VECTOR), interrupt(IPL7SRS), nomips16)) UART1RxISR(void)
@@ -147,28 +148,30 @@ void __attribute__((vector(_UART1_RX_VECTOR), interrupt(IPL7SRS), nomips16)) UAR
     IFS3bits.U1RXIF = 0;                            //Clear UART1 RX interrupt
 }
 //===================================================================================================================================//
-void uart_send_hex(unsigned char byte)
+void uart2_send_byte(unsigned char byte)
 {
-    U1TXREG = byte;
-    while(U1STAbits.TRMT == 0) { }
+    U2TXREG = byte;
+    while(U2STAbits.TRMT == 0) { }
 }
 //==================================================================================================================================//
 int main()
 {
     PIC32MZ_CPU_Init();
-    UART1_init();
+    UART2_init();
     LED_TRIS = 0;   // LED set as output
-    LED_TRIS15 = 0;
     T8_delay_tmr_init();
 
-    asm volatile("ei");
+    //asm volatile("ei"); // enable int global
    
+    LED = 1;
+    
     while (1)
     {
-       LATHbits.LATH2 = 1;
-       delay_ms(100);
-       LATHbits.LATH2 = 0;
-       delay_ms(100);
+       LED = 1;
+       delay_ms(50);
+       LED = 0;
+       delay_ms(50);
+       uart2_send_byte(0x42);
     }
 }
 //=================================================================================================================================//

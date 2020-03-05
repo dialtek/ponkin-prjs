@@ -88,10 +88,6 @@ UBaseType_t UartGetQcnt(void)
 }
 
 
-
-
-
-
 void UartResetQueue(void)
 { 
    xQueueReset(xRxedBytes);

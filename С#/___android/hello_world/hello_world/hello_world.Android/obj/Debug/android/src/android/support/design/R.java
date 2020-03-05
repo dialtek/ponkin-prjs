@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package android.support.design;
+package android.support.coreui;
 
 public final class R {
     public static final class anim {

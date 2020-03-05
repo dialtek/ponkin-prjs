@@ -344,7 +344,7 @@ const char modbus_ver    = 41;           // версия MODBUS
    /// обнуление регистров
    UartInit();
    modbus_reset();
-   RxSemaphore = xSemaphoreCreateCounting(10, 0);
+   RxSemaphore = xSemaphoreCreateCounting(50, 0);
    
    //eeprom_rd_regs_H();
    //eeprom_rd_regs_H(); // !? костыль, если читать 1 раз - всегда все рег.= 0xffff

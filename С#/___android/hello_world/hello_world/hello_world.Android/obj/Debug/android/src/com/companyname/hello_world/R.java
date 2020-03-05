@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.companyname.hello_world;
+package android.support.v7.cardview;
 
 public final class R {
     public static final class anim {
