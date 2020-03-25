@@ -457,6 +457,16 @@
               <FileType>1</FileType>
               <FilePath>.\src\c\mdr_adc.c</FilePath>
             </File>
+            <File>
+              <FileName>pbf_module.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\h\pbf_module.h</FilePath>
+            </File>
+            <File>
+              <FileName>pbf_module.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\src\c\pbf_module.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -25,3 +25,4 @@
 .\objects\mdr_uart.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h
 .\objects\mdr_uart.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h
 .\objects\mdr_uart.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+.\objects\mdr_uart.o: .\src\h\pbf_module.h

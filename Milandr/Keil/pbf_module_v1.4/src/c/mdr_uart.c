@@ -8,6 +8,8 @@ static volatile QueueHandle_t xRxedBytes;
 static volatile uint8_t RxByte;
 static UBaseType_t RxBytesCnt;
 
+static BaseType_t rez = pdFALSE;
+
 volatile unsigned char timer_state = 0;
 extern SemaphoreHandle_t RxSemaphore;
 
@@ -18,10 +20,6 @@ void UartInit(void)								// U1 init
 	
 	// UART1 init - MODBUS	
 		
-  MDR_PORTB->FUNC |= ((2 << 5*2) | (2 << 6*2)); //режим работы порта
-  MDR_PORTB->ANALOG |= ((1 << 5) | (1 << 6));   //цифровой
-  MDR_PORTB->PWR |= ((3 << 5*2) | (3 << 6*2));  //максимально быcтрый
-
   MDR_RST_CLK->PER_CLOCK |= (1UL << 6); 	//тактирование UART1
   MDR_RST_CLK->UART_CLOCK = (4 						/*установка делителя для UART1 = */
   |(0 << 8) 															/*установка делителя для UART2 = undefined*/
@@ -68,18 +66,21 @@ int8_t UartGetByte(uint8_t  *pcRxedChar, TickType_t xBlockTime )
 }
 
 
-
-
 __irq void UART1_IRQHandler(void) // U1 rx interrupt handler UART1
 {
 
 	RxByte = (uint8_t)MDR_UART1->DR; 
 	MDR_UART1->ICR  = 1<<4; // сброс прерывания от приемника  
 
-	xQueueSendFromISR(xRxedBytes, (void*)&RxByte, 0);
+	rez = pdFALSE; 
+	
+	xQueueSendFromISR(xRxedBytes, (void*)&RxByte, &rez);
 
 	if(uxQueueMessagesWaitingFromISR(xRxedBytes) > 7)
 		xSemaphoreGiveFromISR(RxSemaphore,&xHigherPriorityTaskWoken);
+	
+	 if(rez == pdTRUE)
+			portEND_SWITCHING_ISR(rez);
 }
 
 UBaseType_t UartGetQcnt(void)

@@ -16,6 +16,7 @@
 .\objects\main.o: .\RTOS\include\mpu_wrappers.h
 .\objects\main.o: .\RTOS\include\task.h
 .\objects\main.o: .\RTOS\include\list.h
+.\objects\main.o: .\RTOS\include\semphr.h
 .\objects\main.o: .\RTOS\include\queue.h
 .\objects\main.o: .\src\h\mdr_modbus.h
 .\objects\main.o: .\src\h\mdr_adc.h
@@ -23,3 +24,4 @@
 .\objects\main.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Config\MDR32F9Qx_config.h
 .\objects\main.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_lib.h
 .\objects\main.o: C:\Users\home desktop PC\AppData\Local\Arm\Packs\Keil\MDR1986BExx\1.51\Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
+.\objects\main.o: .\src\h\pbf_module.h

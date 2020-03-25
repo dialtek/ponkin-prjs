@@ -1,9 +1,6 @@
-#include "FreeRTOS.h"
-#include "queue.h"
-#include "semphr.h"
+#include "main.h"
 #include "mdr_modbus.h"
 #include <MDR32F9Qx_port.h>
-#include "main.h"
 #include "mdr_uart.h"
 
 #define USE_JTAG_A
@@ -72,7 +69,7 @@ const char modbus_ver    = 41;           // версия MODBUS
 	/* формирование и отправка ответа на команду записи одного регистра */
   volatile void modbus_wsr_answer() { 
     /// ответ на команды записи в регистр
-    
+    modbus_reg_addr += 1000; // !!!!
     // расчет CRC
     crc_buf[0] = (modbus_id == dev_id) ? dev_id : com_dev_id;
     crc_buf[1] = (uint8_t) MODBUS_WSR_CMD;
@@ -298,6 +295,7 @@ const char modbus_ver    = 41;           // версия MODBUS
         case MODBUS_RHR_CMD:        // если команда - чтение R/W регистров
             if(modbus_rx_CRC_check(MODBUS_RHR_CMD) == MODBUS_RHR_CMD)
             {
+								modbus_reg_addr -= 1000; 			// избавляемся от смещения в адресе
                 rx_cmd_code = MODBUS_RHR_CMD;
             }
         break;
@@ -305,6 +303,7 @@ const char modbus_ver    = 41;           // версия MODBUS
         case MODBUS_WSR_CMD:       // если команда - чтение Read-only регистров
             if(modbus_rx_CRC_check(MODBUS_WSR_CMD) == MODBUS_WSR_CMD)
             {
+								modbus_reg_addr -= 1000; 			// избавляемся от смещения в адресе
                 rx_cmd_code = MODBUS_WSR_CMD;
             }
         break;
@@ -312,6 +311,7 @@ const char modbus_ver    = 41;           // версия MODBUS
         case MODBUS_RIR_CMD: 
             if(modbus_rx_CRC_check(MODBUS_RIR_CMD) == MODBUS_RIR_CMD)
             {
+								modbus_reg_addr -= 1000; 			// избавляемся от смещения в адресе
                 rx_cmd_code = MODBUS_RIR_CMD;
             }
         break;

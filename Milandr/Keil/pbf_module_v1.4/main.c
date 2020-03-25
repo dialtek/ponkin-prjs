@@ -1,7 +1,5 @@
 #include "main.h"
 
-PORT_InitTypeDef PortInitStructure;
-
 // structs
 volatile ADC_meas MeasDataTx;
 volatile PIDreg PID;
@@ -15,6 +13,13 @@ volatile QueueHandle_t LoadCurrent_q; 		  // HV load current
 volatile QueueHandle_t DistVset_q; 		  		// Modbus sets From User   
 volatile QueueHandle_t OvercurrBit_q; 		  // overcurrent status to modbus
 volatile QueueHandle_t DistHVenStatus_q; 		// HV state queue 
+volatile QueueHandle_t DistHVenStatus_q; 		// HV state queue 
+
+volatile TaskHandle_t TrigTaskHandle;
+
+SemaphoreHandle_t ExtTrigSemph;
+
+//=============================== USER VARS ==================================//
 
 volatile uint16_t V2set = 0;		
 volatile uint16_t DAC2set = 0;	
@@ -26,27 +31,9 @@ volatile uint16_t Imeas_old = 0;						// temp I meas buffer
 
 volatile uint16_t DistHVen = 0;
 
-//======================== USER FUNCS ===========================//
+volatile BaseType_t ExtTrigInt = pdFALSE;
+volatile BaseType_t PIDregInt  = pdFALSE;
 
-// measured counts to clean I conversion
-uint16_t CalcCurrent(uint16_t V_meas, uint16_t Imeas)
-{
-	uint32_t Iload_meas = 0;
-	float 	 Iload_int  = 0;
-	
-	Iload_meas = (uint32_t)(((float)Imeas * DAC_lsb)/k); // load current
-	Iload_meas = (Iload_meas * 1000)/Rs; 								 // load current V to I converison
-
-	Iload_int  = ((float)V_meas * 1000000.0)/Rint;		 // internal load calc
-	Iload_meas -= Iload_int;														 // internal load compensation
-
-	if(Iload_meas < 0)		// correct if minus
-	 Iload_meas = 0;
-	
-	return (uint16_t)Iload_meas;
-}
-
-//===============================================================//
 void PIDregInit(void)
 {
 	PID.curr_error = 0;
@@ -55,114 +42,28 @@ void PIDregInit(void)
 	
 	DAC2set = 0;
 	
-	//PID.kP = 75.00;
-	PID.kP = 30.0;
-	PID.kI = 0.05;
-	PID.kD = 0.001;
+	PID.kP = 55.0;
+	PID.kI = 0.0005;
+	PID.kD = 0;
 }
 
-void OSC_init(void)
-{
-
-#define	_HSEBYP	0   // 0 - режим осциллятора, 1 - режим внешнего генератора
-#define	_HSEON  1	  // 0 - выключен, 1 - включен
-
-//---CLK-----------------------------------------------------------------------------------------------------
-
-  MDR_RST_CLK->HS_CONTROL = (_HSEBYP<<1) + _HSEON; 
-  while ((MDR_RST_CLK->CLOCK_STATUS & 0x04) != 0x04);     // ждем пока HSE выйдет в рабочий режим
-  MDR_RST_CLK->PLL_CONTROL = ((1 << 2) | (7 << 8)); 	  // вкл. PLL | коэф. умножения = 2
-
-  while((MDR_RST_CLK->CLOCK_STATUS & 0x02) != 0x02);      // ждем когда PLL выйдет в раб. режим
-
-  MDR_RST_CLK->CPU_CLOCK  = (2                           // источник для CPU_C1 - HSE
-						   |(1 << 2)                      // источник для CPU_C2 - PLLCPUo 
-						   |(1 << 4)                      // предделитель для CPU_C3 - CPU_C2
-						   |(1 << 8));                    // источник для HCLK
-  MDR_RST_CLK->PER_CLOCK = 0xFFFFFFFF;        // вкл. тактирование всей перефирии
-  // HCLK = 80 МГц
-}
-   
-
-
-
-
-
-
-
-
-void GPIO_init (void)
-{  
-  
-  MDR_PORTA->OE      = 0xFFDD;          // PA1- вход синхронизации, PA5 - тумблер режима упр
-  MDR_PORTA->FUNC    = (2<<2);          // функция - порт, для РА5 альтернативная функция 
-  MDR_PORTA->ANALOG  = 0xFFFF;          // режим потра - цифровой
-  MDR_PORTA->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
-  //---------------------------------------------------------------------------//
-  // Инициализация структуры для настройки порта
-	PORT_InitTypeDef PORTB_config_struct;
-	PORT_StructInit(&PORTB_config_struct);
+//=============================== IRQs ======================================//
 	
-	// Настройка порта
-	PORTB_config_struct.PORT_Pin = PORT_Pin_9  & (~JTAG_PINS(MDR_PORTB));  // Чтобы не отваливался JTAG,
-																																				 // исключаем из инициализации JTAG-овские пины
-	PORTB_config_struct.PORT_OE = PORT_OE_OUT;
-	PORTB_config_struct.PORT_MODE = PORT_MODE_DIGITAL;
-	PORTB_config_struct.PORT_SPEED = PORT_SPEED_MAXFAST;
-	PORT_Init(MDR_PORTB, &PORTB_config_struct);
-  //---------------------------------------------------------------------------//  
-  MDR_PORTC->OE     = 0xffff;                    
-  MDR_PORTC->FUNC   = 0x0000;                
-  MDR_PORTC->ANALOG = 0xFFFF;      
-  MDR_PORTC->PWR    = 0xFFFFFFFF;       // максимально быстрый фронт
-  //---------------------------------------------------------------------------//
-  MDR_PORTD->OE      = 0x00ca;          // порт D на вход, PD2 - ADC_CH2, PD4 - ADC_CH4, PD5 - ADC_CH5
-  MDR_PORTD->FUNC    = 0x0000;          // функция - порт 
-  MDR_PORTD->ANALOG  = 0xffcb;          // режим потра - цифровой, но PD2 - ADC_CH2, PD4 - ADC_CH4, PD5 - ADC_CH5
-  MDR_PORTD->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
-  //---------------------------------------------------------------------------//
-  MDR_PORTE->OE = 0xffbf;               // порт E на выход, PE6 - вход - анализ вкл. тумблера высокого
-  MDR_PORTE->FUNC = 0x0000;  					  // функция - порт 
-  MDR_PORTE->ANALOG  = 0xfffe;          // режим потра - цифровой, PE0 - DAC2 out
-  MDR_PORTE->PWR    = 0xFFFFFFFE;       // максимально быстрый фронт	
-  //---------------------------------------------------------------------------//
-  MDR_PORTF->OE = 0xffb7;               // порт F на выход,PF3 - RxD
-  MDR_PORTF->FUNC = (2 << 6)|		    	  // режим  пинов 1, 2, 3, 4 порта 
-					(2 << 4) |										// - альтернативный, задействован модуль SSP1
-					(2 << 2) |
-					(2 << 0);
-  MDR_PORTF->ANALOG  = 0xffff;          // режим потра - цифровой
-  MDR_PORTF->PWR     = 0xFFFFFFFF;      // максимально быстрый фронт ( порядка 10 нс)
-}
-
-
-void T2_init(void) {
-          
- // 200 us int 
-    
- MDR_RST_CLK->TIM_CLOCK  |= (1 << 25) | (3<<8); // разрешение тактирования Timer2, TIM2_CLK = HCLK/8											
- MDR_TIMER2->CNTRL = 0x00000000;        	// Режим инициализации таймера, откл
- MDR_TIMER2->CNT   = 0x0000;       			  // Начальное значение счетчика
- MDR_TIMER2->PSG   = 0;                   // Предделитель частоты
- MDR_TIMER2->ARR   = 1999;                // Основание счета, прерывание каждые 200 us - 1999
- MDR_TIMER2->IE    = 0x00000002;          // разрешение прерывания по переполнению TIMER2  
- MDR_TIMER2->STATUS= 0x00000000;          // сбрасываем флаги
+__irq void Timer1_IRQHandler(void) 
+//функция обработки прерывания irq Timer 1 - стробы запуска 
+{ 
+	 ExtTrigInt = pdFALSE; 
 	
+	 xSemaphoreGiveFromISR(ExtTrigSemph,NULL);
+	 
+	 MDR_TIMER1->CNT = 0;                     // установка знач. счетчика на 0
+   MDR_TIMER1->STATUS = 0x0000;             // сброс статуса прерывания
+   NVIC_ClearPendingIRQ(Timer1_IRQn);       // обязательно! 
+	
+	 if(ExtTrigInt == pdTRUE)
+		portEND_SWITCHING_ISR(ExtTrigInt);
+
 }
-
-// DAC
-void MCU_DAC2_init (void){
-    
-    MDR_DAC->CFG = (0<<4) | // DAC1 DAC2 асинхронны
-                   (1<<3) | // DAC2 enabled  
-                   (0<<2) | // DAC1 disabled
-                   (0<<1) | // DAC2 ref - AUcc voltage
-                   (0<<1);  // DAC1 ref - AUcc voltage
-  }
-
-
-//===============================================================//
-
 // IRQ, ADC measurements & PID - 200 us period
 __irq void Timer2_IRQHandler(void)
 {
@@ -270,14 +171,22 @@ __irq void Timer2_IRQHandler(void)
 			PID.I = 0;
 			PID.D = 0;
 		 }
+		 
+		//PIDregInt = pdFALSE; 
+	
+	 // if(PIDregInt == pdTRUE)
+		//	portEND_SWITCHING_ISR(PIDregInt);
 
 	  MDR_TIMER2->CNT = 0;                     // установка знач. счетчика на 0
     MDR_TIMER2->STATUS = 0x0000;             // сброс статуса прерывания
     NVIC_ClearPendingIRQ(Timer2_IRQn);       // обязательно!
 }
 
-//  overcurrent detect state machine
-void task_OvercurrentSM(void *pvParameters)
+
+//===============================================================//
+// USER TASKS
+
+void task_OvercurrentSM(void *pvParameters)	//  overcurrent detect state machine
 {
 	ADC_meas MeasDataRx_OC;
 	
@@ -285,7 +194,7 @@ void task_OvercurrentSM(void *pvParameters)
 	
   uint8_t overcurrent_bit = 0;      // статус-бит перегрузки по току: 0 - ок, 1 - сработала защита по току
   uint8_t overcurrent_count = 0;    // число срабатыаний перегрузки по току
-  uint8_t overcurrent_lim = 99;     // порог откл. HV при перегрузке по току
+  uint8_t overcurrent_lim = 20;     // порог откл. HV при перегрузке по току
   uint8_t overcurr_state = 0;              
 	
   uint16_t HV_sw_state = 0;         // статус-бит тумблера высокого: 0 - выкл, 1 - вкл
@@ -301,7 +210,10 @@ void task_OvercurrentSM(void *pvParameters)
 	MeasDataRx_OC.ImeasCounts = 0;		// clear I var
 	MeasDataRx_OC.VmeasCounts = 0;		// clear V var
 	
-	TickType_t OCtaskPerod = 10;			// this task period var
+	TickType_t OCtaskPerod = 50;			// this task period var
+	
+		
+	HV_SUPPLY_ON;										  // HV supply EN
 	
 	while(1)
 	{
@@ -328,8 +240,12 @@ void task_OvercurrentSM(void *pvParameters)
 		{
 			xQueueReceive(DistVset_q, &MeasDataRx_OC.VsetCounts,T);						// user V set receive 
 			V_set = (uint16_t)((float)MeasDataRx_OC.VsetCounts * DAC_lsb); 		// counts to V convert  
-		}			
-		
+		}	
+
+		set_delta	 = (int16_t)V_set - (int16_t)V_curr;
+			if(set_delta < 0) set_delta *= -1;
+		meas_delta = (int16_t)V_curr - (int16_t)V_prev;		
+			if(meas_delta < 0) meas_delta *= -1;
 		//------------ overcurrent protect state machine ------------//
 		
 		switch (overcurr_state)
@@ -340,27 +256,27 @@ void task_OvercurrentSM(void *pvParameters)
 					overcurr_state = 1;
 			break;
 		  //=====
-			case 1:	// delta check
-				  if(V_curr > V_prev || V_curr != V_set) /// !!!!
-						overcurr_state = 0; 
-					else
-						overcurr_state = 2; 
-			break;
+			case 1:	// delta check	
+				// if voltage is rising - it a cap. load - clear overcurrent state
+			  if( (set_delta > 5) && (meas_delta > 0) )
+					overcurr_state = 0;
+				else
+					overcurr_state = 2;	// it is not cap. load - its short 
+				
+				break;
 			//=====
 			case 2: // final OC check
 				if(overcurrent_count > overcurrent_lim)
         {
           overcurrent_bit = 1;
-          //OCtaskPerod = 100; 			   // set task peroid to ~1000 ms (slow check)
           HV_SUPPLY_OFF;             // выкл. высокое
 					OverCurrLED_ON;						 // OC LED EN
 					PIDregInit();
 					// overcurrent status send
-					//if(uxQueueMessagesWaiting(OvercurrBit_q) == 0)
-          //    xQueueReceive(OvercurrBit_q, &overcurrent_bit,T);
+					if(uxQueueMessagesWaiting(OvercurrBit_q) == 0)
+              xQueueReceive(OvercurrBit_q, &overcurrent_bit,T);
 					
 					overcurr_state = 0;
-					
         }
         else 
 					overcurrent_count++;       // инкремент попыток подачи высокого в режиме перегрузки по току
@@ -387,18 +303,19 @@ void task_OvercurrentSM(void *pvParameters)
 		 if(HV_sw_state_prev == OFF && HV_sw_state == ON)
 			HV_SUPPLY_ON;
 
-		 //holding_reg_write(15,overcurrent_count);
-		 //holding_reg_write(16,overcurr_state);
-		 //holding_reg_write(17,V_curr);
-		// holding_reg_write(18,V_prev);
- 
+//		 holding_reg_write(15,overcurrent_count);
+//		 holding_reg_write(16,overcurr_state);
+//		 holding_reg_write(17,set_delta);
+//		 holding_reg_write(18,meas_delta);
+// 
 		vTaskDelay(OCtaskPerod);
+		TRIG_LED_OFF;
 	}
 }
 
 
-// Modbus RTU over TCP state machine
-void task_ModbusSM(void *pvParameters)
+
+void task_ModbusSM(void *pvParameters)		  // Modbus RTU over TCP state machine
 {
 
   uint16_t wr_reg_addr = 0;       // modbus write reg addr
@@ -449,14 +366,12 @@ void task_ModbusSM(void *pvParameters)
            holding_reg_write(2,(uint16_t)Vset_meas);
 				   holding_reg_write(5,(uint16_t)Vfb_meas);
 					 holding_reg_write(6,CalcCurrent(Vfb_meas, MeasDataRx.ImeasCounts));
-					
-					 holding_reg_write(7,(uint16_t)PID.P);
-					 holding_reg_write(8,(uint16_t)PID.I);
+
 					 holding_reg_write(9,HVsupplyState);
-					 holding_reg_write(10,HV_SWITCH_ST);
-					 holding_reg_write(11,REMOTE_SWITCH_ST);		// 1 - remote, 0 - FP ctrl
-					 holding_reg_write(12,OvercurBit);					// 1 - overcurrent, 0 - normal work
-					 holding_reg_write(13,MeasDataRx.ImeasCounts);					 
+					 holding_reg_write(10,MAX_CURRENT);
+					 holding_reg_write(11,HV_SWITCH_ST);
+					 holding_reg_write(12,OvercurBit);					// 1 - overcurrent, 0 - normal work		
+					 holding_reg_write(13,REMOTE_SWITCH_ST);		// 1 - remote, 0 - FP ctrl
            modbus_rhr_answer(); // modbus rhr cmd answer
            
            Modbus_LED_OFF; 		  // LED toggle
@@ -468,6 +383,7 @@ void task_ModbusSM(void *pvParameters)
           // заполнение переменных пользователя данными из Модбас регистров 
            
            wr_reg_addr = get_wr_reg_addr();    // get address
+					 wr_reg_addr -= 1000;								 // избавляемся от смещения 
            RegisterValue = get_wr_reg_val();   // get the new value
            
            switch(wr_reg_addr)
@@ -522,6 +438,22 @@ void task_ModbusSM(void *pvParameters)
 } // end of task MODBUS
 
 
+void task_OnExtTrig(void *pvParameters)			// ext trig event handler task
+{
+	
+	while(1)
+	{
+    xSemaphoreTake(ExtTrigSemph,portMAX_DELAY); // wait for ext trig
+		
+		TRIG_LED_ON;                        	      // trig LED toggle
+		vTaskDelay(50);
+		TRIG_LED_OFF;
+	}
+}
+
+
+//===============================================================//
+
 int main()
 { 
 	// queues
@@ -535,7 +467,8 @@ int main()
 	// hardware init
 	OSC_init();
 	GPIO_init();
-	T2_init();
+	T1_init();			// ext sync
+	T2_init();			// PID regulator
 	MCU_ADC_init(5);
 	MCU_DAC2_init();
 	
@@ -543,22 +476,27 @@ int main()
 	PIDregInit();
 	modbus_init();
 
+	// tasks
+	xTaskCreate(task_ModbusSM,"ModbusSM", configMINIMAL_STACK_SIZE * 4,NULL,2,NULL);
+	xTaskCreate(task_OvercurrentSM,"OvercurrentSM",configMINIMAL_STACK_SIZE,NULL,1,NULL);
+  xTaskCreate(task_OnExtTrig,"OnExtTrig",configMINIMAL_STACK_SIZE,NULL,1,&TrigTaskHandle);
+	
+	// semph
+	ExtTrigSemph = xSemaphoreCreateCounting(100, 0);
+	
 	// interrupts
+	NVIC_SetPriorityGrouping(4);
+	NVIC_SetPriority(UART1_IRQn,  13);
+	NVIC_SetPriority(Timer1_IRQn, 12);
+	NVIC_SetPriority(Timer2_IRQn, 12);
+	
+	NVIC_EnableIRQ(Timer1_IRQn); // Разрешение прерывания для T1
 	NVIC_EnableIRQ(Timer2_IRQn); // Разрешение прерывания для T2
 	NVIC_EnableIRQ(UART1_IRQn);  // Разрешение прерывания для UART1
-	
-	NVIC_SetPriority(UART1_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY>>4);
-	NVIC_SetPriority(Timer2_IRQn, configMAX_SYSCALL_INTERRUPT_PRIORITY>>3);
-	
 	__enable_irq();	      	     // Enable Interrupts global
 	
-	HV_SUPPLY_ON;								 // HV supply EN
-
-	// tasks
-	xTaskCreate(task_ModbusSM,"ModbusSM",  configMINIMAL_STACK_SIZE*2,NULL,2,NULL);
-	xTaskCreate(task_OvercurrentSM,"OvercurrentSM",configMINIMAL_STACK_SIZE,NULL,1,NULL);
-	
 	MDR_TIMER2->CNTRL |= 1;			 // V set PID-regulator timer start
+	MDR_TIMER1->CNTRL |= 1;			 // ext trig timer start
 	
 	vTaskStartScheduler(); 			 // Запуск планировщика задач
 }
