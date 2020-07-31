@@ -1,0 +1,13 @@
+.\objects\lcd.o: ..\..\Generic\lcd.c
+.\objects\lcd.o: ..\..\Generic\lcd.h
+.\objects\lcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdarg.h
+.\objects\lcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\lcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\objects\lcd.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h
+.\objects\lcd.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h
+.\objects\lcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\lcd.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h
+.\objects\lcd.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h
+.\objects\lcd.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\lcd.o: ..\..\Generic\clk.h
+.\objects\lcd.o: ..\..\Generic\font.h

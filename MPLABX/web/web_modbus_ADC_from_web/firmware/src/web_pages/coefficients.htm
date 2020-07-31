@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Cryogenic temperature measurement module web-interface</title>
+<link href="mchp.css" rel="stylesheet" type="text/css" />
+<script src="mchp.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="shadow-one"><div id="shadow-two"><div id="shadow-three"><div id="shadow-four">
+<div id="page">
+
+<div style="padding:0 0 65px 5px"><img src="Dialtek-emblema.png" alt="Dialtek" align="left"/><img src="LHEP-emblema.png" alt="LHEP" align="right"/></div>
+
+<div id="title">
+<table style="padding-left: 10%; width: 95%; text-align: center;"><tr>
+<td>PKT-8</td><td>CRYOGENIC TEMPERATURE MEASUREMENT MODULE</td><td>WEB INTERFACE</td>
+</tr></table>
+</div>
+
+<div id="menu">
+<a href="index.htm">Measurements</a>
+<a href="device_settings.htm">Device settings</a>
+<a href="coefficients.htm">Coefficients</a>
+<a href="network_settings.htm">Network settings</a>
+<!--
+<a href="index.htm">Overview</a>
+<a href="dynvars.htm">Dynamic Variables</a>
+<a href="forms.htm">Processing Forms</a>
+<a href="auth.htm">Authentication</a>
+<a href="cookies.htm">Cookies</a>
+<a href="upload.htm">Uploading Files</a>
+<a href="email">Sending Emails</a>
+<a href="dyndns">Dynamic DNS</a>
+<a href="protect/config.htm">Network Configuration</a>
+<a href="snmp/snmpconfig.htm">SNMP Configuration</a>
+-->
+</div>
+
+<div id="content">
+
+<p class="page_title"><b>COEFFICIENTS</b></p>
+
+
+<style>
+.coefficientsbox{
+	align: center;
+}
+
+.channelbox {
+	float: left;
+	width: 25%;
+}
+
+.coefficientinput
+{
+    width: 100px;
+    height: 15px;
+    border-radius: 0px;
+}
+</style>
+
+<form method="get" action="coefficients.htm" style="text-align: center;">
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 1</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch1_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 2</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch2_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 3</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch3_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 4</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch4_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 5</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch5_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 6</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch6_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 7</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch7_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<div class="channelbox">
+<table style="width: 100%;" cellpadding=0 cellspacing=0>
+<tr><td style="text-align: inherit;"><br /></td></tr>
+<tr><td style="text-align: inherit;">Channel 8</td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef1" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef2" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef3" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef4" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef5" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef6" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef7" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef8" class="coefficientinput" maxlength="15"/></td></tr>
+<tr><td style="text-align: inherit;"><input type="text" name="ch8_coef9" class="coefficientinput" maxlength="15"/></td></tr>
+</table>
+</div>
+
+<input type="submit" value="Apply" style="margin-top:20px;">
+</form>
+
+</div>
+
+<div class="spacer">&nbsp;</div>
+<div id="page_status">Last update: <span id="page_update_time">???</span> <div id="updating_status">&nbsp;</div></div>
+<div id="footer">Dialtek, 2020</div>
+
+</div></div></div></div></div>
+
+</body>
+</html>
+

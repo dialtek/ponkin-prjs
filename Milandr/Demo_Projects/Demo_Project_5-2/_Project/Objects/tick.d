@@ -1,0 +1,9 @@
+.\objects\tick.o: ..\..\Generic\tick.c
+.\objects\tick.o: ..\..\Generic\tick.h
+.\objects\tick.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h
+.\objects\tick.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h
+.\objects\tick.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tick.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h
+.\objects\tick.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h
+.\objects\tick.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\tick.o: ..\..\Generic\clk.h

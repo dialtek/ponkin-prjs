@@ -10,6 +10,10 @@
             <file>file:/C:/E/Dev/FreeRTOS/WorkingCopy/FreeRTOS/Source/portable/MPLAB/PIC32MZ/port.c</file>
             <file>file:/C:/E/Dev/FreeRTOS/WorkingCopy/FreeRTOS/Source/portable/MPLAB/PIC32MZ/port_asm.S</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/E:/MEGAdrive/ponkin-prjs/MPLABX/FreeRTOSv10.2.0_pic32mz/FreeRTOS/Source/portable/MPLAB/PIC32MZ/port.c</file>
+            <file>file:/E:/MEGAdrive/ponkin-prjs/MPLABX/FreeRTOSv10.2.0_pic32mz/FreeRTOS/Demo/PIC32MZ_MPLAB/main.c</file>
+            <file>file:/E:/MEGAdrive/ponkin-prjs/MPLABX/FreeRTOSv10.2.0_pic32mz/FreeRTOS/Demo/PIC32MZ_MPLAB/main_blinky.c</file>
+        </group>
     </open-files>
 </project-private>

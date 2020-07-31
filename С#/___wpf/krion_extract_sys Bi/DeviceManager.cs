@@ -53,7 +53,7 @@ namespace extract_system
             id = "6";
             shift_vert = 44;
 
-            var device_2 = new DevicePBF(id, shift, shift_vert, "C22", SendMessage);
+            var device_2 = new DevicePBF(id, shift, shift_vert, "C23", SendMessage);
             device_2.CreateControls(_form);
             devices.Add(id, device_2);
 

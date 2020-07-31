@@ -1,0 +1,33 @@
+build/pic32mz_ef_sk/production/_ext/1314174413/drv_ethmac_lib.o:  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/drv_ethmac_lib.c  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/drv_ethmac_lib.h  \
+ ../src/config/pic32mz_ef_sk/system_config.h  \
+ ../src/config/pic32mz_ef_sk/configuration.h  \
+ ../src/config/pic32mz_ef_sk/user.h  \
+ ../src/config/pic32mz_ef_sk/toolchain_specifics.h  \
+ ../src/config/pic32mz_ef_sk/system/debug/sys_debug.h  \
+ ../src/config/pic32mz_ef_sk/system/system.h  \
+ ../src/config/pic32mz_ef_sk/system/system_common.h  \
+ ../src/config/pic32mz_ef_sk/system/system_module.h  \
+ ../src/config/pic32mz_ef_sk/system/system_common.h  \
+ ../src/config/pic32mz_ef_sk/system/command/sys_command.h  \
+ ../src/config/pic32mz_ef_sk/configuration.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time_definitions.h  \
+ ../src/config/pic32mz_ef_sk/system/int/sys_int.h  \
+ ../src/packs/PIC32MZ2048EFH144_DFP/device.h  \
+ ../src/config/pic32mz_ef_sk/toolchain_specifics.h  \
+ ../src/config/pic32mz_ef_sk/peripheral/evic/plib_evic.h  \
+ ../src/config/pic32mz_ef_sk/system/int/sys_int_mapping.h  \
+ ../src/config/pic32mz_ef_sk/system/sys_time_h2_adapter.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time_definitions.h  \
+ ../src/config/pic32mz_ef_sk/library/tcpip/tcpip_ethernet.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/_eth_dcpt_lists.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/drv_eth_pic32_lib.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/drv_ethmac_local.h  \
+ ../src/config/pic32mz_ef_sk/library/tcpip/tcpip_mac_object.h  \
+ ../src/config/pic32mz_ef_sk/library/tcpip/tcpip_mac.h  \
+ ../src/config/pic32mz_ef_sk/library/tcpip/tcpip_ethernet.h  \
+ ../src/config/pic32mz_ef_sk/driver/driver_common.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethphy/drv_ethphy.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/drv_ethmac.h 

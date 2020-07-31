@@ -1,0 +1,9 @@
+.\objects\sort.o: ..\..\Generic\sort.c
+.\objects\sort.o: ..\..\Generic\sort.h
+.\objects\sort.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h
+.\objects\sort.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h
+.\objects\sort.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sort.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h
+.\objects\sort.o: C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h
+.\objects\sort.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sort.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdlib.h

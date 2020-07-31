@@ -1,0 +1,15 @@
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\portable\RVDS\ARM_CM3\port.c
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\FreeRTOS.h
+.\objects\port.o: C:\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\port.o: C:\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\port.o: .\RTE\RTOS\FreeRTOSConfig.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\CMSIS\RTOS2\FreeRTOS\Include\freertos_evr.h
+.\objects\port.o: C:\Keil\ARM\ARMCC\Bin\..\include\string.h
+.\objects\port.o: .\RTE\_1986VE92\RTE_Components.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\projdefs.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\portable.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\deprecated_definitions.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\portable\RVDS\ARM_CM3\portmacro.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\mpu_wrappers.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\task.h
+.\objects\port.o: C:\Keil\ARM\PACK\.Custom\ARM\CMSIS-FreeRTOS\10.3.1\Source\include\list.h

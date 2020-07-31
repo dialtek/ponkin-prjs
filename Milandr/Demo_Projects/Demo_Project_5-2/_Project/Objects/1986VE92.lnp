@@ -1,0 +1,12 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\tmr.o"
+".\objects\dma.o"
+".\objects\arr.o"
+".\objects\clk.o"
+".\objects\tick.o"
+".\objects\lcd.o"
+".\objects\btn.o"
+".\objects\startup_1986ve9x.o"
+--strict --scatter ".\Objects\1986VE92.sct"
+--summary_stderr --info summarysizes -o .\Objects\1986VE92.axf

@@ -1,0 +1,17 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\led.o"
+".\objects\rtos.o"
+".\objects\clk.o"
+".\objects\btn.o"
+".\objects\startup_1986ve9x.o"
+".\objects\freertos_evr.o"
+".\objects\event_groups.o"
+".\objects\list.o"
+".\objects\heap_4.o"
+".\objects\port.o"
+".\objects\queue.o"
+".\objects\tasks.o"
+--strict --scatter ".\Objects\1986VE92.sct"
+--summary_stderr --info summarysizes --callgraph
+--list ".\Listings\1986VE92.map" -o .\Objects\1986VE92.axf

@@ -1,0 +1,33 @@
+Dependencies for Project 'Project', Target '1986VE92': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (..\Source\main.c)(0x5F041BF3)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I ..\..\Generic-I.\RTE\_1986VE92-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header-IC:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (..\Source\main.h)(0x5E8C5C14)
+I (..\Source\link.h)(0x5E8C4DCA)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h)(0x5ECFA958)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5EC7BC4C)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x5EC7BC46)
+I (..\..\Generic\btn.h)(0x5ECCC6A0)
+I (..\Source\led.h)(0x5ECF84F0)
+F (..\Source\led.c)(0x5F042173)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I ..\..\Generic-I.\RTE\_1986VE92-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header-IC:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_-o .\objects\led.o --omf_browse .\objects\led.crf --depend .\objects\led.d)
+I (..\Source\led.h)(0x5ECF84F0)
+I (..\Source\link.h)(0x5E8C4DCA)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h)(0x5ECFA958)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5EC7BC4C)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x5EC7BC46)
+I (..\..\Generic\btn.h)(0x5ECCC6A0)
+I (..\Source\main.h)(0x5E8C5C14)
+F (..\..\Generic\btn.c)(0x5EDDD02C)(--c99 -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork -I ..\..\Generic-I.\RTE\_1986VE92-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header-IC:\Keil\ARM\CMSIS\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_-o .\objects\btn.o --omf_browse .\objects\btn.crf --depend .\objects\btn.d)
+I (..\..\Generic\btn.h)(0x5ECCC6A0)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header\1986VE9x.h)(0x5ECFA958)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cm3.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdint.h)(0x5EC7BC4C)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmInstr.h)(0x5AF36DC8)
+I (C:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core\core_cmFunc.h)(0x5AF36DC8)
+I (C:\Keil\ARM\ARMCC\include\stdbool.h)(0x5EC7BC46)
+F (RTE\Device\1986VE92\startup_1986VE9x.s)(0x5E69DF34)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_1986VE92-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Core-IC:\Keil\ARM\PACK\.Custom\Keil\Milandr_1986VE9x\1.0\Header-IC:\Keil\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1"-o .\objects\startup_1986ve9x.o --depend .\objects\startup_1986ve9x.d)

@@ -1,0 +1,32 @@
+build/pic32mz_ef_sk/production/_ext/1761147401/drv_miim.o:  \
+ ../src/config/pic32mz_ef_sk/driver/miim/src/dynamic/drv_miim.c  \
+ ../src/config/pic32mz_ef_sk/driver/miim/src/drv_miim_local.h  \
+ ../src/config/pic32mz_ef_sk/system_config.h  \
+ ../src/config/pic32mz_ef_sk/configuration.h  \
+ ../src/config/pic32mz_ef_sk/user.h  \
+ ../src/config/pic32mz_ef_sk/toolchain_specifics.h  \
+ ../src/config/pic32mz_ef_sk/driver/miim/drv_miim.h  \
+ ../src/config/pic32mz_ef_sk/system/system_common.h  \
+ ../src/config/pic32mz_ef_sk/system/system_module.h  \
+ ../src/config/pic32mz_ef_sk/system/system_common.h  \
+ ../src/config/pic32mz_ef_sk/driver/driver_common.h  \
+ ../src/config/pic32mz_ef_sk/osal/osal.h  \
+ ../src/packs/PIC32MZ2048EFH144_DFP/device.h  \
+ ../src/config/pic32mz_ef_sk/toolchain_specifics.h  \
+ ../src/config/pic32mz_ef_sk/configuration.h  \
+ ../src/config/pic32mz_ef_sk/osal/osal_definitions.h  \
+ ../src/config/pic32mz_ef_sk/osal/osal_impl_basic.h  \
+ ../src/config/pic32mz_ef_sk/system/int/sys_int.h  \
+ ../src/config/pic32mz_ef_sk/peripheral/evic/plib_evic.h  \
+ ../src/config/pic32mz_ef_sk/system/int/sys_int_mapping.h  \
+ ../src/config/pic32mz_ef_sk/driver/miim/src/dynamic/drv_miim_mapping.h  \
+ ../src/config/pic32mz_ef_sk/driver/ethmac/src/dynamic/drv_eth_pic32_lib.h  \
+ ../src/config/pic32mz_ef_sk/system/sys_time_h2_adapter.h  \
+ ../src/config/pic32mz_ef_sk/system/system.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time_definitions.h  \
+ ../src/config/pic32mz_ef_sk/system/time/sys_time_definitions.h  \
+ ../src/config/pic32mz_ef_sk/system/debug/sys_debug.h  \
+ ../src/config/pic32mz_ef_sk/system/console/sys_console.h  \
+ ../src/config/pic32mz_ef_sk/driver/driver.h  \
+ ../src/config/pic32mz_ef_sk/system/console/src/sys_console_local.h 

@@ -5,7 +5,7 @@
   <confs>
     <conf name="PIC32MZ2048_SK" type="2">
       <platformToolSN>:=MPLABComm-USB-Microchip:=&lt;vid>04D8:=&lt;pid>9009:=&lt;rev>0100:=&lt;man>Microchip Technology, Inc. (www.microchip.com):=&lt;prod>MPLAB ICD3 tm (www.microchip.com):=&lt;sn>JIT162810331:=&lt;drv>x:=&lt;xpt>b:=end</platformToolSN>
-      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v1.33\bin</languageToolchainDir>
+      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v2.30\bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -23,7 +23,7 @@
     </conf>
     <conf name="PIC32MZ2048EF_SK_SOFT_FLOAT" type="2">
       <platformToolSN>:=MPLABComm-USB-Microchip:=&lt;vid>04D8:=&lt;pid>8107:=&lt;rev>0002:=&lt;man>Microchip Technology Incorporated:=&lt;prod>PIC32MZ EF Family:=&lt;sn>BUR153124004:=&lt;drv>x:=&lt;xpt>h:=end</platformToolSN>
-      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v1.33\bin</languageToolchainDir>
+      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v2.30\bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>
@@ -41,7 +41,7 @@
     </conf>
     <conf name="PIC32MZ2048EF_SK_HARD_FLOAT" type="2">
       <platformToolSN>:=MPLABComm-USB-Microchip:=&lt;vid>04D8:=&lt;pid>8107:=&lt;rev>0002:=&lt;man>Microchip Technology Incorporated:=&lt;prod>PIC32MZ EC Family:=&lt;sn>MTI132990155:=&lt;drv>x:=&lt;xpt>h:=end</platformToolSN>
-      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v1.33\bin</languageToolchainDir>
+      <languageToolchainDir>C:\Program Files (x86)\Microchip\xc32\v2.30\bin</languageToolchainDir>
       <mdbdebugger version="1">
         <placeholder1>place holder 1</placeholder1>
         <placeholder2>place holder 2</placeholder2>

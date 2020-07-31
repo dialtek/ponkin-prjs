@@ -17,7 +17,7 @@ Library Manager: ArmAr.exe V5.06 update 6 (build 750)
 Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
 CPU DLL:         SARMCM3.DLL V5.28.0.0
 Dialog DLL:      DCM.DLL V1.17.3.0
-Target DLL:      Segger\JL2CM3.dll V2.99.36.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
 Dialog DLL:      TCM.DLL V1.36.2.0
  
 <h2>Project:</h2>
@@ -27,8 +27,9 @@ Project File Date:  03/16/2020
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Rebuild target 'src'
-compiling heap_2.c...
 compiling port.c...
+compiling heap_2.c...
+compiling list.c...
 compiling main.c...
 .\src\h\mdr_modbus.h(36): warning:  #815-D: type qualifier on return type is meaningless
     volatile uint8_t is_reg (uint16_t reg_addr);
@@ -42,24 +43,23 @@ compiling main.c...
     volatile uint8_t get_modbus_id(void);
 .\src\h\pbf_module.h(32): warning:  #1-D: last line of file ends without a newline
   #endif	/* PBF_MODULE_H */
-main.c(85): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
+main.c(89): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
   			xQueueSendFromISR(FPsetCounts_q, (void*) &MeasDataTx.VsetCounts,T);   
-main.c(88): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
+main.c(92): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
   			xQueueSendFromISR(LoadCurrent_q, (void*) &MeasDataTx.ImeasCounts,T);
-main.c(91): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
+main.c(95): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
   			xQueueSendFromISR(FBvoltage_q, (void*) &MeasDataTx.VmeasCounts,T);   
-main.c(96): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
+main.c(100): warning:  #167-D: argument of type "TickType_t" is incompatible with parameter of type "BaseType_t *const"
   			xQueueReceiveFromISR(DistHVenStatus_q, (void*) &DistHVen,T);  
-main.c(104): warning:  #167-D: argument of type "volatile uint16_t *" is incompatible with parameter of type "void *const"
+main.c(108): warning:  #167-D: argument of type "volatile uint16_t *" is incompatible with parameter of type "void *const"
   					xQueuePeekFromISR(DistVset_q, &VsetCntsDist);
-main.c(385): warning:  #223-D: function "get_wr_reg_addr" declared implicitly
+main.c(389): warning:  #223-D: function "get_wr_reg_addr" declared implicitly
              wr_reg_addr = get_wr_reg_addr();    // get address
-main.c(482): warning:  #167-D: argument of type "volatile TaskHandle_t *" is incompatible with parameter of type "TaskHandle_t *const"
+main.c(486): warning:  #167-D: argument of type "volatile TaskHandle_t *" is incompatible with parameter of type "TaskHandle_t *const"
     xTaskCreate(task_OnExtTrig,"OnExtTrig",configMINIMAL_STACK_SIZE,NULL,1,&TrigTaskHandle);
-main.c(503): warning:  #1-D: last line of file ends without a newline
+main.c(507): warning:  #1-D: last line of file ends without a newline
   //================================================================//
 main.c: 14 warnings, 0 errors
-compiling list.c...
 compiling queue.c...
 compiling mdr_uart.c...
 .\src\h\mdr_uart.h(28): warning:  #1-D: last line of file ends without a newline
@@ -79,11 +79,6 @@ compiling mdr_uart.c...
 src\c\mdr_uart.c(9): warning:  #177-D: variable "RxBytesCnt"  was declared but never referenced
   static UBaseType_t RxBytesCnt;
 src\c\mdr_uart.c: 8 warnings, 0 errors
-compiling tasks.c...
-compiling mdr_adc.c...
-src\c\mdr_adc.c(56): warning:  #1-D: last line of file ends without a newline
-  }
-src\c\mdr_adc.c: 1 warning, 0 errors
 compiling mdr_modbus.c...
 .\src\h\mdr_modbus.h(36): warning:  #815-D: type qualifier on return type is meaningless
     volatile uint8_t is_reg (uint16_t reg_addr);
@@ -112,6 +107,11 @@ src\c\mdr_modbus.c(391): warning:  #815-D: type qualifier on return type is mean
 src\c\mdr_modbus.c(403): warning:  #1-D: last line of file ends without a newline
     
 src\c\mdr_modbus.c: 13 warnings, 0 errors
+compiling mdr_adc.c...
+src\c\mdr_adc.c(56): warning:  #1-D: last line of file ends without a newline
+  }
+src\c\mdr_adc.c: 1 warning, 0 errors
+compiling tasks.c...
 compiling pbf_module.c...
 .\src\h\mdr_modbus.h(36): warning:  #815-D: type qualifier on return type is meaningless
     volatile uint8_t is_reg (uint16_t reg_addr);
@@ -158,16 +158,16 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: Keil::Device:Startup:1.5
-      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
-      Include file:  Config\MDR32F9Qx_config.h
-      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
-      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
       Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.c
+      Include file:  Config\MDR32F9Qx_config.h
+      Include file:  Libraries\CMSIS\CM3\CoreSupport\core_cm3.h
+      Include file:  Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\system_MDR32F9Qx.h
+      Source file:   Libraries\CMSIS\CM3\DeviceSupport\MDR32F9Qx\startup\arm\startup_MDR32F9Qx.s
 
    * Component: Keil::Drivers:PORT:1.5
       Include file:  Libraries\MDR32F9Qx_StdPeriph_Driver\inc\MDR32F9Qx_port.h
       Source file:   Libraries\MDR32F9Qx_StdPeriph_Driver\src\MDR32F9Qx_port.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

@@ -42,8 +42,12 @@ void PIDregInit(void)
 	
 	DAC2set = 0;
 	
+//	PID.kP = 55.0;
+//	PID.kI = 0.0005;
+//	PID.kD = 0;
+	
 	PID.kP = 55.0;
-	PID.kI = 0.0005;
+	PID.kI = 0.005;
 	PID.kD = 0;
 }
 
