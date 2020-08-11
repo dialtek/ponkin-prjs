@@ -24,7 +24,7 @@ static unsigned int modbus_reg_addr;       // адрес регистра для R/W по запросу 
 /* HARDWARE INFO */
 
 const char com_dev_id    = 247;                // MODBUS ID устройства длЯ широковещательного режима, лучше не трогать 
-static unsigned char dev_id = 3;               // MODBUS ID устройства   <<<<<<<<<<======== ID
+static unsigned char dev_id = 100;               // MODBUS ID устройства   <<<<<<<<<<======== ID
 const char firmware_ver  = 10;                 // версиЯ прошивки текущего устройства
 const char device_family = 0;                  // код семейства устройств
 const char modbus_ver    = 40;                 // версия MODBUS
@@ -331,7 +331,9 @@ volatile unsigned char rx_cmd_code = 0;        // код поступившей команды
    
    eeprom_rd_regs_H();
    eeprom_rd_regs_H(); // !? костыль, если читать 1 раз - всегда все рег.= 0xffff
-
+   eeprom_rd_regs_H();
+   
+   eeprom_rd_regs_I();
    eeprom_rd_regs_I();
    
   }

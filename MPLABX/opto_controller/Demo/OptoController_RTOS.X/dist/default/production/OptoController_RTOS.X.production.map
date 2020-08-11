@@ -1,4 +1,4 @@
-Microchip Technology Inc, vv3_31 (A) 
+Microchip Technology Inc, vv3_31 (A) Ï
 
 Tool Name:
   c:\program files (x86)\microchip\mplab c30\bin\bin\..\bin/pic30-elf-ld.exe
@@ -33,8 +33,8 @@ Command:
   build/default/production/dialtek_uart.o \
   build/default/production/d_SPI.o \
   build/default/production/d_eeprom.o \
-  build/default/production/main.o \
   build/default/production/opto_controller.o \
+  build/default/production/main.o \
   --defsym=__MPLAB_BUILD=1 \
   --stack=16 \
   -Map=dist/default/production/OptoController_RTOS.X.production.map \
@@ -79,147 +79,147 @@ section                    address   length (PC units)   length (bytes) (dec)
 .text.ds18b20_i_rd_t         0xa66                0xec           0x162  (354)
 .text.xQueueGenericSend      0xb52                0xe4           0x156  (342)
 .text.xTaskNotifyWait        0xc36                0xe4           0x156  (342)
-.text.vTaskPrioritySet       0xd1a                0xde           0x14d  (333)
-.text.xQueuePeek             0xdf8                0xdc           0x14a  (330)
-.text.xTaskIncrementTick     0xed4                0xdc           0x14a  (330)
-.text.task_ModbusSM          0xfb0                0xdc           0x14a  (330)
-.text.xQueueReceive         0x108c                0xd6           0x141  (321)
-.text.prvInitialiseNewTask    0x1162                0xd0           0x138  (312)
-.text.prvCopyDataToQueue    0x1232                0xb4           0x10e  (270)
-.text.xTaskResumeAll        0x12e6                0xa8            0xfc  (252)
-.text.xTaskPriorityInherit    0x138e                0x9c            0xea  (234)
-.text.modbus_wsr_answer     0x142a                0x9c            0xea  (234)
-.text.modbus_get_poll       0x14c6                0x9a            0xe7  (231)
-.text.RestoreCfg            0x1560                0x9a            0xe7  (231)
-.text.vTaskPriorityDisinheritAfterTimeout    0x15fa                0x98            0xe4  (228)
-.text.pxPortInitialiseStack    0x1692                0x8c            0xd2  (210)
-.text.vTaskNotifyGiveFromISR    0x171e                0x8a            0xcf  (207)
-.text.UpdateIDregs          0x17a8                0x8a            0xcf  (207)
-.text.vTaskSwitchContext    0x1832                0x88            0xcc  (204)
-.text.Timer9_init           0x18ba                0x88            0xcc  (204)
-.text.xQueueGenericReset    0x1942                0x84            0xc6  (198)
-.text.prvAddNewTaskToReadyList    0x19c6                0x7c            0xba  (186)
-.text.vTaskSuspend          0x1a42                0x76            0xb1  (177)
-.text.xTaskPriorityDisinherit    0x1ab8                0x76            0xb1  (177)
-.text.vTaskDelayUntil       0x1b2e                0x74            0xae  (174)
-.text.main                  0x1ba2                0x74            0xae  (174)
-.text.ConfigReset           0x1c16                0x74            0xae  (174)
-.text.modbus_CRC16          0x1c8a                0x72            0xab  (171)
-.text.task_GetTemp          0x1cfc                0x72            0xab  (171)
-.text.xQueueGenericSendFromISR    0x1d6e                0x6e            0xa5  (165)
-.text.xQueueReceiveFromISR    0x1ddc                0x6c            0xa2  (162)
-.text.xTaskRemoveFromEventList    0x1e48                0x6c            0xa2  (162)
-.text.ulTaskNotifyTake      0x1eb4                0x6c            0xa2  (162)
-.text.xTaskCheckForTimeOut    0x1f20                0x6a            0x9f  (159)
-.text.xQueueGiveFromISR     0x1f8a                0x68            0x9c  (156)
-.text.xTaskCreate           0x1ff2                0x68            0x9c  (156)
-.text.xTaskResumeFromISR    0x205a                0x68            0x9c  (156)
-.text.eeprom_wr_page        0x20c2                0x68            0x9c  (156)
-.text.prvUnlockQueue        0x212a                0x66            0x99  (153)
-.text.task_GetSensorID      0x2190                0x64            0x96  (150)
-.text.vListInsert           0x21f4                0x60            0x90  (144)
-.text.pvPortMalloc          0x2254                0x5a            0x87  (135)
-.text.vTaskResume           0x22ae                0x5a            0x87  (135)
-.text.prvAddCurrentTaskToDelayedList    0x2308                0x5a            0x87  (135)
-.text.GPIO_init             0x2362                0x58            0x84  (132)
-.text.vTaskRemoveFromUnorderedEventList    0x23ba                0x54            0x7e  (126)
-.text.UartInit              0x240e                0x52            0x7b  (123)
-.text                       0x2460                0x50            0x78  (120)
-.text.eeprom_rd_regs_H      0x24b0                0x4c            0x72  (114)
-.text.eeprom_rd_regs_I      0x24fc                0x4c            0x72  (114)
-.text.uxListRemove          0x2548                0x48            0x6c  (108)
-.text.crc8                  0x2590                0x46            0x69  (105)
-.dinit                      0x25d6                0x46            0x69  (105)
-.text.xQueueGenericCreate    0x261c                0x44            0x66  (102)
-.text.prvCopyDataFromQueue    0x2660                0x40            0x60  (96)
-.text.vTaskStartScheduler    0x26a0                0x40            0x60  (96)
-.text.vListInsertEnd        0x26e0                0x3c            0x5a  (90)
-.text.OneWire_reset         0x271c                0x3c            0x5a  (90)
-.text.get_sensor_ID         0x2758                0x3c            0x5a  (90)
-.text.xTaskNotifyStateClear    0x2794                0x3a            0x57  (87)
-.text.SPI2_init             0x27ce                0x3a            0x57  (87)
-.text.eeprom_wr_regs        0x2808                0x3a            0x57  (87)
-.text.xQueuePeekFromISR     0x2842                0x38            0x54  (84)
-.text.prvInitialiseTaskLists    0x287a                0x38            0x54  (84)
-.text.OneWire_match_ID      0x28b2                0x38            0x54  (84)
-.text.eeprom_clear_page     0x28ea                0x38            0x54  (84)
-.text.prvInitialiseNewQueue    0x2922                0x36            0x51  (81)
-.text.Onewire_read_rom      0x2958                0x34            0x4e  (78)
-.text.vListInitialise       0x298c                0x32            0x4b  (75)
-.text.prvTaskIsTaskSuspended    0x29be                0x32            0x4b  (75)
-.text.SPI2_read_byte        0x29f0                0x32            0x4b  (75)
-.text.is_reg                0x2a22                0x30            0x48  (72)
-.text.OneWire_read          0x2a52                0x30            0x48  (72)
-.text.xPortStartScheduler    0x2a82                0x2e            0x45  (69)
-.text.vApplicationSetupTickTimerInterrupt    0x2ab0                0x2e            0x45  (69)
-.text.eeprom_clear          0x2ade                0x2c            0x42  (66)
-.text.OneWire_rx_state      0x2b0a                0x2a            0x3f  (63)
-.text.OneWire_send_bit      0x2b34                0x2a            0x3f  (63)
-.text.OneWire_read_bit      0x2b5e                0x2a            0x3f  (63)
-.text.prvInitialiseMutex    0x2b88                0x28            0x3c  (60)
-.text.vTaskDelay            0x2bb0                0x28            0x3c  (60)
-.text.UartSendByte          0x2bd8                0x28            0x3c  (60)
-.text.OSC_init              0x2c00                0x28            0x3c  (60)
-.text.prvIsQueueFull        0x2c28                0x24            0x36  (54)
-.text.xQueueIsQueueFullFromISR    0x2c4c                0x24            0x36  (54)
-.text.vTaskPlaceOnUnorderedEventList    0x2c70                0x24            0x36  (54)
-.text.delay_us              0x2c94                0x24            0x36  (54)
-.text.OneWire_all_rd_t      0x2cb8                0x24            0x36  (54)
-.text.vPortEnterCritical    0x2cdc                0x22            0x33  (51)
-.text.vPortExitCritical     0x2cfe                0x22            0x33  (51)
-.text.vTaskEndScheduler     0x2d20                0x22            0x33  (51)
-.text.prvResetNextTaskUnblockTime    0x2d42                0x22            0x33  (51)
-.text.OneWire_send          0x2d64                0x22            0x33  (51)
-.text.UartGetChar           0x2d86                0x22            0x33  (51)
-.text.xQueueCreateMutex     0x2da8                0x20            0x30  (48)
-.text.xQueueCreateCountingSemaphore    0x2dc8                0x20            0x30  (48)
-.text.prvGetDisinheritPriorityAfterTimeout    0x2de8                0x20            0x30  (48)
-.text.prvIsQueueEmpty       0x2e08                0x20            0x30  (48)
-.text.xQueueIsQueueEmptyFromISR    0x2e28                0x20            0x30  (48)
-.text.pcTaskGetName         0x2e48                0x20            0x30  (48)
-.text.Timer8_init           0x2e68                0x20            0x30  (48)
-.text.uxQueueSpacesAvailable    0x2e88                0x1e            0x2d  (45)
-.text.vApplicationStackOverflowHook    0x2ea6                0x1e            0x2d  (45)
-.text.OneWire_tx_state      0x2ec4                0x1c            0x2a  (42)
-.text.OneWire_skip          0x2ee0                0x1c            0x2a  (42)
-.text.SPI2_write_byte       0x2efc                0x1c            0x2a  (42)
-.text.vTaskPlaceOnEventList    0x2f18                0x18            0x24  (36)
-.text.vTaskSetTimeOutState    0x2f30                0x18            0x24  (36)
-.text.uxTaskResetEventItemValue    0x2f48                0x18            0x24  (36)
-.text.modbus_init           0x2f60                0x18            0x24  (36)
-.text.holding_reg_read      0x2f78                0x18            0x24  (36)
-.text.input_reg_read        0x2f90                0x18            0x24  (36)
-.text.prvIdleTask           0x2fa8                0x16            0x21  (33)
-.text.pvTaskIncrementMutexHeldCount    0x2fbe                0x16            0x21  (33)
-.text.holding_reg_write     0x2fd4                0x16            0x21  (33)
-.text.input_reg_write       0x2fea                0x16            0x21  (33)
-.text.uxQueueMessagesWaiting    0x3000                0x14            0x1e  (30)
-.text.uxQueueMessagesWaitingFromISR    0x3014                0x14            0x1e  (30)
-.text.vTaskInternalSetTimeOutState    0x3028                0x14            0x1e  (30)
-.text.vQueueDelete          0x303c                0x10            0x18  (24)
-.text.xTaskGetTickCount     0x304c                0x10            0x18  (24)
-.text.xTaskGetTickCountFromISR    0x305c                0x10            0x18  (24)
-.text.SendTmeasCmd          0x306c                0x10            0x18  (24)
-.text.vListInitialiseItem    0x307c                 0xe            0x15  (21)
-.text.SystemInit            0x308a                 0xe            0x15  (21)
-.text.xPortGetFreeHeapSize    0x3098                 0xc            0x12  (18)
-.text.vTaskSuspendAll       0x30a4                 0xc            0x12  (18)
-.text.xTaskGetCurrentTaskHandle    0x30b0                 0xc            0x12  (18)
-.text.modbus_reset          0x30bc                 0xc            0x12  (18)
-.text.UartResetQueue        0x30c8                 0xc            0x12  (18)
-.text.vPortInitialiseBlocks    0x30d4                 0xa             0xf  (15)
-.text.vTaskMissedYield      0x30de                 0xa             0xf  (15)
-.text.UartGetQcnt           0x30e8                 0xa             0xf  (15)
-.text.vPortFree             0x30f2                 0x8             0xc  (12)
-.text.uxTaskGetNumberOfTasks    0x30fa                 0x8             0xc  (12)
-.text.get_wr_reg_addr       0x3102                 0x8             0xc  (12)
-.text.get_wr_reg_val        0x310a                 0x8             0xc  (12)
-.text.OneWire_init          0x3112                 0x8             0xc  (12)
-.text.vPortEndScheduler     0x311a                 0x6             0x9  (9)
-.text.prvCheckTasksWaitingTermination    0x3120                 0x6             0x9  (9)
-.text.vApplicationIdleHook    0x3126                 0x6             0x9  (9)
+.text.task_ModbusSM          0xd1a                0xe0           0x150  (336)
+.text.vTaskPrioritySet       0xdfa                0xde           0x14d  (333)
+.text.xQueuePeek             0xed8                0xdc           0x14a  (330)
+.text.xTaskIncrementTick     0xfb4                0xdc           0x14a  (330)
+.text.xQueueReceive         0x1090                0xd6           0x141  (321)
+.text.prvInitialiseNewTask    0x1166                0xd0           0x138  (312)
+.text.prvCopyDataToQueue    0x1236                0xb4           0x10e  (270)
+.text.xTaskResumeAll        0x12ea                0xa8            0xfc  (252)
+.text.xTaskPriorityInherit    0x1392                0x9c            0xea  (234)
+.text.modbus_wsr_answer     0x142e                0x9c            0xea  (234)
+.text.modbus_get_poll       0x14ca                0x9a            0xe7  (231)
+.text.RestoreCfg            0x1564                0x9a            0xe7  (231)
+.text.vTaskPriorityDisinheritAfterTimeout    0x15fe                0x98            0xe4  (228)
+.text.pxPortInitialiseStack    0x1696                0x8c            0xd2  (210)
+.text.vTaskNotifyGiveFromISR    0x1722                0x8a            0xcf  (207)
+.text.UpdateIDregs          0x17ac                0x8a            0xcf  (207)
+.text.vTaskSwitchContext    0x1836                0x88            0xcc  (204)
+.text.Timer9_init           0x18be                0x88            0xcc  (204)
+.text.xQueueGenericReset    0x1946                0x84            0xc6  (198)
+.text.prvAddNewTaskToReadyList    0x19ca                0x7c            0xba  (186)
+.text.ConfigReset           0x1a46                0x7a            0xb7  (183)
+.text.task_GetTemp          0x1ac0                0x7a            0xb7  (183)
+.text.vTaskSuspend          0x1b3a                0x76            0xb1  (177)
+.text.xTaskPriorityDisinherit    0x1bb0                0x76            0xb1  (177)
+.text.vTaskDelayUntil       0x1c26                0x74            0xae  (174)
+.text.main                  0x1c9a                0x74            0xae  (174)
+.text.modbus_CRC16          0x1d0e                0x72            0xab  (171)
+.text.xQueueGenericSendFromISR    0x1d80                0x6e            0xa5  (165)
+.text.xQueueReceiveFromISR    0x1dee                0x6c            0xa2  (162)
+.text.xTaskRemoveFromEventList    0x1e5a                0x6c            0xa2  (162)
+.text.ulTaskNotifyTake      0x1ec6                0x6c            0xa2  (162)
+.text.xTaskCheckForTimeOut    0x1f32                0x6a            0x9f  (159)
+.text.xQueueGiveFromISR     0x1f9c                0x68            0x9c  (156)
+.text.xTaskCreate           0x2004                0x68            0x9c  (156)
+.text.xTaskResumeFromISR    0x206c                0x68            0x9c  (156)
+.text.eeprom_wr_page        0x20d4                0x68            0x9c  (156)
+.text.prvUnlockQueue        0x213c                0x66            0x99  (153)
+.text.task_GetSensorID      0x21a2                0x64            0x96  (150)
+.text.vListInsert           0x2206                0x60            0x90  (144)
+.text.pvPortMalloc          0x2266                0x5a            0x87  (135)
+.text.vTaskResume           0x22c0                0x5a            0x87  (135)
+.text.prvAddCurrentTaskToDelayedList    0x231a                0x5a            0x87  (135)
+.text.vTaskRemoveFromUnorderedEventList    0x2374                0x54            0x7e  (126)
+.text.UartInit              0x23c8                0x52            0x7b  (123)
+.text                       0x241a                0x50            0x78  (120)
+.text.eeprom_rd_regs_H      0x246a                0x4c            0x72  (114)
+.text.eeprom_rd_regs_I      0x24b6                0x4c            0x72  (114)
+.text.GPIO_init             0x2502                0x4c            0x72  (114)
+.text.uxListRemove          0x254e                0x48            0x6c  (108)
+.text.crc8                  0x2596                0x46            0x69  (105)
+.dinit                      0x25dc                0x46            0x69  (105)
+.text.xQueueGenericCreate    0x2622                0x44            0x66  (102)
+.text.prvCopyDataFromQueue    0x2666                0x40            0x60  (96)
+.text.vTaskStartScheduler    0x26a6                0x40            0x60  (96)
+.text.vListInsertEnd        0x26e6                0x3c            0x5a  (90)
+.text.OneWire_reset         0x2722                0x3c            0x5a  (90)
+.text.get_sensor_ID         0x275e                0x3c            0x5a  (90)
+.text.xTaskNotifyStateClear    0x279a                0x3a            0x57  (87)
+.text.SPI2_init             0x27d4                0x3a            0x57  (87)
+.text.eeprom_wr_regs        0x280e                0x3a            0x57  (87)
+.text.xQueuePeekFromISR     0x2848                0x38            0x54  (84)
+.text.prvInitialiseTaskLists    0x2880                0x38            0x54  (84)
+.text.OneWire_match_ID      0x28b8                0x38            0x54  (84)
+.text.eeprom_clear_page     0x28f0                0x38            0x54  (84)
+.text.prvInitialiseNewQueue    0x2928                0x36            0x51  (81)
+.text.Onewire_read_rom      0x295e                0x34            0x4e  (78)
+.text.vListInitialise       0x2992                0x32            0x4b  (75)
+.text.prvTaskIsTaskSuspended    0x29c4                0x32            0x4b  (75)
+.text.SPI2_read_byte        0x29f6                0x32            0x4b  (75)
+.text.is_reg                0x2a28                0x30            0x48  (72)
+.text.OneWire_read          0x2a58                0x30            0x48  (72)
+.text.xPortStartScheduler    0x2a88                0x2e            0x45  (69)
+.text.vApplicationSetupTickTimerInterrupt    0x2ab6                0x2e            0x45  (69)
+.text.eeprom_clear          0x2ae4                0x2c            0x42  (66)
+.text.OneWire_rx_state      0x2b10                0x2a            0x3f  (63)
+.text.OneWire_send_bit      0x2b3a                0x2a            0x3f  (63)
+.text.OneWire_read_bit      0x2b64                0x2a            0x3f  (63)
+.text.prvInitialiseMutex    0x2b8e                0x28            0x3c  (60)
+.text.vTaskDelay            0x2bb6                0x28            0x3c  (60)
+.text.UartSendByte          0x2bde                0x28            0x3c  (60)
+.text.OSC_init              0x2c06                0x28            0x3c  (60)
+.text.prvIsQueueFull        0x2c2e                0x24            0x36  (54)
+.text.xQueueIsQueueFullFromISR    0x2c52                0x24            0x36  (54)
+.text.vTaskPlaceOnUnorderedEventList    0x2c76                0x24            0x36  (54)
+.text.delay_us              0x2c9a                0x24            0x36  (54)
+.text.OneWire_all_rd_t      0x2cbe                0x24            0x36  (54)
+.text.vPortEnterCritical    0x2ce2                0x22            0x33  (51)
+.text.vPortExitCritical     0x2d04                0x22            0x33  (51)
+.text.vTaskEndScheduler     0x2d26                0x22            0x33  (51)
+.text.prvResetNextTaskUnblockTime    0x2d48                0x22            0x33  (51)
+.text.OneWire_send          0x2d6a                0x22            0x33  (51)
+.text.UartGetChar           0x2d8c                0x22            0x33  (51)
+.text.xQueueCreateMutex     0x2dae                0x20            0x30  (48)
+.text.xQueueCreateCountingSemaphore    0x2dce                0x20            0x30  (48)
+.text.prvGetDisinheritPriorityAfterTimeout    0x2dee                0x20            0x30  (48)
+.text.prvIsQueueEmpty       0x2e0e                0x20            0x30  (48)
+.text.xQueueIsQueueEmptyFromISR    0x2e2e                0x20            0x30  (48)
+.text.pcTaskGetName         0x2e4e                0x20            0x30  (48)
+.text.Timer8_init           0x2e6e                0x20            0x30  (48)
+.text.uxQueueSpacesAvailable    0x2e8e                0x1e            0x2d  (45)
+.text.vApplicationStackOverflowHook    0x2eac                0x1e            0x2d  (45)
+.text.modbus_init           0x2eca                0x1c            0x2a  (42)
+.text.OneWire_tx_state      0x2ee6                0x1c            0x2a  (42)
+.text.OneWire_skip          0x2f02                0x1c            0x2a  (42)
+.text.SPI2_write_byte       0x2f1e                0x1c            0x2a  (42)
+.text.vTaskPlaceOnEventList    0x2f3a                0x18            0x24  (36)
+.text.vTaskSetTimeOutState    0x2f52                0x18            0x24  (36)
+.text.uxTaskResetEventItemValue    0x2f6a                0x18            0x24  (36)
+.text.holding_reg_read      0x2f82                0x18            0x24  (36)
+.text.input_reg_read        0x2f9a                0x18            0x24  (36)
+.text.prvIdleTask           0x2fb2                0x16            0x21  (33)
+.text.pvTaskIncrementMutexHeldCount    0x2fc8                0x16            0x21  (33)
+.text.holding_reg_write     0x2fde                0x16            0x21  (33)
+.text.input_reg_write       0x2ff4                0x16            0x21  (33)
+.text.uxQueueMessagesWaiting    0x300a                0x14            0x1e  (30)
+.text.uxQueueMessagesWaitingFromISR    0x301e                0x14            0x1e  (30)
+.text.vTaskInternalSetTimeOutState    0x3032                0x14            0x1e  (30)
+.text.vQueueDelete          0x3046                0x10            0x18  (24)
+.text.xTaskGetTickCount     0x3056                0x10            0x18  (24)
+.text.xTaskGetTickCountFromISR    0x3066                0x10            0x18  (24)
+.text.SendTmeasCmd          0x3076                0x10            0x18  (24)
+.text.vListInitialiseItem    0x3086                 0xe            0x15  (21)
+.text.SystemInit            0x3094                 0xe            0x15  (21)
+.text.xPortGetFreeHeapSize    0x30a2                 0xc            0x12  (18)
+.text.vTaskSuspendAll       0x30ae                 0xc            0x12  (18)
+.text.xTaskGetCurrentTaskHandle    0x30ba                 0xc            0x12  (18)
+.text.modbus_reset          0x30c6                 0xc            0x12  (18)
+.text.UartResetQueue        0x30d2                 0xc            0x12  (18)
+.text.vPortInitialiseBlocks    0x30de                 0xa             0xf  (15)
+.text.vTaskMissedYield      0x30e8                 0xa             0xf  (15)
+.text.UartGetQcnt           0x30f2                 0xa             0xf  (15)
+.text.vPortFree             0x30fc                 0x8             0xc  (12)
+.text.uxTaskGetNumberOfTasks    0x3104                 0x8             0xc  (12)
+.text.get_wr_reg_addr       0x310c                 0x8             0xc  (12)
+.text.get_wr_reg_val        0x3114                 0x8             0xc  (12)
+.text.OneWire_init          0x311c                 0x8             0xc  (12)
+.text.vPortEndScheduler     0x3124                 0x6             0x9  (9)
+.text.prvCheckTasksWaitingTermination    0x312a                 0x6             0x9  (9)
+.text.vApplicationIdleHook    0x3130                 0x6             0x9  (9)
 
-                     Total program memory used (bytes):         0x46c2  (18114) 6%
+                     Total program memory used (bytes):         0x46d1  (18129) 6%
 
 
 Data Memory  [Origin = 0x800, Length = 0x4000]
@@ -302,127 +302,127 @@ External Symbols in Program Memory (by address):
                   0x000a66                  _ds18b20_i_rd_t
                   0x000b52                  _xQueueGenericSend
                   0x000c36                  _xTaskNotifyWait
-                  0x000d1a                  _vTaskPrioritySet
-                  0x000df8                  _xQueuePeek
-                  0x000ed4                  _xTaskIncrementTick
-                  0x000fb0                  _task_ModbusSM
-                  0x00108c                  _xQueueReceive
-                  0x0012e6                  _xTaskResumeAll
-                  0x00138e                  _xTaskPriorityInherit
-                  0x00142a                  _modbus_wsr_answer
-                  0x0014c6                  _modbus_get_poll
-                  0x001560                  _RestoreCfg
-                  0x0015fa                  _vTaskPriorityDisinheritAfterTimeout
-                  0x001692                  _pxPortInitialiseStack
-                  0x00171e                  _vTaskNotifyGiveFromISR
-                  0x0017a8                  _UpdateIDregs
-                  0x001832                  _vTaskSwitchContext
-                  0x0018ba                  _Timer9_init
-                  0x001942                  _xQueueGenericReset
-                  0x001a42                  _vTaskSuspend
-                  0x001ab8                  _xTaskPriorityDisinherit
-                  0x001b2e                  _vTaskDelayUntil
-                  0x001ba2                  _main
-                  0x001c16                  _ConfigReset
-                  0x001cfc                  _task_GetTemp
-                  0x001d6e                  _xQueueGenericSendFromISR
-                  0x001ddc                  _xQueueReceiveFromISR
-                  0x001e48                  _xTaskRemoveFromEventList
-                  0x001eb4                  _ulTaskNotifyTake
-                  0x001f20                  _xTaskCheckForTimeOut
-                  0x001f8a                  _xQueueGiveFromISR
-                  0x001ff2                  _xTaskCreate
-                  0x00205a                  _xTaskResumeFromISR
-                  0x0020c2                  _eeprom_wr_page
-                  0x002190                  _task_GetSensorID
-                  0x0021f4                  _vListInsert
-                  0x002254                  _pvPortMalloc
-                  0x0022ae                  _vTaskResume
-                  0x002362                  _GPIO_init
-                  0x0023ba                  _vTaskRemoveFromUnorderedEventList
-                  0x00240e                  _UartInit
-                  0x002460                  _vPortYield
-                  0x0024b0                  _eeprom_rd_regs_H
-                  0x0024fc                  _eeprom_rd_regs_I
-                  0x002548                  _uxListRemove
-                  0x002590                  _crc8
-                  0x00261c                  _xQueueGenericCreate
-                  0x0026a0                  _vTaskStartScheduler
-                  0x0026e0                  _vListInsertEnd
-                  0x00271c                  _OneWire_reset
-                  0x002758                  _get_sensor_ID
-                  0x002794                  _xTaskNotifyStateClear
-                  0x0027ce                  _SPI2_init
-                  0x002808                  _eeprom_wr_regs
-                  0x002842                  _xQueuePeekFromISR
-                  0x0028b2                  _OneWire_match_ID
-                  0x0028ea                  _eeprom_clear_page
-                  0x002958                  _Onewire_read_rom
-                  0x00298c                  _vListInitialise
-                  0x0029f0                  _SPI2_read_byte
-                  0x002a22                  _is_reg
-                  0x002a52                  _OneWire_read
-                  0x002a82                  _xPortStartScheduler
-                  0x002ade                  _eeprom_clear
-                  0x002b0a                  _OneWire_rx_state
-                  0x002b34                  _OneWire_send_bit
-                  0x002b5e                  _OneWire_read_bit
-                  0x002bb0                  _vTaskDelay
-                  0x002bd8                  _UartSendByte
-                  0x002c00                  _OSC_init
-                  0x002c4c                  _xQueueIsQueueFullFromISR
-                  0x002c70                  _vTaskPlaceOnUnorderedEventList
-                  0x002c94                  _delay_us
-                  0x002cb8                  _OneWire_all_rd_t
-                  0x002cdc                  _vPortEnterCritical
-                  0x002cfe                  _vPortExitCritical
-                  0x002d20                  _vTaskEndScheduler
-                  0x002d64                  _OneWire_send
-                  0x002d86                  _UartGetChar
-                  0x002da8                  _xQueueCreateMutex
-                  0x002dc8                  _xQueueCreateCountingSemaphore
-                  0x002e28                  _xQueueIsQueueEmptyFromISR
-                  0x002e48                  _pcTaskGetName
-                  0x002e68                  _Timer8_init
-                  0x002e88                  _uxQueueSpacesAvailable
-                  0x002ea6                  _vApplicationStackOverflowHook
-                  0x002ec4                  _OneWire_tx_state
-                  0x002ee0                  _OneWire_skip
-                  0x002efc                  _SPI2_write_byte
-                  0x002f18                  _vTaskPlaceOnEventList
-                  0x002f30                  _vTaskSetTimeOutState
-                  0x002f48                  _uxTaskResetEventItemValue
-                  0x002f60                  _modbus_init
-                  0x002f78                  _holding_reg_read
-                  0x002f90                  _input_reg_read
-                  0x002fa8                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
-                  0x002fbe                  _pvTaskIncrementMutexHeldCount
-                  0x002fd4                  _holding_reg_write
-                  0x002fea                  _input_reg_write
-                  0x003000                  _uxQueueMessagesWaiting
-                  0x003014                  _uxQueueMessagesWaitingFromISR
-                  0x003028                  _vTaskInternalSetTimeOutState
-                  0x00303c                  _vQueueDelete
-                  0x00304c                  _xTaskGetTickCount
-                  0x00305c                  _xTaskGetTickCountFromISR
-                  0x00306c                  _SendTmeasCmd
-                  0x00307c                  _vListInitialiseItem
-                  0x00308a                  _SystemInit
-                  0x003098                  _xPortGetFreeHeapSize
-                  0x0030a4                  _vTaskSuspendAll
-                  0x0030b0                  _xTaskGetCurrentTaskHandle
-                  0x0030bc                  _modbus_reset
-                  0x0030c8                  _UartResetQueue
-                  0x0030d4                  _vPortInitialiseBlocks
-                  0x0030de                  _vTaskMissedYield
-                  0x0030e8                  _UartGetQcnt
-                  0x0030f2                  _vPortFree
-                  0x0030fa                  _uxTaskGetNumberOfTasks
-                  0x003102                  _get_wr_reg_addr
-                  0x00310a                  _get_wr_reg_val
-                  0x003112                  _OneWire_init
-                  0x00311a                  _vPortEndScheduler
-                  0x003126                  _vApplicationIdleHook
+                  0x000d1a                  _task_ModbusSM
+                  0x000dfa                  _vTaskPrioritySet
+                  0x000ed8                  _xQueuePeek
+                  0x000fb4                  _xTaskIncrementTick
+                  0x001090                  _xQueueReceive
+                  0x0012ea                  _xTaskResumeAll
+                  0x001392                  _xTaskPriorityInherit
+                  0x00142e                  _modbus_wsr_answer
+                  0x0014ca                  _modbus_get_poll
+                  0x001564                  _RestoreCfg
+                  0x0015fe                  _vTaskPriorityDisinheritAfterTimeout
+                  0x001696                  _pxPortInitialiseStack
+                  0x001722                  _vTaskNotifyGiveFromISR
+                  0x0017ac                  _UpdateIDregs
+                  0x001836                  _vTaskSwitchContext
+                  0x0018be                  _Timer9_init
+                  0x001946                  _xQueueGenericReset
+                  0x001a46                  _ConfigReset
+                  0x001ac0                  _task_GetTemp
+                  0x001b3a                  _vTaskSuspend
+                  0x001bb0                  _xTaskPriorityDisinherit
+                  0x001c26                  _vTaskDelayUntil
+                  0x001c9a                  _main
+                  0x001d80                  _xQueueGenericSendFromISR
+                  0x001dee                  _xQueueReceiveFromISR
+                  0x001e5a                  _xTaskRemoveFromEventList
+                  0x001ec6                  _ulTaskNotifyTake
+                  0x001f32                  _xTaskCheckForTimeOut
+                  0x001f9c                  _xQueueGiveFromISR
+                  0x002004                  _xTaskCreate
+                  0x00206c                  _xTaskResumeFromISR
+                  0x0020d4                  _eeprom_wr_page
+                  0x0021a2                  _task_GetSensorID
+                  0x002206                  _vListInsert
+                  0x002266                  _pvPortMalloc
+                  0x0022c0                  _vTaskResume
+                  0x002374                  _vTaskRemoveFromUnorderedEventList
+                  0x0023c8                  _UartInit
+                  0x00241a                  _vPortYield
+                  0x00246a                  _eeprom_rd_regs_H
+                  0x0024b6                  _eeprom_rd_regs_I
+                  0x002502                  _GPIO_init
+                  0x00254e                  _uxListRemove
+                  0x002596                  _crc8
+                  0x002622                  _xQueueGenericCreate
+                  0x0026a6                  _vTaskStartScheduler
+                  0x0026e6                  _vListInsertEnd
+                  0x002722                  _OneWire_reset
+                  0x00275e                  _get_sensor_ID
+                  0x00279a                  _xTaskNotifyStateClear
+                  0x0027d4                  _SPI2_init
+                  0x00280e                  _eeprom_wr_regs
+                  0x002848                  _xQueuePeekFromISR
+                  0x0028b8                  _OneWire_match_ID
+                  0x0028f0                  _eeprom_clear_page
+                  0x00295e                  _Onewire_read_rom
+                  0x002992                  _vListInitialise
+                  0x0029f6                  _SPI2_read_byte
+                  0x002a28                  _is_reg
+                  0x002a58                  _OneWire_read
+                  0x002a88                  _xPortStartScheduler
+                  0x002ae4                  _eeprom_clear
+                  0x002b10                  _OneWire_rx_state
+                  0x002b3a                  _OneWire_send_bit
+                  0x002b64                  _OneWire_read_bit
+                  0x002bb6                  _vTaskDelay
+                  0x002bde                  _UartSendByte
+                  0x002c06                  _OSC_init
+                  0x002c52                  _xQueueIsQueueFullFromISR
+                  0x002c76                  _vTaskPlaceOnUnorderedEventList
+                  0x002c9a                  _delay_us
+                  0x002cbe                  _OneWire_all_rd_t
+                  0x002ce2                  _vPortEnterCritical
+                  0x002d04                  _vPortExitCritical
+                  0x002d26                  _vTaskEndScheduler
+                  0x002d6a                  _OneWire_send
+                  0x002d8c                  _UartGetChar
+                  0x002dae                  _xQueueCreateMutex
+                  0x002dce                  _xQueueCreateCountingSemaphore
+                  0x002e2e                  _xQueueIsQueueEmptyFromISR
+                  0x002e4e                  _pcTaskGetName
+                  0x002e6e                  _Timer8_init
+                  0x002e8e                  _uxQueueSpacesAvailable
+                  0x002eac                  _vApplicationStackOverflowHook
+                  0x002eca                  _modbus_init
+                  0x002ee6                  _OneWire_tx_state
+                  0x002f02                  _OneWire_skip
+                  0x002f1e                  _SPI2_write_byte
+                  0x002f3a                  _vTaskPlaceOnEventList
+                  0x002f52                  _vTaskSetTimeOutState
+                  0x002f6a                  _uxTaskResetEventItemValue
+                  0x002f82                  _holding_reg_read
+                  0x002f9a                  _input_reg_read
+                  0x002fb2                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x002fc8                  _pvTaskIncrementMutexHeldCount
+                  0x002fde                  _holding_reg_write
+                  0x002ff4                  _input_reg_write
+                  0x00300a                  _uxQueueMessagesWaiting
+                  0x00301e                  _uxQueueMessagesWaitingFromISR
+                  0x003032                  _vTaskInternalSetTimeOutState
+                  0x003046                  _vQueueDelete
+                  0x003056                  _xTaskGetTickCount
+                  0x003066                  _xTaskGetTickCountFromISR
+                  0x003076                  _SendTmeasCmd
+                  0x003086                  _vListInitialiseItem
+                  0x003094                  _SystemInit
+                  0x0030a2                  _xPortGetFreeHeapSize
+                  0x0030ae                  _vTaskSuspendAll
+                  0x0030ba                  _xTaskGetCurrentTaskHandle
+                  0x0030c6                  _modbus_reset
+                  0x0030d2                  _UartResetQueue
+                  0x0030de                  _vPortInitialiseBlocks
+                  0x0030e8                  _vTaskMissedYield
+                  0x0030f2                  _UartGetQcnt
+                  0x0030fc                  _vPortFree
+                  0x003104                  _uxTaskGetNumberOfTasks
+                  0x00310c                  _get_wr_reg_addr
+                  0x003114                  _get_wr_reg_val
+                  0x00311c                  _OneWire_init
+                  0x003124                  _vPortEndScheduler
+                  0x003130                  _vApplicationIdleHook
                   0xf80000                  _FBS
                   0xf80002                  _FSS
                   0xf80004                  _FGS
@@ -434,7 +434,7 @@ External Symbols in Program Memory (by address):
 
 External Symbols in Program Memory (by name):
 
-                  0x001c16                  _ConfigReset
+                  0x001a46                  _ConfigReset
                   0xf80000                  _FBS
                   0xf80004                  _FGS
                   0xf8000e                  _FICD
@@ -443,34 +443,34 @@ External Symbols in Program Memory (by name):
                   0xf8000c                  _FPOR
                   0xf80002                  _FSS
                   0xf8000a                  _FWDT
-                  0x002362                  _GPIO_init
-                  0x002c00                  _OSC_init
-                  0x002cb8                  _OneWire_all_rd_t
-                  0x003112                  _OneWire_init
-                  0x0028b2                  _OneWire_match_ID
-                  0x002a52                  _OneWire_read
-                  0x002b5e                  _OneWire_read_bit
-                  0x00271c                  _OneWire_reset
-                  0x002b0a                  _OneWire_rx_state
-                  0x002d64                  _OneWire_send
-                  0x002b34                  _OneWire_send_bit
-                  0x002ee0                  _OneWire_skip
-                  0x002ec4                  _OneWire_tx_state
-                  0x002958                  _Onewire_read_rom
-                  0x001560                  _RestoreCfg
-                  0x0027ce                  _SPI2_init
-                  0x0029f0                  _SPI2_read_byte
-                  0x002efc                  _SPI2_write_byte
-                  0x00306c                  _SendTmeasCmd
-                  0x00308a                  _SystemInit
-                  0x002e68                  _Timer8_init
-                  0x0018ba                  _Timer9_init
-                  0x002d86                  _UartGetChar
-                  0x0030e8                  _UartGetQcnt
-                  0x00240e                  _UartInit
-                  0x0030c8                  _UartResetQueue
-                  0x002bd8                  _UartSendByte
-                  0x0017a8                  _UpdateIDregs
+                  0x002502                  _GPIO_init
+                  0x002c06                  _OSC_init
+                  0x002cbe                  _OneWire_all_rd_t
+                  0x00311c                  _OneWire_init
+                  0x0028b8                  _OneWire_match_ID
+                  0x002a58                  _OneWire_read
+                  0x002b64                  _OneWire_read_bit
+                  0x002722                  _OneWire_reset
+                  0x002b10                  _OneWire_rx_state
+                  0x002d6a                  _OneWire_send
+                  0x002b3a                  _OneWire_send_bit
+                  0x002f02                  _OneWire_skip
+                  0x002ee6                  _OneWire_tx_state
+                  0x00295e                  _Onewire_read_rom
+                  0x001564                  _RestoreCfg
+                  0x0027d4                  _SPI2_init
+                  0x0029f6                  _SPI2_read_byte
+                  0x002f1e                  _SPI2_write_byte
+                  0x003076                  _SendTmeasCmd
+                  0x003094                  _SystemInit
+                  0x002e6e                  _Timer8_init
+                  0x0018be                  _Timer9_init
+                  0x002d8c                  _UartGetChar
+                  0x0030f2                  _UartGetQcnt
+                  0x0023c8                  _UartInit
+                  0x0030d2                  _UartResetQueue
+                  0x002bde                  _UartSendByte
+                  0x0017ac                  _UpdateIDregs
                   0x00034e                  __DefaultInterrupt
                   0x0002a0                  __T1Interrupt
                   0x00031a                  __T9Interrupt
@@ -482,112 +482,112 @@ External Symbols in Program Memory (by name):
                   0x000222                  __psv_init
                   0x000200                  __resetPRI
                   0x000438                  _com_dev_id
-                  0x002590                  _crc8
-                  0x002c94                  _delay_us
+                  0x002596                  _crc8
+                  0x002c9a                  _delay_us
                   0x00043a                  _device_family
                   0x000a66                  _ds18b20_i_rd_t
-                  0x002ade                  _eeprom_clear
-                  0x0028ea                  _eeprom_clear_page
-                  0x0024b0                  _eeprom_rd_regs_H
-                  0x0024fc                  _eeprom_rd_regs_I
-                  0x0020c2                  _eeprom_wr_page
-                  0x002808                  _eeprom_wr_regs
+                  0x002ae4                  _eeprom_clear
+                  0x0028f0                  _eeprom_clear_page
+                  0x00246a                  _eeprom_rd_regs_H
+                  0x0024b6                  _eeprom_rd_regs_I
+                  0x0020d4                  _eeprom_wr_page
+                  0x00280e                  _eeprom_wr_regs
                   0x000439                  _firmware_ver
-                  0x002758                  _get_sensor_ID
-                  0x003102                  _get_wr_reg_addr
-                  0x00310a                  _get_wr_reg_val
-                  0x002f78                  _holding_reg_read
-                  0x002fd4                  _holding_reg_write
-                  0x002f90                  _input_reg_read
-                  0x002fea                  _input_reg_write
-                  0x002a22                  _is_reg
-                  0x001ba2                  _main
+                  0x00275e                  _get_sensor_ID
+                  0x00310c                  _get_wr_reg_addr
+                  0x003114                  _get_wr_reg_val
+                  0x002f82                  _holding_reg_read
+                  0x002fde                  _holding_reg_write
+                  0x002f9a                  _input_reg_read
+                  0x002ff4                  _input_reg_write
+                  0x002a28                  _is_reg
+                  0x001c9a                  _main
                   0x000390                  _memcmp
                   0x0003c4                  _memcpy
                   0x0003d2                  _memset
-                  0x0014c6                  _modbus_get_poll
-                  0x002f60                  _modbus_init
-                  0x0030bc                  _modbus_reset
+                  0x0014ca                  _modbus_get_poll
+                  0x002eca                  _modbus_init
+                  0x0030c6                  _modbus_reset
                   0x00076a                  _modbus_rhr_answer
                   0x000872                  _modbus_rir_answer
                   0x00043b                  _modbus_ver
-                  0x00142a                  _modbus_wsr_answer
-                  0x002e48                  _pcTaskGetName
-                  0x002254                  _pvPortMalloc
-                  0x002fbe                  _pvTaskIncrementMutexHeldCount
-                  0x001692                  _pxPortInitialiseStack
-                  0x002190                  _task_GetSensorID
-                  0x001cfc                  _task_GetTemp
-                  0x000fb0                  _task_ModbusSM
-                  0x001eb4                  _ulTaskNotifyTake
-                  0x002548                  _uxListRemove
-                  0x003000                  _uxQueueMessagesWaiting
-                  0x003014                  _uxQueueMessagesWaitingFromISR
-                  0x002e88                  _uxQueueSpacesAvailable
-                  0x0030fa                  _uxTaskGetNumberOfTasks
-                  0x002f48                  _uxTaskResetEventItemValue
-                  0x003126                  _vApplicationIdleHook
-                  0x002ea6                  _vApplicationStackOverflowHook
-                  0x00298c                  _vListInitialise
-                  0x00307c                  _vListInitialiseItem
-                  0x0021f4                  _vListInsert
-                  0x0026e0                  _vListInsertEnd
-                  0x00311a                  _vPortEndScheduler
-                  0x002cdc                  _vPortEnterCritical
-                  0x002cfe                  _vPortExitCritical
-                  0x0030f2                  _vPortFree
-                  0x0030d4                  _vPortInitialiseBlocks
-                  0x002460                  _vPortYield
-                  0x00303c                  _vQueueDelete
-                  0x002bb0                  _vTaskDelay
-                  0x001b2e                  _vTaskDelayUntil
-                  0x002d20                  _vTaskEndScheduler
-                  0x003028                  _vTaskInternalSetTimeOutState
-                  0x0030de                  _vTaskMissedYield
-                  0x00171e                  _vTaskNotifyGiveFromISR
-                  0x002f18                  _vTaskPlaceOnEventList
-                  0x002c70                  _vTaskPlaceOnUnorderedEventList
-                  0x0015fa                  _vTaskPriorityDisinheritAfterTimeout
-                  0x000d1a                  _vTaskPrioritySet
-                  0x0023ba                  _vTaskRemoveFromUnorderedEventList
-                  0x0022ae                  _vTaskResume
-                  0x002f30                  _vTaskSetTimeOutState
-                  0x0026a0                  _vTaskStartScheduler
-                  0x001a42                  _vTaskSuspend
-                  0x0030a4                  _vTaskSuspendAll
-                  0x001832                  _vTaskSwitchContext
-                  0x003098                  _xPortGetFreeHeapSize
-                  0x002a82                  _xPortStartScheduler
-                  0x002dc8                  _xQueueCreateCountingSemaphore
-                  0x002da8                  _xQueueCreateMutex
-                  0x00261c                  _xQueueGenericCreate
-                  0x001942                  _xQueueGenericReset
+                  0x00142e                  _modbus_wsr_answer
+                  0x002e4e                  _pcTaskGetName
+                  0x002266                  _pvPortMalloc
+                  0x002fc8                  _pvTaskIncrementMutexHeldCount
+                  0x001696                  _pxPortInitialiseStack
+                  0x0021a2                  _task_GetSensorID
+                  0x001ac0                  _task_GetTemp
+                  0x000d1a                  _task_ModbusSM
+                  0x001ec6                  _ulTaskNotifyTake
+                  0x00254e                  _uxListRemove
+                  0x00300a                  _uxQueueMessagesWaiting
+                  0x00301e                  _uxQueueMessagesWaitingFromISR
+                  0x002e8e                  _uxQueueSpacesAvailable
+                  0x003104                  _uxTaskGetNumberOfTasks
+                  0x002f6a                  _uxTaskResetEventItemValue
+                  0x003130                  _vApplicationIdleHook
+                  0x002eac                  _vApplicationStackOverflowHook
+                  0x002992                  _vListInitialise
+                  0x003086                  _vListInitialiseItem
+                  0x002206                  _vListInsert
+                  0x0026e6                  _vListInsertEnd
+                  0x003124                  _vPortEndScheduler
+                  0x002ce2                  _vPortEnterCritical
+                  0x002d04                  _vPortExitCritical
+                  0x0030fc                  _vPortFree
+                  0x0030de                  _vPortInitialiseBlocks
+                  0x00241a                  _vPortYield
+                  0x003046                  _vQueueDelete
+                  0x002bb6                  _vTaskDelay
+                  0x001c26                  _vTaskDelayUntil
+                  0x002d26                  _vTaskEndScheduler
+                  0x003032                  _vTaskInternalSetTimeOutState
+                  0x0030e8                  _vTaskMissedYield
+                  0x001722                  _vTaskNotifyGiveFromISR
+                  0x002f3a                  _vTaskPlaceOnEventList
+                  0x002c76                  _vTaskPlaceOnUnorderedEventList
+                  0x0015fe                  _vTaskPriorityDisinheritAfterTimeout
+                  0x000dfa                  _vTaskPrioritySet
+                  0x002374                  _vTaskRemoveFromUnorderedEventList
+                  0x0022c0                  _vTaskResume
+                  0x002f52                  _vTaskSetTimeOutState
+                  0x0026a6                  _vTaskStartScheduler
+                  0x001b3a                  _vTaskSuspend
+                  0x0030ae                  _vTaskSuspendAll
+                  0x001836                  _vTaskSwitchContext
+                  0x0030a2                  _xPortGetFreeHeapSize
+                  0x002a88                  _xPortStartScheduler
+                  0x002dce                  _xQueueCreateCountingSemaphore
+                  0x002dae                  _xQueueCreateMutex
+                  0x002622                  _xQueueGenericCreate
+                  0x001946                  _xQueueGenericReset
                   0x000b52                  _xQueueGenericSend
-                  0x001d6e                  _xQueueGenericSendFromISR
-                  0x001f8a                  _xQueueGiveFromISR
-                  0x002e28                  _xQueueIsQueueEmptyFromISR
-                  0x002c4c                  _xQueueIsQueueFullFromISR
-                  0x000df8                  _xQueuePeek
-                  0x002842                  _xQueuePeekFromISR
-                  0x00108c                  _xQueueReceive
-                  0x001ddc                  _xQueueReceiveFromISR
+                  0x001d80                  _xQueueGenericSendFromISR
+                  0x001f9c                  _xQueueGiveFromISR
+                  0x002e2e                  _xQueueIsQueueEmptyFromISR
+                  0x002c52                  _xQueueIsQueueFullFromISR
+                  0x000ed8                  _xQueuePeek
+                  0x002848                  _xQueuePeekFromISR
+                  0x001090                  _xQueueReceive
+                  0x001dee                  _xQueueReceiveFromISR
                   0x000550                  _xQueueSemaphoreTake
-                  0x001f20                  _xTaskCheckForTimeOut
-                  0x001ff2                  _xTaskCreate
+                  0x001f32                  _xTaskCheckForTimeOut
+                  0x002004                  _xTaskCreate
                   0x00097a                  _xTaskGenericNotify
                   0x000662                  _xTaskGenericNotifyFromISR
-                  0x0030b0                  _xTaskGetCurrentTaskHandle
-                  0x00304c                  _xTaskGetTickCount
-                  0x00305c                  _xTaskGetTickCountFromISR
-                  0x000ed4                  _xTaskIncrementTick
-                  0x002794                  _xTaskNotifyStateClear
+                  0x0030ba                  _xTaskGetCurrentTaskHandle
+                  0x003056                  _xTaskGetTickCount
+                  0x003066                  _xTaskGetTickCountFromISR
+                  0x000fb4                  _xTaskIncrementTick
+                  0x00279a                  _xTaskNotifyStateClear
                   0x000c36                  _xTaskNotifyWait
-                  0x001ab8                  _xTaskPriorityDisinherit
-                  0x00138e                  _xTaskPriorityInherit
-                  0x001e48                  _xTaskRemoveFromEventList
-                  0x0012e6                  _xTaskResumeAll
-                  0x00205a                  _xTaskResumeFromISR
-                  0x002fa8                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x001bb0                  _xTaskPriorityDisinherit
+                  0x001392                  _xTaskPriorityInherit
+                  0x001e5a                  _xTaskRemoveFromEventList
+                  0x0012ea                  _xTaskResumeAll
+                  0x00206c                  _xTaskResumeFromISR
+                  0x002fb2                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
 
 Memory Configuration
 
@@ -626,8 +626,8 @@ LOAD build/default/production/dialtek_one_wire.o
 LOAD build/default/production/dialtek_uart.o
 LOAD build/default/production/d_SPI.o
 LOAD build/default/production/d_eeprom.o
-LOAD build/default/production/main.o
 LOAD build/default/production/opto_controller.o
+LOAD build/default/production/main.o
                     0x0001                  __MPLAB_BUILD = 0x1
 LOAD c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib/PIC24H\libp24HJ256GP206-elf.a
                     0xf80000                  __FBS = 0xf80000
@@ -738,22 +738,22 @@ __FUID3
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x8c4e
+.debug_info       0x000000       0x896f
  *(.debug_info)
- .debug_info      0x000000        0x2bd build/default/production/_ext/897580706/heap_1.o
- .debug_info      0x0002bd        0xb1d build/default/production/_ext/410575107/port.o
- .debug_info      0x000dda         0xcb build/default/production/_ext/410575107/portasm_PIC24.o
- .debug_info      0x000ea5        0x462 build/default/production/_ext/1787047461/list.o
- .debug_info      0x001307       0x122e build/default/production/_ext/1787047461/queue.o
- .debug_info      0x002535       0x1c11 build/default/production/_ext/1787047461/tasks.o
- .debug_info      0x004146        0x165 build/default/production/_ext/1787047461/timers.o
- .debug_info      0x0042ab        0xa0d build/default/production/dialtek_modbus.o
- .debug_info      0x004cb8        0xa62 build/default/production/dialtek_one_wire.o
- .debug_info      0x00571a       0x1158 build/default/production/dialtek_uart.o
- .debug_info      0x006872        0x638 build/default/production/d_SPI.o
- .debug_info      0x006eaa        0x40b build/default/production/d_eeprom.o
- .debug_info      0x0072b5        0x78d build/default/production/main.o
- .debug_info      0x007a42       0x120c build/default/production/opto_controller.o
+ .debug_info      0x000000        0x2c3 build/default/production/_ext/897580706/heap_1.o
+ .debug_info      0x0002c3        0xb23 build/default/production/_ext/410575107/port.o
+ .debug_info      0x000de6         0xd1 build/default/production/_ext/410575107/portasm_PIC24.o
+ .debug_info      0x000eb7        0x468 build/default/production/_ext/1787047461/list.o
+ .debug_info      0x00131f       0x1234 build/default/production/_ext/1787047461/queue.o
+ .debug_info      0x002553       0x1c17 build/default/production/_ext/1787047461/tasks.o
+ .debug_info      0x00416a        0x16b build/default/production/_ext/1787047461/timers.o
+ .debug_info      0x0042d5        0xa13 build/default/production/dialtek_modbus.o
+ .debug_info      0x004ce8        0xa64 build/default/production/dialtek_one_wire.o
+ .debug_info      0x00574c       0x115e build/default/production/dialtek_uart.o
+ .debug_info      0x0068aa        0x63e build/default/production/d_SPI.o
+ .debug_info      0x006ee8        0x411 build/default/production/d_eeprom.o
+ .debug_info      0x0072f9        0xee3 build/default/production/opto_controller.o
+ .debug_info      0x0081dc        0x793 build/default/production/main.o
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000       0x11c1
@@ -770,10 +770,10 @@ __FUID3
  .debug_abbrev    0x000b5d        0x17c build/default/production/dialtek_uart.o
  .debug_abbrev    0x000cd9        0x142 build/default/production/d_SPI.o
  .debug_abbrev    0x000e1b         0xc0 build/default/production/d_eeprom.o
- .debug_abbrev    0x000edb        0x172 build/default/production/main.o
- .debug_abbrev    0x00104d        0x174 build/default/production/opto_controller.o
+ .debug_abbrev    0x000edb        0x174 build/default/production/opto_controller.o
+ .debug_abbrev    0x00104f        0x172 build/default/production/main.o
 
-.debug_line       0x000000       0x4b81
+.debug_line       0x000000       0x4b89
  *(.debug_line)
  .debug_line      0x000000        0x244 build/default/production/_ext/897580706/heap_1.o
  .debug_line      0x000244        0x330 build/default/production/_ext/410575107/port.o
@@ -782,13 +782,13 @@ __FUID3
  .debug_line      0x0008b8        0xd8b build/default/production/_ext/1787047461/queue.o
  .debug_line      0x001643       0x12af build/default/production/_ext/1787047461/tasks.o
  .debug_line      0x0028f2        0x187 build/default/production/_ext/1787047461/timers.o
- .debug_line      0x002a79        0x739 build/default/production/dialtek_modbus.o
- .debug_line      0x0031b2        0x63f build/default/production/dialtek_one_wire.o
- .debug_line      0x0037f1        0x3df build/default/production/dialtek_uart.o
- .debug_line      0x003bd0        0x27d build/default/production/d_SPI.o
- .debug_line      0x003e4d        0x3e8 build/default/production/d_eeprom.o
- .debug_line      0x004235        0x44e build/default/production/main.o
- .debug_line      0x004683        0x4fe build/default/production/opto_controller.o
+ .debug_line      0x002a79        0x749 build/default/production/dialtek_modbus.o
+ .debug_line      0x0031c2        0x63f build/default/production/dialtek_one_wire.o
+ .debug_line      0x003801        0x3df build/default/production/dialtek_uart.o
+ .debug_line      0x003be0        0x27d build/default/production/d_SPI.o
+ .debug_line      0x003e5d        0x3e8 build/default/production/d_eeprom.o
+ .debug_line      0x004245        0x4de build/default/production/opto_controller.o
+ .debug_line      0x004723        0x466 build/default/production/main.o
 
 .debug_frame      0x000000        0xa88
  *(.debug_frame)
@@ -802,8 +802,8 @@ __FUID3
  .debug_frame     0x000835         0x97 build/default/production/dialtek_uart.o
  .debug_frame     0x0008cc         0x47 build/default/production/d_SPI.o
  .debug_frame     0x000913         0x77 build/default/production/d_eeprom.o
- .debug_frame     0x00098a         0x77 build/default/production/main.o
- .debug_frame     0x000a01         0x87 build/default/production/opto_controller.o
+ .debug_frame     0x00098a         0x87 build/default/production/opto_controller.o
+ .debug_frame     0x000a11         0x77 build/default/production/main.o
 
 .debug_str        0x000000        0x3f5
  *(.debug_str)
@@ -818,8 +818,8 @@ __FUID3
  .debug_str       0x00037f          0xd build/default/production/dialtek_uart.o
  .debug_str       0x00038c          0xd build/default/production/d_SPI.o
  .debug_str       0x000399         0x2a build/default/production/d_eeprom.o
- .debug_str       0x0003c3         0x25 build/default/production/main.o
- .debug_str       0x0003e8          0xd build/default/production/opto_controller.o
+ .debug_str       0x0003c3          0xd build/default/production/opto_controller.o
+ .debug_str       0x0003d0         0x25 build/default/production/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -851,9 +851,9 @@ __FUID3
  .debug_pubnames
                   0x000b0c         0x89 build/default/production/d_eeprom.o
  .debug_pubnames
-                  0x000b95        0x120 build/default/production/main.o
+                  0x000b95         0x7d build/default/production/opto_controller.o
  .debug_pubnames
-                  0x000cb5         0x7d build/default/production/opto_controller.o
+                  0x000c12        0x120 build/default/production/main.o
 
 .debug_ranges
  *(.debug_ranges)
@@ -883,9 +883,9 @@ __FUID3
  .debug_aranges
                   0x000138         0x20 build/default/production/d_eeprom.o
  .debug_aranges
-                  0x000158         0x20 build/default/production/main.o
+                  0x000158         0x20 build/default/production/opto_controller.o
  .debug_aranges
-                  0x000178         0x20 build/default/production/opto_controller.o
+                  0x000178         0x20 build/default/production/main.o
 
 .ivt              0x000004         0xfc
                   0x000004          0x4 LONG 0x34e DEFINED (__ReservedTrap0)?ABSOLUTE (__ReservedTrap0):ABSOLUTE (__DefaultInterrupt)
@@ -1882,9 +1882,9 @@ __c30_signature
  __c30_signature
                   0x0001d4          0x6 build/default/production/d_eeprom.o
  __c30_signature
-                  0x0001da          0x6 build/default/production/main.o
+                  0x0001da          0x6 build/default/production/opto_controller.o
  __c30_signature
-                  0x0001e0          0x6 build/default/production/opto_controller.o
+                  0x0001e0          0x6 build/default/production/main.o
  __c30_signature
                   0x0001e6          0x6 c:/program files (x86)/microchip/mplab c30/bin/bin/../../lib\libpic30-elf.a(crt0_standard.o)
  __c30_signature
@@ -1929,51 +1929,51 @@ __c30_signature
                     0x1ea0                  _holding_register
                     0x1f9a                  _input_register
 
-_051e77005ceb8623
+_034797005f2bdefb
                   0xf80000          0x2
- _051e77005ceb8623
+ _034797005f2bdefb
                   0xf80000          0x2 build/default/production/main.o
                   0xf80000                  _FBS
 
-_051e77705ceb8623
+_034797705f2bdefb
                   0xf80002          0x2
- _051e77705ceb8623
+ _034797705f2bdefb
                   0xf80002          0x2 build/default/production/main.o
                   0xf80002                  _FSS
 
-_051e77e05ceb8623
+_034797e05f2bdefb
                   0xf80004          0x2
- _051e77e05ceb8623
+ _034797e05f2bdefb
                   0xf80004          0x2 build/default/production/main.o
                   0xf80004                  _FGS
 
-_051e78505ceb8623
+_034798505f2bdefb
                   0xf80006          0x2
- _051e78505ceb8623
+ _034798505f2bdefb
                   0xf80006          0x2 build/default/production/main.o
                   0xf80006                  _FOSCSEL
 
-_051e78c05ceb8623
+_034798c05f2bdefb
                   0xf80008          0x2
- _051e78c05ceb8623
+ _034798c05f2bdefb
                   0xf80008          0x2 build/default/production/main.o
                   0xf80008                  _FOSC
 
-_051e79305ceb8623
+_034799305f2bdefb
                   0xf8000a          0x2
- _051e79305ceb8623
+ _034799305f2bdefb
                   0xf8000a          0x2 build/default/production/main.o
                   0xf8000a                  _FWDT
 
-_051e79a05ceb8623
+_034799a05f2bdefb
                   0xf8000c          0x2
- _051e79a05ceb8623
+ _034799a05f2bdefb
                   0xf8000c          0x2 build/default/production/main.o
                   0xf8000c                  _FPOR
 
-_051e7a105ceb8623
+_03479a105f2bdefb
                   0xf8000e          0x2
- _051e7a105ceb8623
+ _03479a105f2bdefb
                   0xf8000e          0x2 build/default/production/main.o
                   0xf8000e                  _FICD
 
@@ -2040,806 +2040,806 @@ _051e7a105ceb8623
                   0x000c36         0xe4 build/default/production/_ext/1787047461/tasks.o
                   0x000c36                  _xTaskNotifyWait
 
+.text.task_ModbusSM
+                  0x000d1a         0xe0
+ .text.task_ModbusSM
+                  0x000d1a         0xe0 build/default/production/main.o
+                  0x000d1a                  _task_ModbusSM
+
 .text.vTaskPrioritySet
-                  0x000d1a         0xde
+                  0x000dfa         0xde
  .text.vTaskPrioritySet
-                  0x000d1a         0xde build/default/production/_ext/1787047461/tasks.o
-                  0x000d1a                  _vTaskPrioritySet
+                  0x000dfa         0xde build/default/production/_ext/1787047461/tasks.o
+                  0x000dfa                  _vTaskPrioritySet
 
 .text.xQueuePeek
-                  0x000df8         0xdc
+                  0x000ed8         0xdc
  .text.xQueuePeek
-                  0x000df8         0xdc build/default/production/_ext/1787047461/queue.o
-                  0x000df8                  _xQueuePeek
+                  0x000ed8         0xdc build/default/production/_ext/1787047461/queue.o
+                  0x000ed8                  _xQueuePeek
 
 .text.xTaskIncrementTick
-                  0x000ed4         0xdc
+                  0x000fb4         0xdc
  .text.xTaskIncrementTick
-                  0x000ed4         0xdc build/default/production/_ext/1787047461/tasks.o
-                  0x000ed4                  _xTaskIncrementTick
-
-.text.task_ModbusSM
-                  0x000fb0         0xdc
- .text.task_ModbusSM
-                  0x000fb0         0xdc build/default/production/main.o
-                  0x000fb0                  _task_ModbusSM
+                  0x000fb4         0xdc build/default/production/_ext/1787047461/tasks.o
+                  0x000fb4                  _xTaskIncrementTick
 
 .text.xQueueReceive
-                  0x00108c         0xd6
+                  0x001090         0xd6
  .text.xQueueReceive
-                  0x00108c         0xd6 build/default/production/_ext/1787047461/queue.o
-                  0x00108c                  _xQueueReceive
+                  0x001090         0xd6 build/default/production/_ext/1787047461/queue.o
+                  0x001090                  _xQueueReceive
 
 .text.prvInitialiseNewTask
-                  0x001162         0xd0
+                  0x001166         0xd0
  .text.prvInitialiseNewTask
-                  0x001162         0xd0 build/default/production/_ext/1787047461/tasks.o
+                  0x001166         0xd0 build/default/production/_ext/1787047461/tasks.o
 
 .text.prvCopyDataToQueue
-                  0x001232         0xb4
+                  0x001236         0xb4
  .text.prvCopyDataToQueue
-                  0x001232         0xb4 build/default/production/_ext/1787047461/queue.o
+                  0x001236         0xb4 build/default/production/_ext/1787047461/queue.o
 
 .text.xTaskResumeAll
-                  0x0012e6         0xa8
+                  0x0012ea         0xa8
  .text.xTaskResumeAll
-                  0x0012e6         0xa8 build/default/production/_ext/1787047461/tasks.o
-                  0x0012e6                  _xTaskResumeAll
+                  0x0012ea         0xa8 build/default/production/_ext/1787047461/tasks.o
+                  0x0012ea                  _xTaskResumeAll
 
 .text.xTaskPriorityInherit
-                  0x00138e         0x9c
+                  0x001392         0x9c
  .text.xTaskPriorityInherit
-                  0x00138e         0x9c build/default/production/_ext/1787047461/tasks.o
-                  0x00138e                  _xTaskPriorityInherit
+                  0x001392         0x9c build/default/production/_ext/1787047461/tasks.o
+                  0x001392                  _xTaskPriorityInherit
 
 .text.modbus_wsr_answer
-                  0x00142a         0x9c
+                  0x00142e         0x9c
  .text.modbus_wsr_answer
-                  0x00142a         0x9c build/default/production/dialtek_modbus.o
-                  0x00142a                  _modbus_wsr_answer
+                  0x00142e         0x9c build/default/production/dialtek_modbus.o
+                  0x00142e                  _modbus_wsr_answer
 
 .text.modbus_get_poll
-                  0x0014c6         0x9a
+                  0x0014ca         0x9a
  .text.modbus_get_poll
-                  0x0014c6         0x9a build/default/production/dialtek_modbus.o
-                  0x0014c6                  _modbus_get_poll
+                  0x0014ca         0x9a build/default/production/dialtek_modbus.o
+                  0x0014ca                  _modbus_get_poll
 
 .text.RestoreCfg
-                  0x001560         0x9a
+                  0x001564         0x9a
  .text.RestoreCfg
-                  0x001560         0x9a build/default/production/opto_controller.o
-                  0x001560                  _RestoreCfg
+                  0x001564         0x9a build/default/production/opto_controller.o
+                  0x001564                  _RestoreCfg
 
 .text.vTaskPriorityDisinheritAfterTimeout
-                  0x0015fa         0x98
+                  0x0015fe         0x98
  .text.vTaskPriorityDisinheritAfterTimeout
-                  0x0015fa         0x98 build/default/production/_ext/1787047461/tasks.o
-                  0x0015fa                  _vTaskPriorityDisinheritAfterTimeout
+                  0x0015fe         0x98 build/default/production/_ext/1787047461/tasks.o
+                  0x0015fe                  _vTaskPriorityDisinheritAfterTimeout
 
 .text.pxPortInitialiseStack
-                  0x001692         0x8c
+                  0x001696         0x8c
  .text.pxPortInitialiseStack
-                  0x001692         0x8c build/default/production/_ext/410575107/port.o
-                  0x001692                  _pxPortInitialiseStack
+                  0x001696         0x8c build/default/production/_ext/410575107/port.o
+                  0x001696                  _pxPortInitialiseStack
 
 .text.vTaskNotifyGiveFromISR
-                  0x00171e         0x8a
+                  0x001722         0x8a
  .text.vTaskNotifyGiveFromISR
-                  0x00171e         0x8a build/default/production/_ext/1787047461/tasks.o
-                  0x00171e                  _vTaskNotifyGiveFromISR
+                  0x001722         0x8a build/default/production/_ext/1787047461/tasks.o
+                  0x001722                  _vTaskNotifyGiveFromISR
 
 .text.UpdateIDregs
-                  0x0017a8         0x8a
+                  0x0017ac         0x8a
  .text.UpdateIDregs
-                  0x0017a8         0x8a build/default/production/opto_controller.o
-                  0x0017a8                  _UpdateIDregs
+                  0x0017ac         0x8a build/default/production/opto_controller.o
+                  0x0017ac                  _UpdateIDregs
 
 .text.vTaskSwitchContext
-                  0x001832         0x88
+                  0x001836         0x88
  .text.vTaskSwitchContext
-                  0x001832         0x88 build/default/production/_ext/1787047461/tasks.o
-                  0x001832                  _vTaskSwitchContext
+                  0x001836         0x88 build/default/production/_ext/1787047461/tasks.o
+                  0x001836                  _vTaskSwitchContext
 
 .text.Timer9_init
-                  0x0018ba         0x88
+                  0x0018be         0x88
  .text.Timer9_init
-                  0x0018ba         0x88 build/default/production/dialtek_uart.o
-                  0x0018ba                  _Timer9_init
+                  0x0018be         0x88 build/default/production/dialtek_uart.o
+                  0x0018be                  _Timer9_init
 
 .text.xQueueGenericReset
-                  0x001942         0x84
+                  0x001946         0x84
  .text.xQueueGenericReset
-                  0x001942         0x84 build/default/production/_ext/1787047461/queue.o
-                  0x001942                  _xQueueGenericReset
+                  0x001946         0x84 build/default/production/_ext/1787047461/queue.o
+                  0x001946                  _xQueueGenericReset
 
 .text.prvAddNewTaskToReadyList
-                  0x0019c6         0x7c
+                  0x0019ca         0x7c
  .text.prvAddNewTaskToReadyList
-                  0x0019c6         0x7c build/default/production/_ext/1787047461/tasks.o
-
-.text.vTaskSuspend
-                  0x001a42         0x76
- .text.vTaskSuspend
-                  0x001a42         0x76 build/default/production/_ext/1787047461/tasks.o
-                  0x001a42                  _vTaskSuspend
-
-.text.xTaskPriorityDisinherit
-                  0x001ab8         0x76
- .text.xTaskPriorityDisinherit
-                  0x001ab8         0x76 build/default/production/_ext/1787047461/tasks.o
-                  0x001ab8                  _xTaskPriorityDisinherit
-
-.text.vTaskDelayUntil
-                  0x001b2e         0x74
- .text.vTaskDelayUntil
-                  0x001b2e         0x74 build/default/production/_ext/1787047461/tasks.o
-                  0x001b2e                  _vTaskDelayUntil
-
-.text.main        0x001ba2         0x74
- .text.main       0x001ba2         0x74 build/default/production/main.o
-                  0x001ba2                  _main
+                  0x0019ca         0x7c build/default/production/_ext/1787047461/tasks.o
 
 .text.ConfigReset
-                  0x001c16         0x74
+                  0x001a46         0x7a
  .text.ConfigReset
-                  0x001c16         0x74 build/default/production/opto_controller.o
-                  0x001c16                  _ConfigReset
-
-.text.modbus_CRC16
-                  0x001c8a         0x72
- .text.modbus_CRC16
-                  0x001c8a         0x72 build/default/production/dialtek_modbus.o
+                  0x001a46         0x7a build/default/production/opto_controller.o
+                  0x001a46                  _ConfigReset
 
 .text.task_GetTemp
-                  0x001cfc         0x72
+                  0x001ac0         0x7a
  .text.task_GetTemp
-                  0x001cfc         0x72 build/default/production/main.o
-                  0x001cfc                  _task_GetTemp
+                  0x001ac0         0x7a build/default/production/main.o
+                  0x001ac0                  _task_GetTemp
+
+.text.vTaskSuspend
+                  0x001b3a         0x76
+ .text.vTaskSuspend
+                  0x001b3a         0x76 build/default/production/_ext/1787047461/tasks.o
+                  0x001b3a                  _vTaskSuspend
+
+.text.xTaskPriorityDisinherit
+                  0x001bb0         0x76
+ .text.xTaskPriorityDisinherit
+                  0x001bb0         0x76 build/default/production/_ext/1787047461/tasks.o
+                  0x001bb0                  _xTaskPriorityDisinherit
+
+.text.vTaskDelayUntil
+                  0x001c26         0x74
+ .text.vTaskDelayUntil
+                  0x001c26         0x74 build/default/production/_ext/1787047461/tasks.o
+                  0x001c26                  _vTaskDelayUntil
+
+.text.main        0x001c9a         0x74
+ .text.main       0x001c9a         0x74 build/default/production/main.o
+                  0x001c9a                  _main
+
+.text.modbus_CRC16
+                  0x001d0e         0x72
+ .text.modbus_CRC16
+                  0x001d0e         0x72 build/default/production/dialtek_modbus.o
 
 .text.xQueueGenericSendFromISR
-                  0x001d6e         0x6e
+                  0x001d80         0x6e
  .text.xQueueGenericSendFromISR
-                  0x001d6e         0x6e build/default/production/_ext/1787047461/queue.o
-                  0x001d6e                  _xQueueGenericSendFromISR
+                  0x001d80         0x6e build/default/production/_ext/1787047461/queue.o
+                  0x001d80                  _xQueueGenericSendFromISR
 
 .text.xQueueReceiveFromISR
-                  0x001ddc         0x6c
+                  0x001dee         0x6c
  .text.xQueueReceiveFromISR
-                  0x001ddc         0x6c build/default/production/_ext/1787047461/queue.o
-                  0x001ddc                  _xQueueReceiveFromISR
+                  0x001dee         0x6c build/default/production/_ext/1787047461/queue.o
+                  0x001dee                  _xQueueReceiveFromISR
 
 .text.xTaskRemoveFromEventList
-                  0x001e48         0x6c
+                  0x001e5a         0x6c
  .text.xTaskRemoveFromEventList
-                  0x001e48         0x6c build/default/production/_ext/1787047461/tasks.o
-                  0x001e48                  _xTaskRemoveFromEventList
+                  0x001e5a         0x6c build/default/production/_ext/1787047461/tasks.o
+                  0x001e5a                  _xTaskRemoveFromEventList
 
 .text.ulTaskNotifyTake
-                  0x001eb4         0x6c
+                  0x001ec6         0x6c
  .text.ulTaskNotifyTake
-                  0x001eb4         0x6c build/default/production/_ext/1787047461/tasks.o
-                  0x001eb4                  _ulTaskNotifyTake
+                  0x001ec6         0x6c build/default/production/_ext/1787047461/tasks.o
+                  0x001ec6                  _ulTaskNotifyTake
 
 .text.xTaskCheckForTimeOut
-                  0x001f20         0x6a
+                  0x001f32         0x6a
  .text.xTaskCheckForTimeOut
-                  0x001f20         0x6a build/default/production/_ext/1787047461/tasks.o
-                  0x001f20                  _xTaskCheckForTimeOut
+                  0x001f32         0x6a build/default/production/_ext/1787047461/tasks.o
+                  0x001f32                  _xTaskCheckForTimeOut
 
 .text.xQueueGiveFromISR
-                  0x001f8a         0x68
+                  0x001f9c         0x68
  .text.xQueueGiveFromISR
-                  0x001f8a         0x68 build/default/production/_ext/1787047461/queue.o
-                  0x001f8a                  _xQueueGiveFromISR
+                  0x001f9c         0x68 build/default/production/_ext/1787047461/queue.o
+                  0x001f9c                  _xQueueGiveFromISR
 
 .text.xTaskCreate
-                  0x001ff2         0x68
+                  0x002004         0x68
  .text.xTaskCreate
-                  0x001ff2         0x68 build/default/production/_ext/1787047461/tasks.o
-                  0x001ff2                  _xTaskCreate
+                  0x002004         0x68 build/default/production/_ext/1787047461/tasks.o
+                  0x002004                  _xTaskCreate
 
 .text.xTaskResumeFromISR
-                  0x00205a         0x68
+                  0x00206c         0x68
  .text.xTaskResumeFromISR
-                  0x00205a         0x68 build/default/production/_ext/1787047461/tasks.o
-                  0x00205a                  _xTaskResumeFromISR
+                  0x00206c         0x68 build/default/production/_ext/1787047461/tasks.o
+                  0x00206c                  _xTaskResumeFromISR
 
 .text.eeprom_wr_page
-                  0x0020c2         0x68
+                  0x0020d4         0x68
  .text.eeprom_wr_page
-                  0x0020c2         0x68 build/default/production/d_eeprom.o
-                  0x0020c2                  _eeprom_wr_page
+                  0x0020d4         0x68 build/default/production/d_eeprom.o
+                  0x0020d4                  _eeprom_wr_page
 
 .text.prvUnlockQueue
-                  0x00212a         0x66
+                  0x00213c         0x66
  .text.prvUnlockQueue
-                  0x00212a         0x66 build/default/production/_ext/1787047461/queue.o
+                  0x00213c         0x66 build/default/production/_ext/1787047461/queue.o
 
 .text.task_GetSensorID
-                  0x002190         0x64
+                  0x0021a2         0x64
  .text.task_GetSensorID
-                  0x002190         0x64 build/default/production/main.o
-                  0x002190                  _task_GetSensorID
+                  0x0021a2         0x64 build/default/production/main.o
+                  0x0021a2                  _task_GetSensorID
 
 .text.vListInsert
-                  0x0021f4         0x60
+                  0x002206         0x60
  .text.vListInsert
-                  0x0021f4         0x60 build/default/production/_ext/1787047461/list.o
-                  0x0021f4                  _vListInsert
+                  0x002206         0x60 build/default/production/_ext/1787047461/list.o
+                  0x002206                  _vListInsert
 
 .text.pvPortMalloc
-                  0x002254         0x5a
+                  0x002266         0x5a
  .text.pvPortMalloc
-                  0x002254         0x5a build/default/production/_ext/897580706/heap_1.o
-                  0x002254                  _pvPortMalloc
+                  0x002266         0x5a build/default/production/_ext/897580706/heap_1.o
+                  0x002266                  _pvPortMalloc
 
 .text.vTaskResume
-                  0x0022ae         0x5a
+                  0x0022c0         0x5a
  .text.vTaskResume
-                  0x0022ae         0x5a build/default/production/_ext/1787047461/tasks.o
-                  0x0022ae                  _vTaskResume
+                  0x0022c0         0x5a build/default/production/_ext/1787047461/tasks.o
+                  0x0022c0                  _vTaskResume
 
 .text.prvAddCurrentTaskToDelayedList
-                  0x002308         0x5a
+                  0x00231a         0x5a
  .text.prvAddCurrentTaskToDelayedList
-                  0x002308         0x5a build/default/production/_ext/1787047461/tasks.o
-
-.text.GPIO_init
-                  0x002362         0x58
- .text.GPIO_init
-                  0x002362         0x58 build/default/production/opto_controller.o
-                  0x002362                  _GPIO_init
+                  0x00231a         0x5a build/default/production/_ext/1787047461/tasks.o
 
 .text.vTaskRemoveFromUnorderedEventList
-                  0x0023ba         0x54
+                  0x002374         0x54
  .text.vTaskRemoveFromUnorderedEventList
-                  0x0023ba         0x54 build/default/production/_ext/1787047461/tasks.o
-                  0x0023ba                  _vTaskRemoveFromUnorderedEventList
+                  0x002374         0x54 build/default/production/_ext/1787047461/tasks.o
+                  0x002374                  _vTaskRemoveFromUnorderedEventList
 
-.text.UartInit    0x00240e         0x52
+.text.UartInit    0x0023c8         0x52
  .text.UartInit
-                  0x00240e         0x52 build/default/production/dialtek_uart.o
-                  0x00240e                  _UartInit
+                  0x0023c8         0x52 build/default/production/dialtek_uart.o
+                  0x0023c8                  _UartInit
 
-.text             0x002460         0x50
- .text            0x002460         0x50 build/default/production/_ext/410575107/portasm_PIC24.o
-                  0x002460                  _vPortYield
+.text             0x00241a         0x50
+ .text            0x00241a         0x50 build/default/production/_ext/410575107/portasm_PIC24.o
+                  0x00241a                  _vPortYield
 
 .text.eeprom_rd_regs_H
-                  0x0024b0         0x4c
+                  0x00246a         0x4c
  .text.eeprom_rd_regs_H
-                  0x0024b0         0x4c build/default/production/d_eeprom.o
-                  0x0024b0                  _eeprom_rd_regs_H
+                  0x00246a         0x4c build/default/production/d_eeprom.o
+                  0x00246a                  _eeprom_rd_regs_H
 
 .text.eeprom_rd_regs_I
-                  0x0024fc         0x4c
+                  0x0024b6         0x4c
  .text.eeprom_rd_regs_I
-                  0x0024fc         0x4c build/default/production/d_eeprom.o
-                  0x0024fc                  _eeprom_rd_regs_I
+                  0x0024b6         0x4c build/default/production/d_eeprom.o
+                  0x0024b6                  _eeprom_rd_regs_I
+
+.text.GPIO_init
+                  0x002502         0x4c
+ .text.GPIO_init
+                  0x002502         0x4c build/default/production/opto_controller.o
+                  0x002502                  _GPIO_init
 
 .text.uxListRemove
-                  0x002548         0x48
+                  0x00254e         0x48
  .text.uxListRemove
-                  0x002548         0x48 build/default/production/_ext/1787047461/list.o
-                  0x002548                  _uxListRemove
+                  0x00254e         0x48 build/default/production/_ext/1787047461/list.o
+                  0x00254e                  _uxListRemove
 
-.text.crc8        0x002590         0x46
- .text.crc8       0x002590         0x46 build/default/production/dialtek_one_wire.o
-                  0x002590                  _crc8
+.text.crc8        0x002596         0x46
+ .text.crc8       0x002596         0x46 build/default/production/dialtek_one_wire.o
+                  0x002596                  _crc8
 
-.dinit            0x0025d6         0x46
- .dinit           0x0025d6         0x46 data_init
+.dinit            0x0025dc         0x46
+ .dinit           0x0025dc         0x46 data_init
 
 .text.xQueueGenericCreate
-                  0x00261c         0x44
+                  0x002622         0x44
  .text.xQueueGenericCreate
-                  0x00261c         0x44 build/default/production/_ext/1787047461/queue.o
-                  0x00261c                  _xQueueGenericCreate
+                  0x002622         0x44 build/default/production/_ext/1787047461/queue.o
+                  0x002622                  _xQueueGenericCreate
 
 .text.prvCopyDataFromQueue
-                  0x002660         0x40
+                  0x002666         0x40
  .text.prvCopyDataFromQueue
-                  0x002660         0x40 build/default/production/_ext/1787047461/queue.o
+                  0x002666         0x40 build/default/production/_ext/1787047461/queue.o
 
 .text.vTaskStartScheduler
-                  0x0026a0         0x40
+                  0x0026a6         0x40
  .text.vTaskStartScheduler
-                  0x0026a0         0x40 build/default/production/_ext/1787047461/tasks.o
-                  0x0026a0                  _vTaskStartScheduler
+                  0x0026a6         0x40 build/default/production/_ext/1787047461/tasks.o
+                  0x0026a6                  _vTaskStartScheduler
 
 .text.vListInsertEnd
-                  0x0026e0         0x3c
+                  0x0026e6         0x3c
  .text.vListInsertEnd
-                  0x0026e0         0x3c build/default/production/_ext/1787047461/list.o
-                  0x0026e0                  _vListInsertEnd
+                  0x0026e6         0x3c build/default/production/_ext/1787047461/list.o
+                  0x0026e6                  _vListInsertEnd
 
 .text.OneWire_reset
-                  0x00271c         0x3c
+                  0x002722         0x3c
  .text.OneWire_reset
-                  0x00271c         0x3c build/default/production/dialtek_one_wire.o
-                  0x00271c                  _OneWire_reset
+                  0x002722         0x3c build/default/production/dialtek_one_wire.o
+                  0x002722                  _OneWire_reset
 
 .text.get_sensor_ID
-                  0x002758         0x3c
+                  0x00275e         0x3c
  .text.get_sensor_ID
-                  0x002758         0x3c build/default/production/dialtek_one_wire.o
-                  0x002758                  _get_sensor_ID
+                  0x00275e         0x3c build/default/production/dialtek_one_wire.o
+                  0x00275e                  _get_sensor_ID
 
 .text.xTaskNotifyStateClear
-                  0x002794         0x3a
+                  0x00279a         0x3a
  .text.xTaskNotifyStateClear
-                  0x002794         0x3a build/default/production/_ext/1787047461/tasks.o
-                  0x002794                  _xTaskNotifyStateClear
+                  0x00279a         0x3a build/default/production/_ext/1787047461/tasks.o
+                  0x00279a                  _xTaskNotifyStateClear
 
 .text.SPI2_init
-                  0x0027ce         0x3a
+                  0x0027d4         0x3a
  .text.SPI2_init
-                  0x0027ce         0x3a build/default/production/d_SPI.o
-                  0x0027ce                  _SPI2_init
+                  0x0027d4         0x3a build/default/production/d_SPI.o
+                  0x0027d4                  _SPI2_init
 
 .text.eeprom_wr_regs
-                  0x002808         0x3a
+                  0x00280e         0x3a
  .text.eeprom_wr_regs
-                  0x002808         0x3a build/default/production/d_eeprom.o
-                  0x002808                  _eeprom_wr_regs
+                  0x00280e         0x3a build/default/production/d_eeprom.o
+                  0x00280e                  _eeprom_wr_regs
 
 .text.xQueuePeekFromISR
-                  0x002842         0x38
+                  0x002848         0x38
  .text.xQueuePeekFromISR
-                  0x002842         0x38 build/default/production/_ext/1787047461/queue.o
-                  0x002842                  _xQueuePeekFromISR
+                  0x002848         0x38 build/default/production/_ext/1787047461/queue.o
+                  0x002848                  _xQueuePeekFromISR
 
 .text.prvInitialiseTaskLists
-                  0x00287a         0x38
+                  0x002880         0x38
  .text.prvInitialiseTaskLists
-                  0x00287a         0x38 build/default/production/_ext/1787047461/tasks.o
+                  0x002880         0x38 build/default/production/_ext/1787047461/tasks.o
 
 .text.OneWire_match_ID
-                  0x0028b2         0x38
+                  0x0028b8         0x38
  .text.OneWire_match_ID
-                  0x0028b2         0x38 build/default/production/dialtek_one_wire.o
-                  0x0028b2                  _OneWire_match_ID
+                  0x0028b8         0x38 build/default/production/dialtek_one_wire.o
+                  0x0028b8                  _OneWire_match_ID
 
 .text.eeprom_clear_page
-                  0x0028ea         0x38
+                  0x0028f0         0x38
  .text.eeprom_clear_page
-                  0x0028ea         0x38 build/default/production/d_eeprom.o
-                  0x0028ea                  _eeprom_clear_page
+                  0x0028f0         0x38 build/default/production/d_eeprom.o
+                  0x0028f0                  _eeprom_clear_page
 
 .text.prvInitialiseNewQueue
-                  0x002922         0x36
+                  0x002928         0x36
  .text.prvInitialiseNewQueue
-                  0x002922         0x36 build/default/production/_ext/1787047461/queue.o
+                  0x002928         0x36 build/default/production/_ext/1787047461/queue.o
 
 .text.Onewire_read_rom
-                  0x002958         0x34
+                  0x00295e         0x34
  .text.Onewire_read_rom
-                  0x002958         0x34 build/default/production/dialtek_one_wire.o
-                  0x002958                  _Onewire_read_rom
+                  0x00295e         0x34 build/default/production/dialtek_one_wire.o
+                  0x00295e                  _Onewire_read_rom
 
 .text.vListInitialise
-                  0x00298c         0x32
+                  0x002992         0x32
  .text.vListInitialise
-                  0x00298c         0x32 build/default/production/_ext/1787047461/list.o
-                  0x00298c                  _vListInitialise
+                  0x002992         0x32 build/default/production/_ext/1787047461/list.o
+                  0x002992                  _vListInitialise
 
 .text.prvTaskIsTaskSuspended
-                  0x0029be         0x32
+                  0x0029c4         0x32
  .text.prvTaskIsTaskSuspended
-                  0x0029be         0x32 build/default/production/_ext/1787047461/tasks.o
+                  0x0029c4         0x32 build/default/production/_ext/1787047461/tasks.o
 
 .text.SPI2_read_byte
-                  0x0029f0         0x32
+                  0x0029f6         0x32
  .text.SPI2_read_byte
-                  0x0029f0         0x32 build/default/production/d_SPI.o
-                  0x0029f0                  _SPI2_read_byte
+                  0x0029f6         0x32 build/default/production/d_SPI.o
+                  0x0029f6                  _SPI2_read_byte
 
-.text.is_reg      0x002a22         0x30
- .text.is_reg     0x002a22         0x30 build/default/production/dialtek_modbus.o
-                  0x002a22                  _is_reg
+.text.is_reg      0x002a28         0x30
+ .text.is_reg     0x002a28         0x30 build/default/production/dialtek_modbus.o
+                  0x002a28                  _is_reg
 
 .text.OneWire_read
-                  0x002a52         0x30
+                  0x002a58         0x30
  .text.OneWire_read
-                  0x002a52         0x30 build/default/production/dialtek_one_wire.o
-                  0x002a52                  _OneWire_read
+                  0x002a58         0x30 build/default/production/dialtek_one_wire.o
+                  0x002a58                  _OneWire_read
 
 .text.xPortStartScheduler
-                  0x002a82         0x2e
+                  0x002a88         0x2e
  .text.xPortStartScheduler
-                  0x002a82         0x2e build/default/production/_ext/410575107/port.o
-                  0x002a82                  _xPortStartScheduler
+                  0x002a88         0x2e build/default/production/_ext/410575107/port.o
+                  0x002a88                  _xPortStartScheduler
 
 .text.vApplicationSetupTickTimerInterrupt
-                  0x002ab0         0x2e
+                  0x002ab6         0x2e
  .text.vApplicationSetupTickTimerInterrupt
-                  0x002ab0         0x2e build/default/production/_ext/410575107/port.o
-                  0x002ab0                  _vApplicationSetupTickTimerInterrupt
+                  0x002ab6         0x2e build/default/production/_ext/410575107/port.o
+                  0x002ab6                  _vApplicationSetupTickTimerInterrupt
 
 .text.eeprom_clear
-                  0x002ade         0x2c
+                  0x002ae4         0x2c
  .text.eeprom_clear
-                  0x002ade         0x2c build/default/production/d_eeprom.o
-                  0x002ade                  _eeprom_clear
+                  0x002ae4         0x2c build/default/production/d_eeprom.o
+                  0x002ae4                  _eeprom_clear
 
 .text.OneWire_rx_state
-                  0x002b0a         0x2a
+                  0x002b10         0x2a
  .text.OneWire_rx_state
-                  0x002b0a         0x2a build/default/production/dialtek_one_wire.o
-                  0x002b0a                  _OneWire_rx_state
+                  0x002b10         0x2a build/default/production/dialtek_one_wire.o
+                  0x002b10                  _OneWire_rx_state
 
 .text.OneWire_send_bit
-                  0x002b34         0x2a
+                  0x002b3a         0x2a
  .text.OneWire_send_bit
-                  0x002b34         0x2a build/default/production/dialtek_one_wire.o
-                  0x002b34                  _OneWire_send_bit
+                  0x002b3a         0x2a build/default/production/dialtek_one_wire.o
+                  0x002b3a                  _OneWire_send_bit
 
 .text.OneWire_read_bit
-                  0x002b5e         0x2a
+                  0x002b64         0x2a
  .text.OneWire_read_bit
-                  0x002b5e         0x2a build/default/production/dialtek_one_wire.o
-                  0x002b5e                  _OneWire_read_bit
+                  0x002b64         0x2a build/default/production/dialtek_one_wire.o
+                  0x002b64                  _OneWire_read_bit
 
 .text.prvInitialiseMutex
-                  0x002b88         0x28
+                  0x002b8e         0x28
  .text.prvInitialiseMutex
-                  0x002b88         0x28 build/default/production/_ext/1787047461/queue.o
+                  0x002b8e         0x28 build/default/production/_ext/1787047461/queue.o
 
 .text.vTaskDelay
-                  0x002bb0         0x28
+                  0x002bb6         0x28
  .text.vTaskDelay
-                  0x002bb0         0x28 build/default/production/_ext/1787047461/tasks.o
-                  0x002bb0                  _vTaskDelay
+                  0x002bb6         0x28 build/default/production/_ext/1787047461/tasks.o
+                  0x002bb6                  _vTaskDelay
 
 .text.UartSendByte
-                  0x002bd8         0x28
+                  0x002bde         0x28
  .text.UartSendByte
-                  0x002bd8         0x28 build/default/production/dialtek_uart.o
-                  0x002bd8                  _UartSendByte
+                  0x002bde         0x28 build/default/production/dialtek_uart.o
+                  0x002bde                  _UartSendByte
 
-.text.OSC_init    0x002c00         0x28
+.text.OSC_init    0x002c06         0x28
  .text.OSC_init
-                  0x002c00         0x28 build/default/production/opto_controller.o
-                  0x002c00                  _OSC_init
+                  0x002c06         0x28 build/default/production/opto_controller.o
+                  0x002c06                  _OSC_init
 
 .text.prvIsQueueFull
-                  0x002c28         0x24
+                  0x002c2e         0x24
  .text.prvIsQueueFull
-                  0x002c28         0x24 build/default/production/_ext/1787047461/queue.o
+                  0x002c2e         0x24 build/default/production/_ext/1787047461/queue.o
 
 .text.xQueueIsQueueFullFromISR
-                  0x002c4c         0x24
+                  0x002c52         0x24
  .text.xQueueIsQueueFullFromISR
-                  0x002c4c         0x24 build/default/production/_ext/1787047461/queue.o
-                  0x002c4c                  _xQueueIsQueueFullFromISR
+                  0x002c52         0x24 build/default/production/_ext/1787047461/queue.o
+                  0x002c52                  _xQueueIsQueueFullFromISR
 
 .text.vTaskPlaceOnUnorderedEventList
-                  0x002c70         0x24
+                  0x002c76         0x24
  .text.vTaskPlaceOnUnorderedEventList
-                  0x002c70         0x24 build/default/production/_ext/1787047461/tasks.o
-                  0x002c70                  _vTaskPlaceOnUnorderedEventList
+                  0x002c76         0x24 build/default/production/_ext/1787047461/tasks.o
+                  0x002c76                  _vTaskPlaceOnUnorderedEventList
 
-.text.delay_us    0x002c94         0x24
+.text.delay_us    0x002c9a         0x24
  .text.delay_us
-                  0x002c94         0x24 build/default/production/dialtek_one_wire.o
-                  0x002c94                  _delay_us
+                  0x002c9a         0x24 build/default/production/dialtek_one_wire.o
+                  0x002c9a                  _delay_us
 
 .text.OneWire_all_rd_t
-                  0x002cb8         0x24
+                  0x002cbe         0x24
  .text.OneWire_all_rd_t
-                  0x002cb8         0x24 build/default/production/dialtek_one_wire.o
-                  0x002cb8                  _OneWire_all_rd_t
+                  0x002cbe         0x24 build/default/production/dialtek_one_wire.o
+                  0x002cbe                  _OneWire_all_rd_t
 
 .text.vPortEnterCritical
-                  0x002cdc         0x22
+                  0x002ce2         0x22
  .text.vPortEnterCritical
-                  0x002cdc         0x22 build/default/production/_ext/410575107/port.o
-                  0x002cdc                  _vPortEnterCritical
+                  0x002ce2         0x22 build/default/production/_ext/410575107/port.o
+                  0x002ce2                  _vPortEnterCritical
 
 .text.vPortExitCritical
-                  0x002cfe         0x22
+                  0x002d04         0x22
  .text.vPortExitCritical
-                  0x002cfe         0x22 build/default/production/_ext/410575107/port.o
-                  0x002cfe                  _vPortExitCritical
+                  0x002d04         0x22 build/default/production/_ext/410575107/port.o
+                  0x002d04                  _vPortExitCritical
 
 .text.vTaskEndScheduler
-                  0x002d20         0x22
+                  0x002d26         0x22
  .text.vTaskEndScheduler
-                  0x002d20         0x22 build/default/production/_ext/1787047461/tasks.o
-                  0x002d20                  _vTaskEndScheduler
+                  0x002d26         0x22 build/default/production/_ext/1787047461/tasks.o
+                  0x002d26                  _vTaskEndScheduler
 
 .text.prvResetNextTaskUnblockTime
-                  0x002d42         0x22
+                  0x002d48         0x22
  .text.prvResetNextTaskUnblockTime
-                  0x002d42         0x22 build/default/production/_ext/1787047461/tasks.o
+                  0x002d48         0x22 build/default/production/_ext/1787047461/tasks.o
 
 .text.OneWire_send
-                  0x002d64         0x22
+                  0x002d6a         0x22
  .text.OneWire_send
-                  0x002d64         0x22 build/default/production/dialtek_one_wire.o
-                  0x002d64                  _OneWire_send
+                  0x002d6a         0x22 build/default/production/dialtek_one_wire.o
+                  0x002d6a                  _OneWire_send
 
 .text.UartGetChar
-                  0x002d86         0x22
+                  0x002d8c         0x22
  .text.UartGetChar
-                  0x002d86         0x22 build/default/production/dialtek_uart.o
-                  0x002d86                  _UartGetChar
+                  0x002d8c         0x22 build/default/production/dialtek_uart.o
+                  0x002d8c                  _UartGetChar
 
 .text.xQueueCreateMutex
-                  0x002da8         0x20
+                  0x002dae         0x20
  .text.xQueueCreateMutex
-                  0x002da8         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x002da8                  _xQueueCreateMutex
+                  0x002dae         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x002dae                  _xQueueCreateMutex
 
 .text.xQueueCreateCountingSemaphore
-                  0x002dc8         0x20
+                  0x002dce         0x20
  .text.xQueueCreateCountingSemaphore
-                  0x002dc8         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x002dc8                  _xQueueCreateCountingSemaphore
+                  0x002dce         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x002dce                  _xQueueCreateCountingSemaphore
 
 .text.prvGetDisinheritPriorityAfterTimeout
-                  0x002de8         0x20
+                  0x002dee         0x20
  .text.prvGetDisinheritPriorityAfterTimeout
-                  0x002de8         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x002dee         0x20 build/default/production/_ext/1787047461/queue.o
 
 .text.prvIsQueueEmpty
-                  0x002e08         0x20
+                  0x002e0e         0x20
  .text.prvIsQueueEmpty
-                  0x002e08         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x002e0e         0x20 build/default/production/_ext/1787047461/queue.o
 
 .text.xQueueIsQueueEmptyFromISR
-                  0x002e28         0x20
+                  0x002e2e         0x20
  .text.xQueueIsQueueEmptyFromISR
-                  0x002e28         0x20 build/default/production/_ext/1787047461/queue.o
-                  0x002e28                  _xQueueIsQueueEmptyFromISR
+                  0x002e2e         0x20 build/default/production/_ext/1787047461/queue.o
+                  0x002e2e                  _xQueueIsQueueEmptyFromISR
 
 .text.pcTaskGetName
-                  0x002e48         0x20
+                  0x002e4e         0x20
  .text.pcTaskGetName
-                  0x002e48         0x20 build/default/production/_ext/1787047461/tasks.o
-                  0x002e48                  _pcTaskGetName
+                  0x002e4e         0x20 build/default/production/_ext/1787047461/tasks.o
+                  0x002e4e                  _pcTaskGetName
 
 .text.Timer8_init
-                  0x002e68         0x20
+                  0x002e6e         0x20
  .text.Timer8_init
-                  0x002e68         0x20 build/default/production/dialtek_one_wire.o
-                  0x002e68                  _Timer8_init
+                  0x002e6e         0x20 build/default/production/dialtek_one_wire.o
+                  0x002e6e                  _Timer8_init
 
 .text.uxQueueSpacesAvailable
-                  0x002e88         0x1e
+                  0x002e8e         0x1e
  .text.uxQueueSpacesAvailable
-                  0x002e88         0x1e build/default/production/_ext/1787047461/queue.o
-                  0x002e88                  _uxQueueSpacesAvailable
+                  0x002e8e         0x1e build/default/production/_ext/1787047461/queue.o
+                  0x002e8e                  _uxQueueSpacesAvailable
 
 .text.vApplicationStackOverflowHook
-                  0x002ea6         0x1e
+                  0x002eac         0x1e
  .text.vApplicationStackOverflowHook
-                  0x002ea6         0x1e build/default/production/main.o
-                  0x002ea6                  _vApplicationStackOverflowHook
-
-.text.OneWire_tx_state
-                  0x002ec4         0x1c
- .text.OneWire_tx_state
-                  0x002ec4         0x1c build/default/production/dialtek_one_wire.o
-                  0x002ec4                  _OneWire_tx_state
-
-.text.OneWire_skip
-                  0x002ee0         0x1c
- .text.OneWire_skip
-                  0x002ee0         0x1c build/default/production/dialtek_one_wire.o
-                  0x002ee0                  _OneWire_skip
-
-.text.SPI2_write_byte
-                  0x002efc         0x1c
- .text.SPI2_write_byte
-                  0x002efc         0x1c build/default/production/d_SPI.o
-                  0x002efc                  _SPI2_write_byte
-
-.text.vTaskPlaceOnEventList
-                  0x002f18         0x18
- .text.vTaskPlaceOnEventList
-                  0x002f18         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x002f18                  _vTaskPlaceOnEventList
-
-.text.vTaskSetTimeOutState
-                  0x002f30         0x18
- .text.vTaskSetTimeOutState
-                  0x002f30         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x002f30                  _vTaskSetTimeOutState
-
-.text.uxTaskResetEventItemValue
-                  0x002f48         0x18
- .text.uxTaskResetEventItemValue
-                  0x002f48         0x18 build/default/production/_ext/1787047461/tasks.o
-                  0x002f48                  _uxTaskResetEventItemValue
+                  0x002eac         0x1e build/default/production/main.o
+                  0x002eac                  _vApplicationStackOverflowHook
 
 .text.modbus_init
-                  0x002f60         0x18
+                  0x002eca         0x1c
  .text.modbus_init
-                  0x002f60         0x18 build/default/production/dialtek_modbus.o
-                  0x002f60                  _modbus_init
+                  0x002eca         0x1c build/default/production/dialtek_modbus.o
+                  0x002eca                  _modbus_init
+
+.text.OneWire_tx_state
+                  0x002ee6         0x1c
+ .text.OneWire_tx_state
+                  0x002ee6         0x1c build/default/production/dialtek_one_wire.o
+                  0x002ee6                  _OneWire_tx_state
+
+.text.OneWire_skip
+                  0x002f02         0x1c
+ .text.OneWire_skip
+                  0x002f02         0x1c build/default/production/dialtek_one_wire.o
+                  0x002f02                  _OneWire_skip
+
+.text.SPI2_write_byte
+                  0x002f1e         0x1c
+ .text.SPI2_write_byte
+                  0x002f1e         0x1c build/default/production/d_SPI.o
+                  0x002f1e                  _SPI2_write_byte
+
+.text.vTaskPlaceOnEventList
+                  0x002f3a         0x18
+ .text.vTaskPlaceOnEventList
+                  0x002f3a         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x002f3a                  _vTaskPlaceOnEventList
+
+.text.vTaskSetTimeOutState
+                  0x002f52         0x18
+ .text.vTaskSetTimeOutState
+                  0x002f52         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x002f52                  _vTaskSetTimeOutState
+
+.text.uxTaskResetEventItemValue
+                  0x002f6a         0x18
+ .text.uxTaskResetEventItemValue
+                  0x002f6a         0x18 build/default/production/_ext/1787047461/tasks.o
+                  0x002f6a                  _uxTaskResetEventItemValue
 
 .text.holding_reg_read
-                  0x002f78         0x18
+                  0x002f82         0x18
  .text.holding_reg_read
-                  0x002f78         0x18 build/default/production/dialtek_modbus.o
-                  0x002f78                  _holding_reg_read
+                  0x002f82         0x18 build/default/production/dialtek_modbus.o
+                  0x002f82                  _holding_reg_read
 
 .text.input_reg_read
-                  0x002f90         0x18
+                  0x002f9a         0x18
  .text.input_reg_read
-                  0x002f90         0x18 build/default/production/dialtek_modbus.o
-                  0x002f90                  _input_reg_read
+                  0x002f9a         0x18 build/default/production/dialtek_modbus.o
+                  0x002f9a                  _input_reg_read
 
 .text.prvIdleTask
-                  0x002fa8         0x16
+                  0x002fb2         0x16
  .text.prvIdleTask
-                  0x002fa8         0x16 build/default/production/_ext/1787047461/tasks.o
-                  0x002fa8                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
+                  0x002fb2         0x16 build/default/production/_ext/1787047461/tasks.o
+                  0x002fb2                  build/default/production/_ext/1787047461/tasks.o:_prvIdleTask
 
 .text.pvTaskIncrementMutexHeldCount
-                  0x002fbe         0x16
+                  0x002fc8         0x16
  .text.pvTaskIncrementMutexHeldCount
-                  0x002fbe         0x16 build/default/production/_ext/1787047461/tasks.o
-                  0x002fbe                  _pvTaskIncrementMutexHeldCount
+                  0x002fc8         0x16 build/default/production/_ext/1787047461/tasks.o
+                  0x002fc8                  _pvTaskIncrementMutexHeldCount
 
 .text.holding_reg_write
-                  0x002fd4         0x16
+                  0x002fde         0x16
  .text.holding_reg_write
-                  0x002fd4         0x16 build/default/production/dialtek_modbus.o
-                  0x002fd4                  _holding_reg_write
+                  0x002fde         0x16 build/default/production/dialtek_modbus.o
+                  0x002fde                  _holding_reg_write
 
 .text.input_reg_write
-                  0x002fea         0x16
+                  0x002ff4         0x16
  .text.input_reg_write
-                  0x002fea         0x16 build/default/production/dialtek_modbus.o
-                  0x002fea                  _input_reg_write
+                  0x002ff4         0x16 build/default/production/dialtek_modbus.o
+                  0x002ff4                  _input_reg_write
 
 .text.uxQueueMessagesWaiting
-                  0x003000         0x14
+                  0x00300a         0x14
  .text.uxQueueMessagesWaiting
-                  0x003000         0x14 build/default/production/_ext/1787047461/queue.o
-                  0x003000                  _uxQueueMessagesWaiting
+                  0x00300a         0x14 build/default/production/_ext/1787047461/queue.o
+                  0x00300a                  _uxQueueMessagesWaiting
 
 .text.uxQueueMessagesWaitingFromISR
-                  0x003014         0x14
+                  0x00301e         0x14
  .text.uxQueueMessagesWaitingFromISR
-                  0x003014         0x14 build/default/production/_ext/1787047461/queue.o
-                  0x003014                  _uxQueueMessagesWaitingFromISR
+                  0x00301e         0x14 build/default/production/_ext/1787047461/queue.o
+                  0x00301e                  _uxQueueMessagesWaitingFromISR
 
 .text.vTaskInternalSetTimeOutState
-                  0x003028         0x14
+                  0x003032         0x14
  .text.vTaskInternalSetTimeOutState
-                  0x003028         0x14 build/default/production/_ext/1787047461/tasks.o
-                  0x003028                  _vTaskInternalSetTimeOutState
+                  0x003032         0x14 build/default/production/_ext/1787047461/tasks.o
+                  0x003032                  _vTaskInternalSetTimeOutState
 
 .text.vQueueDelete
-                  0x00303c         0x10
+                  0x003046         0x10
  .text.vQueueDelete
-                  0x00303c         0x10 build/default/production/_ext/1787047461/queue.o
-                  0x00303c                  _vQueueDelete
+                  0x003046         0x10 build/default/production/_ext/1787047461/queue.o
+                  0x003046                  _vQueueDelete
 
 .text.xTaskGetTickCount
-                  0x00304c         0x10
+                  0x003056         0x10
  .text.xTaskGetTickCount
-                  0x00304c         0x10 build/default/production/_ext/1787047461/tasks.o
-                  0x00304c                  _xTaskGetTickCount
+                  0x003056         0x10 build/default/production/_ext/1787047461/tasks.o
+                  0x003056                  _xTaskGetTickCount
 
 .text.xTaskGetTickCountFromISR
-                  0x00305c         0x10
+                  0x003066         0x10
  .text.xTaskGetTickCountFromISR
-                  0x00305c         0x10 build/default/production/_ext/1787047461/tasks.o
-                  0x00305c                  _xTaskGetTickCountFromISR
+                  0x003066         0x10 build/default/production/_ext/1787047461/tasks.o
+                  0x003066                  _xTaskGetTickCountFromISR
 
 .text.SendTmeasCmd
-                  0x00306c         0x10
+                  0x003076         0x10
  .text.SendTmeasCmd
-                  0x00306c         0x10 build/default/production/opto_controller.o
-                  0x00306c                  _SendTmeasCmd
+                  0x003076         0x10 build/default/production/opto_controller.o
+                  0x003076                  _SendTmeasCmd
 
 .text.vListInitialiseItem
-                  0x00307c          0xe
+                  0x003086          0xe
  .text.vListInitialiseItem
-                  0x00307c          0xe build/default/production/_ext/1787047461/list.o
-                  0x00307c                  _vListInitialiseItem
+                  0x003086          0xe build/default/production/_ext/1787047461/list.o
+                  0x003086                  _vListInitialiseItem
 
 .text.SystemInit
-                  0x00308a          0xe
+                  0x003094          0xe
  .text.SystemInit
-                  0x00308a          0xe build/default/production/opto_controller.o
-                  0x00308a                  _SystemInit
+                  0x003094          0xe build/default/production/opto_controller.o
+                  0x003094                  _SystemInit
 
 .text.xPortGetFreeHeapSize
-                  0x003098          0xc
+                  0x0030a2          0xc
  .text.xPortGetFreeHeapSize
-                  0x003098          0xc build/default/production/_ext/897580706/heap_1.o
-                  0x003098                  _xPortGetFreeHeapSize
+                  0x0030a2          0xc build/default/production/_ext/897580706/heap_1.o
+                  0x0030a2                  _xPortGetFreeHeapSize
 
 .text.vTaskSuspendAll
-                  0x0030a4          0xc
+                  0x0030ae          0xc
  .text.vTaskSuspendAll
-                  0x0030a4          0xc build/default/production/_ext/1787047461/tasks.o
-                  0x0030a4                  _vTaskSuspendAll
+                  0x0030ae          0xc build/default/production/_ext/1787047461/tasks.o
+                  0x0030ae                  _vTaskSuspendAll
 
 .text.xTaskGetCurrentTaskHandle
-                  0x0030b0          0xc
+                  0x0030ba          0xc
  .text.xTaskGetCurrentTaskHandle
-                  0x0030b0          0xc build/default/production/_ext/1787047461/tasks.o
-                  0x0030b0                  _xTaskGetCurrentTaskHandle
+                  0x0030ba          0xc build/default/production/_ext/1787047461/tasks.o
+                  0x0030ba                  _xTaskGetCurrentTaskHandle
 
 .text.modbus_reset
-                  0x0030bc          0xc
+                  0x0030c6          0xc
  .text.modbus_reset
-                  0x0030bc          0xc build/default/production/dialtek_modbus.o
-                  0x0030bc                  _modbus_reset
+                  0x0030c6          0xc build/default/production/dialtek_modbus.o
+                  0x0030c6                  _modbus_reset
 
 .text.UartResetQueue
-                  0x0030c8          0xc
+                  0x0030d2          0xc
  .text.UartResetQueue
-                  0x0030c8          0xc build/default/production/dialtek_uart.o
-                  0x0030c8                  _UartResetQueue
+                  0x0030d2          0xc build/default/production/dialtek_uart.o
+                  0x0030d2                  _UartResetQueue
 
 .text.vPortInitialiseBlocks
-                  0x0030d4          0xa
+                  0x0030de          0xa
  .text.vPortInitialiseBlocks
-                  0x0030d4          0xa build/default/production/_ext/897580706/heap_1.o
-                  0x0030d4                  _vPortInitialiseBlocks
+                  0x0030de          0xa build/default/production/_ext/897580706/heap_1.o
+                  0x0030de                  _vPortInitialiseBlocks
 
 .text.vTaskMissedYield
-                  0x0030de          0xa
+                  0x0030e8          0xa
  .text.vTaskMissedYield
-                  0x0030de          0xa build/default/production/_ext/1787047461/tasks.o
-                  0x0030de                  _vTaskMissedYield
+                  0x0030e8          0xa build/default/production/_ext/1787047461/tasks.o
+                  0x0030e8                  _vTaskMissedYield
 
 .text.UartGetQcnt
-                  0x0030e8          0xa
+                  0x0030f2          0xa
  .text.UartGetQcnt
-                  0x0030e8          0xa build/default/production/dialtek_uart.o
-                  0x0030e8                  _UartGetQcnt
+                  0x0030f2          0xa build/default/production/dialtek_uart.o
+                  0x0030f2                  _UartGetQcnt
 
 .text.vPortFree
-                  0x0030f2          0x8
+                  0x0030fc          0x8
  .text.vPortFree
-                  0x0030f2          0x8 build/default/production/_ext/897580706/heap_1.o
-                  0x0030f2                  _vPortFree
+                  0x0030fc          0x8 build/default/production/_ext/897580706/heap_1.o
+                  0x0030fc                  _vPortFree
 
 .text.uxTaskGetNumberOfTasks
-                  0x0030fa          0x8
+                  0x003104          0x8
  .text.uxTaskGetNumberOfTasks
-                  0x0030fa          0x8 build/default/production/_ext/1787047461/tasks.o
-                  0x0030fa                  _uxTaskGetNumberOfTasks
+                  0x003104          0x8 build/default/production/_ext/1787047461/tasks.o
+                  0x003104                  _uxTaskGetNumberOfTasks
 
 .text.get_wr_reg_addr
-                  0x003102          0x8
+                  0x00310c          0x8
  .text.get_wr_reg_addr
-                  0x003102          0x8 build/default/production/dialtek_modbus.o
-                  0x003102                  _get_wr_reg_addr
+                  0x00310c          0x8 build/default/production/dialtek_modbus.o
+                  0x00310c                  _get_wr_reg_addr
 
 .text.get_wr_reg_val
-                  0x00310a          0x8
+                  0x003114          0x8
  .text.get_wr_reg_val
-                  0x00310a          0x8 build/default/production/dialtek_modbus.o
-                  0x00310a                  _get_wr_reg_val
+                  0x003114          0x8 build/default/production/dialtek_modbus.o
+                  0x003114                  _get_wr_reg_val
 
 .text.OneWire_init
-                  0x003112          0x8
+                  0x00311c          0x8
  .text.OneWire_init
-                  0x003112          0x8 build/default/production/dialtek_one_wire.o
-                  0x003112                  _OneWire_init
+                  0x00311c          0x8 build/default/production/dialtek_one_wire.o
+                  0x00311c                  _OneWire_init
 
 .text.vPortEndScheduler
-                  0x00311a          0x6
+                  0x003124          0x6
  .text.vPortEndScheduler
-                  0x00311a          0x6 build/default/production/_ext/410575107/port.o
-                  0x00311a                  _vPortEndScheduler
+                  0x003124          0x6 build/default/production/_ext/410575107/port.o
+                  0x003124                  _vPortEndScheduler
 
 .text.prvCheckTasksWaitingTermination
-                  0x003120          0x6
+                  0x00312a          0x6
  .text.prvCheckTasksWaitingTermination
-                  0x003120          0x6 build/default/production/_ext/1787047461/tasks.o
+                  0x00312a          0x6 build/default/production/_ext/1787047461/tasks.o
 
 .text.vApplicationIdleHook
-                  0x003126          0x6
+                  0x003130          0x6
  .text.vApplicationIdleHook
-                  0x003126          0x6 build/default/production/main.o
-                  0x003126                  _vApplicationIdleHook
+                  0x003130          0x6 build/default/production/main.o
+                  0x003130                  _vApplicationIdleHook

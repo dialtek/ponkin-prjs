@@ -7,8 +7,8 @@ extern "C"
 #endif
 ///=====	
 // 1-wire
-#define One_wire_TX_pin   LATGbits.LATG12  // RD6	  
-#define One_wire_RX_pin   PORTGbits.RG14   // RD5	
+#define One_wire_TX_pin   LATDbits.LATD6  // RD6	  
+#define One_wire_RX_pin   PORTDbits.RD5   // RD5	
 	
 #define ID_lenght	8     // кол-во байт в ID датчика
 #define MaxSensQty 20   // макс. число датчиков 

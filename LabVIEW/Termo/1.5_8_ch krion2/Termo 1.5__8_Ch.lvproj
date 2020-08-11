@@ -10,10 +10,12 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Read and Write Controls to Automatic Config File.vi" Type="VI" URL="../Load and Save Controls_LV2009.llb/Read and Write Controls to Automatic Config File.vi"/>
 		<Item Name="T.ico" Type="Document" URL="../../../my lib/T.ico"/>
 		<Item Name="Termo_1.5__.vi" Type="VI" URL="../Termo_1.5__.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
+				<Item Name="8.6CompatibleGlobalVar.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/config.llb/8.6CompatibleGlobalVar.vi"/>
 				<Item Name="Application Directory.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Application Directory.vi"/>
 				<Item Name="BuildHelpPath.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/BuildHelpPath.vi"/>
 				<Item Name="Check if File or Folder Exists.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/libraryn.llb/Check if File or Folder Exists.vi"/>
@@ -48,6 +50,7 @@
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
+				<Item Name="NI_LVConfig.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/config.llb/NI_LVConfig.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
@@ -63,6 +66,8 @@
 			<Item Name="Ch_data_pattern_8_save (SubVI).vi" Type="VI" URL="../Ch_data_pattern_8_save (SubVI).vi"/>
 			<Item Name="Ch_data_title_pattern (SubVI).vi" Type="VI" URL="../Ch_data_title_pattern (SubVI).vi"/>
 			<Item Name="CheckScreenShot (SubVI).vi" Type="VI" URL="../CheckScreenShot (SubVI).vi"/>
+			<Item Name="Read and Write Controls to Config File.vi" Type="VI" URL="../Load and Save Controls_LV2009.llb/Read and Write Controls to Config File.vi"/>
+			<Item Name="RWC_Actions.ctl" Type="VI" URL="../Load and Save Controls_LV2009.llb/RWC_Actions.ctl"/>
 			<Item Name="String_match (SubVI).vi" Type="VI" URL="../String_match (SubVI).vi"/>
 			<Item Name="Volts_to_temperature_(SubVI).vi" Type="VI" URL="../Volts_to_temperature_(SubVI).vi"/>
 		</Item>
@@ -84,6 +89,7 @@
 				<Property Name="Bld_supportedLanguage[0]" Type="Str">English</Property>
 				<Property Name="Bld_supportedLanguageCount" Type="Int">1</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
+				<Property Name="Bld_version.minor" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">Термометрия КРИОН-2.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../EXE/Термометрия КРИОН-2.exe</Property>
 				<Property Name="Destination[0].path.type" Type="Str">relativeToProject</Property>
@@ -94,7 +100,7 @@
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="Exe_iconItemID" Type="Ref">/My Computer/T.ico</Property>
-				<Property Name="Source[0].itemID" Type="Str">{A399DCCE-8C4A-4200-9123-F64CF78BAFA0}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{B4F5BEE2-670D-43D9-BF73-E0A3BFAF25CD}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/Termo_1.5__.vi</Property>
@@ -103,10 +109,14 @@
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/T.ico</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">3</Property>
+				<Property Name="Source[3].destinationIndex" Type="Int">0</Property>
+				<Property Name="Source[3].itemID" Type="Ref">/My Computer/Read and Write Controls to Automatic Config File.vi</Property>
+				<Property Name="Source[3].sourceInclusion" Type="Str">Include</Property>
+				<Property Name="Source[3].type" Type="Str">VI</Property>
+				<Property Name="SourceCount" Type="Int">4</Property>
 				<Property Name="TgtF_companyName" Type="Str">LHEP JINR</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">8 cnannel PoE thermometry system test software</Property>
-				<Property Name="TgtF_legalCopyright" Type="Str">Dubna 2015 </Property>
+				<Property Name="TgtF_legalCopyright" Type="Str">Dubna 2020</Property>
 				<Property Name="TgtF_productName" Type="Str">Термометрия</Property>
 				<Property Name="TgtF_targetfileGUID" Type="Str">{28DE9AEE-6A5F-48DE-B356-11710526EAEC}</Property>
 				<Property Name="TgtF_targetfileName" Type="Str">Термометрия КРИОН-2.exe</Property>

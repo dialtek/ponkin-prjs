@@ -57,6 +57,7 @@ void task_ModbusSM(void *pvParameters)
            if(UpdateIDregs(0))  // update regs if new sensor added
            {
              eeprom_wr_regs(HOLD_REGS);
+             eeprom_wr_regs(HOLD_REGS);
              eeprom_wr_regs(INPUT_REGS);
            }
            
@@ -160,7 +161,7 @@ void task_GetTemp(void *pvParameters)
            taskYIELD(); 
 
         SendTmeasCmd(); // send measure cmd to existing sensors
-  
+         vTaskDelay(100);
         // read T from existig sensors
         for(unsigned char i = 0; i < SensorsQty; i++)
         {
@@ -176,7 +177,8 @@ void task_GetTemp(void *pvParameters)
                 xTaskResumeAll();                  // resume RTOS scheduler
 
                 temper.reg_address = Tsens.index;  // save sensor reg addr and T
-                xQueueSend(modbus_el_q,(void*) &temper, (TickType_t)0);   
+                xQueueSend(modbus_el_q,(void*) &temper, (TickType_t)0); 
+                vTaskDelay(100);
             }
         }
      } 

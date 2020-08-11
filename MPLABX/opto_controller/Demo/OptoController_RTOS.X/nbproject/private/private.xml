@@ -7,7 +7,9 @@
             <file>file:/C:/E/Dev/FreeRTOS/WorkingCopy/FreeRTOS/Demo/PIC24_MPLAB/main.c</file>
         </group>
         <group>
-            <file>file:/F:/Mega/ponkin-prjs/MPLABX/opto_controller/Demo/OptoController_RTOS.X/main.c</file>
+            <file>file:/F:/Mega%20drive/ponkin-prjs/MPLABX/opto_controller/Demo/OptoController_RTOS.X/main.c</file>
+            <file>file:/F:/Mega%20drive/ponkin-prjs/MPLABX/opto_controller/Demo/OptoController_RTOS.X/opto_controller.c</file>
+            <file>file:/F:/Mega%20drive/ponkin-prjs/MPLABX/opto_controller/Demo/OptoController_RTOS.X/dialtek_modbus.c</file>
         </group>
     </open-files>
 </project-private>

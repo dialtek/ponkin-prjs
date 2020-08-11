@@ -6,7 +6,7 @@
             <name>OptoController_RTOS</name>
             <creation-uuid>c6678f4a-9efa-4809-b5d8-ac295272b608</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
+            <c-extensions>c,S</c-extensions>
             <cpp-extensions/>
             <header-extensions>h</header-extensions>
             <sourceEncoding>windows-1251</sourceEncoding>
